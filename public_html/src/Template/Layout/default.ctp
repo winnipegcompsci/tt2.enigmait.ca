@@ -6,10 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-     <title>
-  <?php __('-- TT2.0 -- '); ?>
-  <?php echo $title_for_layout; ?>
-  </title>
+    <title> <?php __('-- Enigma Networks | TT v2.0 -- '); ?> </title>
     <?php
         echo $this->Html->meta('icon');
 
@@ -30,13 +27,9 @@
 		echo $this->Html->script('sb-admin-2');
 		echo $this->Html->script('bootstrap.min');
 
-
-
 		echo $this->Html->script('plugins/dataTables/dataTables.bootstrap');
 		echo $this->Html->script('plugins/metisMenu/metisMenu.min');
-
-
-?>
+	?>
 </head>
 <body>
 
@@ -49,11 +42,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<?php echo $this->Url->build(["controller" => "pages", "action" => "display", "home"]);?>">TT2.0 </a>
+                <a class="navbar-brand" href="<?php echo $this->Url->build(["controller" => "pages", "action" => "display", "home"]);?>">Enigma || TT v2.0 </a>
             </div>
             <!-- /.navbar-header -->
 			
-             <?php // echo $this->element('header'); ?> 
+            <?php // echo $this->element('header'); ?> 
             <?php // echo $this->element('sidebar'); ?>    
         </nav>
 
