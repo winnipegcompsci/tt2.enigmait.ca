@@ -27,10 +27,10 @@
 
 
 
-		echo $this->Html->script('../jquery-1.11.0.min');
-		echo $this->Html->script('../plugins/dataTables/dataTables.bootstrap');
-		echo $this->Html->script('../bootstrap.min');
-		echo $this->Html->script('../plugins/metisMenu/metisMenu.min');
+		echo $this->Html->script('jquery-1.11.0.min');
+		echo $this->Html->script('plugins/dataTables/dataTables.bootstrap');
+		echo $this->Html->script('bootstrap.min');
+		echo $this->Html->script('plugins/metisMenu/metisMenu.min');
 
 		echo $this->Html->script('../sb-admin-2');
 
@@ -50,6 +50,7 @@
                 <a class="navbar-brand" href="index.html">TT2.0 </a>
             </div>
             <!-- /.navbar-header -->
+			
              <?php // echo $this->element('header'); ?> 
             <?php // echo $this->element('sidebar'); ?>    
         </nav>
