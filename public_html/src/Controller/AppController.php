@@ -26,6 +26,21 @@ use Cake\Event\Event;
  */
 class AppController extends Controller
 {
+	public $helpers = [
+		'Html' => [
+			'className' => 'Bootstrap3.BootstrapHtml'
+		],
+		'Form' => [
+			'className' => 'Bootstrap3.BootstrapForm'
+		],
+		'Paginator' => [
+			'className' => 'Bootstrap3.BootstrapPaginator'
+		],
+		'Modal' => [
+			'className' => 'Bootstrap3.BootstrapModal'
+		]
+	];
+
 	public function beforeFilter(Event $event)
     {
         $this->Auth->allow(['index', 'view', 'display']);
