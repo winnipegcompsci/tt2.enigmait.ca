@@ -35,37 +35,36 @@
 
     <div id="wrapper">
 
-<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="<?php echo $this->Url->build(["controller" => "pages", "action" => "display", "home"]);?>">Enigma || TT v2.0 </a>
-            </div>
-            <!-- /.navbar-header -->
-			
-            <?php echo $this->element('header'); ?> 
-            <?php echo $this->element('sidebar'); ?>    
-        </nav>
+		<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+		 v          <span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="<?php echo $this->Url->build(["controller" => "pages", "action" => "display", "home"]);?>">Enigma || TT v2.0 </a>
+			</div>
+			<!-- /.navbar-header -->
+				
+			<?php echo $this->element('header'); ?> 
+			<?php echo $this->element('sidebar'); ?>    
+		</nav>
 
-        <div id="page-wrapper">
-        <div id="content">
+		<div id="page-wrapper">
+			<div id="content">
 
-            <?php echo $this->Flash->render(); ?>
+				<?php echo $this->Flash->render(); ?>
+				<?php echo $this->fetch('content'); ?>
+			</div>
 
-            <?php echo $this->fetch('content'); ?>
-        </div>
-
-        </div>
+		</div>
 
     </div>
 
     <script>
-    $(document).ready(function() {
-        $('#table').dataTable();
-    });
+		$(document).ready(function() {
+			$('#table').dataTable();
+		});
     </script>
 </body>
 <ol>
