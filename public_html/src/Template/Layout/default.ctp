@@ -50,7 +50,10 @@
                 <div class="row">
                     <div class="col-lg-12">
 						<!-- CAKE PHP CALLS -------------------------------------------------->
-                        <?php echo $this->Flash->render(); ?>
+						<div class="alert alert-danger">
+							<?php echo $this->Flash->render(); ?>
+						</div>
+						
 						<?php echo $this->fetch('content'); ?>
 						<!-- CAKE PHP CALLS -------------------------------------------------->
 					</div>
