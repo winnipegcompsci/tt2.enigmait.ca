@@ -46,8 +46,8 @@
             </div>
             <!-- /.navbar-header -->
 			
-            <?php // echo $this->element('header'); ?> 
-            <?php // echo $this->element('sidebar'); ?>    
+            <?php echo $this->element('header'); ?> 
+            <?php echo $this->element('sidebar'); ?>    
         </nav>
 
         <div id="page-wrapper">
