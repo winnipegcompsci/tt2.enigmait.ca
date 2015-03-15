@@ -1,10 +1,12 @@
 <?php
+// Testing Deployment to Whiskey!!!!!
+
 use Cake\Cache\Cache;
 use Cake\Core\Configure;
 use Cake\Datasource\ConnectionManager;
 use Cake\Error\Debugger;
 use Cake\Network\Exception\NotFoundException;
-// Test.
+
 $this->layout = false;
 
 if (!Configure::read('debug')):
