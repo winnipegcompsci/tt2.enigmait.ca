@@ -1,5 +1,5 @@
 <?php
-// Testing Deployment to Whisk
+// Testing Deployment to Whiskey
 
 use Cake\Cache\Cache;
 use Cake\Core\Configure;
