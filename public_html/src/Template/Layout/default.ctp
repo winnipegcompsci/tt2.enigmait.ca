@@ -37,7 +37,7 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
            <?php echo $this->element('header'); ?>
 		   <?php echo $this->element('sidebar'); ?>
 
