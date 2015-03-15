@@ -19,20 +19,22 @@
         echo $this->fetch('css');
         echo $this->fetch('script');
 
+		echo $this->Html->css('sb-admin-2');
 		echo $this->Html->css('bootstrap.min');
+
 		echo $this->Html->css('plugins/metisMenu/metisMenu.min');
 		echo $this->Html->css('plugins/dataTables.bootstrap');
-		echo $this->Html->css('sb-admin-2');
 		echo $this->Html->css('plugins/font-awesome/font-awesome.min');
 
-
-
 		echo $this->Html->script('jquery-1.11.2.min');
-		echo $this->Html->script('plugins/dataTables/dataTables.bootstrap');
+		echo $this->Html->script('sb-admin-2');
 		echo $this->Html->script('bootstrap.min');
+
+
+
+		echo $this->Html->script('plugins/dataTables/dataTables.bootstrap');
 		echo $this->Html->script('plugins/metisMenu/metisMenu.min');
 
-		echo $this->Html->script('sb-admin-2');
 
 ?>
 </head>
@@ -47,7 +49,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">TT2.0 </a>
+                <a class="navbar-brand" href="<?php echo $this->Url->build(["controller" => "pages", "action" => "display", "home"]);?>">TT2.0 </a>
             </div>
             <!-- /.navbar-header -->
 			
@@ -67,15 +69,9 @@
 
     </div>
 
-    <script src="js/jquery-1.11.0.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
-    <script src="js/plugins/dataTables/jquery.dataTables.js"></script>
-    <script src="js/plugins/dataTables/dataTables.bootstrap.js"></script>
-    <script src="js/sb-admin-2.js"></script>
     <script>
     $(document).ready(function() {
-        $('#tabla').dataTable();
+        $('#table').dataTable();
     });
     </script>
 </body>
