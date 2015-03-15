@@ -47,7 +47,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Sistema </a>
+                <a class="navbar-brand" href="index.html">TT2.0 </a>
             </div>
             <!-- /.navbar-header -->
              <?php // echo $this->element('header'); ?> 
