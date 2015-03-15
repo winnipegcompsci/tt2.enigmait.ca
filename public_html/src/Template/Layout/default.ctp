@@ -57,7 +57,7 @@ echo $this->Html->script('sb-admin-2');
         <div id="page-wrapper">
         <div id="content">
 
-            <?php echo $this->Flash(); ?>
+            <?php echo $this->Flash->render(); ?>
 
             <?php echo $this->fetch('content'); ?>
         </div>
