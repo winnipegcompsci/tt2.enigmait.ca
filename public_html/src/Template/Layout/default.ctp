@@ -7,7 +7,7 @@
     <meta name="author" content="">
 
      <title>
-  <?php __('Sistema - '); ?>
+  <?php __('-- TT2.0 -- '); ?>
   <?php echo $title_for_layout; ?>
   </title>
     <?php
@@ -19,20 +19,20 @@
         echo $this->fetch('css');
         echo $this->fetch('script');
 
-echo $this->Html->css('bootstrap.min');
-echo $this->Html->css('plugins/metisMenu/metisMenu.min');
-echo $this->Html->css('plugins/dataTables.bootstrap');
-echo $this->Html->css('sb-admin-2');
-echo $this->Html->css('font-awesome-4.1.0/css/font-awesome.min');
+		echo $this->Html->css('bootstrap.min');
+		echo $this->Html->css('plugins/metisMenu/metisMenu.min');
+		echo $this->Html->css('plugins/dataTables.bootstrap');
+		echo $this->Html->css('sb-admin-2');
+		echo $this->Html->css('font-awesome-4.1.0/css/font-awesome.min');
 
 
 
-echo $this->Html->script('jquery-1.11.0.min');
-echo $this->Html->script('plugins/dataTables/dataTables.bootstrap');
-echo $this->Html->script('bootstrap.min');
-echo $this->Html->script('plugins/metisMenu/metisMenu.min');
+		echo $this->Html->script('../jquery-1.11.0.min');
+		echo $this->Html->script('../plugins/dataTables/dataTables.bootstrap');
+		echo $this->Html->script('../bootstrap.min');
+		echo $this->Html->script('../plugins/metisMenu/metisMenu.min');
 
-echo $this->Html->script('sb-admin-2');
+		echo $this->Html->script('../sb-admin-2');
 
 ?>
 </head>
