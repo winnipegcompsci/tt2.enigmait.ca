@@ -1,6 +1,4 @@
 <?php
-// Testing Chmod.
-
 use Cake\Cache\Cache;
 use Cake\Core\Configure;
 use Cake\Datasource\ConnectionManager;
