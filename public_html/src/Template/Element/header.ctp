@@ -1,5 +1,4 @@
-<!-- /src/Template/Element/header.ctp -->
- <ul class="nav navbar-top-links navbar-right">
+<ul class="nav navbar-top-links navbar-right">
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
@@ -207,4 +206,3 @@
                 </li>
                 <!-- /.dropdown -->
             </ul>
-            <!-- /.navbar-top-links -->

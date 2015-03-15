@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title> <?php __('-- Enigma Networks | TT v2.0 -- '); ?> </title>
+    <title> <?php __('-- TT v2.0 -- '); ?> </title>
     <?php
         echo $this->Html->meta('icon');
 
@@ -42,7 +42,7 @@
 					<span class="icon-bar"></span>
 		 v          <span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="<?php echo $this->Url->build(["controller" => "pages", "action" => "display", "home"]);?>">Enigma || TT v2.0 </a>
+				<a class="navbar-brand" href="<?php echo $this->Url->build(["controller" => "pages", "action" => "display", "home"]);?>"> TT v2.0 </a>
 			</div>
 			<!-- /.navbar-header -->
 				
