@@ -50,8 +50,8 @@ echo $this->Html->script('sb-admin-2');
                 <a class="navbar-brand" href="index.html">Sistema </a>
             </div>
             <!-- /.navbar-header -->
-            <?php echo $this->element('header'); ?> 
-            <?php echo $this->element('sidebar'); ?>    
+             <?php // echo $this->element('header'); ?> 
+            <?php // echo $this->element('sidebar'); ?>    
         </nav>
 
         <div id="page-wrapper">
