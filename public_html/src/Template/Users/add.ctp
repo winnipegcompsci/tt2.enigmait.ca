@@ -1,7 +1,4 @@
 <!-- src/Template/Users/add.ctp -->
-<div class="col-lg-3">
-<!-- Empty, Used to Center Form Below -->
-</div>
 <div class="users form col-lg-6">
 <?= $this->Form->create($user) ?>
     <fieldset>
