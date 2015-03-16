@@ -65,13 +65,13 @@ $(function() {
         element: 'morris-donut-chart',
         data: [{
             label: "WTCR.ca",
-            value: 12
+            value: 28
         }, {
             label: "Amazon",
-            value: 30
+            value: 10
         }, {
             label: "eBay",
-            value: 20
+            value: 18
         }, {
 			label: "Kijiji",
 			value: 8
