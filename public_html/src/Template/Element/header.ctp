@@ -8,7 +8,7 @@
 
     <a class="navbar-brand" href="<?php 
 		echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'dashboard']); 
-		?>"><i class="fa fa-th-list"></i>TT</i> v2.0</a>
+		?>"><i class="fa fa-th-list"></i>&nbsp; TT v2.0</a>
 </div>
 <!-- /.navbar-header -->
 
