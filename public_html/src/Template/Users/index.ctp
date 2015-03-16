@@ -45,9 +45,11 @@
 			
 	    <div class="col-md-3">
 		    <h3> Actions </h3>
-			- Create New User
-			- View Roles
-			- User Reports
+			<ul>
+				<li> Create New User </li>
+				<li> View Roles </li>
+				<li> User Reports </li>
+			</ul>
 		</div>
     </div>
 </div>
