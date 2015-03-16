@@ -29,7 +29,7 @@
 										<td><?php echo $user['User']['created'] ?></td>
 										<td><?php echo $user['User']['modified'] ?></td>
 									</tr>
-								<? } ?>
+								<?php } ?>
 							</tbody>				
 						</table>
 					</div>
