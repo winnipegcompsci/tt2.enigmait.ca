@@ -346,7 +346,7 @@
 						</span>
 						<div class="chat-body clearfix">
 							<div class="header">
-								<strong class="primary-font">Jack Sparrow</strong>
+								<strong class="primary-font">Enigma Networks</strong>
 								<small class="pull-right text-muted">
 									<i class="fa fa-clock-o fa-fw"></i> 12 mins ago
 								</small>
@@ -364,7 +364,7 @@
 							<div class="header">
 								<small class=" text-muted">
 									<i class="fa fa-clock-o fa-fw"></i> 13 mins ago</small>
-								<strong class="pull-right primary-font">Bhaumik Patel</strong>
+								<strong class="pull-right primary-font">WTCR</strong>
 							</div>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
@@ -377,7 +377,7 @@
 						</span>
 						<div class="chat-body clearfix">
 							<div class="header">
-								<strong class="primary-font">Jack Sparrow</strong>
+								<strong class="primary-font">Enigma Networks</strong>
 								<small class="pull-right text-muted">
 									<i class="fa fa-clock-o fa-fw"></i> 14 mins ago</small>
 							</div>
@@ -394,7 +394,7 @@
 							<div class="header">
 								<small class=" text-muted">
 									<i class="fa fa-clock-o fa-fw"></i> 15 mins ago</small>
-								<strong class="pull-right primary-font">Bhaumik Patel</strong>
+								<strong class="pull-right primary-font">WTCR</strong>
 							</div>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
