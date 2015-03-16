@@ -10,6 +10,6 @@
 			'class' => 'form-control',
         ]) ?>
    </fieldset>
-<?= $this->Form->button(__('Submit'), ['class' => 'btn btn-default']); ?>
+<?= $this->Form->button(__('Add New User'), ['class' => 'btn btn-default']); ?>
 <?= $this->Form->end() ?>
 </div>
