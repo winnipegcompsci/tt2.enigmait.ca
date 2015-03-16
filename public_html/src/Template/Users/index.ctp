@@ -32,6 +32,7 @@
 										<td>
 											<?= $this->Html->link('Edit', $this->Url->build(['controller' => 'Users', 'action' => 'edit', $user->id])) ?>
 											<?= $this->Html->link('Message', $this->Url->build(['controller' => 'Users', 'action' => 'view', $user->id])); ?>
+											<?= $this->Html->link('Delete', $this->Url->build(['controller' => 'Users', 'action' => 'delete', $user->id)); ?>
 										</td>
 									</tr>
 								<?php } ?>
@@ -44,6 +45,9 @@
 			
 	    <div class="col-md-3">
 		    <h3> Actions </h3>
+			- Create New User
+			- View Roles
+			- User Reports
 		</div>
     </div>
 </div>
