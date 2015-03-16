@@ -32,7 +32,7 @@
 										<td>
 											<?= $this->Html->link('View', $this->Url->build(['controller' => 'Users', 'action' => 'view', $user->id])); ?>
 											<?= $this->Html->link('Edit', $this->Url->build(['controller' => 'Users', 'action' => 'edit', $user->id])); ?>
-											<?= $this->Html->postLink('Delete', $this->Url->build(['controller' => 'Users', 'action' => 'delete', $user->id])); ?>
+											<?= $this->Form->postLink('Delete', $this->Url->build(['controller' => 'Users', 'action' => 'delete', $user->id]), ['confirm' => 'Are you sure?']); ?>
 										</td>
 									</tr>
 								<?php } ?>
