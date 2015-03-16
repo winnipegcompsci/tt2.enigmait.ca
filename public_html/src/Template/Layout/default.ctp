@@ -53,6 +53,7 @@
                 <div class="row">
                     <div class="col-lg-12" style="padding: 15px">
 						<!-- CAKE PHP CALLS -------------------------------------------------->
+						Current URL: <?php echo $this->here; ?>
 						<?php echo $this->Flash->render(); ?>
 						
 						<?php echo $this->fetch('content'); ?>
