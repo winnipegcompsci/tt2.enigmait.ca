@@ -76,7 +76,7 @@ class UsersController extends AppController
                 $this->Flash->success(__('The user has been saved.'));
                 return $this->redirect(['action' => 'add']);
             }
-            $this->Flash->error(__('Unable to add the user.'));
+            $this->Html->alert('Unable to add the user.');
         }
         $this->set('user', $user);
     }
