@@ -49,7 +49,7 @@
 									<a href="#"><i class="fa fa-cog fa-fw"></i>&nbsp; Management <span class="fa arrow"></span></a>
 									<ul class="nav nav-third-level">
 										<li>
-											<a href="<?php echo $this->Url->build(['controller' => 'Users', 'action' => 'index']); ?>"><i class="fa fa-cog fa-users"></i>&nbsp; Users</a>
+											<a href="<?php echo $this->Url->build(['controller' => 'Users', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; Users</a>
 										</li>
 									</ul>									
 								</li>
