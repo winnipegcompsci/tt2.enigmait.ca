@@ -5,7 +5,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"> <i class="fa fa-puzzle-piece"></i> TT v2.0</a>
+                <a class="navbar-brand" href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'dashboard']); ?>"> <i class="fa fa-puzzle-piece"></i> TT v2.0</a>
             </div>
             <!-- /.navbar-header -->
 
