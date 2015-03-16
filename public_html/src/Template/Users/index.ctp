@@ -30,10 +30,8 @@
 										<td><?php echo $user->created ?></td>
 										<td><?php echo $user->modified ?></td>
 										<td>
-											<?php 
-												echo $this->Html->link('Edit', $this->Url->build('controller' => 'Users', 'action' => 'edit', $user->id));
-												echo $this->Html->link('Message', $this->Url->build('controller' => 'Users', 'action' => 'view', $user->id));
-											?>
+											<?= $this->Html->link('Edit', $this->Url->build('controller' => 'Users', 'action' => 'edit', $user->id)) ?>
+											<?= $this->Html->link('Message', $this->Url->build('controller' => 'Users', 'action' => 'view', $user->id)); ?>
 										</td>
 									</tr>
 								<?php } ?>
