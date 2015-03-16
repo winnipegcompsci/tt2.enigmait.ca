@@ -95,7 +95,7 @@
 	<div class="col-lg-8">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<i class="fa fa-bar-chart-o fa-fw"></i> Daily Sales Numbers
+				<i class="fa fa-bar-chart-o fa-fw"></i> Monthly Sales Volume
 				<div class="pull-right">
 					<div class="btn-group">
 						<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
