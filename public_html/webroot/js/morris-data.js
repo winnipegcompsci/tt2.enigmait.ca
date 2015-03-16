@@ -64,15 +64,18 @@ $(function() {
     Morris.Donut({
         element: 'morris-donut-chart',
         data: [{
-            label: "Download Sales",
+            label: "WTCR.ca",
             value: 12
         }, {
-            label: "In-Store Sales",
+            label: "Amazon",
             value: 30
         }, {
-            label: "Mail-Order Sales",
+            label: "eBay",
             value: 20
-        }],
+        }, {
+			label: "Kijiji",
+			value: 8
+		}],
         resize: true
     });
 
