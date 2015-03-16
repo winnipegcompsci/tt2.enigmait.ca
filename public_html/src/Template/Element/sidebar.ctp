@@ -101,6 +101,9 @@
                                         </li>
                                     </ul>
 								</li>
+								<li>
+									<a href="#"><i class="fa fa-database fa-fw"></i>&nbsp;Data Providers</a>
+								</li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

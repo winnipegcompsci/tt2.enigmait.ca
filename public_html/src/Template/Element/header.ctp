@@ -63,6 +63,8 @@
 		</ul>
 		<!-- /.dropdown-messages -->
 	</li>
+	
+	<!-- Turn tasks into element? -->
 	<!-- /.dropdown -->
 	<li class="dropdown">
 		<a class="dropdown-toggle" data-toggle="dropdown" href="#">
