@@ -40,45 +40,16 @@ class UsersTable extends Table
      */
     public function validationDefault(Validator $validator)
     {
-        $validator
-            ->add('user_id', 'valid', ['rule' => 'numeric'])
-            ->allowEmpty('user_id', 'create')
-            ->requirePresence('user_name', 'create')
-            ->notEmpty('user_name')
-            ->requirePresence('user_password', 'create')
-            ->notEmpty('user_password')
-            ->requirePresence('user_secretkey', 'create')
-            ->notEmpty('user_secretkey')
-            ->requirePresence('user_first_name', 'create')
-            ->notEmpty('user_first_name')
-            ->requirePresence('user_last_name', 'create')
-            ->notEmpty('user_last_name')
-            ->requirePresence('user_email', 'create')
-            ->notEmpty('user_email')
-            ->add('user_class', 'valid', ['rule' => 'numeric'])
-            ->requirePresence('user_class', 'create')
-            ->notEmpty('user_class')
-            ->requirePresence('user_disabled', 'create')
-            ->notEmpty('user_disabled')
-            ->add('user_created', 'valid', ['rule' => 'datetime'])
-            ->requirePresence('user_created', 'create')
-            ->notEmpty('user_created')
-            ->requirePresence('user_session', 'create')
-            ->notEmpty('user_session')
-            ->requirePresence('user_cookie', 'create')
-            ->notEmpty('user_cookie')
-            ->requirePresence('user_ip', 'create')
-            ->notEmpty('user_ip')
-            ->add('user_last_login', 'valid', ['rule' => 'datetime'])
-            ->requirePresence('user_last_login', 'create')
-            ->notEmpty('user_last_login')
-            ->add('user_customer_id', 'valid', ['rule' => 'numeric'])
-            ->requirePresence('user_customer_id', 'create')
-            ->notEmpty('user_customer_id')
-            ->requirePresence('user_company_name', 'create')
-            ->notEmpty('user_company_name');
+		return $validator
+            ->notEmpty('username', 'A username is required')
+            ->notEmpty('password', 'A password is required')
+            ->notEmpty('role', 'A role is required')
+            ->add('role', 'inList', [
+                'rule' => ['inList', ['admin', 'author']],
+                'message' => 'Please enter a valid role'
+            ]);
 
-        return $validator;
+        
     }
 
     /**
