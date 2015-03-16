@@ -352,3 +352,14 @@ table.dataTable thead .sorting:after {
 .panel-yellow a:hover {
     color: #df8a13;
 }
+
+/* Additions and Hacks */
+.message.error {
+	color: #a9442;
+	background-color: #f2dede;
+	border-color:#ebccd1;
+	padding:15px;
+	margin-bottom:20px;
+	border:1px solid transparent;
+	border-radius:4px;
+}
