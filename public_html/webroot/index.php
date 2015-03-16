@@ -38,5 +38,3 @@ $dispatcher->dispatch(
     Request::createFromGlobals(),
     new Response()
 );
-
-// Testing Push to Dev.
