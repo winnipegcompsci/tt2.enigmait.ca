@@ -2,7 +2,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-7">
 			<div class="panel panel-default">
                 <div class="panel-heading">
                     Users
@@ -38,7 +38,7 @@
 		</div> <!-- End of MD-9 -->
 			
 	    <div class="col-md-3">
-		    <h2> Actions </h2>
+		    <h3> Actions </h3>
 		</div>
     </div>
 </div>
