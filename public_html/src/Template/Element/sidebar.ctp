@@ -47,25 +47,25 @@
                         </li>
 						
 						<li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Inventory <span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> WTCR <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="#">Second Level Item</a>
                                 </li>
                                 <li>
-                                    <a href="#">Second Level Item</a>
+                                    <a href="#">Inventory</a>
                                 </li>
                                 <li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
+                                    <a href="#">Vendors <span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
-                                            <a href="#">Third Level Item</a>
+                                            <a href="#">EPROM</a>
                                         </li>
                                         <li>
-                                            <a href="#">Third Level Item</a>
+                                            <a href="#">Longtech</a>
                                         </li>
                                         <li>
-                                            <a href="#">Third Level Item</a>
+                                            <a href="#">ASI</a>
                                         </li>
                                         <li>
                                             <a href="#">Third Level Item</a>
