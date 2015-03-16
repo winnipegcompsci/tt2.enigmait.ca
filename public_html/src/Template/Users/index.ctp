@@ -15,9 +15,10 @@
 								<tr>
 									<th>ID</th>
 									<th>Username</th>
-									<th>Password</th>
+									<th>Role</th>
 									<th>Created</th>
 									<th>Modified</th>
+									<th>Actions</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -25,9 +26,15 @@
 									<tr>
 										<td><?php echo $user->id ?></td>
 										<td><?php echo $user->username ?></td>
-										<td><?php echo $user->password ?></td>
+										<td><?php echo $user->role ?></td>
 										<td><?php echo $user->created ?></td>
 										<td><?php echo $user->modified ?></td>
+										<td>
+											<?php 
+												echo $this->Html->link('Edit', $this-Url->build('controller' => 'Users', 'action' => 'edit', $user->id));
+												echo $this->Html->link('Message', $this->Url->build('controller' => 'Users', 'action' => 'view', $user->id));
+											?>
+										</td>
 									</tr>
 								<?php } ?>
 							</tbody>				
