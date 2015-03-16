@@ -59,6 +59,7 @@ class AppController extends Controller
     {
         $this->loadComponent('Flash');
 		$this->loadComponent('Auth', [
+			'authorize' => ['Controller'],	// Added this Line.
             'loginRedirect' => [
                 'controller' => 'Pages',
                 'action' => 'display',
@@ -72,6 +73,18 @@ class AppController extends Controller
 		
 
     }
+	
+	public function isAuthorized($user) 
+	{
+		// Admin can access every action
+		if(isset($user['role']) && $user['role'] == 'admin') {
+			return true;
+		} else if( isset($user['role']) && $user['role'] == 'user') {
+			return true;
+		}
+		
+		return false;
+	}	
 	
 
 }

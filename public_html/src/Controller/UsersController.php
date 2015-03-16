@@ -145,4 +145,20 @@ class UsersController extends AppController
         }
         return $this->redirect(['action' => 'index']);
     }
+	
+	
+	public function isAuthorized($user)
+	{
+		// All registered users can add articles
+		if ($this->request->action === 'index') {
+			return true;
+		}
+
+		// The owner of an article can edit and delete it
+		if (in_array($this->request->action, ['edit', 'delete'])) {
+			return true;
+		}
+
+    return parent::isAuthorized($user);
+}
 }
