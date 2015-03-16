@@ -88,11 +88,13 @@ class UsersController extends AppController
         if ($this->request->is('post')) {
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));	// CakePHP Way.
-				$this->Html->alert('The User Has Been Saved!', 'success'); // Bootstrap 3 way
+				$this->Flash->success('The User has been saved.', array ('class' => 'alert alert-success'));
+				// $this->Html->alert('The User Has Been Saved!', 'success'); // Bootstrap 3 way
                 return $this->redirect(['action' => 'add']);
             }
             $this->Flash->error(__('Unable to add the user.')); // Cake PHP Way
-			$this->Html->alert("Unable to add the user.");		// Bootstrap 3 Way
+			$this->Flash->error('Unable to add the user.', array('class' => 'alert alert-danger'));
+			// $this->Html->alert("Unable to add the user.");		// Bootstrap 3 Way
         }
         $this->set('user', $user);
     }
