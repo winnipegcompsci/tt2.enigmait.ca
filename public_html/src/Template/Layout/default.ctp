@@ -40,7 +40,10 @@
 		
 		<!-- ONLY INCLUDE IF LOGGED IN? -->
         <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
-           <?php echo "DEBUG: IS AUTHORIZED=" . $this->isAuthorized($this->Auth->identify()); ?>
+           <?php 
+				$user = $this->Auth->identify();
+				echo "<pre>DEBUG:: " . print_r($user, TRUE) . "</pre>";
+		   ?>
 		   <?php echo $this->element('header'); ?>
 		   <?php echo $this->element('sidebar'); ?>
 
