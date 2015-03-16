@@ -91,7 +91,7 @@
 									<a href="#"><i class="fa fa-star-half-full fa-fw"></i>Orders</a>
 								</li>
 								<li>
-									<a href="#"><i class="fa fa-bitcoin fa-fw"></iCryptoCurrency<span class="fa arrow"></span></a>
+									<a href="#"><i class="fa fa-bitcoin fa-fw"></i>CryptoCurrency<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
                                             <a href="#">Bitcoin</a>
