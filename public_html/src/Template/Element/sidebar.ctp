@@ -64,13 +64,13 @@
                             <a href="#"><i class="fa fa-power-off fa-fw"></i> WTCR <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
 								<li>
-									<a href="#"><i class="fa fa-dollar fa-fw"></i>In-Store POS</a>
+									<a href="#"><i class="fa fa-dollar fa-fw"></i>&nbsp;In-Store POS</a>
 								</li>
                                 <li>
-                                    <a href="#"><i class="fa fa-list-alt fa-fw"></i>Inventory</a>
+                                    <a href="#"><i class="fa fa-list-alt fa-fw"></i>&nbsp;Inventory</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-suitcase fa-fw"></i>Vendors <span class="fa arrow"></span></a>
+                                    <a href="#"><i class="fa fa-suitcase fa-fw"></i>&nbsp;Vendors <span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
                                             <a href="#">EPROM</a>
@@ -85,13 +85,13 @@
                                     <!-- /.nav-third-level -->
                                 </li>
 								<li>
-                                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Reports</a>
+                                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>&nbsp;Reports</a>
                                 </li>
 								<li>
-									<a href="#"><i class="fa fa-star-half-full fa-fw"></i>Orders</a>
+									<a href="#"><i class="fa fa-star-half-full fa-fw"></i>&nbsp;Orders</a>
 								</li>
 								<li>
-									<a href="#"><i class="fa fa-bitcoin fa-fw"></i>CryptoCurrency<span class="fa arrow"></span></a>
+									<a href="#"><i class="fa fa-bitcoin fa-fw"></i>&nbsp;CryptoCurrency<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
                                             <a href="#">Bitcoin</a>
