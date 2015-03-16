@@ -40,7 +40,7 @@ class UsersController extends AppController
 				$this->Auth->setUser($user);
 				return $this->redirect($this->Auth->redirectUrl());
 			}
-			$thia->Flash->error(__('Invalid username, password or verification code, please try again'));
+			$this->Flash->error(__('Invalid username, password or verification code, please try again'));
 		}
 	}
 	
