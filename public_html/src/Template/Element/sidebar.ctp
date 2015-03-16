@@ -16,7 +16,7 @@
                             <a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'dashboard']);?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Enigma <span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-cogs fa-fw"></i> Enigma <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="#">Projects</a>
@@ -61,7 +61,7 @@
                         </li>
 						
 						<li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> WTCR <span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-power-off fa-fw"></i> WTCR <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
 								<li>
 									<a href="#">In-Store POS</a>
@@ -88,7 +88,10 @@
                                     <a href="#">Reports</a>
                                 </li>
 								<li>
-									<a href="#">Crypto Currencies <span class="fa arrow"></span></a>
+									<a href="#">Orders</a>
+								</li>
+								<li>
+									<a href="#">CryptoCurrency Rates <span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
                                             <a href="#">Bitcoin</a>
