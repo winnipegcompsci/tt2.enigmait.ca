@@ -40,12 +40,9 @@
 		
 		<!-- ONLY INCLUDE IF LOGGED IN? -->
         <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
-           <?php 
-				$user = $this->Auth->identify();
-				echo "<pre>DEBUG:: " . print_r($user, TRUE) . "</pre>";
-		   ?>
-		   <?php echo $this->element('header'); ?>
-		   <?php echo $this->element('sidebar'); ?>
+			<?php echo "Debug: <pre>" . print_r($this->Auth->identify(), TRUE) . "</pre>"); ?>
+			<?php echo $this->element('header'); ?>
+			<?php echo $this->element('sidebar'); ?>
 
             <!-- /.navbar-static-side -->
         </nav>
