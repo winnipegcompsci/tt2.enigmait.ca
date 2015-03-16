@@ -40,9 +40,14 @@
 		
 		<!-- ONLY INCLUDE IF LOGGED IN? -->
         <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
-			<?php echo $this->element('header'); ?>
-			<?php echo $this->element('sidebar'); ?>
-
+			<?php
+			$user = $this->Session->read('Auth.User');						
+			
+			if(!empty($user)) {
+				echo $this->element('header'); 
+				echo $this->element('sidebar'); 
+			} ?>
+			
             <!-- /.navbar-static-side -->
         </nav>
 
@@ -52,17 +57,9 @@
                 <div class="row">
                     <div class="col-lg-12" style="padding: 15px">
 						<!-- CAKE PHP CALLS -------------------------------------------------->
-						
-						<?php
-							$user = $this->Session->read('Auth.User');						
-						
-						
-							if(!empty($user)) {
-								echo $this->Flash->render(); 
-						
-								echo $this->fetch('content'); 
-							}
-						?>
+							<?php echo $this->Flash->render(); ?>
+							<?php echo $this->fetch('content'); ?> 
+
 						<!-- CAKE PHP CALLS -------------------------------------------------->
 					</div>
                     <!-- /.col-lg-12 -->
