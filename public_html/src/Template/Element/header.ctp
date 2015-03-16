@@ -1,5 +1,4 @@
  <?php $user = $this->Session->read('Auth.User'); ?>
- <?php echo "<pre>" . print_r($user, TRUE) . "</pre>"; ?>
  
  <div class="navbar-header">
 	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
