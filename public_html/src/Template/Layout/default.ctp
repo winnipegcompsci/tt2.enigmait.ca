@@ -49,6 +49,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
+						<br />
 						<!-- CAKE PHP CALLS -------------------------------------------------->
 						<?php echo $this->Flash->render(); ?>
 						
