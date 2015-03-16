@@ -354,7 +354,7 @@ table.dataTable thead .sorting:after {
 }
 
 /* Additions and Hacks */
-.message.error {
+.message .error {
 	color: #a9442;
 	background-color: #f2dede;
 	border-color:#ebccd1;
