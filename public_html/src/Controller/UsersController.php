@@ -10,6 +10,20 @@ use Cake\Event\Event;
  */
 class UsersController extends AppController
 {
+	public $helpers = [
+		'Html' => [
+			'className' => 'Bootstrap3.BootstrapHtml'
+		],
+		'Form' => [
+			'className' => 'Bootstrap3.BootstrapForm'
+		],
+		'Paginator' => [
+			'className' => 'Bootstrap3.BootstrapPaginator'
+		],
+		'Modal' => [
+			'className' => 'Bootstrap3.BootstrapModal'
+		]
+	];
 
 	public function beforeFilter(Event $event){
 		parent::beforeFilter($event);
@@ -73,10 +87,12 @@ class UsersController extends AppController
          $user = $this->Users->newEntity($this->request->data);
         if ($this->request->is('post')) {
             if ($this->Users->save($user)) {
-                $this->Flash->success(__('The user has been saved.'));
+                $this->Flash->success(__('The user has been saved.'));	// CakePHP Way.
+				$this->Html->alert('The User Has Been Saved!', 'success'); // Bootstrap 3 way
                 return $this->redirect(['action' => 'add']);
             }
-            $this->Html->alert('Unable to add the user.');
+            $this->Flash->error(__('Unable to add the user.')); // Cake PHP Way
+			$this->Html->alert("Unable to add the user.");		// Bootstrap 3 Way
         }
         $this->set('user', $user);
     }
