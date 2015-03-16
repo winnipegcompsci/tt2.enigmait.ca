@@ -354,12 +354,12 @@ table.dataTable thead .sorting:after {
 }
 
 /* Additions and Hacks */
-.message .error {
-	color: #a9442;
-	background-color: #f2dede;
-	border-color:#ebccd1;
-	padding:15px;
-	margin-bottom:20px;
-	border:1px solid transparent;
-	border-radius:4px;
+.message.error {
+	color: #a9442 !important;
+	background-color: #f2dede !important;
+	border-color:#ebccd1 !important;
+	padding:15px !important;
+	margin-bottom:20px !important;
+	border:1px solid transparent !important;
+	border-radius:4px !important;
 }
