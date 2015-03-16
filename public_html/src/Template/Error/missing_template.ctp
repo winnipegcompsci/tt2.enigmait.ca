@@ -53,7 +53,7 @@
 						<?php echo $this->Flash->render(); ?>
 						
 						   <strong>Error: </strong>
-						<?= sprintf('The view for <em>%sController::%s()</em> was not found.', h(Inflector::camelize($this->request->controller)), h($this->request->action)); ?>
+						<?= sprintf('The view for <em>%sController::%s()</em> was not found.', h($this->request->controller), h($this->request->action)); ?>
 						<?php $this->end() ?>
 
 						<?php $this->start('file') ?>
