@@ -38,7 +38,8 @@ class AppController extends Controller
 		],
 		'Modal' => [
 			'className' => 'Bootstrap3.BootstrapModal'
-		]
+		],
+		'Auth',
 	];
 
 	public function beforeFilter(Event $event)
