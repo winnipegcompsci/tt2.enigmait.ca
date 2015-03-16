@@ -22,14 +22,10 @@ class UsersTable extends Table
     public function initialize(array $config)
     {
         $this->table('users');
-        $this->displayField('u_user_id');
-        $this->primaryKey('u_user_id');
-        $this->belongsTo('Users', [
-            'foreignKey' => 'user_id'
-        ]);
-        $this->belongsTo('UserCustomers', [
-            'foreignKey' => 'user_customer_id'
-        ]);
+        $this->displayField('user_id');
+        $this->primaryKey('user_id');
+        
+
     }
 
     /**
@@ -61,8 +57,12 @@ class UsersTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
+		/*
         $rules->add($rules->existsIn(['user_id'], 'Users'));
         $rules->add($rules->existsIn(['user_customer_id'], 'UserCustomers'));
         return $rules;
+		*/
+		
+		return $rules;
     }
 }
