@@ -85,7 +85,16 @@ class AppController extends Controller
 		}
 		
 		return false;
-	}	
+	}
+
+	public function beforeFilter()
+	{
+		$user = $this->Auth->identify();
+		
+		if($user != null) {
+			$this->Session->write('user_name', $user->username);
+		}
+	}
 	
 
 }
