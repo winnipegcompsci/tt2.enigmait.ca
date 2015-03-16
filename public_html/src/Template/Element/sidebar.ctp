@@ -19,19 +19,19 @@
                             <a href="#"><i class="fa fa-cogs fa-fw"></i> Enigma <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Projects</a>
+                                    <a href="#"><i class="fa fa-paperclip fa-fw"></i>Projects</a>
                                 </li>
                                 <li>
-                                    <a href="#">Tickets</a>
+                                    <a href="#"><i class="fa fa-life-saver fa-fw"></i>Tickets</a>
                                 </li>
 								<li>
-									<a href="#">Customers</a>
+									<a href="#"><i class="fa fa-credit-card fa-faw"></i>Customers</a>
 								</li>
 								<li>
-									<a href="#">Quotes</a>
+									<a href="#"><i class="fa fa-quote-left"></i>&nbsp; Quotes</a>
 								</li>
                                 <li>
-                                    <a href="#">Reports <span class="fa arrow"></span></a>
+                                    <a href="#"><i class="fa fa-bar-char-o fa-fw"></i>&nbsp; Reports <span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
                                             <a href="#">Ticket Report</a>
