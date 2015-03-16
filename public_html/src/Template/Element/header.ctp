@@ -1,5 +1,6 @@
  <?php $user = $this->Session->read('Auth.User'); ?>
  <?php echo "<pre>" . print_r($user, TRUE) . "</pre>"; ?>
+ 
  <div class="navbar-header">
 	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 		<span class="sr-only">Toggle navigation</span>
@@ -209,7 +210,7 @@
 	<!-- /.dropdown -->
 	<li class="dropdown">
 		<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-			<i class="fa fa-user fa-fw"></i> [User] <i class="fa fa-caret-down"></i>
+			<i class="fa fa-user fa-fw"></i> <?= $user['username'] ?> <i class="fa fa-caret-down"></i>
 		</a>
 		<ul class="dropdown-menu dropdown-user">
 			<li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
