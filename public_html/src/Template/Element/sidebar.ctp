@@ -19,13 +19,19 @@
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Enigma <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Second Level Item</a>
+                                    <a href="#">Projects</a>
                                 </li>
                                 <li>
-                                    <a href="#">Second Level Item</a>
+                                    <a href="#">Tickets</a>
                                 </li>
+								<li>
+									<a href="#">Customers</a>
+								</li>
+								<li>
+									<a href="#">Quotes</a>
+								</li>
                                 <li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
+                                    <a href="#">Reports <span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
                                             <a href="#">Third Level Item</a>
@@ -49,9 +55,9 @@
 						<li>
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> WTCR <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
+								<li>
+									<a href="#">In-Store POS</a>
+								</li>
                                 <li>
                                     <a href="#">Inventory</a>
                                 </li>
@@ -67,12 +73,26 @@
                                         <li>
                                             <a href="#">ASI</a>
                                         </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
                                     </ul>
                                     <!-- /.nav-third-level -->
                                 </li>
+								<li>
+                                    <a href="#">Reports</a>
+                                </li>
+								<li>
+									<a href="#">Crypto Currencies <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="#">EPROM</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Longtech</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">ASI</a>
+                                        </li>
+                                    </ul>
+								</li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
