@@ -8,7 +8,7 @@
 
     <a class="navbar-brand" href="<?php 
 		echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'dashboard']); 
-		?>"> <i class="fa fa-puzzle-piece"></i> TT v2.0</a>
+		?>"><i class="fa fa-th-list"></i> <i class="fa fa-tumblr-square"></i><i class="fa fa-tumblr-square"></i> v2.0</a>
 </div>
 <!-- /.navbar-header -->
 
@@ -195,7 +195,7 @@
 			<li class="divider"></li>
 			<li>
 				<a class="text-center" href="#">
-					<strong>See All Alerts</strong>
+					<strong>See All Notifications</strong>
 					<i class="fa fa-angle-right"></i>
 				</a>
 			</li>
