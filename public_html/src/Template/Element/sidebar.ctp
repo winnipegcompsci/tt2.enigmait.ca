@@ -16,7 +16,7 @@
                             <a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'dashboard']);?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-cogs fa-fw"></i> Enigma <span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-puzzle-piece fa-fw"></i> Enigma <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="#"><i class="fa fa-paperclip fa-fw"></i>&nbsp; Projects</a>
