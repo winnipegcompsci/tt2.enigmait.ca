@@ -151,7 +151,7 @@
 							<table class="table table-bordered table-hover table-striped">
 								<thead>
 									<tr>
-										<th>#</th>
+										<th>Order #</th>
 										<th>Date</th>
 										<th>Time</th>
 										<th>Amount</th>
