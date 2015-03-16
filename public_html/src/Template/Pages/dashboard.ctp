@@ -286,7 +286,7 @@
 		<!-- /.panel -->
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<i class="fa fa-bar-chart-o fa-fw"></i> Transaction Sources
+				<i class="fa fa-bar-chart-o fa-fw"></i> Source of Sale
 			</div>
 			<div class="panel-body">
 				<div id="morris-donut-chart"></div>
