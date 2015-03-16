@@ -31,7 +31,7 @@
 									<a href="#"><i class="fa fa-quote-left"></i>&nbsp; Quotes</a>
 								</li>
                                 <li>
-                                    <a href="#"><i class="fa fa-bar-char-o fa-fw"></i>&nbsp; Reports <span class="fa arrow"></span></a>
+                                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>&nbsp; Reports <span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
                                             <a href="#">Ticket Report</a>
