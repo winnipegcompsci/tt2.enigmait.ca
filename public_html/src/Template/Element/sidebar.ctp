@@ -48,6 +48,14 @@
                                     </ul>
                                     <!-- /.nav-third-level -->
                                 </li>
+								<li>
+									<a href="#">Management <span class="fa arrow"></span></a>
+									<ul class="nav nav-third-level">
+										<li>
+											<a href="#">Users</a>
+										</li>
+									</ul>									
+								</li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
@@ -83,13 +91,13 @@
 									<a href="#">Crypto Currencies <span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
-                                            <a href="#">EPROM</a>
+                                            <a href="#">Bitcoin</a>
                                         </li>
                                         <li>
-                                            <a href="#">Longtech</a>
+                                            <a href="#">Litecoin</a>
                                         </li>
                                         <li>
-                                            <a href="#">ASI</a>
+                                            <a href="#">Peercoin</a>
                                         </li>
                                     </ul>
 								</li>
