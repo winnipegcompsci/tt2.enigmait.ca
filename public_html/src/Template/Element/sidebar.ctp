@@ -34,25 +34,22 @@
                                     <a href="#">Reports <span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
-                                            <a href="#">Third Level Item</a>
+                                            <a href="#">Ticket Report</a>
                                         </li>
                                         <li>
-                                            <a href="#">Third Level Item</a>
+                                            <a href="#">Employee Report</a>
                                         </li>
                                         <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
+                                            <a href="#">Billing Report</a>
                                         </li>
                                     </ul>
                                     <!-- /.nav-third-level -->
                                 </li>
 								<li>
-									<a href="#">Management <span class="fa arrow"></span></a>
+									<a href="#"><i class="fa fa-cog fa-fw"></i>&nbsp; Management <span class="fa arrow"></span></a>
 									<ul class="nav nav-third-level">
 										<li>
-											<a href="#">Users</a>
+											<a href="#"><i class="fa fa-cog fa-users"></i>&nbsp; Users</a>
 										</li>
 									</ul>									
 								</li>
