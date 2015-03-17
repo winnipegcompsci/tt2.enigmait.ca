@@ -41,12 +41,13 @@
 		<!-- ONLY INCLUDE IF LOGGED IN? -->
         <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
 			<?php
-			$user = $this->Session->read('Auth.User');						
+				$user = $this->Session->read('Auth.User');						
 			
-			if(!empty($user)) {
+			//		if(!empty($user)) {
 				echo $this->element('header'); 
 				echo $this->element('sidebar'); 
-			} ?>
+			//		} 
+			?>
 			
             <!-- /.navbar-static-side -->
         </nav>
