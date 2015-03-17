@@ -19,16 +19,16 @@
                             <a href="#"><i class="fa fa-puzzle-piece fa-fw"></i> Enigma <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#"><i class="fa fa-paperclip fa-fw"></i>&nbsp; Projects</a>
+                                    <a href="<?php echo $this->Url->build(['controller' => 'Projects', 'action' => 'index']); ?>"><i class="fa fa-paperclip fa-fw"></i>&nbsp; Projects</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-life-saver fa-fw"></i>&nbsp; Tickets</a>
+                                    <a href="<?php echo $this->Url->build(['controller' => 'Tickets', 'action' => 'index']); ?>"><i class="fa fa-life-saver fa-fw"></i>&nbsp; Tickets</a>
                                 </li>
 								<li>
-									<a href="#"><i class="fa fa-credit-card fa-faw"></i>&nbsp; Customers</a>
+									<a href="<?php echo $this->Url->build(['controller' => 'Customers', 'action' => 'index']); ?>"><i class="fa fa-credit-card fa-faw"></i>&nbsp; Customers</a>
 								</li>
 								<li>
-									<a href="#"><i class="fa fa-quote-left"></i>&nbsp; Quotes</a>
+									<a href="<?php echo $this->Url->build(['controller' => 'Quotes', 'action' => 'index']); ?>"><i class="fa fa-quote-left"></i>&nbsp; Quotes</a>
 								</li>
                                 <li>
                                     <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>&nbsp; Reports <span class="fa arrow"></span></a>
