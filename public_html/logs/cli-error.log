@@ -79,3 +79,117 @@ Stack Trace:
 #14 {main}
 
 
+2015-03-17 01:41:52 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tt2.t_tickets' doesn't exist
+Stack Trace:
+#0 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(96): Cake\Database\Schema\Collection->_reflect('Column', 't_tickets', Array, Object(Cake\Database\Schema\Table))
+#1 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(65): Cake\Database\Schema\Collection->describe('t_tickets', Array)
+#2 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\ORM\Table.php(365): Cake\Database\Schema\CachedCollection->describe('t_tickets')
+#3 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\ORM\Table.php(441): Cake\ORM\Table->schema()
+#4 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(455): Cake\ORM\Table->primaryKey()
+#5 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(275): Bake\Shell\Task\ViewTask->_associations(Object(App\Model\Table\TicketsTable))
+#6 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(139): Bake\Shell\Task\ViewTask->_loadController()
+#7 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\BakeShell.php(229): Bake\Shell\Task\ViewTask->main('Tickets')
+#8 [internal function]: Bake\Shell\BakeShell->all('tickets')
+#9 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\Shell.php(376): call_user_func_array(Array, Array)
+#10 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(200): Cake\Console\Shell->runCommand(Array, true)
+#11 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(171): Cake\Console\ShellDispatcher->_dispatch()
+#12 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(122): Cake\Console\ShellDispatcher->dispatch()
+#13 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\bin\cake.php(20): Cake\Console\ShellDispatcher::run(Array)
+#14 {main}
+
+
+2015-03-17 01:45:58 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tt2.t_tickets' doesn't exist
+Stack Trace:
+#0 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(96): Cake\Database\Schema\Collection->_reflect('Column', 't_tickets', Array, Object(Cake\Database\Schema\Table))
+#1 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(65): Cake\Database\Schema\Collection->describe('t_tickets', Array)
+#2 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\ORM\Table.php(365): Cake\Database\Schema\CachedCollection->describe('t_tickets')
+#3 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\ORM\Table.php(441): Cake\ORM\Table->schema()
+#4 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(455): Cake\ORM\Table->primaryKey()
+#5 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(275): Bake\Shell\Task\ViewTask->_associations(Object(App\Model\Table\TicketsTable))
+#6 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(139): Bake\Shell\Task\ViewTask->_loadController()
+#7 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\BakeShell.php(229): Bake\Shell\Task\ViewTask->main('Tickets')
+#8 [internal function]: Bake\Shell\BakeShell->all('tickets')
+#9 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\Shell.php(376): call_user_func_array(Array, Array)
+#10 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(200): Cake\Console\Shell->runCommand(Array, true)
+#11 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(171): Cake\Console\ShellDispatcher->_dispatch()
+#12 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(122): Cake\Console\ShellDispatcher->dispatch()
+#13 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\bin\cake.php(20): Cake\Console\ShellDispatcher::run(Array)
+#14 {main}
+
+
+2015-03-17 01:50:00 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tt2.customer_sites' doesn't exist
+Stack Trace:
+#0 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(96): Cake\Database\Schema\Collection->_reflect('Column', 'customer_sites', Array, Object(Cake\Database\Schema\Table))
+#1 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(65): Cake\Database\Schema\Collection->describe('customer_sites', Array)
+#2 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\ORM\Table.php(365): Cake\Database\Schema\CachedCollection->describe('customer_sites')
+#3 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\ORM\Table.php(441): Cake\ORM\Table->schema()
+#4 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(455): Cake\ORM\Table->primaryKey()
+#5 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(275): Bake\Shell\Task\ViewTask->_associations(Object(App\Model\Table\TicketsTable))
+#6 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(139): Bake\Shell\Task\ViewTask->_loadController()
+#7 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\BakeShell.php(229): Bake\Shell\Task\ViewTask->main('Tickets')
+#8 [internal function]: Bake\Shell\BakeShell->all('tickets')
+#9 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\Shell.php(376): call_user_func_array(Array, Array)
+#10 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(200): Cake\Console\Shell->runCommand(Array, true)
+#11 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(171): Cake\Console\ShellDispatcher->_dispatch()
+#12 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(122): Cake\Console\ShellDispatcher->dispatch()
+#13 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\bin\cake.php(20): Cake\Console\ShellDispatcher::run(Array)
+#14 {main}
+
+
+2015-03-17 01:51:29 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tt2.billing_statuses' doesn't exist
+Stack Trace:
+#0 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(96): Cake\Database\Schema\Collection->_reflect('Column', 'billing_statuse...', Array, Object(Cake\Database\Schema\Table))
+#1 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(65): Cake\Database\Schema\Collection->describe('billing_statuse...', Array)
+#2 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\ORM\Table.php(365): Cake\Database\Schema\CachedCollection->describe('billing_statuse...')
+#3 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\ORM\Table.php(441): Cake\ORM\Table->schema()
+#4 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(455): Cake\ORM\Table->primaryKey()
+#5 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(275): Bake\Shell\Task\ViewTask->_associations(Object(App\Model\Table\TicketsTable))
+#6 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(139): Bake\Shell\Task\ViewTask->_loadController()
+#7 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\BakeShell.php(229): Bake\Shell\Task\ViewTask->main('Tickets')
+#8 [internal function]: Bake\Shell\BakeShell->all('tickets')
+#9 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\Shell.php(376): call_user_func_array(Array, Array)
+#10 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(200): Cake\Console\Shell->runCommand(Array, true)
+#11 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(171): Cake\Console\ShellDispatcher->_dispatch()
+#12 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(122): Cake\Console\ShellDispatcher->dispatch()
+#13 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\bin\cake.php(20): Cake\Console\ShellDispatcher::run(Array)
+#14 {main}
+
+
+2015-03-17 01:52:32 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tt2.quotes' doesn't exist
+Stack Trace:
+#0 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(96): Cake\Database\Schema\Collection->_reflect('Column', 'quotes', Array, Object(Cake\Database\Schema\Table))
+#1 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(65): Cake\Database\Schema\Collection->describe('quotes', Array)
+#2 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\ORM\Table.php(365): Cake\Database\Schema\CachedCollection->describe('quotes')
+#3 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\ORM\Table.php(441): Cake\ORM\Table->schema()
+#4 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(455): Cake\ORM\Table->primaryKey()
+#5 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(275): Bake\Shell\Task\ViewTask->_associations(Object(App\Model\Table\TicketsTable))
+#6 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(139): Bake\Shell\Task\ViewTask->_loadController()
+#7 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\BakeShell.php(229): Bake\Shell\Task\ViewTask->main('Tickets')
+#8 [internal function]: Bake\Shell\BakeShell->all('tickets')
+#9 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\Shell.php(376): call_user_func_array(Array, Array)
+#10 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(200): Cake\Console\Shell->runCommand(Array, true)
+#11 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(171): Cake\Console\ShellDispatcher->_dispatch()
+#12 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(122): Cake\Console\ShellDispatcher->dispatch()
+#13 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\bin\cake.php(20): Cake\Console\ShellDispatcher::run(Array)
+#14 {main}
+
+
+2015-03-17 01:54:19 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tt2.project_statuses' doesn't exist
+Stack Trace:
+#0 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(96): Cake\Database\Schema\Collection->_reflect('Column', 'project_statuse...', Array, Object(Cake\Database\Schema\Table))
+#1 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(65): Cake\Database\Schema\Collection->describe('project_statuse...', Array)
+#2 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\ORM\Table.php(365): Cake\Database\Schema\CachedCollection->describe('project_statuse...')
+#3 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\ORM\Table.php(441): Cake\ORM\Table->schema()
+#4 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(455): Cake\ORM\Table->primaryKey()
+#5 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(275): Bake\Shell\Task\ViewTask->_associations(Object(App\Model\Table\ProjectsTable))
+#6 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(139): Bake\Shell\Task\ViewTask->_loadController()
+#7 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\BakeShell.php(229): Bake\Shell\Task\ViewTask->main('Projects')
+#8 [internal function]: Bake\Shell\BakeShell->all('projects')
+#9 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\Shell.php(376): call_user_func_array(Array, Array)
+#10 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(200): Cake\Console\Shell->runCommand(Array, true)
+#11 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(171): Cake\Console\ShellDispatcher->_dispatch()
+#12 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(122): Cake\Console\ShellDispatcher->dispatch()
+#13 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\bin\cake.php(20): Cake\Console\ShellDispatcher::run(Array)
+#14 {main}
+
+
