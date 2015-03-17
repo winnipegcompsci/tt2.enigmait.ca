@@ -51,6 +51,9 @@ class CustomersTable extends Table
         $this->hasMany('Tickets', [
             'foreignKey' => 'customer_id'
         ]);
+        $this->hasMany('Users', [
+            'foreignKey' => 'customer_id'
+        ]);
     }
 
     /**

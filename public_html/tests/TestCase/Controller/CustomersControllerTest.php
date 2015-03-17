@@ -30,8 +30,12 @@ class CustomersControllerTest extends IntegrationTestCase
         'TicketStatuses' => 'app.ticket_statuses',
         'Users' => 'app.users',
         'Projects' => 'app.projects',
+        'ProjectStatuses' => 'app.project_statuses',
         'BillingStatuses' => 'app.billing_statuses',
-        'Events' => 'app.events'
+        'Events' => 'app.events',
+        'EventTypes' => 'app.event_types',
+        'BillingTypes' => 'app.billing_types',
+        'TimeTypes' => 'app.time_types'
     ];
 
     /**
