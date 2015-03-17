@@ -10,6 +10,12 @@ use App\Controller\AppController;
  */
 class CustomersController extends AppController
 {
+	// Remove This Afterwords.
+	public function beforeFilter(Event $event)
+	{
+		parent::beforeFilter($event);
+		$this->Auth->allow('add');
+	}	
 
     /**
      * Index method
