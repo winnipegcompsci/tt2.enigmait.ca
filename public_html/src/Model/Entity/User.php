@@ -31,4 +31,9 @@ class User extends Entity
         'customer_id' => true,
         'company_name' => true,
     ];
+	
+	protected function _setPassword($password)
+    {
+        return (new DefaultPasswordHasher)->hash($password);
+    }
 }
