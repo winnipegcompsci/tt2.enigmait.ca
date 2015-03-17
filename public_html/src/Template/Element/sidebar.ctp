@@ -81,9 +81,7 @@
                                     </ul>
                                     <!-- /.nav-third-level -->
                                 </li>
-								<li>
-                                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>&nbsp;Reports</a>
-                                </li>
+
 								<li>
 									<a href="#"><i class="fa fa-star-half-full fa-fw"></i>&nbsp;Orders</a>
 								</li>
@@ -104,6 +102,9 @@
 								<li>
 									<a href="#"><i class="fa fa-database fa-fw"></i>&nbsp;Data Providers</a>
 								</li>
+								<li>
+                                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>&nbsp;Reports</a>
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
