@@ -44,8 +44,7 @@ class AppController extends Controller
 	public function beforeFilter(Event $event)
     {
 		
-        //$this->Auth->allow(['index', 'view', 'display']);
-		$this->Auth->allow(['add']);
+        $this->Auth->allow(['add','index', 'view', 'display']);
 		
 		// $this->set('logged_in', $this->Auth->loggedIn());
 		// ...
