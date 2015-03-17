@@ -17,7 +17,28 @@ class UsersTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'Users' => 'app.users'
+        'Users' => 'app.users',
+        'Customers' => 'app.customers',
+        'Addresses' => 'app.addresses',
+        'Contacts' => 'app.contacts',
+        'ContactTypes' => 'app.contact_types',
+        'Tickets' => 'app.tickets',
+        'ProblemTypes' => 'app.problem_types',
+        'ServiceTypes' => 'app.service_types',
+        'TicketPriorities' => 'app.ticket_priorities',
+        'TicketStatuses' => 'app.ticket_statuses',
+        'CustomerSites' => 'app.customer_sites',
+        'Projects' => 'app.projects',
+        'ProjectStatuses' => 'app.project_statuses',
+        'Quotes' => 'app.quotes',
+        'BillingStatuses' => 'app.billing_statuses',
+        'Events' => 'app.events',
+        'EventTypes' => 'app.event_types',
+        'BillingTypes' => 'app.billing_types',
+        'TimeTypes' => 'app.time_types',
+        'BillingPlans' => 'app.billing_plans',
+        'CustomerNotes' => 'app.customer_notes',
+        'TicketsHistory' => 'app.tickets_history'
     ];
 
     /**

@@ -821,7 +821,7 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(30) NOT NULL,
+  `username` varchar(30) NOT NULL,
   `password` char(32) NOT NULL,
   `secretkey` text NOT NULL,
   `first_name` varchar(50) NOT NULL,
@@ -837,7 +837,7 @@ CREATE TABLE `users` (
   `customer_id` int(11) NOT NULL DEFAULT '-99',
   `company_name` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `u_user_name` (`name`)
+  UNIQUE KEY `u_user_name` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -860,4 +860,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-03-16 21:10:36
+-- Dump completed on 2015-03-16 22:17:13

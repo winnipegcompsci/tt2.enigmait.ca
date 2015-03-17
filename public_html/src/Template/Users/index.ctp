@@ -2,6 +2,16 @@
     <h3><?= __('Actions') ?></h3>
     <ul class="side-nav">
         <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Customers'), ['controller' => 'Customers', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Customer'), ['controller' => 'Customers', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Customer Notes'), ['controller' => 'CustomerNotes', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Customer Note'), ['controller' => 'CustomerNotes', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Events'), ['controller' => 'Events', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Event'), ['controller' => 'Events', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Tickets'), ['controller' => 'Tickets', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Ticket'), ['controller' => 'Tickets', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Tickets History'), ['controller' => 'TicketsHistory', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Tickets History'), ['controller' => 'TicketsHistory', 'action' => 'add']) ?> </li>
     </ul>
 </div>
 <div class="users index large-10 medium-9 columns">
@@ -9,7 +19,7 @@
     <thead>
         <tr>
             <th><?= $this->Paginator->sort('id') ?></th>
-            <th><?= $this->Paginator->sort('name') ?></th>
+            <th><?= $this->Paginator->sort('username') ?></th>
             <th><?= $this->Paginator->sort('password') ?></th>
             <th><?= $this->Paginator->sort('first_name') ?></th>
             <th><?= $this->Paginator->sort('last_name') ?></th>
@@ -22,7 +32,7 @@
     <?php foreach ($users as $user): ?>
         <tr>
             <td><?= $this->Number->format($user->id) ?></td>
-            <td><?= h($user->name) ?></td>
+            <td><?= h($user->username) ?></td>
             <td><?= h($user->password) ?></td>
             <td><?= h($user->first_name) ?></td>
             <td><?= h($user->last_name) ?></td>

@@ -18,7 +18,7 @@ class UsersFixture extends TestFixture
     // @codingStandardsIgnoreStart
     public $fields = [
         'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
-        'name' => ['type' => 'string', 'length' => 30, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
+        'username' => ['type' => 'string', 'length' => 30, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
         'password' => ['type' => 'string', 'fixed' => true, 'length' => 32, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
         'secretkey' => ['type' => 'text', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
         'first_name' => ['type' => 'string', 'length' => 50, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
@@ -35,7 +35,7 @@ class UsersFixture extends TestFixture
         'company_name' => ['type' => 'string', 'length' => 100, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
-            'u_user_name' => ['type' => 'unique', 'columns' => ['name'], 'length' => []],
+            'u_user_name' => ['type' => 'unique', 'columns' => ['username'], 'length' => []],
         ],
         '_options' => [
 'engine' => 'InnoDB', 'collation' => 'latin1_swedish_ci'
@@ -51,7 +51,7 @@ class UsersFixture extends TestFixture
     public $records = [
         [
             'id' => 1,
-            'name' => 'Lorem ipsum dolor sit amet',
+            'username' => 'Lorem ipsum dolor sit amet',
             'password' => 'Lorem ipsum dolor sit amet',
             'secretkey' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
             'first_name' => 'Lorem ipsum dolor sit amet',
@@ -59,11 +59,11 @@ class UsersFixture extends TestFixture
             'email' => 'Lorem ipsum dolor sit amet',
             'role' => 1,
             'disabled' => 'Lorem ipsum dolor sit ame',
-            'user_created' => '2015-03-17 02:08:53',
+            'user_created' => '2015-03-17 03:15:51',
             'session' => 'Lorem ipsum dolor sit amet',
             'cookie' => 'Lorem ipsum dolor sit amet',
             'ip' => 'Lorem ipsum d',
-            'last_login' => '2015-03-17 02:08:53',
+            'last_login' => '2015-03-17 03:15:51',
             'customer_id' => 1,
             'company_name' => 'Lorem ipsum dolor sit amet'
         ],

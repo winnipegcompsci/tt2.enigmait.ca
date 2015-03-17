@@ -52,8 +52,8 @@ class UsersTable extends Table
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('id', 'create')
-            ->requirePresence('name', 'create')
-            ->notEmpty('name')
+            ->requirePresence('username', 'create')
+            ->notEmpty('username')
             ->requirePresence('password', 'create')
             ->notEmpty('password')
             ->requirePresence('secretkey', 'create')
@@ -68,6 +68,23 @@ class UsersTable extends Table
             ->add('role', 'valid', ['rule' => 'numeric'])
             ->requirePresence('role', 'create')
             ->notEmpty('role')
+            ->requirePresence('disabled', 'create')
+            ->notEmpty('disabled')
+            ->add('user_created', 'valid', ['rule' => 'datetime'])
+            ->requirePresence('user_created', 'create')
+            ->notEmpty('user_created')
+            ->requirePresence('session', 'create')
+            ->notEmpty('session')
+            ->requirePresence('cookie', 'create')
+            ->notEmpty('cookie')
+            ->requirePresence('ip', 'create')
+            ->notEmpty('ip')
+            ->add('last_login', 'valid', ['rule' => 'datetime'])
+            ->requirePresence('last_login', 'create')
+            ->notEmpty('last_login')
+            ->add('customer_id', 'valid', ['rule' => 'numeric'])
+            ->requirePresence('customer_id', 'create')
+            ->notEmpty('customer_id')
             ->requirePresence('company_name', 'create')
             ->notEmpty('company_name');
 
@@ -83,6 +100,7 @@ class UsersTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
+        $rules->add($rules->isUnique(['username']));
         $rules->add($rules->isUnique(['email']));
         $rules->add($rules->existsIn(['customer_id'], 'Customers'));
         return $rules;
