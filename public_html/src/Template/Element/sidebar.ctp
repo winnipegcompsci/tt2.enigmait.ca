@@ -34,13 +34,13 @@
                                     <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>&nbsp; Reports <span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
-                                            <a href="#">Ticket Report</a>
+                                            <a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'under_construction']);?>">Ticket Report</a>
                                         </li>
                                         <li>
-                                            <a href="#">Employee Report</a>
+                                            <a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'under_construction']);?>">Employee Report</a>
                                         </li>
                                         <li>
-                                            <a href="#">Billing Report</a>
+                                            <a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'under_construction']);?>">Billing Report</a>
                                         </li>
                                     </ul>
                                     <!-- /.nav-third-level -->
@@ -61,13 +61,13 @@
                             <a href="#"><i class="fa fa-power-off fa-fw"></i> WTCR <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
 								<li>
-									<a href="#"><i class="fa fa-dollar fa-fw"></i>&nbsp;In-Store POS</a>
+									<a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'under_construction']);?>"><i class="fa fa-dollar fa-fw"></i>&nbsp;In-Store POS</a>
 								</li>
                                 <li>
-                                    <a href="#"><i class="fa fa-list-alt fa-fw"></i>&nbsp;Inventory</a>
+                                    <a href="<?php echo $this->Url->build(['controller' => 'Inventory', 'action' => 'index']); ?>"><i class="fa fa-list-alt fa-fw"></i>&nbsp;Inventory</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-suitcase fa-fw"></i>&nbsp;Vendors <span class="fa arrow"></span></a>
+                                    <a href="<?php echo $this->Url->build(['controller' => 'WtcrVendors', 'action' => 'index']); ?>/"><i class="fa fa-suitcase fa-fw"></i>&nbsp;Vendors <span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
                                             <a href="#">EPROM</a>
@@ -83,7 +83,7 @@
                                 </li>
 
 								<li>
-									<a href="#"><i class="fa fa-star-half-full fa-fw"></i>&nbsp;Orders</a>
+									<a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'under_construction']); ?>/"><i class="fa fa-star-half-full fa-fw"></i>&nbsp;Orders</a>
 								</li>
 								<li>
 									<a href="#"><i class="fa fa-bitcoin fa-fw"></i>&nbsp;CryptoCurrency<span class="fa arrow"></span></a>
@@ -100,10 +100,10 @@
                                     </ul>
 								</li>
 								<li>
-									<a href="#"><i class="fa fa-database fa-fw"></i>&nbsp;Data Providers</a>
+									<a href="<?php echo $this->Url->build(['controller' => 'WtcrCurrencyProviders', 'action' => 'index']); ?>/"><i class="fa fa-database fa-fw"></i>&nbsp;Data Providers</a>
 								</li>
 								<li>
-                                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>&nbsp;Reports</a>
+                                    <a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'under_construction']); ?>/"><i class="fa fa-bar-chart-o fa-fw"></i>&nbsp;Reports</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
