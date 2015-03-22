@@ -1,4 +1,4 @@
-<div class="actions columns large-2 medium-3">
+<div class="actions columns col-lg-2 col-md-3 pull-right">
     <h3><?= __('Actions') ?></h3>
     <ul class="side-nav">
         <li><?= $this->Html->link(__('New Notification Type'), ['action' => 'add']) ?></li>
@@ -6,7 +6,7 @@
         <li><?= $this->Html->link(__('New Notification'), ['controller' => 'Notifications', 'action' => 'add']) ?> </li>
     </ul>
 </div>
-<div class="notificationTypes index large-10 medium-9 columns">
+<div class="notificationTypes index col-lg-10 col-md-9 columns">
     <table cellpadding="0" cellspacing="0">
     <thead>
         <tr>

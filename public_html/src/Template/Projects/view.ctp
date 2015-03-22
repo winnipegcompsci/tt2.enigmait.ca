@@ -1,4 +1,4 @@
-<div class="actions columns large-2 medium-3">
+<div class="actions columns col-lg-2 col-md-3 pull-right">
     <h3><?= __('Actions') ?></h3>
     <ul class="side-nav">
         <li><?= $this->Html->link(__('Edit Project'), ['action' => 'edit', $project->id]) ?> </li>
@@ -13,7 +13,7 @@
         <li><?= $this->Html->link(__('New Ticket'), ['controller' => 'Tickets', 'action' => 'add']) ?> </li>
     </ul>
 </div>
-<div class="projects view large-10 medium-9 columns">
+<div class="projects view col-lg-10 col-md-9 columns">
     <h2><?= h($project->name) ?></h2>
     <div class="row">
         <div class="large-5 columns strings">

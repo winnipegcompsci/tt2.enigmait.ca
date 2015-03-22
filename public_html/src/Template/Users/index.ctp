@@ -1,4 +1,4 @@
-<div class="actions columns large-2 medium-3">
+<div class="actions columns col-lg-2 col-md-3 pull-right">
     <h3><?= __('Actions') ?></h3>
     <ul class="side-nav">
         <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?></li>
@@ -18,7 +18,7 @@
         <li><?= $this->Html->link(__('New Ticket'), ['controller' => 'Tickets', 'action' => 'add']) ?> </li>
     </ul>
 </div>
-<div class="users index large-10 medium-9 columns">
+<div class="users index col-lg-10 col-md-9 columns">
     <table cellpadding="0" cellspacing="0">
     <thead>
         <tr>

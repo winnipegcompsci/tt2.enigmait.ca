@@ -20,7 +20,7 @@ $fields = collection($fields)
     })
     ->take(7);
 %>
-<div class="actions columns large-2 medium-3">
+<div class="actions columns col-lg-2 col-md-3 pull-right">
     <h3><?= __('Actions') ?></h3>
     <ul class="side-nav">
         <li><?= $this->Html->link(__('New <%= $singularHumanName %>'), ['action' => 'add']) ?></li>
@@ -40,7 +40,7 @@ $fields = collection($fields)
 %>
     </ul>
 </div>
-<div class="<%= $pluralVar %> index large-10 medium-9 columns">
+<div class="<%= $pluralVar %> index col-lg-10 col-md-9 columns">
     <table cellpadding="0" cellspacing="0">
     <thead>
         <tr>

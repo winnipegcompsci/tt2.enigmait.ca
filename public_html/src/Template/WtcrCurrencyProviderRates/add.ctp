@@ -1,4 +1,4 @@
-<div class="actions columns large-2 medium-3">
+<div class="actions columns col-lg-2 col-md-3 pull-right">
     <h3><?= __('Actions') ?></h3>
     <ul class="side-nav">
         <li><?= $this->Html->link(__('List Wtcr Currency Provider Rates'), ['action' => 'index']) ?></li>
@@ -8,7 +8,7 @@
         <li><?= $this->Html->link(__('New Wtcr Currency Provider'), ['controller' => 'WtcrCurrencyProviders', 'action' => 'add']) ?> </li>
     </ul>
 </div>
-<div class="wtcrCurrencyProviderRates form large-10 medium-9 columns">
+<div class="wtcrCurrencyProviderRates form col-lg-10 col-md-9 columns">
     <?= $this->Form->create($wtcrCurrencyProviderRate); ?>
     <fieldset>
         <legend><?= __('Add Wtcr Currency Provider Rate') ?></legend>

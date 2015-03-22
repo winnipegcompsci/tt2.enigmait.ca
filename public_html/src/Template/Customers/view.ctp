@@ -1,4 +1,4 @@
-<div class="actions columns large-2 medium-3">
+<div class="actions columns col-lg-2 col-md-3 pull-right">
     <h3><?= __('Actions') ?></h3>
     <ul class="side-nav">
         <li><?= $this->Html->link(__('Edit Customer'), ['action' => 'edit', $customer->id]) ?> </li>
@@ -23,7 +23,7 @@
         <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
     </ul>
 </div>
-<div class="customers view large-10 medium-9 columns">
+<div class="customers view col-lg-10 col-md-9 columns">
     <h2><?= h($customer->name) ?></h2>
     <div class="row">
         <div class="large-5 columns strings">

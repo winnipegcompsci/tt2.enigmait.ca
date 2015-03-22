@@ -51,7 +51,7 @@ $groupedFields = collection($fields)
 $groupedFields += ['number' => [], 'string' => [], 'boolean' => [], 'date' => [], 'text' => []];
 $pk = "\$$singularVar->{$primaryKey[0]}";
 %>
-<div class="actions columns large-2 medium-3">
+<div class="actions columns col-lg-2 col-md-3 pull-right">
     <h3><?= __('Actions') ?></h3>
     <ul class="side-nav">
         <li><?= $this->Html->link(__('Edit <%= $singularHumanName %>'), ['action' => 'edit', <%= $pk %>]) ?> </li>
@@ -74,7 +74,7 @@ $pk = "\$$singularVar->{$primaryKey[0]}";
 %>
     </ul>
 </div>
-<div class="<%= $pluralVar %> view large-10 medium-9 columns">
+<div class="<%= $pluralVar %> view col-lg-10 col-md-9 columns">
     <h2><?= h($<%= $singularVar %>-><%= $displayField %>) ?></h2>
     <div class="row">
 <% if ($groupedFields['string']) : %>

@@ -1,4 +1,4 @@
-<div class="actions columns large-2 medium-3">
+<div class="actions columns col-lg-2 col-md-3 pull-right">
     <h3><?= __('Actions') ?></h3>
     <ul class="side-nav">
         <li><?= $this->Html->link(__('List Contact Types'), ['action' => 'index']) ?></li>
@@ -6,7 +6,7 @@
         <li><?= $this->Html->link(__('New Contact'), ['controller' => 'Contacts', 'action' => 'add']) ?> </li>
     </ul>
 </div>
-<div class="contactTypes form large-10 medium-9 columns">
+<div class="contactTypes form col-lg-10 col-md-9 columns">
     <?= $this->Form->create($contactType); ?>
     <fieldset>
         <legend><?= __('Add Contact Type') ?></legend>
