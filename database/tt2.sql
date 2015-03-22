@@ -376,65 +376,87 @@ INSERT INTO `emails` VALUES (1,175,'test@test.com','1','1',NULL),(2,177,'drichar
 UNLOCK TABLES;
 
 --
--- Table structure for table `event_types`
+-- Table structure for table `inventory`
 --
 
-DROP TABLE IF EXISTS `event_types`;
+DROP TABLE IF EXISTS `inventory`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `event_types` (
+CREATE TABLE `inventory` (
   `id` int(11) NOT NULL,
-  `name` varchar(30) NOT NULL,
-  `order` int(11) NOT NULL,
+  `wtcr_sku` varchar(45) DEFAULT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `wtcr_category_id` int(11) DEFAULT NULL,
+  `manufacturer_id` int(11) DEFAULT NULL,
+  `manufacturer_sku` varchar(45) DEFAULT NULL,
+  `vendor_id` int(11) DEFAULT NULL,
+  `vendor_sku` varchar(45) DEFAULT NULL,
+  `vendor_price` float DEFAULT NULL,
+  `received_date` datetime DEFAULT NULL,
+  `markup` float DEFAULT NULL,
+  `serial_numbers` longtext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `event_types`
+-- Dumping data for table `inventory`
 --
 
-LOCK TABLES `event_types` WRITE;
-/*!40000 ALTER TABLE `event_types` DISABLE KEYS */;
-INSERT INTO `event_types` VALUES (1,'Service',0),(2,'Informational',5),(3,'Internal',10);
-/*!40000 ALTER TABLE `event_types` ENABLE KEYS */;
+LOCK TABLES `inventory` WRITE;
+/*!40000 ALTER TABLE `inventory` DISABLE KEYS */;
+/*!40000 ALTER TABLE `inventory` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `events`
+-- Table structure for table `notification_types`
 --
 
-DROP TABLE IF EXISTS `events`;
+DROP TABLE IF EXISTS `notification_types`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `events` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `ticket_id` int(11) NOT NULL,
-  `event_type_id` int(11) NOT NULL,
-  `description` text NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `timestamp` datetime NOT NULL,
-  `billing_type_id` int(11) NOT NULL,
-  `time_type_id` int(11) NOT NULL,
-  `time_taken` float NOT NULL,
-  `is_resolution` binary(1) NOT NULL DEFAULT '0',
-  `resolution_date` datetime NOT NULL,
-  `time_start` datetime NOT NULL,
-  `time_end` datetime NOT NULL,
+CREATE TABLE `notification_types` (
+  `id` int(11) NOT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `icon` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `event_ticket_id` (`ticket_id`),
-  CONSTRAINT `events_ibfk_1` FOREIGN KEY (`ticket_id`) REFERENCES `tickets` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `events`
+-- Dumping data for table `notification_types`
 --
 
-LOCK TABLES `events` WRITE;
-/*!40000 ALTER TABLE `events` DISABLE KEYS */;
-INSERT INTO `events` VALUES (1,5,1,'Test',15,'2014-05-12 13:16:46',1,2,100,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(2,6,2,'Test Event',15,'2014-05-12 15:36:40',-99,-99,0,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(3,9,1,'Event to see if DIS Updates.',15,'2014-05-14 09:20:42',1,2,5,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(4,16,2,'p;[l]p;[l]p;l]p;[l]',15,'2014-06-06 16:41:09',-99,-99,0,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(5,6,2,'<p>Test Event Added</p>\r\n',15,'2014-06-12 15:07:08',-99,-99,0,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(6,6,2,'<p>UI Colour Changed</p>\r\n',15,'2014-06-12 15:11:59',-99,-99,0,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(8,7,3,'<p>Some Sample Event Details Here.</p>\r\n',15,'2014-08-14 17:11:55',1,2,950,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(11,7,3,'<p>Some Huge Event.</p>\r\n',15,'2014-08-14 17:22:14',1,2,1500,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(12,10,1,'<p>test</p>\r\n',15,'2014-08-19 15:33:40',1,2,120,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(13,12,1,'<p>Some event happened.</p>\r\n',15,'2014-08-21 15:35:22',1,2,60,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(14,30,2,'<p>1111111111111111 111 1 111111111111 1 111 111111111 1111111111 1111111111111 111111111111111111111111111111 11111111111111111111 11111111111111111111111111111111111 11111111111111111111111 111111111111111111111111111 111111111111111111111 1111111111 111111 11111 11111</p>\r\n',15,'2014-10-09 17:49:03',-99,-99,0,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(15,8,1,'<p>Test Event (60 Minutes)</p>\r\n',15,'2015-03-06 10:16:26',1,2,60,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(16,9,1,'<p>Test (4 Billing Units)</p>\r\n',15,'2015-03-06 10:59:14',1,2,60,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(17,6,1,'<p>Testing Billable Service.&nbsp;</p>\r\n',15,'2015-03-06 11:56:43',1,2,200,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(18,6,1,'<p>Testing sum of products.</p>\r\n',15,'2015-03-06 11:57:07',1,2,180,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00');
-/*!40000 ALTER TABLE `events` ENABLE KEYS */;
+LOCK TABLES `notification_types` WRITE;
+/*!40000 ALTER TABLE `notification_types` DISABLE KEYS */;
+/*!40000 ALTER TABLE `notification_types` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `notifications`
+--
+
+DROP TABLE IF EXISTS `notifications`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `notifications` (
+  `id` int(11) NOT NULL,
+  `message` varchar(45) DEFAULT NULL,
+  `notification_type_id` int(11) DEFAULT NULL,
+  `date_created` datetime DEFAULT NULL,
+  `role_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `notifications`
+--
+
+LOCK TABLES `notifications` WRITE;
+/*!40000 ALTER TABLE `notifications` DISABLE KEYS */;
+/*!40000 ALTER TABLE `notifications` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -491,31 +513,6 @@ INSERT INTO `phone_types` VALUES (1,'Work',0),(2,'Home',5),(3,'Cell',10);
 UNLOCK TABLES;
 
 --
--- Table structure for table `problem_types`
---
-
-DROP TABLE IF EXISTS `problem_types`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `problem_types` (
-  `id` int(11) NOT NULL,
-  `name` varchar(30) NOT NULL,
-  `order` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `problem_types`
---
-
-LOCK TABLES `problem_types` WRITE;
-/*!40000 ALTER TABLE `problem_types` DISABLE KEYS */;
-INSERT INTO `problem_types` VALUES (1,'Hardware',0),(2,'Software',1),(3,'Network',2),(4,'Website',3),(5,'Phone',4);
-/*!40000 ALTER TABLE `problem_types` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `project_statuses`
 --
 
@@ -536,6 +533,33 @@ CREATE TABLE `project_statuses` (
 LOCK TABLES `project_statuses` WRITE;
 /*!40000 ALTER TABLE `project_statuses` DISABLE KEYS */;
 /*!40000 ALTER TABLE `project_statuses` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `project_tasks`
+--
+
+DROP TABLE IF EXISTS `project_tasks`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `project_tasks` (
+  `id` int(11) NOT NULL,
+  `project_id` int(11) DEFAULT NULL,
+  `title` varchar(45) DEFAULT NULL,
+  `body` varchar(45) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `deadline` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `project_tasks`
+--
+
+LOCK TABLES `project_tasks` WRITE;
+/*!40000 ALTER TABLE `project_tasks` DISABLE KEYS */;
+/*!40000 ALTER TABLE `project_tasks` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -595,6 +619,31 @@ INSERT INTO `provinces` VALUES (1,'Manitoba',1),(2,'Saskatchewan',1),(3,'Alberta
 UNLOCK TABLES;
 
 --
+-- Table structure for table `quote_types`
+--
+
+DROP TABLE IF EXISTS `quote_types`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `quote_types` (
+  `id` int(11) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `quote_types`
+--
+
+LOCK TABLES `quote_types` WRITE;
+/*!40000 ALTER TABLE `quote_types` DISABLE KEYS */;
+/*!40000 ALTER TABLE `quote_types` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `quotes`
 --
 
@@ -604,8 +653,8 @@ DROP TABLE IF EXISTS `quotes`;
 CREATE TABLE `quotes` (
   `id` int(11) NOT NULL,
   `name` varchar(45) NOT NULL,
-  `customer_id` varchar(45) NOT NULL,
-  `ticket_id` varchar(45) DEFAULT NULL,
+  `customer_id` int(11) NOT NULL,
+  `quote_type_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -642,6 +691,68 @@ LOCK TABLES `service_types` WRITE;
 /*!40000 ALTER TABLE `service_types` DISABLE KEYS */;
 INSERT INTO `service_types` VALUES (1,'Standard - Contract',0),(2,'Emergency - Contract',5),(3,'Standard - Hourly',10),(4,'Emergency - Hourly',15);
 /*!40000 ALTER TABLE `service_types` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ticket_event_types`
+--
+
+DROP TABLE IF EXISTS `ticket_event_types`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ticket_event_types` (
+  `id` int(11) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `order` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ticket_event_types`
+--
+
+LOCK TABLES `ticket_event_types` WRITE;
+/*!40000 ALTER TABLE `ticket_event_types` DISABLE KEYS */;
+INSERT INTO `ticket_event_types` VALUES (1,'Service',0),(2,'Informational',5),(3,'Internal',10);
+/*!40000 ALTER TABLE `ticket_event_types` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ticket_events`
+--
+
+DROP TABLE IF EXISTS `ticket_events`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ticket_events` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ticket_id` int(11) NOT NULL,
+  `ticket_event_type_id` int(11) NOT NULL,
+  `description` text NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `timestamp` datetime NOT NULL,
+  `billing_type_id` int(11) NOT NULL,
+  `time_type_id` int(11) NOT NULL,
+  `time_taken` float NOT NULL,
+  `is_resolution` binary(1) NOT NULL DEFAULT '0',
+  `resolution_date` datetime NOT NULL,
+  `time_start` datetime NOT NULL,
+  `time_end` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `event_ticket_id` (`ticket_id`),
+  CONSTRAINT `ticket_events_ibfk_1` FOREIGN KEY (`ticket_id`) REFERENCES `tickets` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ticket_events`
+--
+
+LOCK TABLES `ticket_events` WRITE;
+/*!40000 ALTER TABLE `ticket_events` DISABLE KEYS */;
+INSERT INTO `ticket_events` VALUES (1,5,1,'Test',15,'2014-05-12 13:16:46',1,2,100,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(2,6,2,'Test Event',15,'2014-05-12 15:36:40',-99,-99,0,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(3,9,1,'Event to see if DIS Updates.',15,'2014-05-14 09:20:42',1,2,5,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(4,16,2,'p;[l]p;[l]p;l]p;[l]',15,'2014-06-06 16:41:09',-99,-99,0,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(5,6,2,'<p>Test Event Added</p>\r\n',15,'2014-06-12 15:07:08',-99,-99,0,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(6,6,2,'<p>UI Colour Changed</p>\r\n',15,'2014-06-12 15:11:59',-99,-99,0,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(8,7,3,'<p>Some Sample Event Details Here.</p>\r\n',15,'2014-08-14 17:11:55',1,2,950,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(11,7,3,'<p>Some Huge Event.</p>\r\n',15,'2014-08-14 17:22:14',1,2,1500,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(12,10,1,'<p>test</p>\r\n',15,'2014-08-19 15:33:40',1,2,120,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(13,12,1,'<p>Some event happened.</p>\r\n',15,'2014-08-21 15:35:22',1,2,60,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(14,30,2,'<p>1111111111111111 111 1 111111111111 1 111 111111111 1111111111 1111111111111 111111111111111111111111111111 11111111111111111111 11111111111111111111111111111111111 11111111111111111111111 111111111111111111111111111 111111111111111111111 1111111111 111111 11111 11111</p>\r\n',15,'2014-10-09 17:49:03',-99,-99,0,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(15,8,1,'<p>Test Event (60 Minutes)</p>\r\n',15,'2015-03-06 10:16:26',1,2,60,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(16,9,1,'<p>Test (4 Billing Units)</p>\r\n',15,'2015-03-06 10:59:14',1,2,60,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(17,6,1,'<p>Testing Billable Service.&nbsp;</p>\r\n',15,'2015-03-06 11:56:43',1,2,200,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),(18,6,1,'<p>Testing sum of products.</p>\r\n',15,'2015-03-06 11:57:07',1,2,180,'0','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00');
+/*!40000 ALTER TABLE `ticket_events` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -692,6 +803,31 @@ LOCK TABLES `ticket_statuses` WRITE;
 /*!40000 ALTER TABLE `ticket_statuses` DISABLE KEYS */;
 INSERT INTO `ticket_statuses` VALUES (1,'Open',0),(2,'Closed',15),(3,'In Progress',5),(4,'Waiting',10);
 /*!40000 ALTER TABLE `ticket_statuses` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ticket_types`
+--
+
+DROP TABLE IF EXISTS `ticket_types`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ticket_types` (
+  `id` int(11) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `order` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ticket_types`
+--
+
+LOCK TABLES `ticket_types` WRITE;
+/*!40000 ALTER TABLE `ticket_types` DISABLE KEYS */;
+INSERT INTO `ticket_types` VALUES (1,'Hardware',0),(2,'Software',1),(3,'Network',2),(4,'Website',3),(5,'Phone',4);
+/*!40000 ALTER TABLE `ticket_types` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -788,13 +924,13 @@ INSERT INTO `time_types` VALUES (1,'Travel',20),(2,'Onsite',5),(3,'Remote',10),(
 UNLOCK TABLES;
 
 --
--- Table structure for table `user_types`
+-- Table structure for table `user_roles`
 --
 
-DROP TABLE IF EXISTS `user_types`;
+DROP TABLE IF EXISTS `user_roles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user_types` (
+CREATE TABLE `user_roles` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `order` int(11) NOT NULL,
@@ -803,13 +939,13 @@ CREATE TABLE `user_types` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `user_types`
+-- Dumping data for table `user_roles`
 --
 
-LOCK TABLES `user_types` WRITE;
-/*!40000 ALTER TABLE `user_types` DISABLE KEYS */;
-INSERT INTO `user_types` VALUES (1,'manager',0),(2,'sales',0),(3,'tech',0),(4,'accounting',0),(5,'customer',0),(6,'webuser',0);
-/*!40000 ALTER TABLE `user_types` ENABLE KEYS */;
+LOCK TABLES `user_roles` WRITE;
+/*!40000 ALTER TABLE `user_roles` DISABLE KEYS */;
+INSERT INTO `user_roles` VALUES (1,'manager',0),(2,'sales',0),(3,'tech',0),(4,'accounting',0),(5,'customer',0),(6,'webuser',0);
+/*!40000 ALTER TABLE `user_roles` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -827,7 +963,7 @@ CREATE TABLE `users` (
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `role` int(11) NOT NULL,
+  `user_role_id` int(11) NOT NULL,
   `disabled` binary(1) NOT NULL DEFAULT '0',
   `user_created` datetime NOT NULL,
   `session` char(32) NOT NULL,
@@ -850,6 +986,245 @@ LOCK TABLES `users` WRITE;
 INSERT INTO `users` VALUES (1,'joe.funari','46fa32170adef90863c0eb5794fe440e','OJKURX57OGIU2QVX','Joe','Funari','jfunari@enigmait.ca',1,'0','0000-00-00 00:00:00','ios8hjrjt8raekc6detf104nh7','','64.141.33.170','2014-05-05 11:44:26',-99,''),(2,'ryan.toomer','cb6ab56c8162db35b23b7b54ea2077a0','OJKURX57OGIU2QVX','Ryan','Toomer','rtoomer@enigmait.ca',1,'1','2008-06-23 11:56:21','svobajm1dje1rc7diaqpbvhbv2','','205.200.0.235','2008-08-07 10:15:30',-99,''),(3,'leo.magne','cae85c78cd886aa011d8b498c6006b9a','OJKURX57OGIU2QVX','Leo','Magne','lmagne@test.test',5,'0','2008-06-25 23:51:27','rodeap216hvqn5bk1gop5olvi6','','205.200.6.236','2008-06-25 23:51:45',-99,''),(4,'jexner','95348567a91f98ad0f6ad239d387632d','OJKURX57OGIU2QVX','Jenn','Exner','jexner@enigmait.ca',1,'1','2008-09-29 15:41:23','c6vh4paef7avo1guhhdco4uab6','','10.20.30.106','2009-06-02 16:31:16',-99,''),(5,'teekayehm','3eb20743e72211ae786ee393403e3424','OJKURX57OGIU2QVX','test','test','jfunari@enigmait.ca',6,'0','2008-10-09 20:41:49','','','205.200.6.236','2008-10-09 20:44:49',-99,''),(6,'landerson','3ae07865b1d64099ae067e818aa092b4','OJKURX57OGIU2QVX','Lorne','Anderson','landerson@enigmait.ca',2,'0','2009-06-12 11:27:17','ao8s52678lb1o2ldcva6somsh6','','64.141.33.170','2014-05-05 11:43:28',-99,''),(7,'tseymour','06fd862fb55dbd64dd3f47e0fbefd684','OJKURX57OGIU2QVX','Tracy','Seymour','tseymour@enigmait.ca',1,'1','2009-10-01 15:12:15','sl3ntrllmb1dh2g2l2972cvov0','','10.20.30.109','2009-10-28 10:16:54',-99,''),(8,'jdavidow','a2d58b6915b766e8839ae1fc93b5b428','OJKURX57OGIU2QVX','Justin','Davidow','jdavidow@enigmait.ca',1,'0','2010-02-02 12:21:55','hrtjks77aiqu48n5dadrhdgs96','','127.0.0.1','2014-05-05 18:24:46',-99,''),(9,'kevin.evans','5d75edb7a1b723a383524a719091b40a','OJKURX57OGIU2QVX','Kevin','Evans','kevev22@hotmail.com',3,'1','2010-02-14 19:38:52','lg7n2o7p5j9fvif57eal29q212','','205.200.65.147','2010-02-24 09:22:51',-99,''),(10,'rvialoux','5e82a5346b164a4a513b9b131f244b02','OJKURX57OGIU2QVX','Richard','Vialoux','rvialoux@enigmait.ca',3,'0','2013-03-21 14:58:40','itjilrn7eng7t0mumcult8ppp1','','10.202.100.20','2013-12-06 13:08:50',-99,''),(11,'smarginet','a52814155508b6770c9864b335badd50','OJKURX57OGIU2QVX','Sean','Marginet','smarginet@enigmait.ca',3,'0','2013-06-11 15:17:12','11p5d9spcmh97rql0dnv7hcpt2','','10.202.100.116','2013-06-26 14:18:40',-99,''),(12,'mgeorge','69e8faf3b71b58518f951564d7261246','OJKURX57OGIU2QVX','Michael','Ibrahim','mibrahim@enigmait.ca',3,'0','2013-10-16 12:08:24','6rfl71gn6q1am6vad3ksg9jau1','','64.141.33.170','2014-05-05 10:55:05',-99,''),(13,'asabitu','6b9769492b96811195313b5fe002edfd','OJKURX57OGIU2QVX','Ayoola','Sabitu','asabitu@enigmait.ca',3,'0','2013-11-12 17:24:44','um412hpmt75p58nsp3tsuer3b1','','64.141.33.170','2014-05-05 12:40:13',-99,''),(14,'mchudy','6507df5c405b17e141da82fd86b4fc36','OJKURX57OGIU2QVX','Mike','Chudy','mchudy@enigmait.ca',1,'0','2014-04-14 16:13:31','c9dj276b60igtq2rp99bgk86d7','','64.141.33.170','2014-05-05 12:44:29',-99,''),(15,'drichardson','4c7e5ae26a7c0c40775040adabfec79a','OAL5GCMGA2EKE3RI','David','Richardson','drichardson@enigmait.ca',1,'0','2014-05-05 09:20:04','bekc8u6cnntn2pfku2lsm0fnk4','','127.0.0.1','2015-03-06 10:32:43',-99,''),(20,'TestAccount','05a671c66aefea124cc08b76ea6d30bb','JGNK7HDJLUKZF2VF','Test','Account','test@account.com',3,'0','2014-05-09 13:07:36','3dff60s7e70nk0uev7nnjpl301','','127.0.0.1','0000-00-00 00:00:00',-99,''),(99,'!NOBODY!','test','OAL5GCMGA2EKE3RI','No','User','helpdesk@enigmait.ca',0,'0','0000-00-00 00:00:00','','','','0000-00-00 00:00:00',-99,'Enigma Networks');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `wtcr_competitor_products`
+--
+
+DROP TABLE IF EXISTS `wtcr_competitor_products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `wtcr_competitor_products` (
+  `id` int(11) NOT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `competitor_id` int(11) DEFAULT NULL,
+  `competitor_sku` varchar(45) DEFAULT NULL,
+  `wtcr_sku` varchar(45) DEFAULT NULL,
+  `competitor_price` float DEFAULT NULL,
+  `last_updated` datetime DEFAULT NULL,
+  `url` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `wtcr_competitor_products`
+--
+
+LOCK TABLES `wtcr_competitor_products` WRITE;
+/*!40000 ALTER TABLE `wtcr_competitor_products` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wtcr_competitor_products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `wtcr_competitors`
+--
+
+DROP TABLE IF EXISTS `wtcr_competitors`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `wtcr_competitors` (
+  `id` int(11) NOT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `update_frequency_hours` int(11) DEFAULT '24',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `wtcr_competitors`
+--
+
+LOCK TABLES `wtcr_competitors` WRITE;
+/*!40000 ALTER TABLE `wtcr_competitors` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wtcr_competitors` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `wtcr_currencies`
+--
+
+DROP TABLE IF EXISTS `wtcr_currencies`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `wtcr_currencies` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `wtcr_currency_provider_id` int(11) DEFAULT NULL,
+  `abbreviation` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `wtcr_currencies`
+--
+
+LOCK TABLES `wtcr_currencies` WRITE;
+/*!40000 ALTER TABLE `wtcr_currencies` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wtcr_currencies` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `wtcr_currency_provider_rates`
+--
+
+DROP TABLE IF EXISTS `wtcr_currency_provider_rates`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `wtcr_currency_provider_rates` (
+  `id` int(11) NOT NULL,
+  `wtcr_currencies_id` int(11) DEFAULT NULL,
+  `wtcr_currency_provider_id` int(11) DEFAULT NULL,
+  `rate` float DEFAULT NULL,
+  `timestamp` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `wtcr_currency_provider_rates`
+--
+
+LOCK TABLES `wtcr_currency_provider_rates` WRITE;
+/*!40000 ALTER TABLE `wtcr_currency_provider_rates` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wtcr_currency_provider_rates` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `wtcr_currency_providers`
+--
+
+DROP TABLE IF EXISTS `wtcr_currency_providers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `wtcr_currency_providers` (
+  `id` int(11) NOT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `wtcr_currencies_id` int(11) DEFAULT NULL,
+  `update_freq` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `wtcr_currency_providers`
+--
+
+LOCK TABLES `wtcr_currency_providers` WRITE;
+/*!40000 ALTER TABLE `wtcr_currency_providers` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wtcr_currency_providers` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `wtcr_sales_vehicle_templates`
+--
+
+DROP TABLE IF EXISTS `wtcr_sales_vehicle_templates`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `wtcr_sales_vehicle_templates` (
+  `id` int(11) NOT NULL,
+  `wtcr_sales_vehicle_id` varchar(45) DEFAULT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `template_data` longtext,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `wtcr_sales_vehicle_templates`
+--
+
+LOCK TABLES `wtcr_sales_vehicle_templates` WRITE;
+/*!40000 ALTER TABLE `wtcr_sales_vehicle_templates` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wtcr_sales_vehicle_templates` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `wtcr_sales_vehicles`
+--
+
+DROP TABLE IF EXISTS `wtcr_sales_vehicles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `wtcr_sales_vehicles` (
+  `id` int(11) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `wtcr_sales_vehicle_template_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `wtcr_sales_vehicles`
+--
+
+LOCK TABLES `wtcr_sales_vehicles` WRITE;
+/*!40000 ALTER TABLE `wtcr_sales_vehicles` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wtcr_sales_vehicles` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `wtcr_vendor_products`
+--
+
+DROP TABLE IF EXISTS `wtcr_vendor_products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `wtcr_vendor_products` (
+  `id` int(11) NOT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `vendor_id` int(11) DEFAULT NULL,
+  `vendor_sku` varchar(45) DEFAULT NULL,
+  `wtcr_sku` varchar(45) DEFAULT NULL,
+  `vendor_price` float DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  `last_updated` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `wtcr_vendor_products`
+--
+
+LOCK TABLES `wtcr_vendor_products` WRITE;
+/*!40000 ALTER TABLE `wtcr_vendor_products` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wtcr_vendor_products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `wtcr_vendors`
+--
+
+DROP TABLE IF EXISTS `wtcr_vendors`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `wtcr_vendors` (
+  `id` int(11) NOT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `update_freq_hours` int(11) DEFAULT '24',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `wtcr_vendors`
+--
+
+LOCK TABLES `wtcr_vendors` WRITE;
+/*!40000 ALTER TABLE `wtcr_vendors` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wtcr_vendors` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -860,4 +1235,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-03-16 22:17:13
+-- Dump completed on 2015-03-22 16:40:08
