@@ -13,7 +13,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'dashboard']);?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'dashboard']);?>"><i class="fa fa-dashboard fa-fw"></i> <?php echo $this->Html->icon('fa-dashboard'); ?> Dashboard</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-puzzle-piece fa-fw"></i> Enigma <span class="fa arrow"></span></a>
