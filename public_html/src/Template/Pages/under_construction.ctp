@@ -1,8 +1,8 @@
-<!-- Row Containing Big Buttons Across Top -->
 <div class="row">
-	<div class="col-lg-3 col-md-6">
+	<div class="col-lg-10 col-md-10 col-sm-10">
 	
 	<h1> This Page is Under Construction 
+		<br />
 		<small> Please check back soon or contact the development team. </small>
 	</h1> 
 	
