@@ -13,7 +13,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'dashboard']);?>"><i class="fa fa-dashboard fa-fw"></i> <?php echo $this->Html->icon('fa-dashboard'); ?> Dashboard</a>
+                            <a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'dashboard']);?>"><i class="fa fa-dashboard fa-fw"></i>&nbsp; Dashboard</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-puzzle-piece fa-fw"></i> Enigma <span class="fa arrow"></span></a>
@@ -86,7 +86,7 @@
 									<a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'under_construction']); ?>"><i class="fa fa-star-half-full fa-fw"></i>&nbsp;Orders</a>
 								</li>
 								<li>
-									<a href="#"><i class="fa fa-bitcoin fa-fw"></i>&nbsp;CryptoCurrency<span class="fa arrow"></span></a>
+									<a href="#"><i class="fa fa-bitcoin fa-fw"></i>&nbsp;Crypto Currency Rates<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
                                             <a href="#">Bitcoin</a>
@@ -100,7 +100,7 @@
                                     </ul>
 								</li>
 								<li>
-									<a href="<?php echo $this->Url->build(['controller' => 'WtcrCurrencyProviders', 'action' => 'index']); ?>/"><i class="fa fa-database fa-fw"></i>&nbsp;Data Providers</a>
+									<a href="<?php echo $this->Url->build(['controller' => 'WtcrCurrencyProviders', 'action' => 'index']); ?>/"><i class="fa fa-database fa-fw"></i>&nbsp;Crypto Rate Providers</a>
 								</li>
 								<li>
                                     <a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'under_construction']); ?>"><i class="fa fa-bar-chart-o fa-fw"></i>&nbsp;Reports</a>
