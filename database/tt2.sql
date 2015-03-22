@@ -47,6 +47,43 @@ INSERT INTO `addresses` VALUES (174,'Test','64 Avalon Road','R2M2L5','Winnipeg',
 UNLOCK TABLES;
 
 --
+-- Table structure for table `billing_plan_lines`
+--
+
+DROP TABLE IF EXISTS `billing_plan_lines`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `billing_plan_lines` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `billing_plan_id` int(11) NOT NULL,
+  `time_type_id` int(11) NOT NULL,
+  `minutes_per_unit` float NOT NULL,
+  `min_num_unit` float NOT NULL,
+  `min_unit` float NOT NULL,
+  `round_up_at_min` float NOT NULL,
+  `emerg_minutes_per_unit` float NOT NULL,
+  `emerg_min_num_units` float NOT NULL,
+  `emerg_min_unit` float NOT NULL,
+  `emerg_round_up_at_min` float NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `line_plan_id` (`billing_plan_id`),
+  KEY `line_time_type_id` (`time_type_id`),
+  CONSTRAINT `billing_plan_lines_ibfk_1` FOREIGN KEY (`billing_plan_id`) REFERENCES `billing_plans` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `billing_plan_lines_ibfk_2` FOREIGN KEY (`time_type_id`) REFERENCES `time_types` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `billing_plan_lines`
+--
+
+LOCK TABLES `billing_plan_lines` WRITE;
+/*!40000 ALTER TABLE `billing_plan_lines` DISABLE KEYS */;
+INSERT INTO `billing_plan_lines` VALUES (1,1,2,60,1,0.25,9,60,2,0.25,9),(2,1,3,60,0.25,0.25,9,60,1,0.25,9),(3,1,4,60,0.25,0.25,9,60,1,0.25,9),(4,1,1,60,0.25,0.25,9,60,0.5,0.25,9),(5,2,2,60,1,30,11,60,2,30,11),(6,2,3,60,1,0.25,9,60,2,0.25,9),(7,2,4,60,1,0.25,9,60,2,0.25,9),(8,2,1,60,1,0.25,9,60,2,0.25,9);
+/*!40000 ALTER TABLE `billing_plan_lines` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `billing_plans`
 --
 
@@ -69,43 +106,6 @@ LOCK TABLES `billing_plans` WRITE;
 /*!40000 ALTER TABLE `billing_plans` DISABLE KEYS */;
 INSERT INTO `billing_plans` VALUES (2,'a0'),(1,'default');
 /*!40000 ALTER TABLE `billing_plans` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `billing_plans_lines`
---
-
-DROP TABLE IF EXISTS `billing_plans_lines`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `billing_plans_lines` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `billing_plan_id` int(11) NOT NULL,
-  `time_type_id` int(11) NOT NULL,
-  `minutes_per_unit` float NOT NULL,
-  `min_num_unit` float NOT NULL,
-  `min_unit` float NOT NULL,
-  `round_up_at_min` float NOT NULL,
-  `emerg_minutes_per_unit` float NOT NULL,
-  `emerg_min_num_units` float NOT NULL,
-  `emerg_min_unit` float NOT NULL,
-  `emerg_round_up_at_min` float NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `line_plan_id` (`billing_plan_id`),
-  KEY `line_time_type_id` (`time_type_id`),
-  CONSTRAINT `billing_plans_lines_ibfk_1` FOREIGN KEY (`billing_plan_id`) REFERENCES `billing_plans` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `billing_plans_lines_ibfk_2` FOREIGN KEY (`time_type_id`) REFERENCES `time_types` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `billing_plans_lines`
---
-
-LOCK TABLES `billing_plans_lines` WRITE;
-/*!40000 ALTER TABLE `billing_plans_lines` DISABLE KEYS */;
-INSERT INTO `billing_plans_lines` VALUES (1,1,2,60,1,0.25,9,60,2,0.25,9),(2,1,3,60,0.25,0.25,9,60,1,0.25,9),(3,1,4,60,0.25,0.25,9,60,1,0.25,9),(4,1,1,60,0.25,0.25,9,60,0.5,0.25,9),(5,2,2,60,1,30,11,60,2,30,11),(6,2,3,60,1,0.25,9,60,2,0.25,9),(7,2,4,60,1,0.25,9,60,2,0.25,9),(8,2,1,60,1,0.25,9,60,2,0.25,9);
-/*!40000 ALTER TABLE `billing_plans_lines` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -211,13 +211,13 @@ INSERT INTO `contacts` VALUES (1,'Test','Tester',1,175,1),(2,'David','Richardson
 UNLOCK TABLES;
 
 --
--- Table structure for table `country`
+-- Table structure for table `countries`
 --
 
-DROP TABLE IF EXISTS `country`;
+DROP TABLE IF EXISTS `countries`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `country` (
+CREATE TABLE `countries` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
@@ -225,13 +225,13 @@ CREATE TABLE `country` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `country`
+-- Dumping data for table `countries`
 --
 
-LOCK TABLES `country` WRITE;
-/*!40000 ALTER TABLE `country` DISABLE KEYS */;
-INSERT INTO `country` VALUES (1,'Canada'),(2,'USA');
-/*!40000 ALTER TABLE `country` ENABLE KEYS */;
+LOCK TABLES `countries` WRITE;
+/*!40000 ALTER TABLE `countries` DISABLE KEYS */;
+INSERT INTO `countries` VALUES (1,'Canada'),(2,'USA');
+/*!40000 ALTER TABLE `countries` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -387,9 +387,9 @@ CREATE TABLE `inventory` (
   `wtcr_sku` varchar(45) DEFAULT NULL,
   `name` varchar(45) DEFAULT NULL,
   `wtcr_category_id` int(11) DEFAULT NULL,
-  `manufacturer_id` int(11) DEFAULT NULL,
+  `wtcr_manufacturer_id` int(11) DEFAULT NULL,
   `manufacturer_sku` varchar(45) DEFAULT NULL,
-  `vendor_id` int(11) DEFAULT NULL,
+  `wtcr_vendor_id` int(11) DEFAULT NULL,
   `vendor_sku` varchar(45) DEFAULT NULL,
   `vendor_price` float DEFAULT NULL,
   `received_date` datetime DEFAULT NULL,
@@ -445,7 +445,7 @@ CREATE TABLE `notifications` (
   `message` varchar(45) DEFAULT NULL,
   `notification_type_id` int(11) DEFAULT NULL,
   `date_created` datetime DEFAULT NULL,
-  `role_id` int(11) DEFAULT NULL,
+  `user_role_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -756,6 +756,35 @@ INSERT INTO `ticket_events` VALUES (1,5,1,'Test',15,'2014-05-12 13:16:46',1,2,10
 UNLOCK TABLES;
 
 --
+-- Table structure for table `ticket_history`
+--
+
+DROP TABLE IF EXISTS `ticket_history`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ticket_history` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ticket_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `date` datetime NOT NULL,
+  `action` text NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `history_ticket_id` (`ticket_id`),
+  CONSTRAINT `ticket_history_ibfk_1` FOREIGN KEY (`ticket_id`) REFERENCES `tickets` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=332 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ticket_history`
+--
+
+LOCK TABLES `ticket_history` WRITE;
+/*!40000 ALTER TABLE `ticket_history` DISABLE KEYS */;
+INSERT INTO `ticket_history` VALUES (19,4,15,'2014-05-08 14:06:33','Ticket Created'),(27,5,15,'2014-05-08 15:24:11','Ticket Created'),(35,5,15,'2014-05-12 12:31:43','Assigned changed from <> to <David Richardson>'),(36,5,15,'2014-05-12 12:31:53','Status changed from <> to <Open>'),(37,5,15,'2014-05-12 12:31:59','Priority changed from <> to <High>'),(40,5,15,'2014-05-12 13:08:55','Status changed from <Open> to <In Progress>'),(41,5,15,'2014-05-12 13:16:47','Event Added'),(46,6,15,'2014-05-12 15:17:57','Ticket Created'),(47,6,15,'2014-05-12 15:36:41','Event Added'),(50,7,15,'2014-05-12 16:10:13','Ticket Created'),(51,7,15,'2014-05-12 16:45:10','Priority changed from <High> to <Medium>'),(52,4,15,'2014-05-12 17:07:09','Status changed from <> to <Open>'),(53,4,15,'2014-05-12 17:07:21','Assigned changed from <> to <David Richardson>'),(54,5,15,'2014-05-12 17:22:28','Priority changed from <High> to <Critical>'),(56,8,15,'2014-05-13 09:54:47','Ticket Created'),(57,9,15,'2014-05-13 15:07:21','Ticket Created'),(58,9,15,'2014-05-14 09:20:42','Event Added'),(59,9,15,'2014-05-14 09:21:26','Status changed from <Open> to <In Progress>'),(61,4,15,'2014-05-14 17:26:26','Status changed from <Open> to <In Progress>'),(62,8,15,'2014-05-20 12:29:52','Status changed from <Open> to <In Progress>'),(63,10,15,'2014-05-20 17:26:04','Ticket Created'),(64,10,15,'2014-05-22 13:30:05','Status changed from <Open> to <In Progress>'),(65,4,15,'2014-05-22 13:46:17','Status changed from <In Progress> to <Closed>'),(66,5,15,'2014-05-23 16:07:30','Assigned changed from <David Richardson> to <Justin Davidow>'),(67,11,15,'2014-05-26 13:04:01','Ticket Created'),(68,12,15,'2014-06-05 17:00:16','Ticket Created'),(69,12,15,'2014-06-06 14:12:03','Assigned changed from <No User> to <David Richardson>'),(70,12,15,'2014-06-06 14:12:46','Assigned changed from <No User> to <David Richardson>'),(71,13,15,'2014-06-06 14:23:12','Ticket Created'),(72,12,15,'2014-06-06 14:31:32','Assigned changed from <No User> to <David Richardson>'),(73,12,15,'2014-06-06 14:32:00','Assigned changed from <No User> to <David Richardson>'),(74,12,15,'2014-06-06 14:37:19','Assigned changed from <No User> to <David Richardson>'),(75,14,15,'2014-06-06 14:47:43','Ticket Created'),(76,15,15,'2014-06-06 15:10:46','Ticket Created'),(77,13,15,'2014-06-06 16:17:38','Assigned changed from <No User> to <David Richardson>'),(78,14,15,'2014-06-06 16:17:40','Assigned changed from <No User> to <David Richardson>'),(79,13,15,'2014-06-06 16:19:38','Assigned changed from <No User> to <David Richardson>'),(80,14,15,'2014-06-06 16:20:08','Assigned changed from <No User> to <David Richardson>'),(81,13,15,'2014-06-06 16:23:55','Assigned changed from <No User> to <David Richardson>'),(82,13,15,'2014-06-06 16:26:27','Assigned changed from <No User> to <David Richardson>'),(83,16,15,'2014-06-06 16:31:50','Ticket Created'),(84,13,15,'2014-06-06 16:32:23','Assigned changed from <No User> to <David Richardson>'),(85,14,15,'2014-06-06 16:34:19','Assigned changed from <No User> to <David Richardson>'),(86,15,15,'2014-06-06 16:35:10','Assigned changed from <No User> to <David Richardson>'),(87,16,15,'2014-06-06 16:35:27','Assigned changed from <No User> to <David Richardson>'),(88,14,15,'2014-06-06 16:37:52','Assigned changed from <No User> to <David Richardson>'),(89,15,15,'2014-06-06 16:38:01','Assigned changed from <No User> to <David Richardson>'),(90,16,15,'2014-06-06 16:41:09','Event Added'),(91,14,15,'2014-06-06 16:48:35','Assigned changed from <No User> to <David Richardson>'),(92,15,15,'2014-06-06 16:48:37','Assigned changed from <No User> to <David Richardson>'),(93,14,15,'2014-06-06 17:01:56','Assigned changed from <No User> to <David Richardson>'),(94,14,15,'2014-06-06 17:14:27','Assigned changed from <No User> to <David Richardson>'),(95,6,15,'2014-06-12 15:07:08','Event Added'),(96,6,15,'2014-06-12 15:11:59','Event Added'),(103,18,15,'2014-06-12 15:59:32','Ticket Created'),(104,16,15,'2014-06-12 16:03:46','Assigned changed from <No User> to <David Richardson>'),(105,15,15,'2014-06-12 16:03:49','Assigned changed from <No User> to <David Richardson>'),(106,19,15,'2014-06-12 16:05:37','Ticket Created'),(107,18,15,'2014-06-12 17:31:39','Assigned changed from <No User> to <David Richardson>'),(108,19,15,'2014-06-18 13:40:29','Event Added'),(109,20,15,'2014-07-31 11:40:29','Ticket Created'),(110,19,15,'2014-07-31 14:09:36','Assigned changed from <No User> to <David Richardson>'),(111,20,15,'2014-07-31 14:09:38','Assigned changed from <No User> to <David Richardson>'),(112,21,15,'2014-07-31 14:49:32','Ticket Created'),(113,22,15,'2014-07-31 14:50:01','Ticket Created'),(114,6,15,'2014-08-01 09:41:38','Ticket Added to Project 1'),(115,6,15,'2014-08-01 09:41:59','Ticket Added to Project 0'),(116,21,15,'2014-08-01 09:55:06','Assigned changed from <No User> to <David Richardson>'),(117,22,15,'2014-08-01 09:55:13','Assigned changed from <No User> to <David Richardson>'),(118,23,15,'2014-08-01 09:56:04','Ticket Created'),(119,23,15,'2014-08-01 09:56:32','Assigned changed from <No User> to <David Richardson>'),(120,6,15,'2014-08-13 15:58:14','Ticket Completion updated to 90%'),(121,6,15,'2014-08-13 15:58:18','Ticket Completion updated to 70%'),(122,6,15,'2014-08-13 15:58:24','Ticket Completion updated to 90%'),(123,6,15,'2014-08-13 16:00:25','Status changed from <Open> to <Closed>'),(124,6,15,'2014-08-13 16:00:26','Ticket Closed'),(125,6,15,'2014-08-13 16:00:31','Status changed from <Closed> to <Open>'),(126,6,15,'2014-08-13 16:01:30','Status changed from <Open> to <Closed>'),(127,6,15,'2014-08-13 16:01:31','Ticket Closed -- Completion set to 100%'),(128,6,15,'2014-08-13 16:01:34','Status changed from <Closed> to <Open>'),(129,6,15,'2014-08-13 16:02:09','Status changed from <Open> to <Closed>'),(130,6,15,'2014-08-13 16:02:10','Ticket Closed -- Completion set to 100%'),(131,6,15,'2014-08-13 16:02:13','Status changed from <Closed> to <Open>'),(132,6,15,'2014-08-13 16:02:24','Ticket Completion updated to 70%'),(133,6,15,'2014-08-13 16:42:58','Status changed from <Open> to <Closed>'),(134,6,15,'2014-08-13 16:42:59','Ticket Closed -- Completion set to 100%'),(135,8,15,'2014-08-13 16:43:15','Status changed from <In Progress> to <Closed>'),(136,8,15,'2014-08-13 16:43:15','Ticket Closed -- Completion set to 100%'),(137,9,15,'2014-08-13 16:43:22','Status changed from <In Progress> to <Closed>'),(138,9,15,'2014-08-13 16:43:22','Ticket Closed -- Completion set to 100%'),(139,18,15,'2014-08-13 16:43:35','Status changed from <Open> to <Closed>'),(140,18,15,'2014-08-13 16:43:36','Ticket Closed -- Completion set to 100%'),(141,10,15,'2014-08-14 13:20:37','Status changed from <In Progress> to <Closed>'),(142,10,15,'2014-08-14 13:20:38','Ticket Closed -- Completion set to 100%'),(143,10,15,'2014-08-14 13:52:47','Billing Status Set To <Billed>'),(144,10,15,'2014-08-14 13:52:57','Billing Status Set To <Billed>'),(145,4,15,'2014-08-14 14:05:39','Status changed from <Closed> to <Open>'),(146,4,15,'2014-08-14 14:05:46','Status changed from <Open> to <Closed>'),(147,4,15,'2014-08-14 14:05:47','Ticket Closed -- Completion set to 100%'),(148,18,15,'2014-08-14 14:19:58','Billing Status Set To <Billed>'),(149,18,15,'2014-08-14 14:20:01','Billing Status Set To <Billed>'),(150,18,15,'2014-08-14 14:22:08','Billing Status Set To <Billed>'),(151,4,15,'2014-08-14 15:24:30','Billing Status Set To <Billed>'),(152,4,15,'2014-08-14 15:48:31','Ticket Billing Status set to '),(153,4,15,'2014-08-14 15:49:00','Ticket Billing Status set to '),(154,4,15,'2014-08-14 15:49:26','Ticket Billing Status set to '),(155,4,15,'2014-08-14 15:49:26','Status changed from <Closed> to <Open>'),(156,4,15,'2014-08-14 15:49:35','Ticket Billing Status set to '),(157,4,15,'2014-08-14 15:50:29','Ticket Billing Status set to '),(158,4,15,'2014-08-14 15:50:33','Ticket Billing Status set to '),(159,4,15,'2014-08-14 15:50:33','Status changed from <Open> to <Closed>'),(160,4,15,'2014-08-14 15:51:02','Ticket Billing Status set to 1'),(161,4,15,'2014-08-14 15:51:02','Status changed from <Closed> to <Open>'),(162,4,15,'2014-08-14 15:51:07','Ticket Billing Status set to 2'),(163,4,15,'2014-08-14 15:51:07','Status changed from <Open> to <Closed>'),(164,4,15,'2014-08-14 15:53:48','Ticket Billing Status set to Open Ticket'),(165,4,15,'2014-08-14 15:53:48','Status changed from <Closed> to <Open>'),(166,4,15,'2014-08-14 15:53:55','Ticket Billing Status set to Ready to Bill'),(167,4,15,'2014-08-14 15:53:55','Status changed from <Open> to <Closed>'),(168,4,15,'2014-08-14 15:54:14','Ticket Billing Status set to <Ready to Bill>'),(169,4,15,'2014-08-14 15:57:25','Ticket Billing Status set to <Open Ticket>'),(170,4,15,'2014-08-14 15:57:25','Status changed from <Closed> to <Open>'),(171,4,15,'2014-08-14 15:57:35','Status changed from <Open> to <Closed>'),(172,4,15,'2014-08-14 15:57:36','Ticket Closed -- Completion set to 100%'),(173,6,15,'2014-08-14 16:49:14','Billing Status Set To <Billed>'),(174,8,15,'2014-08-14 16:49:16','Billing Status Set To <Billed>'),(175,10,15,'2014-08-14 16:54:27','Billing Status Set to <Paid>'),(176,18,15,'2014-08-14 16:54:29','Billing Status Set to <Paid>'),(177,6,15,'2014-08-14 16:54:30','Billing Status Set to <Paid>'),(178,8,15,'2014-08-14 16:54:32','Billing Status Set to <Paid>'),(179,4,15,'2014-08-14 16:54:36','Billing Status Set To <Billed>'),(180,4,15,'2014-08-14 16:54:39','Billing Status Set to <Paid>'),(181,4,15,'2014-08-14 16:55:16','Ticket Billing Status set to <Ready to Bill>'),(182,6,15,'2014-08-14 16:55:32','Ticket Billing Status set to <Ready to Bill>'),(183,8,15,'2014-08-14 16:55:41','Ticket Billing Status set to <Ready to Bill>'),(184,9,15,'2014-08-14 16:55:49','Ticket Billing Status set to <Ready to Bill>'),(185,10,15,'2014-08-14 16:55:58','Ticket Billing Status set to <Ready to Bill>'),(186,18,15,'2014-08-14 16:56:10','Ticket Billing Status set to <Ready to Bill>'),(187,4,15,'2014-08-14 16:56:35','Billing Status Set To <Billed>'),(188,9,15,'2014-08-14 16:56:36','Billing Status Set To <Billed>'),(189,4,15,'2014-08-14 16:56:51','Billing Status Set to <Paid>'),(190,4,15,'2014-08-14 16:57:48','Billing Status Set to <Paid>'),(191,7,15,'2014-08-14 17:11:55','Event Added'),(192,7,15,'2014-08-14 17:17:57','Event Added'),(193,7,15,'2014-08-14 17:18:31','Event Added'),(194,7,15,'2014-08-14 17:19:10','Event Deleted'),(195,7,15,'2014-08-14 17:19:14','Event Deleted'),(196,7,15,'2014-08-14 17:22:14','Event Added'),(197,10,15,'2014-08-15 16:46:08','Billing Status Set To <Billed>'),(198,12,15,'2014-08-15 16:46:37','Ticket Billing Status set to <Ready to Bill>'),(199,12,15,'2014-08-15 16:46:37','Status changed from <Open> to <Closed>'),(200,13,15,'2014-08-15 16:47:15','Ticket Billing Status set to <Ready to Bill>'),(201,13,15,'2014-08-15 16:47:15','Status changed from <Open> to <Closed>'),(202,14,15,'2014-08-15 16:47:41','Ticket Billing Status set to <Ready to Bill>'),(203,14,15,'2014-08-15 16:47:41','Status changed from <Open> to <Closed>'),(205,24,15,'2014-08-19 10:09:39','Ticket Created'),(206,24,15,'2014-08-19 10:09:48','Assigned changed from <No User> to <David Richardson>'),(207,11,15,'2014-08-19 14:40:14','Status changed from <Open> to <Closed>'),(208,11,15,'2014-08-19 14:40:15','Ticket Closed -- Completion set to 100%'),(209,11,15,'2014-08-19 14:44:51','Status changed from <Closed> to <Open>'),(210,11,15,'2014-08-19 14:46:37','Status changed from <Open> to <Closed>'),(211,11,15,'2014-08-19 14:46:38','Ticket Closed -- Completion set to 100%'),(212,11,15,'2014-08-19 14:46:42','Status changed from <Closed> to <Open>'),(213,11,15,'2014-08-19 14:46:42','Ticket Re-Opened'),(214,11,15,'2014-08-19 14:46:47','Status changed from <Open> to <Closed>'),(215,11,15,'2014-08-19 14:46:48','Ticket Closed -- Completion set to 100%'),(216,11,15,'2014-08-19 14:48:28','Ticket Billing Status set to <Open Ticket>'),(217,11,15,'2014-08-19 14:48:28','Status changed from <Closed> to <Open>'),(218,10,15,'2014-08-19 15:33:40','Event Added'),(219,11,15,'2014-08-20 17:00:48','Status changed from <Open> to <Closed>'),(220,11,15,'2014-08-20 17:00:53','Ticket Closed -- Completion set to 100%'),(221,12,15,'2014-08-20 17:01:10','Billing Status Set To <Billed>'),(222,11,15,'2014-08-20 17:01:12','Billing Status Set To <Billed>'),(223,13,15,'2014-08-20 17:01:13','Billing Status Set To <Billed>'),(224,14,15,'2014-08-20 17:01:14','Billing Status Set To <Billed>'),(225,18,15,'2014-08-20 17:01:15','Billing Status Set To <Billed>'),(226,19,15,'2014-08-21 11:43:52','Status changed from <Open> to <Closed>'),(227,19,15,'2014-08-21 11:43:55','Ticket Closed -- Completion set to 100%'),(228,15,15,'2014-08-21 11:44:11','Status changed from <Open> to <Closed>'),(229,15,15,'2014-08-21 11:44:12','Ticket Closed -- Completion set to 100%'),(230,20,15,'2014-08-21 11:44:52','Ticket Billing Status set to <Billed>'),(231,20,15,'2014-08-21 11:44:57','Status changed from <Open> to <Closed>'),(232,20,15,'2014-08-21 11:44:59','Ticket Closed -- Completion set to 100%'),(233,20,15,'2014-08-21 11:45:04','Ticket Billing Status set to <Billed>'),(234,21,15,'2014-08-21 11:45:44','Status changed from <Open> to <Closed>'),(235,21,15,'2014-08-21 11:45:45','Ticket Closed -- Completion set to 100%'),(236,23,15,'2014-08-21 11:45:58','Status changed from <Open> to <Closed>'),(237,23,15,'2014-08-21 11:45:59','Ticket Closed -- Completion set to 100%'),(238,20,15,'2014-08-21 11:46:53','Ticket Billing Status set to <Overdue>'),(239,4,15,'2014-08-21 11:58:49','Ticket Billing Status set to <Ready to Bill>'),(240,6,15,'2014-08-21 11:58:55','Ticket Billing Status set to <Ready to Bill>'),(241,8,15,'2014-08-21 11:59:02','Ticket Billing Status set to <Ready to Bill>'),(242,9,15,'2014-08-21 11:59:06','Ticket Billing Status set to <Ready to Bill>'),(243,10,15,'2014-08-21 11:59:12','Ticket Billing Status set to <Ready to Bill>'),(244,11,15,'2014-08-21 11:59:19','Ticket Billing Status set to <Ready to Bill>'),(245,24,15,'2014-08-21 15:16:02','Status changed from <Open> to <Closed>'),(246,24,15,'2014-08-21 15:16:03','Ticket Closed -- Completion set to 100%'),(247,12,15,'2014-08-21 15:35:22','Event Added'),(248,12,15,'2014-08-21 15:35:35','Ticket Billing Status set to <Ready to Bill>'),(249,24,15,'2014-08-21 15:35:42','Ticket Billing Status set to <Ready to Bill>'),(250,16,15,'2014-08-22 11:19:16','Ticket Billing Status set to <Ready to Bill>'),(251,16,15,'2014-08-22 11:19:16','Status changed from <Open> to <Closed>'),(252,22,15,'2014-08-22 11:20:53','Ticket Billing Status set to <Ready to Bill>'),(253,22,15,'2014-08-22 11:20:53','Status changed from <Open> to <Closed>'),(254,12,15,'2014-08-25 16:21:06','Ticket Billing Status set to <Ready to Bill>'),(255,24,15,'2014-08-25 16:21:19','Ticket Billing Status set to <Ready to Bill>'),(256,21,15,'2014-08-25 16:21:33','Ticket Billing Status set to <Ready to Bill>'),(257,25,15,'2014-08-26 13:22:45','Ticket Created'),(258,26,15,'2014-09-16 09:48:57','Ticket Created'),(259,27,15,'2014-09-16 17:11:56','Ticket Created'),(260,26,15,'2014-09-16 17:13:56','Assigned changed from <No User> to <David Richardson>'),(261,28,15,'2014-09-17 12:05:57','Ticket Created'),(262,29,15,'2014-09-17 12:06:02','Ticket Created'),(263,4,15,'2014-10-08 14:45:09','Ticket Billing Status set to <Ready to Bill>'),(264,6,15,'2014-10-08 14:45:18','Ticket Billing Status set to <Ready to Bill>'),(265,8,15,'2014-10-08 14:45:27','Ticket Billing Status set to <Ready to Bill>'),(266,9,15,'2014-10-08 14:45:38','Ticket Billing Status set to <Ready to Bill>'),(267,9,15,'2014-10-08 14:45:50','Ticket Billing Status set to <Billed>'),(268,11,15,'2014-10-08 14:45:58','Ticket Billing Status set to <Billed>'),(269,12,15,'2014-10-08 14:46:09','Ticket Billing Status set to <Billed>'),(270,13,15,'2014-10-08 14:46:18','Ticket Billing Status set to <Ready to Bill>'),(271,18,15,'2014-10-08 14:46:26','Ticket Billing Status set to <Ready to Bill>'),(272,30,15,'2014-10-08 14:48:56','Ticket Created'),(273,25,15,'2014-10-08 14:49:34','Ticket Billing Status set to <Ready to Bill>'),(274,25,15,'2014-10-08 14:49:35','Status changed from <Open> to <Closed>'),(275,26,15,'2014-10-08 14:49:48','Ticket Billing Status set to <Ready to Bill>'),(276,26,15,'2014-10-08 14:49:48','Status changed from <Open> to <Closed>'),(277,30,15,'2014-10-08 14:50:01','Ticket Billing Status set to <Billed>'),(278,30,15,'2014-10-08 14:50:01','Status changed from <Open> to <Closed>'),(279,4,15,'2014-10-08 14:59:15','Ticket Billing Status set to <Ready to Bill>'),(280,6,15,'2014-10-08 14:59:26','Ticket Billing Status set to <Ready to Bill>'),(281,8,15,'2014-10-08 14:59:33','Ticket Billing Status set to <Ready to Bill>'),(282,8,15,'2014-10-08 14:59:44','Ticket Billing Status set to <Ready to Bill>'),(283,9,15,'2014-10-08 14:59:51','Ticket Billing Status set to <Ready to Bill>'),(284,10,15,'2014-10-08 14:59:58','Ticket Billing Status set to <Ready to Bill>'),(285,11,15,'2014-10-08 15:00:09','Ticket Billing Status set to <Ready to Bill>'),(286,12,15,'2014-10-08 15:00:20','Ticket Billing Status set to <Ready to Bill>'),(287,13,15,'2014-10-08 15:00:31','Ticket Billing Status set to <Ready to Bill>'),(288,14,15,'2014-10-08 15:00:38','Ticket Billing Status set to <Ready to Bill>'),(289,15,15,'2014-10-08 15:00:46','Ticket Billing Status set to <Ready to Bill>'),(290,16,15,'2014-10-08 15:01:02','Ticket Billing Status set to <Ready to Bill>'),(291,18,15,'2014-10-08 15:01:10','Ticket Billing Status set to <Ready to Bill>'),(292,19,15,'2014-10-08 15:01:19','Ticket Billing Status set to <Ready to Bill>'),(293,20,15,'2014-10-08 15:01:32','Ticket Billing Status set to <Ready to Bill>'),(294,21,15,'2014-10-08 15:01:42','Ticket Billing Status set to <Ready to Bill>'),(295,25,15,'2014-10-08 15:02:29','Ticket Billing Status set to <Ready to Bill>'),(296,12,15,'2014-10-08 15:16:09','Ticket Billing Status set to <Ready to Bill>'),(297,18,15,'2014-10-08 15:16:18','Ticket Billing Status set to <Ready to Bill>'),(298,19,15,'2014-10-08 15:16:26','Ticket Billing Status set to <Ready to Bill>'),(299,20,15,'2014-10-08 15:16:33','Ticket Billing Status set to <Ready to Bill>'),(300,21,15,'2014-10-08 15:16:39','Ticket Billing Status set to <Ready to Bill>'),(301,4,15,'2014-10-08 15:22:36','Ticket Billing Status set to <Ready to Bill>'),(302,6,15,'2014-10-08 15:22:45','Ticket Billing Status set to <Ready to Bill>'),(303,8,15,'2014-10-08 15:22:52','Ticket Billing Status set to <Ready to Bill>'),(304,9,15,'2014-10-08 15:22:57','Ticket Billing Status set to <Ready to Bill>'),(305,10,15,'2014-10-08 15:23:03','Ticket Billing Status set to <Ready to Bill>'),(306,11,15,'2014-10-08 15:23:10','Ticket Billing Status set to <Ready to Bill>'),(307,13,15,'2014-10-08 15:23:18','Ticket Billing Status set to <Ready to Bill>'),(308,14,15,'2014-10-08 15:23:25','Ticket Billing Status set to <Ready to Bill>'),(309,15,15,'2014-10-08 15:23:33','Ticket Billing Status set to <Ready to Bill>'),(310,16,15,'2014-10-08 15:23:55','Ticket Billing Status set to <Ready to Bill>'),(311,19,15,'2014-10-09 16:38:27','Event Deleted'),(313,30,15,'2014-10-09 17:01:06','Event Added'),(314,4,15,'2014-12-18 14:58:06','Status changed from <Closed> to <Open>'),(315,4,15,'2014-12-18 14:58:12','Ticket Re-Opened'),(316,4,15,'2014-12-18 14:58:25','Status changed from <Open> to <Closed>'),(317,4,15,'2014-12-18 14:58:30','Ticket Closed -- Completion set to 100%'),(318,4,15,'2014-12-18 14:58:31','Ticket Closed -- Completion set to 100%'),(319,27,15,'2014-12-18 15:05:54','Assigned changed from <No User> to <David Richardson>'),(320,28,15,'2014-12-18 15:06:01','Assigned changed from <No User> to <David Richardson>'),(321,29,15,'2014-12-18 15:06:09','Assigned changed from <No User> to <David Richardson>'),(322,4,15,'2014-12-18 15:12:35','Ticket Billing Status set to <Paid>'),(323,6,15,'2014-12-18 15:12:45','Ticket Billing Status set to <Paid>'),(324,8,15,'2014-12-18 15:13:03','Ticket Billing Status set to <Overdue>'),(325,6,15,'2014-12-18 15:34:52','Status changed from <Closed> to <Open>'),(326,6,15,'2014-12-18 15:34:58','Ticket Re-Opened'),(327,31,15,'2014-12-18 16:27:00','Ticket Created'),(328,8,15,'2015-03-06 10:16:26','Event Added'),(329,9,15,'2015-03-06 10:58:51','Event Added'),(330,6,15,'2015-03-06 11:56:43','Event Added'),(331,6,15,'2015-03-06 11:57:07','Event Added');
+/*!40000 ALTER TABLE `ticket_history` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `ticket_priorities`
 --
 
@@ -842,7 +871,7 @@ CREATE TABLE `tickets` (
   `date_created` datetime NOT NULL,
   `customer_id` int(11) NOT NULL,
   `contact_id` int(11) NOT NULL,
-  `problem_type_id` int(11) NOT NULL,
+  `ticket_type_id` int(11) NOT NULL,
   `service_type_id` int(11) NOT NULL,
   `ticket_priority_id` int(11) NOT NULL,
   `problem_description` text NOT NULL,
@@ -867,35 +896,6 @@ LOCK TABLES `tickets` WRITE;
 /*!40000 ALTER TABLE `tickets` DISABLE KEYS */;
 INSERT INTO `tickets` VALUES (4,'0000-00-00 00:00:00',1,1,3,1,2,'Some random ticket descr','',2,15,'2014-12-18 14:58:25',0,0,100,'5','0'),(5,'0000-00-00 00:00:00',1,1,3,1,4,'This is a problem description.','',2,8,'2014-05-12 13:08:55',0,1,100,'3','123'),(6,'2014-05-12 15:17:57',1,1,4,1,3,'Testsetsetsty','',1,15,'2014-12-18 15:34:52',0,0,100,'1','0'),(7,'2014-05-12 16:10:13',1,1,2,2,2,'rghaerhaehrhah','',2,8,'2014-05-12 16:10:13',0,1,80,'3','123'),(8,'2014-05-13 09:54:47',1,1,2,2,3,'test','',2,15,'2014-08-13 16:43:15',0,2,100,'3','0'),(9,'2014-05-13 15:07:21',1,1,3,3,2,'This is an <strong>example</strong> description for the projects module.','',2,15,'2014-08-13 16:43:22',0,1,100,'3','123'),(10,'2014-05-20 17:26:04',1,1,1,1,2,'Test','',2,15,'2014-08-14 13:20:37',1,3,100,'3','0'),(11,'2014-05-26 13:04:01',1,1,1,1,1,'&nbsp;&nbsp;&nbsp;&nbsp;test<br><div>TEST</div><br><div>test</div>','',2,15,'2014-08-20 17:00:48',0,0,100,'3','0'),(12,'2014-06-05 17:00:16',2,2,1,1,1,'This is the project description here.','',2,15,'2014-08-15 16:46:37',0,0,100,'3','0'),(13,'2014-06-06 14:23:12',1,1,1,1,2,'Sample unassigned ticket.','',2,15,'2014-08-15 16:47:15',0,0,100,'3','0'),(14,'2014-06-06 14:47:43',1,1,1,1,2,'Test Problem Description Here.','',2,15,'2014-08-15 16:47:41',1,0,100,'3','0'),(15,'2014-06-06 15:10:46',1,1,1,1,2,'This is a blanket ticket assigned to nobody.','',2,15,'2014-08-21 11:44:11',0,0,100,'3','0'),(16,'2014-06-06 16:31:50',1,1,1,1,1,'This is another sample ticket.','',2,15,'2014-08-22 11:19:16',0,0,100,'3','0'),(18,'2014-06-12 15:59:32',1,1,1,1,2,'<div style=\"width: 80%\">\r\n<h3><strong>Some Example Ticket Title</strong></h3>\r\n\r\n<p>Some Example Ticket Description</p>\r\n\r\n<table border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"float:right; width:100%\">\r\n	<caption><strong>Ticket Tasks</strong></caption>\r\n	<tbody>\r\n		<tr>\r\n			<th style=\"width:50%\">Task</th>\r\n			<th style=\"width:30%\">Comments</th>\r\n			<th style=\"width:20%\">Percentage Completed</th>\r\n		</tr>\r\n		<tr>\r\n			<td>Redesign CKEditor Interface</td>\r\n			<td>Finished.</td>\r\n			<td>100%</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Create TT Ticket and Event Templates.</td>\r\n			<td>Ticket has been created, event has not.</td>\r\n			<td>50%</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Push this to dev server for testing.</td>\r\n			<td>This has not been started yet.</td>\r\n			<td>30%</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>\r\n','',2,15,'2014-08-13 16:43:35',0,0,100,'3','0'),(19,'2014-06-12 16:05:37',1,1,1,1,1,'<div style=\"width: 80%\">\r\n<h3><strong>Fix Product Search on Cleanflow.</strong></h3>\r\n\r\n<p>Search is slow, doesn&#39;t have images and needs to include more relevant results. Also some simple formatting things need to be fixed and cross browser compliance verified,</p>\r\n\r\n<table border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"float:right; width:100%\">\r\n	<caption><strong>Ticket Tasks</strong></caption>\r\n	<tbody>\r\n		<tr>\r\n			<th style=\"width:50%\">Task</th>\r\n			<th style=\"width:30%\">Comments</th>\r\n			<th style=\"width:20%\">Percentage Completed</th>\r\n		</tr>\r\n		<tr>\r\n			<td>Display Thumbnails in Search Results</td>\r\n			<td>Almost done, needs formatting</td>\r\n			<td>90%</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Setup Dev Site</td>\r\n			<td>In Progress</td>\r\n			<td>100%</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Some other task.</td>\r\n			<td>Waiting</td>\r\n			<td>0%</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>\r\n','',2,15,'2014-08-21 11:43:52',0,0,100,'3','0'),(20,'2014-07-31 11:40:29',2,2,2,2,2,'<p>Test</p>\r\n','',2,15,'2014-08-21 11:44:57',0,0,100,'3','0'),(21,'2014-07-31 14:49:32',2,2,1,1,2,'<p>Random Test Ticket</p>\r\n','',2,15,'2014-08-21 11:45:44',0,0,100,'3','0'),(22,'2014-07-31 14:50:01',1,1,4,3,2,'<p>Some other ticket</p>\r\n','',2,15,'2014-08-22 11:20:53',0,0,100,'3','0'),(23,'2014-08-01 09:56:04',2,2,2,1,2,'<p>Testing to see if unassignedtickets grid&nbsp;gets hidden on no tickets, but displayed when unassigned tickets are found.</p>\r\n','',2,15,'2014-08-21 11:45:58',0,0,100,'3','0'),(24,'2014-08-19 10:09:39',2,2,1,1,1,'<p>Test</p>\r\n','',2,15,'2014-08-21 15:16:02',0,0,100,'3','0'),(25,'2014-08-26 13:22:45',1,1,1,1,3,'<p>Test</p>\r\n','',2,15,'2014-10-08 14:49:34',0,0,100,'3',NULL),(26,'2014-09-16 09:48:57',2,2,2,1,1,'<p>Sample Ticket</p>\r\n','',2,15,'2014-10-08 14:49:48',0,0,100,'3',NULL),(27,'2014-09-16 17:11:56',1,1,1,2,3,'<p>Testing Email Generation</p>\r\n','',2,15,'2014-09-16 17:11:56',0,0,0,'3',NULL),(28,'2014-09-17 12:05:57',1,1,1,3,4,'Test','',2,15,'2014-09-17 12:05:57',0,0,0,'3',NULL),(29,'2014-09-17 12:06:02',1,1,1,3,4,'Test','',2,15,'2014-09-17 12:06:02',0,0,0,'3',NULL),(30,'2014-10-08 14:48:56',1,1,3,3,2,'<p>Test Test Test</p>\r\n','',2,15,'2014-10-08 14:50:01',0,0,100,'3',NULL),(31,'2014-12-18 16:27:00',2,2,5,1,1,'<p>Test Ticket for Problem Type &#39;Phone&#39;.</p>\r\n','',1,15,'2014-12-18 16:27:00',0,0,0,'1',NULL);
 /*!40000 ALTER TABLE `tickets` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `tickets_history`
---
-
-DROP TABLE IF EXISTS `tickets_history`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tickets_history` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `ticket_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `date` datetime NOT NULL,
-  `action` text NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `history_ticket_id` (`ticket_id`),
-  CONSTRAINT `tickets_history_ibfk_1` FOREIGN KEY (`ticket_id`) REFERENCES `tickets` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=332 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `tickets_history`
---
-
-LOCK TABLES `tickets_history` WRITE;
-/*!40000 ALTER TABLE `tickets_history` DISABLE KEYS */;
-INSERT INTO `tickets_history` VALUES (19,4,15,'2014-05-08 14:06:33','Ticket Created'),(27,5,15,'2014-05-08 15:24:11','Ticket Created'),(35,5,15,'2014-05-12 12:31:43','Assigned changed from <> to <David Richardson>'),(36,5,15,'2014-05-12 12:31:53','Status changed from <> to <Open>'),(37,5,15,'2014-05-12 12:31:59','Priority changed from <> to <High>'),(40,5,15,'2014-05-12 13:08:55','Status changed from <Open> to <In Progress>'),(41,5,15,'2014-05-12 13:16:47','Event Added'),(46,6,15,'2014-05-12 15:17:57','Ticket Created'),(47,6,15,'2014-05-12 15:36:41','Event Added'),(50,7,15,'2014-05-12 16:10:13','Ticket Created'),(51,7,15,'2014-05-12 16:45:10','Priority changed from <High> to <Medium>'),(52,4,15,'2014-05-12 17:07:09','Status changed from <> to <Open>'),(53,4,15,'2014-05-12 17:07:21','Assigned changed from <> to <David Richardson>'),(54,5,15,'2014-05-12 17:22:28','Priority changed from <High> to <Critical>'),(56,8,15,'2014-05-13 09:54:47','Ticket Created'),(57,9,15,'2014-05-13 15:07:21','Ticket Created'),(58,9,15,'2014-05-14 09:20:42','Event Added'),(59,9,15,'2014-05-14 09:21:26','Status changed from <Open> to <In Progress>'),(61,4,15,'2014-05-14 17:26:26','Status changed from <Open> to <In Progress>'),(62,8,15,'2014-05-20 12:29:52','Status changed from <Open> to <In Progress>'),(63,10,15,'2014-05-20 17:26:04','Ticket Created'),(64,10,15,'2014-05-22 13:30:05','Status changed from <Open> to <In Progress>'),(65,4,15,'2014-05-22 13:46:17','Status changed from <In Progress> to <Closed>'),(66,5,15,'2014-05-23 16:07:30','Assigned changed from <David Richardson> to <Justin Davidow>'),(67,11,15,'2014-05-26 13:04:01','Ticket Created'),(68,12,15,'2014-06-05 17:00:16','Ticket Created'),(69,12,15,'2014-06-06 14:12:03','Assigned changed from <No User> to <David Richardson>'),(70,12,15,'2014-06-06 14:12:46','Assigned changed from <No User> to <David Richardson>'),(71,13,15,'2014-06-06 14:23:12','Ticket Created'),(72,12,15,'2014-06-06 14:31:32','Assigned changed from <No User> to <David Richardson>'),(73,12,15,'2014-06-06 14:32:00','Assigned changed from <No User> to <David Richardson>'),(74,12,15,'2014-06-06 14:37:19','Assigned changed from <No User> to <David Richardson>'),(75,14,15,'2014-06-06 14:47:43','Ticket Created'),(76,15,15,'2014-06-06 15:10:46','Ticket Created'),(77,13,15,'2014-06-06 16:17:38','Assigned changed from <No User> to <David Richardson>'),(78,14,15,'2014-06-06 16:17:40','Assigned changed from <No User> to <David Richardson>'),(79,13,15,'2014-06-06 16:19:38','Assigned changed from <No User> to <David Richardson>'),(80,14,15,'2014-06-06 16:20:08','Assigned changed from <No User> to <David Richardson>'),(81,13,15,'2014-06-06 16:23:55','Assigned changed from <No User> to <David Richardson>'),(82,13,15,'2014-06-06 16:26:27','Assigned changed from <No User> to <David Richardson>'),(83,16,15,'2014-06-06 16:31:50','Ticket Created'),(84,13,15,'2014-06-06 16:32:23','Assigned changed from <No User> to <David Richardson>'),(85,14,15,'2014-06-06 16:34:19','Assigned changed from <No User> to <David Richardson>'),(86,15,15,'2014-06-06 16:35:10','Assigned changed from <No User> to <David Richardson>'),(87,16,15,'2014-06-06 16:35:27','Assigned changed from <No User> to <David Richardson>'),(88,14,15,'2014-06-06 16:37:52','Assigned changed from <No User> to <David Richardson>'),(89,15,15,'2014-06-06 16:38:01','Assigned changed from <No User> to <David Richardson>'),(90,16,15,'2014-06-06 16:41:09','Event Added'),(91,14,15,'2014-06-06 16:48:35','Assigned changed from <No User> to <David Richardson>'),(92,15,15,'2014-06-06 16:48:37','Assigned changed from <No User> to <David Richardson>'),(93,14,15,'2014-06-06 17:01:56','Assigned changed from <No User> to <David Richardson>'),(94,14,15,'2014-06-06 17:14:27','Assigned changed from <No User> to <David Richardson>'),(95,6,15,'2014-06-12 15:07:08','Event Added'),(96,6,15,'2014-06-12 15:11:59','Event Added'),(103,18,15,'2014-06-12 15:59:32','Ticket Created'),(104,16,15,'2014-06-12 16:03:46','Assigned changed from <No User> to <David Richardson>'),(105,15,15,'2014-06-12 16:03:49','Assigned changed from <No User> to <David Richardson>'),(106,19,15,'2014-06-12 16:05:37','Ticket Created'),(107,18,15,'2014-06-12 17:31:39','Assigned changed from <No User> to <David Richardson>'),(108,19,15,'2014-06-18 13:40:29','Event Added'),(109,20,15,'2014-07-31 11:40:29','Ticket Created'),(110,19,15,'2014-07-31 14:09:36','Assigned changed from <No User> to <David Richardson>'),(111,20,15,'2014-07-31 14:09:38','Assigned changed from <No User> to <David Richardson>'),(112,21,15,'2014-07-31 14:49:32','Ticket Created'),(113,22,15,'2014-07-31 14:50:01','Ticket Created'),(114,6,15,'2014-08-01 09:41:38','Ticket Added to Project 1'),(115,6,15,'2014-08-01 09:41:59','Ticket Added to Project 0'),(116,21,15,'2014-08-01 09:55:06','Assigned changed from <No User> to <David Richardson>'),(117,22,15,'2014-08-01 09:55:13','Assigned changed from <No User> to <David Richardson>'),(118,23,15,'2014-08-01 09:56:04','Ticket Created'),(119,23,15,'2014-08-01 09:56:32','Assigned changed from <No User> to <David Richardson>'),(120,6,15,'2014-08-13 15:58:14','Ticket Completion updated to 90%'),(121,6,15,'2014-08-13 15:58:18','Ticket Completion updated to 70%'),(122,6,15,'2014-08-13 15:58:24','Ticket Completion updated to 90%'),(123,6,15,'2014-08-13 16:00:25','Status changed from <Open> to <Closed>'),(124,6,15,'2014-08-13 16:00:26','Ticket Closed'),(125,6,15,'2014-08-13 16:00:31','Status changed from <Closed> to <Open>'),(126,6,15,'2014-08-13 16:01:30','Status changed from <Open> to <Closed>'),(127,6,15,'2014-08-13 16:01:31','Ticket Closed -- Completion set to 100%'),(128,6,15,'2014-08-13 16:01:34','Status changed from <Closed> to <Open>'),(129,6,15,'2014-08-13 16:02:09','Status changed from <Open> to <Closed>'),(130,6,15,'2014-08-13 16:02:10','Ticket Closed -- Completion set to 100%'),(131,6,15,'2014-08-13 16:02:13','Status changed from <Closed> to <Open>'),(132,6,15,'2014-08-13 16:02:24','Ticket Completion updated to 70%'),(133,6,15,'2014-08-13 16:42:58','Status changed from <Open> to <Closed>'),(134,6,15,'2014-08-13 16:42:59','Ticket Closed -- Completion set to 100%'),(135,8,15,'2014-08-13 16:43:15','Status changed from <In Progress> to <Closed>'),(136,8,15,'2014-08-13 16:43:15','Ticket Closed -- Completion set to 100%'),(137,9,15,'2014-08-13 16:43:22','Status changed from <In Progress> to <Closed>'),(138,9,15,'2014-08-13 16:43:22','Ticket Closed -- Completion set to 100%'),(139,18,15,'2014-08-13 16:43:35','Status changed from <Open> to <Closed>'),(140,18,15,'2014-08-13 16:43:36','Ticket Closed -- Completion set to 100%'),(141,10,15,'2014-08-14 13:20:37','Status changed from <In Progress> to <Closed>'),(142,10,15,'2014-08-14 13:20:38','Ticket Closed -- Completion set to 100%'),(143,10,15,'2014-08-14 13:52:47','Billing Status Set To <Billed>'),(144,10,15,'2014-08-14 13:52:57','Billing Status Set To <Billed>'),(145,4,15,'2014-08-14 14:05:39','Status changed from <Closed> to <Open>'),(146,4,15,'2014-08-14 14:05:46','Status changed from <Open> to <Closed>'),(147,4,15,'2014-08-14 14:05:47','Ticket Closed -- Completion set to 100%'),(148,18,15,'2014-08-14 14:19:58','Billing Status Set To <Billed>'),(149,18,15,'2014-08-14 14:20:01','Billing Status Set To <Billed>'),(150,18,15,'2014-08-14 14:22:08','Billing Status Set To <Billed>'),(151,4,15,'2014-08-14 15:24:30','Billing Status Set To <Billed>'),(152,4,15,'2014-08-14 15:48:31','Ticket Billing Status set to '),(153,4,15,'2014-08-14 15:49:00','Ticket Billing Status set to '),(154,4,15,'2014-08-14 15:49:26','Ticket Billing Status set to '),(155,4,15,'2014-08-14 15:49:26','Status changed from <Closed> to <Open>'),(156,4,15,'2014-08-14 15:49:35','Ticket Billing Status set to '),(157,4,15,'2014-08-14 15:50:29','Ticket Billing Status set to '),(158,4,15,'2014-08-14 15:50:33','Ticket Billing Status set to '),(159,4,15,'2014-08-14 15:50:33','Status changed from <Open> to <Closed>'),(160,4,15,'2014-08-14 15:51:02','Ticket Billing Status set to 1'),(161,4,15,'2014-08-14 15:51:02','Status changed from <Closed> to <Open>'),(162,4,15,'2014-08-14 15:51:07','Ticket Billing Status set to 2'),(163,4,15,'2014-08-14 15:51:07','Status changed from <Open> to <Closed>'),(164,4,15,'2014-08-14 15:53:48','Ticket Billing Status set to Open Ticket'),(165,4,15,'2014-08-14 15:53:48','Status changed from <Closed> to <Open>'),(166,4,15,'2014-08-14 15:53:55','Ticket Billing Status set to Ready to Bill'),(167,4,15,'2014-08-14 15:53:55','Status changed from <Open> to <Closed>'),(168,4,15,'2014-08-14 15:54:14','Ticket Billing Status set to <Ready to Bill>'),(169,4,15,'2014-08-14 15:57:25','Ticket Billing Status set to <Open Ticket>'),(170,4,15,'2014-08-14 15:57:25','Status changed from <Closed> to <Open>'),(171,4,15,'2014-08-14 15:57:35','Status changed from <Open> to <Closed>'),(172,4,15,'2014-08-14 15:57:36','Ticket Closed -- Completion set to 100%'),(173,6,15,'2014-08-14 16:49:14','Billing Status Set To <Billed>'),(174,8,15,'2014-08-14 16:49:16','Billing Status Set To <Billed>'),(175,10,15,'2014-08-14 16:54:27','Billing Status Set to <Paid>'),(176,18,15,'2014-08-14 16:54:29','Billing Status Set to <Paid>'),(177,6,15,'2014-08-14 16:54:30','Billing Status Set to <Paid>'),(178,8,15,'2014-08-14 16:54:32','Billing Status Set to <Paid>'),(179,4,15,'2014-08-14 16:54:36','Billing Status Set To <Billed>'),(180,4,15,'2014-08-14 16:54:39','Billing Status Set to <Paid>'),(181,4,15,'2014-08-14 16:55:16','Ticket Billing Status set to <Ready to Bill>'),(182,6,15,'2014-08-14 16:55:32','Ticket Billing Status set to <Ready to Bill>'),(183,8,15,'2014-08-14 16:55:41','Ticket Billing Status set to <Ready to Bill>'),(184,9,15,'2014-08-14 16:55:49','Ticket Billing Status set to <Ready to Bill>'),(185,10,15,'2014-08-14 16:55:58','Ticket Billing Status set to <Ready to Bill>'),(186,18,15,'2014-08-14 16:56:10','Ticket Billing Status set to <Ready to Bill>'),(187,4,15,'2014-08-14 16:56:35','Billing Status Set To <Billed>'),(188,9,15,'2014-08-14 16:56:36','Billing Status Set To <Billed>'),(189,4,15,'2014-08-14 16:56:51','Billing Status Set to <Paid>'),(190,4,15,'2014-08-14 16:57:48','Billing Status Set to <Paid>'),(191,7,15,'2014-08-14 17:11:55','Event Added'),(192,7,15,'2014-08-14 17:17:57','Event Added'),(193,7,15,'2014-08-14 17:18:31','Event Added'),(194,7,15,'2014-08-14 17:19:10','Event Deleted'),(195,7,15,'2014-08-14 17:19:14','Event Deleted'),(196,7,15,'2014-08-14 17:22:14','Event Added'),(197,10,15,'2014-08-15 16:46:08','Billing Status Set To <Billed>'),(198,12,15,'2014-08-15 16:46:37','Ticket Billing Status set to <Ready to Bill>'),(199,12,15,'2014-08-15 16:46:37','Status changed from <Open> to <Closed>'),(200,13,15,'2014-08-15 16:47:15','Ticket Billing Status set to <Ready to Bill>'),(201,13,15,'2014-08-15 16:47:15','Status changed from <Open> to <Closed>'),(202,14,15,'2014-08-15 16:47:41','Ticket Billing Status set to <Ready to Bill>'),(203,14,15,'2014-08-15 16:47:41','Status changed from <Open> to <Closed>'),(205,24,15,'2014-08-19 10:09:39','Ticket Created'),(206,24,15,'2014-08-19 10:09:48','Assigned changed from <No User> to <David Richardson>'),(207,11,15,'2014-08-19 14:40:14','Status changed from <Open> to <Closed>'),(208,11,15,'2014-08-19 14:40:15','Ticket Closed -- Completion set to 100%'),(209,11,15,'2014-08-19 14:44:51','Status changed from <Closed> to <Open>'),(210,11,15,'2014-08-19 14:46:37','Status changed from <Open> to <Closed>'),(211,11,15,'2014-08-19 14:46:38','Ticket Closed -- Completion set to 100%'),(212,11,15,'2014-08-19 14:46:42','Status changed from <Closed> to <Open>'),(213,11,15,'2014-08-19 14:46:42','Ticket Re-Opened'),(214,11,15,'2014-08-19 14:46:47','Status changed from <Open> to <Closed>'),(215,11,15,'2014-08-19 14:46:48','Ticket Closed -- Completion set to 100%'),(216,11,15,'2014-08-19 14:48:28','Ticket Billing Status set to <Open Ticket>'),(217,11,15,'2014-08-19 14:48:28','Status changed from <Closed> to <Open>'),(218,10,15,'2014-08-19 15:33:40','Event Added'),(219,11,15,'2014-08-20 17:00:48','Status changed from <Open> to <Closed>'),(220,11,15,'2014-08-20 17:00:53','Ticket Closed -- Completion set to 100%'),(221,12,15,'2014-08-20 17:01:10','Billing Status Set To <Billed>'),(222,11,15,'2014-08-20 17:01:12','Billing Status Set To <Billed>'),(223,13,15,'2014-08-20 17:01:13','Billing Status Set To <Billed>'),(224,14,15,'2014-08-20 17:01:14','Billing Status Set To <Billed>'),(225,18,15,'2014-08-20 17:01:15','Billing Status Set To <Billed>'),(226,19,15,'2014-08-21 11:43:52','Status changed from <Open> to <Closed>'),(227,19,15,'2014-08-21 11:43:55','Ticket Closed -- Completion set to 100%'),(228,15,15,'2014-08-21 11:44:11','Status changed from <Open> to <Closed>'),(229,15,15,'2014-08-21 11:44:12','Ticket Closed -- Completion set to 100%'),(230,20,15,'2014-08-21 11:44:52','Ticket Billing Status set to <Billed>'),(231,20,15,'2014-08-21 11:44:57','Status changed from <Open> to <Closed>'),(232,20,15,'2014-08-21 11:44:59','Ticket Closed -- Completion set to 100%'),(233,20,15,'2014-08-21 11:45:04','Ticket Billing Status set to <Billed>'),(234,21,15,'2014-08-21 11:45:44','Status changed from <Open> to <Closed>'),(235,21,15,'2014-08-21 11:45:45','Ticket Closed -- Completion set to 100%'),(236,23,15,'2014-08-21 11:45:58','Status changed from <Open> to <Closed>'),(237,23,15,'2014-08-21 11:45:59','Ticket Closed -- Completion set to 100%'),(238,20,15,'2014-08-21 11:46:53','Ticket Billing Status set to <Overdue>'),(239,4,15,'2014-08-21 11:58:49','Ticket Billing Status set to <Ready to Bill>'),(240,6,15,'2014-08-21 11:58:55','Ticket Billing Status set to <Ready to Bill>'),(241,8,15,'2014-08-21 11:59:02','Ticket Billing Status set to <Ready to Bill>'),(242,9,15,'2014-08-21 11:59:06','Ticket Billing Status set to <Ready to Bill>'),(243,10,15,'2014-08-21 11:59:12','Ticket Billing Status set to <Ready to Bill>'),(244,11,15,'2014-08-21 11:59:19','Ticket Billing Status set to <Ready to Bill>'),(245,24,15,'2014-08-21 15:16:02','Status changed from <Open> to <Closed>'),(246,24,15,'2014-08-21 15:16:03','Ticket Closed -- Completion set to 100%'),(247,12,15,'2014-08-21 15:35:22','Event Added'),(248,12,15,'2014-08-21 15:35:35','Ticket Billing Status set to <Ready to Bill>'),(249,24,15,'2014-08-21 15:35:42','Ticket Billing Status set to <Ready to Bill>'),(250,16,15,'2014-08-22 11:19:16','Ticket Billing Status set to <Ready to Bill>'),(251,16,15,'2014-08-22 11:19:16','Status changed from <Open> to <Closed>'),(252,22,15,'2014-08-22 11:20:53','Ticket Billing Status set to <Ready to Bill>'),(253,22,15,'2014-08-22 11:20:53','Status changed from <Open> to <Closed>'),(254,12,15,'2014-08-25 16:21:06','Ticket Billing Status set to <Ready to Bill>'),(255,24,15,'2014-08-25 16:21:19','Ticket Billing Status set to <Ready to Bill>'),(256,21,15,'2014-08-25 16:21:33','Ticket Billing Status set to <Ready to Bill>'),(257,25,15,'2014-08-26 13:22:45','Ticket Created'),(258,26,15,'2014-09-16 09:48:57','Ticket Created'),(259,27,15,'2014-09-16 17:11:56','Ticket Created'),(260,26,15,'2014-09-16 17:13:56','Assigned changed from <No User> to <David Richardson>'),(261,28,15,'2014-09-17 12:05:57','Ticket Created'),(262,29,15,'2014-09-17 12:06:02','Ticket Created'),(263,4,15,'2014-10-08 14:45:09','Ticket Billing Status set to <Ready to Bill>'),(264,6,15,'2014-10-08 14:45:18','Ticket Billing Status set to <Ready to Bill>'),(265,8,15,'2014-10-08 14:45:27','Ticket Billing Status set to <Ready to Bill>'),(266,9,15,'2014-10-08 14:45:38','Ticket Billing Status set to <Ready to Bill>'),(267,9,15,'2014-10-08 14:45:50','Ticket Billing Status set to <Billed>'),(268,11,15,'2014-10-08 14:45:58','Ticket Billing Status set to <Billed>'),(269,12,15,'2014-10-08 14:46:09','Ticket Billing Status set to <Billed>'),(270,13,15,'2014-10-08 14:46:18','Ticket Billing Status set to <Ready to Bill>'),(271,18,15,'2014-10-08 14:46:26','Ticket Billing Status set to <Ready to Bill>'),(272,30,15,'2014-10-08 14:48:56','Ticket Created'),(273,25,15,'2014-10-08 14:49:34','Ticket Billing Status set to <Ready to Bill>'),(274,25,15,'2014-10-08 14:49:35','Status changed from <Open> to <Closed>'),(275,26,15,'2014-10-08 14:49:48','Ticket Billing Status set to <Ready to Bill>'),(276,26,15,'2014-10-08 14:49:48','Status changed from <Open> to <Closed>'),(277,30,15,'2014-10-08 14:50:01','Ticket Billing Status set to <Billed>'),(278,30,15,'2014-10-08 14:50:01','Status changed from <Open> to <Closed>'),(279,4,15,'2014-10-08 14:59:15','Ticket Billing Status set to <Ready to Bill>'),(280,6,15,'2014-10-08 14:59:26','Ticket Billing Status set to <Ready to Bill>'),(281,8,15,'2014-10-08 14:59:33','Ticket Billing Status set to <Ready to Bill>'),(282,8,15,'2014-10-08 14:59:44','Ticket Billing Status set to <Ready to Bill>'),(283,9,15,'2014-10-08 14:59:51','Ticket Billing Status set to <Ready to Bill>'),(284,10,15,'2014-10-08 14:59:58','Ticket Billing Status set to <Ready to Bill>'),(285,11,15,'2014-10-08 15:00:09','Ticket Billing Status set to <Ready to Bill>'),(286,12,15,'2014-10-08 15:00:20','Ticket Billing Status set to <Ready to Bill>'),(287,13,15,'2014-10-08 15:00:31','Ticket Billing Status set to <Ready to Bill>'),(288,14,15,'2014-10-08 15:00:38','Ticket Billing Status set to <Ready to Bill>'),(289,15,15,'2014-10-08 15:00:46','Ticket Billing Status set to <Ready to Bill>'),(290,16,15,'2014-10-08 15:01:02','Ticket Billing Status set to <Ready to Bill>'),(291,18,15,'2014-10-08 15:01:10','Ticket Billing Status set to <Ready to Bill>'),(292,19,15,'2014-10-08 15:01:19','Ticket Billing Status set to <Ready to Bill>'),(293,20,15,'2014-10-08 15:01:32','Ticket Billing Status set to <Ready to Bill>'),(294,21,15,'2014-10-08 15:01:42','Ticket Billing Status set to <Ready to Bill>'),(295,25,15,'2014-10-08 15:02:29','Ticket Billing Status set to <Ready to Bill>'),(296,12,15,'2014-10-08 15:16:09','Ticket Billing Status set to <Ready to Bill>'),(297,18,15,'2014-10-08 15:16:18','Ticket Billing Status set to <Ready to Bill>'),(298,19,15,'2014-10-08 15:16:26','Ticket Billing Status set to <Ready to Bill>'),(299,20,15,'2014-10-08 15:16:33','Ticket Billing Status set to <Ready to Bill>'),(300,21,15,'2014-10-08 15:16:39','Ticket Billing Status set to <Ready to Bill>'),(301,4,15,'2014-10-08 15:22:36','Ticket Billing Status set to <Ready to Bill>'),(302,6,15,'2014-10-08 15:22:45','Ticket Billing Status set to <Ready to Bill>'),(303,8,15,'2014-10-08 15:22:52','Ticket Billing Status set to <Ready to Bill>'),(304,9,15,'2014-10-08 15:22:57','Ticket Billing Status set to <Ready to Bill>'),(305,10,15,'2014-10-08 15:23:03','Ticket Billing Status set to <Ready to Bill>'),(306,11,15,'2014-10-08 15:23:10','Ticket Billing Status set to <Ready to Bill>'),(307,13,15,'2014-10-08 15:23:18','Ticket Billing Status set to <Ready to Bill>'),(308,14,15,'2014-10-08 15:23:25','Ticket Billing Status set to <Ready to Bill>'),(309,15,15,'2014-10-08 15:23:33','Ticket Billing Status set to <Ready to Bill>'),(310,16,15,'2014-10-08 15:23:55','Ticket Billing Status set to <Ready to Bill>'),(311,19,15,'2014-10-09 16:38:27','Event Deleted'),(313,30,15,'2014-10-09 17:01:06','Event Added'),(314,4,15,'2014-12-18 14:58:06','Status changed from <Closed> to <Open>'),(315,4,15,'2014-12-18 14:58:12','Ticket Re-Opened'),(316,4,15,'2014-12-18 14:58:25','Status changed from <Open> to <Closed>'),(317,4,15,'2014-12-18 14:58:30','Ticket Closed -- Completion set to 100%'),(318,4,15,'2014-12-18 14:58:31','Ticket Closed -- Completion set to 100%'),(319,27,15,'2014-12-18 15:05:54','Assigned changed from <No User> to <David Richardson>'),(320,28,15,'2014-12-18 15:06:01','Assigned changed from <No User> to <David Richardson>'),(321,29,15,'2014-12-18 15:06:09','Assigned changed from <No User> to <David Richardson>'),(322,4,15,'2014-12-18 15:12:35','Ticket Billing Status set to <Paid>'),(323,6,15,'2014-12-18 15:12:45','Ticket Billing Status set to <Paid>'),(324,8,15,'2014-12-18 15:13:03','Ticket Billing Status set to <Overdue>'),(325,6,15,'2014-12-18 15:34:52','Status changed from <Closed> to <Open>'),(326,6,15,'2014-12-18 15:34:58','Ticket Re-Opened'),(327,31,15,'2014-12-18 16:27:00','Ticket Created'),(328,8,15,'2015-03-06 10:16:26','Event Added'),(329,9,15,'2015-03-06 10:58:51','Event Added'),(330,6,15,'2015-03-06 11:56:43','Event Added'),(331,6,15,'2015-03-06 11:57:07','Event Added');
-/*!40000 ALTER TABLE `tickets_history` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -988,6 +988,31 @@ INSERT INTO `users` VALUES (1,'joe.funari','46fa32170adef90863c0eb5794fe440e','O
 UNLOCK TABLES;
 
 --
+-- Table structure for table `wtcr_categories`
+--
+
+DROP TABLE IF EXISTS `wtcr_categories`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `wtcr_categories` (
+  `id` int(11) NOT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `default_markup` float DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `wtcr_categories`
+--
+
+LOCK TABLES `wtcr_categories` WRITE;
+/*!40000 ALTER TABLE `wtcr_categories` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wtcr_categories` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `wtcr_competitor_products`
 --
 
@@ -997,7 +1022,7 @@ DROP TABLE IF EXISTS `wtcr_competitor_products`;
 CREATE TABLE `wtcr_competitor_products` (
   `id` int(11) NOT NULL,
   `name` varchar(45) DEFAULT NULL,
-  `competitor_id` int(11) DEFAULT NULL,
+  `wtcr_competitor_id` int(11) DEFAULT NULL,
   `competitor_sku` varchar(45) DEFAULT NULL,
   `wtcr_sku` varchar(45) DEFAULT NULL,
   `competitor_price` float DEFAULT NULL,
@@ -1121,6 +1146,30 @@ LOCK TABLES `wtcr_currency_providers` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `wtcr_manufacturers`
+--
+
+DROP TABLE IF EXISTS `wtcr_manufacturers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `wtcr_manufacturers` (
+  `id` int(11) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `wtcr_manufacturers`
+--
+
+LOCK TABLES `wtcr_manufacturers` WRITE;
+/*!40000 ALTER TABLE `wtcr_manufacturers` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wtcr_manufacturers` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `wtcr_sales_vehicle_templates`
 --
 
@@ -1180,11 +1229,11 @@ DROP TABLE IF EXISTS `wtcr_vendor_products`;
 CREATE TABLE `wtcr_vendor_products` (
   `id` int(11) NOT NULL,
   `name` varchar(45) DEFAULT NULL,
-  `vendor_id` int(11) DEFAULT NULL,
+  `wtcr_vendor_id` int(11) DEFAULT NULL,
   `vendor_sku` varchar(45) DEFAULT NULL,
   `wtcr_sku` varchar(45) DEFAULT NULL,
   `vendor_price` float DEFAULT NULL,
-  `category_id` int(11) DEFAULT NULL,
+  `wtcr_category_id` int(11) DEFAULT NULL,
   `last_updated` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
@@ -1235,4 +1284,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-03-22 16:40:08
+-- Dump completed on 2015-03-22 17:06:52
