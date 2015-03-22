@@ -9,8 +9,8 @@
         <li><?= $this->Html->link(__('New Customer'), ['controller' => 'Customers', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Contacts'), ['controller' => 'Contacts', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Contact'), ['controller' => 'Contacts', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Problem Types'), ['controller' => 'ProblemTypes', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Problem Type'), ['controller' => 'ProblemTypes', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Ticket Types'), ['controller' => 'TicketTypes', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Ticket Type'), ['controller' => 'TicketTypes', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Service Types'), ['controller' => 'ServiceTypes', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Service Type'), ['controller' => 'ServiceTypes', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Ticket Priorities'), ['controller' => 'TicketPriorities', 'action' => 'index']) ?> </li>
@@ -27,8 +27,8 @@
         <li><?= $this->Html->link(__('New Billing Status'), ['controller' => 'BillingStatuses', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Quotes'), ['controller' => 'Quotes', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Quote'), ['controller' => 'Quotes', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Events'), ['controller' => 'Events', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Event'), ['controller' => 'Events', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Ticket Events'), ['controller' => 'TicketEvents', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Ticket Event'), ['controller' => 'TicketEvents', 'action' => 'add']) ?> </li>
     </ul>
 </div>
 <div class="tickets view large-10 medium-9 columns">
@@ -39,8 +39,8 @@
             <p><?= $ticket->has('customer') ? $this->Html->link($ticket->customer->name, ['controller' => 'Customers', 'action' => 'view', $ticket->customer->id]) : '' ?></p>
             <h6 class="subheader"><?= __('Contact') ?></h6>
             <p><?= $ticket->has('contact') ? $this->Html->link($ticket->contact->id, ['controller' => 'Contacts', 'action' => 'view', $ticket->contact->id]) : '' ?></p>
-            <h6 class="subheader"><?= __('Problem Type') ?></h6>
-            <p><?= $ticket->has('problem_type') ? $this->Html->link($ticket->problem_type->name, ['controller' => 'ProblemTypes', 'action' => 'view', $ticket->problem_type->id]) : '' ?></p>
+            <h6 class="subheader"><?= __('Ticket Type') ?></h6>
+            <p><?= $ticket->has('ticket_type') ? $this->Html->link($ticket->ticket_type->name, ['controller' => 'TicketTypes', 'action' => 'view', $ticket->ticket_type->id]) : '' ?></p>
             <h6 class="subheader"><?= __('Service Type') ?></h6>
             <p><?= $ticket->has('service_type') ? $this->Html->link($ticket->service_type->name, ['controller' => 'ServiceTypes', 'action' => 'view', $ticket->service_type->id]) : '' ?></p>
             <h6 class="subheader"><?= __('Ticket Priority') ?></h6>
@@ -88,13 +88,13 @@
 </div>
 <div class="related row">
     <div class="column large-12">
-    <h4 class="subheader"><?= __('Related Events') ?></h4>
-    <?php if (!empty($ticket->events)): ?>
+    <h4 class="subheader"><?= __('Related TicketEvents') ?></h4>
+    <?php if (!empty($ticket->ticket_events)): ?>
     <table cellpadding="0" cellspacing="0">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Ticket Id') ?></th>
-            <th><?= __('Type Id') ?></th>
+            <th><?= __('Ticket Event Type Id') ?></th>
             <th><?= __('Description') ?></th>
             <th><?= __('User Id') ?></th>
             <th><?= __('Timestamp') ?></th>
@@ -107,28 +107,28 @@
             <th><?= __('Time End') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
         </tr>
-        <?php foreach ($ticket->events as $events): ?>
+        <?php foreach ($ticket->ticket_events as $ticketEvents): ?>
         <tr>
-            <td><?= h($events->id) ?></td>
-            <td><?= h($events->ticket_id) ?></td>
-            <td><?= h($events->type_id) ?></td>
-            <td><?= h($events->description) ?></td>
-            <td><?= h($events->user_id) ?></td>
-            <td><?= h($events->timestamp) ?></td>
-            <td><?= h($events->billing_type_id) ?></td>
-            <td><?= h($events->time_type_id) ?></td>
-            <td><?= h($events->time_taken) ?></td>
-            <td><?= h($events->is_resolution) ?></td>
-            <td><?= h($events->resolution_date) ?></td>
-            <td><?= h($events->time_start) ?></td>
-            <td><?= h($events->time_end) ?></td>
+            <td><?= h($ticketEvents->id) ?></td>
+            <td><?= h($ticketEvents->ticket_id) ?></td>
+            <td><?= h($ticketEvents->ticket_event_type_id) ?></td>
+            <td><?= h($ticketEvents->description) ?></td>
+            <td><?= h($ticketEvents->user_id) ?></td>
+            <td><?= h($ticketEvents->timestamp) ?></td>
+            <td><?= h($ticketEvents->billing_type_id) ?></td>
+            <td><?= h($ticketEvents->time_type_id) ?></td>
+            <td><?= h($ticketEvents->time_taken) ?></td>
+            <td><?= h($ticketEvents->is_resolution) ?></td>
+            <td><?= h($ticketEvents->resolution_date) ?></td>
+            <td><?= h($ticketEvents->time_start) ?></td>
+            <td><?= h($ticketEvents->time_end) ?></td>
 
             <td class="actions">
-                <?= $this->Html->link(__('View'), ['controller' => 'Events', 'action' => 'view', $events->id]) ?>
+                <?= $this->Html->link(__('View'), ['controller' => 'TicketEvents', 'action' => 'view', $ticketEvents->id]) ?>
 
-                <?= $this->Html->link(__('Edit'), ['controller' => 'Events', 'action' => 'edit', $events->id]) ?>
+                <?= $this->Html->link(__('Edit'), ['controller' => 'TicketEvents', 'action' => 'edit', $ticketEvents->id]) ?>
 
-                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Events', 'action' => 'delete', $events->id], ['confirm' => __('Are you sure you want to delete # {0}?', $events->id)]) ?>
+                <?= $this->Form->postLink(__('Delete'), ['controller' => 'TicketEvents', 'action' => 'delete', $ticketEvents->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ticketEvents->id)]) ?>
 
             </td>
         </tr>

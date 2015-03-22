@@ -6,8 +6,8 @@
         <li><?= $this->Html->link(__('New Customer'), ['controller' => 'Customers', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Contacts'), ['controller' => 'Contacts', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Contact'), ['controller' => 'Contacts', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Problem Types'), ['controller' => 'ProblemTypes', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Problem Type'), ['controller' => 'ProblemTypes', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Ticket Types'), ['controller' => 'TicketTypes', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Ticket Type'), ['controller' => 'TicketTypes', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Service Types'), ['controller' => 'ServiceTypes', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Service Type'), ['controller' => 'ServiceTypes', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Ticket Priorities'), ['controller' => 'TicketPriorities', 'action' => 'index']) ?> </li>
@@ -24,8 +24,8 @@
         <li><?= $this->Html->link(__('New Billing Status'), ['controller' => 'BillingStatuses', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Quotes'), ['controller' => 'Quotes', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Quote'), ['controller' => 'Quotes', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Events'), ['controller' => 'Events', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Event'), ['controller' => 'Events', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Ticket Events'), ['controller' => 'TicketEvents', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Ticket Event'), ['controller' => 'TicketEvents', 'action' => 'add']) ?> </li>
     </ul>
 </div>
 <div class="tickets index large-10 medium-9 columns">
@@ -36,7 +36,7 @@
             <th><?= $this->Paginator->sort('date_created') ?></th>
             <th><?= $this->Paginator->sort('customer_id') ?></th>
             <th><?= $this->Paginator->sort('contact_id') ?></th>
-            <th><?= $this->Paginator->sort('problem_type_id') ?></th>
+            <th><?= $this->Paginator->sort('ticket_type_id') ?></th>
             <th><?= $this->Paginator->sort('service_type_id') ?></th>
             <th><?= $this->Paginator->sort('ticket_priority_id') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
@@ -54,7 +54,7 @@
                 <?= $ticket->has('contact') ? $this->Html->link($ticket->contact->id, ['controller' => 'Contacts', 'action' => 'view', $ticket->contact->id]) : '' ?>
             </td>
             <td>
-                <?= $ticket->has('problem_type') ? $this->Html->link($ticket->problem_type->name, ['controller' => 'ProblemTypes', 'action' => 'view', $ticket->problem_type->id]) : '' ?>
+                <?= $ticket->has('ticket_type') ? $this->Html->link($ticket->ticket_type->name, ['controller' => 'TicketTypes', 'action' => 'view', $ticket->ticket_type->id]) : '' ?>
             </td>
             <td>
                 <?= $ticket->has('service_type') ? $this->Html->link($ticket->service_type->name, ['controller' => 'ServiceTypes', 'action' => 'view', $ticket->service_type->id]) : '' ?>

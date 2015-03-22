@@ -5,16 +5,20 @@
         <li><?= $this->Form->postLink(__('Delete User'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?> </li>
         <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List User Roles'), ['controller' => 'UserRoles', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New User Role'), ['controller' => 'UserRoles', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Customers'), ['controller' => 'Customers', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Customer'), ['controller' => 'Customers', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Customer Notes'), ['controller' => 'CustomerNotes', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Customer Note'), ['controller' => 'CustomerNotes', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Events'), ['controller' => 'Events', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Event'), ['controller' => 'Events', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Project Tasks'), ['controller' => 'ProjectTasks', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Project Task'), ['controller' => 'ProjectTasks', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Ticket Events'), ['controller' => 'TicketEvents', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Ticket Event'), ['controller' => 'TicketEvents', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Ticket History'), ['controller' => 'TicketHistory', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Ticket History'), ['controller' => 'TicketHistory', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Tickets'), ['controller' => 'Tickets', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Ticket'), ['controller' => 'Tickets', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Tickets History'), ['controller' => 'TicketsHistory', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Tickets History'), ['controller' => 'TicketsHistory', 'action' => 'add']) ?> </li>
     </ul>
 </div>
 <div class="users view large-10 medium-9 columns">
@@ -31,6 +35,8 @@
             <p><?= h($user->last_name) ?></p>
             <h6 class="subheader"><?= __('Email') ?></h6>
             <p><?= h($user->email) ?></p>
+            <h6 class="subheader"><?= __('User Role') ?></h6>
+            <p><?= $user->has('user_role') ? $this->Html->link($user->user_role->name, ['controller' => 'UserRoles', 'action' => 'view', $user->user_role->id]) : '' ?></p>
             <h6 class="subheader"><?= __('Session') ?></h6>
             <p><?= h($user->session) ?></p>
             <h6 class="subheader"><?= __('Cookie') ?></h6>
@@ -45,8 +51,6 @@
         <div class="large-2 columns numbers end">
             <h6 class="subheader"><?= __('Id') ?></h6>
             <p><?= $this->Number->format($user->id) ?></p>
-            <h6 class="subheader"><?= __('Role') ?></h6>
-            <p><?= $this->Number->format($user->role) ?></p>
         </div>
         <div class="large-2 columns dates end">
             <h6 class="subheader"><?= __('User Created') ?></h6>
@@ -105,13 +109,51 @@
 </div>
 <div class="related row">
     <div class="column large-12">
-    <h4 class="subheader"><?= __('Related Events') ?></h4>
-    <?php if (!empty($user->events)): ?>
+    <h4 class="subheader"><?= __('Related ProjectTasks') ?></h4>
+    <?php if (!empty($user->project_tasks)): ?>
+    <table cellpadding="0" cellspacing="0">
+        <tr>
+            <th><?= __('Id') ?></th>
+            <th><?= __('Project Id') ?></th>
+            <th><?= __('Title') ?></th>
+            <th><?= __('Body') ?></th>
+            <th><?= __('User Id') ?></th>
+            <th><?= __('Deadline') ?></th>
+            <th class="actions"><?= __('Actions') ?></th>
+        </tr>
+        <?php foreach ($user->project_tasks as $projectTasks): ?>
+        <tr>
+            <td><?= h($projectTasks->id) ?></td>
+            <td><?= h($projectTasks->project_id) ?></td>
+            <td><?= h($projectTasks->title) ?></td>
+            <td><?= h($projectTasks->body) ?></td>
+            <td><?= h($projectTasks->user_id) ?></td>
+            <td><?= h($projectTasks->deadline) ?></td>
+
+            <td class="actions">
+                <?= $this->Html->link(__('View'), ['controller' => 'ProjectTasks', 'action' => 'view', $projectTasks->id]) ?>
+
+                <?= $this->Html->link(__('Edit'), ['controller' => 'ProjectTasks', 'action' => 'edit', $projectTasks->id]) ?>
+
+                <?= $this->Form->postLink(__('Delete'), ['controller' => 'ProjectTasks', 'action' => 'delete', $projectTasks->id], ['confirm' => __('Are you sure you want to delete # {0}?', $projectTasks->id)]) ?>
+
+            </td>
+        </tr>
+
+        <?php endforeach; ?>
+    </table>
+    <?php endif; ?>
+    </div>
+</div>
+<div class="related row">
+    <div class="column large-12">
+    <h4 class="subheader"><?= __('Related TicketEvents') ?></h4>
+    <?php if (!empty($user->ticket_events)): ?>
     <table cellpadding="0" cellspacing="0">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Ticket Id') ?></th>
-            <th><?= __('Event Type Id') ?></th>
+            <th><?= __('Ticket Event Type Id') ?></th>
             <th><?= __('Description') ?></th>
             <th><?= __('User Id') ?></th>
             <th><?= __('Timestamp') ?></th>
@@ -124,28 +166,64 @@
             <th><?= __('Time End') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
         </tr>
-        <?php foreach ($user->events as $events): ?>
+        <?php foreach ($user->ticket_events as $ticketEvents): ?>
         <tr>
-            <td><?= h($events->id) ?></td>
-            <td><?= h($events->ticket_id) ?></td>
-            <td><?= h($events->event_type_id) ?></td>
-            <td><?= h($events->description) ?></td>
-            <td><?= h($events->user_id) ?></td>
-            <td><?= h($events->timestamp) ?></td>
-            <td><?= h($events->billing_type_id) ?></td>
-            <td><?= h($events->time_type_id) ?></td>
-            <td><?= h($events->time_taken) ?></td>
-            <td><?= h($events->is_resolution) ?></td>
-            <td><?= h($events->resolution_date) ?></td>
-            <td><?= h($events->time_start) ?></td>
-            <td><?= h($events->time_end) ?></td>
+            <td><?= h($ticketEvents->id) ?></td>
+            <td><?= h($ticketEvents->ticket_id) ?></td>
+            <td><?= h($ticketEvents->ticket_event_type_id) ?></td>
+            <td><?= h($ticketEvents->description) ?></td>
+            <td><?= h($ticketEvents->user_id) ?></td>
+            <td><?= h($ticketEvents->timestamp) ?></td>
+            <td><?= h($ticketEvents->billing_type_id) ?></td>
+            <td><?= h($ticketEvents->time_type_id) ?></td>
+            <td><?= h($ticketEvents->time_taken) ?></td>
+            <td><?= h($ticketEvents->is_resolution) ?></td>
+            <td><?= h($ticketEvents->resolution_date) ?></td>
+            <td><?= h($ticketEvents->time_start) ?></td>
+            <td><?= h($ticketEvents->time_end) ?></td>
 
             <td class="actions">
-                <?= $this->Html->link(__('View'), ['controller' => 'Events', 'action' => 'view', $events->id]) ?>
+                <?= $this->Html->link(__('View'), ['controller' => 'TicketEvents', 'action' => 'view', $ticketEvents->id]) ?>
 
-                <?= $this->Html->link(__('Edit'), ['controller' => 'Events', 'action' => 'edit', $events->id]) ?>
+                <?= $this->Html->link(__('Edit'), ['controller' => 'TicketEvents', 'action' => 'edit', $ticketEvents->id]) ?>
 
-                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Events', 'action' => 'delete', $events->id], ['confirm' => __('Are you sure you want to delete # {0}?', $events->id)]) ?>
+                <?= $this->Form->postLink(__('Delete'), ['controller' => 'TicketEvents', 'action' => 'delete', $ticketEvents->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ticketEvents->id)]) ?>
+
+            </td>
+        </tr>
+
+        <?php endforeach; ?>
+    </table>
+    <?php endif; ?>
+    </div>
+</div>
+<div class="related row">
+    <div class="column large-12">
+    <h4 class="subheader"><?= __('Related TicketHistory') ?></h4>
+    <?php if (!empty($user->ticket_history)): ?>
+    <table cellpadding="0" cellspacing="0">
+        <tr>
+            <th><?= __('Id') ?></th>
+            <th><?= __('Ticket Id') ?></th>
+            <th><?= __('User Id') ?></th>
+            <th><?= __('Date') ?></th>
+            <th><?= __('Action') ?></th>
+            <th class="actions"><?= __('Actions') ?></th>
+        </tr>
+        <?php foreach ($user->ticket_history as $ticketHistory): ?>
+        <tr>
+            <td><?= h($ticketHistory->id) ?></td>
+            <td><?= h($ticketHistory->ticket_id) ?></td>
+            <td><?= h($ticketHistory->user_id) ?></td>
+            <td><?= h($ticketHistory->date) ?></td>
+            <td><?= h($ticketHistory->action) ?></td>
+
+            <td class="actions">
+                <?= $this->Html->link(__('View'), ['controller' => 'TicketHistory', 'action' => 'view', $ticketHistory->id]) ?>
+
+                <?= $this->Html->link(__('Edit'), ['controller' => 'TicketHistory', 'action' => 'edit', $ticketHistory->id]) ?>
+
+                <?= $this->Form->postLink(__('Delete'), ['controller' => 'TicketHistory', 'action' => 'delete', $ticketHistory->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ticketHistory->id)]) ?>
 
             </td>
         </tr>
@@ -165,7 +243,7 @@
             <th><?= __('Date Created') ?></th>
             <th><?= __('Customer Id') ?></th>
             <th><?= __('Contact Id') ?></th>
-            <th><?= __('Problem Type Id') ?></th>
+            <th><?= __('Ticket Type Id') ?></th>
             <th><?= __('Service Type Id') ?></th>
             <th><?= __('Ticket Priority Id') ?></th>
             <th><?= __('Problem Description') ?></th>
@@ -186,7 +264,7 @@
             <td><?= h($tickets->date_created) ?></td>
             <td><?= h($tickets->customer_id) ?></td>
             <td><?= h($tickets->contact_id) ?></td>
-            <td><?= h($tickets->problem_type_id) ?></td>
+            <td><?= h($tickets->ticket_type_id) ?></td>
             <td><?= h($tickets->service_type_id) ?></td>
             <td><?= h($tickets->ticket_priority_id) ?></td>
             <td><?= h($tickets->problem_description) ?></td>
@@ -206,42 +284,6 @@
                 <?= $this->Html->link(__('Edit'), ['controller' => 'Tickets', 'action' => 'edit', $tickets->t_ticket_id]) ?>
 
                 <?= $this->Form->postLink(__('Delete'), ['controller' => 'Tickets', 'action' => 'delete', $tickets->t_ticket_id], ['confirm' => __('Are you sure you want to delete # {0}?', $tickets->t_ticket_id)]) ?>
-
-            </td>
-        </tr>
-
-        <?php endforeach; ?>
-    </table>
-    <?php endif; ?>
-    </div>
-</div>
-<div class="related row">
-    <div class="column large-12">
-    <h4 class="subheader"><?= __('Related TicketsHistory') ?></h4>
-    <?php if (!empty($user->tickets_history)): ?>
-    <table cellpadding="0" cellspacing="0">
-        <tr>
-            <th><?= __('Id') ?></th>
-            <th><?= __('Ticket Id') ?></th>
-            <th><?= __('User Id') ?></th>
-            <th><?= __('Date') ?></th>
-            <th><?= __('Action') ?></th>
-            <th class="actions"><?= __('Actions') ?></th>
-        </tr>
-        <?php foreach ($user->tickets_history as $ticketsHistory): ?>
-        <tr>
-            <td><?= h($ticketsHistory->id) ?></td>
-            <td><?= h($ticketsHistory->ticket_id) ?></td>
-            <td><?= h($ticketsHistory->user_id) ?></td>
-            <td><?= h($ticketsHistory->date) ?></td>
-            <td><?= h($ticketsHistory->action) ?></td>
-
-            <td class="actions">
-                <?= $this->Html->link(__('View'), ['controller' => 'TicketsHistory', 'action' => 'view', $ticketsHistory->id]) ?>
-
-                <?= $this->Html->link(__('Edit'), ['controller' => 'TicketsHistory', 'action' => 'edit', $ticketsHistory->id]) ?>
-
-                <?= $this->Form->postLink(__('Delete'), ['controller' => 'TicketsHistory', 'action' => 'delete', $ticketsHistory->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ticketsHistory->id)]) ?>
 
             </td>
         </tr>

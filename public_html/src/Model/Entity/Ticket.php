@@ -19,7 +19,7 @@ class Ticket extends Entity
         'date_created' => true,
         'customer_id' => true,
         'contact_id' => true,
-        'problem_type_id' => true,
+        'ticket_type_id' => true,
         'service_type_id' => true,
         'ticket_priority_id' => true,
         'problem_description' => true,
@@ -34,7 +34,7 @@ class Ticket extends Entity
         'quote_id' => true,
         'customer' => true,
         'contact' => true,
-        'problem_type' => true,
+        'ticket_type' => true,
         'service_type' => true,
         'ticket_priority' => true,
         'ticket_status' => true,
@@ -43,6 +43,6 @@ class Ticket extends Entity
         'project' => true,
         'billing_status' => true,
         'quote' => true,
-        'events' => true,
+        'ticket_events' => true,
     ];
 }

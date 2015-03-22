@@ -27,8 +27,8 @@ class QuotesTable extends Table
         $this->belongsTo('Customers', [
             'foreignKey' => 'customer_id'
         ]);
-        $this->belongsTo('Tickets', [
-            'foreignKey' => 'ticket_id'
+        $this->belongsTo('QuoteTypes', [
+            'foreignKey' => 'quote_type_id'
         ]);
         $this->hasMany('Projects', [
             'foreignKey' => 'quote_id'
@@ -51,9 +51,12 @@ class QuotesTable extends Table
             ->allowEmpty('id', 'create')
             ->requirePresence('name', 'create')
             ->notEmpty('name')
+            ->add('customer_id', 'valid', ['rule' => 'numeric'])
             ->requirePresence('customer_id', 'create')
             ->notEmpty('customer_id')
-            ->allowEmpty('ticket_id');
+            ->add('quote_type_id', 'valid', ['rule' => 'numeric'])
+            ->requirePresence('quote_type_id', 'create')
+            ->notEmpty('quote_type_id');
 
         return $validator;
     }
@@ -68,7 +71,7 @@ class QuotesTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['customer_id'], 'Customers'));
-        $rules->add($rules->existsIn(['ticket_id'], 'Tickets'));
+        $rules->add($rules->existsIn(['quote_type_id'], 'QuoteTypes'));
         return $rules;
     }
 }

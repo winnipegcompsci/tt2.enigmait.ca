@@ -10,12 +10,6 @@ use App\Controller\AppController;
  */
 class CustomersController extends AppController
 {
-	// Remove This Afterwords.
-	public function beforeFilter(Event $event)
-	{
-		parent::beforeFilter($event);
-		$this->Auth->allow('add');
-	}	
 
     /**
      * Index method
@@ -41,7 +35,7 @@ class CustomersController extends AppController
     public function view($id = null)
     {
         $customer = $this->Customers->get($id, [
-            'contain' => ['Addresses', 'BillingPlans', 'Contacts', 'CustomerNotes', 'CustomerSites', 'Quotes', 'Tickets']
+            'contain' => ['Addresses', 'BillingPlans', 'Contacts', 'CustomerNotes', 'CustomerSites', 'Quotes', 'Tickets', 'Users']
         ]);
         $this->set('customer', $customer);
         $this->set('_serialize', ['customer']);

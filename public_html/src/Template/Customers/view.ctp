@@ -19,6 +19,8 @@
         <li><?= $this->Html->link(__('New Quote'), ['controller' => 'Quotes', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Tickets'), ['controller' => 'Tickets', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Ticket'), ['controller' => 'Tickets', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
     </ul>
 </div>
 <div class="customers view large-10 medium-9 columns">
@@ -170,7 +172,7 @@
             <th><?= __('Id') ?></th>
             <th><?= __('Name') ?></th>
             <th><?= __('Customer Id') ?></th>
-            <th><?= __('Ticket Id') ?></th>
+            <th><?= __('Quote Type Id') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
         </tr>
         <?php foreach ($customer->quotes as $quotes): ?>
@@ -178,7 +180,7 @@
             <td><?= h($quotes->id) ?></td>
             <td><?= h($quotes->name) ?></td>
             <td><?= h($quotes->customer_id) ?></td>
-            <td><?= h($quotes->ticket_id) ?></td>
+            <td><?= h($quotes->quote_type_id) ?></td>
 
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['controller' => 'Quotes', 'action' => 'view', $quotes->id]) ?>
@@ -246,6 +248,64 @@
                 <?= $this->Html->link(__('Edit'), ['controller' => 'Tickets', 'action' => 'edit', $tickets->t_ticket_id]) ?>
 
                 <?= $this->Form->postLink(__('Delete'), ['controller' => 'Tickets', 'action' => 'delete', $tickets->t_ticket_id], ['confirm' => __('Are you sure you want to delete # {0}?', $tickets->t_ticket_id)]) ?>
+
+            </td>
+        </tr>
+
+        <?php endforeach; ?>
+    </table>
+    <?php endif; ?>
+    </div>
+</div>
+<div class="related row">
+    <div class="column large-12">
+    <h4 class="subheader"><?= __('Related Users') ?></h4>
+    <?php if (!empty($customer->users)): ?>
+    <table cellpadding="0" cellspacing="0">
+        <tr>
+            <th><?= __('Id') ?></th>
+            <th><?= __('Username') ?></th>
+            <th><?= __('Password') ?></th>
+            <th><?= __('Secretkey') ?></th>
+            <th><?= __('First Name') ?></th>
+            <th><?= __('Last Name') ?></th>
+            <th><?= __('Email') ?></th>
+            <th><?= __('User Role Id') ?></th>
+            <th><?= __('Disabled') ?></th>
+            <th><?= __('User Created') ?></th>
+            <th><?= __('Session') ?></th>
+            <th><?= __('Cookie') ?></th>
+            <th><?= __('Ip') ?></th>
+            <th><?= __('Last Login') ?></th>
+            <th><?= __('Customer Id') ?></th>
+            <th><?= __('Company Name') ?></th>
+            <th class="actions"><?= __('Actions') ?></th>
+        </tr>
+        <?php foreach ($customer->users as $users): ?>
+        <tr>
+            <td><?= h($users->id) ?></td>
+            <td><?= h($users->username) ?></td>
+            <td><?= h($users->password) ?></td>
+            <td><?= h($users->secretkey) ?></td>
+            <td><?= h($users->first_name) ?></td>
+            <td><?= h($users->last_name) ?></td>
+            <td><?= h($users->email) ?></td>
+            <td><?= h($users->user_role_id) ?></td>
+            <td><?= h($users->disabled) ?></td>
+            <td><?= h($users->user_created) ?></td>
+            <td><?= h($users->session) ?></td>
+            <td><?= h($users->cookie) ?></td>
+            <td><?= h($users->ip) ?></td>
+            <td><?= h($users->last_login) ?></td>
+            <td><?= h($users->customer_id) ?></td>
+            <td><?= h($users->company_name) ?></td>
+
+            <td class="actions">
+                <?= $this->Html->link(__('View'), ['controller' => 'Users', 'action' => 'view', $users->id]) ?>
+
+                <?= $this->Html->link(__('Edit'), ['controller' => 'Users', 'action' => 'edit', $users->id]) ?>
+
+                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Users', 'action' => 'delete', $users->id], ['confirm' => __('Are you sure you want to delete # {0}?', $users->id)]) ?>
 
             </td>
         </tr>

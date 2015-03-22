@@ -11,33 +11,6 @@ use App\Controller\AppController;
 class UsersController extends AppController
 {
 
-public function beforeFilter(Event $event)
-{
-    parent::beforeFilter($event);
-    // Allow users to register and logout.
-    // You should not add the "login" action to allow list. Doing so would
-    // cause problems with normal functioning of AuthComponent.
-    $this->Auth->allow(['add', 'logout']);
-}
-
-	public function login() 
-	{
-		if($this->request->is('post')) {
-			$user = $this->Auth->identify();
-			if ($user) {
-				$this->Auth->setUser($user);
-				return $this->redirect($this->Auth->redirectUrl());
-			}
-			$this->Flash->error(__('Invalid username or password, try again'));
-		}
-	}
-	
-	public function logout()
-	{
-		return $this->redirect($this->Auth->logout());
-	}
-	
-	
     /**
      * Index method
      *
@@ -45,6 +18,9 @@ public function beforeFilter(Event $event)
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['UserRoles', 'Customers']
+        ];
         $this->set('users', $this->paginate($this->Users));
         $this->set('_serialize', ['users']);
     }
@@ -59,7 +35,7 @@ public function beforeFilter(Event $event)
     public function view($id = null)
     {
         $user = $this->Users->get($id, [
-            'contain' => []
+            'contain' => ['UserRoles', 'Customers', 'CustomerNotes', 'ProjectTasks', 'TicketEvents', 'TicketHistory', 'Tickets']
         ]);
         $this->set('user', $user);
         $this->set('_serialize', ['user']);
@@ -82,7 +58,9 @@ public function beforeFilter(Event $event)
                 $this->Flash->error('The user could not be saved. Please, try again.');
             }
         }
-        $this->set(compact('user'));
+        $userRoles = $this->Users->UserRoles->find('list', ['limit' => 200]);
+        $customers = $this->Users->Customers->find('list', ['limit' => 200]);
+        $this->set(compact('user', 'userRoles', 'customers'));
         $this->set('_serialize', ['user']);
     }
 
@@ -107,7 +85,9 @@ public function beforeFilter(Event $event)
                 $this->Flash->error('The user could not be saved. Please, try again.');
             }
         }
-        $this->set(compact('user'));
+        $userRoles = $this->Users->UserRoles->find('list', ['limit' => 200]);
+        $customers = $this->Users->Customers->find('list', ['limit' => 200]);
+        $this->set(compact('user', 'userRoles', 'customers'));
         $this->set('_serialize', ['user']);
     }
 

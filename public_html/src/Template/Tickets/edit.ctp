@@ -12,8 +12,8 @@
         <li><?= $this->Html->link(__('New Customer'), ['controller' => 'Customers', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Contacts'), ['controller' => 'Contacts', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Contact'), ['controller' => 'Contacts', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Problem Types'), ['controller' => 'ProblemTypes', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Problem Type'), ['controller' => 'ProblemTypes', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Ticket Types'), ['controller' => 'TicketTypes', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Ticket Type'), ['controller' => 'TicketTypes', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Service Types'), ['controller' => 'ServiceTypes', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Service Type'), ['controller' => 'ServiceTypes', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Ticket Priorities'), ['controller' => 'TicketPriorities', 'action' => 'index']) ?> </li>
@@ -30,8 +30,8 @@
         <li><?= $this->Html->link(__('New Billing Status'), ['controller' => 'BillingStatuses', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Quotes'), ['controller' => 'Quotes', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Quote'), ['controller' => 'Quotes', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Events'), ['controller' => 'Events', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Event'), ['controller' => 'Events', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Ticket Events'), ['controller' => 'TicketEvents', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Ticket Event'), ['controller' => 'TicketEvents', 'action' => 'add']) ?> </li>
     </ul>
 </div>
 <div class="tickets form large-10 medium-9 columns">
@@ -43,7 +43,7 @@
             echo $this->Form->input('date_created');
             echo $this->Form->input('customer_id', ['options' => $customers]);
             echo $this->Form->input('contact_id', ['options' => $contacts]);
-            echo $this->Form->input('problem_type_id', ['options' => $problemTypes]);
+            echo $this->Form->input('ticket_type_id', ['options' => $ticketTypes]);
             echo $this->Form->input('service_type_id', ['options' => $serviceTypes]);
             echo $this->Form->input('ticket_priority_id', ['options' => $ticketPriorities]);
             echo $this->Form->input('problem_description');

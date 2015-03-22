@@ -17,7 +17,7 @@
         <?php
             echo $this->Form->input('name');
             echo $this->Form->input('customer_id', ['options' => $customers]);
-            echo $this->Form->input('ticket_id');
+            echo $this->Form->input('quote_type_id');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

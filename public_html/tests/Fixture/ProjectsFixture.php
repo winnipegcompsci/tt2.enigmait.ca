@@ -43,13 +43,13 @@ class ProjectsFixture extends TestFixture
     public $records = [
         [
             'id' => 1,
-            'date_created' => '2015-03-17 01:55:24',
+            'date_created' => '2015-03-22 21:54:23',
             'name' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
             'description' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
             'project_status_id' => 1,
             'max_hours' => 1,
             'quoted_hours' => 1,
-            'due_date' => '2015-03-17',
+            'due_date' => '2015-03-22',
             'quote_id' => 'Lorem ipsum dolor sit amet'
         ],
     ];

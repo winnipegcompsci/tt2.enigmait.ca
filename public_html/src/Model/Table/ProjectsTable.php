@@ -30,6 +30,9 @@ class ProjectsTable extends Table
         $this->belongsTo('Quotes', [
             'foreignKey' => 'quote_id'
         ]);
+        $this->hasMany('ProjectTasks', [
+            'foreignKey' => 'project_id'
+        ]);
         $this->hasMany('Tickets', [
             'foreignKey' => 'project_id'
         ]);

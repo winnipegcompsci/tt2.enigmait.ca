@@ -24,19 +24,25 @@ class UsersTable extends Table
         $this->table('users');
         $this->displayField('id');
         $this->primaryKey('id');
+        $this->belongsTo('UserRoles', [
+            'foreignKey' => 'user_role_id'
+        ]);
         $this->belongsTo('Customers', [
             'foreignKey' => 'customer_id'
         ]);
         $this->hasMany('CustomerNotes', [
             'foreignKey' => 'user_id'
         ]);
-        $this->hasMany('Events', [
+        $this->hasMany('ProjectTasks', [
+            'foreignKey' => 'user_id'
+        ]);
+        $this->hasMany('TicketEvents', [
+            'foreignKey' => 'user_id'
+        ]);
+        $this->hasMany('TicketHistory', [
             'foreignKey' => 'user_id'
         ]);
         $this->hasMany('Tickets', [
-            'foreignKey' => 'user_id'
-        ]);
-        $this->hasMany('TicketsHistory', [
             'foreignKey' => 'user_id'
         ]);
     }
@@ -65,10 +71,28 @@ class UsersTable extends Table
             ->add('email', 'valid', ['rule' => 'email'])
             ->requirePresence('email', 'create')
             ->notEmpty('email')
-            ->add('role', 'valid', ['rule' => 'numeric'])
-            ->requirePresence('role', 'create')
-            ->notEmpty('role');
-           
+            ->add('user_role_id', 'valid', ['rule' => 'numeric'])
+            ->requirePresence('user_role_id', 'create')
+            ->notEmpty('user_role_id')
+            ->requirePresence('disabled', 'create')
+            ->notEmpty('disabled')
+            ->add('user_created', 'valid', ['rule' => 'datetime'])
+            ->requirePresence('user_created', 'create')
+            ->notEmpty('user_created')
+            ->requirePresence('session', 'create')
+            ->notEmpty('session')
+            ->requirePresence('cookie', 'create')
+            ->notEmpty('cookie')
+            ->requirePresence('ip', 'create')
+            ->notEmpty('ip')
+            ->add('last_login', 'valid', ['rule' => 'datetime'])
+            ->requirePresence('last_login', 'create')
+            ->notEmpty('last_login')
+            ->add('customer_id', 'valid', ['rule' => 'numeric'])
+            ->requirePresence('customer_id', 'create')
+            ->notEmpty('customer_id')
+            ->requirePresence('company_name', 'create')
+            ->notEmpty('company_name');
 
         return $validator;
     }
@@ -84,6 +108,7 @@ class UsersTable extends Table
     {
         $rules->add($rules->isUnique(['username']));
         $rules->add($rules->isUnique(['email']));
+        $rules->add($rules->existsIn(['user_role_id'], 'UserRoles'));
         $rules->add($rules->existsIn(['customer_id'], 'Customers'));
         return $rules;
     }

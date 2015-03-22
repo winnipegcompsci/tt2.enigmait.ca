@@ -19,7 +19,7 @@ class TicketsController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Customers', 'Contacts', 'ProblemTypes', 'ServiceTypes', 'TicketPriorities', 'TicketStatuses', 'Users', 'CustomerSites', 'Projects', 'BillingStatuses', 'Quotes']
+            'contain' => ['Customers', 'Contacts', 'TicketTypes', 'ServiceTypes', 'TicketPriorities', 'TicketStatuses', 'Users', 'CustomerSites', 'Projects', 'BillingStatuses', 'Quotes']
         ];
         $this->set('tickets', $this->paginate($this->Tickets));
         $this->set('_serialize', ['tickets']);
@@ -35,7 +35,7 @@ class TicketsController extends AppController
     public function view($id = null)
     {
         $ticket = $this->Tickets->get($id, [
-            'contain' => ['Customers', 'Contacts', 'ProblemTypes', 'ServiceTypes', 'TicketPriorities', 'TicketStatuses', 'Users', 'CustomerSites', 'Projects', 'BillingStatuses', 'Quotes', 'Events']
+            'contain' => ['Customers', 'Contacts', 'TicketTypes', 'ServiceTypes', 'TicketPriorities', 'TicketStatuses', 'Users', 'CustomerSites', 'Projects', 'BillingStatuses', 'Quotes', 'TicketEvents']
         ]);
         $this->set('ticket', $ticket);
         $this->set('_serialize', ['ticket']);
@@ -60,7 +60,7 @@ class TicketsController extends AppController
         }
         $customers = $this->Tickets->Customers->find('list', ['limit' => 200]);
         $contacts = $this->Tickets->Contacts->find('list', ['limit' => 200]);
-        $problemTypes = $this->Tickets->ProblemTypes->find('list', ['limit' => 200]);
+        $ticketTypes = $this->Tickets->TicketTypes->find('list', ['limit' => 200]);
         $serviceTypes = $this->Tickets->ServiceTypes->find('list', ['limit' => 200]);
         $ticketPriorities = $this->Tickets->TicketPriorities->find('list', ['limit' => 200]);
         $ticketStatuses = $this->Tickets->TicketStatuses->find('list', ['limit' => 200]);
@@ -69,7 +69,7 @@ class TicketsController extends AppController
         $projects = $this->Tickets->Projects->find('list', ['limit' => 200]);
         $billingStatuses = $this->Tickets->BillingStatuses->find('list', ['limit' => 200]);
         $quotes = $this->Tickets->Quotes->find('list', ['limit' => 200]);
-        $this->set(compact('ticket', 'customers', 'contacts', 'problemTypes', 'serviceTypes', 'ticketPriorities', 'ticketStatuses', 'users', 'customerSites', 'projects', 'billingStatuses', 'quotes'));
+        $this->set(compact('ticket', 'customers', 'contacts', 'ticketTypes', 'serviceTypes', 'ticketPriorities', 'ticketStatuses', 'users', 'customerSites', 'projects', 'billingStatuses', 'quotes'));
         $this->set('_serialize', ['ticket']);
     }
 
@@ -96,7 +96,7 @@ class TicketsController extends AppController
         }
         $customers = $this->Tickets->Customers->find('list', ['limit' => 200]);
         $contacts = $this->Tickets->Contacts->find('list', ['limit' => 200]);
-        $problemTypes = $this->Tickets->ProblemTypes->find('list', ['limit' => 200]);
+        $ticketTypes = $this->Tickets->TicketTypes->find('list', ['limit' => 200]);
         $serviceTypes = $this->Tickets->ServiceTypes->find('list', ['limit' => 200]);
         $ticketPriorities = $this->Tickets->TicketPriorities->find('list', ['limit' => 200]);
         $ticketStatuses = $this->Tickets->TicketStatuses->find('list', ['limit' => 200]);
@@ -105,7 +105,7 @@ class TicketsController extends AppController
         $projects = $this->Tickets->Projects->find('list', ['limit' => 200]);
         $billingStatuses = $this->Tickets->BillingStatuses->find('list', ['limit' => 200]);
         $quotes = $this->Tickets->Quotes->find('list', ['limit' => 200]);
-        $this->set(compact('ticket', 'customers', 'contacts', 'problemTypes', 'serviceTypes', 'ticketPriorities', 'ticketStatuses', 'users', 'customerSites', 'projects', 'billingStatuses', 'quotes'));
+        $this->set(compact('ticket', 'customers', 'contacts', 'ticketTypes', 'serviceTypes', 'ticketPriorities', 'ticketStatuses', 'users', 'customerSites', 'projects', 'billingStatuses', 'quotes'));
         $this->set('_serialize', ['ticket']);
     }
 

@@ -29,5 +29,6 @@ class Customer extends Entity
         'customer_sites' => true,
         'quotes' => true,
         'tickets' => true,
+        'users' => true,
     ];
 }

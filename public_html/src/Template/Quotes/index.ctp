@@ -17,7 +17,7 @@
             <th><?= $this->Paginator->sort('id') ?></th>
             <th><?= $this->Paginator->sort('name') ?></th>
             <th><?= $this->Paginator->sort('customer_id') ?></th>
-            <th><?= $this->Paginator->sort('ticket_id') ?></th>
+            <th><?= $this->Paginator->sort('quote_type_id') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
         </tr>
     </thead>
@@ -29,7 +29,7 @@
             <td>
                 <?= $quote->has('customer') ? $this->Html->link($quote->customer->name, ['controller' => 'Customers', 'action' => 'view', $quote->customer->id]) : '' ?>
             </td>
-            <td><?= h($quote->ticket_id) ?></td>
+            <td><?= $this->Number->format($quote->quote_type_id) ?></td>
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['action' => 'view', $quote->id]) ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $quote->id]) ?>

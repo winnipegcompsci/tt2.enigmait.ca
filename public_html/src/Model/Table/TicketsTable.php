@@ -30,8 +30,8 @@ class TicketsTable extends Table
         $this->belongsTo('Contacts', [
             'foreignKey' => 'contact_id'
         ]);
-        $this->belongsTo('ProblemTypes', [
-            'foreignKey' => 'problem_type_id'
+        $this->belongsTo('TicketTypes', [
+            'foreignKey' => 'ticket_type_id'
         ]);
         $this->belongsTo('ServiceTypes', [
             'foreignKey' => 'service_type_id'
@@ -57,10 +57,7 @@ class TicketsTable extends Table
         $this->belongsTo('Quotes', [
             'foreignKey' => 'quote_id'
         ]);
-        $this->hasMany('Events', [
-            'foreignKey' => 'ticket_id'
-        ]);
-        $this->hasMany('Quotes', [
+        $this->hasMany('TicketEvents', [
             'foreignKey' => 'ticket_id'
         ]);
     }
@@ -85,9 +82,9 @@ class TicketsTable extends Table
             ->add('contact_id', 'valid', ['rule' => 'numeric'])
             ->requirePresence('contact_id', 'create')
             ->notEmpty('contact_id')
-            ->add('problem_type_id', 'valid', ['rule' => 'numeric'])
-            ->requirePresence('problem_type_id', 'create')
-            ->notEmpty('problem_type_id')
+            ->add('ticket_type_id', 'valid', ['rule' => 'numeric'])
+            ->requirePresence('ticket_type_id', 'create')
+            ->notEmpty('ticket_type_id')
             ->add('service_type_id', 'valid', ['rule' => 'numeric'])
             ->requirePresence('service_type_id', 'create')
             ->notEmpty('service_type_id')
@@ -134,7 +131,7 @@ class TicketsTable extends Table
     {
         $rules->add($rules->existsIn(['customer_id'], 'Customers'));
         $rules->add($rules->existsIn(['contact_id'], 'Contacts'));
-        $rules->add($rules->existsIn(['problem_type_id'], 'ProblemTypes'));
+        $rules->add($rules->existsIn(['ticket_type_id'], 'TicketTypes'));
         $rules->add($rules->existsIn(['service_type_id'], 'ServiceTypes'));
         $rules->add($rules->existsIn(['ticket_priority_id'], 'TicketPriorities'));
         $rules->add($rules->existsIn(['ticket_status_id'], 'TicketStatuses'));

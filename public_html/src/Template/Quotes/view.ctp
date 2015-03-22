@@ -21,12 +21,12 @@
             <p><?= h($quote->name) ?></p>
             <h6 class="subheader"><?= __('Customer') ?></h6>
             <p><?= $quote->has('customer') ? $this->Html->link($quote->customer->name, ['controller' => 'Customers', 'action' => 'view', $quote->customer->id]) : '' ?></p>
-            <h6 class="subheader"><?= __('Ticket Id') ?></h6>
-            <p><?= h($quote->ticket_id) ?></p>
         </div>
         <div class="large-2 columns numbers end">
             <h6 class="subheader"><?= __('Id') ?></h6>
             <p><?= $this->Number->format($quote->id) ?></p>
+            <h6 class="subheader"><?= __('Quote Type Id') ?></h6>
+            <p><?= $this->Number->format($quote->quote_type_id) ?></p>
         </div>
     </div>
 </div>
