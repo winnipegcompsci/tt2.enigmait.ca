@@ -1,5 +1,3 @@
-<h1> Messages </h1>
-
 <div class="chat-panel panel panel-default">
     <div class="panel-heading">
 		<i class="fa fa-comments fa-fw"></i> Chat
