@@ -55,7 +55,7 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related Contacts') ?></h4>
     <?php if (!empty($customer->contacts)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('First Name') ?></th>
@@ -93,7 +93,7 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related CustomerNotes') ?></h4>
     <?php if (!empty($customer->customer_notes)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Customer Id') ?></th>
@@ -133,7 +133,7 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related CustomerSites') ?></h4>
     <?php if (!empty($customer->customer_sites)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Customer Id') ?></th>
@@ -167,7 +167,7 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related Quotes') ?></h4>
     <?php if (!empty($customer->quotes)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Name') ?></th>
@@ -201,7 +201,7 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related Tickets') ?></h4>
     <?php if (!empty($customer->tickets)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Date Created') ?></th>
@@ -261,7 +261,7 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related Users') ?></h4>
     <?php if (!empty($customer->users)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Username') ?></th>

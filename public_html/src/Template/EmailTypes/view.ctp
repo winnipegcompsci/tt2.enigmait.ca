@@ -28,7 +28,7 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related Emails') ?></h4>
     <?php if (!empty($emailType->emails)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Address Id') ?></th>

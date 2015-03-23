@@ -90,7 +90,7 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related TicketEvents') ?></h4>
     <?php if (!empty($ticket->ticket_events)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Ticket Id') ?></th>

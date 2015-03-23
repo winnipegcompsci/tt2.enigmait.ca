@@ -50,7 +50,7 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related Contacts') ?></h4>
     <?php if (!empty($address->contacts)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('First Name') ?></th>
@@ -88,7 +88,7 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related Customers') ?></h4>
     <?php if (!empty($address->customers)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Name') ?></th>
@@ -130,7 +130,7 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related Emails') ?></h4>
     <?php if (!empty($address->emails)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Address Id') ?></th>
@@ -168,7 +168,7 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related PhoneNumbers') ?></h4>
     <?php if (!empty($address->phone_numbers)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Address Id') ?></th>

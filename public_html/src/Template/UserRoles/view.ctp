@@ -30,7 +30,7 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related Notifications') ?></h4>
     <?php if (!empty($userRole->notifications)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Message') ?></th>
@@ -66,7 +66,7 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related Users') ?></h4>
     <?php if (!empty($userRole->users)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Username') ?></th>

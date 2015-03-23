@@ -71,7 +71,7 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related CustomerNotes') ?></h4>
     <?php if (!empty($user->customer_notes)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Customer Id') ?></th>
@@ -111,7 +111,7 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related ProjectTasks') ?></h4>
     <?php if (!empty($user->project_tasks)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Project Id') ?></th>
@@ -149,7 +149,7 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related TicketEvents') ?></h4>
     <?php if (!empty($user->ticket_events)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Ticket Id') ?></th>
@@ -201,7 +201,7 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related TicketHistory') ?></h4>
     <?php if (!empty($user->ticket_history)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Ticket Id') ?></th>
@@ -237,7 +237,7 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related Tickets') ?></h4>
     <?php if (!empty($user->tickets)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Date Created') ?></th>

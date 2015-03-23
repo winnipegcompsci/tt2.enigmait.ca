@@ -30,7 +30,7 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related BillingPlanLines') ?></h4>
     <?php if (!empty($timeType->billing_plan_lines)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Billing Plan Id') ?></th>
@@ -78,7 +78,7 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related TicketEvents') ?></h4>
     <?php if (!empty($timeType->ticket_events)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Ticket Id') ?></th>

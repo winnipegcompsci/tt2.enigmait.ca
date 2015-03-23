@@ -30,7 +30,7 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related Inventory') ?></h4>
     <?php if (!empty($wtcrVendor->inventory)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Wtcr Sku') ?></th>
@@ -80,7 +80,7 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related WtcrVendorProducts') ?></h4>
     <?php if (!empty($wtcrVendor->wtcr_vendor_products)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Name') ?></th>

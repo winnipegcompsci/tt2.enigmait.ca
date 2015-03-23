@@ -7,7 +7,7 @@
     </ul>
 </div>
 <div class="wtcrCurrencies index col-lg-10 col-md-9 columns">
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
     <thead>
         <tr>
             <th><?= $this->Paginator->sort('id') ?></th>

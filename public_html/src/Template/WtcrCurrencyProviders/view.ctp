@@ -34,7 +34,7 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related WtcrCurrencies') ?></h4>
     <?php if (!empty($wtcrCurrencyProvider->wtcr_currencies)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Name') ?></th>
@@ -68,7 +68,7 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related WtcrCurrencyProviderRates') ?></h4>
     <?php if (!empty($wtcrCurrencyProvider->wtcr_currency_provider_rates)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Wtcr Currencies Id') ?></th>
