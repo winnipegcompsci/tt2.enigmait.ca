@@ -275,7 +275,6 @@
 		</div>
 		<!-- /.panel -->
 
-		<!-- /.panel -->
 	</div>	
 </div>
 <!-- /.row for Notifications / Messages. -->
@@ -283,7 +282,7 @@
 <!-- Graph Row -->
 <div class="row">
 	<div class="col-lg-8">
-		<h1>Insert Recent Orders Here. </h1>
+		<h1 class="text-info">Insert Recent Orders Here. </h1>
 	</div>
 
 	<div class="col-lg-4">
