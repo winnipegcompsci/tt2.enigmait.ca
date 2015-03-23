@@ -73,26 +73,8 @@ class UsersTable extends Table
             ->notEmpty('email')
             ->add('user_role_id', 'valid', ['rule' => 'numeric'])
             ->requirePresence('user_role_id', 'create')
-            ->notEmpty('user_role_id')
-            ->requirePresence('disabled', 'create')
-            ->notEmpty('disabled')
-            ->add('user_created', 'valid', ['rule' => 'datetime'])
-            ->requirePresence('user_created', 'create')
-            ->notEmpty('user_created')
-            ->requirePresence('session', 'create')
-            ->notEmpty('session')
-            ->requirePresence('cookie', 'create')
-            ->notEmpty('cookie')
-            ->requirePresence('ip', 'create')
-            ->notEmpty('ip')
-            ->add('last_login', 'valid', ['rule' => 'datetime'])
-            ->requirePresence('last_login', 'create')
-            ->notEmpty('last_login')
-            ->add('customer_id', 'valid', ['rule' => 'numeric'])
-            ->requirePresence('customer_id', 'create')
-            ->notEmpty('customer_id')
-            ->requirePresence('company_name', 'create')
-            ->notEmpty('company_name');
+            ->notEmpty('user_role_id');
+
 
         return $validator;
     }
