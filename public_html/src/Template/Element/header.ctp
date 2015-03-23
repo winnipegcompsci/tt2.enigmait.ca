@@ -1,6 +1,6 @@
- <?php $user = $this->Session->read('Auth.User'); ?>
+<?php $user = $this->Session->read('Auth.User'); ?>
  
- <div class="navbar-header">
+<div class="navbar-header">
 	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 		<span class="sr-only">Toggle navigation</span>
 		<span class="icon-bar"></span>
