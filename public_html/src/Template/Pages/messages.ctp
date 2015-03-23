@@ -4,6 +4,6 @@
 	</div>
 	
 	<div class="col-lg-3 col-md-4">
-		<h2> User List </h2>
+		<?php echo $this->element('chat_userlist'); ?>
 	</div>
 </div>
