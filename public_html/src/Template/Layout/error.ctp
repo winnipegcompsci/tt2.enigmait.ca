@@ -59,7 +59,6 @@
                     <div class="col-lg-12" style="padding: 15px">
 							<?php echo $this->Flash->render(); ?>
 							
-							<h1 class="danger"> ERROR: </h1>
 							<?php echo $this->fetch('content'); ?> 
 					</div>
                     <!-- /.col-lg-12 -->

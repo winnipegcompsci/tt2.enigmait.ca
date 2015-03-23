@@ -58,7 +58,9 @@
                 <div class="row">
                     <div class="col-lg-12" style="padding: 15px">
 							<?php echo $this->Flash->render(); ?>
-							<?php echo $this->fetch('content'); ?> 
+							<p class="text-danger">
+								<?php echo $this->fetch('content'); ?> 
+							</p>
 					</div>
                     <!-- /.col-lg-12 -->
                 </div>
