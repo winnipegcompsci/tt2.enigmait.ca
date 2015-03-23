@@ -12,16 +12,16 @@
     <title>TT2.0</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="<?php echo $this->webroot; ?>bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="<?php echo $this->Url->build('/'); ?>bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="<?php echo $this->webroot; ?>bower_components/metisMenu/dist/metisMenu.css" rel="stylesheet">
+    <link href="<?php echo $this->Url->build('/'); ?>bower_components/metisMenu/dist/metisMenu.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<?php echo $this->webroot; ?>/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<?php echo $this->Url->build('/'); ?>dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="<?php echo $this->webroot; ?>/bower_components/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo $this->Url->build('/'); ?>bower_components/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
