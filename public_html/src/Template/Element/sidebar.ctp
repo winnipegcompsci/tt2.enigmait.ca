@@ -49,7 +49,40 @@
 									<a href="#"><i class="fa fa-cog fa-fw"></i>&nbsp; Management <span class="fa arrow"></span></a>
 									<ul class="nav nav-third-level">
 										<li>
+											<a href="<?php echo $this->Url->build(['controller' => 'BillingTypes', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; Billing Types</a>
+										</li>
+										<li>
+											<a href="<?php echo $this->Url->build(['controller' => 'BillingStatuses', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; Billing Statuses</a>
+										</li>
+										<li>
+											<a href="<?php echo $this->Url->build(['controller' => 'BillingPlanLines', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; Billing Plan Lines</a>
+										</li>
+										<li>
+											<a href="<?php echo $this->Url->build(['controller' => 'ContactTypes', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; Contact Types</a>
+										</li>
+										<li>
+											<a href="<?php echo $this->Url->build(['controller' => 'PhoneNumbers', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; Phone Numbers</a>
+										</li>
+										<li>
+											<a href="<?php echo $this->Url->build(['controller' => 'TicketEventTypes', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; Ticket Event Types</a>
+										</li>
+										<li>
+											<a href="<?php echo $this->Url->build(['controller' => 'TicketPriorities', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; Ticket Priorities</a>
+										</li>
+										<li>										
+											<a href="<?php echo $this->Url->build(['controller' => 'ServiceTypes', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; Ticket Service Types</a>
+										</li>
+										<li>
+											<a href="<?php echo $this->Url->build(['controller' => 'TicketStatuses', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; Ticket Statuses</a>
+										</li>
+										<li>
+											<a href="<?php echo $this->Url->build(['controller' => 'TicketTypes', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; Ticket Types</a>
+										</li>
+										<li>
 											<a href="<?php echo $this->Url->build(['controller' => 'Users', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; Users</a>
+										</li>
+										<li>
+											<a href="<?php echo $this->Url->build(['controller' => 'UserRoles', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; Roles</a>
 										</li>
 									</ul>									
 								</li>
@@ -105,6 +138,32 @@
 								<li>
                                     <a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'under_construction']); ?>"><i class="fa fa-bar-chart-o fa-fw"></i>&nbsp;Reports</a>
                                 </li>
+								<li>
+									<a href="#"><i class="fa fa-bitcoin fa-fw"></i>&nbsp;Settings<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="<?php echo $this->Url->build(['controller' => 'WtcrCategories', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; Product Categores</a>
+                                        </li>
+										<li>
+                                            <a href="<?php echo $this->Url->build(['controller' => 'WtcrVendors', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; WTCR Vendors</a>
+                                        </li>
+                                        <li>
+                                            <a href="<?php echo $this->Url->build(['controller' => 'WtcrCompetitors', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; WTCR Competitors</a>
+                                        </li>
+                                        <li>
+                                            <a href="<?php echo $this->Url->build(['controller' => 'WtcrCurrencies', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; Currencies</a>
+                                        </li>
+										<li>
+                                            <a href="<?php echo $this->Url->build(['controller' => 'WtcrCurrencyProviders', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; Currency Data Providers</a>
+                                        </li>
+										<li>
+                                            <a href="<?php echo $this->Url->build(['controller' => 'WtcrManufacturers', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; Manufacturers</a>
+                                        </li>
+										<li>
+                                            <a href="<?php echo $this->Url->build(['controller' => 'WtcrSalesVehicles', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; Sales Vehicles</a>
+                                        </li>
+                                    </ul>
+								</li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
