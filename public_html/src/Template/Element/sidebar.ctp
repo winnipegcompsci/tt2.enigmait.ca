@@ -82,7 +82,7 @@
 											<a href="<?php echo $this->Url->build(['controller' => 'Users', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; Users</a>
 										</li>
 										<li>
-											<a href="<?php echo $this->Url->build(['controller' => 'UserRoles', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; Roles</a>
+											<a href="<?php echo $this->Url->build(['controller' => 'UserRoles', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; User Roles</a>
 										</li>
 									</ul>									
 								</li>
