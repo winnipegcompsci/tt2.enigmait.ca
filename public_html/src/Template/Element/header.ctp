@@ -20,7 +20,7 @@
 			<i class="fa fa-envelope fa-fw"></i> Messages  <i class="fa fa-caret-down"></i>
 		</a>
 		<ul class="dropdown-menu dropdown-messages">
-			<?php $this->element('chat_header_messages'); ?>
+			<?php echo $this->element('chat_header_messages'); ?>
 			<li>
 				<a href="#">
 					<div>
