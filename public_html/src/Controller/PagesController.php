@@ -17,6 +17,7 @@ namespace App\Controller;
 use Cake\Core\Configure;
 use Cake\Network\Exception\NotFoundException;
 use Cake\View\Exception\MissingTemplateException;
+use Cake\ORM\TableRegistry;
 
 /**
  * Static content controller
@@ -55,7 +56,8 @@ class PagesController extends AppController
         $this->set(compact('page', 'subpage'));
 		
 		// Message Vars
-		$this->set('messages', $this->Messages->find('all'));
+		$messages = TableRegistry::get('Messages')->find('all')->limit(10);
+		$this->set('messages', $messages);
 
         try {
             $this->render(implode('/', $path));
