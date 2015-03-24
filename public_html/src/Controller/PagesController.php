@@ -57,7 +57,7 @@ class PagesController extends AppController
 		
 		// Message Vars
 		$messages = TableRegistry::get('Messages')->find('all')->limit(15);
-		$header_messages = TableRegistry::get('Messages')->find('all',['order' => array('Message.timestamp DESC')])->limit(3);
+		$header_messages = TableRegistry::get('Messages')->find('all',['order' => array('Messages.timestamp DESC')])->limit(3);
 		
 		$users = TableRegistry::get('Users')->find('all');
 		$usernames = array();
