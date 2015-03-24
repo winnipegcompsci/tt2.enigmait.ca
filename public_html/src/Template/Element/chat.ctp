@@ -53,9 +53,10 @@
 					</span>
 					<div class="chat-body clearfix">
 						<div class="header">
-							<small class=" text-muted">
-								<i class="fa fa-clock-o fa-fw"></i> <?php echo $message->timestamp; ?></small>
-							<strong class="pull-<?php echo $opposite; ?> primary-font"><?php echo $usernames[$message->user_id]; ?></strong>
+							<small class=" text-muted pull-<?php echo $opposite; ?>">
+								<i class="fa fa-clock-o fa-fw"></i> <?php echo $message->timestamp; ?>
+							</small>
+							<strong class="pull-<?php echo $side; ?> primary-font"><?php echo $usernames[$message->user_id]; ?></strong>
 						</div>
 						<p>
 							<?php echo $message->text; ?>
