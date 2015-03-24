@@ -44,7 +44,7 @@
 					} else {
 						$side = "left";
 						$opposite = "right";
-						$color = "http://placehold.it/50/FA6F57/fff"
+						$color = "http://placehold.it/50/FA6F57/fff";
 					}			
 					// right = $side
 					// left = $opposite
