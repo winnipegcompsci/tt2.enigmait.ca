@@ -45,16 +45,15 @@
 						$opposite = "right";
 					}				
 				?>
-				<li class="<?php echo $side; ?> clearfix">
-					<span class="chat-img pull-<?php echo $side; ?>">
-						<img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle">
+				<li class="right clearfix">
+					<span class="chat-img pull-right">
+						<img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="img-circle">
 					</span>
 					<div class="chat-body clearfix">
 						<div class="header">
-							<strong class="primary-font"><?php echo $usernames[$message->user_id]; ?></strong>
-							<small class="pull-<?php echo $opposite; ?> text-muted">
-								<i class="fa fa-clock-o fa-fw"></i> <?php echo $message->timestamp; ?>
-							</small>
+							<small class=" text-muted">
+								<i class="fa fa-clock-o fa-fw"></i> <?php echo $message->timestamp; ?></small>
+							<strong class="pull-right primary-font"><?php echo $usernames[$message->user_id]; ?></strong>
 						</div>
 						<p>
 							<?php echo $message->text; ?>
