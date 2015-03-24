@@ -37,6 +37,8 @@
 				<?php 
 					$user = $this->Session->read('Auth.User');	
 
+					echo "<br />USER: " . $user['id'] . "<br />MESSAGE UID: " . $message->user_id;
+					
 					if($user['id'] == $message->user_id) {
 						$side = "right";
 					} else {
