@@ -58,7 +58,7 @@
 							</small>
 							<strong class="pull-<?php echo $side; ?> primary-font"><?php echo $usernames[$message->user_id]; ?></strong>
 						</div>
-						<p>
+						<p style="padding-top: 10px;">
 							<?php echo $message->text; ?>
 						</p>
 					</div>
