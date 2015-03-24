@@ -39,18 +39,21 @@
         <!-- Navigation -->
 		
 		<!-- ONLY INCLUDE IF LOGGED IN? -->
-        <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
-			<?php
+        	<?php
 				$user = $this->Session->read('Auth.User');						
 			
-				if(!empty($user)) {
-					echo $this->element('header'); 
-					echo $this->element('sidebar'); 
-				} 
-			?>
+				if(!empty($user)) { ?>
+					<nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
+		
+					<?php
+						echo $this->element('header'); 
+						echo $this->element('sidebar'); 
+					?>
+			        </nav>
+					<?php } ?>
 			
             <!-- /.navbar-static-side -->
-        </nav>
+
 
         <!-- Page Content -->
         <div id="page-wrapper">
