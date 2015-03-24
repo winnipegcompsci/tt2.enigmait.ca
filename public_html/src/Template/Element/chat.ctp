@@ -58,9 +58,10 @@
 							</small>
 							<strong class="pull-<?php echo $side; ?> primary-font"><?php echo $usernames[$message->user_id]; ?></strong>
 						</div>
-						<p style="padding-top: 10px;">
+						<p>
 							<?php echo $message->text; ?>
 						</p>
+						::after
 					</div>
 				</li>
 			<?php }	?>
