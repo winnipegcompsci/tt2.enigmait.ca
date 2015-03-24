@@ -40,7 +40,7 @@
 		<ul class="chat">
 			<?php 
 				foreach($messages as $message) {
-					echo "<pre>" . print_r($message, TRUE) . "</pre>";
+					echo "<pre>" . $message->user_id . "<br />" . $message->timestamp . "<br />" . $message->text. "<br /></pre>";
 				}
 			?>
 		
