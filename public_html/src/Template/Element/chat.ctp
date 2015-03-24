@@ -40,16 +40,18 @@
 					if($user['id'] == $message->user_id) {
 						$side = "right";
 						$opposite = "left";
+						$color = "http://placehold.it/50/55C1E7/fff";
 					} else {
 						$side = "left";
 						$opposite = "right";
+						$color = "http://placehold.it/50/FA6F57/fff"
 					}			
 					// right = $side
 					// left = $opposite
 				?>
 				<li class="<?php echo $side; ?> clearfix">
 					<span class="chat-img pull-<?php echo $side; ?>">
-						<img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="img-circle">
+						<img src="<?php echo $color; ?>" alt="User Avatar" class="img-circle">
 					</span>
 					<div class="chat-body clearfix">
 						<div class="header">
