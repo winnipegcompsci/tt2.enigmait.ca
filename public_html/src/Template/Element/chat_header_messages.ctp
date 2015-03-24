@@ -11,4 +11,4 @@
 		</a>
 	</li>
 	<li class="divider"></li>				
-<? } ?>
+<?php } ?>
