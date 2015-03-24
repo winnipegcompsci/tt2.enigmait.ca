@@ -57,6 +57,8 @@ class PagesController extends AppController
 		
 		// Message Vars
 		$messages = TableRegistry::get('Messages')->find('all')->limit(15);
+		$header_messages = TableRegister::get('Messages')->find('all')->limit(3);
+		
 		$users = TableRegistry::get('Users')->find('all');
 		$usernames = array();
 		
@@ -66,6 +68,7 @@ class PagesController extends AppController
 		
 		$this->set('messages', $messages);
 		$this->set('usernames', $usernames);
+		$this->set('header_messages', $header_messages);
 		
         try {
             $this->render(implode('/', $path));
