@@ -2,6 +2,8 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
+use Cake\Network\Exception\NotFoundException
 
 /**
  * Users Controller
@@ -20,6 +22,7 @@ class UsersController extends AppController
 	{
 		if ($this->request->is('post')) {
 			$user = $this->Auth->identify();
+			error_log("USER:: " . print_r($user, TRUE)  );
 			if ($user) {
 				$this->Auth->setUser($user);
 				return $this->redirect($this->Auth->redirectUrl());

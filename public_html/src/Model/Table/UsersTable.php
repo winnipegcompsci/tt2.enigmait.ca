@@ -91,7 +91,7 @@ class UsersTable extends Table
         $rules->add($rules->isUnique(['username']));
         $rules->add($rules->isUnique(['email']));
         $rules->add($rules->existsIn(['user_role_id'], 'UserRoles'));
-        $rules->add($rules->existsIn(['customer_id'], 'Customers'));
+        // $rules->add($rules->existsIn(['customer_id'], 'Customers'));
         return $rules;
     }
 }
