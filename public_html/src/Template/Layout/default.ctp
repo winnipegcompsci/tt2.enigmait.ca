@@ -43,10 +43,10 @@
 			<?php
 				$user = $this->Session->read('Auth.User');						
 			
-			//		if(!empty($user)) {
-				echo $this->element('header'); 
-				echo $this->element('sidebar'); 
-			//		} 
+				if(!empty($user)) {
+					echo $this->element('header'); 
+					echo $this->element('sidebar'); 
+				} 
 			?>
 			
             <!-- /.navbar-static-side -->
