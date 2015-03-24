@@ -36,23 +36,23 @@
 				<!-- IF USER ID == $message->user_ID Then class => right clearfix -->
 				<?php 
 					$user = $this->Session->read('Auth.User');	
-
-					echo "<br />USER: " . $user['id'] . "<br />MESSAGE UID: " . $message->user_id;
 					
 					if($user['id'] == $message->user_id) {
 						$side = "right";
+						$opposite = "left";
 					} else {
 						$side = "left";
+						$opposite = "right";
 					}				
 				?>
 				<li class="<?php echo $side; ?> clearfix">
-					<span class="chat-img pull-left">
+					<span class="chat-img pull-<?php echo $side; ?>">
 						<img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle">
 					</span>
 					<div class="chat-body clearfix">
 						<div class="header">
 							<strong class="primary-font"><?php echo $usernames[$message->user_id]; ?></strong>
-							<small class="pull-right text-muted">
+							<small class="pull-<?php echo $opposite; ?> text-muted">
 								<i class="fa fa-clock-o fa-fw"></i> <?php echo $message->timestamp; ?>
 							</small>
 						</div>
