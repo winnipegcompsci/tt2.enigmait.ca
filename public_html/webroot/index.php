@@ -18,8 +18,6 @@
  
 // for built-in server
 
-// GIT SERVER @ 10.20.10.88 --> NOT Copying to /Var/www...
-
 if (php_sapi_name() === 'cli-server') {
     $_SERVER['PHP_SELF'] = '/' . basename(__FILE__);
 
