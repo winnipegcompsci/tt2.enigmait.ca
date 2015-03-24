@@ -57,7 +57,7 @@ class PagesController extends AppController
 		
 		// Message Vars
 		$messages = TableRegistry::get('Messages')->find('all')->limit(15);
-		$users - TableRegistry::get('Users')->find('all');
+		$users = TableRegistry::get('Users')->find('all');
 		$usernames = array();
 		
 		foreach($users as $user){
