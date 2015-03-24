@@ -38,6 +38,12 @@
 	<!-- /.panel-heading -->
 	<div class="panel-body">
 		<ul class="chat">
+			<?php 
+				foreach($messages as $message) {
+					echo "<pre>" . print_r($message, TRUE) . "</pre>";
+				}
+			?>
+		
 			<li class="left clearfix">
 				<span class="chat-img pull-left">
 					<img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle">

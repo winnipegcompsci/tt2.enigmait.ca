@@ -37,6 +37,7 @@ class PagesController extends AppController
      */
     public function display()
     {
+	
         $path = func_get_args();
 
         $count = count($path);
@@ -52,6 +53,9 @@ class PagesController extends AppController
             $subpage = $path[1];
         }
         $this->set(compact('page', 'subpage'));
+		
+		// Message Vars
+		$this->set('messages', $this->Messages->find('all'));
 
         try {
             $this->render(implode('/', $path));
