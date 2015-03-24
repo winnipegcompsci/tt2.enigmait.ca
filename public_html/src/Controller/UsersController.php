@@ -3,7 +3,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Event\Event;
-use Cake\Network\Exception\NotFoundException
+use Cake\Network\Exception\NotFoundException;
 
 /**
  * Users Controller
