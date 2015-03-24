@@ -36,8 +36,8 @@
 				<!-- IF USER ID == $message->user_ID Then class => right clearfix -->
 				<?php 
 					$user = $this->Session->read('Auth.User');	
-					echo "USER::<pre>" . print_r($user, TRUE) . "</pre>";
-					if($user->id == $message->user_id) {
+
+					if($user['id'] == $message->user_id) {
 						$side = "right";
 					} else {
 						$side = "left";
