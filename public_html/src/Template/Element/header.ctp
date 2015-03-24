@@ -1,4 +1,6 @@
- <div class="navbar-header">
+<?php $user = $this->Session->read('Auth.User'); ?>
+ 
+<div class="navbar-header">
 	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 		<span class="sr-only">Toggle navigation</span>
 		<span class="icon-bar"></span>
@@ -8,7 +10,7 @@
 
     <a class="navbar-brand" href="<?php 
 		echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'dashboard']); 
-		?>"> <i class="fa fa-puzzle-piece"></i> TT v2.0</a>
+		?>"><i class="fa fa-th-list"></i>&nbsp; TT v2.0</a>
 </div>
 <!-- /.navbar-header -->
 
@@ -18,44 +20,9 @@
 			<i class="fa fa-envelope fa-fw"></i> Messages  <i class="fa fa-caret-down"></i>
 		</a>
 		<ul class="dropdown-menu dropdown-messages">
+			<?php echo $this->element('chat_header_messages'); ?>
 			<li>
-				<a href="#">
-					<div>
-						<strong>John Smith</strong>
-						<span class="pull-right text-muted">
-							<em>Yesterday</em>
-						</span>
-					</div>
-					<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-				</a>
-			</li>
-			<li class="divider"></li>
-			<li>
-				<a href="#">
-					<div>
-						<strong>John Smith</strong>
-						<span class="pull-right text-muted">
-							<em>Yesterday</em>
-						</span>
-					</div>
-					<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-				</a>
-			</li>
-			<li class="divider"></li>
-			<li>
-				<a href="#">
-					<div>
-						<strong>John Smith</strong>
-						<span class="pull-right text-muted">
-							<em>Yesterday</em>
-						</span>
-					</div>
-					<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-				</a>
-			</li>
-			<li class="divider"></li>
-			<li>
-				<a class="text-center" href="#">
+				<a class="text-center" href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'messages']);?>">
 					<strong>Read All Messages</strong>
 					<i class="fa fa-angle-right"></i>
 				</a>
@@ -63,6 +30,8 @@
 		</ul>
 		<!-- /.dropdown-messages -->
 	</li>
+	
+	<!-- Turn tasks into element? -->
 	<!-- /.dropdown -->
 	<li class="dropdown">
 		<a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -195,7 +164,7 @@
 			<li class="divider"></li>
 			<li>
 				<a class="text-center" href="#">
-					<strong>See All Alerts</strong>
+					<strong>See All Notifications</strong>
 					<i class="fa fa-angle-right"></i>
 				</a>
 			</li>
@@ -205,7 +174,7 @@
 	<!-- /.dropdown -->
 	<li class="dropdown">
 		<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-			<i class="fa fa-user fa-fw"></i> Account <i class="fa fa-caret-down"></i>
+			<i class="fa fa-user fa-fw"></i> <?= $user['username'] ?> <i class="fa fa-caret-down"></i>
 		</a>
 		<ul class="dropdown-menu dropdown-user">
 			<li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
@@ -213,7 +182,7 @@
 			<li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
 			</li>
 			<li class="divider"></li>
-			<li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+			<li><a href="<?php echo $this->Url->build(['controller' => 'Users', 'action' => 'logout']); ?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
 			</li>
 		</ul>
 		<!-- /.dropdown-user -->

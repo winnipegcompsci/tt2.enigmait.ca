@@ -38,12 +38,14 @@ class AppController extends Controller
 		],
 		'Modal' => [
 			'className' => 'Bootstrap3.BootstrapModal'
-		]
+		],
 	];
 
 	public function beforeFilter(Event $event)
-    {
-        $this->Auth->allow(['index', 'view', 'display']);
+    {		
+        $this->Auth->allow(['add','index', 'view', 'display']);	// REMOVE THIS AFTER!!!
+		
+		// $this->set('logged_in', $this->Auth->loggedIn());
 		// ...
     }
 
@@ -58,19 +60,32 @@ class AppController extends Controller
     {
         $this->loadComponent('Flash');
 		$this->loadComponent('Auth', [
+			'authorize' => ['Controller'],	// Added this Line.
             'loginRedirect' => [
-                'controller' => 'Articles',
-                'action' => 'index'
-            ],
-            'logoutRedirect' => [
                 'controller' => 'Pages',
                 'action' => 'display',
-                'home'
+				'dashboard'
+            ],
+            'logoutRedirect' => [
+                'controller' => 'Users',
+                'action' => 'login'
             ]
         ]);
 		
 
     }
 	
-
+	public function isAuthorized() 
+	{
+		$this->set('logged_in', $this->Auth->identify());
+		// Admin can access every action
+		if(isset($user['role']) && $user['role'] == 'admin') {
+			return true;
+		} else if( isset($user['role']) && $user['role'] == 'user') {
+			return true;
+		}
+		
+		// return false;
+		return true; // DEBUG:: CHANGE AFTER!!
+	}
 }

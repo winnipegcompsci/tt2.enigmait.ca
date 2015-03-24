@@ -22,13 +22,28 @@ class UsersTable extends Table
     public function initialize(array $config)
     {
         $this->table('users');
-        $this->displayField('u_user_id');
-        $this->primaryKey('u_user_id');
-        $this->belongsTo('Users', [
+        $this->displayField('id');
+        $this->primaryKey('id');
+        $this->belongsTo('UserRoles', [
+            'foreignKey' => 'user_role_id'
+        ]);
+        $this->belongsTo('Customers', [
+            'foreignKey' => 'customer_id'
+        ]);
+        $this->hasMany('CustomerNotes', [
             'foreignKey' => 'user_id'
         ]);
-        $this->belongsTo('UserCustomers', [
-            'foreignKey' => 'user_customer_id'
+        $this->hasMany('ProjectTasks', [
+            'foreignKey' => 'user_id'
+        ]);
+        $this->hasMany('TicketEvents', [
+            'foreignKey' => 'user_id'
+        ]);
+        $this->hasMany('TicketHistory', [
+            'foreignKey' => 'user_id'
+        ]);
+        $this->hasMany('Tickets', [
+            'foreignKey' => 'user_id'
         ]);
     }
 
@@ -41,42 +56,25 @@ class UsersTable extends Table
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->add('user_id', 'valid', ['rule' => 'numeric'])
-            ->allowEmpty('user_id', 'create')
-            ->requirePresence('user_name', 'create')
-            ->notEmpty('user_name')
-            ->requirePresence('user_password', 'create')
-            ->notEmpty('user_password')
-            ->requirePresence('user_secretkey', 'create')
-            ->notEmpty('user_secretkey')
-            ->requirePresence('user_first_name', 'create')
-            ->notEmpty('user_first_name')
-            ->requirePresence('user_last_name', 'create')
-            ->notEmpty('user_last_name')
-            ->requirePresence('user_email', 'create')
-            ->notEmpty('user_email')
-            ->add('user_class', 'valid', ['rule' => 'numeric'])
-            ->requirePresence('user_class', 'create')
-            ->notEmpty('user_class')
-            ->requirePresence('user_disabled', 'create')
-            ->notEmpty('user_disabled')
-            ->add('user_created', 'valid', ['rule' => 'datetime'])
-            ->requirePresence('user_created', 'create')
-            ->notEmpty('user_created')
-            ->requirePresence('user_session', 'create')
-            ->notEmpty('user_session')
-            ->requirePresence('user_cookie', 'create')
-            ->notEmpty('user_cookie')
-            ->requirePresence('user_ip', 'create')
-            ->notEmpty('user_ip')
-            ->add('user_last_login', 'valid', ['rule' => 'datetime'])
-            ->requirePresence('user_last_login', 'create')
-            ->notEmpty('user_last_login')
-            ->add('user_customer_id', 'valid', ['rule' => 'numeric'])
-            ->requirePresence('user_customer_id', 'create')
-            ->notEmpty('user_customer_id')
-            ->requirePresence('user_company_name', 'create')
-            ->notEmpty('user_company_name');
+            ->add('id', 'valid', ['rule' => 'numeric'])
+            ->allowEmpty('id', 'create')
+            ->requirePresence('username', 'create')
+            ->notEmpty('username')
+            ->requirePresence('password', 'create')
+            ->notEmpty('password')
+            ->requirePresence('secretkey', 'create')
+            ->notEmpty('secretkey')
+            ->requirePresence('first_name', 'create')
+            ->notEmpty('first_name')
+            ->requirePresence('last_name', 'create')
+            ->notEmpty('last_name')
+            ->add('email', 'valid', ['rule' => 'email'])
+            ->requirePresence('email', 'create')
+            ->notEmpty('email')
+            ->add('user_role_id', 'valid', ['rule' => 'numeric'])
+            ->requirePresence('user_role_id', 'create')
+            ->notEmpty('user_role_id');
+
 
         return $validator;
     }
@@ -90,8 +88,10 @@ class UsersTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['user_id'], 'Users'));
-        $rules->add($rules->existsIn(['user_customer_id'], 'UserCustomers'));
+        $rules->add($rules->isUnique(['username']));
+        $rules->add($rules->isUnique(['email']));
+        $rules->add($rules->existsIn(['user_role_id'], 'UserRoles'));
+        // $rules->add($rules->existsIn(['customer_id'], 'Customers'));
         return $rules;
     }
 }

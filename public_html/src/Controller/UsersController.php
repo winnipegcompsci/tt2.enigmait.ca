@@ -3,6 +3,8 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Event\Event;
+use Cake\Network\Exception\NotFoundException;
+
 /**
  * Users Controller
  *
@@ -10,52 +12,41 @@ use Cake\Event\Event;
  */
 class UsersController extends AppController
 {
-	public $helpers = [
-		'Html' => [
-			'className' => 'Bootstrap3.BootstrapHtml'
-		],
-		'Form' => [
-			'className' => 'Bootstrap3.BootstrapForm'
-		],
-		'Paginator' => [
-			'className' => 'Bootstrap3.BootstrapPaginator'
-		],
-		'Modal' => [
-			'className' => 'Bootstrap3.BootstrapModal'
-		]
-	];
-
-	public function beforeFilter(Event $event){
+	public function beforeFilter(Event $event)
+	{
 		parent::beforeFilter($event);
-		// Allow users to register and logout.
-		// You should not add the "login" action to allow list. Doing so would
-		// cause problems with normal functioning of AuthComponent.
 		$this->Auth->allow(['add', 'logout']);
 	}
-    
-	public function login() {
+	
+	public function login() 
+	{
 		if ($this->request->is('post')) {
 			$user = $this->Auth->identify();
-			if($user) {
+			error_log("USER:: " . print_r($user, TRUE)  );
+			if ($user) {
 				$this->Auth->setUser($user);
 				return $this->redirect($this->Auth->redirectUrl());
 			}
-			$thia->Flash->error(__('Invalid username, password or verification code, please try again'));
+			$this->Flash->error(__('Invalid username or password, try again'));
 		}
 	}
 	
-	public function logout() {
+	public function logout()
+	{
 		return $this->redirect($this->Auth->logout());
 	}
-	
-	/**
+
+    /**
      * Index method
      *
      * @return void
      */
     public function index()
     {
-        $this->set('users', $this->Users->find('all'));
+        $this->paginate = [
+            'contain' => ['UserRoles', 'Customers']
+        ];
+        $this->set('users', $this->paginate($this->Users));
         $this->set('_serialize', ['users']);
     }
 
@@ -68,12 +59,10 @@ class UsersController extends AppController
      */
     public function view($id = null)
     {
-        if (!$id) {
-            throw new NotFoundException(__('Invalid user'));
-        }
-
-        $user = $this->Users->get($id);
-        $this->set(compact('user'));
+        $user = $this->Users->get($id, [
+            'contain' => ['UserRoles', 'Customers', 'CustomerNotes', 'ProjectTasks', 'TicketEvents', 'TicketHistory', 'Tickets']
+        ]);
+        $this->set('user', $user);
         $this->set('_serialize', ['user']);
     }
 
@@ -84,20 +73,20 @@ class UsersController extends AppController
      */
     public function add()
     {
-        $user = $this->Users->newEntity($this->request->data);
+        $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
+            $user = $this->Users->patchEntity($user, $this->request->data);
             if ($this->Users->save($user)) {
-                // $this->Flash->success(__('The user has been saved.'));										// CakePHP Way.
-				$this->Flash->success('The User has been saved.', array ('class' => 'alert alert-success'));	//Bootstrap 3 Way.
-
-                return $this->redirect(['action' => 'add']);
+                $this->Flash->success('The user has been saved.');
+                return $this->redirect(['action' => 'index']);
+            } else {
+                $this->Flash->error('The user could not be saved. Please, try again.');
             }
-
-            // $this->Flash->error(__('Unable to add the user.')); 												// Cake PHP Way
-			$this->Flash->error('Unable to add the user.', array('class' => 'alert alert-danger'));				//Bootstrap 3 Way.
-
         }
-        $this->set('user', $user);
+        $userRoles = $this->Users->UserRoles->find('list', ['limit' => 200]);
+        $customers = $this->Users->Customers->find('list', ['limit' => 200]);
+        $this->set(compact('user', 'userRoles', 'customers'));
+        $this->set('_serialize', ['user']);
     }
 
     /**
@@ -121,9 +110,9 @@ class UsersController extends AppController
                 $this->Flash->error('The user could not be saved. Please, try again.');
             }
         }
-        $uUsers = $this->Users->UUsers->find('list', ['limit' => 200]);
-        $uCustomers = $this->Users->UCustomers->find('list', ['limit' => 200]);
-        $this->set(compact('user', 'uUsers', 'uCustomers'));
+        $userRoles = $this->Users->UserRoles->find('list', ['limit' => 200]);
+        $customers = $this->Users->Customers->find('list', ['limit' => 200]);
+        $this->set(compact('user', 'userRoles', 'customers'));
         $this->set('_serialize', ['user']);
     }
 

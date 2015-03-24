@@ -19,7 +19,7 @@ $fields = collection($fields)
         return $schema->columnType($field) !== 'binary';
     });
 %>
-<div class="actions columns large-2 medium-3">
+<div class="actions columns col-lg-2 col-md-3 pull-right">
     <h3><?= __('Actions') ?></h3>
     <ul class="side-nav">
 <% if (strpos($action, 'add') === false): %>
@@ -47,7 +47,7 @@ $fields = collection($fields)
 %>
     </ul>
 </div>
-<div class="<%= $pluralVar %> form large-10 medium-9 columns">
+<div class="<%= $pluralVar %> form col-lg-10 col-md-9 columns">
     <?= $this->Form->create($<%= $singularVar %>); ?>
     <fieldset>
         <legend><?= __('<%= Inflector::humanize($action) %> <%= $singularHumanName %>') ?></legend>

@@ -1,0 +1,21 @@
+2015-03-17 03:16:16 Notice: Strict (2048): Declaration of App\Controller\UsersController::beforeFilter() should be compatible with App\Controller\AppController::beforeFilter(Cake\Event\Event $event) in [C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\src\Controller\UsersController.php, line 12]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 138
+include - APP/Controller\UsersController.php, line 12
+Composer\Autoload\includeFile - ROOT\vendor\composer\ClassLoader.php, line 412
+Composer\Autoload\ClassLoader::loadClass() - ROOT\vendor\composer\ClassLoader.php, line 301
+spl_autoload_call - [internal], line ??
+class_exists - [internal], line ??
+Cake\Core\App::_classExistsInBase() - CORE\src\Core\App.php, line 94
+Cake\Core\App::className() - CORE\src\Core\App.php, line 71
+Bake\Shell\Task\ViewTask::controller() - ROOT\vendor\cakephp\bake\src\Shell\Task\ViewTask.php, line 188
+Bake\Shell\Task\ViewTask::main() - ROOT\vendor\cakephp\bake\src\Shell\Task\ViewTask.php, line 126
+Cake\Console\Shell::runCommand() - CORE\src\Console\Shell.php, line 387
+Cake\Console\Shell::runCommand() - CORE\src\Console\Shell.php, line 382
+Cake\Console\ShellDispatcher::_dispatch() - CORE\src\Console\ShellDispatcher.php, line 200
+Cake\Console\ShellDispatcher::dispatch() - CORE\src\Console\ShellDispatcher.php, line 171
+Cake\Console\ShellDispatcher::run() - CORE\src\Console\ShellDispatcher.php, line 122
+[main] - ROOT\bin\cake.php, line 20
+
+
+

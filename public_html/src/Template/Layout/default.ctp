@@ -21,7 +21,7 @@
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../bower_components/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,10 +37,18 @@
     <div id="wrapper">
 
         <!-- Navigation -->
+		
+		<!-- ONLY INCLUDE IF LOGGED IN? -->
         <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
-           <?php echo $this->element('header'); ?>
-		   <?php echo $this->element('sidebar'); ?>
-
+			<?php
+				$user = $this->Session->read('Auth.User');						
+			
+				if(!empty($user)) {
+					echo $this->element('header'); 
+					echo $this->element('sidebar'); 
+				} 
+			?>
+			
             <!-- /.navbar-static-side -->
         </nav>
 
@@ -49,11 +57,8 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12" style="padding: 15px">
-						<!-- CAKE PHP CALLS -------------------------------------------------->
-						<?php echo $this->Flash->render(); ?>
-						
-						<?php echo $this->fetch('content'); ?>
-						<!-- CAKE PHP CALLS -------------------------------------------------->
+							<?php echo $this->Flash->render(); ?>
+							<?php echo $this->fetch('content'); ?> 
 					</div>
                     <!-- /.col-lg-12 -->
                 </div>
