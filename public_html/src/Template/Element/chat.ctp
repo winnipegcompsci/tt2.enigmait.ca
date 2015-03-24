@@ -55,7 +55,7 @@
 						<div class="header">
 							<small class=" text-muted">
 								<i class="fa fa-clock-o fa-fw"></i> <?php echo $message->timestamp; ?></small>
-							<strong class="pull-<?php echo $side; ?> primary-font"><?php echo $usernames[$message->user_id]; ?></strong>
+							<strong class="pull-<?php echo $opposite; ?> primary-font"><?php echo $usernames[$message->user_id]; ?></strong>
 						</div>
 						<p>
 							<?php echo $message->text; ?>
