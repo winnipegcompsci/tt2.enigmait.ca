@@ -39,13 +39,14 @@
 	<div class="panel-body">
 		<ul class="chat">
 			<?php foreach($messages as $message) { ?>
+				<!-- IF USER ID == $message->user_ID Then class => right clearfix -->
 				<li class="left clearfix">
 					<span class="chat-img pull-left">
 						<img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle">
 					</span>
 					<div class="chat-body clearfix">
 						<div class="header">
-							<strong class="primary-font"><?php echo $message->user_id; ?></strong>
+							<strong class="primary-font"><?php echo $message->author; ?></strong>
 							<small class="pull-right text-muted">
 								<i class="fa fa-clock-o fa-fw"></i> <?php echo $message->timestamp; ?>
 							</small>

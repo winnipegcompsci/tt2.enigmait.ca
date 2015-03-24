@@ -57,6 +57,11 @@ class PagesController extends AppController
 		
 		// Message Vars
 		$messages = TableRegistry::get('Messages')->find('all')->limit(10);
+		foreach($messages as $message) {
+			$user = $users->get($message->user_id);
+			
+			$messages->author = $user->first_name . " " . $user->last_name;
+		}
 		$this->set('messages', $messages);
 
         try {
