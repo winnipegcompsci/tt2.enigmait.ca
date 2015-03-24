@@ -59,9 +59,9 @@
 							<strong class="pull-<?php echo $side; ?> primary-font"><?php echo $usernames[$message->user_id]; ?></strong>
 						</div>
 						<p>
+							<br />
 							<?php echo $message->text; ?>
 						</p>
-						::after
 					</div>
 				</li>
 			<?php }	?>
