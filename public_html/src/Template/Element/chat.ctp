@@ -34,6 +34,7 @@
 		<ul class="chat">
 			<?php foreach($messages as $message) { 	?>
 				<!-- IF USER ID == $message->user_ID Then class => right clearfix -->
+				<?php echo "<pre>" . print_r($logged_in, TRUE) . "</pre>"; ?>
 				<li class="left clearfix">
 					<span class="chat-img pull-left">
 						<img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle">
