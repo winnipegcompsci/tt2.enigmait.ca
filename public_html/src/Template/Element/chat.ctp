@@ -51,7 +51,7 @@
 					<span class="chat-img pull-<?php echo $side; ?>">
 						<img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="img-circle">
 					</span>
-					<div class="chat-body clearfix pull-<?php echo $opposite; ?>">
+					<div class="chat-body clearfix">
 						<div class="header">
 							<small class=" text-muted pull-<?php echo $opposite; ?>">
 								<i class="fa fa-clock-o fa-fw"></i> <?php echo $message->timestamp; ?>
