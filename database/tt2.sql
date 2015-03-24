@@ -983,7 +983,7 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(30) NOT NULL,
-  `password` char(32) NOT NULL,
+  `password` varchar(256) NOT NULL,
   `secretkey` text NOT NULL,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
@@ -999,7 +999,7 @@ CREATE TABLE `users` (
   `company_name` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `u_user_name` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1008,7 +1008,6 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'drichardson','$2y$10$KhOkjUnoLNRnEryq4lJ.V.YZO','123456789','David','Richardson','winnipegcompsci@gmail.com',1,'0','0000-00-00 00:00:00','','','','0000-00-00 00:00:00',-99,'');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1309,4 +1308,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-03-23 19:00:05
+-- Dump completed on 2015-03-23 20:25:52
