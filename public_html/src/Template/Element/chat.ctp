@@ -58,7 +58,7 @@
 							</small>
 							<strong class="pull-<?php echo $side; ?> primary-font"><?php echo $usernames[$message->user_id]; ?></strong>
 						</div>
-						<p>
+						<p class="pull-<?php echo $opposite; ?>">
 							<br />
 							<?php echo $message->text; ?>
 						</p>
