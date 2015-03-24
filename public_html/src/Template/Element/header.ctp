@@ -22,43 +22,7 @@
 		<ul class="dropdown-menu dropdown-messages">
 			<?php echo $this->element('chat_header_messages'); ?>
 			<li>
-				<a href="#">
-					<div>
-						<strong>John Smith</strong>
-						<span class="pull-right text-muted">
-							<em>Yesterday</em>
-						</span>
-					</div>
-					<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-				</a>
-			</li>
-			<li class="divider"></li>
-			<li>
-				<a href="#">
-					<div>
-						<strong>John Smith</strong>
-						<span class="pull-right text-muted">
-							<em>Yesterday</em>
-						</span>
-					</div>
-					<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-				</a>
-			</li>
-			<li class="divider"></li>
-			<li>
-				<a href="#">
-					<div>
-						<strong>John Smith</strong>
-						<span class="pull-right text-muted">
-							<em>Yesterday</em>
-						</span>
-					</div>
-					<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-				</a>
-			</li>
-			<li class="divider"></li>
-			<li>
-				<a class="text-center" href="#">
+				<a class="text-center" href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'messages']);?>">
 					<strong>Read All Messages</strong>
 					<i class="fa fa-angle-right"></i>
 				</a>
