@@ -409,6 +409,31 @@ LOCK TABLES `inventory` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `messages`
+--
+
+DROP TABLE IF EXISTS `messages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `messages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `timestamp` datetime NOT NULL,
+  `text` longtext NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `messages`
+--
+
+LOCK TABLES `messages` WRITE;
+/*!40000 ALTER TABLE `messages` DISABLE KEYS */;
+/*!40000 ALTER TABLE `messages` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `notification_types`
 --
 
@@ -974,7 +999,7 @@ CREATE TABLE `users` (
   `company_name` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `u_user_name` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -983,7 +1008,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'joe.funari','46fa32170adef90863c0eb5794fe440e','OJKURX57OGIU2QVX','Joe','Funari','jfunari@enigmait.ca',1,'0','0000-00-00 00:00:00','ios8hjrjt8raekc6detf104nh7','','64.141.33.170','2014-05-05 11:44:26',-99,''),(2,'ryan.toomer','cb6ab56c8162db35b23b7b54ea2077a0','OJKURX57OGIU2QVX','Ryan','Toomer','rtoomer@enigmait.ca',1,'1','2008-06-23 11:56:21','svobajm1dje1rc7diaqpbvhbv2','','205.200.0.235','2008-08-07 10:15:30',-99,''),(3,'leo.magne','cae85c78cd886aa011d8b498c6006b9a','OJKURX57OGIU2QVX','Leo','Magne','lmagne@test.test',5,'0','2008-06-25 23:51:27','rodeap216hvqn5bk1gop5olvi6','','205.200.6.236','2008-06-25 23:51:45',-99,''),(4,'jexner','95348567a91f98ad0f6ad239d387632d','OJKURX57OGIU2QVX','Jenn','Exner','jexner@enigmait.ca',1,'1','2008-09-29 15:41:23','c6vh4paef7avo1guhhdco4uab6','','10.20.30.106','2009-06-02 16:31:16',-99,''),(5,'teekayehm','3eb20743e72211ae786ee393403e3424','OJKURX57OGIU2QVX','test','test','jfunari@enigmait.ca',6,'0','2008-10-09 20:41:49','','','205.200.6.236','2008-10-09 20:44:49',-99,''),(6,'landerson','3ae07865b1d64099ae067e818aa092b4','OJKURX57OGIU2QVX','Lorne','Anderson','landerson@enigmait.ca',2,'0','2009-06-12 11:27:17','ao8s52678lb1o2ldcva6somsh6','','64.141.33.170','2014-05-05 11:43:28',-99,''),(7,'tseymour','06fd862fb55dbd64dd3f47e0fbefd684','OJKURX57OGIU2QVX','Tracy','Seymour','tseymour@enigmait.ca',1,'1','2009-10-01 15:12:15','sl3ntrllmb1dh2g2l2972cvov0','','10.20.30.109','2009-10-28 10:16:54',-99,''),(8,'jdavidow','a2d58b6915b766e8839ae1fc93b5b428','OJKURX57OGIU2QVX','Justin','Davidow','jdavidow@enigmait.ca',1,'0','2010-02-02 12:21:55','hrtjks77aiqu48n5dadrhdgs96','','127.0.0.1','2014-05-05 18:24:46',-99,''),(9,'kevin.evans','5d75edb7a1b723a383524a719091b40a','OJKURX57OGIU2QVX','Kevin','Evans','kevev22@hotmail.com',3,'1','2010-02-14 19:38:52','lg7n2o7p5j9fvif57eal29q212','','205.200.65.147','2010-02-24 09:22:51',-99,''),(10,'rvialoux','5e82a5346b164a4a513b9b131f244b02','OJKURX57OGIU2QVX','Richard','Vialoux','rvialoux@enigmait.ca',3,'0','2013-03-21 14:58:40','itjilrn7eng7t0mumcult8ppp1','','10.202.100.20','2013-12-06 13:08:50',-99,''),(11,'smarginet','a52814155508b6770c9864b335badd50','OJKURX57OGIU2QVX','Sean','Marginet','smarginet@enigmait.ca',3,'0','2013-06-11 15:17:12','11p5d9spcmh97rql0dnv7hcpt2','','10.202.100.116','2013-06-26 14:18:40',-99,''),(12,'mgeorge','69e8faf3b71b58518f951564d7261246','OJKURX57OGIU2QVX','Michael','Ibrahim','mibrahim@enigmait.ca',3,'0','2013-10-16 12:08:24','6rfl71gn6q1am6vad3ksg9jau1','','64.141.33.170','2014-05-05 10:55:05',-99,''),(13,'asabitu','6b9769492b96811195313b5fe002edfd','OJKURX57OGIU2QVX','Ayoola','Sabitu','asabitu@enigmait.ca',3,'0','2013-11-12 17:24:44','um412hpmt75p58nsp3tsuer3b1','','64.141.33.170','2014-05-05 12:40:13',-99,''),(14,'mchudy','6507df5c405b17e141da82fd86b4fc36','OJKURX57OGIU2QVX','Mike','Chudy','mchudy@enigmait.ca',1,'0','2014-04-14 16:13:31','c9dj276b60igtq2rp99bgk86d7','','64.141.33.170','2014-05-05 12:44:29',-99,''),(15,'drichardson','4c7e5ae26a7c0c40775040adabfec79a','OAL5GCMGA2EKE3RI','David','Richardson','drichardson@enigmait.ca',1,'0','2014-05-05 09:20:04','bekc8u6cnntn2pfku2lsm0fnk4','','127.0.0.1','2015-03-06 10:32:43',-99,''),(20,'TestAccount','05a671c66aefea124cc08b76ea6d30bb','JGNK7HDJLUKZF2VF','Test','Account','test@account.com',3,'0','2014-05-09 13:07:36','3dff60s7e70nk0uev7nnjpl301','','127.0.0.1','0000-00-00 00:00:00',-99,''),(99,'!NOBODY!','test','OAL5GCMGA2EKE3RI','No','User','helpdesk@enigmait.ca',0,'0','0000-00-00 00:00:00','','','','0000-00-00 00:00:00',-99,'Enigma Networks');
+INSERT INTO `users` VALUES (1,'drichardson','$2y$10$KhOkjUnoLNRnEryq4lJ.V.YZO','123456789','David','Richardson','winnipegcompsci@gmail.com',1,'0','0000-00-00 00:00:00','','','','0000-00-00 00:00:00',-99,'');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1284,4 +1309,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-03-22 17:06:52
+-- Dump completed on 2015-03-23 19:00:05
