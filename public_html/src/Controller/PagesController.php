@@ -57,17 +57,16 @@ class PagesController extends AppController
 		
 		// Message Vars
 		$messages = TableRegistry::get('Messages')->find('all')->limit(15);
-		$users = 	TableRegistry::get('Users');
+		$users - TableRegistry::get('Users')->find('all');
+		$usernames = array();
 		
-		foreach($messages as $message) {
-			$user = $users->find('all', [
-				'conditions' => ['Users.id =', $message->user_id]
-			]);
-			
-			$message->author = $user->first_name . " " . $user->last_name;
+		foreach($users as $user){
+			$usernames[$user->id] = $user->first_name . " " . $user->last_name;
 		}
+		
 		$this->set('messages', $messages);
-
+		$this->set('usernames', $usernames);
+		
         try {
             $this->render(implode('/', $path));
         } catch (MissingTemplateException $e) {

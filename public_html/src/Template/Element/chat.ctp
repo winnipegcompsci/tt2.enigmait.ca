@@ -38,7 +38,8 @@
 	<!-- /.panel-heading -->
 	<div class="panel-body">
 		<ul class="chat">
-			<?php foreach($messages as $message) { ?>
+			<?php echo "<pre>" . print_r($usernames, TRUE) . "</pre>"; ?>
+			<?php foreach($messages as $message) { 	?>
 				<!-- IF USER ID == $message->user_ID Then class => right clearfix -->
 				<li class="left clearfix">
 					<span class="chat-img pull-left">
@@ -46,7 +47,7 @@
 					</span>
 					<div class="chat-body clearfix">
 						<div class="header">
-							<strong class="primary-font"><?php echo $message->author; ?></strong>
+							<strong class="primary-font"><?php echo $message->user_id; ?></strong>
 							<small class="pull-right text-muted">
 								<i class="fa fa-clock-o fa-fw"></i> <?php echo $message->timestamp; ?>
 							</small>
