@@ -1,9 +1,10 @@
 <?php
-    /*
+    $class = "timeline";
+   
 	foreach($events as $event) {
 		echo "<pre>" . print_r($event, TRUE) . "</pre>";
 	}
-    */
+   
  
 ?>
 
