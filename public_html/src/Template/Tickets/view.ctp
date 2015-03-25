@@ -28,6 +28,19 @@
 	</div>
 	
 	<div class="row">
+        <div class="columns col-lg-4">
+            <h4> Customer Information </h4>
+        </div>
+        
+        <div class="columns col-lg-4"> 
+           <h2> Ticket Information </h2>
+        </div>
+        
+        <div class="columns col-lg-4">
+            <h4> Billing Information </h4>
+        </div>
+        <!--
+    
 		<div class="columns col-lg-12">
 			<h6 class="subheader"><?= __('Customer') ?></h6>
 			<p><?= $ticket->has('customer') ? $this->Html->link($ticket->customer->name, ['controller' => 'Customers', 'action' => 'view', $ticket->customer->id]) : '' ?></p>
@@ -52,6 +65,7 @@
 			<h6 class="subheader"><?= __('Quote') ?></h6>
 			<p><?= $ticket->has('quote') ? $this->Html->link($ticket->quote->name, ['controller' => 'Quotes', 'action' => 'view', $ticket->quote->id]) : '' ?></p>
 		</div>
+        -->
 	</div>
 	
 	<div class="row">
