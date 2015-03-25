@@ -61,7 +61,7 @@
 	</div>
 	
 	<div class="row">
-		<div class="columns col-lg-8 col-md-6 pull-left">
+		<div class="columns col-lg-8 col-md-6">
 			<?php echo $this->element('ticket_event_timeline', array('events' => $ticket->ticket_events)); ?>
 		</div>
 	</div> <!-- ./row -->
