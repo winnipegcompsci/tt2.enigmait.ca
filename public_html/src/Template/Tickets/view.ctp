@@ -28,42 +28,42 @@
             <table>
                 <tr>
                     <td> Project: </td>
-                    <td></td>
-                    <td><?= $ticket->has('project') ? $this->Html->link($ticket->project->name, ['controller' => 'Projects', 'action' => 'view', $ticket->project->id]) : '' ?></td>
+                    <td>&nbsp;</td>
+                    <td><?= $ticket->has('project') ? $this->Html->link($ticket->project->name, ['controller' => 'Projects', 'action' => 'view', $ticket->project->id]) : 'No Project' ?></td>
                 </tr>
                 <tr>
                     <td> Date Created: </td>
-                    <td></td>
+                    <td>&nbsp;</td>
                     <td><?= h($ticket->date_created) ?></td>
                 </tr>
                 <tr>
                     <td> Last Event: </td>
-                    <td></td>
+                    <td>&nbsp;</td>
                     <td><p><?= h($ticket->dis) ?></p></td>
                 </tr>
                 <tr>
                     <td> Ticket Type: </td>
-                    <td></td>
+                    <td>&nbsp;</td>
                     <td><?= $ticket->has('ticket_type') ? $this->Html->link($ticket->ticket_type->name, ['controller' => 'TicketTypes', 'action' => 'view', $ticket->ticket_type->id]) : '' ?> </td>
                 </tr>
                 <tr>
                     <td> Service Type: </td>
-                    <td></td>
+                    <td>&nbsp;</td>
                     <td><?= $ticket->has('service_type') ? $this->Html->link($ticket->service_type->name, ['controller' => 'ServiceTypes', 'action' => 'view', $ticket->service_type->id]) : '' ?></td>
                 </tr>
                 <tr>
                     <td> Priority: </td>
-                    <td></td>
+                    <td>&nbsp;</td>
                     <td><?= $ticket->has('ticket_priority') ? $this->Html->link($ticket->ticket_priority->name, ['controller' => 'TicketPriorities', 'action' => 'view', $ticket->ticket_priority->id]) : '' ?></td>
                 </tr>
                 <tr>
                     <td> Status: </td>
-                    <td></td>
+                    <td>&nbsp;</td>
                     <td><?= $ticket->has('ticket_status') ? $this->Html->link($ticket->ticket_status->name, ['controller' => 'TicketStatuses', 'action' => 'view', $ticket->ticket_status->id]) : '' ?></td>
                 </tr>                    
                 <tr>
                     <td> Assigned to: </td> 
-                    <td></td>
+                    <td>&nbsp;</td>
                     <td> <?= $ticket->has('user') ? $this->Html->link($ticket->user->id, ['controller' => 'Users', 'action' => 'view', $ticket->user->id]) : 'Unassigned' ?> </td>
                 </tr>
             </table>
@@ -74,12 +74,12 @@
             <table>
                 <tr>
                     <td>Billing Status: </td>
-                    <td></td>
+                    <td>&nbsp;</td>
                     <td><?= $ticket->has('billing_status') ? $this->Html->link($ticket->billing_status->id, ['controller' => 'BillingStatuses', 'action' => 'view', $ticket->billing_status->id]) : ''?></td>
                 </tr>
                 <tr>
                     <td>Quote</td>
-                    <td></td>
+                    <td>&nbsp;</td>
                     <td><?= $ticket->has('quote') ? $this->Html->link($ticket->quote->name, ['controller' => 'Quotes', 'action' => 'view', $ticket->quote->id]) : '' ?></td>
                 </tr>
             </table>
