@@ -83,7 +83,7 @@
 </div>
 
 <script> 	 	
-$(document).ready(function() { 	 	
-    $('#tickets-table').dataTable(); 	 	
+jQuery(document).ready(function() { 	 	
+    jQuery('#tickets-table').dataTable(); 	 	
 }); 	 	
 </script> 
