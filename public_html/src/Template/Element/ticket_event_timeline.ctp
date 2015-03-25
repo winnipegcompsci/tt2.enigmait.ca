@@ -12,15 +12,12 @@
         <ul class="timeline">
         <?php    
             foreach($events as $event) {
-                echo "<pre>" . print_r($event, TRUE) . "</pre>";
                 if($class == "") {
                     $class = "timeline-inverted";
                 } else {
                     $class = "";
                 }
                 $badgetype = $BADGES[array_rand($BADGES)];
-                
-                // echo "<pre>" . print_r($event, TRUE) . "</pre>";
         ?>
                 <li class="<?php echo $class; ?>">
                 <div class="timeline-badge <?= $badgetype ?>"><i class="fa fa-check"></i>
