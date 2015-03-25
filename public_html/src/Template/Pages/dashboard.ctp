@@ -91,6 +91,28 @@
 </div>
 <!-- end of Row containing attention buttons -->
 
+<!-- Graph Row -->
+<div class="row">
+	<div class="col-lg-8">
+		<h1 class="text-info">Insert Recent Orders Here. </h1>
+	</div>
+
+	<div class="col-lg-4">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<i class="fa fa-bar-chart-o fa-fw"></i> Source of Sale 
+			</div>
+			<div class="panel-body">
+				<div id="morris-donut-chart"></div>
+				<a href="#" class="btn btn-default btn-block">View Details</a>
+			</div>
+			<!-- /.panel-body -->
+		</div>
+	</div>
+</div>
+<!-- /.row for Graphs -->
+
+
 <!-- Row Containing Chat -->
 <div class="row">
 	<div class="col-lg-8">
@@ -163,26 +185,7 @@
 </div>
 <!-- /.row for Notifications / Messages. -->
 
-<!-- Graph Row -->
-<div class="row">
-	<div class="col-lg-8">
-		<h1 class="text-info">Insert Recent Orders Here. </h1>
-	</div>
 
-	<div class="col-lg-4">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<i class="fa fa-bar-chart-o fa-fw"></i> Source of Sale 
-			</div>
-			<div class="panel-body">
-				<div id="morris-donut-chart"></div>
-				<a href="#" class="btn btn-default btn-block">View Details</a>
-			</div>
-			<!-- /.panel-body -->
-		</div>
-	</div>
-</div>
-<!-- /.row for Graphs -->
 
 
 <!-- Morris Charts JavaScript -->
