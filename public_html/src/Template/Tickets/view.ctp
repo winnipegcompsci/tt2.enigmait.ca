@@ -1,5 +1,15 @@
 <div class="tickets view col-lg-10 col-md-9 columns">
     <h2><?= h($ticket->id) ?></h2>
+	<div class="row">
+		<div class="column col-lg-5" style="background-color: BLUE">
+			<h2> Ticket Details </h2>
+		</div>
+		
+		<div class="column col-lg-5" style="background-color: RED">
+			<h2> Ticket Events </h2>:
+		</div>
+	</div>
+	
     <div class="row">
         <div class="col-lg-5 columns strings">
             <h6 class="subheader"><?= __('Customer') ?></h6>
@@ -49,7 +59,6 @@
         <div class="columns large-9">
             <h6 class="subheader"><?= __('Solution') ?></h6>
             <?= $this->Text->autoParagraph(h($ticket->solution)); ?>
-
         </div>
     </div>
 </div>
