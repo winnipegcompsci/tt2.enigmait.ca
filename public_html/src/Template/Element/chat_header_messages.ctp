@@ -1,7 +1,9 @@
 <?php 	
 	foreach($header_messages as $message) { 
 
-		$all_names = $usernames->find('list');
+		$all_names = $usernames->find('all', [
+			'condition' => array('id =' => $message->user_id)
+		]);
 		echo "<pre> ALL NAMES: " . print_r($all_names, TRUE) . "</pre>";
 	?>
 	<li>
