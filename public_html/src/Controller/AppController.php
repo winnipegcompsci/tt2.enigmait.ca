@@ -77,7 +77,7 @@ class AppController extends Controller
 	
 	public function isAuthorized() 
 	{
-		echo "<pre>Debug:: " . print_r($user, TRUE) . "</pre>";
+		error_log("<pre>Debug:: " . print_r($user, TRUE) . "</pre>");
 		
 		$this->set('logged_in', $this->Auth->identify());
 		// Admin can access every action
