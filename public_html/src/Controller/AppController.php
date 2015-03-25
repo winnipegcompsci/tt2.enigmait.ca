@@ -76,9 +76,9 @@ class AppController extends Controller
 		$all_users = TableRegistry::get('Users');
 		
 		$header_messages = TableRegistry::get('Messages')->find('all', [
-			'order' => ['Messages.timestamp ASC']
+			'order' => ['Messages.id DESC'],
 		
-		])->limit(3);
+		])->limit(3)->order;
 
 		$this->set('header_messages', $header_messages);
 		$this->set('usernames', $all_users);
