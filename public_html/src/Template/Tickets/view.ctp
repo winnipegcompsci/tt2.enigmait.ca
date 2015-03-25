@@ -51,7 +51,7 @@
         </div>
 	</div>
 	
-	<div class="row">
+	<div class="row" style="padding-top: 25px">
 		<div class="columns col-lg-8 col-md-6">
 			<?php echo $this->element('ticket_event_timeline', array('events' => $ticket->ticket_events, 'problem' => $ticket->problem_description, 'solution' => $ticket->solution)); ?>
 		</div>

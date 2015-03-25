@@ -30,7 +30,7 @@
                 } else {
                     $class = "";
                 }
-                $badgetype = $BADGES[array_rand($BADGES)];
+                $badgetype = "info";
         ?>
                 <li class="<?php echo $class; ?>">
                     <div class="timeline-badge <?= $badgetype ?>">
