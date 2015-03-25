@@ -46,10 +46,12 @@
                         </div>
                     </div>
                 </li>
-        <?php         
-            endforeach;
-        ?>
-            <li class="timeline">
+            <?php         
+                endforeach;
+            
+                if($solution != "") :
+            ?>
+                <li class="timeline">
                 <div class="timeline-badge success>">
                     <i class="fa fa-check"></i>
                 </div>
@@ -63,6 +65,7 @@
                     </div>
                 </div>
             </li>
+            <?php endif; ?>
         </ul>
     </div>
 </div>
