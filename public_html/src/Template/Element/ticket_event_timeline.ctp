@@ -12,7 +12,7 @@
         <ul class="timeline">
         <?php    
             foreach($events as $event) {
-                if($class = "") {
+                if($class == "") {
                     $class = "timeline-inverted";
                 } else {
                     $class = "";
