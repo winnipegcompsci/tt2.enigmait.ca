@@ -80,10 +80,29 @@
         </ul>
         <p><?= $this->Paginator->counter() ?></p>
     </div>
+    
+    <table id="datatable">
+        <thead>
+            <tr>
+                <th><?= __('id') ?></th>
+                <th><?= __('date_created') ?></th>
+                <th><?= __('customer_id') ?></th>
+                <th><?= __('contact_id') ?></th>
+                <th><?= __('ticket_type_id') ?></th>
+                <th><?= __('service_type_id') ?></th>
+                <th><?= __('ticket_priority_id') ?></th>
+                <th class="actions"><?= __('Actions') ?></th>
+            </tr>
+        </head>
+        
+        <tbody>
+        <?php foreach ($tickets as $ticket): ?>
+            <tr>
+                
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
 </div>
 
-<script> 	 	
-jQuery(document).ready(function() { 	 	
-    jQuery('#tickets-table').dataTable(); 	 	
-}); 	 	
-</script> 
+

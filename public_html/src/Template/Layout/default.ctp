@@ -86,9 +86,18 @@
     <!-- Metis Menu Plugin JavaScript -->
     <script src="/bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
+    <!-- Data Tables -->
+    <script src="/bower_components/datatables-responsive/js/dataTables.responsive.js"></script>
+    
     <!-- Custom Theme JavaScript -->
     <script src="/dist/js/sb-admin-2.js"></script>
 
 </body>
 
 </html>
+
+<script> 	 	
+$(document).ready(function() { 	 	
+    $('#datatable').dataTable(); 	 	
+}); 	 	
+</script> 
