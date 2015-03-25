@@ -13,7 +13,7 @@
 				<div class="row texts">
 					<div class="columns large-9">
 						<h3 class="subheader"><?= __('Solution') ?></h3>
-						<?= $this->Text->autoParagraph(h($ticket->solution)); ?>
+						<?= isset($this->Text->autoParagraph(h($ticket->solution))) ? $this->Text->autoParagraph(h($ticket->solution)) : "Unresolved"; ?>
 					</div>
 				</div>
 			</div>
@@ -33,7 +33,7 @@
         </div>
         
         <div class="columns col-lg-4"> 
-           <h2> Ticket Information </h2>
+           <h3> Ticket Information </h3>
             <h6 class="subheader"><?= __('Project') ?></h6>
 			<p><?= $ticket->has('project') ? $this->Html->link($ticket->project->name, ['controller' => 'Projects', 'action' => 'view', $ticket->project->id]) : '' ?></p>
            	<h6 class="subheader"><?= __('Date Created') ?></h6>
