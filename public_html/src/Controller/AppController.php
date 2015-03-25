@@ -73,12 +73,15 @@ class AppController extends Controller
             ]
         ]);
 		
+		$all_users = TableRegistry::get('Users')->find('list');
+		
 		$header_messages = TableRegistry::get('Messages')->find('all', [
 			'order' => ['Messages.timestamp ASC']
+		
 		])->limit(3);
 
 		$this->set('header_messages', $header_messages);
-		$this->set('usernames', TableRegistry::get('Users')->find('all'));
+		$this->set('usernames', $all_users);
     }
 	
 	public function isAuthorized() 
