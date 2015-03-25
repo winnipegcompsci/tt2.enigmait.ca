@@ -1,6 +1,6 @@
 <?php
     $class = "";
-    $badges = array(1 => "success", 2 => "info", 3 => "warn", 4 => "danger");
+    $BADGES = array("success", "info", "warn", "danger");
 ?>
 
 
@@ -18,7 +18,7 @@
                 } else {
                     $class = "";
                 }
-                $badgetype = array_rand($badges);
+                $badgetype = $BADGES[array_rand($BADGES)];
                 
                 // echo "<pre>" . print_r($event, TRUE) . "</pre>";
         ?>
