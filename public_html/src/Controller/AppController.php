@@ -73,7 +73,7 @@ class AppController extends Controller
             ]
         ]);
 		
-		$usersnames = array();
+		$usernames = array();
 		$users = TableRegistry::get('Users')->find('all');
 	
 		foreach($users as $user){

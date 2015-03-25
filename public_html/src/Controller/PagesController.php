@@ -60,15 +60,15 @@ class PagesController extends AppController
 		$header_messages = TableRegistry::get('Messages')->find('all', ['order' => array('Messages.id DESC')])->limit(3);
 		
 		$users = TableRegistry::get('Users')->find('all');
-		$usernames = array();
+		$names = array();
 		
 		foreach($users as $user){
-			$usernames[$user->id] = $user->first_name . " " . $user->last_name;
+			$names[$user->id] = $user->first_name . " " . $user->last_name;
 		}
 		
 		$this->set('messages', $messages);
 		$this->set('header_messages', $header_messages);
-		$this->set('usernames', $usernames);
+		$this->set('names', $names);
 		
         try {
             $this->render(implode('/', $path));

@@ -1,6 +1,6 @@
 <?php 	
 	foreach($header_messages as $message) { 
-		$username = $usernames[$message->user_id];
+		$username = $names[$message->user_id];
 	?>
 	<li>
 		<a href="#">
