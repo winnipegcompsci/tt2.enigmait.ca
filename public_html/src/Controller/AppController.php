@@ -77,7 +77,7 @@ class AppController extends Controller
 			'order' => ['Messages.timestamp ASC']
 		])->limit(3);
 
-		Configure::write('header_messages', $header_messages);
+		$this->set('header_messages', $header_messages);
     }
 	
 	public function isAuthorized() 
