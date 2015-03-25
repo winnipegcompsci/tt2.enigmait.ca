@@ -4,12 +4,17 @@
 	<div class="row">
         <div class="columns col-lg-2">
             <h4> Customer Information </h4>
-            <h6 class="subheader"><?= __('Customer') ?></h6>
-			<p><?= $ticket->has('customer') ? $this->Html->link($ticket->customer->name, ['controller' => 'Customers', 'action' => 'view', $ticket->customer->id]) : '' ?></p>
-			<h6 class="subheader"><?= __('Contact') ?></h6>
-			<p><?= $ticket->has('contact') ? $this->Html->link($ticket->contact->id, ['controller' => 'Contacts', 'action' => 'view', $ticket->contact->id]) : '' ?></p>
-            <h6 class="subheader"><?= __('Customer Site') ?></h6>
-			<p><?= $ticket->has('customer_site') ? $this->Html->link($ticket->customer_site->id, ['controller' => 'CustomerSites', 'action' => 'view', $ticket->customer_site->id]) : '' ?></p>
+            <table>
+                <tr>
+                    <td>Customer: </td><td><?= $ticket->has('customer') ? $this->Html->link($ticket->customer->name, ['controller' => 'Customers', 'action' => 'view', $ticket->customer->id]) : '' ?></td>
+                </tr>
+                <tr>
+                    <td>Contact: </td><td><?= $ticket->has('contact') ? $this->Html->link($ticket->contact->id, ['controller' => 'Contacts', 'action' => 'view', $ticket->contact->id]) : '' ?></td>
+                </tr>
+                <tr>
+                    <td>Site: </td><td><?= $ticket->has('customer_site') ? $this->Html->link($ticket->customer_site->id, ['controller' => 'CustomerSites', 'action' => 'view', $ticket->customer_site->id]) : '' ?></td>
+                </tr>
+            </table>
         </div>
         
         <div class="columns col-lg-4"> 
@@ -44,10 +49,14 @@
         
         <div class="columns col-lg-2">
             <h4> Billing Information </h4>
-            <h6 class="subheader"><?= __('Billing Status') ?></h6>
-			<p><?= $ticket->has('billing_status') ? $this->Html->link($ticket->billing_status->id, ['controller' => 'BillingStatuses', 'action' => 'view', $ticket->billing_status->id]) : '' ?></p>
-            <h6 class="subheader"><?= __('Quote') ?></h6>
-			<p><?= $ticket->has('quote') ? $this->Html->link($ticket->quote->name, ['controller' => 'Quotes', 'action' => 'view', $ticket->quote->id]) : '' ?></p>
+            <table>
+                <tr>
+                    <td>Billing Status</td><td><?= $ticket->has('billing_status') ? $this->Html->link($ticket->billing_status->id, ['controller' => 'BillingStatuses', 'action' => 'view', $ticket->billing_status->id]) : ''?></td>
+                </tr>
+                <tr>
+                    <td>Quote</td><td><?= $ticket->has('quote') ? $this->Html->link($ticket->quote->name, ['controller' => 'Quotes', 'action' => 'view', $ticket->quote->id]) : '' ?></td>
+                </tr>
+            </table>
         </div>
 	</div>
 	
