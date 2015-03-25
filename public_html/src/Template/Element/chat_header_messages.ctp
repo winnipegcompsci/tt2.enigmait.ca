@@ -5,7 +5,7 @@
 			'condition' => array('Users.id =' => $message->user_id)
 		]);
 		
-		foreach($people as $pereson) {
+		foreach($people as $person) {
 			echo "<pre>Person #: " . $person->id . "</pre>";
 		}
 	?>
