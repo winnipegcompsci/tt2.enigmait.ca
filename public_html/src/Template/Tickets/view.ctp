@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="columns col-lg-12 col-md-6">
 			
-			<div class="column col-lg-8">
+			<div class="columns col-lg-8 pull-left">
 				<div class="row texts">
 					<div class="columns large-9">
 						<h6 class="subheader"><?= __('Problem Description') ?></h6>
@@ -19,7 +19,7 @@
 			</div>
 		</div>
 		
-		<div class="column col-lg-4">
+		<div class="columns col-lg-4 pull-right">
 			<h6 class="subheader"><?= __('Date Created') ?></h6>
 			<p><?= h($ticket->date_created) ?></p>
 			<h6 class="subheader"><?= __('Dis') ?></h6>
@@ -28,7 +28,7 @@
 	</div>
 	
 	<div class="row">
-		<div class="column col-lg-12">
+		<div class="columns col-lg-12">
 			<h6 class="subheader"><?= __('Customer') ?></h6>
 			<p><?= $ticket->has('customer') ? $this->Html->link($ticket->customer->name, ['controller' => 'Customers', 'action' => 'view', $ticket->customer->id]) : '' ?></p>
 			<h6 class="subheader"><?= __('Contact') ?></h6>
