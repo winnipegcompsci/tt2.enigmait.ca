@@ -1,15 +1,6 @@
 <?php 	
 	foreach($header_messages as $message) { 
-
-		$people = $usernames->find('all', [
-			'condition' => array('Users.id =' => $message->user_id)
-		]);
-		
-		foreach($people as $person) {
-			if($person->id == $message->user_id) {
-				$username = $person->first_name;
-			}
-		}
+		$username = $usernames[$message->user_id];
 	?>
 	<li>
 		<a href="#">

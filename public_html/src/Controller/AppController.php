@@ -73,7 +73,11 @@ class AppController extends Controller
             ]
         ]);
 		
-		$all_users = TableRegistry::get('Users');
+		$usernames = array();
+		
+		foreach($users as $user){
+			$usernames[$user->id] = $user->first_name . " " . $user->last_name;
+		}
 		
 		$header_messages = TableRegistry::get('Messages')->find('all', [
 			'order' => ['Messages.id DESC'],
@@ -81,7 +85,7 @@ class AppController extends Controller
 		])->limit(3)->order;
 
 		$this->set('header_messages', $header_messages);
-		$this->set('usernames', $all_users);
+		$this->set('usernames', $usernames);
     }
 	
 	public function isAuthorized() 
