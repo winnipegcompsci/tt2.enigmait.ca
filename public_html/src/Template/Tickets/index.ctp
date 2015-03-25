@@ -51,7 +51,7 @@
                 <?= $ticket->has('customer') ? $this->Html->link($ticket->customer->name, ['controller' => 'Customers', 'action' => 'view', $ticket->customer->id]) : '' ?>
             </td>
             <td>
-                <?= $ticket->has('contact') ? $this->Html->link($ticket->contact->name, ['controller' => 'Contacts', 'action' => 'view', $ticket->contact->id]) : '' ?>
+                <?= $ticket->has('contact') ? $this->Html->link($ticket->contact->id, ['controller' => 'Contacts', 'action' => 'view', $ticket->contact->id]) : '' ?>
             </td>
             <td>
                 <?= $ticket->has('ticket_type') ? $this->Html->link($ticket->ticket_type->name, ['controller' => 'TicketTypes', 'action' => 'view', $ticket->ticket_type->id]) : '' ?>
