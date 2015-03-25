@@ -83,7 +83,7 @@ class AppController extends Controller
 		$header_messages = TableRegistry::get('Messages')->find('all', [
 			'order' => ['Messages.id DESC'],
 		
-		])->limit(3)->order;
+		])->limit(3);
 
 		$this->set('header_messages', $header_messages);
 		$this->set('usernames', $usernames);
