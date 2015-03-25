@@ -32,13 +32,13 @@
     <table id="datatable" cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
     <thead>
         <tr>
-            <th><?= $this->Paginator->sort('id') ?></th>
-            <th><?= $this->Paginator->sort('date_created') ?></th>
-            <th><?= $this->Paginator->sort('customer_id') ?></th>
-            <th><?= $this->Paginator->sort('contact_id') ?></th>
-            <th><?= $this->Paginator->sort('ticket_type_id') ?></th>
-            <th><?= $this->Paginator->sort('service_type_id') ?></th>
-            <th><?= $this->Paginator->sort('ticket_priority_id') ?></th>
+            <th> ID </th>
+            <th> Date Created </th>
+            <th> Customer </th>
+            <th> Contact </th>
+            <th> Ticket Type</th>
+            <th> Service Type </th>
+            <th> Priority</th>
             <th class="actions"><?= __('Actions') ?></th>
         </tr>
     </thead>
