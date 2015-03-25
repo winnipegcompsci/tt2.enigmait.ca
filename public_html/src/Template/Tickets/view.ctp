@@ -22,7 +22,7 @@
 	</div>
 	
 	<div class="row">
-        <div class="columns col-lg-4">
+        <div class="columns col-lg-2">
             <h4> Customer Information </h4>
             <h6 class="subheader"><?= __('Customer') ?></h6>
 			<p><?= $ticket->has('customer') ? $this->Html->link($ticket->customer->name, ['controller' => 'Customers', 'action' => 'view', $ticket->customer->id]) : '' ?></p>
@@ -62,7 +62,7 @@
             </table>
         </div>
         
-        <div class="columns col-lg-4">
+        <div class="columns col-lg-2">
             <h4> Billing Information </h4>
             <h6 class="subheader"><?= __('Billing Status') ?></h6>
 			<p><?= $ticket->has('billing_status') ? $this->Html->link($ticket->billing_status->id, ['controller' => 'BillingStatuses', 'action' => 'view', $ticket->billing_status->id]) : '' ?></p>
@@ -73,7 +73,7 @@
 	
 	<div class="row">
 		<div class="columns col-lg-8 col-md-6">
-			<?php echo $this->element('ticket_event_timeline', array('events' => $ticket->ticket_events)); ?>
+			<?php echo $this->element('ticket_event_timeline', array('events' => $ticket->ticket_events, 'problem' => $ticket->problem_description, 'solution' => $ticket->solution)); ?>
 		</div>
 	</div> <!-- ./row -->
 </div> <!-- ./tickets view -->

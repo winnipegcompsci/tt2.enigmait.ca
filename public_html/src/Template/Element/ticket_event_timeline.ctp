@@ -10,8 +10,22 @@
     <!-- /.panel-heading -->
     <div class="panel-body">
         <ul class="timeline">
+            <li class="timeline">
+                    <div class="timeline-badge danger">
+                        <i class="fa fa-check"></i>
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title"> Problem: </h4>
+                            <p><small class="text-muted"><i class="fa fa-clock-o"></i> <?= $event->time_taken . " minutes" ?></small></p>
+                        </div>
+                        <div class="timeline-body">
+                            <p><?php echo $event->description; ?></p>
+                        </div>
+                    </div>
+            </li>
         <?php    
-            foreach($events as $event) {
+            foreach($events as $event) :
                 if($class == "") {
                     $class = "timeline-inverted";
                 } else {
@@ -20,22 +34,36 @@
                 $badgetype = $BADGES[array_rand($BADGES)];
         ?>
                 <li class="<?php echo $class; ?>">
-                <div class="timeline-badge <?= $badgetype ?>"><i class="fa fa-check"></i>
+                    <div class="timeline-badge <?= $badgetype ?>">
+                        <i class="fa fa-check"></i>
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title"><?php echo $event->timestamp; ?></h4>
+                            <p><small class="text-muted"><i class="fa fa-clock-o"></i> <?= $event->time_taken . " minutes" ?></small></p>
+                        </div>
+                        <div class="timeline-body">
+                            <p><?php echo $event->description; ?></p>
+                        </div>
+                    </div>
+                </li>
+        <?php         
+            endforeach;
+        ?>
+            <li class="timeline">
+                <div class="timeline-badge success>">
+                    <i class="fa fa-check"></i>
                 </div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
-                        <h4 class="timeline-title"><?php echo $event->timestamp; ?></h4>
-                        <p><small class="text-muted"><i class="fa fa-clock-o"></i> <?= $event->time_taken . " minutes" ?></small>
-                        </p>
+                        <h4 class="timeline-title"> SOLUTION: </h4>
+                        <p><small class="text-muted"><i class="fa fa-clock-o"></i> <?= $event->time_taken . " minutes" ?></small></p>
                     </div>
                     <div class="timeline-body">
                         <p><?php echo $event->description; ?></p>
                     </div>
                 </div>
             </li>
-        <?php         
-            }
-        ?>
         </ul>
     </div>
 </div>
