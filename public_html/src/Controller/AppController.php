@@ -85,7 +85,6 @@ class AppController extends Controller
 			return true;
 		}
 		
-		// return false;
-		return true; // DEBUG:: CHANGE AFTER!!
+		return false;
 	}
 }

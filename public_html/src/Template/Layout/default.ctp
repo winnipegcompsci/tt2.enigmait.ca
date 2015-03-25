@@ -12,16 +12,16 @@
     <title>TT2.0</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="../bower_components/metisMenu/dist/metisMenu.css" rel="stylesheet">
+    <link href="/bower_components/metisMenu/dist/metisMenu.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../bower_components/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="/bower_components/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -39,18 +39,21 @@
         <!-- Navigation -->
 		
 		<!-- ONLY INCLUDE IF LOGGED IN? -->
-        <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
-			<?php
+        	<?php
 				$user = $this->Session->read('Auth.User');						
 			
-				if(!empty($user)) {
-					echo $this->element('header'); 
-					echo $this->element('sidebar'); 
-				} 
-			?>
+				if( TRUE /*!empty($user)*/) { ?>
+					<nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
+		
+					<?php
+						echo $this->element('header'); 
+						echo $this->element('sidebar'); 
+					?>
+			        </nav>
+					<?php } ?>
 			
             <!-- /.navbar-static-side -->
-        </nav>
+
 
         <!-- Page Content -->
         <div id="page-wrapper">
@@ -72,16 +75,16 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="/bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
+    <script src="/dist/js/sb-admin-2.js"></script>
 
 </body>
 
