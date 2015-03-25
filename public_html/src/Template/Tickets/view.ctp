@@ -2,7 +2,7 @@
     <h2>Ticket #<?= h($ticket->id) ?></h2>
 	
 	<div class="row">
-        <div class="columns col-lg-2">
+        <div class="columns col-lg-2 col-md-6 col-lg-offset-2">
             <h4> Customer Information </h4>
             <table>
                 <tr>
@@ -61,7 +61,7 @@
 	</div>
 	
 	<div class="row" style="padding-top: 25px">
-		<div class="columns col-lg-8 col-md-6 col-lg-offset-2">
+		<div class="columns col-lg-10 col-md-6 col-lg-offset-1">
 			<?php echo $this->element('ticket_event_timeline', array('events' => $ticket->ticket_events, 'problem' => $ticket->problem_description, 'solution' => $ticket->solution)); ?>
 		</div>
 	</div> <!-- ./row -->
