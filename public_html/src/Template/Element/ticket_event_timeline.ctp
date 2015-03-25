@@ -28,7 +28,7 @@
                 <div class="timeline-panel">
                     <div class="timeline-heading">
                         <h4 class="timeline-title"><?php echo $event->timestamp; ?></h4>
-                        <p><small class="text-muted"><i class="fa fa-clock-o"></i> <?php $this->Html->link($event->user_id, ['controller' => 'Users', 'action' => 'view', $event->user_id]) : '' ?> ?></small>
+                        <p><small class="text-muted"><i class="fa fa-clock-o"></i> <?= $this->Html->link($event->user_id, ['controller' => 'Users', 'action' => 'view', $event->user_id]); ?> ?></small>
                         </p>
                     </div>
                     <div class="timeline-body">
