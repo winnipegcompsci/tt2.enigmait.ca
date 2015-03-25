@@ -89,13 +89,11 @@
     <script src="/bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
     <!-- Data Tables -->
-    <script src="/bower_components/datatables-responsive/js/dataTables.responsive.js"></script>
+    <!-- <script src="/bower_components/datatables-responsive/js/dataTables.responsive.js"></script> -->
+    <?php echo $this->Html->script('dataTables.bootstrap'); ?>
     
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.js"></script>
-    
-    <?php echo $this->Html->script('dataTables.bootstrap'); ?>
-
-    
+       
     <!-- Custom Theme JavaScript -->
     <script src="/dist/js/sb-admin-2.js"></script>
 
