@@ -1,28 +1,7 @@
-<div class="tickets view col-lg-12 col-md-9 columns">
+<div class="tickets view col-lg-12 col-md-9 columns col-lg-offset-2">
     <h2>Ticket #<?= h($ticket->id) ?></h2>
 	
-	<div class="row">
-        <div class="columns col-lg-2 col-md-6 col-lg-offset-2">
-            <h4> Customer Information </h4>
-            <table>
-                <tr>
-                    <td>Customer: </td>
-                    <td></td>
-                    <td class="pull-right"><?= $ticket->has('customer') ? $this->Html->link($ticket->customer->name, ['controller' => 'Customers', 'action' => 'view', $ticket->customer->id]) : '' ?></td>
-                </tr>
-                <tr>
-                    <td>Contact: </td>
-                    <td></td>
-                    <td class="pull-right"><?= $ticket->has('contact') ? $this->Html->link($ticket->contact->id, ['controller' => 'Contacts', 'action' => 'view', $ticket->contact->id]) : '' ?></td>
-                </tr>
-                <tr>
-                    <td>Site: </td>
-                    <td></td>
-                    <td class="pull-right"><?= $ticket->has('customer_site') ? $this->Html->link($ticket->customer_site->id, ['controller' => 'CustomerSites', 'action' => 'view', $ticket->customer_site->id]) : '' ?></td>
-                </tr>
-            </table>
-        </div>
-        
+	<div class="row">       
         <div class="columns col-lg-4"> 
            <h4 class="subheader"> Ticket Information </h3>
             <table>
@@ -65,6 +44,27 @@
                     <td> Assigned to: </td> 
                     <td>&nbsp;</td>
                     <td class="pull-right"> <?= $ticket->has('user') ? $this->Html->link($ticket->user->id, ['controller' => 'Users', 'action' => 'view', $ticket->user->id]) : 'Unassigned' ?> </td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="columns col-lg-2 col-md-6">
+            <h4> Customer Information </h4>
+            <table>
+                <tr>
+                    <td>Customer: </td>
+                    <td></td>
+                    <td class="pull-right"><?= $ticket->has('customer') ? $this->Html->link($ticket->customer->name, ['controller' => 'Customers', 'action' => 'view', $ticket->customer->id]) : '' ?></td>
+                </tr>
+                <tr>
+                    <td>Contact: </td>
+                    <td></td>
+                    <td class="pull-right"><?= $ticket->has('contact') ? $this->Html->link($ticket->contact->id, ['controller' => 'Contacts', 'action' => 'view', $ticket->contact->id]) : '' ?></td>
+                </tr>
+                <tr>
+                    <td>Site: </td>
+                    <td></td>
+                    <td class="pull-right"><?= $ticket->has('customer_site') ? $this->Html->link($ticket->customer_site->id, ['controller' => 'CustomerSites', 'action' => 'view', $ticket->customer_site->id]) : '' ?></td>
                 </tr>
             </table>
         </div>
