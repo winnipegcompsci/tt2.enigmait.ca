@@ -98,7 +98,28 @@
         <tbody>
         <?php foreach ($tickets as $ticket): ?>
             <tr>
-                
+                <td><?= $this->Number->format($ticket->id) ?></td>
+                <td><?= h($ticket->date_created) ?></td>
+                <td>
+                    <?= $ticket->has('customer') ? $this->Html->link($ticket->customer->name, ['controller' => 'Customers', 'action' => 'view', $ticket->customer->id]) : '' ?>
+                </td>
+                <td>
+                    <?= $ticket->has('contact') ? $this->Html->link($ticket->contact->id, ['controller' => 'Contacts', 'action' => 'view', $ticket->contact->id]) : '' ?>
+                </td>
+                <td>
+                    <?= $ticket->has('ticket_type') ? $this->Html->link($ticket->ticket_type->name, ['controller' => 'TicketTypes', 'action' => 'view', $ticket->ticket_type->id]) : '' ?>
+                </td>
+                <td>
+                    <?= $ticket->has('service_type') ? $this->Html->link($ticket->service_type->name, ['controller' => 'ServiceTypes', 'action' => 'view', $ticket->service_type->id]) : '' ?>
+                </td>
+                <td>
+                    <?= $ticket->has('ticket_priority') ? $this->Html->link($ticket->ticket_priority->name, ['controller' => 'TicketPriorities', 'action' => 'view', $ticket->ticket_priority->id]) : '' ?>
+                </td>
+                <td class="actions">
+                    <?= $this->Html->link(__('View'), ['action' => 'view', $ticket->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $ticket->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $ticket->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ticket->t_ticket_id)]) ?>
+                </td>
             </tr>
         <?php endforeach; ?>
         </tbody>
