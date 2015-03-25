@@ -22,8 +22,8 @@ class TicketsTable extends Table
     public function initialize(array $config)
     {
         $this->table('tickets');
-        $this->displayField('t_ticket_id');
-        $this->primaryKey('t_ticket_id');
+        $this->displayField('id');
+        $this->primaryKey('id');
         $this->belongsTo('Customers', [
             'foreignKey' => 'customer_id'
         ]);
