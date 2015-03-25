@@ -92,6 +92,8 @@ class AppController extends Controller
 	public function isAuthorized() 
 	{		
 		$this->set('logged_in', $this->Auth->identify());
+		error_log("USER::" . print_r($user, TRUE));
+		
 		// Admin can access every action
 		if(isset($user['role']) && $user['role'] == 'manager') {
 			return true;
