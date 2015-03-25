@@ -95,11 +95,9 @@ class AppController extends Controller
 		error_log("USER::" . print_r($user, TRUE));
 		
 		// Admin can access every action
-		if(isset($user['role']) && $user['role'] == 'manager') {
+		if(isset($user['user_role_id']) && $user['user_role_id'] == '1') {
 			return true;
-		} else if( isset($user['role']) && $user['role'] == 'sales') {
-			return true;
-		}
+		} 
 		
 		return false;
 	}
