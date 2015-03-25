@@ -17,10 +17,9 @@
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4 class="timeline-title"> Problem: </h4>
-                            <p><small class="text-muted"><i class="fa fa-clock-o"></i> <?= $event->time_taken . " minutes" ?></small></p>
                         </div>
                         <div class="timeline-body">
-                            <p><?php echo $event->description; ?></p>
+                            <p><?php echo $problem; ?></p>
                         </div>
                     </div>
             </li>
@@ -56,11 +55,11 @@
                 </div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
-                        <h4 class="timeline-title"> SOLUTION: </h4>
+                        <h4 class="timeline-title success"> Solution: </h4>
                         <p><small class="text-muted"><i class="fa fa-clock-o"></i> <?= $event->time_taken . " minutes" ?></small></p>
                     </div>
                     <div class="timeline-body">
-                        <p><?php echo $event->description; ?></p>
+                        <p><?php echo $solution; ?></p>
                     </div>
                 </div>
             </li>
