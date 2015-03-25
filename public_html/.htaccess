@@ -4,4 +4,9 @@
     RewriteRule    (.*) webroot/$1    [L]
 </IfModule>
 
-AddType application/font-woff		.ttf
+AddType application/font-woff .woff
+AddType application/x-font-truetype .ttf
+AddType image/svg+xml .svg
+AddType application/x-font-opentype .otf     
+AddType application/vnd.ms-fontobject .eot
+
