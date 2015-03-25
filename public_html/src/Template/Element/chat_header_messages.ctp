@@ -1,8 +1,8 @@
 <?php 	
 	foreach($header_messages as $message) { 
 
-		$all_names = $usernames->find('all', [
-			'condition' => array('id =' => $message->user_id)
+		$people = $usernames->find('all', [
+			'condition' => array('Users.id =' => $message->user_id)
 		]);
 		
 		foreach($all_names as $name) {
