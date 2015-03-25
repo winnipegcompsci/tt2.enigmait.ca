@@ -54,52 +54,8 @@
 
 	<div class="row">
 		<div class="columns col-lg-8 pull-left">
-			<h2> Ticket Events </h2>
-			
-			<!--
-			<?php if (!empty($ticket->ticket_events)): ?>
-			<table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
-				<tr>
-					<th><?= __('Id') ?></th>
-					<th><?= __('Ticket Id') ?></th>
-					<th><?= __('Ticket Event Type Id') ?></th>
-					<th><?= __('Description') ?></th>
-					<th><?= __('User Id') ?></th>
-					<th><?= __('Timestamp') ?></th>
-					<th><?= __('Billing Type Id') ?></th>
-					<th><?= __('Time Type Id') ?></th>
-					<th><?= __('Time Taken') ?></th>
-					<th><?= __('Resolution Date') ?></th>
-					<th><?= __('Time Start') ?></th>
-					<th><?= __('Time End') ?></th>
-					<th class="actions"><?= __('Actions') ?></th>
-				</tr>
-				<?php foreach ($ticket->ticket_events as $ticketEvents): ?>
-				<tr>
-					<td><?= h($ticketEvents->id) ?></td>
-					<td><?= h($ticketEvents->ticket_id) ?></td>
-					<td><?= h($ticketEvents->ticket_event_type_id) ?></td>
-					<td><?= h($ticketEvents->description) ?></td>
-					<td><?= h($ticketEvents->user_id) ?></td>
-					<td><?= h($ticketEvents->timestamp) ?></td>
-					<td><?= h($ticketEvents->billing_type_id) ?></td>
-					<td><?= h($ticketEvents->time_type_id) ?></td>
-					<td><?= h($ticketEvents->time_taken) ?></td>
-					<td><?= h($ticketEvents->resolution_date) ?></td>
-					<td><?= h($ticketEvents->time_start) ?></td>
-					<td><?= h($ticketEvents->time_end) ?></td>
-
-					<td class="actions">
-						<?= $this->Html->link(__('View'), ['controller' => 'TicketEvents', 'action' => 'view', $ticketEvents->id]) ?>
-						<?= $this->Html->link(__('Edit'), ['controller' => 'TicketEvents', 'action' => 'edit', $ticketEvents->id]) ?>
-						<?= $this->Form->postLink(__('Delete'), ['controller' => 'TicketEvents', 'action' => 'delete', $ticketEvents->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ticketEvents->id)]) ?>
-					</td>
-				</tr>
-
-				<?php endforeach; ?>
-			</table>
-			<?php endif; ?>
-			-->
+			<h3> Ticket Events </h3>
+			<?php echo $this->element('ticket_event_timeline', array('events' => $ticket->ticket_events)); ?>
 		</div>
 	</div> <!-- ./row -->
 </div> <!-- ./tickets view -->
