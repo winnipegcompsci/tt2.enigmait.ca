@@ -77,6 +77,9 @@ class AppController extends Controller
 	
 	public function isAuthorized() 
 	{
+		$header_messages = TableRegistry::get('Messages')->find('all',['order' => array('Messages.id DESC')])->limit(3);
+		$this->set('header_messages', $header_messsages);
+		
 		$this->set('logged_in', $this->Auth->identify());
 		// Admin can access every action
 		if(isset($user['role']) && $user['role'] == 'admin') {
