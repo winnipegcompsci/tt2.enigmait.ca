@@ -56,7 +56,7 @@ class PagesController extends AppController
         $this->set(compact('page', 'subpage'));
 		
 		// Message Vars
-		$messages = TableRegistry::get('Messages')->find('all',['order' => array('Messages.id DESC')])->limit(30);
+		$messages = TableRegistry::get('Messages')->find('all',['order' => array('Messages.id ASC')])->limit(30);
 		$header_messages = TableRegistry::get('Messages')->find('all',['order' => array('Messages.id DESC')])->limit(3);
 		
 		$users = TableRegistry::get('Users')->find('all');
