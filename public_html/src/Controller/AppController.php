@@ -73,7 +73,7 @@ class AppController extends Controller
             ]
         ]);
 		
-		$all_users = TableRegistry::get('Users')
+		$all_users = TableRegistry::get('Users');
 		
 		$header_messages = TableRegistry::get('Messages')->find('all', [
 			'order' => ['Messages.timestamp ASC']
