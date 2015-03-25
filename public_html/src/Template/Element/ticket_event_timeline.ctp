@@ -3,7 +3,6 @@
     $BADGES = array("success", "info", "warn", "danger");
 ?>
 
-
 <div class="panel panel-default">
     <div class="panel-heading">
         <i class="fa fa-clock-o fa-fw"></i> Ticket Events
@@ -13,6 +12,7 @@
         <ul class="timeline">
         <?php    
             foreach($events as $event) {
+                echo "<pre>" . print_r($event->user, TRUE) . "</pre>";
                 if($class == "") {
                     $class = "timeline-inverted";
                 } else {
