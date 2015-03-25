@@ -13,7 +13,7 @@
 				<div class="row texts">
 					<div class="columns large-9">
 						<h3 class="subheader"><?= __('Solution') ?></h3>
-						<?= $this->Text->autoParagraph(h($ticket->solution)) !== null ? $this->Text->autoParagraph(h($ticket->solution)) : "Unresolved"; ?>
+						<?= strlen($ticket->solution) !== 0 ? $this->Text->autoParagraph(h($ticket->solution)) : "Unresolved"; ?>
 					</div>
 				</div>
 			</div>
