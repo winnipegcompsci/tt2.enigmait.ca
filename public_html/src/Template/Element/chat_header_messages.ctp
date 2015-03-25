@@ -1,4 +1,7 @@
-<?php foreach($header_messages as $message) { ?>
+<?php 
+	$header_messages = Configure::read('header_messages');
+	
+	foreach($header_messages as $message) { ?>
 	<li>
 		<a href="#">
 			<div>

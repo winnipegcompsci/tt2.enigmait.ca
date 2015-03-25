@@ -16,6 +16,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use Cake\ORM\TableRegistry;
 /**
  * Application Controller
  *
@@ -72,13 +73,15 @@ class AppController extends Controller
             ]
         ]);
 		
+		$header_messages = TableRegistry::get('Messages')->find('all', [
+			'order' => ['Messages.timestamp ASC']
+		])->limit(3);
 
+		Configure::write('header_messages', $header_messages);
     }
 	
 	public function isAuthorized() 
-	{
-		error_log("<pre>Debug:: " . print_r($user, TRUE) . "</pre>");
-		
+	{		
 		$this->set('logged_in', $this->Auth->identify());
 		// Admin can access every action
 		if(isset($user['role']) && $user['role'] == 'manager') {
