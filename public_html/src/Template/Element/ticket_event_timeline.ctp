@@ -2,7 +2,11 @@
     $class = "timeline";
    
 	foreach($events as $event) {
-		echo "<pre>" . print_r($event, TRUE) . "</pre>";
+		// echo "<pre>" . print_r($event, TRUE) . "</pre>";
+        
+        echo "<br />";
+        echo $event->timestamp; // Title.
+        echo $event->description; // Problem Description.
 	}
    
  
