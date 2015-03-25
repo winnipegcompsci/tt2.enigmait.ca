@@ -55,7 +55,7 @@
 </div>
 <div class="related row">
     <div class="column large-12">
-    <h4 class="subheader"><?= __('Related TicketEvents') ?></h4>
+    <h4 class="subheader"><?= __('Ticket Events') ?></h4>
     <?php if (!empty($ticket->ticket_events)): ?>
     <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
         <tr>
