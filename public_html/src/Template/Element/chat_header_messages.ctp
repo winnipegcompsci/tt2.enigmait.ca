@@ -5,7 +5,7 @@
 			'condition' => array('Users.id =' => $message->user_id)
 		]);
 		
-		foreach($all_names as $name) {
+		foreach($people as $name) {
 			echo "<pre>" . print_r($name, TRUE) . "</pre>";
 		}
 	?>
