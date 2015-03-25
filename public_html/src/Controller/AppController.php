@@ -78,6 +78,7 @@ class AppController extends Controller
 		])->limit(3);
 
 		$this->set('header_messages', $header_messages);
+		$this->set('usernames', TableRegistry::get('Users')->find('all'));
     }
 	
 	public function isAuthorized() 
