@@ -92,6 +92,8 @@
     <script src="/bower_components/datatables-responsive/js/dataTables.responsive.js"></script>
     
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.js"></script>
+    
+    <?php echo $this->Html->script('dataTables.bootstrap'); ?>
 
     
     <!-- Custom Theme JavaScript -->
