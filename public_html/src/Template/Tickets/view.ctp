@@ -1,8 +1,8 @@
-<div class="tickets view col-lg-12 col-md-9 columns col-lg-offset-2">
+<div class="tickets view col-lg-12 col-md-9 columns">
     <h2>Ticket #<?= h($ticket->id) ?></h2>
 	
 	<div class="row">       
-        <div class="columns col-lg-4"> 
+        <div class="columns col-lg-4 col-lg-offset-2"> 
            <h4 class="subheader"> Ticket Information </h3>
             <table>
                 <tr>
