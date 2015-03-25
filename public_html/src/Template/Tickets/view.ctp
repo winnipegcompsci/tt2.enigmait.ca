@@ -5,13 +5,13 @@
 			
 			<div class="columns col-lg-8 pull-left">
 				<div class="row texts">
-					<div class="columns large-9">
+					<div class="columns col-lg-8 col-md-4">
 						<h3 class="subheader"><?= __('Problem Description') ?></h3>
 						<?= $this->Text->autoParagraph(h($ticket->problem_description)); ?>
 					</div>
 				</div>
 				<div class="row texts">
-					<div class="columns large-9">
+					<div class="columns col-lg-8 col-md-4">
 						<h3 class="subheader"><?= __('Solution') ?></h3>
 						<?= strlen($ticket->solution) !== 0 ? $this->Text->autoParagraph(h($ticket->solution)) : "Unresolved"; ?>
 					</div>
@@ -61,7 +61,7 @@
 	</div>
 	
 	<div class="row">
-		<div class="columns col-lg-12 col-md-6 pull-left">
+		<div class="columns col-lg-8 col-md-6 pull-left">
 			<?php echo $this->element('ticket_event_timeline', array('events' => $ticket->ticket_events)); ?>
 		</div>
 	</div> <!-- ./row -->
