@@ -6,7 +6,9 @@
 		]);
 		
 		foreach($people as $person) {
-			echo "<pre>Person #: " . $person->id . "</pre>";
+			if($person->id == $message->user_id) {
+				$username = $person->first_name;
+			}
 		}
 	?>
 	<li>
