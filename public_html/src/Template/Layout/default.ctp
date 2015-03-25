@@ -28,8 +28,7 @@
 
     <link href="/css/timeline.css" rel="stylesheet" type="text/css">
     
-    <?php echo $this->Html->css('plugins/dataTables.bootstrap'); ?>
-    
+        
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -92,7 +91,7 @@
 
     <!-- Data Tables -->
     <!-- <script src="/bower_components/datatables-responsive/js/dataTables.responsive.js"></script> -->
-    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.js"></script>
+    <!-- <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.js"></script> -->
     <?php echo $this->Html->script('dataTables.bootstrap'); ?>
     
     <!-- Custom Theme JavaScript -->
