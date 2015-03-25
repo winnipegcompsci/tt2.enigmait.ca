@@ -63,9 +63,9 @@
                 <?= $ticket->has('ticket_priority') ? $this->Html->link($ticket->ticket_priority->name, ['controller' => 'TicketPriorities', 'action' => 'view', $ticket->ticket_priority->id]) : '' ?>
             </td>
             <td class="actions">
-                <?= $this->Html->link(__('View'), ['action' => 'view', $ticket->t_ticket_id]) ?>
-                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $ticket->t_ticket_id]) ?>
-                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $ticket->t_ticket_id], ['confirm' => __('Are you sure you want to delete # {0}?', $ticket->t_ticket_id)]) ?>
+                <?= $this->Html->link(__('View'), ['action' => 'view', $ticket->id]) ?>
+                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $ticket->id]) ?>
+                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $ticket->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ticket->t_ticket_id)]) ?>
             </td>
         </tr>
 
