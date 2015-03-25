@@ -1,6 +1,6 @@
 <?php
     $class = "";
-    $badges = array("success", "info", "warn", "danger");
+    $badges = array(1 => "success", 2 => "info", 3 => "warn", 4 => "danger");
 ?>
 
 
