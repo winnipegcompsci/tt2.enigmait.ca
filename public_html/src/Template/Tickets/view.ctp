@@ -1,8 +1,8 @@
 <div class="actions columns col-lg-2 col-md-3 pull-right">
     <h3><?= __('Actions') ?></h3>
     <ul class="side-nav">
-        <li><?= $this->Html->link(__('Edit Ticket'), ['action' => 'edit', $ticket->t_ticket_id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Ticket'), ['action' => 'delete', $ticket->t_ticket_id], ['confirm' => __('Are you sure you want to delete # {0}?', $ticket->t_ticket_id)]) ?> </li>
+        <li><?= $this->Html->link(__('Edit Ticket'), ['action' => 'edit', $ticket->id]) ?> </li>
+        <li><?= $this->Form->postLink(__('Delete Ticket'), ['action' => 'delete', $ticket->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ticket->id)]) ?> </li>
         <li><?= $this->Html->link(__('List Tickets'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Ticket'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Customers'), ['controller' => 'Customers', 'action' => 'index']) ?> </li>
@@ -32,7 +32,7 @@
     </ul>
 </div>
 <div class="tickets view col-lg-10 col-md-9 columns">
-    <h2><?= h($ticket->t_ticket_id) ?></h2>
+    <h2><?= h($ticket->id) ?></h2>
     <div class="row">
         <div class="large-5 columns strings">
             <h6 class="subheader"><?= __('Customer') ?></h6>
