@@ -42,7 +42,7 @@
         	<?php
 				$user = $this->Session->read('Auth.User');						
 			
-				if(!empty($user)) { ?>
+				if( TRUE /*!empty($user)*/) { ?>
 					<nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
 		
 					<?php
