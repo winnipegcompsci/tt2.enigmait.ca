@@ -1,7 +1,7 @@
 <div class="tickets view col-lg-10 col-md-9 columns">
     <h2><?= h($ticket->id) ?></h2>
     <div class="row">
-        <div class="large-5 columns strings">
+        <div class="col-lg-5 columns strings">
             <h6 class="subheader"><?= __('Customer') ?></h6>
             <p><?= $ticket->has('customer') ? $this->Html->link($ticket->customer->name, ['controller' => 'Customers', 'action' => 'view', $ticket->customer->id]) : '' ?></p>
             <h6 class="subheader"><?= __('Contact') ?></h6>
@@ -25,13 +25,13 @@
             <h6 class="subheader"><?= __('Quote') ?></h6>
             <p><?= $ticket->has('quote') ? $this->Html->link($ticket->quote->name, ['controller' => 'Quotes', 'action' => 'view', $ticket->quote->id]) : '' ?></p>
         </div>
-        <div class="large-2 columns numbers end">
+        <div class="col-lg-2 columns numbers end">
             <h6 class="subheader"><?= __('Id') ?></h6>
             <p><?= $this->Number->format($ticket->id) ?></p>
             <h6 class="subheader"><?= __('Completion') ?></h6>
             <p><?= $this->Number->format($ticket->completion) ?></p>
         </div>
-        <div class="large-2 columns dates end">
+        <div class="col-lg-2 columns dates end">
             <h6 class="subheader"><?= __('Date Created') ?></h6>
             <p><?= h($ticket->date_created) ?></p>
             <h6 class="subheader"><?= __('Dis') ?></h6>
