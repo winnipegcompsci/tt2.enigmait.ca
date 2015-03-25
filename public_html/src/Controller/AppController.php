@@ -93,10 +93,10 @@ class AppController extends Controller
 	{		
 		$this->set('logged_in', $this->Auth->identify());
 		
-		error_log('RID:: ' . $user->user_role_id);
 		
+	
 		// Admin can access every action
-		if(isset($user['user_role_id']) && $user['user_role_id'] == '1') {
+		if(isset($user) && $user !== null) {
 			error_log('USER IS AUTHORIZED');
 			return true;
 		} 
