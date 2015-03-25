@@ -73,8 +73,9 @@ class AppController extends Controller
             ]
         ]);
 		
-		$usernames = array();
-		
+		$usersnames = array();
+		$users = TableRegistry::get('Users')->find('all');
+	
 		foreach($users as $user){
 			$usernames[$user->id] = $user->first_name . " " . $user->last_name;
 		}
