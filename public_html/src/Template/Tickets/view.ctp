@@ -6,25 +6,19 @@
 			<div class="columns col-lg-8 pull-left">
 				<div class="row texts">
 					<div class="columns large-9">
-						<h6 class="subheader"><?= __('Problem Description') ?></h6>
+						<h3 class="subheader"><?= __('Problem Description') ?></h3>
 						<?= $this->Text->autoParagraph(h($ticket->problem_description)); ?>
 					</div>
 				</div>
 				<div class="row texts">
 					<div class="columns large-9">
-						<h6 class="subheader"><?= __('Solution') ?></h6>
+						<h3 class="subheader"><?= __('Solution') ?></h3>
 						<?= $this->Text->autoParagraph(h($ticket->solution)); ?>
 					</div>
 				</div>
 			</div>
 		</div>
 		
-		<div class="column col-lg-4 pull-right">
-			<h6 class="subheader"><?= __('Date Created') ?></h6>
-			<p><?= h($ticket->date_created) ?></p>
-			<h6 class="subheader"><?= __('Dis') ?></h6>
-			<p><?= h($ticket->dis) ?></p>
-		</div>
 	</div>
 	
 	<div class="row">
