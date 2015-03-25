@@ -61,7 +61,7 @@
 	</div>
 	
 	<div class="row" style="padding-top: 25px">
-		<div class="columns col-lg-8 col-md-6">
+		<div class="columns col-lg-8 col-md-6 col-lg-offset-2">
 			<?php echo $this->element('ticket_event_timeline', array('events' => $ticket->ticket_events, 'problem' => $ticket->problem_description, 'solution' => $ticket->solution)); ?>
 		</div>
 	</div> <!-- ./row -->
