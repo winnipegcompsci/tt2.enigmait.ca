@@ -1,7 +1,8 @@
 <?php 	
 	foreach($header_messages as $message) { 
 
-		$username = $usernames->findById($message->user_id)->limit(1);
+		$all_names = $usernames->find('list');
+		echo "<pre> ALL NAMES: " . print_r($all_names, TRUE) . "</pre>";
 	?>
 	<li>
 		<a href="#">
