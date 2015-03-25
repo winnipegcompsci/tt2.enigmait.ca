@@ -1,7 +1,7 @@
 <div class="tickets view col-lg-12 col-md-9 columns">
     <h2>Ticket #<?= h($ticket->id) ?></h2>
 	<div class="row">
-		<div class="columns col-lg-12 col-md-6">
+		<div class="column col-lg-12 col-md-6">
 			
 			<div class="columns col-lg-8 pull-left">
 				<div class="row texts">
@@ -19,7 +19,7 @@
 			</div>
 		</div>
 		
-		<div class="columns col-lg-4 pull-right">
+		<div class="column col-lg-4 pull-right">
 			<h6 class="subheader"><?= __('Date Created') ?></h6>
 			<p><?= h($ticket->date_created) ?></p>
 			<h6 class="subheader"><?= __('Dis') ?></h6>
