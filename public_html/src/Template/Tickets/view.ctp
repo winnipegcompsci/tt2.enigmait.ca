@@ -53,7 +53,10 @@
 	</div>
 
 	<div class="row">
-		<div class="columns col-lg-8">
+		<div class="columns col-lg-8 pull-left">
+			<h2> Ticket Events </h2>
+			
+			<!--
 			<?php if (!empty($ticket->ticket_events)): ?>
 			<table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
 				<tr>
@@ -96,6 +99,7 @@
 				<?php endforeach; ?>
 			</table>
 			<?php endif; ?>
+			-->
 		</div>
 	</div> <!-- ./row -->
 </div> <!-- ./tickets view -->
