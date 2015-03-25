@@ -3,7 +3,7 @@
 	<li>
 		<a href="#">
 			<div>
-				<strong><?php echo $usernames[$message->user_id]; ?></strong>
+				<strong><?php echo $usernames->findById($message->user_id); ?></strong>
 				<span class="pull-right text-muted">
 					<em><?php echo $message->timestamp; ?></em>
 				</span>
