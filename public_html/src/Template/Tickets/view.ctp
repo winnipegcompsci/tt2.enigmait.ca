@@ -1,11 +1,12 @@
 <div class="tickets view col-lg-10 col-md-9 columns">
     <h2><?= h($ticket->id) ?></h2>
 	<div class="row">
-		<div class="column col-lg-5" style="background-color: BLUE">
+		<div class="column col-lg-12 col-md-6" style="background-color: BLUE">
 			<h2> Ticket Details </h2>
 		</div>
-		
-		<div class="column col-lg-5" style="background-color: RED">
+	</div>
+	<div class="row">
+		<div class="column col-lg-12 col-md-6" style="background-color: RED">
 			<h2> Ticket Events </h2>:
 		</div>
 	</div>
