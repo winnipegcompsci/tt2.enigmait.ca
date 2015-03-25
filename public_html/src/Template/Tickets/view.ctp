@@ -2,22 +2,28 @@
     <h2>Ticket #<?= h($ticket->id) ?></h2>
 	<div class="row">
 		<div class="column col-lg-12 col-md-6">
-			<div class="column col-lg-4">
-				<h2> Ticket Details </h2>
-					<div class="row texts">
-						<div class="columns large-9">
-							<h6 class="subheader"><?= __('Problem Description') ?></h6>
-							<?= $this->Text->autoParagraph(h($ticket->problem_description)); ?>
-						</div>
+			
+			<div class="column col-lg-8">
+				<div class="row texts">
+					<div class="columns large-9">
+						<h6 class="subheader"><?= __('Problem Description') ?></h6>
+						<?= $this->Text->autoParagraph(h($ticket->problem_description)); ?>
 					</div>
-					<div class="row texts">
-						<div class="columns large-9">
-							<h6 class="subheader"><?= __('Solution') ?></h6>
-							<?= $this->Text->autoParagraph(h($ticket->solution)); ?>
-						</div>
+				</div>
+				<div class="row texts">
+					<div class="columns large-9">
+						<h6 class="subheader"><?= __('Solution') ?></h6>
+						<?= $this->Text->autoParagraph(h($ticket->solution)); ?>
 					</div>
+				</div>
 			</div>
+			
 			<div class="column col-lg-4">
+				<h6 class="subheader"><?= __('Date Created') ?></h6>
+				<p><?= h($ticket->date_created) ?></p>
+				<h6 class="subheader"><?= __('Dis') ?></h6>
+				<p><?= h($ticket->dis) ?></p>
+			
 				<h6 class="subheader"><?= __('Customer') ?></h6>
 				<p><?= $ticket->has('customer') ? $this->Html->link($ticket->customer->name, ['controller' => 'Customers', 'action' => 'view', $ticket->customer->id]) : '' ?></p>
 				<h6 class="subheader"><?= __('Contact') ?></h6>
@@ -42,12 +48,6 @@
 				<p><?= $ticket->has('quote') ? $this->Html->link($ticket->quote->name, ['controller' => 'Quotes', 'action' => 'view', $ticket->quote->id]) : '' ?></p>
 			</div>
 			
-			<div class="column col-lg-4">
-			    <h6 class="subheader"><?= __('Date Created') ?></h6>
-				<p><?= h($ticket->date_created) ?></p>
-				<h6 class="subheader"><?= __('Dis') ?></h6>
-				<p><?= h($ticket->dis) ?></p>
-			</div>
 		</div>
 		
 	</div>
