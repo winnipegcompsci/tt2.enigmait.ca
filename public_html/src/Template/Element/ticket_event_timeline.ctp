@@ -40,7 +40,7 @@
                 } else {
                     $class = "";
                 }
-                $icon = "fa-check"
+                $icon = "fa-check";
                 
                 $event_type_id = $event->ticket_event_type_id;
                 $ticket_types = TableRegistry::get('ticket_event_types');
