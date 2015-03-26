@@ -29,6 +29,7 @@
     </ul>
 </div>
 <div class="tickets index col-lg-10 col-md-9 columns">
+    <h3> Tickets </h3>
     <table id="datatable" cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
     <thead>
         <tr>
