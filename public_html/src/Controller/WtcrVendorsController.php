@@ -147,12 +147,12 @@ class WtcrVendorsController extends AppController
     public function fetch_eprom_products() 
     {
         $vendorID = TableRegistry::get('wtcr_vendors')->findByName('EPROM');
+        $products = TableRegistry::get('wtcr_vendors_products')->findByWtcrVendorId($vendorId)
+        $this->set('products', $products);
         // echo "Vendor ID: <pre>" . print_r($vendorID, TRUE) . "</pre>";
         
         $write_path = getcwd() . '/vendordata/eprom.csv';
-        
-        $this->Flash->success('Debug:: Fetching Eprom Products');
-        
+                
         // Credentials 
         $username     = "w210";
         $password     = "Cyp4mybjX3Tt";
