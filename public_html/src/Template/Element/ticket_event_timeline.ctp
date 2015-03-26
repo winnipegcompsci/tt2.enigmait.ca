@@ -63,7 +63,7 @@
                     </div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4 class="timeline-title"><?php echo $event->timestamp; ?><span class="pull-right">User: <?= $event->user_id; ?></span></h4>
+                            <h4 class="timeline-title"><?php echo $event->timestamp; ?><span class="pull-right">User: <?= $event->user_id . " " . $this->User->findById($event->user_id)->first_name; ?></span></h4>
                             <p><small class="text-muted pull-right"><i class="fa fa-clock-o"></i> <?= $event->time_taken . " minutes" ?></small></p>
                             
                         </div>
