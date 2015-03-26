@@ -1,7 +1,7 @@
 <h1> <i class="fa fa-shopping-cart fa-fw"></i><?= $vendor_name  ?> Products </h1>
 
 <?php 
-if($vendor_products == null) {
+if(!isset($vendor_products) || $vendor_products == null) {
     echo $this->Modal->create("No Products found, please try fetching", ['id' => 'MyModal', 'close' => true]) ; 
     $this->Flash->error("No products from $vendor_name have been found. Try fetching first");
 } else {
