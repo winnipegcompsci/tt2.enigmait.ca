@@ -145,7 +145,57 @@ class WtcrVendorsController extends AppController
     
     public function fetch_eprom_products() 
     {
-        $this->Flash->error('Debug:: Fetching Eprom Products');
+        $writePath = '/vendordata/eprom.csv';
+        
+        $this->Flash->success('Debug:: Fetching Eprom Products');
+        
+        // Credentials 
+        $username     = "w210";
+        $password     = "Cyp4mybjX3Tt";
+        $login_url    = "http://www.eprom.com/home/customer/login/index.php?url=/home/customer/product/download.php";
+        $download_url = "http://www.eprom.com/home/customer/product/download.php";
+        
+        // Get CSV File
+        try {
+            $ch = curl_init();
+            
+            curl_setopt($ch, CURLOPT_URL, $login_url);
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, 'login=' . $username . '&password=' . $password . '&isSubmitted=1&submit=Submit');
+            curl_setopt($ch, CURLOPT_COOKIEFILE, '/cookie.txt');
+            curl_setopt($ch, CURLOPT_COOKIEJAR, '/cookie.txt');
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_AUTOREFERER, 1);
+             
+            $referer = 'http://google.ca';
+            curl_setopt($ch, CURLOPT_REFERER, $referer);
+              
+            $userAgent = variable_get('prodmgr_user_agent', 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)');
+            curl_setopt($ch, CURLOPT_USERAGENT, $userAgent);
+              
+            // Perform the Login Request///////////////////////////////////////////////////
+            curl_setopt($ch, CURLOPT_URL, $login_url);
+            $login_content = curl_exec($ch);
+            $login_info    = curl_getinfo($ch);
+              
+            //Perform the Download Request/////////////////////////////////////////////////
+            curl_setopt($ch, CURLOPT_URL, $download_url);
+            $downloaded_file = curl_exec($ch);
+            $download_info   = curl_getinfo($ch);
+            
+            file_put_contents($write_path, $downloaded_file);
+            
+        } catch (Exception $e) {
+            $this->Flash->error('Error Caught:: ' . $e->getMessage());
+        }
+        
+        
+        /*
+            For Each Product in CSV:
+                Update Corresponding Entry in DB Where Supplier = "eprom" AND
+                    supplier_sku = "eprom product sku".
+        */
         
         
     }
