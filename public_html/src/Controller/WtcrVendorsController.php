@@ -102,4 +102,41 @@ class WtcrVendorsController extends AppController
         }
         return $this->redirect(['action' => 'index']);
     }
+    
+    public function view_eprom_products() 
+    {
+        $eprom = $this->WtcrVendors->findByName('Eprom');
+        
+        $this->Flash->error('View EPROM:: <pre>' . print_r($eprom, TRUE) . '</pre>');
+        // Query WTCR Vendor Products where vendor.ID = X.
+        // $this->set('products', design table).
+    }
+    
+    public function fetch_eprom_products() 
+    {
+        $eprom = $this->WtcrVendors->findByName('Eprom');
+        
+        $this->Flash->error('Fetch Eprom:: <pre>' . print_r($eprom,  TRUE) . '</pre>');
+    
+    }
+    
+    public function view_longtech_products() 
+    {
+    
+    }
+    
+    public function fetch_longtech_products() 
+    {
+    
+    }
+    
+    public function view_asi_products() 
+    {
+    
+    }
+    
+    public function fetch_asi_products() {
+    
+    }
+    
 }
