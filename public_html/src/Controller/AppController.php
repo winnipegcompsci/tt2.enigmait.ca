@@ -93,13 +93,16 @@ class AppController extends Controller
 	{		
 		$this->set('logged_in', $this->Auth->identify());
 		
+		$this_user = $this->Auth->identify();
+		
 		// Admin can access every action
-		if(1 == 1) {
+		if($thisuser) {
 			error_log('USER IS AUTHORIZED');
 			return true;
 		} 
 		
 		error_log('USER NOT AUTHORIZED');
+		$this->loginRedirect();
 		return false;
 	}
 }
