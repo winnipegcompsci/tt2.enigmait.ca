@@ -204,9 +204,26 @@ class WtcrVendorsController extends AppController
                 $stock = $parts[2];
                 $supplier_price = $parts[3];
                 $url = $parts[4];
-                               
+                
+                $productData = [
+                    'id' => ,
+                    'name' => $description,
+                    'wtcr_vendor_id' => $vendorID,
+                    'vendor_sku' => $supplier_sku,
+                    'vendor_price' => $supplier_price,
+                    'wtcr_sku' => 'WTCR-' . $supplier_sku,  // Craete Method Later.
+                    'wtcr_category_id' => $category,
+                    'last_updated' => date('Y-m-d');
+                ];
                 
                 echo "<pre>" . print_r($parts, TRUE) . "</pre>";
+                
+                $products = TableRegister::get('wtcr_vendor_products');
+                $product = $product->newEntity($productData);
+                if($products->save($product)) {
+                    $this->Flash->success("Saved Product $supplier_sku");
+                }
+                
             }
             
         } catch (Exception $e) {
