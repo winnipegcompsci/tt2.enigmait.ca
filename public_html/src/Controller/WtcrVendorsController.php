@@ -110,11 +110,11 @@ class WtcrVendorsController extends AppController
         }
         
         if($vendor == "longtech") {
-            $this->Flash->success("Vieweing Longtech Products");
+            $this->Flash->success("Viewing Longtech Products");
         }
         
         if($vendor == "asi") {
-            $this->Flash->success("Vieweing ASI Products");
+            $this->Flash->success("Viewing ASI Products");
         }
     }
     
