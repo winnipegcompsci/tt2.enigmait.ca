@@ -102,7 +102,6 @@ class AppController extends Controller
 		} 
 		
 		error_log('USER NOT AUTHORIZED');
-		$this->loginRedirect();
 		return false;
 	}
 }
