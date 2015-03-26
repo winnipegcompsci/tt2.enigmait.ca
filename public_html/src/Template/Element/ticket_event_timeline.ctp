@@ -74,7 +74,7 @@
                                         <li><a href="#">Edit Event</a></li>
                                         <li><a href="#">Delete</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="">Mark as Solution</a></li>
+                                        <li><a href="<?= $this->Url->build(['controller' => 'ticket_events', 'action' => 'set_solution', $event->id]); ?>">Mark as Solution</a></li>
                                     </ul>
                             </div>
                         </div>
@@ -95,7 +95,14 @@
                         <p><small class="text-muted"><i class="fa fa-clock-o"></i> <?= $event->time_taken . " minutes" ?></small></p>
                     </div>
                     <div class="timeline-body">
-                        <p><?php echo $solution; ?></p>
+                        <p><?php echo $solution; ?></p>                
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i>  <span class="caret"></span></button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Edit Event</a></li>
+                                <li><a href="#">Delete</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </li>

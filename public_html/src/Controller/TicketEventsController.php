@@ -115,4 +115,12 @@ class TicketEventsController extends AppController
         }
         return $this->redirect(['action' => 'index']);
     }
+    
+    public function set_solution($id = null) {
+        $ticketEvent = $this->TicketEvents->get($id);
+        
+        echo "<pre>" . print_r($ticketEvent, TRUE) . "</pre>";
+        
+        
+    }
 }
