@@ -53,6 +53,9 @@ class AppController extends Controller
             'receive_products',
             'view_vendor_products',
             'fetch_vendor_products',
+            'fetch_eprom_products',
+            'fetch_longtech_products',
+            'fetch_asi_products',
         ]);	// REMOVE THIS AFTER!!!
         
         
