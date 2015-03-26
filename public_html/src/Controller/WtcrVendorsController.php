@@ -204,8 +204,7 @@ class WtcrVendorsController extends AppController
                     $supplier_price = $parts[3];
                     $url = $parts[4];
                 }
-                
-                
+                                
                 if(isset($supplier_sku) && $supplier_sku != "") {
                     $productData = [
                         'id' => 1,
@@ -218,14 +217,14 @@ class WtcrVendorsController extends AppController
                         'last_updated' => date('Y-m-d'),
                     ];
                     
-                    echo "<pre>" . print_r($parts, TRUE) . "</pre>";
+                    // echo "<pre>" . print_r($parts, TRUE) . "</pre>"; // DEBUG
                     
                     $products = TableRegistry::get('wtcr_vendor_products');
                     $product = $products->newEntity($productData);
                     if($products->save($product)) {
                         $this->Flash->success("Saved Product $supplier_sku");
                     } else {
-                        $this->Flash->error("Could Not Save Vendor Product");
+                        $this->Flash->error("Could Not Save Vendor Product $suppolier_sku");
                     }
                 }
                 
