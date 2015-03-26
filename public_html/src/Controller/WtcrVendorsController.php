@@ -146,7 +146,7 @@ class WtcrVendorsController extends AppController
     public function fetch_eprom_products() 
     {
         $vendorID = TableRegistry::get('wtcr_vendors')->findByName('EPROM');
-        $products = TableRegistry::get('wtcr_vendors_products')->findByWtcrVendorId($vendorId);
+        $products = TableRegistry::get('wtcr_vendor_products')->findByWtcrVendorId($vendorId);
         $this->set('products', $products);
         // echo "Vendor ID: <pre>" . print_r($vendorID, TRUE) . "</pre>";
         
