@@ -15,9 +15,7 @@
     <div class="panel-body">
         <h4 class="text-warn"> Product Table Here </h4>
         <?php 
-            foreach($vendor_products as  $product) {
-                echo "<pre>" . print_r($product, TRUE) . "</pre>";
-            }
+
         ?>
     </div>
 </div>
