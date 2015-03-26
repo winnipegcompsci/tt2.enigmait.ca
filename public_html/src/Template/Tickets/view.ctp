@@ -82,6 +82,9 @@
                     <td>&nbsp;</td>
                     <td class="pull-right"><?= $ticket->has('quote') ? $this->Html->link($ticket->quote->name, ['controller' => 'Quotes', 'action' => 'view', $ticket->quote->id]) : '' ?></td>
                 </tr>
+                <tr>
+                    
+                </td>
             </table>
         </div>
 	</div>

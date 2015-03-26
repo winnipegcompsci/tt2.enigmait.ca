@@ -119,9 +119,19 @@ class TicketEventsController extends AppController
     public function set_solution($id = null) {
         $ticketEvent = $this->TicketEvents->get($id);
         
+        $ticketEvent->is_solution = 1;
+        
+        $ticket = TableRegistry::get('Tickets')->find('all', [
+            'condition' => array('Ticket.id =' => $tickentEvent->ticket_id),
+        ]);
+        
+        $ticket->solution = $ticketEvent->description;
+        
         error_log("<pre>" . print_r($ticketEvent, TRUE) . "</pre>");
         
-        if($this->TicketEvents->save($ticketEvent)) {
+        
+        
+        if($this->TicketEvents->save($ticketEvent) && TableRegistry::get('Tickets')->save($ticket)) {
             $this->Flash->success("Marked Event as Ticket Solution");
         } else {
             $this->Flash->error("Error: Unable to save Ticket Event as solution!");
