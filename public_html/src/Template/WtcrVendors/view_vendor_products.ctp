@@ -1,3 +1,5 @@
+$numProducts = count($vendor_products);
+
 <div class="panel panel-default">
     <div class="panel-heading">
         <i class="fa fa-shopping-cart fa-3x"></i><span style="font-size: 2em">&nbsp; <?= $vendor_name  ?> Products</span>
@@ -12,10 +14,10 @@
         </div>
     </div>
         <!-- /.panel-heading -->
-    <div class="panel-body">
-        <h4 class="text-warn"> Product Table Here </h4>
+    <div class="panel-body">   
+        <h4 class="text-warn"> <?= $vendor_name ?> Product Table </h4>
         <?php 
-
+            
         ?>
     </div>
 </div>
