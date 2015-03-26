@@ -100,10 +100,10 @@
                                     <a href="<?php echo $this->Url->build(['controller' => 'Inventory', 'action' => 'index']); ?>"><i class="fa fa-list-alt fa-fw"></i>&nbsp;Inventory <span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
-                                            <a href="#">Find Product </a>
+                                            <a href="<?php echo $this->Url->build(['controller' => 'Inventory', 'action' => 'find_product']); ?>">Find Product </a>
                                         </li>
                                         <li>
-                                            <a href="#">Receive Product </a>
+                                            <a href="<?php echo $this->Url->build(['controller' => 'Inventory', 'action' => 'receive_products']); ?>">Receive Products </a>
                                         </li>
                                     </ul>
                                 </li>

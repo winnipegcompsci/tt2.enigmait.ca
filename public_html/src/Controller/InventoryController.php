@@ -116,4 +116,9 @@ class InventoryController extends AppController
     {
         $this->Flash->success("find_product() called");
     }
+    
+    public function receive_products() 
+    {
+        $this->Flash->success("receive_products() called");
+    }
 }
