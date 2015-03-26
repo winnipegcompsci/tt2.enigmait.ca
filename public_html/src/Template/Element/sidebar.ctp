@@ -48,6 +48,12 @@
 								<li>
 									<a href="#"><i class="fa fa-cog fa-fw"></i>&nbsp; Management <span class="fa arrow"></span></a>
 									<ul class="nav nav-third-level">
+                                    	<li>
+											<a href="<?php echo $this->Url->build(['controller' => 'Users', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; Users</a>
+										</li>
+										<li>
+											<a href="<?php echo $this->Url->build(['controller' => 'UserRoles', 'action' => 'index']); ?>/">&nbsp; User Roles</a>
+										</li>
 										<li>
 											<a href="<?php echo $this->Url->build(['controller' => 'BillingTypes', 'action' => 'index']); ?>/">&nbsp; Billing Types</a>
 										</li>
@@ -78,12 +84,6 @@
 										<li>
 											<a href="<?php echo $this->Url->build(['controller' => 'TicketTypes', 'action' => 'index']); ?>/">&nbsp; Ticket Types</a>
 										</li>
-										<li>
-											<a href="<?php echo $this->Url->build(['controller' => 'Users', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; Users</a>
-										</li>
-										<li>
-											<a href="<?php echo $this->Url->build(['controller' => 'UserRoles', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; User Roles</a>
-										</li>
 									</ul>									
 								</li>
                             </ul>
@@ -98,6 +98,14 @@
 								</li>
                                 <li>
                                     <a href="<?php echo $this->Url->build(['controller' => 'Inventory', 'action' => 'index']); ?>"><i class="fa fa-list-alt fa-fw"></i>&nbsp;Inventory</a>
+                                    <ul class="nav nav third-level">
+                                        <li>
+                                            <a href="#">Find Product </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Receive Inventory </a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li>
                                     <a href="<?php echo $this->Url->build(['controller' => 'WtcrVendors', 'action' => 'index']); ?>/"><i class="fa fa-suitcase fa-fw"></i>&nbsp;Vendors <span class="fa arrow"></span></a>
