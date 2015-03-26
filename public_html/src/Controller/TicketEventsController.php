@@ -135,7 +135,7 @@ class TicketEventsController extends AppController
             $this->Flash->error("Error: Unable to save Ticket Event as solution!");
         }
         
-        $this->redirect(['controller' => 'Tickets', 'action' => 'set_solution', $ticketEvent->ticket_id, $ticketEvent->description);
+        $this->redirect(['controller' => 'Tickets', 'action' => 'set_solution', $ticketEvent->ticket_id, $ticketEvent->description]);
         
         
     }
