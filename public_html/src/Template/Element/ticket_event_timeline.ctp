@@ -31,6 +31,7 @@
                 } else {
                     $class = "";
                 }
+                echo "<pre>" . print_r($event, TRUE) . "</pre>";    // DEBUG
                 $badgetype = "info";
         ?>
                 <li class="<?php echo $class; ?>">
