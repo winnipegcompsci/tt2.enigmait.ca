@@ -52,7 +52,7 @@
                     $icon = "fa-retweet";
                 }
                       
-                
+                $this_user = isset($names[$event->user_id]) ? $names[$event->user_id] : 'Unknown';
                 // echo "<pre>" . print_r($event, TRUE) . "</pre>";    // DEBUG
                 $badgetype = "info";
         ?>
@@ -62,7 +62,7 @@
                     </div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4 class="timeline-title"><?php echo $event->timestamp; ?><span class="pull-right">User: <?= $names[$event->user_id]; ?></span></h4>
+                            <h4 class="timeline-title"><?php echo $event->timestamp; ?><span class="pull-right"><?= $this_user; ?></span></h4>
                             <p><small class="text-muted pull-right"><i class="fa fa-clock-o"></i> <?= $event->time_taken . " minutes" ?></small></p>
                             
                         </div>
