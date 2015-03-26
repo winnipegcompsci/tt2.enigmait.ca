@@ -111,13 +111,13 @@
                                     <a href="<?php echo $this->Url->build(['controller' => 'WtcrVendors', 'action' => 'index']); ?>/"><i class="fa fa-suitcase fa-fw"></i>&nbsp;Vendors <span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
-                                            <a href="<?php echo $this->Url->build(['controller' => 'WtcrVendors', 'action' => 'view_vendor_products', 'eprom']); ?>">EPROM</a>
+                                            <a href="<?php echo $this->Url->build(['controller' => 'WtcrVendors', 'action' => 'view_vendor_products', 'eprom']); ?>">EPROM Products</a>
                                         </li>
                                         <li>
-                                            <a href="<?php echo $this->Url->build(['controller' => 'WtcrVendors', 'action' => 'view_vendor_products', 'longtech']); ?>">Longtech</a>
+                                            <a href="<?php echo $this->Url->build(['controller' => 'WtcrVendors', 'action' => 'view_vendor_products', 'longtech']); ?>">Longtech Products</a>
                                         </li>
                                         <li>
-                                            <a href="<?php echo $this->Url->build(['controller' => 'WtcrVendors', 'action' => 'view_vendor_products', 'asi']); ?>">ASI</a>
+                                            <a href="<?php echo $this->Url->build(['controller' => 'WtcrVendors', 'action' => 'view_vendor_products', 'asi']); ?>">ASI Products</a>
                                         </li>
                                     </ul>
                                     <!-- /.nav-third-level -->
