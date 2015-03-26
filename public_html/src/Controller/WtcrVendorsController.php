@@ -145,6 +145,9 @@ class WtcrVendorsController extends AppController
     
     public function fetch_eprom_products() 
     {
+        $vendorID = TableRegistry::get('wtcr_vendors')->findByName('EPROM');
+        echo "Vendor ID: <pre>" . print_r($vendorID, TRUE) . "</pre>";
+        
         $write_path = getcwd() . '/vendordata/eprom.csv';
         
         $this->Flash->success('Debug:: Fetching Eprom Products');
@@ -190,6 +193,14 @@ class WtcrVendorsController extends AppController
             
             foreach(preg_split("/((\r?\n)|(\r\n?))/", $downloaded_file) as $line) {               
                 $parts = explode(",", $line, 6);
+                
+                $supplier_sku = $parts[0];
+                $description = $parts[1];
+                $stock = $parts[2];
+                $supplier_price = $parts[3];
+                $url = $parts[4];
+                
+                
                 
                 echo "<pre>" . print_r($parts, TRUE) . "</pre>";
             }
