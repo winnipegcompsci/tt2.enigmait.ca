@@ -43,7 +43,15 @@
                 $icon = "fa-check";
                 
                 $event_type_id = $event->ticket_event_type_id;
-                echo "<pre> Event Type ID: " . $event_type_id . "</pre>";
+                
+                if($event_type_id == 1) {   //  Service
+                    $icon = "fa-wrench";
+                } else if($event_type_id == 2) { // Informational 
+                    $icon = "fa-info";
+                } else if($event_type_id == 3) { // Internal
+                    $icon = "fa-retweet";
+                }
+                
                 
                 
                 // echo "<pre>" . print_r($event, TRUE) . "</pre>";    // DEBUG
