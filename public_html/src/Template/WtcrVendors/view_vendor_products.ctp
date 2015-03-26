@@ -34,7 +34,7 @@
             <tbody>
                 <?php 
                     if(isset($vendor_products) && $vendor_products !== null) {
-                    foreach($vendor_products as $product) {?> 
+                        foreach($vendor_products as $product) {?> 
                         <tr>
                             <td><?= $product->name ?></td>
                             <td><?= $product->wtcr_vendor_id ?></td>
@@ -43,7 +43,7 @@
                             <td><?= $product->wtcr_category ?></td>
                             <td><?= $product->last_updated ?></td>
                         </tr> 
-                <?php> } 
+                    <?php } 
                     }
                     if(count($vendor_products) == 0) {
                         $this->Flash->error("No $vendor_name products could be found at this time");
