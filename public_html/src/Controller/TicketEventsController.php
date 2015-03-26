@@ -126,10 +126,7 @@ class TicketEventsController extends AppController
             'condition' => array('Ticket.id =' => $ticketEvent->ticket_id),
         ]);
         
-        $ticket->solution = $ticketEvent->description;
-        
-        error_log("<pre>" . print_r($ticketEvent, TRUE) . "</pre>");
-        
+        $ticket->solution = $ticketEvent->description;   
         
         
         if($this->TicketEvents->save($ticketEvent)) {

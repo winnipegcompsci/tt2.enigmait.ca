@@ -120,7 +120,7 @@ class TicketsController extends AppController
             $this->Flash->error("Could not save Ticket Solution");
         }
         
-        return $this->redirect(['controller' => 'Tickets', 'action' => 'view', $id);
+        return $this->redirect(['controller' => 'Tickets', 'action' => 'view', $id]);
     }
     
     
