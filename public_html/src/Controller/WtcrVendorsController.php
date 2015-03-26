@@ -211,7 +211,7 @@ class WtcrVendorsController extends AppController
                             'name' => $description,
                             'wtcr_vendor_id' => $vendorID,
                             'vendor_sku' => $supplier_sku,
-                            'vendor_price' => $supplier_price,
+                            'vendor_price' => $supplier_price
                             'wtcr_sku' => 'WTCR-' . $supplier_sku,  // Craete Method Later.
                             'wtcr_category_id' => $category,
                             'last_updated' => date('Y-m-d'),
@@ -221,7 +221,16 @@ class WtcrVendorsController extends AppController
                     // echo "<pre>" . print_r($parts, TRUE) . "</pre>"; // DEBUG
                     
                     $products = TableRegistry::get('wtcr_vendor_products');
-                    $product = $products->newEntity($productData);
+                    
+                    $product = $products->newEntity();
+                    $product->name = $description;
+                    $product->wtcr_vendor_id = $vendorID;
+                    $product->vendor_sku = $supplier_sku;
+                    $product->vendor_price = $supplier_price;
+                    $product->wtcr_sku = 'WTCR-' . $supplier_sku;
+                    $product->wtcr_category_id = $category;
+                    $product->last_updated = date('Y-m-d');
+                    
                     if($products->save($product)) {
                         $this->Flash->success("Saved Product $supplier_sku");
                     } else {
