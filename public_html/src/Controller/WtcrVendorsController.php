@@ -147,7 +147,7 @@ class WtcrVendorsController extends AppController
     public function fetch_eprom_products() 
     {
         $vendorID = TableRegistry::get('wtcr_vendors')->findByName('EPROM');
-        echo "Vendor ID: <pre>" . print_r($vendorID, TRUE) . "</pre>";
+        // echo "Vendor ID: <pre>" . print_r($vendorID, TRUE) . "</pre>";
         
         $write_path = getcwd() . '/vendordata/eprom.csv';
         
@@ -197,33 +197,36 @@ class WtcrVendorsController extends AppController
                 
                 if( isset($parts[0]) && !isset($parts[1]) ) {
                     $category = $parts[0];
+                } else {               
+                    $supplier_sku = $parts[0];
+                    $description = $parts[1];
+                    $stock = $parts[2];
+                    $supplier_price = $parts[3];
+                    $url = $parts[4];
                 }
                 
-                $supplier_sku = $parts[0];
-                $description = $parts[1];
-                $stock = $parts[2];
-                $supplier_price = $parts[3];
-                $url = $parts[4];
                 
-                $productData = [
-                    'id' => 1,
-                    'name' => $description,
-                    'wtcr_vendor_id' => $vendorID,
-                    'vendor_sku' => $supplier_sku,
-                    'vendor_price' => $supplier_price,
-                    'wtcr_sku' => 'WTCR-' . $supplier_sku,  // Craete Method Later.
-                    'wtcr_category_id' => $category,
-                    'last_updated' => date('Y-m-d'),
-                ];
-                
-                echo "<pre>" . print_r($parts, TRUE) . "</pre>";
-                
-                $products = TableRegistry::get('wtcr_vendor_products');
-                $product = $products->newEntity($productData);
-                if($products->save($product)) {
-                    $this->Flash->success("Saved Product $supplier_sku");
-                } else {
-                    $this->Flash->error("Could Not Save Vendor Product");
+                if(isset($supplier_sku) && $supplier_sku != "") {
+                    $productData = [
+                        'id' => 1,
+                        'name' => $description,
+                        'wtcr_vendor_id' => $vendorID,
+                        'vendor_sku' => $supplier_sku,
+                        'vendor_price' => $supplier_price,
+                        'wtcr_sku' => 'WTCR-' . $supplier_sku,  // Craete Method Later.
+                        'wtcr_category_id' => $category,
+                        'last_updated' => date('Y-m-d'),
+                    ];
+                    
+                    echo "<pre>" . print_r($parts, TRUE) . "</pre>";
+                    
+                    $products = TableRegistry::get('wtcr_vendor_products');
+                    $product = $products->newEntity($productData);
+                    if($products->save($product)) {
+                        $this->Flash->success("Saved Product $supplier_sku");
+                    } else {
+                        $this->Flash->error("Could Not Save Vendor Product");
+                    }
                 }
                 
             }
