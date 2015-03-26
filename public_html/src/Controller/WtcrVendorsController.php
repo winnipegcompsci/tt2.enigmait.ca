@@ -207,14 +207,17 @@ class WtcrVendorsController extends AppController
                                 
                 if(isset($supplier_sku) && $supplier_sku != "") {
                     $productData = [
-                        'id' => 1,
-                        'name' => $description,
-                        'wtcr_vendor_id' => $vendorID,
-                        'vendor_sku' => $supplier_sku,
-                        'vendor_price' => $supplier_price,
-                        'wtcr_sku' => 'WTCR-' . $supplier_sku,  // Craete Method Later.
-                        'wtcr_category_id' => $category,
-                        'last_updated' => date('Y-m-d'),
+                        ['wtcr_vendor_products'] => Array(
+                            'id' => 1,
+                            'name' => $description,
+                            'wtcr_vendor_id' => $vendorID,
+                            'vendor_sku' => $supplier_sku,
+                            'vendor_price' => $supplier_price,
+                            'wtcr_sku' => 'WTCR-' . $supplier_sku,  // Craete Method Later.
+                            'wtcr_category_id' => $category,
+                            'last_updated' => date('Y-m-d'),
+                        ),
+                        
                     ];
                     
                     // echo "<pre>" . print_r($parts, TRUE) . "</pre>"; // DEBUG
@@ -224,7 +227,7 @@ class WtcrVendorsController extends AppController
                     if($products->save($product)) {
                         $this->Flash->success("Saved Product $supplier_sku");
                     } else {
-                        $this->Flash->error("Could Not Save Vendor Product $supplier_sku");
+                        $this->Flash->error("Could Not Save Vendor Product: $supplier_sku");
                     }
                 }
                 
