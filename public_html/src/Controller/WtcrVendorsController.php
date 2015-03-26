@@ -206,7 +206,7 @@ class WtcrVendorsController extends AppController
                                 
                 if(isset($supplier_sku) && $supplier_sku != "") {
                     $productData = [
-                        ['wtcr_vendor_products'] => Array(
+                        'wtcr_vendor_products'=> Array(
                             'id' => 1,
                             'name' => $description,
                             'wtcr_vendor_id' => $vendorID,
@@ -215,8 +215,8 @@ class WtcrVendorsController extends AppController
                             'wtcr_sku' => 'WTCR-' . $supplier_sku,  // Craete Method Later.
                             'wtcr_category_id' => $category,
                             'last_updated' => date('Y-m-d'),
-                        )    
-                    ];
+                        )];    
+                    
                     
                     // echo "<pre>" . print_r($parts, TRUE) . "</pre>"; // DEBUG
                     
