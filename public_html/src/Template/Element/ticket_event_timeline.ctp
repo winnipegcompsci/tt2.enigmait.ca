@@ -63,9 +63,9 @@
                     </div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4 class="timeline-title"><?php echo $event->timestamp; ?></h4>
+                            <h4 class="timeline-title"><?php echo $event->timestamp; ?><span class="pull-right">User: <?= $ticketEvent->user_id; ?></span></h4>
                             <p><small class="text-muted"><i class="fa fa-clock-o"></i> <?= $event->time_taken . " minutes" ?></small></p>
-                            <h3> User: <?= $event->user_id; ?></h3>
+                            
                         </div>
                         <div class="timeline-body">
                             <p><?php echo $event->description; ?></p>
