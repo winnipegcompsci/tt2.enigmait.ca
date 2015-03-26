@@ -215,8 +215,7 @@ class WtcrVendorsController extends AppController
                             'wtcr_sku' => 'WTCR-' . $supplier_sku,  // Craete Method Later.
                             'wtcr_category_id' => $category,
                             'last_updated' => date('Y-m-d'),
-                        ),
-                        
+                        )    
                     ];
                     
                     // echo "<pre>" . print_r($parts, TRUE) . "</pre>"; // DEBUG
