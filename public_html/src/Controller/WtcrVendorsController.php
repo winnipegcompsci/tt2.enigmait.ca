@@ -106,17 +106,14 @@ class WtcrVendorsController extends AppController
     public function view_vendor_products($vendor = null) 
     {
         if($vendor == "eprom") {
-            $this->Flash->success('Viewing EPROM Products');
             $this->set('vendor_name', 'Eprom');
         }
         
         if($vendor == "longtech") {
-            $this->Flash->success("Viewing Longtech Products");
             $this->set('vendor_name', 'Longtech');
         }
         
         if($vendor == "asi") {
-            $this->Flash->success("Viewing ASI Products");
             $this->set('vendor_name', 'ASI');
         }
     }
