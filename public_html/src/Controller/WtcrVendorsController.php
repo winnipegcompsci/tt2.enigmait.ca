@@ -145,7 +145,7 @@ class WtcrVendorsController extends AppController
     
     public function fetch_eprom_products() 
     {
-        $write_path = '/vendordata/eprom.csv';
+        $write_path = getcwd() . '/vendordata/eprom.csv';
         
         $this->Flash->success('Debug:: Fetching Eprom Products');
         
