@@ -186,6 +186,12 @@ class WtcrVendorsController extends AppController
             
             file_put_contents($write_path, $downloaded_file);
             
+            foreach(preg_split("/((\r?\n)|(\r\n?))/", $downloaded_file) as $line) {
+                $parts = explode(",", $line);
+                
+                $this->Flash->error("<pre>" . print_r($parts, TRUE) . "</pre>");
+            }
+            
         } catch (Exception $e) {
             $this->Flash->error('Error Caught:: ' . $e->getMessage());
         }
