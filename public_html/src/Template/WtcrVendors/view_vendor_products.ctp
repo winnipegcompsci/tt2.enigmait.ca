@@ -2,6 +2,7 @@
 
 <?php 
 if($vendor_products == null) {
+    echo $this->Modal->create("No Products found, please try fetching", ['id' => 'MyModal', 'close' => true]) ; 
     $this->Flash->error("No products from $vendor_name have been found. Try fetching first");
 } else {
 ?>
