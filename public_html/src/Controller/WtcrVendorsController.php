@@ -195,13 +195,16 @@ class WtcrVendorsController extends AppController
             foreach(preg_split("/((\r?\n)|(\r\n?))/", $downloaded_file) as $line) {               
                 $parts = explode(",", $line, 6);
                 
+                if( isset($parts[0]) && !isset($parts[1]) ) {
+                    $category = $parts[0];
+                }
+                
                 $supplier_sku = $parts[0];
                 $description = $parts[1];
                 $stock = $parts[2];
                 $supplier_price = $parts[3];
                 $url = $parts[4];
-                
-                
+                               
                 
                 echo "<pre>" . print_r($parts, TRUE) . "</pre>";
             }
