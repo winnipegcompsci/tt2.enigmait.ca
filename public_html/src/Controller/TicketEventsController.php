@@ -119,7 +119,7 @@ class TicketEventsController extends AppController
     public function set_solution($id = null) {
         $ticketEvent = $this->TicketEvents->get($id);
         
-        echo "<pre>" . print_r($ticketEvent, TRUE) . "</pre>";
+        $this->Flash->error("<pre>" . print_r($ticketEvent, TRUE) . "</pre>");
         
         
     }
