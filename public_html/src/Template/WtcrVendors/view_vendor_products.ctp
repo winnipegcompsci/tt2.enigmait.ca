@@ -48,7 +48,7 @@
                 ?> 
                 
                     <tr>
-                        <td colspan=7>No <?= $vendor_name ?> products could be found. </td>
+                        <td colspan=7 class="text-center" >No <?= $vendor_name ?> products could be found. </td>
                     </tr>
                 <?php } ?>
                 
