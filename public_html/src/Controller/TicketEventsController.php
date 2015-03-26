@@ -123,7 +123,7 @@ class TicketEventsController extends AppController
         $ticketEvent->is_solution = 1;
         
         $ticket = TableRegistry::get('Tickets')->find('all', [
-            'condition' => array('Ticket.id =' => $tickentEvent->ticket_id),
+            'condition' => array('Ticket.id =' => $ticketEvent->ticket_id),
         ]);
         
         $ticket->solution = $ticketEvent->description;
