@@ -31,7 +31,7 @@
                 } else {
                     $class = "";
                 }
-                echo "<pre>" . print_r($event, TRUE) . "</pre>";    // DEBUG
+                // echo "<pre>" . print_r($event, TRUE) . "</pre>";    // DEBUG
                 $badgetype = "info";
         ?>
                 <li class="<?php echo $class; ?>">
@@ -51,7 +51,7 @@
                                         <li><a href="#">Edit Event</a></li>
                                         <li><a href="#">Delete</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="#">Mark as Solution</a></li>
+                                        <li><a href="">Mark as Solution</a></li>
                                     </ul>
                             </div>
                         </div>
