@@ -97,7 +97,7 @@
 									<a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'under_construction']);?>"><i class="fa fa-dollar fa-fw"></i>&nbsp;In-Store POS</a>
 								</li>
                                 <li>
-                                    <a href="<?php echo $this->Url->build(['controller' => 'Inventory', 'action' => 'index']); ?>"><i class="fa fa-list-alt fa-fw"></i>&nbsp;Inventory</a>
+                                    <a href="<?php echo $this->Url->build(['controller' => 'Inventory', 'action' => 'index']); ?>"><i class="fa fa-list-alt fa-fw"></i>&nbsp;Inventory <span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
                                             <a href="#">Find Product </a>
