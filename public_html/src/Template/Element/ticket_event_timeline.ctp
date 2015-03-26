@@ -59,7 +59,7 @@
         ?>
                 <li class="<?php echo $class; ?>">
                     <div class="timeline-badge <?= $badgetype ?>">
-                        <i class="fa $icon"></i>
+                        <i class="fa <?= $icon ?>"></i>
                     </div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
