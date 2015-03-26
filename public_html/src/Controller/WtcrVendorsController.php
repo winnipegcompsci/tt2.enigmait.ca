@@ -224,7 +224,7 @@ class WtcrVendorsController extends AppController
                     if($products->save($product)) {
                         $this->Flash->success("Saved Product $supplier_sku");
                     } else {
-                        $this->Flash->error("Could Not Save Vendor Product $suppolier_sku");
+                        $this->Flash->error("Could Not Save Vendor Product $supplier_sku");
                     }
                 }
                 
