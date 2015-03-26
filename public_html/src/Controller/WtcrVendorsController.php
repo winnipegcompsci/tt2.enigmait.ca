@@ -206,7 +206,7 @@ class WtcrVendorsController extends AppController
                 $url = $parts[4];
                 
                 $productData = [
-                    'id' => ,
+                    'id' => 1,
                     'name' => $description,
                     'wtcr_vendor_id' => $vendorID,
                     'vendor_sku' => $supplier_sku,
