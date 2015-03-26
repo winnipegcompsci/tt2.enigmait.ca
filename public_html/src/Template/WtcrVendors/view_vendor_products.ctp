@@ -4,7 +4,7 @@
     <div class="panel-heading">
         <i class="fa fa-ship-o fa-fw"></i> 
         <div class="btn-group pull-right">
-            <button type="button" style="padding-bottom: 10px" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i> Vendor Actions <span class="caret"></span></button>
+            <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i> Vendor Actions <span class="caret"></span></button>
             <ul class="dropdown-menu" role="menu">
                 <li><a href="#">Find Vendor Product </a></li>
                 <li><a href="#">Fetch New Products</a></li>
