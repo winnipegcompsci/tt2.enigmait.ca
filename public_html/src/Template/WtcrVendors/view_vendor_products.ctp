@@ -17,9 +17,43 @@
         <!-- /.panel-heading -->
     <div class="panel-body">   
         <h4 class="text-warn"> <?= $vendor_name ?> Product Table </h4>
-        <?php 
-            echo "Number of Products:: " . $numProducts;
-        ?>
+        
+        <table id="datatable">
+            <thead>
+                <tr>
+                    <td>Product Name</td>
+                    <td>Vendor Name</td>
+                    <td>Vendor SKU</td>
+                    <td>Vendor Price</td>
+                    <td>WTCR SKU </td>
+                    <td>WTCR Category</td>
+                    <td>Last Updated</td>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <?php foreach($vendor_products as $product) {?> 
+                    <tr>
+                        <td><?= $product->name ?></td>
+                        <td><?= $product->wtcr_vendor_id ?></td>
+                        <td><?= $product->vendor_sku ?></td>
+                        <td><?= $product->wtcr_sku ?></td>
+                        <td><?= $product->wtcr_category ?></td>
+                        <td><?= $product->last_updated ?></td>
+                    </tr> 
+                <?php> } if(count($vendor_products) == 0) {
+                    $this->Flash->error("No $vendor_name products could be found at this time");
+                ?> 
+                
+                    <tr>
+                        <td colspan=7>No <?= $vendor_name ?> products could be found. </td>
+                    </tr>
+                <?php } ?>
+                
+            </tbody>
+        </table>
+        
+        
     </div>
 </div>
 
