@@ -220,16 +220,9 @@ class WtcrVendorsController extends AppController
                     
                     $products = TableRegistry::get('wtcr_vendor_products');
                     
-                    $product = $products->newEntity();
-                    $product->name = $description;
-                    $product->wtcr_vendor_id = $vendorID;
-                    $product->vendor_sku = $supplier_sku;
-                    $product->vendor_price = $supplier_price;
-                    $product->wtcr_sku = 'WTCR-' . $supplier_sku;
-                    $product->wtcr_category_id = $category;
-                    $product->last_updated = date('Y-m-d');
+
                     
-                    if($products->save($product)) {
+                    if($products->save($productData)) {
                         $this->Flash->success("Saved Product $supplier_sku");
                     } else {
                         $this->Flash->error("Could Not Save Vendor Product: $supplier_sku");
