@@ -65,6 +65,7 @@
                         <div class="timeline-heading">
                             <h4 class="timeline-title"><?php echo $event->timestamp; ?></h4>
                             <p><small class="text-muted"><i class="fa fa-clock-o"></i> <?= $event->time_taken . " minutes" ?></small></p>
+                            <h3> User: <?= $event->User->first_name; ?></h3>
                         </div>
                         <div class="timeline-body">
                             <p><?php echo $event->description; ?></p>
