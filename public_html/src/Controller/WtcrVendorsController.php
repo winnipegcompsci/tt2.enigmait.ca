@@ -103,40 +103,34 @@ class WtcrVendorsController extends AppController
         return $this->redirect(['action' => 'index']);
     }
     
-    public function view_eprom_products() 
+    
+    public function view_vendor_products($vendor = null) 
     {
-        $eprom = $this->WtcrVendors->findByName('Eprom');
-        
-        $this->Flash->error('View EPROM:: <pre>' . print_r($eprom, TRUE) . '</pre>');
-        // Query WTCR Vendor Products where vendor.ID = X.
-        // $this->set('products', design table).
+        switch ($vendor) {
+            case "eprom": 
+                $this->Flash->success("set products  var to eprom products");
+                break;
+            
+            case "longtech": 
+                $this->Flash->success("Set producty to longtech products");
+                break;
+            
+            case "asi": 
+                $this->Flash->success("Set products var to ASI products");
+                break;
+            
+            
+            default: {
+                $this->Flash->error("No Valid Vendor Specified");
+            }
+        } // end switch().        
     }
-    
-    public function fetch_eprom_products() 
-    {
-        $eprom = $this->WtcrVendors->findByName('Eprom');
-        
-        $this->Flash->error('Fetch Eprom:: <pre>' . print_r($eprom,  TRUE) . '</pre>');
-    
-    }
-    
-    public function view_longtech_products() 
-    {
-    
-    }
-    
-    public function fetch_longtech_products() 
-    {
-    
-    }
-    
-    public function view_asi_products() 
+
+    public function fetch_vendor_products($vendor = null) 
     {
     
     }
     
-    public function fetch_asi_products() {
-    
-    }
+  
     
 }
