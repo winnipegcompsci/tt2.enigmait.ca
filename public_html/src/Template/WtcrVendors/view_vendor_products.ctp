@@ -32,17 +32,21 @@
             </thead>
             
             <tbody>
-                <?php foreach($vendor_products as $product) {?> 
-                    <tr>
-                        <td><?= $product->name ?></td>
-                        <td><?= $product->wtcr_vendor_id ?></td>
-                        <td><?= $product->vendor_sku ?></td>
-                        <td><?= $product->wtcr_sku ?></td>
-                        <td><?= $product->wtcr_category ?></td>
-                        <td><?= $product->last_updated ?></td>
-                    </tr> 
-                <?php> } if(count($vendor_products) == 0) {
-                    $this->Flash->error("No $vendor_name products could be found at this time");
+                <?php 
+                    if(isset($vendor_products) && $vendor_products !== null) {
+                    foreach($vendor_products as $product) {?> 
+                        <tr>
+                            <td><?= $product->name ?></td>
+                            <td><?= $product->wtcr_vendor_id ?></td>
+                            <td><?= $product->vendor_sku ?></td>
+                            <td><?= $product->wtcr_sku ?></td>
+                            <td><?= $product->wtcr_category ?></td>
+                            <td><?= $product->last_updated ?></td>
+                        </tr> 
+                <?php> } 
+                    }
+                    if(count($vendor_products) == 0) {
+                        $this->Flash->error("No $vendor_name products could be found at this time");
                 ?> 
                 
                     <tr>
