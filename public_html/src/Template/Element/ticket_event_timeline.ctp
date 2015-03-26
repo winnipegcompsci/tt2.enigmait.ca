@@ -43,6 +43,7 @@
                 $icon = "fa-check";
                 
                 $event_type_id = $event->ticket_event_type_id;
+                use Cake\ORM\TableRegistry;
                 $ticket_types = TableRegistry::get('ticket_event_types');
                 echo "<pre> Event Type ID: " . $event_type_id . "</pre>";
                 
