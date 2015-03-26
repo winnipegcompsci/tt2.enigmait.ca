@@ -44,13 +44,11 @@
                     <?php } 
                     }
                     if(count($vendor_products) == 0) {
-                        $this->Flash->error("No $vendor_name products could be found at this time");
-                ?> 
-                
-                    <tr>
-                        <td colspan=7 class="text-center" >No <?= $vendor_name ?> products could be found. </td>
-                    </tr>
-                <?php } ?>
+                    ?>                
+                        <tr>
+                            <td colspan=7 class="text-center" >No <?= $vendor_name ?> products could be found. </td>
+                        </tr>
+                    <?php } ?>
                 
             </tbody>
         </table>
