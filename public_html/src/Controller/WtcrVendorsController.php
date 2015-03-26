@@ -169,9 +169,9 @@ class WtcrVendorsController extends AppController
             curl_setopt($ch, CURLOPT_AUTOREFERER, 1);
              
             $referer = 'http://google.ca';
+            $userAgent = 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)';
+            
             curl_setopt($ch, CURLOPT_REFERER, $referer);
-              
-            $userAgent = variable_get('prodmgr_user_agent', 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)');
             curl_setopt($ch, CURLOPT_USERAGENT, $userAgent);
               
             // Perform the Login Request///////////////////////////////////////////////////
