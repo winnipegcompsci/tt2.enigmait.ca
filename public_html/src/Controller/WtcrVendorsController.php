@@ -189,7 +189,9 @@ class WtcrVendorsController extends AppController
             $category = "";
             
             foreach(preg_split("/((\r?\n)|(\r\n?))/", $downloaded_file) as $line) {               
-                $parts = explode(",", $line, 6)
+                $parts = explode(",", $line, 6);
+                
+                echo "<pre>" . print_r($parts, TRUE) . "</pre>";
             }
             
         } catch (Exception $e) {
