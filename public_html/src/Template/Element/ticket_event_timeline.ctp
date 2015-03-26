@@ -21,7 +21,7 @@
         <ul class="timeline">
             <li class="timeline">
                     <div class="timeline-badge danger">
-                        <i class="fa fa-check"></i>
+                        <i class="fa fa-ticket"></i>
                     </div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
@@ -86,7 +86,7 @@
                 if($solution != "") :
             ?>
                 <li class="timeline">
-                <div class="timeline-badge success>">
+                <div class="timeline-badge success">
                     <i class="fa fa-check"></i>
                 </div>
                 <div class="timeline-panel">
