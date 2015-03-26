@@ -104,7 +104,7 @@
 			<li class="divider"></li>
 			<li>
 				<a class="text-center" href="#">
-					<strong>See All Tasks</strong>
+					<strong>See All Tickets</strong>
 					<i class="fa fa-angle-right"></i>
 				</a>
 			</li>

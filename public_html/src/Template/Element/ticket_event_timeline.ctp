@@ -40,12 +40,19 @@
                 } else {
                     $class = "";
                 }
+                $icon = "fa-check"
+                
+                $event_type_id = $event->ticket_event_type_id;
+                $ticket_types = TableRegistry::get('ticket_event_types');
+                echo "<pre> Event Type ID: " . $event_type_id . "</pre>";
+                
+                
                 // echo "<pre>" . print_r($event, TRUE) . "</pre>";    // DEBUG
                 $badgetype = "info";
         ?>
                 <li class="<?php echo $class; ?>">
                     <div class="timeline-badge <?= $badgetype ?>">
-                        <i class="fa fa-check"></i>
+                        <i class="fa $icon"></i>
                     </div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
