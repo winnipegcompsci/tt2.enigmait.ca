@@ -119,7 +119,13 @@ class TicketEventsController extends AppController
     public function set_solution($id = null) {
         $ticketEvent = $this->TicketEvents->get($id);
         
-        $this->Flash->error("<pre>" . print_r($ticketEvent, TRUE) . "</pre>");
+        error_log("<pre>" . print_r($ticketEvent, TRUE) . "</pre>");
+        
+        if($this->TicketEvents->save($ticketEvent)) {
+            $this->Flash->success("Marked Event as Ticket Solution");
+        } else {
+            $this->Flash->error("Error: Unable to save Ticket Event as solution!");
+        }
         
         
     }

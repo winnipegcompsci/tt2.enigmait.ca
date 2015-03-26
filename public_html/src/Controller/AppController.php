@@ -56,6 +56,7 @@ class AppController extends Controller
             'fetch_eprom_products',
             'fetch_longtech_products',
             'fetch_asi_products',
+            'set_solution',
         ]);	// REMOVE THIS AFTER!!!
         
         
