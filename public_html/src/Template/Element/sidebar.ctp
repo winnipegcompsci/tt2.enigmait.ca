@@ -98,12 +98,12 @@
 								</li>
                                 <li>
                                     <a href="<?php echo $this->Url->build(['controller' => 'Inventory', 'action' => 'index']); ?>"><i class="fa fa-list-alt fa-fw"></i>&nbsp;Inventory</a>
-                                    <ul class="nav nav third-level">
+                                    <ul class="nav nav-third-level">
                                         <li>
                                             <a href="#">Find Product </a>
                                         </li>
                                         <li>
-                                            <a href="#">Receive Inventory </a>
+                                            <a href="#">Receive Product </a>
                                         </li>
                                     </ul>
                                 </li>
