@@ -109,11 +109,11 @@
 	<div class="col-lg-4">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<i class="fa fa-bar-chart-o fa-fw"></i> Source of Sale 
+				<i class="fa fa-bar-chart-o fa-fw"></i> Sales by Marketplace
 			</div>
 			<div class="panel-body">
 				<div id="morris-donut-chart"></div>
-				<a href="#" class="btn btn-default btn-block">View Details</a>
+				<a href="#" class="btn btn-default btn-block">View All Orders</a>
 			</div>
 			<!-- /.panel-body -->
 		</div>
