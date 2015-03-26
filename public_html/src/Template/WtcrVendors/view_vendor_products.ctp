@@ -17,7 +17,7 @@ $numProducts = count($vendor_products);
     <div class="panel-body">   
         <h4 class="text-warn"> <?= $vendor_name ?> Product Table </h4>
         <?php 
-            
+            echo "Number of Products:: " . $numProducts;
         ?>
     </div>
 </div>
