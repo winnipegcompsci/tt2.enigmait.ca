@@ -5,9 +5,9 @@
             <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i> Vendor Actions <span class="caret"></span></button>
             <ul class="dropdown-menu" role="menu">
                 <li><a href="#">Find Vendor Product </a></li>
-                <li><a href="#">Fetch New Products</a></li>
+                <li><a href="<?= $this->Url->build(['controller' => 'WtcrVendors', 'action' => 'fetch_vendor_products', strtolower($vendor_name)]) ?>">Fetch New Products</a></li>
                 <li class="divider"></li>
-                <li><a href="">Delete Vendor Products</a></li>
+                <li><a href="">Edit Vendor Settings</a></li>
             </ul>
         </div>
     </div>
