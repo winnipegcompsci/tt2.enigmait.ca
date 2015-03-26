@@ -132,13 +132,13 @@ class TicketEventsController extends AppController
         
         
         
-        if($this->TicketEvents->save($ticketEvent) && TableRegistry::get('Tickets')->save($ticket)) {
+        if($this->TicketEvents->save($ticketEvent)) {
             $this->Flash->success("Marked Event as Ticket Solution");
         } else {
             $this->Flash->error("Error: Unable to save Ticket Event as solution!");
         }
         
-        $this->redirect(['controller' => 'Tickets', 'action' => 'view', $ticketEvent->ticket_id]);
+        $this->redirect(['controller' => 'Tickets', 'action' => 'set_solution', $ticketEvent->ticket_id, $ticketEvent->description);
         
         
     }

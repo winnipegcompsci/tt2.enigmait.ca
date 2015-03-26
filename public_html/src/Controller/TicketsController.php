@@ -109,6 +109,21 @@ class TicketsController extends AppController
         $this->set('_serialize', ['ticket']);
     }
 
+    
+    public function set_solution($id = null, $description = null) {
+        $ticket = $this->Tickets->get($id);
+        $ticket->solution = $description;
+        
+        if($this->Tickets->save($ticket)) {
+            $this->Flash->success("Saved Ticket Solution");
+        } else {
+            $this->Flash->error("Could not save Ticket Solution");
+        }
+        
+        return $this->redirect(['controller' => 'Tickets', 'action' => 'view', $id);
+    }
+    
+    
     /**
      * Delete method
      *
