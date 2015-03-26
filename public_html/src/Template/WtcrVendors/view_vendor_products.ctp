@@ -15,10 +15,8 @@
         </div>
     </div>
         <!-- /.panel-heading -->
-    <div class="panel-body">   
-        <h4 class="text-warn"> <?= $vendor_name ?> Product Table </h4>
-        
-        <table id="datatable">
+    <div class="panel-body">           
+        <table id="datatable" cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
             <thead>
                 <tr>
                     <td>Product Name</td>
