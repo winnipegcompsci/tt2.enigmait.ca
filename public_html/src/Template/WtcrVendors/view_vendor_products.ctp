@@ -1,0 +1,1 @@
+<h1> <i class="fa fa-shopping-cart fa-fw"></i>Viewing <?= $vendor_name  ?> Products </h1>
