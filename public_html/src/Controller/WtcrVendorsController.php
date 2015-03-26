@@ -105,6 +105,10 @@ class WtcrVendorsController extends AppController
     
     public function view_vendor_products($vendor = null) 
     {
+        $vendor_products = null;
+        
+        
+        
         if($vendor == "eprom") {
             $this->set('vendor_name', 'Eprom');
         }
@@ -116,6 +120,8 @@ class WtcrVendorsController extends AppController
         if($vendor == "asi") {
             $this->set('vendor_name', 'ASI');
         }
+        
+        $this->set('vendor_products', $vendor_products);
     }
     
     
