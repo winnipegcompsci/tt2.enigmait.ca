@@ -43,13 +43,7 @@
                         </tr> 
                     <?php } 
                     }
-                    if(count($vendor_products) == 0) {
-                    ?>                
-                        <tr>
-                            <td colspan=7 class="text-center" >No <?= $vendor_name ?> products could be found. </td>
-                        </tr>
-                    <?php } ?>
-                
+                ?>                
             </tbody>
         </table>
         
