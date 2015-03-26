@@ -187,7 +187,7 @@ class WtcrVendorsController extends AppController
             file_put_contents($write_path, $downloaded_file);
             
             foreach(preg_split("/((\r?\n)|(\r\n?))/", $downloaded_file) as $line) {               
-                echo $line;
+                echo $line . "<br />";
             }
             
         } catch (Exception $e) {
