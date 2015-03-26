@@ -1,8 +1,8 @@
 <h1> <i class="fa fa-shopping-cart fa-fw"></i><?= $vendor_name  ?> Products </h1>
 
-<div class="panel panel-green">
+<div class="panel panel-green" style="padding-bottom: 10px">
     <div class="panel-heading">
-        <i class="fa fa-clock-o fa-fw"></i> 
+        <i class="fa fa-ship-o fa-fw"></i> 
         <div class="btn-group pull-right">
             <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i> Vendor Actions <span class="caret"></span></button>
             <ul class="dropdown-menu" role="menu">
