@@ -1,5 +1,6 @@
-$numProducts = count($vendor_products);
-
+<?php
+    $numProducts = count($vendor_products);
+?>
 <div class="panel panel-default">
     <div class="panel-heading">
         <i class="fa fa-shopping-cart fa-3x"></i><span style="font-size: 2em">&nbsp; <?= $vendor_name  ?> Products</span>
