@@ -51,9 +51,7 @@ class AppController extends Controller
             'display', 
             'find_product', 
             'receive_products',
-            'view_eprom_products',
-            'view_longtech_products',
-            'view_asi_products',
+            'view_vendor_products'
         ]);	// REMOVE THIS AFTER!!!
         
         
