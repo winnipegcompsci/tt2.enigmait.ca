@@ -103,33 +103,38 @@ class WtcrVendorsController extends AppController
         return $this->redirect(['action' => 'index']);
     }
     
-    
     public function view_vendor_products($vendor = null) 
     {
-        switch ($vendor) {
-            case "eprom": 
-                $this->Flash->success("set products  var to eprom products");
-                break;
-            
-            case "longtech": 
-                $this->Flash->success("Set producty to longtech products");
-                break;
-            
-            case "asi": 
-                $this->Flash->success("Set products var to ASI products");
-                break;
-            
-            
-            default: {
-                $this->Flash->error("No Valid Vendor Specified");
-            }
-        } // end switch().        
+        if($vendor == "eprom") {
+            $this->Flash->success('Viewing EPROM Products');
+        }
+        
+        if($vendor == "longtech") {
+            $this->Flash->success("Vieweing Longtech Products");
+        }
+        
+        if($vendor == "asi") {
+            $this->Flash->success("Vieweing ASI Products");
+        }
     }
-
+    
+    
     public function fetch_vendor_products($vendor = null) 
     {
-    
+        if($vendor == "eprom") {
+            $this->Flash->success('Fetching EPROM Products');
+        }
+        
+        if($vendor == "longtech") {
+            $this->Flash->success("Fetching Longtech Products");
+        }
+        
+        if($vendor == "asi") {
+            $this->Flash->success("Fetching ASI Products");
+        }
     }
+    
+    
     
   
     
