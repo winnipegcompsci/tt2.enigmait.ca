@@ -25,7 +25,7 @@
                     <td>WTCR SKU </td>
                     <td>WTCR Category</td>
                     <td>Last Updated</td>
-                    <td>In Stock </td>
+                    <td>In Inventory </td>
                 </tr>
             </thead>
             
@@ -40,7 +40,7 @@
                             <td><?= $product->wtcr_sku ?></td>
                             <td><?= $product->wtcr_category ?></td>
                             <td><?= $product->last_updated ?></td>
-                            <td>Count Query</td>
+                            <td>Yes - # | NO </td>
                         </tr> 
                     <?php } 
                     }
