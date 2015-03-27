@@ -48,7 +48,7 @@
         <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-12" style="padding: 15px">
+                    <div class="col-lg-12 text-danger" style="padding: 15px">
 						<!-- CAKE PHP CALLS -------------------------------------------------->
 						<?php echo $this->Flash->render(); ?>
 						
