@@ -203,7 +203,7 @@ class WtcrVendorsController extends AppController
                 }
                                 
                 if(isset($supplier_sku) && $supplier_sku != "") {
-                    $products = TableRegistry::get('wtcr_vendor_products')->find('first');
+                    $products = TableRegistry::get('wtcr_vendor_products')->find('all');
                     
                     foreach($products as $product) {
                         echo "<pre>" . print_r($product, TRUE) . "</pre>";
