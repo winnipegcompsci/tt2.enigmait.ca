@@ -38,6 +38,9 @@ class PagesController extends AppController
      */
     public function display()
     {
+		if(!$this->Auth->identify()) {
+			$this->redirect(['controller' => 'Users', 'action' => 'login']);
+		}
 	
         $path = func_get_args();
 
