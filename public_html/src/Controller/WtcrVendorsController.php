@@ -215,7 +215,7 @@ class WtcrVendorsController extends AppController
                 if(isset($supplier_sku) && $supplier_sku != "" && $supplier_sku != "Item Code") {                                                         
                                           
                     $product = $products->find('all', [
-                        'conditions' => ['vendor_sku' => $supplier_sku, 'wtcr_vendor_id' => 0]
+                        'conditions' => ['vendor_sku' => $supplier_sku]
                     ]);
                     
                     $product->name = $description;
