@@ -2,7 +2,7 @@
     <h2>Ticket #<?= h($ticket->id) ?></h2>
 	
 	<div class="row">       
-        <div class="panel panel-info columns col-lg-10">
+        <div class="panel panel-info columns col-lg-10" style="padding-left:0px; padding-right:0px">
             <div class="panel-heading">
                 <i class="fa-fa-clock-o fa-fw"></i><span style="font-size: 2em"> Details </span>
                 <div class="btn-group pull-right">
