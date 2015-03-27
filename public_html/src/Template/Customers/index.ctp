@@ -36,7 +36,7 @@
         </div>
         
         <div class="panel-body">        
-            <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
+            <table id="datatable" cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
             <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
