@@ -37,11 +37,7 @@ class PagesController extends AppController
      *   be found or \Cake\View\Exception\MissingTemplateException in debug mode.
      */
     public function display()
-    {
-		if(!$this->Auth->identify()) {
-			$this->redirect(['controller' => 'Users', 'action' => 'login']);
-		}
-	
+    {	
         $path = func_get_args();
 
         $count = count($path);
