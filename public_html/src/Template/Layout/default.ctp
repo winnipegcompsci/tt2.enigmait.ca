@@ -58,7 +58,7 @@
 					?>
 			        </nav>
 					<?php } else if(strpos($this->request->params['action'], 'login') == false) {
-                        $this->redirect(['controller' => 'Users', 'action' => 'login']);
+                        $this->Auth->logoutRedirect();
                     }                    
                     ?>
 			
