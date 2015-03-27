@@ -226,12 +226,7 @@ class WtcrVendorsController extends AppController
                     
                     // echo "<br />Product:: <pre>" . print_r($product, TRUE) . "</pre>";
                     
-                                        
-                    if($products->save($product)) {
-                        echo "<br />DEBUG:: Saved Product $supplier_sku";
-                    } else {
-                        echo "<br />Could Not Save Vendor Product: $supplier_sku";
-                    }
+                    $products->save($product);
                 }
                 
             }
