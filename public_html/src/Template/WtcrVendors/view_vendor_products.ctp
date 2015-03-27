@@ -26,7 +26,7 @@
                     <td>WTCR Category</td>
                     <td>Last Updated</td>
                     <td>In Inventory </td>
-                    <td>Delite</td>
+                    <td>Delete</td>
                 </tr>
             </thead>
             
