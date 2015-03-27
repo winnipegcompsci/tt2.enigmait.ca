@@ -58,7 +58,7 @@
                 echo "<pre>";
                 echo "<br />Description: " . $event->description;
                 echo "<br />Solution: " . $solution;
-                echo trim($solution) == trim($event->description) ? "SOLUTION: TRUE" : "SOLUTION: FALSE";
+                echo trim($solution) == trim($event->description) ? "<br />SOLUTION: TRUE" : "<br />SOLUTION: FALSE";
                 echo "</pre>";
                 
                 if(trim($event->description) == trim($solution)) {
