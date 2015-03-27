@@ -55,6 +55,11 @@
                     $icon = "fa-retweet";
                 }
                 
+                echo "<pre>";
+                echo "<br />Description: " . $event->description;
+                echo "<br />Solution: " . $solution;
+                echo "</pre>";
+                
                 if(strpos($event->description, $solution) !== false) {
                     $icon = "fa-check";
                     $badtype = "success";
