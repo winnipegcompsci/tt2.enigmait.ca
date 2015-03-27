@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * WtcrVendors Controller
@@ -102,4 +103,160 @@ class WtcrVendorsController extends AppController
         }
         return $this->redirect(['action' => 'index']);
     }
+    
+    public function view_vendor_products($vendor = null) 
+    {
+        $vendor_products = null;
+                
+        
+        if($vendor == "eprom") {
+            $this->set('vendor_name', 'Eprom');
+        }
+        
+        if($vendor == "longtech") {
+            $this->set('vendor_name', 'Longtech');
+        }
+        
+        if($vendor == "asi") {
+            $this->set('vendor_name', 'ASI');
+        }
+        
+        $this->set('vendor_products', $vendor_products);
+    }
+    
+    
+    public function fetch_vendor_products($vendor = null) 
+    {
+        if($vendor == "eprom") {
+            $this->Flash->success('Fetching EPROM Products');   // Debug
+            $vendor_products = $this->fetch_eprom_products();
+        }
+        
+        if($vendor == "longtech") {
+            $this->Flash->success("Fetching Longtech Products");   // Debug
+            $vendor_products = $this->fetch_longtech_products();
+        }
+        
+        if($vendor == "asi") {
+            $this->Flash->success("Fetching ASI Products"); // Debug
+            $vendor_products = $this->fetch_asi_products();
+        }
+    }
+    
+    public function fetch_eprom_products() 
+    {
+        $vendorID = TableRegistry::get('wtcr_vendors')->findByName('EPROM');
+        // echo "Vendor ID: <pre>" . print_r($vendorID, TRUE) . "</pre>";
+        
+        $write_path = getcwd() . '/vendordata/eprom.csv';
+                
+        // Credentials 
+        $username     = "w210";
+        $password     = "Cyp4mybjX3Tt";
+        $login_url    = "http://www.eprom.com/home/customer/login/index.php?url=/home/customer/product/download.php";
+        $download_url = "http://www.eprom.com/home/customer/product/download.php";
+        
+        // Get CSV File
+        try {
+            $ch = curl_init();
+            
+            curl_setopt($ch, CURLOPT_URL, $login_url);
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, 'login=' . $username . '&password=' . $password . '&isSubmitted=1&submit=Submit');
+            curl_setopt($ch, CURLOPT_COOKIEFILE, '/cookie.txt');
+            curl_setopt($ch, CURLOPT_COOKIEJAR, '/cookie.txt');
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_AUTOREFERER, 1);
+             
+            $referer = 'http://google.ca';
+            $userAgent = 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)';
+            
+            curl_setopt($ch, CURLOPT_REFERER, $referer);
+            curl_setopt($ch, CURLOPT_USERAGENT, $userAgent);
+              
+            // Perform the Login Request///////////////////////////////////////////////////
+            curl_setopt($ch, CURLOPT_URL, $login_url);
+            $login_content = curl_exec($ch);
+            $login_info    = curl_getinfo($ch);
+              
+            //Perform the Download Request/////////////////////////////////////////////////
+            curl_setopt($ch, CURLOPT_URL, $download_url);
+            $downloaded_file = curl_exec($ch);
+            $download_info   = curl_getinfo($ch);
+            
+            file_put_contents($write_path, $downloaded_file);
+            
+            $category = "";
+            
+            foreach(preg_split("/((\r?\n)|(\r\n?))/", $downloaded_file) as $line) {               
+                $parts = explode(",", $line, 6);
+                
+                if( isset($parts[0]) && !isset($parts[1]) ) {
+                    $category = $parts[0];
+                } else {               
+                    $supplier_sku = $parts[0];
+                    $description = $parts[1];
+                    $stock = $parts[2];
+                    $supplier_price = $parts[3];
+                    $url = $parts[4];
+                }
+                                
+                if(isset($supplier_sku) && $supplier_sku != "") {
+                    $productData = ['wtcr_vendor_products'=> Array(
+                        'id' => 1,
+                        'name' => $description,
+                        'wtcr_vendor_id' => $vendorID,
+                        'vendor_sku' => $supplier_sku,
+                        'vendor_price' => $supplier_price,
+                        'wtcr_sku' => 'WTCR-' . $supplier_sku,  // Craete Method Later.
+                        'wtcr_category_id' => $category,
+                        'last_updated' => date('Y-m-d'),
+                    )];    
+                    
+                    
+                    // echo "<pre>" . print_r($parts, TRUE) . "</pre>"; // DEBUG
+                    
+                    $products = TableRegistry::get('wtcr_vendor_products');
+                    
+
+                    
+                    if($products->save($productData)) {
+                        $this->Flash->success("Saved Product $supplier_sku");
+                    } else {
+                        $this->Flash->error("Could Not Save Vendor Product: $supplier_sku");
+                    }
+                }
+                
+            }
+            
+        } catch (Exception $e) {
+            $this->Flash->error('Error Caught:: ' . $e->getMessage());
+        }
+        
+        
+        /*
+            For Each Product in CSV:
+                Update Corresponding Entry in DB Where Supplier = "eprom" AND
+                    supplier_sku = "eprom product sku".
+        */
+        
+        
+    }
+    
+    public function fetch_longtech_products() 
+    {
+        $this->Flash->error('Debug:: Fetching Longtech Products');
+    }
+    
+    public function fetch_asi_products()
+    {
+        $this->Flash->error('Debug:: Fetching ASI Products');
+    }
+    
+    
+    
+    
+  
+    
 }

@@ -48,6 +48,12 @@
 								<li>
 									<a href="#"><i class="fa fa-cog fa-fw"></i>&nbsp; Management <span class="fa arrow"></span></a>
 									<ul class="nav nav-third-level">
+                                    	<li>
+											<a href="<?php echo $this->Url->build(['controller' => 'Users', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; Users</a>
+										</li>
+										<li>
+											<a href="<?php echo $this->Url->build(['controller' => 'UserRoles', 'action' => 'index']); ?>/">&nbsp; User Roles</a>
+										</li>
 										<li>
 											<a href="<?php echo $this->Url->build(['controller' => 'BillingTypes', 'action' => 'index']); ?>/">&nbsp; Billing Types</a>
 										</li>
@@ -78,12 +84,6 @@
 										<li>
 											<a href="<?php echo $this->Url->build(['controller' => 'TicketTypes', 'action' => 'index']); ?>/">&nbsp; Ticket Types</a>
 										</li>
-										<li>
-											<a href="<?php echo $this->Url->build(['controller' => 'Users', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; Users</a>
-										</li>
-										<li>
-											<a href="<?php echo $this->Url->build(['controller' => 'UserRoles', 'action' => 'index']); ?>/"><i class="fa fa-cog fa-users"></i>&nbsp; User Roles</a>
-										</li>
 									</ul>									
 								</li>
                             </ul>
@@ -97,19 +97,27 @@
 									<a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'under_construction']);?>"><i class="fa fa-dollar fa-fw"></i>&nbsp;In-Store POS</a>
 								</li>
                                 <li>
-                                    <a href="<?php echo $this->Url->build(['controller' => 'Inventory', 'action' => 'index']); ?>"><i class="fa fa-list-alt fa-fw"></i>&nbsp;Inventory</a>
+                                    <a href="<?php echo $this->Url->build(['controller' => 'Inventory', 'action' => 'index']); ?>"><i class="fa fa-list-alt fa-fw"></i>&nbsp;Inventory <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="<?php echo $this->Url->build(['controller' => 'Inventory', 'action' => 'find_product']); ?>">Find Product </a>
+                                        </li>
+                                        <li>
+                                            <a href="<?php echo $this->Url->build(['controller' => 'Inventory', 'action' => 'receive_products']); ?>">Receive Products </a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li>
                                     <a href="<?php echo $this->Url->build(['controller' => 'WtcrVendors', 'action' => 'index']); ?>/"><i class="fa fa-suitcase fa-fw"></i>&nbsp;Vendors <span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
-                                            <a href="#">EPROM</a>
+                                            <a href="<?php echo $this->Url->build(['controller' => 'WtcrVendors', 'action' => 'view_vendor_products', 'eprom']); ?>">EPROM Products</a>
                                         </li>
                                         <li>
-                                            <a href="#">Longtech</a>
+                                            <a href="<?php echo $this->Url->build(['controller' => 'WtcrVendors', 'action' => 'view_vendor_products', 'longtech']); ?>">Longtech Products</a>
                                         </li>
                                         <li>
-                                            <a href="#">ASI</a>
+                                            <a href="<?php echo $this->Url->build(['controller' => 'WtcrVendors', 'action' => 'view_vendor_products', 'asi']); ?>">ASI Products</a>
                                         </li>
                                     </ul>
                                     <!-- /.nav-third-level -->

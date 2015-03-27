@@ -94,17 +94,26 @@
 <!-- Graph Row -->
 <div class="row">
 	<div class="col-lg-8">
-		<h1 class="text-info">Insert Recent Orders Here. </h1>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<i class="fa fa-bar-chart-o fa-fw"></i> Recent Orders
+			</div>
+			<div class="panel-body">
+				<h4 class="text-warn"> Insert Recent Order Table Here </h4>
+				<a href="#" class="btn btn-default btn-block">View Details</a>
+			</div>
+			<!-- /.panel-body -->
+		</div>
 	</div>
 
 	<div class="col-lg-4">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<i class="fa fa-bar-chart-o fa-fw"></i> Source of Sale 
+				<i class="fa fa-bar-chart-o fa-fw"></i> Sales by Marketplace
 			</div>
 			<div class="panel-body">
 				<div id="morris-donut-chart"></div>
-				<a href="#" class="btn btn-default btn-block">View Details</a>
+				<a href="#" class="btn btn-default btn-block">View All Orders</a>
 			</div>
 			<!-- /.panel-body -->
 		</div>

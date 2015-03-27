@@ -63,8 +63,8 @@ class InventoryController extends AppController
         $wtcrVendors = $this->Inventory->WtcrVendors->find('list', ['limit' => 200]);
         $this->set(compact('inventory', 'wtcrCategories', 'wtcrManufacturers', 'wtcrVendors'));
         $this->set('_serialize', ['inventory']);
-    }
-
+    }    
+    
     /**
      * Edit method
      *
@@ -110,5 +110,15 @@ class InventoryController extends AppController
             $this->Flash->error('The inventory could not be deleted. Please, try again.');
         }
         return $this->redirect(['action' => 'index']);
+    }
+    
+    public function find_product() 
+    {
+        $this->Flash->success("find_product() called");
+    }
+    
+    public function receive_products() 
+    {
+        $this->Flash->success("receive_products() called");
     }
 }

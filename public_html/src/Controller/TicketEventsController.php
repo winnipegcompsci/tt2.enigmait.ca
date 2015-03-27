@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * TicketEvents Controller
@@ -114,5 +115,28 @@ class TicketEventsController extends AppController
             $this->Flash->error('The ticket event could not be deleted. Please, try again.');
         }
         return $this->redirect(['action' => 'index']);
+    }
+    
+    public function set_solution($id = null) {
+        $ticketEvent = $this->TicketEvents->get($id);
+        
+        $ticketEvent->is_solution = 1;
+        
+        $ticket = TableRegistry::get('Tickets')->find('all', [
+            'condition' => array('Ticket.id =' => $ticketEvent->ticket_id),
+        ]);
+        
+        $ticket->solution = $ticketEvent->description;   
+        
+        
+        if($this->TicketEvents->save($ticketEvent)) {
+            $this->Flash->success("Marked Event as Ticket Solution");
+        } else {
+            $this->Flash->error("Error: Unable to save Ticket Event as solution!");
+        }
+        
+        $this->redirect(['controller' => 'Tickets', 'action' => 'set_solution', $ticketEvent->ticket_id, $ticketEvent->description]);
+        
+        
     }
 }
