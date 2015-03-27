@@ -45,7 +45,8 @@
                 $icon = "fa-check";
                 
                 $event_type_id = $event->ticket_event_type_id;
-                
+                $badgetype = "info";
+                                
                 if($event_type_id == 1) {   //  Service
                     $icon = "fa-wrench";
                 } else if($event_type_id == 2) { // Informational 
@@ -54,11 +55,14 @@
                     $icon = "fa-retweet";
                 }
                 
-                
+                if(strpos($event->description, $solution) !== false) {
+                    $icon = "fa-check";
+                    $badtype = "success";
+                }
                       
                 $this_user = isset($names[$event->user_id]) ? $names[$event->user_id] : 'Unknown';
                 // echo "<pre>" . print_r($event, TRUE) . "</pre>";    // DEBUG
-                $badgetype = "info";
+
         ?>
                 <li class="<?php echo $class; ?>">
                     <div class="timeline-badge <?= $badgetype ?>">
@@ -88,6 +92,7 @@
                     $solution_min += $event->time_taken;
                 endforeach;
             
+                /*
                 if($solution != "") :
             ?>
                 <li class="timeline">
@@ -111,7 +116,7 @@
                     </div>
                 </div>
             </li>
-            <?php endif; ?>
+            <?php endif; */ ?>
         </ul>
     </div>
 </div>
