@@ -204,11 +204,10 @@ class WtcrVendorsController extends AppController
                 }
                                 
                 if(isset($supplier_sku) && $supplier_sku != "") {                                                         
-                    
-                        
+                                          
                     $product = $products->newEntity($this->request->data());
                     
-                    echo "<br /><pre>" . print_r("Product: " . print_r($product, TRUE) . "</pre>";
+                    echo "<br />Product:: <pre>" . print_r($product, TRUE) . "</pre>";
                     
                                         
                     if($products->save($product)) {
