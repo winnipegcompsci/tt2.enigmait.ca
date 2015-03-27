@@ -20,12 +20,12 @@
             <thead>
                 <tr>
                     <td>Product Name</td>
-                    <td>Vendor Name</td>
                     <td>Vendor SKU</td>
                     <td>Vendor Price</td>
                     <td>WTCR SKU </td>
                     <td>WTCR Category</td>
                     <td>Last Updated</td>
+                    <td>In Stock </td>
                 </tr>
             </thead>
             
@@ -35,11 +35,13 @@
                         foreach($vendor_products as $product) {?> 
                         <tr>
                             <td><?= $product->name ?></td>
-                            <td><?= $product->wtcr_vendor_id ?></td>
                             <td><?= $product->vendor_sku ?></td>
+                            <td><?= $product->vendor_price ?></td>
                             <td><?= $product->wtcr_sku ?></td>
                             <td><?= $product->wtcr_category ?></td>
+                            <td>
                             <td><?= $product->last_updated ?></td>
+                            <td>Implement</td>
                         </tr> 
                     <?php } 
                     }
