@@ -26,7 +26,7 @@
                     <td>WTCR Category</td>
                     <td>Last Updated</td>
                     <td>In Inventory </td>
-                    <td>Delete</td>
+                    <td>Hide</td>
                 </tr>
             </thead>
             
@@ -42,7 +42,7 @@
                             <td><?= $product->wtcr_category ?></td>
                             <td><?= $product->last_updated ?></td>
                             <td>Yes - # or Add </td>
-                            <td><i class="fa fa-remove  fa-fw"></i>Delete</td>
+                            <td><i class="fa fa-remove fa-fw"></i>Hide</td>
                         </tr> 
                     <?php } 
                     }
