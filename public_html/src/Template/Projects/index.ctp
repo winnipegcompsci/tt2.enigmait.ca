@@ -13,7 +13,7 @@
 <div class="projects index col-lg-10 col-md-9 columns">
     <div class="panel panel-primary">
         <div class="panel-heading">
-            <i class="fa fa-project fa-2x"></i><span style="font-size: 2em"> Projects </span>
+            <i class="fa fa-tasks fa-2x"></i><span style="font-size: 2em"> Projects </span>
             <div class="btn-group pull-right">
                 <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i>  <span class="caret"></span></button>
                 <ul class="dropdown-menu" role="menu">
