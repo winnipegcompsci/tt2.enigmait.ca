@@ -58,6 +58,7 @@
                 echo "<pre>";
                 echo "<br />Description: " . $event->description;
                 echo "<br />Solution: " . $solution;
+                echo "<br />Is Solution: " . strpos($event->description, $solution) ? "TRUE" : "FALSE";
                 echo "</pre>";
                 
                 if(strpos($event->description, $solution) !== false) {
