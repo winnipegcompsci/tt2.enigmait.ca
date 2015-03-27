@@ -96,7 +96,8 @@
                     </table>
                 </div> <!-- end of billing information -->
             </div> <!-- end of panel body -->
-	
+        </div> <!-- end panel -->
+    </div>
 	<div class="row" style="padding-top: 25px">
 		<div class="columns col-lg-10 col-md-6">
 			<?php echo $this->element('ticket_event_timeline', array('events' => $ticket->ticket_events, 'problem' => $ticket->problem_description, 'solution' => $ticket->solution)); ?>
