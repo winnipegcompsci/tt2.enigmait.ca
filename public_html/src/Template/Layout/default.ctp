@@ -57,7 +57,10 @@
 						echo $this->element('sidebar'); 
 					?>
 			        </nav>
-					<?php } ?>
+					<?php } else if(strpos($this->here, 'login') == false) {
+                        $this->redirect(['controller' => 'Users', 'action' => 'login']);
+                    }                    
+                    ?>
 			
             <!-- /.navbar-static-side -->
 
