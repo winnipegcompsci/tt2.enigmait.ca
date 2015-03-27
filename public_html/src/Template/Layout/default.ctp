@@ -57,7 +57,7 @@
 						echo $this->element('sidebar'); 
 					?>
 			        </nav>
-					<?php } else if(strpos($this->here, 'login') == false) {
+					<?php } else if(strpos($this->request->params['action'], 'login') == false) {
                         $this->redirect(['controller' => 'Users', 'action' => 'login']);
                     }                    
                     ?>
