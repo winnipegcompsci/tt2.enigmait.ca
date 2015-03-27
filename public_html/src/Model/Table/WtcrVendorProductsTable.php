@@ -21,7 +21,6 @@ class WtcrVendorProductsTable extends Table
      */
     public function initialize(array $config)
     {
-        $product->id = null;
         $this->table('wtcr_vendor_products');
         $this->displayField('name');
         $this->primaryKey('id');
