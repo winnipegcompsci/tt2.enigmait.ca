@@ -40,7 +40,7 @@
                             <td><?= $product->wtcr_sku ?></td>
                             <td><?= $product->wtcr_category ?></td>
                             <td><?= $product->last_updated ?></td>
-                            <td>Yes - # | NO </td>
+                            <td>Yes - # or Add </td>
                         </tr> 
                     <?php } 
                     }
