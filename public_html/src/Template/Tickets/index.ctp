@@ -29,50 +29,55 @@
     </ul>
 </div>
 <div class="tickets index col-lg-10 col-md-9 columns">
-    <h1> Tickets </h1>
-    <table id="datatable" cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
-    <thead>
-        <tr>
-            <th> ID </th>
-            <th> Date Created </th>
-            <th> Customer </th>
-            <th> Contact </th>
-            <th> Ticket Type</th>
-            <th> Service Type </th>
-            <th> Priority</th>
-            <th class="actions"><?= __('Actions') ?></th>
-        </tr>
-    </thead>
-    <tbody>
-    <?php foreach ($tickets as $ticket): ?>
-        <tr>
-            <td><?= $this->Number->format($ticket->id) ?></td>
-            <td><?= h($ticket->date_created) ?></td>
-            <td>
-                <?= $ticket->has('customer') ? $this->Html->link($ticket->customer->name, ['controller' => 'Customers', 'action' => 'view', $ticket->customer->id]) : '' ?>
-            </td>
-            <td>
-                <?= $ticket->has('contact') ? $this->Html->link($ticket->contact->id, ['controller' => 'Contacts', 'action' => 'view', $ticket->contact->id]) : '' ?>
-            </td>
-            <td>
-                <?= $ticket->has('ticket_type') ? $this->Html->link($ticket->ticket_type->name, ['controller' => 'TicketTypes', 'action' => 'view', $ticket->ticket_type->id]) : '' ?>
-            </td>
-            <td>
-                <?= $ticket->has('service_type') ? $this->Html->link($ticket->service_type->name, ['controller' => 'ServiceTypes', 'action' => 'view', $ticket->service_type->id]) : '' ?>
-            </td>
-            <td>
-                <?= $ticket->has('ticket_priority') ? $this->Html->link($ticket->ticket_priority->name, ['controller' => 'TicketPriorities', 'action' => 'view', $ticket->ticket_priority->id]) : '' ?>
-            </td>
-            <td class="actions">
-                <?= $this->Html->link(__('View'), ['action' => 'view', $ticket->id]) ?>
-                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $ticket->id]) ?>
-                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $ticket->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ticket->id)]) ?>
-            </td>
-        </tr>
-
-    <?php endforeach; ?>
-    </tbody>
-    </table>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <i class="fa-fa-ticket fa-fw"></i><span style="font-size: 2em"> Tickets </span>
+            <div class="btn-group pull-right">
+                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i>  <span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Create New Ticket</a></li>
+                    <li><a href="#">Find Ticket</a></li>
+                    <li class="divider"></li>
+                    <li><a href="">Delete Ticket</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="panel-body">
+            <table id="datatable" cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
+                <thead>
+                    <tr>
+                        <th> ID </th>
+                        <th> Date Created </th>
+                        <th> Customer </th>
+                        <th> Contact </th>
+                        <th> Ticket Type</th>
+                        <th> Service Type </th>
+                        <th> Priority</th>
+                        <th class="actions"><?= __('Actions') ?></th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($tickets as $ticket): ?>
+                    <tr>
+                        <td><?= $this->Number->format($ticket->id) ?></td>
+                        <td><?= h($ticket->date_created) ?></td>
+                        <td><?= $ticket->has('customer') ? $this->Html->link($ticket->customer->name, ['controller' => 'Customers', 'action' => 'view', $ticket->customer->id]) : '' ?></td>
+                        <td><?= $ticket->has('contact') ? $this->Html->link($ticket->contact->id, ['controller' => 'Contacts', 'action' => 'view', $ticket->contact->id]) : '' ?></td>
+                        <td><?= $ticket->has('ticket_type') ? $this->Html->link($ticket->ticket_type->name, ['controller' => 'TicketTypes', 'action' => 'view', $ticket->ticket_type->id]) : '' ?></td>
+                        <td><?= $ticket->has('service_type') ? $this->Html->link($ticket->service_type->name, ['controller' => 'ServiceTypes', 'action' => 'view', $ticket->service_type->id]) : '' ?></td>
+                        <td><?= $ticket->has('ticket_priority') ? $this->Html->link($ticket->ticket_priority->name, ['controller' => 'TicketPriorities', 'action' => 'view', $ticket->ticket_priority->id]) : '' ?></td>
+                        <td class="actions">
+                            <?= $this->Html->link(__('View'), ['action' => 'view', $ticket->id]) ?>
+                            <?= $this->Html->link(__('Edit'), ['action' => 'edit', $ticket->id]) ?>
+                            <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $ticket->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ticket->id)]) ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div> <!-- ./panel-body -->
+    </div> <!-- ./panel -->
 </div>
 
 
