@@ -120,6 +120,6 @@ class AppController extends Controller
 		} 
 		
 		error_log('USER NOT AUTHORIZED');
-		return $this->redirect(['controller' => 'Users', 'action' => 'logout']);
+		return false;
 	}
 }
