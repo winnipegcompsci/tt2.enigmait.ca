@@ -124,7 +124,7 @@ class WtcrVendorsController extends AppController
             $vendor_id = 2;
         }
         
-        $vendor_products = TableRegister::get('wtcr_vendor_products')->find('all', [
+        $vendor_products = TableRegistry::get('wtcr_vendor_products')->find('all', [
             'conditions' => ['wtcr_vendor_id' => $vendor_id]
         ]);
                 
