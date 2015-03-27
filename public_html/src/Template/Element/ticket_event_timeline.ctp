@@ -3,7 +3,7 @@
     $BADGES = array("success", "info", "warn", "danger");
 ?>
 
-<div class="panel panel-default">
+<div class="panel panel-info">
     <div class="panel-heading">
         <i class="fa fa-clock-o fa-fw"></i> <span style="font-size: 2em"> Ticket Events </span>
         <div class="btn-group pull-right">
