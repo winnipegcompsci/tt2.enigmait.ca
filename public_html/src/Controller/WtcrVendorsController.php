@@ -219,7 +219,7 @@ class WtcrVendorsController extends AppController
                     
                     $products = TableRegistry::get('wtcr_vendor_products');
                     
-
+                    echo "<pre>" . print_r($productData, TRUE) . "</pre>";
                     
                     if($products->save($productData)) {
                         $this->Flash->success("Saved Product $supplier_sku");
