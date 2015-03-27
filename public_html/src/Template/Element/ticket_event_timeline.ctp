@@ -57,8 +57,7 @@
                                 
                 if(trim($event->description) == trim($solution)) {
                     $icon = "fa-check";
-                    $badtype = "success";
-                    echo "SOLUTION NEXT";
+                    $badgetype = "success";
                 }
                       
                 $this_user = isset($names[$event->user_id]) ? $names[$event->user_id] : 'Unknown';
