@@ -227,7 +227,7 @@ class WtcrVendorsController extends AppController
                         $product->vendor_price = $supplier_price;
                         // $product->wtcr_category_id = $category;
                         $product->last_updated = date('Y-m-d H:i:s');
-                        $products->save($product);
+
                     } else {
                         $product->name = $description;
                         $product->wtcr_vendor_id = 0;
@@ -236,10 +236,10 @@ class WtcrVendorsController extends AppController
                         $product->vendor_price = $supplier_price;
                         // $product->wtcr_category_id = $category;
                         $product->last_updated = date('Y-m-d H:i:s');
-                        $products->patchEntity($product);
+                        
                     }
                     
-                    
+                    $products->save($product);
                 }
                 
             }
