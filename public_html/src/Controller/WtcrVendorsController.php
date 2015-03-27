@@ -218,17 +218,28 @@ class WtcrVendorsController extends AppController
                         'conditions' => ['vendor_sku' => $supplier_sku, 'wtcr_vendor_id' => '0']
                     ]);
                     
-                    $product->name = $description;
-                    $product->wtcr_vendor_id = 0;
-                    $product->vendor_sku = $supplier_sku;
-                    $product->wtcr_sku = 'WTCR-' . $supplier_sku;       // Create a VENDOR_SKU -> WTCR_SKU FUNC
-                    $product->vendor_price = $supplier_price;
-                    // $product->wtcr_category_id = $category;
-                    $product->last_updated = date('Y-m-d H:i:s');
+                    if(!$product) {
+                        $product = $products->newEntity();
+                        $product->name = $description;
+                        $product->wtcr_vendor_id = 0;
+                        $product->vendor_sku = $supplier_sku;
+                        $product->wtcr_sku = 'WTCR-' . $supplier_sku;       // Create a VENDOR_SKU -> WTCR_SKU FUNC
+                        $product->vendor_price = $supplier_price;
+                        // $product->wtcr_category_id = $category;
+                        $product->last_updated = date('Y-m-d H:i:s');
+                        $products->save($product);
+                    } else {
+                        $product->name = $description;
+                        $product->wtcr_vendor_id = 0;
+                        $product->vendor_sku = $supplier_sku;
+                        $product->wtcr_sku = 'WTCR-' . $supplier_sku;       // Create a VENDOR_SKU -> WTCR_SKU FUNC
+                        $product->vendor_price = $supplier_price;
+                        // $product->wtcr_category_id = $category;
+                        $product->last_updated = date('Y-m-d H:i:s');
+                        $products->patchEntity($product);
+                    }
                     
-                    // echo "<br />Product:: <pre>" . print_r($product, TRUE) . "</pre>";
                     
-                    $products->save($product);
                 }
                 
             }
