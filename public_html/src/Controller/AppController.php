@@ -63,9 +63,7 @@ class AppController extends Controller
             'set_solution',
         ]);	// REMOVE THIS AFTER!!!
         
-        
->>>>>>> 71062cdf65ff931651b6f31fe382877f48218dae
-		// $this->set('logged_in', $this->Auth->loggedIn());
+       		// $this->set('logged_in', $this->Auth->loggedIn());
 		// ...
     }
 
