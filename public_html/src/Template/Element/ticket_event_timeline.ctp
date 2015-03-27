@@ -58,10 +58,10 @@
                 echo "<pre>";
                 echo "<br />Description: " . $event->description;
                 echo "<br />Solution: " . $solution;
-                echo "<br />Is Solution: " . strpos($event->description, $solution) != false ? "TRUE" : "FALSE";
+                echo trim($solution) == trim($event->description) ? "SOLUTION: TRUE" : "SOLUTION: FALSE";
                 echo "</pre>";
                 
-                if($event->description == $solution) {
+                if(trim($event->description) == trim($solution)) {
                     $icon = "fa-check";
                     $badtype = "success";
                 }
