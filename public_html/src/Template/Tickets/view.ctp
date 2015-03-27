@@ -2,13 +2,22 @@
     <h2>Ticket #<?= h($ticket->id) ?></h2>
 	
 	<div class="row">       
-        <div class="panel panel-info">
+        <div class="panel panel-info columns col-lg-10">
             <div class="panel-heading">
                 <i class="fa-fa-clock-o fa-fw"></i><span style="font-size: 2em"> Details </span>
+                <div class="btn-group pull-right">
+                    <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i>  <span class="caret"></span></button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Add New Event</a></li>
+                        <li><a href="#">Edit Ticket</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">Delete Ticket</a></li>
+                    </ul>
+                </div>
             </div> <!-- ./panel-heading -->
             
             <div class="panel-body">
-                <div class="columns col-lg-6 col-md-6 col-md-offset-0 ">
+                <div class="columns col-lg-6 col-md-6">
                     <h4 class="subheader"> Ticket Information </h3>
                     <table>
                         <tr>
