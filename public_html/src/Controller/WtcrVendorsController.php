@@ -137,17 +137,14 @@ class WtcrVendorsController extends AppController
     public function fetch_vendor_products($vendor = null) 
     {
         if($vendor == "eprom") {
-            $this->Flash->success('Fetching EPROM Products');   // Debug
             $vendor_products = $this->fetch_eprom_products();
         }
         
         if($vendor == "longtech") {
-            $this->Flash->success("Fetching Longtech Products");   // Debug
             $vendor_products = $this->fetch_longtech_products();
         }
         
         if($vendor == "asi") {
-            $this->Flash->success("Fetching ASI Products"); // Debug
             $vendor_products = $this->fetch_asi_products();
         }
     }
