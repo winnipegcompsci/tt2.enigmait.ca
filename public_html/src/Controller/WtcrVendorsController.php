@@ -204,18 +204,13 @@ class WtcrVendorsController extends AppController
                                 
                 if(isset($supplier_sku) && $supplier_sku != "") {
                     $products = TableRegistry::get('wtcr_vendor_products')->find('all');
-                    
-                    foreach($products as $product) {
-                        echo "<pre>" . print_r($product, TRUE) . "</pre>";
-                    }
-                                        
-                    /*
+                                                            
                     $products = TableRegistry::get('wtcr_vendor_products');
                                        
                     if($products->save($productData)) {
-                        $this->Flash->success("Saved Product $supplier_sku");
+                        echo "<br />DEBUG:: Saved Product $supplier_sku";
                     } else {
-                        $this->Flash->error("Could Not Save Vendor Product: $supplier_sku");
+                        echo "<br />Could Not Save Vendor Product: $supplier_sku";
                     }
                     */
                 }
