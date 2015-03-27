@@ -61,7 +61,7 @@
                 echo "<br />Is Solution: " . strpos($event->description, $solution) != false ? "TRUE" : "FALSE";
                 echo "</pre>";
                 
-                if(strpos($event->description, $solution) != false) {
+                if($event->description == $solution) {
                     $icon = "fa-check";
                     $badtype = "success";
                 }
