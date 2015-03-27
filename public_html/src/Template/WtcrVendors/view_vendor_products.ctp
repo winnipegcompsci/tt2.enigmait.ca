@@ -39,9 +39,8 @@
                             <td><?= $product->vendor_price ?></td>
                             <td><?= $product->wtcr_sku ?></td>
                             <td><?= $product->wtcr_category ?></td>
-                            <td>
                             <td><?= $product->last_updated ?></td>
-                            <td>Implement</td>
+                            <td>Count Query</td>
                         </tr> 
                     <?php } 
                     }
