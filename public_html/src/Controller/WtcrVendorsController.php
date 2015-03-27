@@ -203,7 +203,7 @@ class WtcrVendorsController extends AppController
                     $url = $parts[4];
                 }
                                 
-                if(isset($supplier_sku) && $supplier_sku != "") {                                                         
+                if(isset($supplier_sku) && $supplier_sku != "" && $supplier_sku != "Item Code") {                                                         
                                           
                     $product = $products->newEntity($this->request->data());
                     
