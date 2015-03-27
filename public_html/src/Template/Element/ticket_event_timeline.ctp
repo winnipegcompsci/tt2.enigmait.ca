@@ -33,7 +33,9 @@
                         
                     </div>
             </li>
-        <?php    
+        <?php
+            $solution_min = 0;
+            
             foreach($events as $event) :
                 if($class == "") {
                     $class = "timeline-inverted";
@@ -73,7 +75,7 @@
                             <div class="btn-group">
                                 <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i>  <span class="caret"></span></button>
                                     <ul class="dropdown-menu" role="menu">
-                                        <li><a href="#">Edit Event</a></li>
+                                        <li><a href="<?= $this->Url->build(['controller' => 'ticket_events', 'action' => 'edit', $event->id]); ?>">Edit Event</a></li>
                                         <li><a href="#">Delete</a></li>
                                         <li class="divider"></li>
                                         <li><a href="<?= $this->Url->build(['controller' => 'ticket_events', 'action' => 'set_solution', $event->id]); ?>">Mark as Solution</a></li>
@@ -82,7 +84,8 @@
                         </div>
                     </div>
                 </li>
-            <?php         
+            <?php
+                    $solution_min += $event->time_taken;
                 endforeach;
             
                 if($solution != "") :
@@ -94,7 +97,7 @@
                 <div class="timeline-panel">
                     <div class="timeline-heading">
                         <h4 class="timeline-title success"> Solution: </h4>
-                        <p><small class="text-muted"><i class="fa fa-clock-o"></i> <?= $event->time_taken . " minutes" ?></small></p>
+                        <p><small class="text-muted"><i class="fa fa-clock-o"></i><strong class='text-success'> <?= $solution_min . " minutes" ?></strong></small></p>
                     </div>
                     <div class="timeline-body">
                         <p><?php echo $solution; ?></p>                
