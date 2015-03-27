@@ -37,7 +37,7 @@
                         <tr>
                             <td><?= $product->name ?></td>
                             <td><?= $product->vendor_sku ?></td>
-                            <td><?= $product->vendor_price ?></td>
+                            <td>$<?= number_format($product->vendor_price, 2); ?></td>
                             <td><?= $product->wtcr_sku ?></td>
                             <td><?= $product->wtcr_category ?></td>
                             <td><?= $product->last_updated ?></td>
