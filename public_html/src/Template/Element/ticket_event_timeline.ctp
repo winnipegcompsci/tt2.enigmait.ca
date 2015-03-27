@@ -61,7 +61,7 @@
                 if(trim($event->description) == trim($solution)) {
                     $icon = "fa-check";
                     $badgetype = "success";
-                    $event_min = $solution_min;
+                    $event_min = "Total: " . $solution_min;
                 }
                       
                 $this_user = isset($names[$event->user_id]) ? $names[$event->user_id] : 'Unknown';
