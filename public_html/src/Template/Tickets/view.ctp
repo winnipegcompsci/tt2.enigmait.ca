@@ -4,7 +4,7 @@
 	<div class="row">       
         <div class="panel panel-info columns col-lg-10" style="padding-left:0px; padding-right:0px">
             <div class="panel-heading">
-                <i class="fa fa-info-circle fa-fw"></i><span style="font-size: 2em"> Details </span>
+                <i class="fa fa-info-circle fa-2x"></i><span style="font-size: 2em"> Details </span>
                 <div class="btn-group pull-right">
                     <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i>  <span class="caret"></span></button>
                     <ul class="dropdown-menu" role="menu">
