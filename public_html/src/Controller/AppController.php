@@ -103,7 +103,9 @@ class AppController extends Controller
     }
 	
 	public function isAuthorized() 
-	{		
+	{
+        error_log("Called:: isAuthorized() hook");
+        
 		$this->set('logged_in', $this->Auth->identify());
 		
 		$this_user = $this->Auth->identify();
