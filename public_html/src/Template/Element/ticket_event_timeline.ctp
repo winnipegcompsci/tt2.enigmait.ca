@@ -54,10 +54,14 @@
                 } else if($event_type_id == 3) { // Internal
                     $icon = "fa-retweet";
                 }
-                                
+                
+                $solution_min += $event->time_taken;
+                $event_min = $event->time_taken;
+                
                 if(trim($event->description) == trim($solution)) {
                     $icon = "fa-check";
                     $badgetype = "success";
+                    $event_min = $solution_min;
                 }
                       
                 $this_user = isset($names[$event->user_id]) ? $names[$event->user_id] : 'Unknown';
@@ -71,7 +75,7 @@
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4 class="timeline-title"><?php echo $event->timestamp; ?><span class="pull-right"><?= $this_user; ?></span></h4>
-                            <p><small class="text-muted pull-right"><i class="fa fa-clock-o"></i> <?= $event->time_taken . " minutes" ?></small></p>
+                            <p><small class="text-muted pull-right"><i class="fa fa-clock-o"></i> <?= $event_min . " minutes" ?></small></p>
                             
                         </div>
                         <div class="timeline-body">
@@ -89,34 +93,9 @@
                     </div>
                 </li>
             <?php
-                    $solution_min += $event->time_taken;
+                    
                 endforeach;
-            
-                /*
-                if($solution != "") :
             ?>
-                <li class="timeline">
-                <div class="timeline-badge success">
-                    <i class="fa fa-check"></i>
-                </div>
-                <div class="timeline-panel">
-                    <div class="timeline-heading">
-                        <h4 class="timeline-title success"> Solution: </h4>
-                        <p><small class="text-muted"><i class="fa fa-clock-o"></i><strong class='text-success'> <?= $solution_min . " minutes" ?></strong></small></p>
-                    </div>
-                    <div class="timeline-body">
-                        <p><?php echo $solution; ?></p>                
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i>  <span class="caret"></span></button>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="<?= $this->Url->build(['controller' => 'ticket_events', 'action' => 'edit', $event->id]); ?>">Edit Event</a></li>
-                                <li><a href="#">Delete</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <?php endif; */ ?>
         </ul>
     </div>
 </div>
