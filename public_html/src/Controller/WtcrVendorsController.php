@@ -199,13 +199,21 @@ class WtcrVendorsController extends AppController
                     $supplier_sku = $parts[0];
                     $description = $parts[1];
                     $stock = $parts[2];
-                    $supplier_price = $parts[3];
+                    $supplier_price = number_format($parts[3], 2);
                     $url = $parts[4];
                 }
                                 
                 if(isset($supplier_sku) && $supplier_sku != "") {                                                         
                                           
                     $product = $products->newEntity($this->request->data());
+                    
+                    $product->name = $description;
+                    $product->wtcr_vendor_id = 'EPROM';
+                    $product->vendor_sku = $supplier_sku;
+                    $product->wtcr_sku = 'WTCR-' . $supplier_sku;
+                    $product->vendor_price = $supplier_price
+                    $product->wtcr_category_id = $category;
+                    $product->last_updated = date('Y-m-d H:i:s');
                     
                     echo "<br />Product:: <pre>" . print_r($product, TRUE) . "</pre>";
                     
