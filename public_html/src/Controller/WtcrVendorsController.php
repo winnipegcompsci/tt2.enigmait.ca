@@ -213,10 +213,18 @@ class WtcrVendorsController extends AppController
                 }
                                 
                 if(isset($supplier_sku) && $supplier_sku != "" && $supplier_sku != "Item Code") {                                                         
-                                          
-                    $product = $products->find('all', [
-                        'conditions' => ['vendor_sku' => $supplier_sku, 'wtcr_vendor_id' => '0']
-                    ])->toArray();
+                    
+                    
+                    $product = $products->newEntity();
+                    
+                    $existing_prods = $products->find()
+                        ->where(['vendor_sku' => $supplier_sku])
+                        ->toArray();
+                    
+                    foreach($existing_prods as $prod) {
+                        $product = $prod;
+                    }
+                    
                     
                     if(!$product) {
                         $product = $products->newEntity();
