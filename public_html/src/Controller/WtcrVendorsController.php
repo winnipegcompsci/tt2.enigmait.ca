@@ -205,7 +205,7 @@ class WtcrVendorsController extends AppController
                     $supplier_sku = $parts[0];
                     $description = $parts[1];
                     $stock = $parts[2];
-                    $supplier_price = number_format($parts[3], 2);
+                    $supplier_price = number_format($parts[3]*1, 2);
                     $url = $parts[4];
                 }
                                 
