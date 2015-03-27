@@ -264,7 +264,7 @@ class WtcrVendorsController extends AppController
     
     public function fetch_longtech_products() 
     {
-        $this->Flash->error('Debug:: Fetching Longtech Products');
+        $this->Flash->warn('Debug:: Fetching Longtech Products');
     }
     
     public function fetch_asi_products()
