@@ -17,10 +17,10 @@
             <div class="btn-group pull-right">
                 <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i>  <span class="caret"></span></button>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Create New Ticket</a></li>
-                    <li><a href="#">Find Ticket</a></li>
+                    <li><a href="#">Create New Project</a></li>
+                    <li><a href="#">Find Project</a></li>
                     <li class="divider"></li>
-                    <li><a href="">Delete Ticket</a></li>
+                    <li><a href="">Delete Project</a></li>
                 </ul>
             </div>
         </div> <!-- ./heading -->
