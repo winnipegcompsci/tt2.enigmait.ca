@@ -216,7 +216,7 @@ class WtcrVendorsController extends AppController
                                           
                     $product = $products->find('all', [
                         'conditions' => ['vendor_sku' => $supplier_sku, 'wtcr_vendor_id' => '0']
-                    ])->extract();
+                    ])->toArray();
                     
                     if(!$product) {
                         $product = $products->newEntity();
