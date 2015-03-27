@@ -208,7 +208,7 @@ class WtcrVendorsController extends AppController
                     $product = $products->newEntity($this->request->data());
                     
                     $product->name = $description;
-                    $product->wtcr_vendor_id = 1;
+                    // $product->wtcr_vendor_id = 1;
                     $product->vendor_sku = $supplier_sku;
                     $product->wtcr_sku = 'WTCR-' . $supplier_sku;       // Create a VENDOR_SKU -> WTCR_SKU FUNC
                     $product->vendor_price = $supplier_price;
