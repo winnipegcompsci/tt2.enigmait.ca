@@ -43,7 +43,7 @@ class AppController extends Controller
 	];
 
 	public function beforeFilter(Event $event)
-    {			
+    {	/*		
         $this->Auth->allow([
             'add',
             'index', 
@@ -58,6 +58,9 @@ class AppController extends Controller
             'fetch_asi_products',
             'set_solution',
         ]);	// REMOVE THIS AFTER!!!
+        */
+        
+            // $this->Auth->authorize = 'Controller';
         
        		// $this->set('logged_in', $this->Auth->loggedIn());
 		// ...
