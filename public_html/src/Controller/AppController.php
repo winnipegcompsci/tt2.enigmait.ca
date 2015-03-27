@@ -43,11 +43,7 @@ class AppController extends Controller
 	];
 
 	public function beforeFilter(Event $event)
-    {		
-<<<<<<< HEAD
-        $this->Auth->allow(['add', 'edit', 'index', 'view', 'display']);	// REMOVE THIS AFTER!!!
-		
-=======
+    {			
         $this->Auth->allow([
             'add',
             'index', 
