@@ -51,6 +51,8 @@
                 } else if($event_type_id == 3) { // Internal
                     $icon = "fa-retweet";
                 }
+                
+                
                       
                 $this_user = isset($names[$event->user_id]) ? $names[$event->user_id] : 'Unknown';
                 // echo "<pre>" . print_r($event, TRUE) . "</pre>";    // DEBUG
@@ -99,7 +101,7 @@
                         <div class="btn-group">
                             <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i>  <span class="caret"></span></button>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Edit Event</a></li>
+                                <li><a href="<?= $this->Url->build(['controller' => 'ticket_events', 'action' => 'edit', $event->id]); ?>">Edit Event</a></li>
                                 <li><a href="#">Delete</a></li>
                             </ul>
                         </div>

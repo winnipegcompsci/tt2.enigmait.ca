@@ -29,8 +29,8 @@
             <table id="datatable" cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
                 <thead>
                     <tr>
-                        <th><?= $this->Paginator->sort('id') ?></th>
-                        <th><?= $this->Paginator->sort('date_created') ?></th>
+                        <th>ID</th>
+                        <th>Date Created</th>
                         <th><?= $this->Paginator->sort('project_status_id') ?></th>
                         <th><?= $this->Paginator->sort('max_hours') ?></th>
                         <th><?= $this->Paginator->sort('quoted_hours') ?></th>
