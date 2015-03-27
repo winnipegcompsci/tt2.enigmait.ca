@@ -60,11 +60,7 @@ class AppController extends Controller
         ]);	// REMOVE THIS AFTER!!!
         */
         
-            $this->Auth->authorize = 'Controller';
-            
-            if($this->Auth->loggedIn()) {
-                $this->Auth->allow();
-            }
+        $this->Auth->allow();
         
        		// $this->set('logged_in', $this->Auth->loggedIn());
 		// ...
