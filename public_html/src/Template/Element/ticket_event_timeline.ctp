@@ -54,16 +54,11 @@
                 } else if($event_type_id == 3) { // Internal
                     $icon = "fa-retweet";
                 }
-                
-                echo "<pre>";
-                echo "<br />Description: " . $event->description;
-                echo "<br />Solution: " . $solution;
-                echo trim($solution) == trim($event->description) ? "<br />SOLUTION: TRUE" : "<br />SOLUTION: FALSE";
-                echo "</pre>";
-                
+                                
                 if(trim($event->description) == trim($solution)) {
                     $icon = "fa-check";
                     $badtype = "success";
+                    echo "SOLUTION NEXT";
                 }
                       
                 $this_user = isset($names[$event->user_id]) ? $names[$event->user_id] : 'Unknown';
