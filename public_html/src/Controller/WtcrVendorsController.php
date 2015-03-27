@@ -188,7 +188,8 @@ class WtcrVendorsController extends AppController
             file_put_contents($write_path, $downloaded_file);
             
             $category = "";
-            
+            $products = TableRegistry::get('wtcr_vendor_products');
+                                
             foreach(preg_split("/((\r?\n)|(\r\n?))/", $downloaded_file) as $line) {               
                 $parts = explode(",", $line, 6);
                 
@@ -202,17 +203,19 @@ class WtcrVendorsController extends AppController
                     $url = $parts[4];
                 }
                                 
-                if(isset($supplier_sku) && $supplier_sku != "") {
-                    $products = TableRegistry::get('wtcr_vendor_products')->find('all');
-                                                            
-                    $products = TableRegistry::get('wtcr_vendor_products');
-                                       
-                    if($products->save($productData)) {
+                if(isset($supplier_sku) && $supplier_sku != "") {                                                         
+                    
+                        
+                    $product = $products->newEntity($this->request->data());
+                    
+                    echo "<br /><pre>" . print_r("Product: " . print_r($product, TRUE) . "</pre>";
+                    
+                                        
+                    if($products->save($product)) {
                         echo "<br />DEBUG:: Saved Product $supplier_sku";
                     } else {
                         echo "<br />Could Not Save Vendor Product: $supplier_sku";
                     }
-                    */
                 }
                 
             }
