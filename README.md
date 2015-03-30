@@ -1,12 +1,20 @@
 TT2.0 Development Progress / TODO:
 -------------------------------------------------------------------------------
     User Interface:
-        Switch Dashboard's 'New Tasks' button with 'Project Tasks'.
-        Assign Panels colour based on Dash images. (Blue,  Green, Yellow, Red).
-        Dashboard - Recent Orders Table (Last 10 Orders)
-        'Sales by Marketplace' Donut Graph
         'My Tickets' - Header Element
         'Notifications' - Header Element
+        
+        Switch Dashboard's 'New Tasks' button with 'Project Tasks'.
+        Panel for Quotes
+        Panel for Reports
+        Panel for Currencies
+        Panel for Competitors
+        Panel for Data Providers    
+        Assign Panels colour based on Dashboard Links. (Blue,  Green, Yellow, Red).
+
+        Fix / Center Paginated Numbers.
+        Dashboard - Recent Orders Table (Last 10 Orders)
+        'Sales by Marketplace' Donut Graph.       
     
     Database:
         Switch 'Sales Vehicles' for 'Marketplaces'. Build Marketplace Schema
@@ -27,7 +35,7 @@ TT2.0 Development Progress / TODO:
 
         Event: Supplier Price Fetches              DAILY
         Event: Competitor Price Fetches            DAILY
-        Event: Price Updates                       DAILY
+        Event: Marketplace Price Updates           DAILY
         Event: Crypto Currency Rate Updates        Every 4-6 Hours?
         
         
