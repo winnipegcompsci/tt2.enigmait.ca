@@ -38,7 +38,7 @@ class TicketsController extends AppController
             'contain' => ['Customers', 'Contacts', 'TicketTypes', 'ServiceTypes', 'TicketPriorities', 'TicketStatuses', 'Users', 'CustomerSites', 'Projects', 'BillingStatuses', 'Quotes', 'TicketEvents']
         ]);
 		
-		echo "<pre>" . print_r($ticket, TRUE) . "</pre>";
+		echo "<pre>" . print_r($ticket->Projects, TRUE) . "</pre>";
 	
         $this->set('ticket', $ticket);
         $this->set('_serialize', ['ticket']);
