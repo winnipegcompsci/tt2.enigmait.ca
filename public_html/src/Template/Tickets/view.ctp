@@ -62,17 +62,11 @@
                         </tr>
                     </table>
                 </div>
-           
-                <div class="columns col-lg-2">
-                    <div class="progress progress-striped active">
-						<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?= $ticket->completion; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $ticket->completion; ?>%">
-							<span class=""><?= $ticket->completion; ?>% Complete</span>
-						</div>
+                   
+                <div class="columns col-lg-4 col-md-6">
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?= $ticket->completion; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $ticket->completion; ?>%"><span class=""><?= $ticket->completion; ?>% Complete</span>						</div>
 					</div>
-                </div> <!-- end of billing information -->
-       
-        
-                <div class="columns col-lg-2 col-md-6">
                     <h4> Customer Information </h4>
                     <table>
                         <tr>
