@@ -72,7 +72,12 @@
                         <td><?= $ticket->has('ticket_priority') ? $this->Html->link($ticket->ticket_priority->name, ['controller' => 'TicketPriorities', 'action' => 'view', $ticket->ticket_priority->id]) : '' ?></td>
                         <td><?= $ticket->has('user_id') ? $this->Html->link(isset($names[$ticket->user_id]) ? $names[$ticket->user_id] : 'Nobody', ['controller' => 'Users', 'action' => 'view', $ticket->user_id]) : '' ?></td>
                         <td>
-                            <?php $percent =  $ticket->completion; ?>
+                            <?php 
+								$percent =  $ticket->completion; 
+								if($percent >= 0 && $percent <= 30) {
+									$class = "progress-bar progress-bar-
+								}
+							?>
                             <div class="progress progress-striped active">
                                 <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?= $percent; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $ticket->completion; ?>%">
                                     <span class=""><?= $percent; ?>%</span>						

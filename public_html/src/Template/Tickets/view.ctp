@@ -2,7 +2,7 @@
     <h2>Ticket #<?= h($ticket->id) ?></h2>
 	
 	<div class="row">       
-        <div class="panel panel-info columns col-lg-10" style="padding-left:0px; padding-right:0px">
+        <div class="panel panel-info columns col-lg-12" style="padding-left:0px; padding-right:0px">
             <div class="panel-heading">
                 <i class="fa fa-info-circle fa-2x"></i><span style="font-size: 2em"> Details </span>
                 <div class="btn-group pull-right">
@@ -63,9 +63,9 @@
                     </table>
                 </div>
                    
-                <div class="columns col-lg-4 col-md-6">
-                        <div class="progress progress-striped active">
-                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?= $ticket->completion; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $ticket->completion; ?>%"><span class=""><?= $ticket->completion; ?>% Complete</span>						</div>
+                <div class="columns col-lg-4 col-md-6 pull-right">
+                    <div class="progress progress-striped active">
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?= $ticket->completion; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $ticket->completion; ?>%"><span class=""><?= $ticket->completion; ?>% Complete</span>						</div>
 					</div>
                     <h4> Customer Information </h4>
                     <table>
