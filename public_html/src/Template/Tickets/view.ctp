@@ -67,12 +67,12 @@
                 </div>
                 
 				<div style="background-color: RED" class="columns col-lg-4 col-md-6">
-					
+					/* TICKET FORM CONTROLS HERE */ 
 				</div>	
 
 				
                 <div class="columns col-lg-4 col-md-6 pull-right">
-                    <h4> Customer Information </h4>
+                    <h4 class="subheader"> Customer Information </h4>
                     <table>
                         <tr>
                             <td>Customer: </td>
@@ -91,7 +91,7 @@
                         </tr>
                     </table>
                     
-                    <h4> Billing Information </h4>
+                    <h4 class="subheader"> Billing Information </h4>
                     <table>
                         <tr>
                             <td>Billing Status: </td>
