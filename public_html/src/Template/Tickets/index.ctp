@@ -62,7 +62,7 @@
                 <tbody>
                 <?php foreach ($tickets as $ticket): ?>
                     <tr>
-                        <td colspan=10><?= echo "<pre>" ?></td>
+                        <td colspan=10><?= "<pre>" . $ticket->user . "</pre>" ?></td>
                     </tr>
                     
                     <tr>                        
