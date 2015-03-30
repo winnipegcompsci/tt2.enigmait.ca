@@ -63,6 +63,9 @@
                     </table>
                 </div>
            
+                <div class="columns col-lg-2">
+                    Progressor 
+                </div> <!-- end of billing information -->
        
         
                 <div class="columns col-lg-2 col-md-6">
@@ -99,10 +102,6 @@
                         </tr>
                     </table>
                 </div>
-        
-                <div class="columns col-lg-2">
-                    Progressor?   
-                </div> <!-- end of billing information -->
             </div> <!-- end of panel body -->
         </div> <!-- end panel -->
     </div> <!-- end of first row -->
