@@ -60,17 +60,25 @@
                     </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($tickets as $ticket): ?>                    
-                    <tr>                        
+                <?php foreach ($tickets as $ticket): ?>      
+                    <tr> 
+                    
                         <td><?= $this->Number->format($ticket->id) ?></td>
                         <td><?= h($ticket->date_created) ?></td>
                         <td><?= $ticket->has('customer') ? $this->Html->link($ticket->customer->name, ['controller' => 'Customers', 'action' => 'view', $ticket->customer->id]) : '' ?></td>
-                        <td><?= $ticket->has('contact') ? $this->Html->link($ticket->contact->name, ['controller' => 'Contacts', 'action' => 'view', $ticket->contact->id]) : '' ?></td>
+                        <td><?= $ticket->has('contact') ? $this->Html->link($ticket->contact->id, ['controller' => 'Contacts', 'action' => 'view', $ticket->contact->id]) : '' ?></td>
                         <td><?= $ticket->has('ticket_type') ? $this->Html->link($ticket->ticket_type->name, ['controller' => 'TicketTypes', 'action' => 'view', $ticket->ticket_type->id]) : '' ?></td>
                         <td><?= $ticket->has('service_type') ? $this->Html->link($ticket->service_type->name, ['controller' => 'ServiceTypes', 'action' => 'view', $ticket->service_type->id]) : '' ?></td>
                         <td><?= $ticket->has('ticket_priority') ? $this->Html->link($ticket->ticket_priority->name, ['controller' => 'TicketPriorities', 'action' => 'view', $ticket->ticket_priority->id]) : '' ?></td>
                         <td><?= $ticket->has('user_id') ? $this->Html->link(isset($names[$ticket->user_id]) ? $names[$ticket->user_id] : 'Nobody', ['controller' => 'Users', 'action' => 'view', $ticket->user_id]) : '' ?></td>
-                        <td><?= $ticket->completion ?>% Complete</td>
+                        <td>
+                            <?php $percent =  $ticket->completion; ?>
+                            <div class="progress progress-striped active">
+                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?= $percent; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $ticket->completion; ?>%">
+                                    <span class=""><?= $percent; ?>% Complete</span>						
+                                </div>
+                            </div>
+                        </td>
                         <td class="actions">
                             <?= $this->Html->link(__('View'), ['action' => 'view', $ticket->id]) ?>
                             <?= $this->Html->link(__('Edit'), ['action' => 'edit', $ticket->id]) ?>
