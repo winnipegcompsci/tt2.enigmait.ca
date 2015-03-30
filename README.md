@@ -15,8 +15,7 @@ User Interface:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 	
 	'My Tickets' - Header Element
 	'Notifications' - Header Element
-	
-	
+		
 	Fix / Center Paginated Numbers.
 	Dashboard - Recent Orders Table (Last 10 Orders)
 	'Sales by Marketplace' Donut Graph.       

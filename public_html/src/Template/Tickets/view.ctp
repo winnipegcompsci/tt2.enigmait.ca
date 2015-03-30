@@ -120,17 +120,17 @@
 				
 				<div class="columns col-lg-4 col-md-6 pull-right">
 					<div style="font-size:0.75em">
-					<?php 
+					<?php 					
 						echo $this->Form->create(null, ['url' => ['controller' => 'Tickets', 'action' => 'update_ticket', $ticket->id]]);
 						
-						echo $this->Form->input('project');
-						echo $this->Form->input('status');
-						echo $this->Form->input('priority');
-						echo $this->Form->input('completion');
-						echo $this->Form->input('user_id');
-						echo $this->Form->input('billing_status');
+						echo $this->Form->select('project', $projects);
+						echo $this->Form->select('status', $statuses);
+						echo $this->Form->select('priority', $priorities);
+						echo $this->Form->select('completion', $completion);
+						echo $this->Form->select('user_id', $users);
+						echo $this->Form->select('billing_status', $billing_statuses);
 						
-						echo $this->Form->end();
+						echo $this->Form->end('Update');
 					?>
 					</div>	
 				</div>
