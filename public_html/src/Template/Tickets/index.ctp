@@ -59,9 +59,6 @@
                 </thead>
                 <tbody>
                 <?php foreach ($tickets as $ticket): ?>
-                    <tr>
-                        <?php echo "<pre>" . print_r($ticket, TRUE) . "</pre>"; ?>
-                    </tr>
                     <tr>                        
                         <td><?= $this->Number->format($ticket->id) ?></td>
                         <td><?= h($ticket->date_created) ?></td>

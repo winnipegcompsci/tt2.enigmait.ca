@@ -6,20 +6,6 @@
 		<small> Please check back soon or contact the development team. </small>
 	</h1> 
 	
-    <?php 
-    echo $this->Modal->create("My Modal Form", ['id' => 'MyModal', 'close' => false]) ; 
-    ?>
-        <p>Here I write the body of my modal !</p>
-        <?php
-        // Close the modal, output a footer with a 'close' button
-        echo $this->Modal->end() ;
-        // It is possible to specify custom buttons:
-        echo $this->Modal->end([
-
-            $this->Form->button('Submit', ['bootstrap-type' => 'primary']),   
-            $this->Form->button('Close', ['data-dismiss' => 'modal']) 
-    ]);
-	?>
     
     </div>
 </div>
