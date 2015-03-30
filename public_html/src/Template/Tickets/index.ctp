@@ -61,6 +61,10 @@
                 </thead>
                 <tbody>
                 <?php foreach ($tickets as $ticket): ?>
+                    <tr>
+                        <td colspan=10><?= echo "<pre>" ?></td>
+                    </tr>
+                    
                     <tr>                        
                         <td><?= $this->Number->format($ticket->id) ?></td>
                         <td><?= h($ticket->date_created) ?></td>
