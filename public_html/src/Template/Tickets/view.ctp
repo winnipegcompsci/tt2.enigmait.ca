@@ -65,7 +65,13 @@
                 </div>
                 
 				<div class="columns col-lg-4 col-md-6">
-					/* TICKET FORM CONTROLS HERE */ 
+				<?php 
+					echo $this->Form->create(null, ['url' => ['controller' => 'Tickets', 'action' => 'update_ticket', $ticket->id]]);
+					
+					echi $this->Form->end('Update Ticket');
+					
+					
+				?>
 				</div>	
 
 				

@@ -109,6 +109,11 @@ class TicketsController extends AppController
         $this->set('_serialize', ['ticket']);
     }
 
+	function update_ticket($id = null) {
+		$ticket = $this->Tickets->get($id);
+		
+		
+	}
     
     public function set_solution($id = null, $description = null) {
         $ticket = $this->Tickets->get($id);
