@@ -68,7 +68,14 @@
 				<?php 
 					echo $this->Form->create(null, ['url' => ['controller' => 'Tickets', 'action' => 'update_ticket', $ticket->id]]);
 					
-					echo $this->Form->end('Update Ticket');
+					echo $this->Form->input('project');
+					echo $this->Form->input('status');
+					echo $this->Form->input('priority');
+					echo $this->Form->input('completion');
+					echo $this->Form->input('user_id');
+					echo $this->Form->input('billing_status');
+					
+					echo $this->Form->end();
 					
 					
 				?>
