@@ -84,9 +84,7 @@
                             <td class="pull-right"><?= $ticket->has('customer_site') ? $this->Html->link($ticket->customer_site->id, ['controller' => 'CustomerSites', 'action' => 'view', $ticket->customer_site->id]) : '' ?></td>
                         </tr>
                     </table>
-                </div>
-        
-                <div class="columns col-lg-2">
+                    
                     <h4> Billing Information </h4>
                     <table>
                         <tr>
@@ -100,13 +98,15 @@
                             <td class="pull-right"><?= $ticket->has('quote') ? $this->Html->link($ticket->quote->name, ['controller' => 'Quotes', 'action' => 'view', $ticket->quote->id]) : '' ?></td>
                         </tr>
                     </table>
-                    
-                   
+                </div>
+        
+                <div class="columns col-lg-2">
+                    Progressor?   
                 </div> <!-- end of billing information -->
             </div> <!-- end of panel body -->
         </div> <!-- end panel -->
     </div> <!-- end of first row -->
-	<div class="row" style="padding-top: 25px">
+    <div class="row" style="padding-top: 25px">
 		<div class="columns col-lg-10 col-md-6">
 			<?php echo $this->element('ticket_event_timeline', array('events' => $ticket->ticket_events, 'problem' => $ticket->problem_description, 'solution' => $ticket->solution)); ?>
 		</div>
