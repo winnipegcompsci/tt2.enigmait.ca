@@ -68,7 +68,7 @@
 				<?php 
 					echo $this->Form->create(null, ['url' => ['controller' => 'Tickets', 'action' => 'update_ticket', $ticket->id]]);
 					
-					echi $this->Form->end('Update Ticket');
+					echo $this->Form->end('Update Ticket');
 					
 					
 				?>
