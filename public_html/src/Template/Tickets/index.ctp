@@ -64,7 +64,7 @@
                     <tr> 
                     
                         <td><?= $this->Number->format($ticket->id) ?></td>
-                        <td><?= date('Y-m-d', h($ticket->date_created)); ?></td>
+                        <td><?= ($ticket->date_created) . "<br />DEBUG: " . date('Y-m-d', $ticket->date_created); ?></td>
                         <td><?= $ticket->has('customer') ? $this->Html->link($ticket->customer->name, ['controller' => 'Customers', 'action' => 'view', $ticket->customer->id]) : '' ?></td>
                         <td><?= $ticket->has('contact') ? $this->Html->link($ticket->contact->id, ['controller' => 'Contacts', 'action' => 'view', $ticket->contact->id]) : '' ?></td>
                         <td><?= $ticket->has('ticket_type') ? $this->Html->link($ticket->ticket_type->name, ['controller' => 'TicketTypes', 'action' => 'view', $ticket->ticket_type->id]) : '' ?></td>
