@@ -103,10 +103,11 @@
                     
                     <h4> Legend: </h4>
                     <ul class="timeline">
-                        <li class="timeline">
-                            <div class="timeline-badge danger"><i class="fa fa-ticket"></i></div>
-                            <div class="timeline-panel">Problem</div>
-                        </li>
+                        <li class="timeline"><div class="timeline-badge danger"><i class="fa fa-ticket fa-fw"></i></div> Problem </li>
+                        <li class="timeline"><div class="timeline-badge info"><i class="fa fa-info fa-fw"></i></div> Informational Event </li>
+                        <li class="timeline"><div class="timeline-badge info"><i class="fa fa-wrench fa-fw"></i></div> Service Event
+                        <li class="timeline"><div class="timeline-badge info"><i class="fa fa-retweet fa-fw"></i></div> Internal Event </li>
+                        <li class="timeline"><div class="timeline-badge success"><i class="fa fa-check fa-fw"></i></div> Solution </li>
                     </ul>
                    
                 </div> <!-- end of billing information -->
