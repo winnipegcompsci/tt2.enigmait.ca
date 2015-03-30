@@ -17,7 +17,7 @@
             <div class="panel-body">
                 <div class="columns col-lg-4 col-md-6">
                     <h4 class="subheader"> Ticket Information </h3>
-                    <table>
+                    <table width="100%">
                         <tr>
                             <td> Project: </td>
                             <td>&nbsp;</td>
