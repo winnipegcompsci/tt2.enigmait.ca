@@ -123,14 +123,17 @@
 					<?php 					
 						echo $this->Form->create(null, ['url' => ['controller' => 'Tickets', 'action' => 'update_ticket', $ticket->id]]);
 						
+						echo $this->Form->label('project', 'Project');
 						echo $this->Form->select('project', $projects);
+						
+						echo $this->Form->label('status', 'Ticket Status');
 						echo $this->Form->select('status', $statuses);
 						echo $this->Form->select('priority', $priorities);
 						echo $this->Form->select('completion', $completion_options);
 						echo $this->Form->select('user_id', $users);
 						echo $this->Form->select('billing_status', $billing_statuses);
 						
-						echo $this->Form->end('Update');
+						echo $this->Form->end();
 					?>
 					</div>	
 				</div>
