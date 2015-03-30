@@ -75,7 +75,11 @@
                             <?php 
 								$percent =  $ticket->completion; 
 								if($percent >= 0 && $percent <= 30) {
-									$class = "progress-bar progress-bar-
+									$bar_class = "progress-bar progress-bar-danger";
+								} else if ($percent > 30 && $percent <= 65) {
+									$bar_class = "progress-bar progress-bar-warning";
+								} else if ($percent > 66 && $percent <= 100) {
+									$bar_class = "progress-bar progress-bar-success";
 								}
 							?>
                             <div class="progress progress-striped active">
