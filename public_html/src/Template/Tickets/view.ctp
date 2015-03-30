@@ -66,7 +66,7 @@
                 <div class="columns col-lg-2">
                     <div class="progress progress-striped active">
 						<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?= $ticket->completion; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $ticket->completion; ?>%">
-							<span class="sr-only"><?= $ticket->completion; ?>% Complete (success)</span>
+							<span class=""><?= $ticket->completion; ?>% Complete</span>
 						</div>
 					</div>
                 </div> <!-- end of billing information -->
