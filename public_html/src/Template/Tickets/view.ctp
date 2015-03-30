@@ -104,7 +104,7 @@
                 </div>
 				
 				<div class="columns col-lg-4 col-md-6">
-					<div style="font-size:0.5em">
+					<div style="font-size:0.75em">
 					<?php 
 						echo $this->Form->create(null, ['url' => ['controller' => 'Tickets', 'action' => 'update_ticket', $ticket->id]]);
 						
