@@ -59,7 +59,17 @@
                             <td class="pull-right"> <?= $ticket->has('user') ? $this->Html->link($ticket->user->id, ['controller' => 'Users', 'action' => 'view', $ticket->user->id]) : 'Unassigned' ?> </td>
                         </tr>
                     </table>
+					
+					<br />
 					<h4 class="subheader">Progress </h4>
+					<table>
+						<tr>
+							<td> Minutes Used: </td> <td> X </td>
+						</tr>
+						<tr>
+							<td> Billing Units: </td> <td> Y </td>
+						</tr>
+					</table>
 					
 					
 					<div class="progress progress-striped active">
@@ -81,6 +91,11 @@
                             <td></td>
                             <td class="pull-right"><?= $ticket->has('contact') ? $this->Html->link($ticket->contact->id, ['controller' => 'Contacts', 'action' => 'view', $ticket->contact->id]) : '' ?></td>
                         </tr>
+						<tr>
+							<td>Contact Phone: </td>
+							<td></td>
+							<td class="pull-right"> Query Phone </td>
+						</tr>
                         <tr>
                             <td>Site: </td>
                             <td></td>
