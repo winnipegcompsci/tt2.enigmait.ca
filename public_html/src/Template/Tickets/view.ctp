@@ -66,7 +66,7 @@
 					</div>
                 </div>
                 
-				<div style="background-color: RED" class="columns col-lg-4 col-md-6">
+				<div class="columns col-lg-4 col-md-6">
 					/* TICKET FORM CONTROLS HERE */ 
 				</div>	
 
@@ -109,7 +109,7 @@
         </div> <!-- end panel -->
     </div> <!-- end of first row -->
     <div class="row" style="padding-top: 25px">
-		<div class="columns col-lg-10 col-md-6">
+		<div class="columns col-lg-12 col-md-6">
 			<?php echo $this->element('ticket_event_timeline', array('events' => $ticket->ticket_events, 'problem' => $ticket->problem_description, 'solution' => $ticket->solution)); ?>
 		</div>
 	</div> <!-- ./row -->
