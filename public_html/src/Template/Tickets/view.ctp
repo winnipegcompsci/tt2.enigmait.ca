@@ -101,27 +101,14 @@
                         </tr>
                     </table>
                     
-                    <h5 class="subtitle"> Legend: </h5>
-                    <table>
-                        <tr>
-                            <td> Icon </td><td> Event Type </td>
-                        </tr>
-                        <tr>
-                            <td><div class="timeline-badge danger"><i class="fa fa-ticket"></i></div></td><td>Problem</td>
-                        </tr>
-                        <tr>
-                            <td><div class="timeline-badge info"><i class="fa fa-wrench"></i></div></td><td>Service</td>
-                        </tr>
-                        <tr>
-                            <td><div class="timeline-badge info"><i class="fa fa-info"></i></div></td><td>Informational</td>
-                        </tr>
-                        <tr>
-                            <td><div class="timeline-badge info"><i class="fa fa-retweet"></i></div></td><td>Internal</td>
-                        </tr>
-                        <tr>
-                            <td><div class="timeline-badge success"><i class="fa fa-check"></i></div></td><td>Solution</td> 
-                        </tr>
-                    </table>
+                    <h4> Legend: </h4>
+                    <ul>
+                        <li><div class="timeline-badge danger"><i class="fa fa-ticket"></i></div>Problem</li>
+                        <li><div class="timeline-badge info"><i class="fa fa-wrench"></i></div>Service</li>
+                        <li><div class="timeline-badge info"><i class="fa fa-info"></i></div>Informational</li>
+                        <li><div class="timeline-badge info"><i class="fa fa-retweet"></i></div>Internal</li>
+                        <li><div class="timeline-badge success"><i class="fa fa-check"></i></div></td><td>Solution</li>
+                    </ul>
                    
                 </div> <!-- end of billing information -->
             </div> <!-- end of panel body -->
