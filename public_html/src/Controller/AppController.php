@@ -57,6 +57,7 @@ class AppController extends Controller
             'fetch_longtech_products',
             'fetch_asi_products',
             'set_solution',
+			'delete',
         ]);	// REMOVE THIS AFTER!!!
         
         
