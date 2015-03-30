@@ -60,11 +60,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($tickets as $ticket): ?>
-                    <tr>
-                        <td colspan=10><?= "<pre>" . $names[$ticket->user_id] . "</pre>" ?></td>
-                    </tr>
-                    
+                <?php foreach ($tickets as $ticket): ?>                    
                     <tr>                        
                         <td><?= $this->Number->format($ticket->id) ?></td>
                         <td><?= h($ticket->date_created) ?></td>
