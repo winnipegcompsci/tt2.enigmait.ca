@@ -101,14 +101,6 @@
                         </tr>
                     </table>
                     
-                    <h4> Legend: </h4>
-                    <ul class="timeline">
-                        <li class="timeline"><div class="timeline-badge danger"><i class="fa fa-ticket fa-fw"></i></div><div class="pull-right"> Problem </div></li>
-                        <li class="timeline"><div class="timeline-badge info"><i class="fa fa-info fa-fw"></i></div><div class="pull right"> Informational Event </div></li>
-                        <li class="timeline"><div class="timeline-badge info"><i class="fa fa-wrench fa-fw"></i></div><div class="pull right"> Service Event </div> </li>
-                        <li class="timeline"><div class="timeline-badge info"><i class="fa fa-retweet fa-fw"></i></div><div class="pull-right"> Internal Event </div></li>
-                        <li class="timeline"><div class="timeline-badge success"><i class="fa fa-check fa-fw"></i></div><div class="pull-right"> Solution </div> </li>
-                    </ul>
                    
                 </div> <!-- end of billing information -->
             </div> <!-- end of panel body -->
