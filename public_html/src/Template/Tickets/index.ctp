@@ -54,8 +54,8 @@
                         <th> Ticket Type</th>
                         <th> Service Type </th>                        
                         <th> Priority</th>
-                        <td> Assigned User </th>
-                        <td> Progress </td>
+                        <th> Assigned User </th>
+                        <th> Progress </th>
                         <th class="actions"><?= __('Actions') ?></th>
                     </tr>
                 </thead>
