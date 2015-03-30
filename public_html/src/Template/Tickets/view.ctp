@@ -68,7 +68,7 @@
                 </div>
                 
 			
-                <div class="columns col-lg-4 col-md-6 pull-right">
+                <div class="columns col-lg-4 col-md-6">
                     <h4 class="subheader"> Customer Information </h4>
                     <table>
                         <tr>
@@ -103,7 +103,7 @@
                     </table>
                 </div>
 				
-				<div class="columns col-lg-4 col-md-6">
+				<div class="columns col-lg-4 col-md-6 pull-right">
 					<div style="font-size:0.75em">
 					<?php 
 						echo $this->Form->create(null, ['url' => ['controller' => 'Tickets', 'action' => 'update_ticket', $ticket->id]]);
