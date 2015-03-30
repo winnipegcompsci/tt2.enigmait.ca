@@ -44,7 +44,7 @@ class TicketsController extends AppController
         $this->set('_serialize', ['ticket']);
 		
 		$this->set('projects', $this->Tickets->Projects->find('list'));
-		$this->set('statuses', $this->Ticket->Ticket_Status->find('list'));
+		$this->set('statuses', $this->Ticket->TicketStatuses->find('list'));
 	}
 
     /**
