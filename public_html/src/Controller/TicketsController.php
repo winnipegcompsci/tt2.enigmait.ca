@@ -37,6 +37,8 @@ class TicketsController extends AppController
         $ticket = $this->Tickets->get($id, [
             'contain' => ['Customers', 'Contacts', 'TicketTypes', 'ServiceTypes', 'TicketPriorities', 'TicketStatuses', 'Users', 'CustomerSites', 'Projects', 'BillingStatuses', 'Quotes', 'TicketEvents']
         ]);
+		
+		$this->set('projects', $this->Projects->find('list'));
         $this->set('ticket', $ticket);
         $this->set('_serialize', ['ticket']);
     }
