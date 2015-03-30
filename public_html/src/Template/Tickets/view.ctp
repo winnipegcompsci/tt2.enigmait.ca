@@ -126,7 +126,7 @@
 						echo $this->Form->select('project', $projects);
 						echo $this->Form->select('status', $statuses);
 						echo $this->Form->select('priority', $priorities);
-						echo $this->Form->select('completion', $completion);
+						echo $this->Form->select('completion', $completion_options);
 						echo $this->Form->select('user_id', $users);
 						echo $this->Form->select('billing_status', $billing_statuses);
 						
