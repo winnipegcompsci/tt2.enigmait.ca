@@ -9,7 +9,7 @@ TT2.0 Development Progress / TODO:
         'Notifications' - Header Element
     
     Database:
-        Switch 'Sales Vehicles' for 'Marketplaces'
+        Switch 'Sales Vehicles' for 'Marketplaces'. Build Marketplace Schema
 
     Functionality:
         Fetching from Longtech          (Ajax Progressor)
@@ -38,7 +38,7 @@ WTCR2.0 Development:
         Setup Commerce (Kickstart?)
         Find Responsive Theme
         Create Product Layout / Template
-        Push Products from Site.
+        Push Products from TT2.0 Application
         
     
     
