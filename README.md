@@ -16,8 +16,6 @@ TT2.0 Development Progress / TODO:
         Dashboard - Recent Orders Table (Last 10 Orders)
         'Sales by Marketplace' Donut Graph.       
 
-        Create User Menu Name
-
         Database:
         Switch 'Sales Vehicles' for 'Marketplaces'. Build Marketplace Schema
 
@@ -39,6 +37,8 @@ TT2.0 Development Progress / TODO:
         Event: Competitor Price Fetches            DAILY
         Event: Marketplace Price Updates           DAILY
         Event: Crypto Currency Rate Updates        Every 4-6 Hours?
+        
+        2-Factor Authentication
         
         
 WTCR2.0 Development:
