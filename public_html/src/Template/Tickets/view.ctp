@@ -102,12 +102,11 @@
                     </table>
                     
                     <h4> Legend: </h4>
-                    <ul>
-                        <li><div class="timeline-badge danger"><i class="fa fa-ticket"></i></div>Problem</li>
-                        <li><div class="timeline-badge info"><i class="fa fa-wrench"></i></div>Service</li>
-                        <li><div class="timeline-badge info"><i class="fa fa-info"></i></div>Informational</li>
-                        <li><div class="timeline-badge info"><i class="fa fa-retweet"></i></div>Internal</li>
-                        <li><div class="timeline-badge success"><i class="fa fa-check"></i></div></td><td>Solution</li>
+                    <ul class="timeline">
+                        <li class="timeline">
+                            <div class="timeline-badge danger"><i class="fa fa-ticket"></i></div>
+                            <div class="timeline-panel">Problem</div>
+                        </li>
                     </ul>
                    
                 </div> <!-- end of billing information -->
