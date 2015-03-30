@@ -11,12 +11,14 @@ TT2.0 Development Progress / TODO:
         Panel for Competitors
         Panel for Data Providers    
         Assign Panels colour based on Dashboard Links. (Blue,  Green, Yellow, Red).
-
+        
         Fix / Center Paginated Numbers.
         Dashboard - Recent Orders Table (Last 10 Orders)
         'Sales by Marketplace' Donut Graph.       
-    
-    Database:
+
+        Create User Menu Name
+
+        Database:
         Switch 'Sales Vehicles' for 'Marketplaces'. Build Marketplace Schema
 
     Functionality:
