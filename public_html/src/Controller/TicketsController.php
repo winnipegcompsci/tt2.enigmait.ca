@@ -56,6 +56,7 @@ class TicketsController extends AppController
 			100 => '100%'
 		);
 		
+		$this->set('completion_options', $completion_options);
 		$this->set('projects', $this->Tickets->Projects->find('list'));
 		$this->set('users', $this->Tickets->Users->find('list'));
 		$this->set('priorities', $this->Tickets->TicketPriorities->find('list'));
