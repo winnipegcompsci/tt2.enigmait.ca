@@ -17,7 +17,7 @@
             </div> <!-- ./panel-heading -->
             
             <div class="panel-body">
-                <div class="columns col-lg-6 col-md-6">
+                <div class="columns col-lg-4 col-md-6">
                     <h4 class="subheader"> Ticket Information </h3>
                     <table>
                         <tr>
@@ -65,7 +65,12 @@
                         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?= $ticket->completion; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $ticket->completion; ?>%"><span class=""><?= $ticket->completion; ?>% Complete</span>						</div>
 					</div>
                 </div>
-                   
+                
+				<div style="background-color: RED" class="columns col-lg-4 col-md-6">
+					
+				</div>	
+
+				
                 <div class="columns col-lg-4 col-md-6 pull-right">
                     <h4> Customer Information </h4>
                     <table>
