@@ -59,28 +59,15 @@
                             <td class="pull-right"> <?= $ticket->has('user') ? $this->Html->link($ticket->user->id, ['controller' => 'Users', 'action' => 'view', $ticket->user->id]) : 'Unassigned' ?> </td>
                         </tr>
                     </table>
+					<h4 class="subheader">Progress </h4>
+					
+					
 					<div class="progress progress-striped active">
                         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?= $ticket->completion; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $ticket->completion; ?>%"><span class=""><?= $ticket->completion; ?>% Complete</span>						</div>
 					</div>
                 </div>
                 
-				<div class="columns col-lg-4 col-md-6">
-					<div style="font-size:0.5em">
-					<?php 
-						echo $this->Form->create(null, ['url' => ['controller' => 'Tickets', 'action' => 'update_ticket', $ticket->id]]);
-						
-						echo $this->Form->input('project');
-						echo $this->Form->input('status');
-						echo $this->Form->input('priority');
-						echo $this->Form->input('completion');
-						echo $this->Form->input('user_id');
-						echo $this->Form->input('billing_status');
-						
-						echo $this->Form->end();
-					?>
-					</div>	
-				</div>
-				
+			
                 <div class="columns col-lg-4 col-md-6 pull-right">
                     <h4 class="subheader"> Customer Information </h4>
                     <table>
@@ -115,6 +102,23 @@
                         </tr>
                     </table>
                 </div>
+				
+				<div class="columns col-lg-4 col-md-6">
+					<div style="font-size:0.5em">
+					<?php 
+						echo $this->Form->create(null, ['url' => ['controller' => 'Tickets', 'action' => 'update_ticket', $ticket->id]]);
+						
+						echo $this->Form->input('project');
+						echo $this->Form->input('status');
+						echo $this->Form->input('priority');
+						echo $this->Form->input('completion');
+						echo $this->Form->input('user_id');
+						echo $this->Form->input('billing_status');
+						
+						echo $this->Form->end();
+					?>
+					</div>	
+				</div>
             </div> <!-- end of panel body -->
         </div> <!-- end panel -->
     </div> <!-- end of first row -->
