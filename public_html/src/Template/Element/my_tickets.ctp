@@ -5,7 +5,6 @@
     foreach($my_tickets as $ticket) {
         $numTickets++;
     }
-    error_log("Number of Tickets:: " . $numTickets);
     
     if($numTickets > 0) {
         foreach($my_tickets as $ticket) { ?>
