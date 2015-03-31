@@ -97,12 +97,6 @@
                 <?php endforeach; ?>
                 </tbody>
             </table>
-            <?php
-                echo $this->Paginator->first('<< first');
-                echo $this->Paginator->prev(' < prev');
-                echo $this->Paginator->next(' > next');
-                echo $this->Paginator->last(' >> last');
-            ?>
         </div> <!-- ./panel-body -->
     </div> <!-- ./panel -->
 </div>
