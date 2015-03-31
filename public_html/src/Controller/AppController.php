@@ -101,9 +101,7 @@ class AppController extends Controller
 			'order' => ['Messages.id DESC']
 		])->limit(3);
         
-        
-        error_log('Auth.user:: ' . $this->Session->read('Auth.user'));
-        
+                
         $my_tickets = TableRegistry::get('Tickets')->find('all', [
             'order' => ['Tickets.id DESC'],
             'condition' => ['Tickets.user_id' => $this->Session->read('Auth.user')],

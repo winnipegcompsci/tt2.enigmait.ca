@@ -60,7 +60,6 @@ class PagesController extends AppController
 		
         $my_tickets = TableRegistry::get('Tickets')->find('all', [
             'order' => ['Tickets.id DESC'],
-            'condition' => ['Tickets.user_id =' => $this->Session->read('Auth.User')],
         ])->limit(4);
         
 		$users = TableRegistry::get('Users')->find('all');
