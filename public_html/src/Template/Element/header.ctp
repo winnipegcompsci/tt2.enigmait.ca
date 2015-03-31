@@ -124,7 +124,7 @@
         </a>
         <ul class="dropdown-menu dropdown-help">
             <li>
-                <a href="#"> Help </a>
+                <a href="#" data-toggle="modal" data-target="#help"> Help </a>
             </li>
         </ul>
     </li>
