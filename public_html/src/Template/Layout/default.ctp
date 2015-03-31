@@ -106,6 +106,8 @@
 
 <script> 	 	
 $(document).ready(function() { 	 	
-    $('#datatable').dataTable(); 	 	
+    $('#datatable').dataTable( {
+        "pagingType": "full_numbers"
+    } ); 	 	
 }); 	 	
 </script> 

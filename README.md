@@ -72,7 +72,15 @@ Drupal 8
 	Setup Commerce (Kickstart?)
 	Find Responsive Theme
 	Create Product Layout / Template
-	Push Products from TT2.0 Application
-	
-    
-    
+    Find Commerce Replacement Modules to Replace Outdated Ubercart Modules:
+        UberCart (fullfillment):
+            Canada Post Shipping
+            Flat Rate Shipping
+            UPS Shipping Rates
+            Weight Quotes
+            
+        Ubercart Payment:
+            Bitcoin (Litecoin, Peercoin, Nubit)
+            Discount
+            Coupon
+        
