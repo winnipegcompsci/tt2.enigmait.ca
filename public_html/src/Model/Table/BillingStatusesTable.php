@@ -22,7 +22,7 @@ class BillingStatusesTable extends Table
     public function initialize(array $config)
     {
         $this->table('billing_statuses');
-        $this->displayField('name');
+        $this->displayField('billing_status');
         $this->primaryKey('id');
         $this->hasMany('Tickets', [
             'foreignKey' => 'billing_status_id'
