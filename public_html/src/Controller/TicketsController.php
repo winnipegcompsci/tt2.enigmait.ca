@@ -138,6 +138,8 @@ class TicketsController extends AppController
 		
 		$this->Flash->success('Update_Ticket Func. called');
 		echo "Form Params: <pre>" . print_r($this->request->params, TRUE) . "</pre>";
+        
+        return $this->redirect(['controller' => 'Tickets', 'action' => 'view', $id]);
 	}
     
     public function set_solution($id = null, $description = null) {
