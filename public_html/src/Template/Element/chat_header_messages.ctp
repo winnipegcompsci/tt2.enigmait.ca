@@ -3,7 +3,7 @@
 		$username = $names[$message->user_id];
 	?>
 	<li>
-		<a href="<?php echo $this->Url->build(['controller' => 'Messages', 'action' => 'view', $message->id]) ?>">
+		<a href="#">
 			<div>
 				<strong><?php echo $username; ?></strong>
 				<span class="pull-right text-muted">
