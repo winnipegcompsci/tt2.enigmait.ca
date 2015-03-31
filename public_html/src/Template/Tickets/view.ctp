@@ -144,6 +144,7 @@
 						echo $this->Form->submit('Update Ticket', [
 							'controller' => 'Tickets', 
 							'action' => 'update_ticket',
+							'class' => 'pull-right',
 						]);
 					?>
 					</div>	
