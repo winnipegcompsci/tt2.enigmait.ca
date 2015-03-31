@@ -59,7 +59,7 @@ Functionality::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     
 	Event: Supplier Price Fetches              DAILY
 	Event: Competitor Price Fetches            DAILY
-	Event: Marketplace Price Updates           DAILY
+	Event: UPDATE MARKETPLACE PRICES           DAILY
 	Event: Crypto Currency Rate Updates        Every 4-6 Hours?
 	
 	2-Factor Authentication
