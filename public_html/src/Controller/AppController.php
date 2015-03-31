@@ -60,9 +60,7 @@ class AppController extends Controller
 			'delete',
             'update_ticket',
         ]);	// REMOVE THIS AFTER!!!
-        
-        error_log('User ID: ' .  $this->Auth->user('id'));
-        
+                
        		// $this->set('logged_in', $this->Auth->loggedIn());
 		// ...
     }
@@ -105,6 +103,7 @@ class AppController extends Controller
         
         $my_tickets = TableRegistry::get('Tickets')->find('all', [
             'order' => ['Tickets.id DESC'],
+            'conditions' => ['Tickets.user_id =' => $this->Auth->user('id')],
         ])->limit(4);
 
         $this->set('my_tickets', $my_tickets);
