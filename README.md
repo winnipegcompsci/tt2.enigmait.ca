@@ -76,13 +76,19 @@ Drupal 8
 	Create Product Layout / Template
     Find Commerce Replacement Modules to Replace Outdated Ubercart Modules:
         UberCart (fullfillment):
-            Canada Post Shipping
-            Flat Rate Shipping
-            UPS Shipping Rates
-            Weight Quotes
+            Canada Post Shipping.......... https://www.drupal.org/project/commerce_canadapost
+            Flat Rate Shipping............ https://www.drupal.org/project/commerce_flat_rate
+            UPS Shipping Rates............ https://www.drupal.org/project/commerce_ups
             
         Ubercart Payment:
-            Bitcoin (Litecoin, Peercoin, Nubit)
-            Discount
-            Coupon
+            Bitcoin:...................... https://www.drupal.org/project/commerce_bitcoin
+            Litecoin:..................... Will have to Custom Make Litecoin Module
+            Peercoin:..................... Will have to Custom Make Peercoin Module
+            Nubit:........................ Will have to Custom Make Nubit Module
+        Paypal:........................... https://www.drupal.org/project/commerce_paypal 
+            Amazon Payments............... https://marketplace.commerceguys.com/extensions/amazon/overview?utm_source=dcorg&utm_medium=module_listing&utm_content=thumbnail&utm_campaign=Amazon
+            Commerce Discount............. https://marketplace.commerceguys.com/extensions/commerce-discount/overview?utm_source=dcorg&utm_medium=module_listing&utm_content=thumbnail&utm_campaign=Commerce%20Discount
+            Commerce Coupon............... https://marketplace.commerceguys.com/extensions/commerce-coupon/overview?utm_source=dcorg&utm_medium=module_listing&utm_content=thumbnail&utm_campaign=Commerce%20Coupon
+            Commerce Donate (Auction)..... https://marketplace.commerceguys.com/extensions/commerce-donate/overview?utm_source=dcorg&utm_medium=module_listing&utm_content=thumbnail&utm_campaign=Commerce%20Donate
+            
         
