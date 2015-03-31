@@ -125,7 +125,7 @@
 						
 						echo $this->Form->label('project', 'Project');
                         error_log("TICKET PROJECT:: " . $ticket->project->id);
-						echo $this->Form->select('project', $projects);
+						echo $this->Form->select('project', ['options' => $projects, 'default' => $ticket->project->id]);
 						
 						echo $this->Form->label('status', 'Ticket Status');
 						echo $this->Form->select('status', $statuses);
