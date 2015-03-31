@@ -3,7 +3,7 @@
 <ul>
 <?php 
 foreach($names as $name) {
-    echo "<li>" . $name . "</li>";
+    echo "<li><i class=\"fa fa-user fa-fw\"></i>"  . $name . "</li>";
 }
 ?>
 </ul>
