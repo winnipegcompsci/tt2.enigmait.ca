@@ -5,12 +5,12 @@
             <a href="#">
                 <div>
 					<p>
-						<strong>Task 1</strong>
-						<span class="pull-right text-muted">40% Complete</span>
+						<strong>Ticket #: <?= $ticket->id ?></strong>
+						<span class="pull-right text-muted"><?= $ticket->completion ?> Complete</span>
 					</p>
 					<div class="progress progress-striped active">
 						<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-							<span class="sr-only">40% Complete (success)</span>
+							<span class=""><?= $ticket->completion ?> Complete (success)</span>
 						</div>
 					</div>
 				</div>
@@ -27,9 +27,3 @@
 		</a>
     </li>
 </ul>
-
-<?php 
-    foreach($my_tickets as $ticket) {
-        echo "TICKET: <pre>" . print_r($ticket, TRUE) . "</pre>";
-    }
-?>
