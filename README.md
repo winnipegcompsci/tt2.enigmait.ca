@@ -65,6 +65,10 @@ Functionality::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 	Event: Crypto Currency Rate Updates        Every 4-6 Hours?
 	
 	2-Factor Authentication
+    
+    Send Emails on Event Add.
+    Send Emails on Ticket Assign
+    Send Emails on New Notification (pertaining to user ROLE).
         
 -------------------------------------------------------------------------------        
 WTCR2.0 Development::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -89,6 +93,6 @@ Drupal 8
             Amazon Payments............... https://marketplace.commerceguys.com/extensions/amazon/overview?utm_source=dcorg&utm_medium=module_listing&utm_content=thumbnail&utm_campaign=Amazon
             Commerce Discount............. https://marketplace.commerceguys.com/extensions/commerce-discount/overview?utm_source=dcorg&utm_medium=module_listing&utm_content=thumbnail&utm_campaign=Commerce%20Discount
             Commerce Coupon............... https://marketplace.commerceguys.com/extensions/commerce-coupon/overview?utm_source=dcorg&utm_medium=module_listing&utm_content=thumbnail&utm_campaign=Commerce%20Coupon
-            Commerce Donate (Auction)..... https://marketplace.commerceguys.com/extensions/commerce-donate/overview?utm_source=dcorg&utm_medium=module_listing&utm_content=thumbnail&utm_campaign=Commerce%20Donate
+            Commerce (Auction)............ https://marketplace.commerceguys.com/extensions/commerce-donate/overview?utm_source=dcorg&utm_medium=module_listing&utm_content=thumbnail&utm_campaign=Commerce%20Donate
             
         
