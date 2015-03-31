@@ -118,9 +118,10 @@
 		<!-- /.dropdown-user -->
 	</li>
     
-    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#help">
-        Help
-    </button>
+    <li class="">
+        <a data-toggle="modal" data-target="#help"><i class="fa fa-help fa-fw"></i></a>
+    </li>
+        
 	<!-- /.dropdown -->
 </ul>
 <!-- /.navbar-top-links -->
