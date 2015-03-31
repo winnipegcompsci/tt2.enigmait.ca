@@ -7,7 +7,7 @@
     }
     error_log("Number of Tickets:: " . $numTickets);
     
-    if($my_tickets) {
+    if($numTickets > 0) {
         foreach($my_tickets as $ticket) { ?>
         <li>
             <a href="<?= $this->Url->build(['controller' => 'Tickets', 'action' => 'view', $ticket->id]);?>">
