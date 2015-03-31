@@ -106,9 +106,25 @@
 
 <script> 	 	
 $(document).ready(function() { 	 	
+    /*
     $('#datatable').dataTable( {
         "pagingType": "full_numbers",
         "sPaginationType": "extStyle",
-    } ); 	 	
+    } );  
+    */
+    $('#datatable').dataTable({
+        "aaSorting": [[ 1, "asc" ]],
+        "sPaginationType": "full_numbers",
+        "oLanguage": {
+            "oPaginate": {
+                "sNext": 'n',
+                "sLast": 'l',
+                "sFirst": 'f',
+                "sPrevious": 'p'
+            }
+        }
+    });
+
+    
 }); 	 	
 </script> 
