@@ -94,7 +94,7 @@
 						<tr>
 							<td>Contact Phone: </td>
 							<td></td>
-							<td class="pull-right"> <?= $this->Html->link($ticket->contact->address->phone_number ?> </td>
+							<td class="pull-right"> <?= $this->Html->link($ticket->contact->address->phone_number, ''); ?> </td>
 						</tr>
                         <tr>
                             <td>Site: </td>
