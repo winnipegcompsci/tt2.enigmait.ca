@@ -56,7 +56,7 @@
                         <tr>
                             <td> Assigned to: </td> 
                             <td>&nbsp;</td>
-                            <td class="pull-right"> <?= $ticket->has('user') ? $this->Html->link($ticket->user->id, ['controller' => 'Users', 'action' => 'view', $ticket->user->id]) : 'Unassigned' ?> </td>
+                            <td class="pull-right"> <?= $ticket->has('user') ? $this->Html->link($ticket->user->username, ['controller' => 'Users', 'action' => 'view', $ticket->user->id]) : 'Unassigned' ?> </td>
                         </tr>
                     </table>
 					
