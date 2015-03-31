@@ -1,6 +1,8 @@
 <ul class="dropdown-menu dropdown-tasks">
     
-    <?php foreach($my_tickets as $ticket) { ?>
+    <?php 
+    if($my_tickets) {
+        foreach($my_tickets as $ticket) { ?>
         <li>
             <a href="<?= $this->Url->build(['controller' => 'Tickets', 'action' => 'view', $ticket->id]);?>">
                 <div>
@@ -27,7 +29,12 @@
 			</a>
         </li>
         <li class="divider"></li>
-    <?php } ?>
+        <?php 
+        } 
+    } else {
+        echo "<No Tickets Assigned to You>";
+    }
+    ?>
 
 	<li>
 		<a class="text-center" href="<?= $this->Url->build(['controller' => 'Tickets', 'action' => 'index']); ?>">
