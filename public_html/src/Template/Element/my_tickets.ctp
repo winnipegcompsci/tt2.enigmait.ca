@@ -1,6 +1,6 @@
 <ul class="dropdown-menu dropdown-tasks">
     
-    <?php foreach($my_tickets as $ticket) { echo "<pre>" . print_r($ticket, TRUE) . "</pre>"; ?>
+    <?php foreach($my_tickets as $ticket) { ?>
         <li>
             <a href="<?= $this->Url->build([]);?>">
                 <div>
