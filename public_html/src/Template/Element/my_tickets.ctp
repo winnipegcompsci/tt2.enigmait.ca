@@ -8,7 +8,7 @@
                 <div>
 					<p>
 						<strong>Ticket #: <?= $ticket->id ?></strong>
-						<span class="pull-right text-muted"><?= $ticket->completion ?>% Complete</span>
+						<span class="pull-right text-muted">Last Event: <?= $ticket->dis ?></span>
 					</p>
 					<div class="progress progress-striped active">
                         <?php 
