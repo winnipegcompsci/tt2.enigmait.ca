@@ -59,8 +59,8 @@ class PagesController extends AppController
 		$header_messages = TableRegistry::get('Messages')->find('all', ['order' => array('Messages.id DESC')])->limit(3);
 		
         $my_tickets = TableRegistry::get('Tickets')->find('all', [
-            'order' => ['Ticket.id DESC'],
-            'condition' => ['Ticket.user_id' => $this->Auth->identify()],
+            'order' => ['Tickets.id DESC'],
+            'condition' => ['Tickets.user_id =' => $this->Session->read('Auth.User')],
         ])->limit(4);
         
 		$users = TableRegistry::get('Users')->find('all');

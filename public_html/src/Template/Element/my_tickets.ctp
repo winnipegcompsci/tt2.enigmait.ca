@@ -29,7 +29,6 @@
         <li class="divider"></li>
     <?php } ?>
 
-	<li class="divider"></li>
 	<li>
 		<a class="text-center" href="#">
 			<strong>See All Tickets</strong>
