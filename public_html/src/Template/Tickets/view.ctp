@@ -126,7 +126,7 @@
 						
 						echo $this->Form->label('project', 'Project');
                         
-						echo $this->Form->select('project', $projects, ['default' => $ticket->project->id]);
+						echo $this->Form->select('project', $projects, ['default' => isset($ticket->project->id) ? $ticket->project->id : '']);
 						
 						echo $this->Form->label('status', 'Ticket Status');
 						echo $this->Form->select('status', $statuses, ['default' => $ticket->ticket_status->id]);

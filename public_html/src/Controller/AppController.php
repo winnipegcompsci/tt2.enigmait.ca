@@ -88,6 +88,7 @@ class AppController extends Controller
             ]
         ]);
 		
+        // Set Required Variables /////////////////////////////////////////////
 		$names = array();
 		$users = TableRegistry::get('Users')->find('all');
 	
@@ -109,6 +110,7 @@ class AppController extends Controller
         $this->set('my_tickets', $my_tickets);
 		$this->set('header_messages', $header_messages);
 		$this->set('names', $names);
+        // END OF Setting Variables ///////////////////////////////////////////
     }
 	
 	public function isAuthorized() 
