@@ -129,13 +129,13 @@
 						echo $this->Form->select('project', $projects, ['default' => $ticket->project->id]);
 						
 						echo $this->Form->label('status', 'Ticket Status');
-						echo $this->Form->select('status', $statuses);
+						echo $this->Form->select('status', $statuses, ['default' => $ticket->status->id]);
 						
 						echo $this->Form->label('priority', 'Ticket Priority');
-						echo $this->Form->select('priority', $priorities);
+						echo $this->Form->select('priority', $priorities, ['default' => $ticket->priorities->id]);
 						
 						echo $this->Form->label('completion', 'Completion');
-						echo $this->Form->select('completion', $completion_options);
+						echo $this->Form->select('completion', $completion_options, ['default' => $ticket->completion->amount]);
 						
 						echo $this->Form->label('user_id', 'Assigned To');
 						echo $this->Form->select('user_id', $users);
