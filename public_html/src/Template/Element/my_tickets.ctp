@@ -34,13 +34,13 @@
     } else {
         ?>
             <li>
-                <a href="<?= $this->Url->build(['controller' => 'Tickets', 'action' => 'view', $ticket->id]);?>">
+                <a href="#">
                 <div>
 					<p>
 						<strong>No Tickets Currently Assigned to You</strong>
 					</p>
 				</div>
-			</a>
+                </a>
             </li>
         
         <?
