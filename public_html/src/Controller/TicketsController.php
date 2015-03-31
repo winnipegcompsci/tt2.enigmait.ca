@@ -135,6 +135,8 @@ class TicketsController extends AppController
 	function update_ticket($id = null) {
 		$ticket = $this->Tickets->get($id);
 		
+		
+		$this->Flash->success('Update_Ticket Func. called');
 		echo "Form Params: <pre>" . print_r($this->request->params, TRUE) . "</pre>";
 	}
     
