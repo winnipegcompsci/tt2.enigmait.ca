@@ -43,7 +43,7 @@
                 <a href="#">
                 <div>
 					<p>
-						<strong>No Tickets Currently Assigned to You</strong>
+						<em>No Tickets Currently Assigned to You</em>
 					</p>
 				</div>
                 </a>
