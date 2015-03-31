@@ -124,8 +124,7 @@
 						echo $this->Form->create(null, ['url' => ['controller' => 'Tickets', 'action' => 'update_ticket', $ticket->id]]);
 						
 						echo $this->Form->label('project', 'Project');
-                        $projects['default'] = $ticket->project;
-						echo $this->Form->select('project', $projects);
+						echo $this->Form->select('project', ['options' => $projects, 'default' => $ticket->project]);
 						
 						echo $this->Form->label('status', 'Ticket Status');
 						echo $this->Form->select('status', $statuses);
