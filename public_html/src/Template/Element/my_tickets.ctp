@@ -15,7 +15,7 @@
                             } else if($ticket->completion > 30 && $ticket->completion <= 65) {
                                 $bar_class = "progress-bar-warning";
                             } else if($ticket->completion >= 65) {
-                                $bar_class = "progres-bar-success";
+                                $bar_class = "progress-bar-success";
                             }
                         ?>
                     
