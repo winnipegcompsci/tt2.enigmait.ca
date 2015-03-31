@@ -1,6 +1,7 @@
 TT2.0 Development Progress / TODO:
 -------------------------------------------------------------------------------
 User Interface:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+-------------------------------------------------------------------------------
 	Panel for Quotes
 	Panel for Reports
 	Panel for Currencies
@@ -11,7 +12,7 @@ User Interface:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     TT:
     Tickets (Add View)
     Tickets (Edit View)
-    Tickets (Index View)
+    Tickets (Index View)......................................................
     
     Projects (Add View)
     Projects (Edit View)
@@ -25,19 +26,21 @@ User Interface:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 	Orders (Add View)
     Orders (Index View, Find, Lookup)
     Orders (Edit View)
-    
-    
-	'My Tickets' - Header Element
+        
 	'Notifications' - Header Element
 		
 	Fix / Center Paginated Numbers.
 	Dashboard - Recent Orders Table (Last 10 Orders)
 	'Sales by Marketplace' Donut Graph.       
 
+-------------------------------------------------------------------------------    
 Database:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+-------------------------------------------------------------------------------
 	Switch 'Sales Vehicles' for 'Marketplaces'. Build Marketplace Schema
 
+-------------------------------------------------------------------------------    
 Functionality::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+-------------------------------------------------------------------------------
 	Creating WTCR Product from Vendor Products
     Add WTCR Product to Inventory
 
@@ -61,7 +64,7 @@ Functionality::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 	
 	2-Factor Authentication
         
-        
+-------------------------------------------------------------------------------        
 WTCR2.0 Development::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 -------------------------------------------------------------------------------
 Drupal 8
