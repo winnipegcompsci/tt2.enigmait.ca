@@ -102,7 +102,7 @@ class AppController extends Controller
         
         
         $my_tickets = TableRegistry::get('Tickets')->find('all', [
-            'order' => ['Tickets.completion DESC'],
+            'order' => ['Tickets.dis DESC'],
             'conditions' => ['Tickets.user_id =' => $this->Auth->user('id')],
         ])->limit(4);
 
