@@ -2,15 +2,25 @@
     
     <?php foreach($my_tickets as $ticket) { echo "<pre>" . print_r($ticket, TRUE) . "</pre>"; ?>
         <li>
-            <a href="#">
+            <a href="<?= $this->Url->build([]);?>">
                 <div>
 					<p>
 						<strong>Ticket #: <?= $ticket->id ?></strong>
-						<span class="pull-right text-muted"><?= $ticket->completion ?> Complete</span>
+						<span class="pull-right text-muted"><?= $ticket->completion ?>% Complete</span>
 					</p>
 					<div class="progress progress-striped active">
-						<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?= $ticket->completion ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $ticket->completion ?>%">
-							<span class=""><?= $ticket->completion ?>% Complete (success)</span>
+                        <?php 
+                            if($ticket->completion >= 0 && $ticket->completion <= 30) {
+                                $bar_class = "progress-bar-danger";
+                            } else if($ticket->completion > 30 && $ticket->completion <= 65) {
+                                $bar_class = "progress-bar-warning";
+                            } else if($ticket->completion >= 65) {
+                                $bar_class = "progres-bar-success";
+                            }
+                        ?>
+                    
+						<div class="progress-bar <?= $bar_class ?>" role="progressbar" aria-valuenow="<?= $ticket->completion ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $ticket->completion ?>%">
+							<span class=""><?= $ticket->completion ?>% Complete</span>
 						</div>
 					</div>
 				</div>
