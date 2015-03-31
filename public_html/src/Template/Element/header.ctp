@@ -37,6 +37,9 @@
 		<a class="dropdown-toggle" data-toggle="dropdown" href="#">
 			<i class="fa fa-tasks fa-fw"></i> My Tickets  <i class="fa fa-caret-down"></i>
 		</a>
+        
+        <?php echo $this->element('my_tickets', array('my_tickets' => $my_tickets)); ?>
+        
 		<ul class="dropdown-menu dropdown-tasks">
 			<li>
 				<a href="#">

@@ -58,7 +58,7 @@ class AppController extends Controller
             'fetch_asi_products',
             'set_solution',
 			'delete',
-            'update_ticket',
+            'update_ticket',m
         ]);	// REMOVE THIS AFTER!!!
         
         
@@ -98,9 +98,13 @@ class AppController extends Controller
 		}
 		
 		$header_messages = TableRegistry::get('Messages')->find('all', [
-			'order' => ['Messages.id DESC'],
-		
+			'order' => ['Messages.id DESC']
 		])->limit(3);
+        
+        $my_tickets = TableRegistry::get('Tickets')->find('all', [
+            'order' => ['Ticket.id DESC'],
+            'condition' => ['Ticket.user_id' => $this->Auth->identify()],
+        ])->limit(4);
 
 		$this->set('header_messages', $header_messages);
 		$this->set('names', $names);
