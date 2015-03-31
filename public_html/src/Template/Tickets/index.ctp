@@ -95,6 +95,8 @@
                         </td>
                     </tr>
                 <?php endforeach; ?>
+                <?php 
+                echo (this->Paginator->prev(' << prev'));
                 </tbody>
             </table>
         </div> <!-- ./panel-body -->
