@@ -135,9 +135,19 @@ class TicketsController extends AppController
 	function update_ticket($id = null) {
 		$ticket = $this->Tickets->get($id);
 		
-		$this->Flash->success("<pre>" . print_r($this->request->data, TRUE) . "</pre><pre>" . print_r($ticket, TRUE) . "</pre>");
+		$ticket->project_id = $this->request->data['project'];
+        $ticket->status = $this->request->data['status'];
+        $ticket->priority = $this->request->data['priority'];
+        $ticket->completion = $this->request->data['completion'];
+        $ticket->user_id = $this->request->data['user_id'];
+        $ticket->billing_status = $this->request->data['billing_status'];
         
-        
+        if ($this->Tickets->save($ticket)) {
+            $this->Flash->success("Updated Ticket Details");
+        } else {
+            $this->Flash->error("Could not update Ticket!");
+        }
+             
         
         return $this->redirect(['controller' => 'Tickets', 'action' => 'view', $id]);
 	}
