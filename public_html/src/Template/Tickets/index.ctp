@@ -98,7 +98,7 @@
                 </tbody>
             </table>
             <?php 
-                echo (this->Paginator->prev(' << prev'));
+                echo ($this->Paginator->prev(' << prev'));
             ?>
         </div> <!-- ./panel-body -->
     </div> <!-- ./panel -->
