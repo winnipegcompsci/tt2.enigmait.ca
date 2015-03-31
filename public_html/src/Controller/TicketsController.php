@@ -140,7 +140,7 @@ class TicketsController extends AppController
         $ticket->priority = $this->request->data['priority'];
         $ticket->completion = $this->request->data['completion'];
         $ticket->user_id = $this->request->data['user_id'];
-        $ticket->billing_status = $this->request->data['billing_status'];
+        $ticket->billing_status_id = $this->request->data['billing_status'];
         
         if ($this->Tickets->save($ticket)) {
             $this->Flash->success("Updated Ticket Details");
