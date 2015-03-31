@@ -29,7 +29,7 @@
     </ul>
 </div>
 <div class="tickets index col-lg-10 col-md-9 columns">
-    <div class="panel panel-info">
+    <div class="panel panel-red">
         <div class="panel-heading">
             <i class="fa fa-ticket fa-2x"></i><span style="font-size: 2em"> Tickets </span>
             <div class="btn-group pull-right">
