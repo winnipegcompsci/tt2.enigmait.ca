@@ -140,13 +140,11 @@
 						
 						echo $this->Form->label('billing_status', 'Billing Status');
 						echo $this->Form->select('billing_status', $billing_statuses);
-						
-						echo $this->Form->postButton('Update Ticket', [
+												
+						echo $this->Form->submit('Update Ticket', [
 							'controller' => 'Tickets', 
 							'action' => 'update_ticket',
 						]);
-						
-						echo $this->Form->end();
 					?>
 					</div>	
 				</div>
