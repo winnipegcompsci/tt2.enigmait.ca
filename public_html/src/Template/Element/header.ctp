@@ -39,7 +39,7 @@
 		</a>
         
         <?php echo $this->element('my_tickets', array('my_tickets' => $my_tickets)); ?>
-        
+        <!-- 
 		<ul class="dropdown-menu dropdown-tasks">
 			<li>
 				<a href="#">
@@ -112,6 +112,7 @@
 				</a>
 			</li>
 		</ul>
+        -->
 		<!-- /.dropdown-tasks -->
 	</li>
 	<!-- /.dropdown -->
