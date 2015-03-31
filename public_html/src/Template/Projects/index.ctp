@@ -11,11 +11,11 @@
     </ul>
 </div>
 <div class="projects index col-lg-10 col-md-9 columns">
-    <div class="panel panel-primary">
+    <div class="panel panel-green">
         <div class="panel-heading">
             <i class="fa fa-tasks fa-2x"></i><span style="font-size: 2em"> Projects </span>
             <div class="btn-group pull-right">
-                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i>  <span class="caret"></span></button>
+                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">Project Menu <i class="fa fa-gear"></i>  <span class="caret"></span></button>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="#">Create New Project</a></li>
                     <li><a href="#">Find Project</a></li>
