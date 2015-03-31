@@ -135,7 +135,7 @@
 						echo $this->Form->select('priority', $priorities, ['default' => $ticket->ticket_priority->id]);
 						
 						echo $this->Form->label('completion', 'Completion');
-						echo $this->Form->select('completion', $completion_options, ['default' => $ticket->completion->amount]);
+						echo $this->Form->select('completion', $completion_options, ['default' => $ticket->completion]);
 						
 						echo $this->Form->label('user_id', 'Assigned To');
 						echo $this->Form->select('user_id', $users);
