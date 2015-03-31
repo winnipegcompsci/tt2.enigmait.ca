@@ -83,7 +83,7 @@
 								}
 							?>
                             <div class="progress progress-striped active">
-                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?= $percent; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $ticket->completion; ?>%">
+                                <div class="progress-bar <?= $bar_class ?>" role="progressbar" aria-valuenow="<?= $percent; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $ticket->completion; ?>%">
                                     <span class=""><?= $percent; ?>%</span>						
                                 </div>
                             </div>
