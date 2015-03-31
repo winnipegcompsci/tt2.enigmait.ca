@@ -57,7 +57,7 @@ Functionality::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 	Push Product to Amazon (WTCR)
 	Push Product to  Kijiji (WTCR)
 
-	Create Enigma Reports (Taxes, Ticket, Billing Status, Employee Report)
+	Create Reports (Taxes, Ticket, Billing Status, Employee Report, Inventory)
     
 	Event: Supplier Price Fetches              DAILY
 	Event: Competitor Price Fetches            DAILY
