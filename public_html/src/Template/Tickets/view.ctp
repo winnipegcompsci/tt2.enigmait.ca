@@ -128,9 +128,17 @@
 						
 						echo $this->Form->label('status', 'Ticket Status');
 						echo $this->Form->select('status', $statuses);
+						
+						echo $this->Form->label('priority', 'Ticket Priority');
 						echo $this->Form->select('priority', $priorities);
+						
+						echo $this->Form->label('completion', 'Completion');
 						echo $this->Form->select('completion', $completion_options);
+						
+						echo $this->Form->label('user_id', 'Assigned To');
 						echo $this->Form->select('user_id', $users);
+						
+						echo $this->Form->label('billing_status', 'Billing Status');
 						echo $this->Form->select('billing_status', $billing_statuses);
 						
 						echo $this->Form->end();
