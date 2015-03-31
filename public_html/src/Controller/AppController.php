@@ -106,6 +106,7 @@ class AppController extends Controller
             'condition' => ['Ticket.user_id' => $this->Auth->identify()],
         ])->limit(4);
 
+        $this->set('my_tickets', $my_tickets);
 		$this->set('header_messages', $header_messages);
 		$this->set('names', $names);
     }

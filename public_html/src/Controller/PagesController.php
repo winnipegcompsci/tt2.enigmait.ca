@@ -70,6 +70,7 @@ class PagesController extends AppController
 			$names[$user->id] = $user->first_name . " " . $user->last_name;
 		}
 		
+        $this->set('my_tickets', $my_tickets);
 		$this->set('messages', $messages);
 		$this->set('header_messages', $header_messages);
 		$this->set('names', $names);
