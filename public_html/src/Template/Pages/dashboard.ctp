@@ -198,6 +198,24 @@
 </div>
 <!-- /.row for Notifications / Messages. -->
 
+<div class="modal fade" id="help" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal" type="button">×</button>
+                <h4 class="modal-title" id="myModalLabel">Dashboard</h4>
+            </div>
+
+            <div class="modal-body">
+                Shows charts, graphs, recent orders, and some other statistical data of high importance.
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
+            </div><!-- /.footer -->
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div> <!-- /.model-fade -->
 
 
 
