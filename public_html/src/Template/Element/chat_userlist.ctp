@@ -1,6 +1,9 @@
 <h3 class="subheader"> Users </h3>
 
+<ul>
 <?php 
 foreach($names as $name) {
-    echo $name . "<br />";
+    echo "<li>" . $name . "</li>";
 }
+?>
+</ul>
