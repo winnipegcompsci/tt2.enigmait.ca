@@ -1,7 +1,12 @@
 <ul class="dropdown-menu dropdown-tasks">
     
     <?php 
-    error_log('Count Tickets:: ' . count($my_tickets));
+    $numTickets = 0;
+    foreach($my_tickets as $ticket) {
+        $numTickets++;
+    }
+    error_log("Number of Tickets:: " . $numTickets);
+    
     if($my_tickets) {
         foreach($my_tickets as $ticket) { ?>
         <li>
