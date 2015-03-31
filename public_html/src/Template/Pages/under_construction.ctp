@@ -5,10 +5,6 @@
             <small> Please check back soon or contact the development team. </small>
         </h1> 
     </div>
-    
-    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#about">
-        Launch Modal
-    </button>
 </div>
 <!-- /.row -->
 
