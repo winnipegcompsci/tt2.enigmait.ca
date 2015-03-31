@@ -58,27 +58,24 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button class="close" data-dismiss="modal" type=
-                "button">×</button>
+                <button class="close" data-dismiss="modal" type="button">×</button>
 
-                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                <h4 class="modal-title" id="myModalLabel">View Vendor Products</h4>
             </div>
 
             <div class="modal-body">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                irure dolor in reprehenderit in voluptate velit esse cillum
-                dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit anim id est laborum.
+                The view vendor products page allows you to see what products our suppliers/vendors 
+                are currently offering.
+                
+                Once you find a vendor product you would like to Add to WTCR you can click the 'Add Product' button in the column.
+                This creates an 'Inventory' entry in the database with product details specific to that particular employer.
+                
+                Once an order is made for these parts from this vendor, they will get moved from the WTCR Products model to the Inventory Model.
             </div>
 
             <div class="modal-footer">
                 <button class="btn btn-default" data-dismiss="modal" type=
-                "button">Close</button> <button class="btn btn-primary" type=
-                "button">Save changes</button>
+                "button">Close</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
