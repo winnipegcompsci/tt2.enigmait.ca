@@ -59,7 +59,6 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button class="close" data-dismiss="modal" type="button">×</button>
-
                 <h4 class="modal-title" id="myModalLabel">View Vendor Products</h4>
             </div>
 
@@ -74,12 +73,11 @@
             </div>
 
             <div class="modal-footer">
-                <button class="btn btn-default" data-dismiss="modal" type=
-                "button">Close</button>
-            </div>
+                <button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
+            </div><!-- /.footer -->
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
-</div>
+</div> <!-- /.model-fade -->
 
 
 
