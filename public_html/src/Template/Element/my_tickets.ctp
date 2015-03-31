@@ -1,6 +1,6 @@
 <ul class="dropdown-menu dropdown-tasks">
     
-    <?php foreach($my_tickets as $ticket) { ?>
+    <?php foreach($my_tickets as $ticket) { echo "<pre>" . print_r($ticket, TRUE) . "</pre>"; ?>
         <li>
             <a href="#">
                 <div>
