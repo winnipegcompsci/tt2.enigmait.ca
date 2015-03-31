@@ -1,1 +1,5 @@
-<h2> Users </h2>
+<h3 class="subheader"> Users </h3>
+
+foreach($names as $name) {
+    echo "<li>" . $name . "</li>";
+}
