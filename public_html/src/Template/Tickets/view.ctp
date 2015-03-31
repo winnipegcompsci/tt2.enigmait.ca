@@ -64,10 +64,10 @@
 					<h4 class="subheader">Progress </h4>
 					<table>
 						<tr>
-							<td> Minutes Used: </td> <td> X </td>
+							<td> Minutes Used: </td> <td> Iterate Event Minutes to Calculate Total </td>
 						</tr>
 						<tr>
-							<td> Billing Units: </td> <td> Y </td>
+							<td> Billing Units: </td> <td> min / MIN_PER_BILLINGPLAN  </td>
 						</tr>
 					</table>
 					
