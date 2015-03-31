@@ -32,7 +32,18 @@
         <?php 
         } 
     } else {
-        echo "<No Tickets Assigned to You>";
+        ?>
+            <li>
+                <a href="<?= $this->Url->build(['controller' => 'Tickets', 'action' => 'view', $ticket->id]);?>">
+                <div>
+					<p>
+						<strong>No Tickets Currently Assigned to You</strong>
+					</p>
+				</div>
+			</a>
+            </li>
+        
+        <?
     }
     ?>
 
