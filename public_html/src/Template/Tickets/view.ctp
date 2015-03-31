@@ -124,22 +124,23 @@
 						echo $this->Form->create(null, ['url' => ['controller' => 'Tickets', 'action' => 'update_ticket', $ticket->id]]);
 						
 						echo $this->Form->label('project', 'Project');
-						echo $this->Form->select('project', $projects, $options['default'] = $ticket->project);
+                        $projects['default'] = $ticket->project;
+						echo $this->Form->select('project', $projects);
 						
 						echo $this->Form->label('status', 'Ticket Status');
-						echo $this->Form->select('status', $statuses, $options['default'] = $ticket->status);
+						echo $this->Form->select('status', $statuses);
 						
 						echo $this->Form->label('priority', 'Ticket Priority');
-						echo $this->Form->select('priority', $priorities, $options['default'] = $ticket->priority);
+						echo $this->Form->select('priority', $priorities);
 						
 						echo $this->Form->label('completion', 'Completion');
-						echo $this->Form->select('completion', $completion_options, $options['default'] = $ticket->completion);
+						echo $this->Form->select('completion', $completion_options);
 						
 						echo $this->Form->label('user_id', 'Assigned To');
-						echo $this->Form->select('user_id', $users, $options['default'] = $ticket->user_id);
+						echo $this->Form->select('user_id', $users);
 						
 						echo $this->Form->label('billing_status', 'Billing Status');
-						echo $this->Form->select('billing_status', $billing_statuses, $options['default'] = $ticket->billing_status);
+						echo $this->Form->select('billing_status', $billing_statuses);
 												
 						echo $this->Form->submit('Update Ticket', [
 							'controller' => 'Tickets', 
