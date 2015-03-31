@@ -24,7 +24,6 @@
     <link href="/bower_components/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
     
     <!-- Data Tables -->
-    <link href="/bower_components/datatables/media/css/jQuery.dataTables.css" rel="stylesheet" type="text/css">
     <link href="/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet" type="text/css">
         
     <link href="/css/timeline.css" rel="stylesheet" type="text/css">
