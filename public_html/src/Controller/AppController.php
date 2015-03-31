@@ -58,7 +58,7 @@ class AppController extends Controller
             'fetch_asi_products',
             'set_solution',
 			'delete',
-            'update_ticket',m
+            'update_ticket',
         ]);	// REMOVE THIS AFTER!!!
         
         
