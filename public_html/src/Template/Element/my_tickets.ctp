@@ -30,7 +30,7 @@
     <?php } ?>
 
 	<li>
-		<a class="text-center" href="#">
+		<a class="text-center" href="<?= $this->Url->build(['controller' => 'Tickets', 'action' => 'index']); ?>">
 			<strong>See All Tickets</strong>
 			<i class="fa fa-angle-right"></i>
 		</a>
