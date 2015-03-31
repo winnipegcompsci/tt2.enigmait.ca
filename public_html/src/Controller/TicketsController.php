@@ -135,7 +135,9 @@ class TicketsController extends AppController
 	function update_ticket($id = null) {
 		$ticket = $this->Tickets->get($id);
 		
-		$this->Flash->success("<pre>" . print_r($this->request, TRUE) . "</pre>");
+		$this->Flash->success("<pre>" . print_r($this->request->data, TRUE) . "</pre><pre>" . print_r($ticket, TRUE) . "</pre>");
+        
+        
         
         return $this->redirect(['controller' => 'Tickets', 'action' => 'view', $id]);
 	}
