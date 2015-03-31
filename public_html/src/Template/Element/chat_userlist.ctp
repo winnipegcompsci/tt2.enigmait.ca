@@ -2,5 +2,5 @@
 
 <?php 
 foreach($names as $user) {
-    echo "<li>" . $user->first_name . " " . $user->last_name . "</li>";
+    echo  "<pre>" . print_r($user, TRUE) . "</pre>";
 }
