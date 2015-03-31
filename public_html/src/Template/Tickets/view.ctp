@@ -108,7 +108,7 @@
                         <tr>
                             <td>Billing Status: </td>
                             <td>&nbsp;</td>
-                            <td class="pull-right"><?= $ticket->has('billing_status') ? $this->Html->link($ticket->billing_status->id, ['controller' => 'BillingStatuses', 'action' => 'view', $ticket->billing_status->id]) : ''?></td>
+                            <td class="pull-right"><?= $ticket->has('billing_status') ? $this->Html->link($ticket->billing_status->billing_status, ['controller' => 'BillingStatuses', 'action' => 'view', $ticket->billing_status->id]) : ''?></td>
                         </tr>
                         <tr>
                             <td>Quote</td>
