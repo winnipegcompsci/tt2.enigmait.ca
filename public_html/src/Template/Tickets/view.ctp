@@ -138,10 +138,10 @@
 						echo $this->Form->select('completion', $completion_options, ['default' => $ticket->completion]);
 						
 						echo $this->Form->label('user_id', 'Assigned To');
-						echo $this->Form->select('user_id', $users);
+						echo $this->Form->select('user_id', $users, ['default' => $ticket->user->id]);
 						
 						echo $this->Form->label('billing_status', 'Billing Status');
-						echo $this->Form->select('billing_status', $billing_statuses);
+						echo $this->Form->select('billing_status', $billing_statuses, ['default' => $ticket->billing_status->id]);
 												
 						echo $this->Form->submit('Update Ticket', [
 							'controller' => 'Tickets', 
