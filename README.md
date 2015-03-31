@@ -48,6 +48,8 @@ Functionality::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 	Fetching from ASI               (Ajax Progressor)
 	Manually add AllWay Products    
 
+    Drop All Old Products
+    
 	Generate ZPL Barcode for Inventory Tracking
 	
 	Push Product to Drupal (WTCR)
