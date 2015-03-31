@@ -2,7 +2,7 @@
     
     <?php foreach($my_tickets as $ticket) { ?>
         <li>
-            <a href="<?= $this->Url->build([]);?>">
+            <a href="<?= $this->Url->build(['controller' => 'Tickets', 'action' => 'view', $ticket->id]);?>">
                 <div>
 					<p>
 						<strong>Ticket #: <?= $ticket->id ?></strong>
