@@ -8,11 +8,25 @@ User Interface:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 	Panel for Data Providers    
 	Assign Panels colour based on Dashboard Links. (Blue,  Green, Yellow, Red).
 	
-	View Views.
-	Index Views.
-	Add Views (Modal)
-	Edit Views (Modal)
-	
+    TT:
+    Tickets (Add View)
+    Tickets (Edit View)
+    Tickets (Index View)
+    
+    Projects (Add View)
+    Projects (Edit View)
+    Projects (Index View)
+    
+    Quotes (Add View)
+    Quotes (Edit View)
+    Quotes (Index View)
+    
+    WTCR:
+	Orders (Add View)
+    Orders (Index View, Find, Lookup)
+    Orders (Edit View)
+    
+    
 	'My Tickets' - Header Element
 	'Notifications' - Header Element
 		
@@ -20,11 +34,12 @@ User Interface:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 	Dashboard - Recent Orders Table (Last 10 Orders)
 	'Sales by Marketplace' Donut Graph.       
 
-	Database:
+Database:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 	Switch 'Sales Vehicles' for 'Marketplaces'. Build Marketplace Schema
 
 Functionality::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-	Saving New Vendor Product => Create WTCR SKU
+	Creating WTCR Product from Vendor Products
+    Add WTCR Product to Inventory
 
 	Fetching from Longtech          (Ajax Progressor)
 	Fetching from ASI               (Ajax Progressor)
@@ -37,8 +52,8 @@ Functionality::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 	Push Product to Amazon (WTCR)
 	Push Product to  Kijiji (WTCR)
 
-	Create Reports (Taxes, Ticket, Billing Status, Employee I don't know.)
-
+	Create Enigma Reports (Taxes, Ticket, Billing Status, Employee Report)
+    
 	Event: Supplier Price Fetches              DAILY
 	Event: Competitor Price Fetches            DAILY
 	Event: Marketplace Price Updates           DAILY
