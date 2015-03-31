@@ -89,7 +89,7 @@
                         <tr>
                             <td>Contact: </td>
                             <td></td>
-                            <td class="pull-right"><?= $ticket->has('contact') ? $this->Html->link($ticket->contact->id, ['controller' => 'Contacts', 'action' => 'view', $ticket->contact->id]) : '' ?></td>
+                            <td class="pull-right"><?= $ticket->has('contact') ? $this->Html->link($ticket->contact->name, ['controller' => 'Contacts', 'action' => 'view', $ticket->contact->id]) : '' ?></td>
                         </tr>
 						<tr>
 							<td>Contact Phone: </td>
