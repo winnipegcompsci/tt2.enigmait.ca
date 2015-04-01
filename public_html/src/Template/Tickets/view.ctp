@@ -61,15 +61,7 @@
                     </table>
 					
 					<br />
-					<h4 class="subheader">Progress </h4>
-					<table>
-						<tr>
-							<td> Minutes Used: </td> <td> Iterate Event Minutes to Calculate Total </td>
-						</tr>
-						<tr>
-							<td> Billing Units: </td> <td> min / MIN_PER_BILLINGPLAN  </td>
-						</tr>
-					</table>
+                    <?= $this->element('progress_bar', array('percent' => $ticket->completion)); ?>
 					
                 </div>
                 
@@ -112,9 +104,15 @@
                             <td>&nbsp;</td>
                             <td class="pull-right"><?= $ticket->has('quote') ? $this->Html->link($ticket->quote->name, ['controller' => 'Quotes', 'action' => 'view', $ticket->quote->id]) : '' ?></td>
                         </tr>
+						<tr>
+							<td> Minutes Used: </td> <td> Iterate Event Minutes to Calculate Total </td>
+						</tr>
+						<tr>
+							<td> Billing Units: </td> <td> min / MIN_PER_BILLINGPLAN  </td>
+						</tr>
                     </table>
                     <br />
-                    <?= $this->element('progress_bar', array('percent' => $ticket->completion)); ?>
+                    
 
                 </div>
 				
