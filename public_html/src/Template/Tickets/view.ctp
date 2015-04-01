@@ -71,16 +71,10 @@
 						</tr>
 					</table>
 					
-                    <?= $this->element('progress_bar', array('percent' => $ticket->completion)); ?>
-					<!--
-					<div class="progress progress-striped active">
-                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?= $ticket->completion; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $ticket->completion; ?>%"><span class=""><?= $ticket->completion; ?>% Complete</span>						</div>
-					</div>
-                    -->
                 </div>
                 
 			
-                <div class="columns col-lg-4 col-md-6">
+                <div class="columns col-lg-3 col-md-6">
                     <h4 class="subheader"> Customer Information </h4>
                     <table>
                         <tr>
@@ -119,9 +113,12 @@
                             <td class="pull-right"><?= $ticket->has('quote') ? $this->Html->link($ticket->quote->name, ['controller' => 'Quotes', 'action' => 'view', $ticket->quote->id]) : '' ?></td>
                         </tr>
                     </table>
+                    <br />
+                    <?= $this->element('progress_bar', array('percent' => $ticket->completion)); ?>
+
                 </div>
 				
-				<div class="columns col-lg-4 col-md-6 pull-right">
+				<div class="columns col-lg-3 col-md-6 pull-right">
 					<div style="font-size:0.75em">
 					<?php 					
 						echo $this->Form->create(null, ['url' => ['controller' => 'Tickets', 'action' => 'update_ticket', $ticket->id]]);
