@@ -71,10 +71,12 @@
 						</tr>
 					</table>
 					
-					
+                    <?= $this->element('progress_bar', array('percent' => $ticket->completion)); ?>
+					<!--
 					<div class="progress progress-striped active">
                         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?= $ticket->completion; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $ticket->completion; ?>%"><span class=""><?= $ticket->completion; ?>% Complete</span>						</div>
 					</div>
+                    -->
                 </div>
                 
 			

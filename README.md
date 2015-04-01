@@ -7,7 +7,6 @@ User Interface:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 	Panel for Currencies
 	Panel for Competitors
 	Panel for Data Providers    
-	Assign Panels colour based on Dashboard Links. (Blue,  Green, Yellow, Red).
 	
     TT:
     Tickets (Add View)
@@ -18,6 +17,7 @@ User Interface:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     Projects (Edit View)
     Projects (Index View)
     
+    Quotes: Schema
     Quotes (Add View)
     Quotes (Edit View)
     Quotes (Index View)
@@ -28,11 +28,13 @@ User Interface:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     Orders (Edit View)
         
 	'Notifications' - Header Element
-		
-	Fix / Center Paginated Numbers.
-	Dashboard - Recent Orders Table (Last 10 Orders)
+
+    
+    Fix / Center Paginated Numbers.
+	Dashboard - Recent Orders Table (10 Orders)
 	'Sales by Marketplace' Donut Graph.       
 
+    
 -------------------------------------------------------------------------------    
 Database:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 -------------------------------------------------------------------------------
@@ -41,16 +43,25 @@ Database:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 -------------------------------------------------------------------------------    
 Functionality::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 -------------------------------------------------------------------------------
-	Creating WTCR Product from Vendor Products
-    Add WTCR Product to Inventory
-
 	Fetching from Longtech          (Ajax Progressor)
 	Fetching from ASI               (Ajax Progressor)
 	Manually add AllWay Products    
 
-    Drop All Old Products
+    Add WTCR Vendor Product => WTCR Product
     
+    
+    Receive Products (WTCR Product => Inventory)
+        Pushes WTCR Vendor Product to WTCR_Product.
+            Gets Serial Numbers, Unique Instance Information, 
+            (Comments: scratched) -> Saves to Inventory.
+    
+    Find Product Details
+        Scan Barcode attached to item to lookup data about that particular
+        product. 
+        eg) Date Received, Date Sold, Price Received, Price Sold,Order #, 
+       
 	Generate ZPL Barcode for Inventory Tracking
+        Barcode Gets Displayed in Inventory View along with link to print?
 	
 	Push Product to Drupal (WTCR)
 	Push Product to eBay (WTCR)
