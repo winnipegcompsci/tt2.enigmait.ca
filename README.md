@@ -7,7 +7,10 @@ Database:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 -------------------------------------------------------------------------------    
 Functionality::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 -------------------------------------------------------------------------------
-    Add WTCR Vendor Product => WTCR Product
+    Adding Item to Inventory
+        Adds Details from Vendors Table to WTCR Products Table
+            (SKU Lookup on SKU Map)
+        IF HAS WTCR-SKU USE IT, Otherwise GENERATE-NEW
     
     Fetching from Longtech          (Ajax Progressor)
 	Fetching from ASI               (Ajax Progressor)
