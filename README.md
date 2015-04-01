@@ -50,7 +50,11 @@ Functionality::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 -------------------------------------------------------------------------------
 User Interface:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 -------------------------------------------------------------------------------
-	Panel for Quotes
+	User Profile View
+        Secret Key
+        Change Password    
+    
+    Panel for Quotes
 	Panel for Reports
 	Panel for Currencies
 	Panel for Competitors
