@@ -72,7 +72,7 @@ use Cake\Error\Debugger;
 								if (strpos($path, CORE_PATH) !== false) {
 									continue;
 								}
-                                <?php if (!empty($error->params)) { ?>
+                                if (!empty($error->params)) { ?>
                                     <strong>SQL Query Params: </strong>
                                     <?= Debugger::dump($error->params);
                                 }
