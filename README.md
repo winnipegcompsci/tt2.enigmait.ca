@@ -1,4 +1,49 @@
 TT2.0 Development Progress / TODO:
+-------------------------------------------------------------------------------    
+Database:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+-------------------------------------------------------------------------------
+	Switch 'Sales Vehicles' for 'Marketplaces'. Build Marketplace Schema
+
+-------------------------------------------------------------------------------    
+Functionality::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+-------------------------------------------------------------------------------
+    Add WTCR Vendor Product => WTCR Product
+    
+    Fetching from Longtech          (Ajax Progressor)
+	Fetching from ASI               (Ajax Progressor)
+	Manually add AllWay Products       
+    
+    Receive Products (WTCR Product => Inventory)
+        Pushes WTCR Vendor Product to WTCR_Product.
+            Gets Serial Numbers, Unique Instance Information, 
+            (Comments: scratched) -> Saves to Inventory.
+    
+    Find Product Details
+        Scan Barcode attached to item to lookup data about that particular
+        product. 
+        eg) Date Received, Date Sold, Price Received, Price Sold,Order #, 
+       
+	Generate ZPL Barcode for Inventory Tracking
+        Barcode Gets Displayed in Inventory View along with link to print?
+	
+	Push Product to Drupal (WTCR)
+	Push Product to Amazon (WTCR)
+	Push Product to eBay (WTCR)
+	Push Product to Kijiji (WTCR)
+
+	Create Reports (Taxes, Ticket, Billing Status, Employee Report, Inventory)
+        Supplier Price Fetches                  DAILY
+        Event: Crypto Currency Rate Updates     Every 4-6 Hours?
+        Competitor Price Fetches                DAILY
+        Event: UPDATE MARKETPLACE PRICES        DAILY
+        
+	
+	2-Factor Authentication
+    
+    Send Emails on Event Add.
+    Send Emails on Ticket Assign
+    Send Emails on New Notification (pertaining to user ROLE).
+        
 -------------------------------------------------------------------------------
 User Interface:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 -------------------------------------------------------------------------------
@@ -32,78 +77,28 @@ User Interface:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     
     Fix / Center Paginated Numbers.
 	Dashboard - Recent Orders Table (10 Orders)
-	'Sales by Marketplace' Donut Graph.       
-
-    
--------------------------------------------------------------------------------    
-Database:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
--------------------------------------------------------------------------------
-	Switch 'Sales Vehicles' for 'Marketplaces'. Build Marketplace Schema
-
--------------------------------------------------------------------------------    
-Functionality::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
--------------------------------------------------------------------------------
-	Fetching from Longtech          (Ajax Progressor)
-	Fetching from ASI               (Ajax Progressor)
-	Manually add AllWay Products    
-
-    Add WTCR Vendor Product => WTCR Product
-    
-    
-    Receive Products (WTCR Product => Inventory)
-        Pushes WTCR Vendor Product to WTCR_Product.
-            Gets Serial Numbers, Unique Instance Information, 
-            (Comments: scratched) -> Saves to Inventory.
-    
-    Find Product Details
-        Scan Barcode attached to item to lookup data about that particular
-        product. 
-        eg) Date Received, Date Sold, Price Received, Price Sold,Order #, 
-       
-	Generate ZPL Barcode for Inventory Tracking
-        Barcode Gets Displayed in Inventory View along with link to print?
-	
-	Push Product to Drupal (WTCR)
-	Push Product to eBay (WTCR)
-	Push Product to Amazon (WTCR)
-	Push Product to  Kijiji (WTCR)
-
-	Create Reports (Taxes, Ticket, Billing Status, Employee Report, Inventory)
-    
-	Event: Supplier Price Fetches              DAILY
-	Event: Competitor Price Fetches            DAILY
-	Event: UPDATE MARKETPLACE PRICES           DAILY
-	Event: Crypto Currency Rate Updates        Every 4-6 Hours?
-	
-	2-Factor Authentication
-    
-    Send Emails on Event Add.
-    Send Emails on Ticket Assign
-    Send Emails on New Notification (pertaining to user ROLE).
+	'Sales by Marketplace' Donut Graph.      
         
 -------------------------------------------------------------------------------        
 WTCR2.0 Development::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 -------------------------------------------------------------------------------
-Drupal 8
-	Install
-	Setup Commerce (Kickstart?)
-	Find Responsive Theme
-	Create Product Layout / Template
-    Find Commerce Replacement Modules to Replace Outdated Ubercart Modules:
-        UberCart (fullfillment):
-            Canada Post Shipping.......... https://www.drupal.org/project/commerce_canadapost
-            Flat Rate Shipping............ https://www.drupal.org/project/commerce_flat_rate
-            UPS Shipping Rates............ https://www.drupal.org/project/commerce_ups
-            
-        Ubercart Payment:
-            Bitcoin:...................... https://www.drupal.org/project/commerce_bitcoin
-            Litecoin:..................... Will have to Custom Make Litecoin Module
-            Peercoin:..................... Will have to Custom Make Peercoin Module
-            Nubit:........................ Will have to Custom Make Nubit Module
-        Paypal:........................... https://www.drupal.org/project/commerce_paypal 
-            Amazon Payments............... https://marketplace.commerceguys.com/extensions/amazon/overview?utm_source=dcorg&utm_medium=module_listing&utm_content=thumbnail&utm_campaign=Amazon
-            Commerce Discount............. https://marketplace.commerceguys.com/extensions/commerce-discount/overview?utm_source=dcorg&utm_medium=module_listing&utm_content=thumbnail&utm_campaign=Commerce%20Discount
-            Commerce Coupon............... https://marketplace.commerceguys.com/extensions/commerce-coupon/overview?utm_source=dcorg&utm_medium=module_listing&utm_content=thumbnail&utm_campaign=Commerce%20Coupon
-            Commerce (Auction)............ https://marketplace.commerceguys.com/extensions/commerce-donate/overview?utm_source=dcorg&utm_medium=module_listing&utm_content=thumbnail&utm_campaign=Commerce%20Donate
+Install Drupal 8.0 (Acquia Dev Desktop)
+Find Good Responsive Theme
+Create Commerce Product Layout / Template
+Find Commerce Replacement Modules to Replace Outdated Ubercart Modules:
+    Canada Post Shipping.......... https://www.drupal.org/project/commerce_canadapost
+    Flat Rate Shipping............ https://www.drupal.org/project/commerce_flat_rate
+    UPS Shipping Rates............ https://www.drupal.org/project/commerce_ups
+    
+    Bitcoin:...................... https://www.drupal.org/project/commerce_bitcoin
+    Litecoin:..................... Will have to Custom Make Litecoin Module
+    Peercoin:..................... Will have to Custom Make Peercoin Module
+    Nubit:........................ Will have to Custom Make Nubit Module
+    
+    Paypal:........................... https://www.drupal.org/project/commerce_paypal 
+    Amazon Payments............... https://marketplace.commerceguys.com/extensions/amazon/overview?utm_source=dcorg&utm_medium=module_listing&utm_content=thumbnail&utm_campaign=Amazon
+    Commerce Discount............. https://marketplace.commerceguys.com/extensions/commerce-discount/overview?utm_source=dcorg&utm_medium=module_listing&utm_content=thumbnail&utm_campaign=Commerce%20Discount
+    Commerce Coupon............... https://marketplace.commerceguys.com/extensions/commerce-coupon/overview?utm_source=dcorg&utm_medium=module_listing&utm_content=thumbnail&utm_campaign=Commerce%20Coupon
+    Commerce (Auction)............ https://marketplace.commerceguys.com/extensions/commerce-donate/overview?utm_source=dcorg&utm_medium=module_listing&utm_content=thumbnail&utm_campaign=Commerce%20Donate
             
         
