@@ -66,7 +66,7 @@
                 </div>
                 
 			
-                <div class="columns col-lg-3 col-md-6">
+                <div class="columns col-lg-3 col-lg-offset-1 col-md-6">
                     <h4 class="subheader"> Customer Information </h4>
                     <table>
                         <tr>
@@ -105,10 +105,14 @@
                             <td class="pull-right"><?= $ticket->has('quote') ? $this->Html->link($ticket->quote->name, ['controller' => 'Quotes', 'action' => 'view', $ticket->quote->id]) : '' ?></td>
                         </tr>
 						<tr>
-							<td> Minutes Used: </td> <td> Iterate Event Minutes to Calculate Total </td>
+							<td> Minutes Used: </td> 
+                            <td>&nbsp; </td>
+                            <td> Iterate Event Minutes to Calculate Total </td>
 						</tr>
 						<tr>
-							<td> Billing Units: </td> <td> min / MIN_PER_BILLINGPLAN  </td>
+							<td> Billing Units: </td> 
+                            <td>&nbsp; </td>
+                            <td> min / MIN_PER_BILLINGPLAN  </td>
 						</tr>
                     </table>
                     <br />
