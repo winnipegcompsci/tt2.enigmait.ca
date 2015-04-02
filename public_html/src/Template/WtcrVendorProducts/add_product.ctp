@@ -19,7 +19,7 @@
             $default_category =  $p->wtcr_category_id;
         }
     ?>
-    <?= $this->Form->create($wtcrProduct); ?>
+    <?= $this->Form->create(null); ?>
     <fieldset>
         <legend><?= __('Add Wtcr Vendor Product') ?></legend>
         <?php
