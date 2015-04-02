@@ -98,7 +98,7 @@ class AppController extends Controller
 		}
 		
 		$header_messages = TableRegistry::get('Messages')->find('all', [
-			'order' => ['Messages.s DESC']
+			'order' => ['Messages.id DESC']
 		])->limit(3);
                 
         
