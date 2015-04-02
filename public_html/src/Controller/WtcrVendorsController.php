@@ -247,9 +247,7 @@ class WtcrVendorsController extends AppController
                 }
                 
             }
-            
-            echo $this-Modal-waters someboddy
-            
+                        
             $this->Flash->success('Updated EPROM product list');
             return $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'view_vendor_products', 'eprom']);
             
