@@ -10,7 +10,7 @@
 </div>
 <div class="wtcrVendorProducts form col-lg-10 col-md-9 columns">
     <?php
-   
+        echo "PRODUCT::: <pre>" . print_r($product, TRUE) . "</pre>";
     ?>
     <?= $this->Form->create(null); ?>
     <fieldset>
