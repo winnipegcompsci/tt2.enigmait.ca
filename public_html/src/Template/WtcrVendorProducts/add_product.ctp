@@ -28,9 +28,8 @@
             echo $this->Form->input('vendor_sku', ['default' => $default_vendor_sku]);
             echo $this->Form->input('wtcr_sku', ['default' => $default_wtcr_sku ]);
             echo $this->Form->input('vendor_price', ['default' => $default_vendor_price]);
-            echo $this->Form->input('wtcr_category_id', ['options' => $wtcrCategories, 'empty' => true, 'default' => $default_category]);
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Submit')) ?>    
     <?= $this->Form->end() ?>
 </div>

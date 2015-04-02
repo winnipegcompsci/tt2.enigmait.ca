@@ -249,6 +249,9 @@ class WtcrVendorsController extends AppController
             }
                         
             $this->Flash->success('Updated EPROM product list');
+            
+            
+                        
             return $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'view_vendor_products', 'eprom']);
             
         } catch (Exception $e) {
