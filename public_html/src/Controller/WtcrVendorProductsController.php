@@ -65,7 +65,9 @@ class WtcrVendorProductsController extends AppController
     }
 
     public function add_product($vendor_sku = null) 
-    {        
+    {    
+        error_log('Vendor SKU::: ' . $vendor_sku);
+    
         $product = $this->WtcrVendorProducts->find('all')->where(['vendor_sku' => $vendor_sku]);     
         
         foreach($product as $item) {
