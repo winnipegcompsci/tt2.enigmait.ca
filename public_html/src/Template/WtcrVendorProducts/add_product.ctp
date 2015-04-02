@@ -11,7 +11,12 @@
 <div class="wtcrVendorProducts form col-lg-10 col-md-9 columns">
     <?php
         foreach($product as $p) {
-            echo "PRODUCT:: <pre>" . print_r($p->name, TRUE) . "</pre>";
+            $default_name = $product->name;
+            $default_vendor_id = $product->wtcr_vendor_id;
+            $default_vendor_sku = $product->vendor_sku;
+            $default_wtcr_sku = $product->wtcr_sku;
+            $default_vendor_price = $product->vendor_price;
+            $default_category = $product->wtcr_category_id;
         }
     ?>
     <?= $this->Form->create(null); ?>
@@ -20,10 +25,10 @@
         <?php
             echo $this->Form->text('name', ['default' => $product['name'] ]);
             echo $this->Form->input('wtcr_vendor_id', ['options' => $wtcrVendors, 'empty' => true]);
-            echo $this->Form->input('vendor_sku', ['default' => $product->vendor_sku]);
-            echo $this->Form->input('wtcr_sku', ['default' => $product->wtcr_sku ]);
-            echo $this->Form->input('vendor_price', ['default' => $product->vendor_price]);
-            echo $this->Form->input('wtcr_category_id', ['options' => $wtcrCategories, 'empty' => true]);
+            echo $this->Form->input('vendor_sku', ['default' => $product->vendor_sku, 'default' => $default_vendor_sku]);
+            echo $this->Form->input('wtcr_sku', ['default' => $product->wtcr_sku, 'default' => $default_wtcr_sku ]);
+            echo $this->Form->input('vendor_price', ['default' => $product->vendor_price, 'default' => $default_vendor_price]);
+            echo $this->Form->input('wtcr_category_id', ['options' => $wtcrCategories, 'empty' => true, 'default' => $default_category]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
