@@ -59,6 +59,7 @@ class AppController extends Controller
             'set_solution',
 			'delete',
             'update_ticket',
+            'add_product',
         ]);	// REMOVE THIS AFTER!!!
                 
        		// $this->set('logged_in', $this->Auth->loggedIn());
