@@ -41,7 +41,7 @@
                             <td><?= $product->wtcr_sku ?></td>
                             <td><?= $product->wtcr_category ?></td>
                             <td><?= $product->last_updated ?></td>
-                            <td>(#)or l(Add Product) </td>
+                            <td><?= l('Add Product', ['controller' => 'wtcr_vendor_products', 'action' => 'add_product']); ?></td>
                             <td><i class="fa fa-remove fa-fw"></i>Hide</td>
                         </tr> 
                     <?php } 

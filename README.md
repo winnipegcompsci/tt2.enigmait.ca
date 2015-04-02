@@ -14,7 +14,7 @@ Functionality::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     
     Fetching from Longtech          (Ajax Progressor)
 	Fetching from ASI               (Ajax Progressor)
-	Manually add AllWay Products       
+	Manually add AllWay Products    (Add Form that does Lookup against Map)    
     
     Receive Products (WTCR Product => Inventory)
         Pushes WTCR Vendor Product to WTCR_Product.
