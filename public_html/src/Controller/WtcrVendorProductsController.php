@@ -68,9 +68,7 @@ class WtcrVendorProductsController extends AppController
     {
         echo "<pre>" . print_r($vendor_sku, TRUE) . '</pre>';
         
-        $product = $this->WtcrVendorProducts->find('all', [
-            'conditions' => ['vendor_sku' => $vendor_sku]
-        ]);
+        $product = $this->WtcrVendorProducts->find('all');    
         
         $wtcrVendors = $this->WtcrVendorProducts->WtcrVendors->find('list', ['limit' => 200]);
         $wtcrCategories = $this->WtcrVendorProducts->WtcrCategories->find('list', ['limit' => 200]);
