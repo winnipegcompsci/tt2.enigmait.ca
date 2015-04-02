@@ -11,7 +11,7 @@
     <fieldset>
         <legend><?= __('Add Wtcr Category') ?></legend>
         <?php
-            echo $this->Form->input('name');
+            echo $this->Form->text('name');
             echo $this->Form->input('default_markup');
         ?>
     </fieldset>
