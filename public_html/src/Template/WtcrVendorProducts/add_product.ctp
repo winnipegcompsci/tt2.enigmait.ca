@@ -16,7 +16,7 @@
     <fieldset>
         <legend><?= __('Add Wtcr Vendor Product') ?></legend>
         <?php
-            echo $this->Form->text('name', ['default' => $product->name]);
+            echo $this->Form->text('name', ['default' => $product['name'] ]);
             echo $this->Form->input('wtcr_vendor_id', ['options' => $wtcrVendors, 'empty' => true]);
             echo $this->Form->input('vendor_sku', ['default' => $product->vendor_sku]);
             echo $this->Form->input('wtcr_sku', ['default' => $product->wtcr_sku ]);
