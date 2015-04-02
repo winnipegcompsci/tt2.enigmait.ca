@@ -1,8 +1,10 @@
--- MySQL dump 10.13  Distrib 5.6.17, for Win32 (x86)
+CREATE DATABASE  IF NOT EXISTS `tt2` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `tt2`;
+-- MySQL dump 10.13  Distrib 5.6.13, for Win32 (x86)
 --
--- Host: 127.0.0.1    Database: tt2
+-- Host: localhost    Database: tt2
 -- ------------------------------------------------------
--- Server version	5.6.15-log
+-- Server version	5.6.17-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -30,8 +32,8 @@ CREATE TABLE `addresses` (
   `city` varchar(75) NOT NULL,
   `province_id` int(11) NOT NULL,
   `country_id` int(50) NOT NULL,
-  `fax` varchar(20) NOT NULL,
-  `website` varchar(150) NOT NULL,
+  `fax` varchar(20) DEFAULT NULL,
+  `website` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=178 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -66,6 +68,7 @@ CREATE TABLE `billing_plan_lines` (
   `emerg_min_unit` float NOT NULL,
   `emerg_round_up_at_min` float NOT NULL,
   PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `line_plan_id` (`billing_plan_id`),
   KEY `line_time_type_id` (`time_type_id`),
   CONSTRAINT `billing_plan_lines_ibfk_1` FOREIGN KEY (`billing_plan_id`) REFERENCES `billing_plans` (`id`) ON DELETE CASCADE,
@@ -94,7 +97,8 @@ CREATE TABLE `billing_plans` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `plan_number` (`name`)
+  UNIQUE KEY `plan_number` (`name`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -117,8 +121,9 @@ DROP TABLE IF EXISTS `billing_statuses`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `billing_statuses` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `billing_status` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `billing_status` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -140,11 +145,12 @@ DROP TABLE IF EXISTS `billing_types`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `billing_types` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(40) NOT NULL,
   `order` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1194,53 +1200,55 @@ LOCK TABLES `wtcr_manufacturers` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `wtcr_sales_vehicle_templates`
+-- Table structure for table `wtcr_marketplace_templates`
 --
 
-DROP TABLE IF EXISTS `wtcr_sales_vehicle_templates`;
+DROP TABLE IF EXISTS `wtcr_marketplace_templates`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `wtcr_sales_vehicle_templates` (
-  `id` int(11) NOT NULL,
-  `wtcr_sales_vehicle_id` varchar(45) DEFAULT NULL,
-  `name` varchar(45) DEFAULT NULL,
+CREATE TABLE `wtcr_marketplace_templates` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `marketplace_id` varchar(45) NOT NULL,
   `template_data` longtext,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`,`marketplace_id`),
+  UNIQUE KEY `marketplace_id_UNIQUE` (`marketplace_id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `wtcr_sales_vehicle_templates`
+-- Dumping data for table `wtcr_marketplace_templates`
 --
 
-LOCK TABLES `wtcr_sales_vehicle_templates` WRITE;
-/*!40000 ALTER TABLE `wtcr_sales_vehicle_templates` DISABLE KEYS */;
-/*!40000 ALTER TABLE `wtcr_sales_vehicle_templates` ENABLE KEYS */;
+LOCK TABLES `wtcr_marketplace_templates` WRITE;
+/*!40000 ALTER TABLE `wtcr_marketplace_templates` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wtcr_marketplace_templates` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `wtcr_sales_vehicles`
+-- Table structure for table `wtcr_marketplaces`
 --
 
-DROP TABLE IF EXISTS `wtcr_sales_vehicles`;
+DROP TABLE IF EXISTS `wtcr_marketplaces`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `wtcr_sales_vehicles` (
-  `id` int(11) NOT NULL,
-  `name` varchar(45) NOT NULL,
+CREATE TABLE `wtcr_marketplaces` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `marketplace` varchar(45) NOT NULL,
   `wtcr_sales_vehicle_template_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `name_UNIQUE` (`name`)
+  UNIQUE KEY `name_UNIQUE` (`marketplace`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `wtcr_sales_vehicles`
+-- Dumping data for table `wtcr_marketplaces`
 --
 
-LOCK TABLES `wtcr_sales_vehicles` WRITE;
-/*!40000 ALTER TABLE `wtcr_sales_vehicles` DISABLE KEYS */;
-/*!40000 ALTER TABLE `wtcr_sales_vehicles` ENABLE KEYS */;
+LOCK TABLES `wtcr_marketplaces` WRITE;
+/*!40000 ALTER TABLE `wtcr_marketplaces` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wtcr_marketplaces` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1251,7 +1259,7 @@ DROP TABLE IF EXISTS `wtcr_vendor_products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wtcr_vendor_products` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
   `wtcr_vendor_id` int(11) DEFAULT NULL,
   `vendor_sku` varchar(45) DEFAULT NULL,
@@ -1281,7 +1289,7 @@ DROP TABLE IF EXISTS `wtcr_vendors`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wtcr_vendors` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
   `update_freq_hours` int(11) DEFAULT '24',
   PRIMARY KEY (`id`),
@@ -1308,4 +1316,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-03-23 20:25:52
+-- Dump completed on 2015-04-02 13:17:09
