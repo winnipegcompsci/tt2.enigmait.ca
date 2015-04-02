@@ -69,7 +69,7 @@ class WtcrVendorProductsController extends AppController
         echo "<pre>" . print_r($vendor_sku, TRUE) . '</pre>';
         
         $product = $this->WtcrVendorProducts->find('all', [
-            'conditions' => ['vendor_sku' => $vendor_sku];
+            'conditions' => ['vendor_sku' => $vendor_sku]
         ]);
         
         $this->set('product', $product);
