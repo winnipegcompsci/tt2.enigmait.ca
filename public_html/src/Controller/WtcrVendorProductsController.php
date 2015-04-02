@@ -75,7 +75,7 @@ class WtcrVendorProductsController extends AppController
         $wtcrVendors = $this->WtcrVendorProducts->WtcrVendors->find('list', ['limit' => 200]);
         $wtcrCategories = $this->WtcrVendorProducts->WtcrCategories->find('list', ['limit' => 200]);
 
-        $this->set('wtcrCategories', $categoryID);        
+        $this->set('wtcrCategories', $wtcrCategories);        
         $this->set('wtcrVendors', $wtcrVendors);
         $this->set('product', $product->toArray());
     }
