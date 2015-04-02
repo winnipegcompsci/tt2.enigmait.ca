@@ -66,7 +66,7 @@ class WtcrVendorProductsController extends AppController
 
     public function add_product($vendor_sku = null) 
     {
-        $this->Flash->warning(print_r($vendor_sku, TRUE));
+        $this->Flash->error(print_r($vendor_sku, TRUE));
     }
     
     
