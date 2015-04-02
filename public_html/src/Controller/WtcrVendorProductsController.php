@@ -77,7 +77,7 @@ class WtcrVendorProductsController extends AppController
 
         $this->set('wtcrCategories', $categoryID);        
         $this->set('wtcrVendors', $wtcrVendors);
-        $this->set('product', $product);
+        $this->set('product', $product->toArray());
     }
     
     
