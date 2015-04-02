@@ -41,7 +41,7 @@
                             <td><?= $product->wtcr_sku ?></td>
                             <td><?= $product->wtcr_category ?></td>
                             <td><?= $product->last_updated ?></td>
-                            <td><?= $this->Html->link('Add Product', ['controller' => 'wtcr_vendor_products', 'action' => 'add_product', $product]); ?></td>
+                            <td><?= $this->Html->postLink('Add Product', ['controller' => 'wtcr_vendor_products', 'action' => 'add_product', $product]); ?></td>
                             <td><i class="fa fa-remove fa-fw"></i>Hide</td>
                         </tr> 
                     <?php } 
