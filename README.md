@@ -10,7 +10,9 @@ Functionality::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     Adding Item to Inventory
         Adds Details from Vendors Table to WTCR Products Table
             (SKU Lookup on SKU Map)
-        IF HAS WTCR-SKU USE IT, Otherwise GENERATE-NEW
+          
+        IF HAS WTCR-SKU IN MAP => USE IT
+        ELSE =? Generate New WTCR SKU
     
     Fetching from Longtech          (Ajax Progressor)
 	Fetching from ASI               (Ajax Progressor)
