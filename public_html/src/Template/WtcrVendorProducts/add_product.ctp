@@ -16,7 +16,7 @@
             $default_vendor_sku = $p->vendor_sku;
             $default_wtcr_sku = $p->wtcr_sku;
             $default_vendor_price = $p->vendor_price;
-            $default_category = $p->wtcr_category_id;
+            $default_category =  $p->wtcr_category_id;
         }
     ?>
     <?= $this->Form->create(null); ?>
