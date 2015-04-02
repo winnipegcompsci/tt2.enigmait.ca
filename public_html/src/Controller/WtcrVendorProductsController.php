@@ -64,6 +64,12 @@ class WtcrVendorProductsController extends AppController
         $this->set('_serialize', ['wtcrVendorProduct']);
     }
 
+    public function add_product($product) 
+    {
+        $this->Flash->warning('<pre>' . print_r($product, TRUE) . '</pre>');
+    }
+    
+    
     /**
      * Edit method
      *
