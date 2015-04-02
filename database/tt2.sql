@@ -1252,6 +1252,46 @@ LOCK TABLES `wtcr_marketplaces` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `wtcr_product_map`
+--
+
+DROP TABLE IF EXISTS `wtcr_product_map`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `wtcr_product_map` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'A unique ID for the product',
+  `supplier` varchar(40) NOT NULL COMMENT 'The Supplier that offers the product',
+  `category` varchar(100) NOT NULL COMMENT 'The category the product falls in',
+  `manufacturersku` varchar(40) NOT NULL COMMENT 'Part # The Manufacturer Uses',
+  `suppliersku` varchar(40) NOT NULL COMMENT 'The SKU used by the supplier to identify the product',
+  `description` varchar(500) DEFAULT NULL COMMENT 'A description of the product',
+  `supplierprice` varchar(40) NOT NULL COMMENT 'The Price the Supplier Charges',
+  `supplierstock` varchar(40) NOT NULL COMMENT 'The product stock the supplier has advertised',
+  `autoupdate` int(11) NOT NULL COMMENT '1 if Product Should Auto Update Price, 0 otherwise.',
+  `suggestedprice` varchar(40) DEFAULT NULL COMMENT 'The Price Suggested based on Current Markup',
+  `suggestedmarkup` varchar(40) DEFAULT NULL COMMENT 'The Suggested Markup Percentage for a Product',
+  `wtcrsku` varchar(40) DEFAULT NULL COMMENT 'The SKU used by WTCR to identify the product',
+  `wtcrprice` varchar(40) DEFAULT NULL COMMENT 'The Price WTCR Charges',
+  `createnode` int(11) NOT NULL COMMENT '0 if no node, 1 if the product has a node',
+  `nid` varchar(10) DEFAULT NULL COMMENT 'The NID of the Product on WTCRs Website',
+  `lastupdated` datetime NOT NULL COMMENT 'The date/time this product was last updated from supplier',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `suppliersku` (`suppliersku`),
+  UNIQUE KEY `manufacturersku` (`manufacturersku`),
+  UNIQUE KEY `nid` (`nid`)
+) ENGINE=InnoDB AUTO_INCREMENT=9695 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `wtcr_product_map`
+--
+
+LOCK TABLES `wtcr_product_map` WRITE;
+/*!40000 ALTER TABLE `wtcr_product_map` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wtcr_product_map` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `wtcr_vendor_products`
 --
 
@@ -1316,4 +1356,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-02 13:17:09
+-- Dump completed on 2015-04-02 13:26:33
