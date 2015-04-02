@@ -112,5 +112,7 @@ $(document).ready(function() {
     $('#datatable').dataTable({
         "pagingType": "full_numbers",
     });  
+    
+    $( "#datepicker" ).datepicker();
 }); 	 	
 </script> 
