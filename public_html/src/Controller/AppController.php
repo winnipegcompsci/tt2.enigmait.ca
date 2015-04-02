@@ -116,7 +116,7 @@ class AppController extends Controller
 	
 	public function isAuthorized() 
 	{
-        error_log("Called:: isAuthorized() hook");
+        // error_log("Called:: isAuthorized() hook");
         
 		$this->set('logged_in', $this->Auth->identify());
 		
@@ -124,11 +124,11 @@ class AppController extends Controller
 		
 		// Admin can access every action
 		if($this_user) {
-			error_log('USER IS AUTHORIZED');
+			// error_log('USER IS AUTHORIZED');
 			return true;
 		} 
 		
-		error_log('USER NOT AUTHORIZED');
+		// error_log('USER NOT AUTHORIZED');
 		return false;
 	}
 }
