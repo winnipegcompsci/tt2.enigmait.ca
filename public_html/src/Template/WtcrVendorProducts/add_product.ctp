@@ -32,5 +32,5 @@
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
-    <?= $this->Form->end() ?>
+    <?= $this->Form->end('Save') ?>
 </div>
