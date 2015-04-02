@@ -9,7 +9,12 @@
     </ul>
 </div>
 <div class="wtcrVendorProducts form col-lg-10 col-md-9 columns">
-    <?= die("<pre>" . print_r($product, TRUE) . "</pre>"); ?>
+    <?= 
+    
+    foreach($product as $item) {
+        echo "<pre>" . print_r($item, TRUE) . "</pre>"); 
+    }
+    ?>
     <?= $this->Form->create($wtcrVendorProduct); ?>
     <fieldset>
         <legend><?= __('Add Wtcr Vendor Product') ?></legend>
