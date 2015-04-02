@@ -11,12 +11,12 @@
 <div class="wtcrVendorProducts form col-lg-10 col-md-9 columns">
     <?php
         foreach($product as $p) {
-            $default_name = $product->name;
-            $default_vendor_id = $product->wtcr_vendor_id;
-            $default_vendor_sku = $product->vendor_sku;
-            $default_wtcr_sku = $product->wtcr_sku;
-            $default_vendor_price = $product->vendor_price;
-            $default_category = $product->wtcr_category_id;
+            $default_name = $p->name;
+            $default_vendor_id = $p->wtcr_vendor_id;
+            $default_vendor_sku = $p->vendor_sku;
+            $default_wtcr_sku = $p->wtcr_sku;
+            $default_vendor_price = $p->vendor_price;
+            $default_category = $p->wtcr_category_id;
         }
     ?>
     <?= $this->Form->create(null); ?>
