@@ -11,7 +11,6 @@ use Cake\ORM\TableRegistry;
  */
 class WtcrVendorsController extends AppController
 {
-
     /**
      * Index method
      *

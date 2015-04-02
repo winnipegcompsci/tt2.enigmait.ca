@@ -2,11 +2,7 @@ TT2.0 Development Progress / TODO:
 -------------------------------------------------------------------------------    
 Database:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 -------------------------------------------------------------------------------
-	Bake Marketplace Schema Changes
-    Bake Marketplace Template Schema Changes
-    WTCR Vendor Product ! Incrementing?
-    Add Product Map from WTCR.ca
-    
+    Import tt2.sql to TT2 db.
     
 -------------------------------------------------------------------------------    
 Functionality::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
