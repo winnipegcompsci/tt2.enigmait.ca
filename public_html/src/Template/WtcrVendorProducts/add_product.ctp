@@ -15,7 +15,7 @@
         echo "<pre>" . print_r($item, TRUE) . "</pre>"; 
     }
     ?>
-    <?= $this->Form->create($wtcrVendorProduct); ?>
+    <?= $this->Form->create(null); ?>
     <fieldset>
         <legend><?= __('Add Wtcr Vendor Product') ?></legend>
         <?php
