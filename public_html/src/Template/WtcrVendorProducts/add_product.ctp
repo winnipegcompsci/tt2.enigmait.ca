@@ -11,7 +11,7 @@
 <div class="wtcrVendorProducts form col-lg-10 col-md-9 columns">
     <?php
         foreach($product as $p) {
-            echo "<pre>" . print_r($p, TRUE) . "</pre>";
+            echo "P:::: <pre>" . print_r($p, TRUE) . "</pre>";
             
             $default_name = $p->name;
             $default_vendor_id = $p->wtcr_vendor_id;
