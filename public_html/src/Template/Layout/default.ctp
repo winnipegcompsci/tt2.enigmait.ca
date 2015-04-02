@@ -113,6 +113,6 @@ $(document).ready(function() {
         "pagingType": "full_numbers",
     });  
     
-    $( "#datepicker" ).datepicker();
+    // $( "#datepicker" ).datepicker();
 }); 	 	
 </script> 
