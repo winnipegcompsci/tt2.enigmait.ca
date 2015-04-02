@@ -248,20 +248,14 @@ class WtcrVendorsController extends AppController
                 
             }
             
+            echo $this-Modal-waters someboddy
+            
             $this->Flash->success('Updated EPROM product list');
             return $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'view_vendor_products', 'eprom']);
             
         } catch (Exception $e) {
             $this->Flash->error('Error Caught:: ' . $e->getMessage());
         }
-        
-        
-        /*
-            For Each Product in CSV:
-                Update Corresponding Entry in DB Where Supplier = "eprom" AND
-                    supplier_sku = "eprom product sku".
-        */
-        
         
     }
     
