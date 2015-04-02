@@ -9,7 +9,7 @@
     </ul>
 </div>
 <div class="wtcrVendorProducts form col-lg-10 col-md-9 columns">
-    <?= 
+    <?php
     
     foreach($product as $item) {
         echo "<pre>" . print_r($item, TRUE) . "</pre>"); 
