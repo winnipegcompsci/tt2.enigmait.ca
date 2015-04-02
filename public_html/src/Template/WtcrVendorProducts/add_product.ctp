@@ -10,9 +10,7 @@
 </div>
 <div class="wtcrVendorProducts form col-lg-10 col-md-9 columns">
     <?php
-        foreach($product as $p) {
-            echo "P:::: <pre>" . print_r($p->name, TRUE) . "</pre>";
-            
+        foreach($product as $p) {            
             $default_name = $p->name;
             $default_vendor_id = $p->wtcr_vendor_id;
             $default_vendor_sku = $p->vendor_sku;
