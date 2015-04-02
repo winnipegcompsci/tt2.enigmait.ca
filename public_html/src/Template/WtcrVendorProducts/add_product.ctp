@@ -24,7 +24,7 @@
         <legend><?= __('Add Wtcr Vendor Product') ?></legend>
         <?php
             echo $this->Form->text('name', ['default' => $default_name ]);
-            echo $this->Form->input('wtcr_vendor_id', ['options' => $wtcrVendors, 'empty' => true]);
+            echo $this->Form->input('wtcr_vendor_id', ['options' => $wtcrVendors,'default' => $default_vendor_id, 'empty' => true]);
             echo $this->Form->input('vendor_sku', ['default' => $default_vendor_sku]);
             echo $this->Form->input('wtcr_sku', ['default' => $default_wtcr_sku ]);
             echo $this->Form->input('vendor_price', ['default' => $default_vendor_price]);
