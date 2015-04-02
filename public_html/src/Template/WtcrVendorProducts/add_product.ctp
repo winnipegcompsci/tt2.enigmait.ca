@@ -12,7 +12,7 @@
     <?php
     
     foreach($product as $item) {
-        echo "<pre>" . print_r($item, TRUE) . "</pre>"); 
+        echo "<pre>" . print_r($item, TRUE) . "</pre>"; 
     }
     ?>
     <?= $this->Form->create($wtcrVendorProduct); ?>
