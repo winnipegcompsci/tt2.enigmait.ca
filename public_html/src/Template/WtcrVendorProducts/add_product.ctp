@@ -25,9 +25,9 @@
         <?php
             echo $this->Form->text('name', ['default' => $default_name ]);
             echo $this->Form->input('wtcr_vendor_id', ['options' => $wtcrVendors, 'empty' => true]);
-            echo $this->Form->input('vendor_sku', ['default' => $product->vendor_sku, 'default' => $default_vendor_sku]);
-            echo $this->Form->input('wtcr_sku', ['default' => $product->wtcr_sku, 'default' => $default_wtcr_sku ]);
-            echo $this->Form->input('vendor_price', ['default' => $product->vendor_price, 'default' => $default_vendor_price]);
+            echo $this->Form->input('vendor_sku', ['default' => $default_vendor_sku]);
+            echo $this->Form->input('wtcr_sku', ['default' => $default_wtcr_sku ]);
+            echo $this->Form->input('vendor_price', ['default' => $default_vendor_price]);
             echo $this->Form->input('wtcr_category_id', ['options' => $wtcrCategories, 'empty' => true, 'default' => $default_category]);
         ?>
     </fieldset>
