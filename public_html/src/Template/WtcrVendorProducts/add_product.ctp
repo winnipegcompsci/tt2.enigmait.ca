@@ -11,7 +11,7 @@
 <div class="wtcrVendorProducts form col-lg-10 col-md-9 columns">
     <?php
         foreach($product as $p) {
-            echo "PRODUCT:: <pre>" . print_r($p, TRUE) . "</pre>";
+            echo "PRODUCT:: <pre>" . print_r($p->name, TRUE) . "</pre>";
         }
     ?>
     <?= $this->Form->create(null); ?>
