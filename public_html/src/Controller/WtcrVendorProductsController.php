@@ -68,9 +68,9 @@ class WtcrVendorProductsController extends AppController
     {        
         $product = $this->WtcrVendorProducts->find('all')->where(['vendor_sku' => $vendor_sku]);     
         
-        $match = $product->toArray();
-        
-        error_log('Product Match:: ' . print_r($match, TRUE));
+        foreach($product as $item) {
+            error_log("ITEM:: " . print_r($item, TRUE) );
+        }
         
         $wtcrVendors = $this->WtcrVendorProducts->WtcrVendors->find('list', ['limit' => 200]);
         $wtcrCategories = $this->WtcrVendorProducts->WtcrCategories->find('list', ['limit' => 200]);
