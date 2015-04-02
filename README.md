@@ -2,7 +2,7 @@ TT2.0 Development Progress / TODO:
 -------------------------------------------------------------------------------    
 Database:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 -------------------------------------------------------------------------------
-    Import tt2.sql to TT2 db.
+    Import tt2.sql to TT2 db on Whiskey
     
 -------------------------------------------------------------------------------    
 Functionality::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -65,7 +65,7 @@ User Interface:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     TT:
     Tickets (Add View)
     Tickets (Edit View)
-    Tickets (Index View)......................................................
+    Tickets (Index View)
     
     Projects (Add View)
     Projects (Edit View)
@@ -109,5 +109,3 @@ Find Commerce Replacement Modules to Replace Outdated Ubercart Modules:
     Commerce Discount............. https://marketplace.commerceguys.com/extensions/commerce-discount/overview?utm_source=dcorg&utm_medium=module_listing&utm_content=thumbnail&utm_campaign=Commerce%20Discount
     Commerce Coupon............... https://marketplace.commerceguys.com/extensions/commerce-coupon/overview?utm_source=dcorg&utm_medium=module_listing&utm_content=thumbnail&utm_campaign=Commerce%20Coupon
     Commerce (Auction)............ https://marketplace.commerceguys.com/extensions/commerce-donate/overview?utm_source=dcorg&utm_medium=module_listing&utm_content=thumbnail&utm_campaign=Commerce%20Donate
-            
-        

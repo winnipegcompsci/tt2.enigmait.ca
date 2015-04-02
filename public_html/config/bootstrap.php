@@ -179,6 +179,7 @@ Request::addDetector('tablet', function ($request) {
  *
  */
 
+ 
 Plugin::load('Migrations');
 Plugin::load('Bootstrap3', ['autoload' => true]);
 
