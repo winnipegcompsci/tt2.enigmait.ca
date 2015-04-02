@@ -65,8 +65,12 @@ class WtcrVendorProductsController extends AppController
     }
 
     public function add_product($vendor_sku = null) 
-    {    
-        echo "PARAMS:::<pre>" . print_r($this->request->params, TRUE) . "</pre>";
+    {   
+        if(!$vendor_sku) {
+            $vendor_sku = $this->request->params['pass'][0];
+        }
+        
+        echo "PARAMS:::<pre>" . print_r($this->request->params['pass'][0], TRUE) . "</pre>";
     
         $product = $this->WtcrVendorProducts->find('all')->where(['vendor_sku' => $vendor_sku]);     
         
