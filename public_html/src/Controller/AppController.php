@@ -98,7 +98,7 @@ class AppController extends Controller
 		}
 		
 		$header_messages = TableRegistry::get('Messages')->find('all', [
-			'order' => ['Messages.id DESC']
+			'order' => ['Messages.s DESC']
 		])->limit(3);
                 
         
@@ -112,6 +112,7 @@ class AppController extends Controller
 		$this->set('header_messages', $header_messages);
 		$this->set('names', $names);
         // END OF Setting Variables ///////////////////////////////////////////
+        
     }
 	
 	public function isAuthorized() 
