@@ -221,6 +221,7 @@ class WtcrVendorsController extends AppController
                     
                     foreach($existing_prods as $prod) {
                         $product = $prod;
+						error_log("<pre>" . print_r($prod, TRUE) . "</pre>");
                     }
                     
                     
@@ -228,9 +229,9 @@ class WtcrVendorsController extends AppController
                         $product = $products->newEntity();
                         $product->name = $description;
                         $product->wtcr_vendor_id = 0;
-                        $product->vendor_sku = $supplier_sku;
+                        $product->wtcr_vendor_sku = $supplier_sku;
                         $product->wtcr_sku = 'WTCR-' . $supplier_sku;       // Create a VENDOR_SKU -> WTCR_SKU FUNC
-                        $product->vendor_price = $supplier_price;
+                        $product->wvendor_price = $supplier_price;
                         // $product->wtcr_category_id = $category;
                         $product->last_updated = date('Y-m-d H:i:s');
                     } else {
