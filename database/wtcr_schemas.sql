@@ -160,10 +160,10 @@ CREATE TABLE `wtcr_inventory` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `wtcr_sku` varchar(45) DEFAULT NULL,
   `product_name` varchar(45) DEFAULT NULL,
-  `wtcr_category_id` int(11) DEFAULT NULL,
+  `wtcr_product_category_id` int(11) NOT NULL,
   `wtcr_manufacturer_id` int(11) DEFAULT NULL,
   `manufacturer_sku` varchar(45) DEFAULT NULL,
-  `wtcr_vendor_id` int(11) DEFAULT NULL,
+  `wtcr_vendor_id` int(11) NOT NULL,
   `vendor_sku` varchar(45) DEFAULT NULL,
   `vendor_price` float DEFAULT NULL,
   `received_date` datetime DEFAULT NULL,
@@ -191,10 +191,10 @@ DROP TABLE IF EXISTS `wtcr_marketplace_templates`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wtcr_marketplace_templates` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `marketplace_id` varchar(45) NOT NULL,
+  `wtcr_marketplace_id` varchar(45) NOT NULL,
   `template_data` longtext,
-  PRIMARY KEY (`id`,`marketplace_id`),
-  UNIQUE KEY `marketplace_id_UNIQUE` (`marketplace_id`),
+  PRIMARY KEY (`id`,`wtcr_marketplace_id`),
+  UNIQUE KEY `marketplace_id_UNIQUE` (`wtcr_marketplace_id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -364,4 +364,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-05 18:00:35
+-- Dump completed on 2015-04-05 18:05:49
