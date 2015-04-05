@@ -13,16 +13,16 @@
     <h2><?= h($wtcrCompetitorProduct->name) ?></h2>
     <div class="row">
         <div class="large-5 columns strings">
-            <h6 class="subheader"><?= __('Name') ?></h6>
-            <p><?= h($wtcrCompetitorProduct->name) ?></p>
+            <h6 class="subheader"><?= __('Competitor Product Name') ?></h6>
+            <p><?= h($wtcrCompetitorProduct->competitor_product_name) ?></p>
             <h6 class="subheader"><?= __('Wtcr Competitor') ?></h6>
             <p><?= $wtcrCompetitorProduct->has('wtcr_competitor') ? $this->Html->link($wtcrCompetitorProduct->wtcr_competitor->name, ['controller' => 'WtcrCompetitors', 'action' => 'view', $wtcrCompetitorProduct->wtcr_competitor->id]) : '' ?></p>
-            <h6 class="subheader"><?= __('Competitor Sku') ?></h6>
-            <p><?= h($wtcrCompetitorProduct->competitor_sku) ?></p>
-            <h6 class="subheader"><?= __('Wtcr Sku') ?></h6>
-            <p><?= h($wtcrCompetitorProduct->wtcr_sku) ?></p>
-            <h6 class="subheader"><?= __('Url') ?></h6>
-            <p><?= h($wtcrCompetitorProduct->url) ?></p>
+            <h6 class="subheader"><?= __('Wtcr Competitor Sku') ?></h6>
+            <p><?= h($wtcrCompetitorProduct->wtcr_competitor_sku) ?></p>
+            <h6 class="subheader"><?= __('Mfg Part Number') ?></h6>
+            <p><?= h($wtcrCompetitorProduct->mfg_part_number) ?></p>
+            <h6 class="subheader"><?= __('Competitor Url') ?></h6>
+            <p><?= h($wtcrCompetitorProduct->competitor_url) ?></p>
         </div>
         <div class="large-2 columns numbers end">
             <h6 class="subheader"><?= __('Id') ?></h6>

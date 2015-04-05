@@ -40,7 +40,7 @@ class WtcrCurrencyProvidersFixture extends TestFixture
             'id' => 1,
             'currency_provider_name' => 'Lorem ipsum dolor sit amet',
             'wtcr_currencies_id' => 1,
-            'update_freq' => '2015-04-05 07:05:19'
+            'update_freq' => '2015-04-05 22:49:36'
         ],
     ];
 }

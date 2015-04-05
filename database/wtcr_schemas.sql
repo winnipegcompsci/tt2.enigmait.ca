@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `wtcr_competitor_products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wtcr_competitor_products` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `competitor_product_name` varchar(45) DEFAULT NULL,
   `wtcr_competitor_id` int(11) DEFAULT NULL,
   `wtcr_competitor_sku` varchar(45) DEFAULT NULL,
@@ -54,7 +54,7 @@ DROP TABLE IF EXISTS `wtcr_competitors`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wtcr_competitors` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `competitor_name` varchar(45) DEFAULT NULL,
   `update_frequency_hours` int(11) DEFAULT '24',
   PRIMARY KEY (`id`),
@@ -107,7 +107,7 @@ DROP TABLE IF EXISTS `wtcr_currency_provider_rates`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wtcr_currency_provider_rates` (
   `id` int(11) NOT NULL,
-  `wtcr_currencies_id` int(11) DEFAULT NULL,
+  `wtcr_currency_id` int(11) DEFAULT NULL,
   `wtcr_currency_provider_id` int(11) DEFAULT NULL,
   `rate` float DEFAULT NULL,
   `timestamp` datetime DEFAULT NULL,
@@ -282,6 +282,7 @@ CREATE TABLE `wtcr_products` (
   `createnode` int(11) NOT NULL COMMENT '0 if no node, 1 if the product has a node',
   `wtcr_nid` varchar(10) DEFAULT NULL COMMENT 'The NID of the Product on WTCRs Website',
   `lastupdated` datetime NOT NULL COMMENT 'The date/time this product was last updated from supplier',
+  `extra` longtext,
   PRIMARY KEY (`id`,`createnode`,`wtcr_product_category_id`),
   UNIQUE KEY `suppliersku` (`wtcr_vendor_sku`),
   UNIQUE KEY `manufacturersku` (`mfg_part_num`),
@@ -363,4 +364,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-05 17:44:22
+-- Dump completed on 2015-04-05 18:00:35

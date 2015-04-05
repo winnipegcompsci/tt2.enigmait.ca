@@ -15,13 +15,13 @@ class WtcrCompetitorProduct extends Entity
      * @var array
      */
     protected $_accessible = [
-        'name' => true,
+        'competitor_product_name' => true,
         'wtcr_competitor_id' => true,
-        'competitor_sku' => true,
-        'wtcr_sku' => true,
+        'wtcr_competitor_sku' => true,
+        'mfg_part_number' => true,
         'competitor_price' => true,
         'last_updated' => true,
-        'url' => true,
+        'competitor_url' => true,
         'wtcr_competitor' => true,
     ];
 }

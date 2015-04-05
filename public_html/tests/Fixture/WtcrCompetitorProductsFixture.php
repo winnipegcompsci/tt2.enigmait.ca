@@ -18,16 +18,17 @@ class WtcrCompetitorProductsFixture extends TestFixture
     // @codingStandardsIgnoreStart
     public $fields = [
         'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
-        'name' => ['type' => 'string', 'length' => 45, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
+        'competitor_product_name' => ['type' => 'string', 'length' => 45, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
         'wtcr_competitor_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
-        'competitor_sku' => ['type' => 'string', 'length' => 45, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
-        'wtcr_sku' => ['type' => 'string', 'length' => 45, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
+        'wtcr_competitor_sku' => ['type' => 'string', 'length' => 45, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
+        'mfg_part_number' => ['type' => 'string', 'length' => 45, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
         'competitor_price' => ['type' => 'float', 'length' => null, 'precision' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => ''],
         'last_updated' => ['type' => 'datetime', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
-        'url' => ['type' => 'string', 'length' => 45, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
+        'competitor_url' => ['type' => 'string', 'length' => 45, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
             'id_UNIQUE' => ['type' => 'unique', 'columns' => ['id'], 'length' => []],
+            'wtcr_competitor_sku_UNIQUE' => ['type' => 'unique', 'columns' => ['wtcr_competitor_sku'], 'length' => []],
         ],
         '_options' => [
 'engine' => 'MyISAM', 'collation' => 'latin1_swedish_ci'
@@ -43,13 +44,13 @@ class WtcrCompetitorProductsFixture extends TestFixture
     public $records = [
         [
             'id' => 1,
-            'name' => 'Lorem ipsum dolor sit amet',
+            'competitor_product_name' => 'Lorem ipsum dolor sit amet',
             'wtcr_competitor_id' => 1,
-            'competitor_sku' => 'Lorem ipsum dolor sit amet',
-            'wtcr_sku' => 'Lorem ipsum dolor sit amet',
+            'wtcr_competitor_sku' => 'Lorem ipsum dolor sit amet',
+            'mfg_part_number' => 'Lorem ipsum dolor sit amet',
             'competitor_price' => 1,
-            'last_updated' => '2015-03-22 22:01:55',
-            'url' => 'Lorem ipsum dolor sit amet'
+            'last_updated' => '2015-04-05 22:46:59',
+            'competitor_url' => 'Lorem ipsum dolor sit amet'
         ],
     ];
 }

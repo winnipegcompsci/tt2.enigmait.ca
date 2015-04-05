@@ -597,3 +597,58 @@ Stack Trace:
 #13 {main}
 
 
+2015-04-05 22:50:22 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tt2.wtcr_categories' doesn't exist
+Stack Trace:
+#0 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(96): Cake\Database\Schema\Collection->_reflect('Column', 'wtcr_categories', Array, Object(Cake\Database\Schema\Table))
+#1 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(65): Cake\Database\Schema\Collection->describe('wtcr_categories', Array)
+#2 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\ORM\Table.php(365): Cake\Database\Schema\CachedCollection->describe('wtcr_categories')
+#3 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(460): Cake\ORM\Table->schema()
+#4 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(275): Bake\Shell\Task\ViewTask->_associations(Object(App\Model\Table\WtcrInventoryTable))
+#5 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(139): Bake\Shell\Task\ViewTask->_loadController()
+#6 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\BakeShell.php(229): Bake\Shell\Task\ViewTask->main('WtcrInventory')
+#7 [internal function]: Bake\Shell\BakeShell->all('wtcr_inventory')
+#8 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\Shell.php(376): call_user_func_array(Array, Array)
+#9 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(200): Cake\Console\Shell->runCommand(Array, true)
+#10 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(171): Cake\Console\ShellDispatcher->_dispatch()
+#11 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(122): Cake\Console\ShellDispatcher->dispatch()
+#12 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\bin\cake.php(20): Cake\Console\ShellDispatcher::run(Array)
+#13 {main}
+
+
+2015-04-05 22:51:08 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tt2.marketplaces' doesn't exist
+Stack Trace:
+#0 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(96): Cake\Database\Schema\Collection->_reflect('Column', 'marketplaces', Array, Object(Cake\Database\Schema\Table))
+#1 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(65): Cake\Database\Schema\Collection->describe('marketplaces', Array)
+#2 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\ORM\Table.php(365): Cake\Database\Schema\CachedCollection->describe('marketplaces')
+#3 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\ORM\Table.php(441): Cake\ORM\Table->schema()
+#4 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(455): Cake\ORM\Table->primaryKey()
+#5 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(275): Bake\Shell\Task\ViewTask->_associations(Object(App\Model\Table\WtcrMarketplaceTemplatesTable))
+#6 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(139): Bake\Shell\Task\ViewTask->_loadController()
+#7 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\BakeShell.php(229): Bake\Shell\Task\ViewTask->main('WtcrMarketplace...')
+#8 [internal function]: Bake\Shell\BakeShell->all('wtcr_marketplac...')
+#9 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\Shell.php(376): call_user_func_array(Array, Array)
+#10 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(200): Cake\Console\Shell->runCommand(Array, true)
+#11 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(171): Cake\Console\ShellDispatcher->_dispatch()
+#12 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(122): Cake\Console\ShellDispatcher->dispatch()
+#13 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\bin\cake.php(20): Cake\Console\ShellDispatcher::run(Array)
+#14 {main}
+
+
+2015-04-05 22:52:01 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tt2.wtcr_product_map' doesn't exist
+Stack Trace:
+#0 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(96): Cake\Database\Schema\Collection->_reflect('Column', 'wtcr_product_ma...', Array, Object(Cake\Database\Schema\Table))
+#1 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(65): Cake\Database\Schema\Collection->describe('wtcr_product_ma...', Array)
+#2 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\ORM\Table.php(365): Cake\Database\Schema\CachedCollection->describe('wtcr_product_ma...')
+#3 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(460): Cake\ORM\Table->schema()
+#4 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(275): Bake\Shell\Task\ViewTask->_associations(Object(App\Model\Table\WtcrProductCategoriesTable))
+#5 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(139): Bake\Shell\Task\ViewTask->_loadController()
+#6 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\BakeShell.php(229): Bake\Shell\Task\ViewTask->main('WtcrProductCate...')
+#7 [internal function]: Bake\Shell\BakeShell->all('wtcr_product_ca...')
+#8 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\Shell.php(376): call_user_func_array(Array, Array)
+#9 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(200): Cake\Console\Shell->runCommand(Array, true)
+#10 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(171): Cake\Console\ShellDispatcher->_dispatch()
+#11 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(122): Cake\Console\ShellDispatcher->dispatch()
+#12 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\bin\cake.php(20): Cake\Console\ShellDispatcher::run(Array)
+#13 {main}
+
+

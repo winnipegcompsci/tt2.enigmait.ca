@@ -40,16 +40,16 @@ class WtcrCompetitorProductsTable extends Table
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('id', 'create')
-            ->allowEmpty('name')
+            ->allowEmpty('competitor_product_name')
             ->add('wtcr_competitor_id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('wtcr_competitor_id')
-            ->allowEmpty('competitor_sku')
-            ->allowEmpty('wtcr_sku')
+            ->allowEmpty('wtcr_competitor_sku')
+            ->allowEmpty('mfg_part_number')
             ->add('competitor_price', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('competitor_price')
             ->add('last_updated', 'valid', ['rule' => 'datetime'])
             ->allowEmpty('last_updated')
-            ->allowEmpty('url');
+            ->allowEmpty('competitor_url');
 
         return $validator;
     }

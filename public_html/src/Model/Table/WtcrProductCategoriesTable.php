@@ -24,7 +24,7 @@ class WtcrProductCategoriesTable extends Table
         $this->table('wtcr_product_categories');
         $this->displayField('id');
         $this->primaryKey('id');
-        $this->hasMany('WtcrProductMap', [
+        $this->hasMany('WtcrProducts', [
             'foreignKey' => 'wtcr_product_category_id'
         ]);
         $this->hasMany('WtcrVendorProducts', [

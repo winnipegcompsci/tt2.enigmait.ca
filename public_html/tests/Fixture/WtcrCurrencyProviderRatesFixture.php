@@ -42,7 +42,7 @@ class WtcrCurrencyProviderRatesFixture extends TestFixture
             'wtcr_currencies_id' => 1,
             'wtcr_currency_provider_id' => 1,
             'rate' => 1,
-            'timestamp' => '2015-03-22 22:02:21'
+            'timestamp' => '2015-04-05 22:49:01'
         ],
     ];
 }

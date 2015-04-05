@@ -11,13 +11,13 @@
     <fieldset>
         <legend><?= __('Add Wtcr Competitor Product') ?></legend>
         <?php
-            echo $this->Form->input('name');
+            echo $this->Form->input('competitor_product_name');
             echo $this->Form->input('wtcr_competitor_id', ['options' => $wtcrCompetitors, 'empty' => true]);
-            echo $this->Form->input('competitor_sku');
-            echo $this->Form->input('wtcr_sku');
+            echo $this->Form->input('wtcr_competitor_sku');
+            echo $this->Form->input('mfg_part_number');
             echo $this->Form->input('competitor_price');
             echo $this->Form->input('last_updated');
-            echo $this->Form->input('url');
+            echo $this->Form->input('competitor_url');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

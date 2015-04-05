@@ -7,14 +7,14 @@
     </ul>
 </div>
 <div class="wtcrCompetitorProducts index col-lg-10 col-md-9 columns">
-    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
+    <table cellpadding="0" cellspacing="0">
     <thead>
         <tr>
             <th><?= $this->Paginator->sort('id') ?></th>
-            <th><?= $this->Paginator->sort('name') ?></th>
+            <th><?= $this->Paginator->sort('competitor_product_name') ?></th>
             <th><?= $this->Paginator->sort('wtcr_competitor_id') ?></th>
-            <th><?= $this->Paginator->sort('competitor_sku') ?></th>
-            <th><?= $this->Paginator->sort('wtcr_sku') ?></th>
+            <th><?= $this->Paginator->sort('wtcr_competitor_sku') ?></th>
+            <th><?= $this->Paginator->sort('mfg_part_number') ?></th>
             <th><?= $this->Paginator->sort('competitor_price') ?></th>
             <th><?= $this->Paginator->sort('last_updated') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
@@ -24,12 +24,12 @@
     <?php foreach ($wtcrCompetitorProducts as $wtcrCompetitorProduct): ?>
         <tr>
             <td><?= $this->Number->format($wtcrCompetitorProduct->id) ?></td>
-            <td><?= h($wtcrCompetitorProduct->name) ?></td>
+            <td><?= h($wtcrCompetitorProduct->competitor_product_name) ?></td>
             <td>
                 <?= $wtcrCompetitorProduct->has('wtcr_competitor') ? $this->Html->link($wtcrCompetitorProduct->wtcr_competitor->name, ['controller' => 'WtcrCompetitors', 'action' => 'view', $wtcrCompetitorProduct->wtcr_competitor->id]) : '' ?>
             </td>
-            <td><?= h($wtcrCompetitorProduct->competitor_sku) ?></td>
-            <td><?= h($wtcrCompetitorProduct->wtcr_sku) ?></td>
+            <td><?= h($wtcrCompetitorProduct->wtcr_competitor_sku) ?></td>
+            <td><?= h($wtcrCompetitorProduct->mfg_part_number) ?></td>
             <td><?= $this->Number->format($wtcrCompetitorProduct->competitor_price) ?></td>
             <td><?= h($wtcrCompetitorProduct->last_updated) ?></td>
             <td class="actions">
