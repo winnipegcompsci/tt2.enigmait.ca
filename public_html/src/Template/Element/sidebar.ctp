@@ -153,7 +153,7 @@
                                     <a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'under_construction']); ?>"><i class="fa fa-bar-chart-o fa-fw"></i>&nbsp;Reports</a>
                                 </li>
 								<li>
-									<a href="#"><i class="fa fa-cog fa-fw"></i>&nbsp;Settings<span class="fa arrow"></span></a>
+									<a href="settings"><i class="fa fa-cog fa-fw"></i>&nbsp;Settings<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
                                             <a href="<?php echo $this->Url->build(['controller' => 'WtcrProducts', 'action' => 'index']); ?>/">&nbsp; Product Categories</a>

@@ -196,7 +196,8 @@ class WtcrVendorsController extends AppController
             $category = "";
             $products = TableRegistry::get('wtcr_vendor_products');
                                 
-            foreach(preg_split("/((\r?\n)|(\r\n?))/", $downloaded_file) as $line) {               
+            foreach(preg_split("/((\r?\n)|(\r\n?))/", $downloaded_file) as $line) {
+				error_log('FOUND LINE: ' . $line);
                 $parts = explode(",", $line, 6);
                 
                 if( isset($parts[0]) && !isset($parts[1]) ) {
