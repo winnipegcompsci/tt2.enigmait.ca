@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `tt2` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `tt2`;
--- MySQL dump 10.13  Distrib 5.6.13, for Win32 (x86)
+-- MySQL dump 10.13  Distrib 5.6.17, for Win32 (x86)
 --
--- Host: localhost    Database: tt2
+-- Host: 127.0.0.1    Database: tt2
 -- ------------------------------------------------------
--- Server version	5.6.17-log
+-- Server version	5.6.21
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,7 @@ DROP TABLE IF EXISTS `addresses`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `addresses` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
+  `address_name` varchar(100) NOT NULL,
   `address` varchar(500) NOT NULL DEFAULT ' ',
   `postal_code` varchar(25) NOT NULL,
   `city` varchar(75) NOT NULL,
@@ -95,9 +95,9 @@ DROP TABLE IF EXISTS `billing_plans`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `billing_plans` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL,
+  `billing_plan_name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `plan_number` (`name`),
+  UNIQUE KEY `plan_number` (`billing_plan_name`),
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -171,11 +171,11 @@ DROP TABLE IF EXISTS `contact_types`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `contact_types` (
-  `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `contact_type_name` varchar(50) NOT NULL,
   `order` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1018,31 +1018,6 @@ LOCK TABLES `users` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `wtcr_categories`
---
-
-DROP TABLE IF EXISTS `wtcr_categories`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `wtcr_categories` (
-  `id` int(11) NOT NULL,
-  `name` varchar(45) DEFAULT NULL,
-  `default_markup` float DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `wtcr_categories`
---
-
-LOCK TABLES `wtcr_categories` WRITE;
-/*!40000 ALTER TABLE `wtcr_categories` DISABLE KEYS */;
-/*!40000 ALTER TABLE `wtcr_categories` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `wtcr_competitor_products`
 --
 
@@ -1051,10 +1026,10 @@ DROP TABLE IF EXISTS `wtcr_competitor_products`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wtcr_competitor_products` (
   `id` int(11) NOT NULL,
-  `name` varchar(45) DEFAULT NULL,
+  `competitor_product_name` varchar(45) DEFAULT NULL,
   `wtcr_competitor_id` int(11) DEFAULT NULL,
   `competitor_sku` varchar(45) DEFAULT NULL,
-  `wtcr_sku` varchar(45) DEFAULT NULL,
+  `manufactuer_part_number` varchar(45) DEFAULT NULL,
   `competitor_price` float DEFAULT NULL,
   `last_updated` datetime DEFAULT NULL,
   `url` varchar(45) DEFAULT NULL,
@@ -1081,11 +1056,11 @@ DROP TABLE IF EXISTS `wtcr_competitors`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wtcr_competitors` (
   `id` int(11) NOT NULL,
-  `name` varchar(45) DEFAULT NULL,
+  `competitor_name` varchar(45) DEFAULT NULL,
   `update_frequency_hours` int(11) DEFAULT '24',
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
-  UNIQUE KEY `name_UNIQUE` (`name`)
+  UNIQUE KEY `name_UNIQUE` (`competitor_name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1176,30 +1151,6 @@ LOCK TABLES `wtcr_currency_providers` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `wtcr_manufacturers`
---
-
-DROP TABLE IF EXISTS `wtcr_manufacturers`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `wtcr_manufacturers` (
-  `id` int(11) NOT NULL,
-  `name` varchar(45) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name_UNIQUE` (`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `wtcr_manufacturers`
---
-
-LOCK TABLES `wtcr_manufacturers` WRITE;
-/*!40000 ALTER TABLE `wtcr_manufacturers` DISABLE KEYS */;
-/*!40000 ALTER TABLE `wtcr_manufacturers` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `wtcr_marketplace_templates`
 --
 
@@ -1234,10 +1185,10 @@ DROP TABLE IF EXISTS `wtcr_marketplaces`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wtcr_marketplaces` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `marketplace` varchar(45) NOT NULL,
+  `marketplace_name` varchar(45) NOT NULL,
   `wtcr_sales_vehicle_template_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `name_UNIQUE` (`marketplace`),
+  UNIQUE KEY `name_UNIQUE` (`marketplace_name`),
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1252,6 +1203,31 @@ LOCK TABLES `wtcr_marketplaces` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `wtcr_product_categories`
+--
+
+DROP TABLE IF EXISTS `wtcr_product_categories`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `wtcr_product_categories` (
+  `id` int(11) NOT NULL,
+  `category_name` varchar(45) DEFAULT NULL,
+  `default_markup` float DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `wtcr_product_categories`
+--
+
+LOCK TABLES `wtcr_product_categories` WRITE;
+/*!40000 ALTER TABLE `wtcr_product_categories` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wtcr_product_categories` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `wtcr_product_map`
 --
 
@@ -1260,25 +1236,24 @@ DROP TABLE IF EXISTS `wtcr_product_map`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wtcr_product_map` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'A unique ID for the product',
-  `supplier` varchar(40) NOT NULL COMMENT 'The Supplier that offers the product',
-  `category` varchar(100) NOT NULL COMMENT 'The category the product falls in',
-  `manufacturersku` varchar(40) NOT NULL COMMENT 'Part # The Manufacturer Uses',
-  `suppliersku` varchar(40) NOT NULL COMMENT 'The SKU used by the supplier to identify the product',
+  `wtcr_vendor_id` int(11) NOT NULL COMMENT 'The Supplier that offers the product',
+  `mfg_part_num` varchar(40) NOT NULL COMMENT 'Part # The Manufacturer Uses',
+  `wtcrsku` varchar(40) DEFAULT NULL COMMENT 'The SKU used by WTCR to identify the product',
+  `wtcr_product_category_id` int(11) NOT NULL COMMENT 'The category the product falls in',
   `description` varchar(500) DEFAULT NULL COMMENT 'A description of the product',
-  `supplierprice` varchar(40) NOT NULL COMMENT 'The Price the Supplier Charges',
+  `wtcr_vendor_sku` varchar(40) NOT NULL COMMENT 'The SKU used by the supplier to identify the product',
   `supplierstock` varchar(40) NOT NULL COMMENT 'The product stock the supplier has advertised',
   `autoupdate` int(11) NOT NULL COMMENT '1 if Product Should Auto Update Price, 0 otherwise.',
   `suggestedprice` varchar(40) DEFAULT NULL COMMENT 'The Price Suggested based on Current Markup',
   `suggestedmarkup` varchar(40) DEFAULT NULL COMMENT 'The Suggested Markup Percentage for a Product',
-  `wtcrsku` varchar(40) DEFAULT NULL COMMENT 'The SKU used by WTCR to identify the product',
   `wtcrprice` varchar(40) DEFAULT NULL COMMENT 'The Price WTCR Charges',
   `createnode` int(11) NOT NULL COMMENT '0 if no node, 1 if the product has a node',
-  `nid` varchar(10) DEFAULT NULL COMMENT 'The NID of the Product on WTCRs Website',
+  `wtcr_nid` varchar(10) DEFAULT NULL COMMENT 'The NID of the Product on WTCRs Website',
   `lastupdated` datetime NOT NULL COMMENT 'The date/time this product was last updated from supplier',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `suppliersku` (`suppliersku`),
-  UNIQUE KEY `manufacturersku` (`manufacturersku`),
-  UNIQUE KEY `nid` (`nid`)
+  PRIMARY KEY (`id`,`createnode`,`wtcr_product_category_id`),
+  UNIQUE KEY `suppliersku` (`wtcr_vendor_sku`),
+  UNIQUE KEY `manufacturersku` (`mfg_part_num`),
+  UNIQUE KEY `nid` (`wtcr_nid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9695 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1300,13 +1275,13 @@ DROP TABLE IF EXISTS `wtcr_vendor_products`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wtcr_vendor_products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) DEFAULT NULL,
+  `product_name` varchar(45) DEFAULT NULL,
   `wtcr_vendor_id` int(11) DEFAULT NULL,
-  `vendor_sku` varchar(45) DEFAULT NULL,
-  `wtcr_sku` varchar(45) DEFAULT NULL,
+  `wtcr_vendor_sku` varchar(45) DEFAULT NULL,
+  `mfg_part_num` varchar(45) DEFAULT NULL,
   `vendor_price` float DEFAULT NULL,
   `wtcr_category_id` int(11) DEFAULT NULL,
-  `last_updated` datetime DEFAULT NULL,
+  `last_updated` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -1330,11 +1305,11 @@ DROP TABLE IF EXISTS `wtcr_vendors`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wtcr_vendors` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) DEFAULT NULL,
+  `vendor_name` varchar(45) DEFAULT NULL,
   `update_freq_hours` int(11) DEFAULT '24',
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
-  UNIQUE KEY `name_UNIQUE` (`name`)
+  UNIQUE KEY `name_UNIQUE` (`vendor_name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1356,4 +1331,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-02 13:26:33
+-- Dump completed on 2015-04-04 20:43:06
