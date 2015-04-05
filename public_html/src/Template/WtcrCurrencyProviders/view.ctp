@@ -71,7 +71,7 @@
     <table cellpadding="0" cellspacing="0">
         <tr>
             <th><?= __('Id') ?></th>
-            <th><?= __('Wtcr Currencies Id') ?></th>
+            <th><?= __('Wtcr Currency Id') ?></th>
             <th><?= __('Wtcr Currency Provider Id') ?></th>
             <th><?= __('Rate') ?></th>
             <th><?= __('Timestamp') ?></th>
@@ -80,7 +80,7 @@
         <?php foreach ($wtcrCurrencyProvider->wtcr_currency_provider_rates as $wtcrCurrencyProviderRates): ?>
         <tr>
             <td><?= h($wtcrCurrencyProviderRates->id) ?></td>
-            <td><?= h($wtcrCurrencyProviderRates->wtcr_currencies_id) ?></td>
+            <td><?= h($wtcrCurrencyProviderRates->wtcr_currency_id) ?></td>
             <td><?= h($wtcrCurrencyProviderRates->wtcr_currency_provider_id) ?></td>
             <td><?= h($wtcrCurrencyProviderRates->rate) ?></td>
             <td><?= h($wtcrCurrencyProviderRates->timestamp) ?></td>

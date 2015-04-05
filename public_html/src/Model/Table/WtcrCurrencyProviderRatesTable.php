@@ -25,7 +25,7 @@ class WtcrCurrencyProviderRatesTable extends Table
         $this->displayField('id');
         $this->primaryKey('id');
         $this->belongsTo('WtcrCurrencies', [
-            'foreignKey' => 'wtcr_currencies_id'
+            'foreignKey' => 'wtcr_currency_id'
         ]);
         $this->belongsTo('WtcrCurrencyProviders', [
             'foreignKey' => 'wtcr_currency_provider_id'
@@ -43,8 +43,8 @@ class WtcrCurrencyProviderRatesTable extends Table
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('id', 'create')
-            ->add('wtcr_currencies_id', 'valid', ['rule' => 'numeric'])
-            ->allowEmpty('wtcr_currencies_id')
+            ->add('wtcr_currency_id', 'valid', ['rule' => 'numeric'])
+            ->allowEmpty('wtcr_currency_id')
             ->add('wtcr_currency_provider_id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('wtcr_currency_provider_id')
             ->add('rate', 'valid', ['rule' => 'numeric'])
@@ -64,7 +64,7 @@ class WtcrCurrencyProviderRatesTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['wtcr_currencies_id'], 'WtcrCurrencies'));
+        $rules->add($rules->existsIn(['wtcr_currency_id'], 'WtcrCurrencies'));
         $rules->add($rules->existsIn(['wtcr_currency_provider_id'], 'WtcrCurrencyProviders'));
         return $rules;
     }

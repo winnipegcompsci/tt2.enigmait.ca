@@ -15,6 +15,7 @@ class WtcrMarketplaceTemplate extends Entity
      * @var array
      */
     protected $_accessible = [
+        'wtcr_marketplace_id' => true,
         'template_data' => true,
         'marketplace' => true,
     ];

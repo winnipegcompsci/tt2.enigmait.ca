@@ -13,7 +13,7 @@
     <thead>
         <tr>
             <th><?= $this->Paginator->sort('id') ?></th>
-            <th><?= $this->Paginator->sort('wtcr_currencies_id') ?></th>
+            <th><?= $this->Paginator->sort('wtcr_currency_id') ?></th>
             <th><?= $this->Paginator->sort('wtcr_currency_provider_id') ?></th>
             <th><?= $this->Paginator->sort('rate') ?></th>
             <th><?= $this->Paginator->sort('timestamp') ?></th>
@@ -24,9 +24,7 @@
     <?php foreach ($wtcrCurrencyProviderRates as $wtcrCurrencyProviderRate): ?>
         <tr>
             <td><?= $this->Number->format($wtcrCurrencyProviderRate->id) ?></td>
-            <td>
-                <?= $wtcrCurrencyProviderRate->has('wtcr_currency') ? $this->Html->link($wtcrCurrencyProviderRate->wtcr_currency->name, ['controller' => 'WtcrCurrencies', 'action' => 'view', $wtcrCurrencyProviderRate->wtcr_currency->id]) : '' ?>
-            </td>
+            <td><?= $this->Number->format($wtcrCurrencyProviderRate->wtcr_currency_id) ?></td>
             <td>
                 <?= $wtcrCurrencyProviderRate->has('wtcr_currency_provider') ? $this->Html->link($wtcrCurrencyProviderRate->wtcr_currency_provider->name, ['controller' => 'WtcrCurrencyProviders', 'action' => 'view', $wtcrCurrencyProviderRate->wtcr_currency_provider->id]) : '' ?>
             </td>

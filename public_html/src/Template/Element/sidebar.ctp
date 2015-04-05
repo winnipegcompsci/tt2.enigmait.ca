@@ -97,13 +97,13 @@
 									<a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'under_construction']);?>"><i class="fa fa-dollar fa-fw"></i>&nbsp;In-Store POS</a>
 								</li>
                                 <li>
-                                    <a href="<?php echo $this->Url->build(['controller' => 'Inventory', 'action' => 'index']); ?>"><i class="fa fa-list-alt fa-fw"></i>&nbsp;Inventory <span class="fa arrow"></span></a>
+                                    <a href="<?php echo $this->Url->build(['controller' => 'WtcrInventory', 'action' => 'index']); ?>"><i class="fa fa-list-alt fa-fw"></i>&nbsp;Inventory <span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
-                                            <a href="<?php echo $this->Url->build(['controller' => 'Inventory', 'action' => 'find_product']); ?>">Find Product </a>
+                                            <a href="<?php echo $this->Url->build(['controller' => 'WtcrInventory', 'action' => 'index']); ?>">Find Product </a>
                                         </li>
                                         <li>
-                                            <a href="<?php echo $this->Url->build(['controller' => 'Inventory', 'action' => 'receive_products']); ?>">Receive Products </a>
+                                            <a href="<?php echo $this->Url->build(['controller' => 'WtcrInventory', 'action' => 'receive_products']); ?>">Receive Products </a>
                                         </li>
                                     </ul>
                                 </li>
@@ -150,7 +150,7 @@
 									<a href="#"><i class="fa fa-cog fa-fw"></i>&nbsp;Settings<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
-                                            <a href="<?php echo $this->Url->build(['controller' => 'WtcrCategories', 'action' => 'index']); ?>/">&nbsp; Product Categories</a>
+                                            <a href="<?php echo $this->Url->build(['controller' => 'WtcrProducts', 'action' => 'index']); ?>/">&nbsp; Product Categories</a>
                                         </li>
 										<li>
                                             <a href="<?php echo $this->Url->build(['controller' => 'WtcrVendors', 'action' => 'index']); ?>/">&nbsp; WTCR Vendors</a>
@@ -165,10 +165,7 @@
                                             <a href="<?php echo $this->Url->build(['controller' => 'WtcrCurrencyProviders', 'action' => 'index']); ?>/">&nbsp; Currency Data Providers</a>
                                         </li>
 										<li>
-                                            <a href="<?php echo $this->Url->build(['controller' => 'WtcrManufacturers', 'action' => 'index']); ?>/">&nbsp; Manufacturers</a>
-                                        </li>
-										<li>
-                                            <a href="<?php echo $this->Url->build(['controller' => 'WtcrSalesVehicles', 'action' => 'index']); ?>/">&nbsp; Sales Vehicles</a>
+                                            <a href="<?php echo $this->Url->build(['controller' => 'WtcrMarketplaces', 'action' => 'index']); ?>/">&nbsp; Sales Vehicles</a>
                                         </li>
                                     </ul>
 								</li>

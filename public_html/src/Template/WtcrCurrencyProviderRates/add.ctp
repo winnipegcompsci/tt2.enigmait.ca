@@ -13,7 +13,7 @@
     <fieldset>
         <legend><?= __('Add Wtcr Currency Provider Rate') ?></legend>
         <?php
-            echo $this->Form->input('wtcr_currencies_id', ['options' => $wtcrCurrencies, 'empty' => true]);
+            echo $this->Form->input('wtcr_currency_id');
             echo $this->Form->input('wtcr_currency_provider_id', ['options' => $wtcrCurrencyProviders, 'empty' => true]);
             echo $this->Form->input('rate');
             echo $this->Form->input('timestamp');

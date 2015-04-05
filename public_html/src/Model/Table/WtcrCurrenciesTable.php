@@ -27,6 +27,9 @@ class WtcrCurrenciesTable extends Table
         $this->belongsTo('WtcrCurrencyProviders', [
             'foreignKey' => 'wtcr_currency_provider_id'
         ]);
+        $this->hasMany('WtcrCurrencyProviderRates', [
+            'foreignKey' => 'wtcr_currency_id'
+        ]);
     }
 
     /**

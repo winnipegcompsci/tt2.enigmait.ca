@@ -18,7 +18,7 @@ class WtcrCurrencyProviderRatesFixture extends TestFixture
     // @codingStandardsIgnoreStart
     public $fields = [
         'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
-        'wtcr_currencies_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'wtcr_currency_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'wtcr_currency_provider_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'rate' => ['type' => 'float', 'length' => null, 'precision' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => ''],
         'timestamp' => ['type' => 'datetime', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
@@ -39,10 +39,10 @@ class WtcrCurrencyProviderRatesFixture extends TestFixture
     public $records = [
         [
             'id' => 1,
-            'wtcr_currencies_id' => 1,
+            'wtcr_currency_id' => 1,
             'wtcr_currency_provider_id' => 1,
             'rate' => 1,
-            'timestamp' => '2015-04-05 22:49:01'
+            'timestamp' => '2015-04-05 23:13:27'
         ],
     ];
 }

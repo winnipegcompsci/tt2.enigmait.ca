@@ -24,8 +24,8 @@ class WtcrMarketplaceTemplatesTable extends Table
         $this->table('wtcr_marketplace_templates');
         $this->displayField('id');
         $this->primaryKey(['id', 'marketplace_id']);
-        $this->belongsTo('Marketplaces', [
-            'foreignKey' => 'marketplace_id'
+        $this->belongsTo('WtcrMarketplaces', [
+            'foreignKey' => 'wtcr_marketplace_id'
         ]);
     }
 
@@ -40,7 +40,7 @@ class WtcrMarketplaceTemplatesTable extends Table
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('id', 'create')
-            ->allowEmpty('marketplace_id', 'create')
+            ->allowEmpty('wtcr_marketplace_id', 'create')
             ->allowEmpty('template_data');
 
         return $validator;
@@ -55,7 +55,7 @@ class WtcrMarketplaceTemplatesTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['marketplace_id'], 'Marketplaces'));
+        $rules->add($rules->existsIn(['wtcr_marketplace_id'], 'WtcrMarketplaces'));
         return $rules;
     }
 }

@@ -17,7 +17,7 @@ class WtcrCompetitorProductsFixture extends TestFixture
      */
     // @codingStandardsIgnoreStart
     public $fields = [
-        'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
         'competitor_product_name' => ['type' => 'string', 'length' => 45, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
         'wtcr_competitor_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'wtcr_competitor_sku' => ['type' => 'string', 'length' => 45, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
@@ -49,7 +49,7 @@ class WtcrCompetitorProductsFixture extends TestFixture
             'wtcr_competitor_sku' => 'Lorem ipsum dolor sit amet',
             'mfg_part_number' => 'Lorem ipsum dolor sit amet',
             'competitor_price' => 1,
-            'last_updated' => '2015-04-05 22:46:59',
+            'last_updated' => '2015-04-05 23:07:26',
             'competitor_url' => 'Lorem ipsum dolor sit amet'
         ],
     ];

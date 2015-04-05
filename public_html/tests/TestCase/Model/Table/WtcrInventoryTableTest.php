@@ -18,13 +18,14 @@ class WtcrInventoryTableTest extends TestCase
      */
     public $fixtures = [
         'WtcrInventory' => 'app.wtcr_inventory',
-        'WtcrCategories' => 'app.wtcr_categories',
-        'Inventory' => 'app.inventory',
-        'WtcrManufacturers' => 'app.wtcr_manufacturers',
-        'WtcrVendors' => 'app.wtcr_vendors',
-        'WtcrProductMap' => 'app.wtcr_product_map',
         'WtcrProductCategories' => 'app.wtcr_product_categories',
-        'WtcrVendorProducts' => 'app.wtcr_vendor_products'
+        'WtcrProducts' => 'app.wtcr_products',
+        'WtcrVendorProducts' => 'app.wtcr_vendor_products',
+        'WtcrVendors' => 'app.wtcr_vendors',
+        'Inventory' => 'app.inventory',
+        'WtcrCategories' => 'app.wtcr_categories',
+        'WtcrManufacturers' => 'app.wtcr_manufacturers',
+        'WtcrProductMap' => 'app.wtcr_product_map'
     ];
 
     /**

@@ -17,7 +17,7 @@ class WtcrCompetitorsFixture extends TestFixture
      */
     // @codingStandardsIgnoreStart
     public $fields = [
-        'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
         'competitor_name' => ['type' => 'string', 'length' => 45, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
         'update_frequency_hours' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => true, 'default' => '24', 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         '_constraints' => [
