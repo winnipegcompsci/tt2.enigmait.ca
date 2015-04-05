@@ -215,7 +215,7 @@ class WtcrVendorsController extends AppController
                     $product = $products->newEntity();
                     
                     $existing_prods = $products->find()
-                        ->where(['vendor_sku' => $supplier_sku])
+                        ->where(['wtcr_vendor_sku' => $supplier_sku])
                         ->toArray();
                     
                     foreach($existing_prods as $prod) {
