@@ -19,7 +19,7 @@
     <fieldset>
         <legend><?= __('Edit Wtcr Currency Provider') ?></legend>
         <?php
-            echo $this->Form->input('name');
+            echo $this->Form->input('currency_provider_name');
             echo $this->Form->input('wtcr_currencies_id');
             echo $this->Form->input('update_freq');
         ?>

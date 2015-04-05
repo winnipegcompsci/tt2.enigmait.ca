@@ -11,7 +11,7 @@
     <fieldset>
         <legend><?= __('Add Wtcr Competitor') ?></legend>
         <?php
-            echo $this->Form->input('name');
+            echo $this->Form->input('competitor_name');
             echo $this->Form->input('update_frequency_hours');
         ?>
     </fieldset>

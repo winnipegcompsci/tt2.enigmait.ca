@@ -10,8 +10,8 @@
         <li><?= $this->Html->link(__('List Wtcr Vendor Products'), ['action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('List Wtcr Vendors'), ['controller' => 'WtcrVendors', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Wtcr Vendor'), ['controller' => 'WtcrVendors', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Wtcr Categories'), ['controller' => 'WtcrCategories', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Wtcr Category'), ['controller' => 'WtcrCategories', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Wtcr Product Categories'), ['controller' => 'WtcrProductCategories', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Wtcr Product Category'), ['controller' => 'WtcrProductCategories', 'action' => 'add']) ?> </li>
     </ul>
 </div>
 <div class="wtcrVendorProducts form col-lg-10 col-md-9 columns">
@@ -19,12 +19,12 @@
     <fieldset>
         <legend><?= __('Edit Wtcr Vendor Product') ?></legend>
         <?php
-            echo $this->Form->input('name');
+            echo $this->Form->input('product_name');
             echo $this->Form->input('wtcr_vendor_id', ['options' => $wtcrVendors, 'empty' => true]);
-            echo $this->Form->input('vendor_sku');
-            echo $this->Form->input('wtcr_sku');
+            echo $this->Form->input('wtcr_vendor_sku');
+            echo $this->Form->input('mfg_part_num');
             echo $this->Form->input('vendor_price');
-            echo $this->Form->input('wtcr_category_id', ['options' => $wtcrCategories, 'empty' => true]);
+            echo $this->Form->input('wtcr_product_category_id', ['options' => $wtcrProductCategories, 'empty' => true]);
             echo $this->Form->input('last_updated');
         ?>
     </fieldset>

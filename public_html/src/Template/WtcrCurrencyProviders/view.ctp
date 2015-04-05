@@ -15,8 +15,8 @@
     <h2><?= h($wtcrCurrencyProvider->name) ?></h2>
     <div class="row">
         <div class="large-5 columns strings">
-            <h6 class="subheader"><?= __('Name') ?></h6>
-            <p><?= h($wtcrCurrencyProvider->name) ?></p>
+            <h6 class="subheader"><?= __('Currency Provider Name') ?></h6>
+            <p><?= h($wtcrCurrencyProvider->currency_provider_name) ?></p>
         </div>
         <div class="large-2 columns numbers end">
             <h6 class="subheader"><?= __('Id') ?></h6>
@@ -34,10 +34,10 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related WtcrCurrencies') ?></h4>
     <?php if (!empty($wtcrCurrencyProvider->wtcr_currencies)): ?>
-    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
+    <table cellpadding="0" cellspacing="0">
         <tr>
             <th><?= __('Id') ?></th>
-            <th><?= __('Name') ?></th>
+            <th><?= __('Currency Name') ?></th>
             <th><?= __('Wtcr Currency Provider Id') ?></th>
             <th><?= __('Abbreviation') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
@@ -45,7 +45,7 @@
         <?php foreach ($wtcrCurrencyProvider->wtcr_currencies as $wtcrCurrencies): ?>
         <tr>
             <td><?= h($wtcrCurrencies->id) ?></td>
-            <td><?= h($wtcrCurrencies->name) ?></td>
+            <td><?= h($wtcrCurrencies->currency_name) ?></td>
             <td><?= h($wtcrCurrencies->wtcr_currency_provider_id) ?></td>
             <td><?= h($wtcrCurrencies->abbreviation) ?></td>
 
@@ -68,7 +68,7 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related WtcrCurrencyProviderRates') ?></h4>
     <?php if (!empty($wtcrCurrencyProvider->wtcr_currency_provider_rates)): ?>
-    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
+    <table cellpadding="0" cellspacing="0">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Wtcr Currencies Id') ?></th>

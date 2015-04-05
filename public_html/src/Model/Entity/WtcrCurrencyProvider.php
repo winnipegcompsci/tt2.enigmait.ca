@@ -15,7 +15,7 @@ class WtcrCurrencyProvider extends Entity
      * @var array
      */
     protected $_accessible = [
-        'name' => true,
+        'currency_provider_name' => true,
         'wtcr_currencies_id' => true,
         'update_freq' => true,
         'wtcr_currencies' => true,

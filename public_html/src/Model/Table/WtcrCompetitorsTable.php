@@ -40,7 +40,7 @@ class WtcrCompetitorsTable extends Table
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('id', 'create')
-            ->allowEmpty('name')
+            ->allowEmpty('competitor_name')
             ->add('update_frequency_hours', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('update_frequency_hours');
 

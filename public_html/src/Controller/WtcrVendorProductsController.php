@@ -19,7 +19,7 @@ class WtcrVendorProductsController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['WtcrVendors', 'WtcrCategories']
+            'contain' => ['WtcrVendors', 'WtcrProductCategories']
         ];
         $this->set('wtcrVendorProducts', $this->paginate($this->WtcrVendorProducts));
         $this->set('_serialize', ['wtcrVendorProducts']);
@@ -35,7 +35,7 @@ class WtcrVendorProductsController extends AppController
     public function view($id = null)
     {
         $wtcrVendorProduct = $this->WtcrVendorProducts->get($id, [
-            'contain' => ['WtcrVendors', 'WtcrCategories']
+            'contain' => ['WtcrVendors', 'WtcrProductCategories']
         ]);
         $this->set('wtcrVendorProduct', $wtcrVendorProduct);
         $this->set('_serialize', ['wtcrVendorProduct']);
@@ -59,8 +59,8 @@ class WtcrVendorProductsController extends AppController
             }
         }
         $wtcrVendors = $this->WtcrVendorProducts->WtcrVendors->find('list', ['limit' => 200]);
-        $wtcrCategories = $this->WtcrVendorProducts->WtcrCategories->find('list', ['limit' => 200]);
-        $this->set(compact('wtcrVendorProduct', 'wtcrVendors', 'wtcrCategories'));
+        $wtcrProductCategories = $this->WtcrVendorProducts->WtcrProductCategories->find('list', ['limit' => 200]);
+        $this->set(compact('wtcrVendorProduct', 'wtcrVendors', 'wtcrProductCategories'));
         $this->set('_serialize', ['wtcrVendorProduct']);
     }
 
@@ -86,8 +86,8 @@ class WtcrVendorProductsController extends AppController
             }
         }
         $wtcrVendors = $this->WtcrVendorProducts->WtcrVendors->find('list', ['limit' => 200]);
-        $wtcrCategories = $this->WtcrVendorProducts->WtcrCategories->find('list', ['limit' => 200]);
-        $this->set(compact('wtcrVendorProduct', 'wtcrVendors', 'wtcrCategories'));
+        $wtcrProductCategories = $this->WtcrVendorProducts->WtcrProductCategories->find('list', ['limit' => 200]);
+        $this->set(compact('wtcrVendorProduct', 'wtcrVendors', 'wtcrProductCategories'));
         $this->set('_serialize', ['wtcrVendorProduct']);
     }
 

@@ -7,11 +7,11 @@
     </ul>
 </div>
 <div class="wtcrCompetitors index col-lg-10 col-md-9 columns">
-    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
+    <table cellpadding="0" cellspacing="0">
     <thead>
         <tr>
             <th><?= $this->Paginator->sort('id') ?></th>
-            <th><?= $this->Paginator->sort('name') ?></th>
+            <th><?= $this->Paginator->sort('competitor_name') ?></th>
             <th><?= $this->Paginator->sort('update_frequency_hours') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
         </tr>
@@ -20,7 +20,7 @@
     <?php foreach ($wtcrCompetitors as $wtcrCompetitor): ?>
         <tr>
             <td><?= $this->Number->format($wtcrCompetitor->id) ?></td>
-            <td><?= h($wtcrCompetitor->name) ?></td>
+            <td><?= h($wtcrCompetitor->competitor_name) ?></td>
             <td><?= $this->Number->format($wtcrCompetitor->update_frequency_hours) ?></td>
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['action' => 'view', $wtcrCompetitor->id]) ?>

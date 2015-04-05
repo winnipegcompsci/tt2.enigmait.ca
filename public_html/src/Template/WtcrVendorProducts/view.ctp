@@ -7,24 +7,24 @@
         <li><?= $this->Html->link(__('New Wtcr Vendor Product'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Wtcr Vendors'), ['controller' => 'WtcrVendors', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Wtcr Vendor'), ['controller' => 'WtcrVendors', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Wtcr Categories'), ['controller' => 'WtcrCategories', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Wtcr Category'), ['controller' => 'WtcrCategories', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Wtcr Product Categories'), ['controller' => 'WtcrProductCategories', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Wtcr Product Category'), ['controller' => 'WtcrProductCategories', 'action' => 'add']) ?> </li>
     </ul>
 </div>
 <div class="wtcrVendorProducts view col-lg-10 col-md-9 columns">
     <h2><?= h($wtcrVendorProduct->name) ?></h2>
     <div class="row">
         <div class="large-5 columns strings">
-            <h6 class="subheader"><?= __('Name') ?></h6>
-            <p><?= h($wtcrVendorProduct->name) ?></p>
+            <h6 class="subheader"><?= __('Product Name') ?></h6>
+            <p><?= h($wtcrVendorProduct->product_name) ?></p>
             <h6 class="subheader"><?= __('Wtcr Vendor') ?></h6>
             <p><?= $wtcrVendorProduct->has('wtcr_vendor') ? $this->Html->link($wtcrVendorProduct->wtcr_vendor->name, ['controller' => 'WtcrVendors', 'action' => 'view', $wtcrVendorProduct->wtcr_vendor->id]) : '' ?></p>
-            <h6 class="subheader"><?= __('Vendor Sku') ?></h6>
-            <p><?= h($wtcrVendorProduct->vendor_sku) ?></p>
-            <h6 class="subheader"><?= __('Wtcr Sku') ?></h6>
-            <p><?= h($wtcrVendorProduct->wtcr_sku) ?></p>
-            <h6 class="subheader"><?= __('Wtcr Category') ?></h6>
-            <p><?= $wtcrVendorProduct->has('wtcr_category') ? $this->Html->link($wtcrVendorProduct->wtcr_category->name, ['controller' => 'WtcrCategories', 'action' => 'view', $wtcrVendorProduct->wtcr_category->id]) : '' ?></p>
+            <h6 class="subheader"><?= __('Wtcr Vendor Sku') ?></h6>
+            <p><?= h($wtcrVendorProduct->wtcr_vendor_sku) ?></p>
+            <h6 class="subheader"><?= __('Mfg Part Num') ?></h6>
+            <p><?= h($wtcrVendorProduct->mfg_part_num) ?></p>
+            <h6 class="subheader"><?= __('Wtcr Product Category') ?></h6>
+            <p><?= $wtcrVendorProduct->has('wtcr_product_category') ? $this->Html->link($wtcrVendorProduct->wtcr_product_category->id, ['controller' => 'WtcrProductCategories', 'action' => 'view', $wtcrVendorProduct->wtcr_product_category->id]) : '' ?></p>
         </div>
         <div class="large-2 columns numbers end">
             <h6 class="subheader"><?= __('Id') ?></h6>

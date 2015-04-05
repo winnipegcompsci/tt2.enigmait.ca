@@ -7,11 +7,11 @@
     </ul>
 </div>
 <div class="wtcrCurrencies index col-lg-10 col-md-9 columns">
-    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
+    <table cellpadding="0" cellspacing="0">
     <thead>
         <tr>
             <th><?= $this->Paginator->sort('id') ?></th>
-            <th><?= $this->Paginator->sort('name') ?></th>
+            <th><?= $this->Paginator->sort('currency_name') ?></th>
             <th><?= $this->Paginator->sort('wtcr_currency_provider_id') ?></th>
             <th><?= $this->Paginator->sort('abbreviation') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
@@ -21,7 +21,7 @@
     <?php foreach ($wtcrCurrencies as $wtcrCurrency): ?>
         <tr>
             <td><?= $this->Number->format($wtcrCurrency->id) ?></td>
-            <td><?= h($wtcrCurrency->name) ?></td>
+            <td><?= h($wtcrCurrency->currency_name) ?></td>
             <td>
                 <?= $wtcrCurrency->has('wtcr_currency_provider') ? $this->Html->link($wtcrCurrency->wtcr_currency_provider->name, ['controller' => 'WtcrCurrencyProviders', 'action' => 'view', $wtcrCurrency->wtcr_currency_provider->id]) : '' ?>
             </td>

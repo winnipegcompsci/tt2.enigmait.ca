@@ -13,8 +13,8 @@
     <h2><?= h($wtcrCurrency->name) ?></h2>
     <div class="row">
         <div class="large-5 columns strings">
-            <h6 class="subheader"><?= __('Name') ?></h6>
-            <p><?= h($wtcrCurrency->name) ?></p>
+            <h6 class="subheader"><?= __('Currency Name') ?></h6>
+            <p><?= h($wtcrCurrency->currency_name) ?></p>
             <h6 class="subheader"><?= __('Wtcr Currency Provider') ?></h6>
             <p><?= $wtcrCurrency->has('wtcr_currency_provider') ? $this->Html->link($wtcrCurrency->wtcr_currency_provider->name, ['controller' => 'WtcrCurrencyProviders', 'action' => 'view', $wtcrCurrency->wtcr_currency_provider->id]) : '' ?></p>
             <h6 class="subheader"><?= __('Abbreviation') ?></h6>

@@ -17,7 +17,8 @@ class WtcrCurrenciesControllerTest extends IntegrationTestCase
      */
     public $fixtures = [
         'WtcrCurrencies' => 'app.wtcr_currencies',
-        'WtcrCurrencyProviders' => 'app.wtcr_currency_providers'
+        'WtcrCurrencyProviders' => 'app.wtcr_currency_providers',
+        'WtcrCurrencyProviderRates' => 'app.wtcr_currency_provider_rates'
     ];
 
     /**

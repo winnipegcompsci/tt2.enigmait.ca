@@ -9,11 +9,11 @@
     </ul>
 </div>
 <div class="wtcrCurrencyProviders index col-lg-10 col-md-9 columns">
-    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
+    <table cellpadding="0" cellspacing="0">
     <thead>
         <tr>
             <th><?= $this->Paginator->sort('id') ?></th>
-            <th><?= $this->Paginator->sort('name') ?></th>
+            <th><?= $this->Paginator->sort('currency_provider_name') ?></th>
             <th><?= $this->Paginator->sort('wtcr_currencies_id') ?></th>
             <th><?= $this->Paginator->sort('update_freq') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
@@ -23,7 +23,7 @@
     <?php foreach ($wtcrCurrencyProviders as $wtcrCurrencyProvider): ?>
         <tr>
             <td><?= $this->Number->format($wtcrCurrencyProvider->id) ?></td>
-            <td><?= h($wtcrCurrencyProvider->name) ?></td>
+            <td><?= h($wtcrCurrencyProvider->currency_provider_name) ?></td>
             <td><?= $this->Number->format($wtcrCurrencyProvider->wtcr_currencies_id) ?></td>
             <td><?= h($wtcrCurrencyProvider->update_freq) ?></td>
             <td class="actions">

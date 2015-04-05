@@ -15,7 +15,7 @@ class WtcrCompetitor extends Entity
      * @var array
      */
     protected $_accessible = [
-        'name' => true,
+        'competitor_name' => true,
         'update_frequency_hours' => true,
         'wtcr_competitor_products' => true,
     ];

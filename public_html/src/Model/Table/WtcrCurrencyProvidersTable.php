@@ -46,7 +46,7 @@ class WtcrCurrencyProvidersTable extends Table
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('id', 'create')
-            ->allowEmpty('name')
+            ->allowEmpty('currency_provider_name')
             ->add('wtcr_currencies_id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('wtcr_currencies_id')
             ->add('update_freq', 'valid', ['rule' => 'datetime'])

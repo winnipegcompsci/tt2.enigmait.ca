@@ -4,21 +4,21 @@
         <li><?= $this->Html->link(__('New Wtcr Vendor Product'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Wtcr Vendors'), ['controller' => 'WtcrVendors', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Wtcr Vendor'), ['controller' => 'WtcrVendors', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Wtcr Categories'), ['controller' => 'WtcrCategories', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Wtcr Category'), ['controller' => 'WtcrCategories', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Wtcr Product Categories'), ['controller' => 'WtcrProductCategories', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Wtcr Product Category'), ['controller' => 'WtcrProductCategories', 'action' => 'add']) ?> </li>
     </ul>
 </div>
 <div class="wtcrVendorProducts index col-lg-10 col-md-9 columns">
-    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
+    <table cellpadding="0" cellspacing="0">
     <thead>
         <tr>
             <th><?= $this->Paginator->sort('id') ?></th>
-            <th><?= $this->Paginator->sort('name') ?></th>
+            <th><?= $this->Paginator->sort('product_name') ?></th>
             <th><?= $this->Paginator->sort('wtcr_vendor_id') ?></th>
-            <th><?= $this->Paginator->sort('vendor_sku') ?></th>
-            <th><?= $this->Paginator->sort('wtcr_sku') ?></th>
+            <th><?= $this->Paginator->sort('wtcr_vendor_sku') ?></th>
+            <th><?= $this->Paginator->sort('mfg_part_num') ?></th>
             <th><?= $this->Paginator->sort('vendor_price') ?></th>
-            <th><?= $this->Paginator->sort('wtcr_category_id') ?></th>
+            <th><?= $this->Paginator->sort('wtcr_product_category_id') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
         </tr>
     </thead>
@@ -26,15 +26,15 @@
     <?php foreach ($wtcrVendorProducts as $wtcrVendorProduct): ?>
         <tr>
             <td><?= $this->Number->format($wtcrVendorProduct->id) ?></td>
-            <td><?= h($wtcrVendorProduct->name) ?></td>
+            <td><?= h($wtcrVendorProduct->product_name) ?></td>
             <td>
                 <?= $wtcrVendorProduct->has('wtcr_vendor') ? $this->Html->link($wtcrVendorProduct->wtcr_vendor->name, ['controller' => 'WtcrVendors', 'action' => 'view', $wtcrVendorProduct->wtcr_vendor->id]) : '' ?>
             </td>
-            <td><?= h($wtcrVendorProduct->vendor_sku) ?></td>
-            <td><?= h($wtcrVendorProduct->wtcr_sku) ?></td>
+            <td><?= h($wtcrVendorProduct->wtcr_vendor_sku) ?></td>
+            <td><?= h($wtcrVendorProduct->mfg_part_num) ?></td>
             <td><?= $this->Number->format($wtcrVendorProduct->vendor_price) ?></td>
             <td>
-                <?= $wtcrVendorProduct->has('wtcr_category') ? $this->Html->link($wtcrVendorProduct->wtcr_category->name, ['controller' => 'WtcrCategories', 'action' => 'view', $wtcrVendorProduct->wtcr_category->id]) : '' ?>
+                <?= $wtcrVendorProduct->has('wtcr_product_category') ? $this->Html->link($wtcrVendorProduct->wtcr_product_category->id, ['controller' => 'WtcrProductCategories', 'action' => 'view', $wtcrVendorProduct->wtcr_product_category->id]) : '' ?>
             </td>
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['action' => 'view', $wtcrVendorProduct->id]) ?>

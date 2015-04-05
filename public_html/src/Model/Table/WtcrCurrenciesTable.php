@@ -40,7 +40,7 @@ class WtcrCurrenciesTable extends Table
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('id', 'create')
-            ->allowEmpty('name')
+            ->allowEmpty('currency_name')
             ->add('wtcr_currency_provider_id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('wtcr_currency_provider_id')
             ->allowEmpty('abbreviation');

@@ -17,7 +17,7 @@
     <fieldset>
         <legend><?= __('Edit Wtcr Currency') ?></legend>
         <?php
-            echo $this->Form->input('name');
+            echo $this->Form->input('currency_name');
             echo $this->Form->input('wtcr_currency_provider_id', ['options' => $wtcrCurrencyProviders, 'empty' => true]);
             echo $this->Form->input('abbreviation');
         ?>
