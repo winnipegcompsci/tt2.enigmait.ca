@@ -150,6 +150,39 @@ LOCK TABLES `wtcr_currency_providers` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `wtcr_inventory`
+--
+
+DROP TABLE IF EXISTS `wtcr_inventory`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `wtcr_inventory` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `wtcr_sku` varchar(45) DEFAULT NULL,
+  `product_name` varchar(45) DEFAULT NULL,
+  `wtcr_category_id` int(11) DEFAULT NULL,
+  `wtcr_manufacturer_id` int(11) DEFAULT NULL,
+  `manufacturer_sku` varchar(45) DEFAULT NULL,
+  `wtcr_vendor_id` int(11) DEFAULT NULL,
+  `vendor_sku` varchar(45) DEFAULT NULL,
+  `vendor_price` float DEFAULT NULL,
+  `received_date` datetime DEFAULT NULL,
+  `markup` float DEFAULT NULL,
+  `serial_numbers` longtext,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `wtcr_inventory`
+--
+
+LOCK TABLES `wtcr_inventory` WRITE;
+/*!40000 ALTER TABLE `wtcr_inventory` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wtcr_inventory` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `wtcr_marketplace_templates`
 --
 
@@ -185,7 +218,7 @@ DROP TABLE IF EXISTS `wtcr_marketplaces`;
 CREATE TABLE `wtcr_marketplaces` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `marketplace_name` varchar(45) NOT NULL,
-  `wtcr_sales_vehicle_template_id` int(11) DEFAULT NULL,
+  `wtcr_marketplace_template_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name_UNIQUE` (`marketplace_name`),
   UNIQUE KEY `id_UNIQUE` (`id`)
@@ -227,13 +260,13 @@ LOCK TABLES `wtcr_product_categories` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `wtcr_product_map`
+-- Table structure for table `wtcr_products`
 --
 
-DROP TABLE IF EXISTS `wtcr_product_map`;
+DROP TABLE IF EXISTS `wtcr_products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `wtcr_product_map` (
+CREATE TABLE `wtcr_products` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'A unique ID for the product',
   `wtcr_vendor_id` int(11) NOT NULL COMMENT 'The Supplier that offers the product',
   `mfg_part_num` varchar(40) NOT NULL COMMENT 'Part # The Manufacturer Uses',
@@ -257,12 +290,12 @@ CREATE TABLE `wtcr_product_map` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `wtcr_product_map`
+-- Dumping data for table `wtcr_products`
 --
 
-LOCK TABLES `wtcr_product_map` WRITE;
-/*!40000 ALTER TABLE `wtcr_product_map` DISABLE KEYS */;
-/*!40000 ALTER TABLE `wtcr_product_map` ENABLE KEYS */;
+LOCK TABLES `wtcr_products` WRITE;
+/*!40000 ALTER TABLE `wtcr_products` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wtcr_products` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -330,4 +363,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-05  2:00:25
+-- Dump completed on 2015-04-05 17:44:22
