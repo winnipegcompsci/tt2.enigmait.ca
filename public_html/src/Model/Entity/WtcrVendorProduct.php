@@ -20,7 +20,7 @@ class WtcrVendorProduct extends Entity
         'wtcr_vendor_sku' => true,
         'mfg_part_num' => true,
         'vendor_price' => true,
-        'wtcr_category_id' => true,
+        'wtcr_product_category_id' => true,
         'last_updated' => true,
         'wtcr_vendor' => true,
         'wtcr_category' => true,

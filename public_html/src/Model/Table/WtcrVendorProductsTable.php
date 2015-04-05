@@ -27,8 +27,8 @@ class WtcrVendorProductsTable extends Table
         $this->belongsTo('WtcrVendors', [
             'foreignKey' => 'wtcr_vendor_id'
         ]);
-        $this->belongsTo('WtcrCategories', [
-            'foreignKey' => 'wtcr_category_id'
+        $this->belongsTo('WtcrProductCategories', [
+            'foreignKey' => 'wtcr_product_category_id'
         ]);
     }
 
@@ -50,8 +50,8 @@ class WtcrVendorProductsTable extends Table
             ->allowEmpty('mfg_part_num')
             ->add('vendor_price', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('vendor_price')
-            ->add('wtcr_category_id', 'valid', ['rule' => 'numeric'])
-            ->allowEmpty('wtcr_category_id')
+            ->add('wtcr_product_category_id', 'valid', ['rule' => 'numeric'])
+            ->allowEmpty('wtcr_product_category_id')
             ->add('last_updated', 'valid', ['rule' => 'date'])
             ->allowEmpty('last_updated');
 
@@ -68,7 +68,7 @@ class WtcrVendorProductsTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['wtcr_vendor_id'], 'WtcrVendors'));
-        $rules->add($rules->existsIn(['wtcr_category_id'], 'WtcrCategories'));
+        $rules->add($rules->existsIn(['wtcr_product_category_id'], 'WtcrProductCategories'));
         return $rules;
     }
 }

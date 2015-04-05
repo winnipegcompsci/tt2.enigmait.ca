@@ -23,7 +23,7 @@ class WtcrVendorProductsFixture extends TestFixture
         'wtcr_vendor_sku' => ['type' => 'string', 'length' => 45, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
         'mfg_part_num' => ['type' => 'string', 'length' => 45, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
         'vendor_price' => ['type' => 'float', 'length' => null, 'precision' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => ''],
-        'wtcr_category_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'wtcr_product_category_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'last_updated' => ['type' => 'date', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
@@ -48,7 +48,7 @@ class WtcrVendorProductsFixture extends TestFixture
             'wtcr_vendor_sku' => 'Lorem ipsum dolor sit amet',
             'mfg_part_num' => 'Lorem ipsum dolor sit amet',
             'vendor_price' => 1,
-            'wtcr_category_id' => 1,
+            'wtcr_product_category_id' => 1,
             'last_updated' => '2015-04-05'
         ],
     ];

@@ -16,6 +16,63 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `wtcr_competitor_products`
+--
+
+DROP TABLE IF EXISTS `wtcr_competitor_products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `wtcr_competitor_products` (
+  `id` int(11) NOT NULL,
+  `competitor_product_name` varchar(45) DEFAULT NULL,
+  `wtcr_competitor_id` int(11) DEFAULT NULL,
+  `wtcr_competitor_sku` varchar(45) DEFAULT NULL,
+  `mfg_part_number` varchar(45) DEFAULT NULL,
+  `competitor_price` float DEFAULT NULL,
+  `last_updated` datetime DEFAULT NULL,
+  `competitor_url` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  UNIQUE KEY `wtcr_competitor_sku_UNIQUE` (`wtcr_competitor_sku`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `wtcr_competitor_products`
+--
+
+LOCK TABLES `wtcr_competitor_products` WRITE;
+/*!40000 ALTER TABLE `wtcr_competitor_products` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wtcr_competitor_products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `wtcr_competitors`
+--
+
+DROP TABLE IF EXISTS `wtcr_competitors`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `wtcr_competitors` (
+  `id` int(11) NOT NULL,
+  `competitor_name` varchar(45) DEFAULT NULL,
+  `update_frequency_hours` int(11) DEFAULT '24',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  UNIQUE KEY `name_UNIQUE` (`competitor_name`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `wtcr_competitors`
+--
+
+LOCK TABLES `wtcr_competitors` WRITE;
+/*!40000 ALTER TABLE `wtcr_competitors` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wtcr_competitors` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `wtcr_currencies`
 --
 
@@ -222,7 +279,7 @@ CREATE TABLE `wtcr_vendor_products` (
   `wtcr_vendor_sku` varchar(45) DEFAULT NULL,
   `mfg_part_num` varchar(45) DEFAULT NULL,
   `vendor_price` float DEFAULT NULL,
-  `wtcr_category_id` int(11) DEFAULT NULL,
+  `wtcr_product_category_id` int(11) DEFAULT NULL,
   `last_updated` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
@@ -273,4 +330,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-04 21:00:51
+-- Dump completed on 2015-04-05  2:00:25
