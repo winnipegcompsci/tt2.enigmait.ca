@@ -579,3 +579,21 @@ Stack Trace:
 #13 {main}
 
 
+2015-04-05 07:08:19 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tt2.wtcr_sales_vehicle_templates' doesn't exist
+Stack Trace:
+#0 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(96): Cake\Database\Schema\Collection->_reflect('Column', 'wtcr_sales_vehi...', Array, Object(Cake\Database\Schema\Table))
+#1 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(65): Cake\Database\Schema\Collection->describe('wtcr_sales_vehi...', Array)
+#2 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\ORM\Table.php(365): Cake\Database\Schema\CachedCollection->describe('wtcr_sales_vehi...')
+#3 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(460): Cake\ORM\Table->schema()
+#4 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(275): Bake\Shell\Task\ViewTask->_associations(Object(App\Model\Table\WtcrMarketplacesTable))
+#5 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ViewTask.php(139): Bake\Shell\Task\ViewTask->_loadController()
+#6 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\BakeShell.php(229): Bake\Shell\Task\ViewTask->main('WtcrMarketplace...')
+#7 [internal function]: Bake\Shell\BakeShell->all('wtcr_marketplac...')
+#8 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\Shell.php(376): call_user_func_array(Array, Array)
+#9 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(200): Cake\Console\Shell->runCommand(Array, true)
+#10 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(171): Cake\Console\ShellDispatcher->_dispatch()
+#11 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(122): Cake\Console\ShellDispatcher->dispatch()
+#12 C:\Users\David\ENIGMA\tt2.enigmait.ca\public_html\bin\cake.php(20): Cake\Console\ShellDispatcher::run(Array)
+#13 {main}
+
+
