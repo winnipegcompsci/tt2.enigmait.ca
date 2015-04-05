@@ -2,20 +2,23 @@ TT2.0 Development Progress / TODO:
 -------------------------------------------------------------------------------    
 Database:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 -------------------------------------------------------------------------------
-    Import tt2.sql to TT2 db on Whiskey
+    Run Integration Script
+	Rebake All Views.
     
 -------------------------------------------------------------------------------    
 Functionality::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 -------------------------------------------------------------------------------
     Adding Item to Inventory
-        Adds Details from Vendors Table to WTCR Products Table
+       Adds Details from Vendors Table (Product Map) to WTCR Products Table
             (SKU Lookup on SKU Map)
           
         IF HAS WTCR-SKU IN MAP => USE IT
         ELSE =? Generate New WTCR SKU
     
     Fetching from Longtech          (Ajax Progressor)
+	Fetching from Longtech			(Cron Call - No Interface)
 	Fetching from ASI               (Ajax Progressor)
+	Fetching from ASI 				(Cron Call - No Interface)
 	Manually add AllWay Products    (Add Form that does Lookup against Map)    
     
     Receive Products (WTCR Product => Inventory)

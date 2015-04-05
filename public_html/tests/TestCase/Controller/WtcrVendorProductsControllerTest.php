@@ -18,9 +18,10 @@ class WtcrVendorProductsControllerTest extends IntegrationTestCase
     public $fixtures = [
         'WtcrVendorProducts' => 'app.wtcr_vendor_products',
         'WtcrVendors' => 'app.wtcr_vendors',
-        'WtcrCategories' => 'app.wtcr_categories',
         'Inventory' => 'app.inventory',
-        'WtcrManufacturers' => 'app.wtcr_manufacturers'
+        'WtcrCategories' => 'app.wtcr_categories',
+        'WtcrManufacturers' => 'app.wtcr_manufacturers',
+        'WtcrProductMap' => 'app.wtcr_product_map'
     ];
 
     /**

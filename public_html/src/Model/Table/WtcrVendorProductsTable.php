@@ -43,16 +43,16 @@ class WtcrVendorProductsTable extends Table
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('id', 'create')
-            ->allowEmpty('name')
-            // ->add('wtcr_vendor_id', 'valid', ['rule' => 'numeric'])
+            ->allowEmpty('product_name')
+            ->add('wtcr_vendor_id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('wtcr_vendor_id')
-            ->allowEmpty('vendor_sku')
-            ->allowEmpty('wtcr_sku')
+            ->allowEmpty('wtcr_vendor_sku')
+            ->allowEmpty('mfg_part_num')
             ->add('vendor_price', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('vendor_price')
-            // ->add('wtcr_category_id', 'valid', ['rule' => 'numeric'])
+            ->add('wtcr_category_id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('wtcr_category_id')
-            ->add('last_updated', 'valid', ['rule' => 'datetime'])
+            ->add('last_updated', 'valid', ['rule' => 'date'])
             ->allowEmpty('last_updated');
 
         return $validator;

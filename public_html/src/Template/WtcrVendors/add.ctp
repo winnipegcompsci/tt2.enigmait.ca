@@ -13,7 +13,7 @@
     <fieldset>
         <legend><?= __('Add Wtcr Vendor') ?></legend>
         <?php
-            echo $this->Form->input('name');
+            echo $this->Form->input('vendor_name');
             echo $this->Form->input('update_freq_hours');
         ?>
     </fieldset>

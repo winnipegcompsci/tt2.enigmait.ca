@@ -27,6 +27,9 @@ class WtcrVendorsTable extends Table
         $this->hasMany('Inventory', [
             'foreignKey' => 'wtcr_vendor_id'
         ]);
+        $this->hasMany('WtcrProductMap', [
+            'foreignKey' => 'wtcr_vendor_id'
+        ]);
         $this->hasMany('WtcrVendorProducts', [
             'foreignKey' => 'wtcr_vendor_id'
         ]);
@@ -43,7 +46,7 @@ class WtcrVendorsTable extends Table
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('id', 'create')
-            ->allowEmpty('name')
+            ->allowEmpty('vendor_name')
             ->add('update_freq_hours', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('update_freq_hours');
 

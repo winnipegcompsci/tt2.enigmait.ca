@@ -15,7 +15,7 @@ class WtcrVendor extends Entity
      * @var array
      */
     protected $_accessible = [
-        'name' => true,
+        'vendor_name' => true,
         'update_freq_hours' => true,
         'inventory' => true,
         'wtcr_vendor_products' => true,

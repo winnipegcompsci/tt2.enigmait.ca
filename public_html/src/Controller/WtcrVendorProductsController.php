@@ -64,25 +64,6 @@ class WtcrVendorProductsController extends AppController
         $this->set('_serialize', ['wtcrVendorProduct']);
     }
 
-    public function add_product($vendor_sku = null) 
-    {   
-        if(!$vendor_sku) {
-            $vendor_sku = $this->request->params['pass'][0];
-        }
-        
-        // echo "PARAMS:::<pre>" . print_r($this->request->params['pass'][0], TRUE) . "</pre>";
-    
-        $product = $this->WtcrVendorProducts->find('all')->where(['vendor_sku' => $vendor_sku])->toArray();     
-        
-        $wtcrVendors = $this->WtcrVendorProducts->WtcrVendors->find('list', ['limit' => 200]);
-        $wtcrCategories = $this->WtcrVendorProducts->WtcrCategories->find('list', ['limit' => 200]);
-
-        $this->set('wtcrCategories', $wtcrCategories);        
-        $this->set('wtcrVendors', $wtcrVendors);
-        $this->set('product', $product);
-    }
-    
-    
     /**
      * Edit method
      *

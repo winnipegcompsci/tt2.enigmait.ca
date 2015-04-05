@@ -15,8 +15,8 @@
     <h2><?= h($wtcrVendor->name) ?></h2>
     <div class="row">
         <div class="large-5 columns strings">
-            <h6 class="subheader"><?= __('Name') ?></h6>
-            <p><?= h($wtcrVendor->name) ?></p>
+            <h6 class="subheader"><?= __('Vendor Name') ?></h6>
+            <p><?= h($wtcrVendor->vendor_name) ?></p>
         </div>
         <div class="large-2 columns numbers end">
             <h6 class="subheader"><?= __('Id') ?></h6>
@@ -30,7 +30,7 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related Inventory') ?></h4>
     <?php if (!empty($wtcrVendor->inventory)): ?>
-    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
+    <table cellpadding="0" cellspacing="0">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Wtcr Sku') ?></th>
@@ -80,13 +80,13 @@
     <div class="column large-12">
     <h4 class="subheader"><?= __('Related WtcrVendorProducts') ?></h4>
     <?php if (!empty($wtcrVendor->wtcr_vendor_products)): ?>
-    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
+    <table cellpadding="0" cellspacing="0">
         <tr>
             <th><?= __('Id') ?></th>
-            <th><?= __('Name') ?></th>
+            <th><?= __('Product Name') ?></th>
             <th><?= __('Wtcr Vendor Id') ?></th>
-            <th><?= __('Vendor Sku') ?></th>
-            <th><?= __('Wtcr Sku') ?></th>
+            <th><?= __('Wtcr Vendor Sku') ?></th>
+            <th><?= __('Mfg Part Num') ?></th>
             <th><?= __('Vendor Price') ?></th>
             <th><?= __('Wtcr Category Id') ?></th>
             <th><?= __('Last Updated') ?></th>
@@ -95,10 +95,10 @@
         <?php foreach ($wtcrVendor->wtcr_vendor_products as $wtcrVendorProducts): ?>
         <tr>
             <td><?= h($wtcrVendorProducts->id) ?></td>
-            <td><?= h($wtcrVendorProducts->name) ?></td>
+            <td><?= h($wtcrVendorProducts->product_name) ?></td>
             <td><?= h($wtcrVendorProducts->wtcr_vendor_id) ?></td>
-            <td><?= h($wtcrVendorProducts->vendor_sku) ?></td>
-            <td><?= h($wtcrVendorProducts->wtcr_sku) ?></td>
+            <td><?= h($wtcrVendorProducts->wtcr_vendor_sku) ?></td>
+            <td><?= h($wtcrVendorProducts->mfg_part_num) ?></td>
             <td><?= h($wtcrVendorProducts->vendor_price) ?></td>
             <td><?= h($wtcrVendorProducts->wtcr_category_id) ?></td>
             <td><?= h($wtcrVendorProducts->last_updated) ?></td>
