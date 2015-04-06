@@ -97,7 +97,7 @@
 									<a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'under_construction']);?>"><i class="fa fa-dollar fa-fw"></i>&nbsp;In-Store POS</a>
 								</li>
 								<li>
-									<a href="<?php echo $this->Url->build(['controller' => 'WtcrProducts', 'action' => 'index']); ?>"><i class="fa fa-dollar fa-fw"></i>&nbsp;WTCR Products </a>
+									<a href="<?php echo $this->Url->build(['controller' => 'WtcrProducts', 'action' => 'index']); ?>"><i class="fa fa-won fa-fw"></i>&nbsp;WTCR Products </a>
 								</li>
                                 <li>
                                     <a href="<?php echo $this->Url->build(['controller' => 'WtcrInventory', 'action' => 'index']); ?>"><i class="fa fa-list-alt fa-fw"></i>&nbsp;Inventory <span class="fa arrow"></span></a>
