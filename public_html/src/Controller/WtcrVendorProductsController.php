@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * WtcrVendorProducts Controller
@@ -69,7 +70,7 @@ class WtcrVendorProductsController extends AppController
         
         if($this->request->is('post')) {
             
-            $wtcrProduct = $this->WtcrProducts->newEntity();
+            $wtcrProduct = TableRegistry::get('WtcrProducts')->newEntity();
             $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
             
             if($this->WtcrProducts->save($wtcrProduct)) {
