@@ -22,7 +22,7 @@ class WtcrProductCategoriesTable extends Table
     public function initialize(array $config)
     {
         $this->table('wtcr_product_categories');
-        $this->displayField('id');
+        $this->displayField('category_name');
         $this->primaryKey('id');
         $this->hasMany('WtcrProducts', [
             'foreignKey' => 'wtcr_product_category_id'

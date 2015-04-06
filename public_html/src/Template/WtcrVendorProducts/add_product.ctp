@@ -13,7 +13,7 @@
         foreach($product as $p) {            
             $default_name = $p->name;
             $default_vendor_id = $p->wtcr_vendor_id;
-            $default_vendor_sku = $p->vendor_sku;
+            $default_vendor_sku = $p->wtcr_vendor_sku;
             $mfg_part_num = $p->mfg_part_num;
             $default_vendor_price = $p->vendor_price;
             $default_category =  $p->wtcr_category_id;
