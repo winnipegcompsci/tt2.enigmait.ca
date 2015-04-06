@@ -75,9 +75,10 @@ class WtcrVendorProductsController extends AppController
 			
 			echo "<pre>WTCR PRODUCT:: " . print_r($wtcrProduct, TRUE) . "</pre>";
 			echo "<pre>THIS REQUEST DATA:: " . print_r($this->request->data, TRUE) . "</pre>";
+			$wtcrProduct = $wtcrProducts->patchEntity($wtcrProduct, $this->request->data);
+            echo "<pre>WTCR PRODUCT:: " . print_r($wtcrProduct, TRUE) . "</pre>";
 			
-            $wtcrProduct = $wtcrProducts->patchEntity($wtcrProduct, $this->request->data);
-            // Set other values:
+			// Set other values:
 			// WTCR Price = Base + Markup
 			// Marketplaces = (Check Default)
 			// 
