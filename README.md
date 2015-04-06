@@ -1,6 +1,7 @@
 Functionality:
 -------------------------------------------------------------------------------
 	Import Product Map Items from WTCR.
+    
 	
 	Fetch from EPROM				(Cron Call - No Interface)......................
 	
@@ -12,17 +13,20 @@ Functionality:
 	
 	Manually add AllWay Products    (Add Form that does Lookup against Map).........
     
+    Authentication Not Working......................................................
+    
     Receive Products (WTCR Product => Inventory)....................................
         Creates Inventory Item from WTCR Product + Vendor Product Info.
             Gets Serial Numbers, Unique Instance Information, 
             
     Find Product Details............................................................
         Scan Barcode attached to item to lookup data about that particular
-        inventory item. 
+        inventory item. ............................................................
         eg) Date Received, Date Sold, Price Received, Price Sold,Order #, 
        
 	Generate ZPL Barcode for Inventory Tracking.....................................
         Barcode Gets Displayed in Inventory View along with link to print?
+        eg) Date Received, Date Sold, Price Received, price sold, order #...........
 	
 	Push Product to Drupal (WTCR)
 	Push Product to Amazon (WTCR)
