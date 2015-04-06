@@ -429,5 +429,5 @@ class WtcrVendorsController extends AppController
                
         
            
-    } <!-- /.longtech_fetch -->
-}
+    } /*.longtech_fetch */
+}   
