@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\ORM\TableRegistry;
+App::import('Vendor', 'simple_html_dom');
 
 /**
  * WtcrVendors Controller
@@ -279,9 +280,7 @@ class WtcrVendorsController extends AppController
         header("Connection: Keep-alive");
         
         ini_set('max_execution_time', 0);
-        
-        App::import('Vendor', 'simple_html_dom');
-        
+               
         
         // Import DOM.
         
