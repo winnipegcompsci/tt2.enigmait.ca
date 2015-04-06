@@ -11,7 +11,7 @@
 <div class="wtcrVendorProducts form col-lg-10 col-md-9 columns">
     <?php
         foreach($product as $p) {            
-            $default_name = $p->name;
+            $default_name = $p->product_name;
             $default_vendor_id = $p->wtcr_vendor_id;
             $default_vendor_sku = $p->wtcr_vendor_sku;
             $mfg_part_num = $p->mfg_part_num;
@@ -23,7 +23,7 @@
     <fieldset>
         <legend><?= __('Add Wtcr Vendor Product') ?></legend>
         <?php
-            echo $this->Form->text('product_name', ['default' => $default_name ]);
+            echo $this->Form->input('product_name', ['default' => $default_name, 'label' => 'Product Name']);
             echo $this->Form->input('wtcr_vendor_id', ['options' => $wtcrVendors,'default' => $default_vendor_id, 'empty' => true]);
             echo $this->Form->input('wtcr_vendor_sku', ['default' => $default_vendor_sku]);
             echo $this->Form->input('mfg_part_num', ['default' => $mfg_part_num ]);
