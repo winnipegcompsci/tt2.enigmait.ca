@@ -231,19 +231,19 @@ class WtcrVendorsController extends AppController
 						error_log("Product::2:: " . print_r($product, TRUE));
 						
                         $product->product_name = $description;
-                        $product->wtcr_vendor_id = 0;				  // Replace this with Fetched ID After.
+                        $product->wtcr_vendor_id = 1;				  // Replace this with Fetched ID After.
                         $product->wtcr_vendor_sku = $supplier_sku;
                         $product->mfg_part_num = $supplier_sku;       // Create a VENDOR_SKU -> WTCR_SKU FUNC
 						$product->vendor_price = $supplier_price;
                         $product->wtcr_category_id = 0;
                         $product->last_updated = date('Y-m-d H:i:s');
                     } else { // $product exists. 
-                        $product->product_name = $description;
-                        $product->wtcr_vendor_id = 0;				 // Replace this with Fetched ID After
-                        $product->wtcr_vendor_sku = $supplier_sku;
-                        $product->mfg_part_num = $supplier_sku;       // Create a VENDOR_SKU -> WTCR_SKU FUNC
+                        // $product->product_name = $description;
+                        $product->wtcr_vendor_id = 1;				 // Replace this with Fetched ID After
+                        // $product->wtcr_vendor_sku = $supplier_sku;
+                        // $product->mfg_part_num = $supplier_sku;       // Create a VENDOR_SKU -> WTCR_SKU FUNC
                         $product->vendor_price = $supplier_price;
-                        $product->wtcr_category_id = 0;				// Options: $category.
+                        // $product->wtcr_category_id = 0;				// Options: $category.
                         $product->last_updated = date('Y-m-d H:i:s');
                     }
                     
