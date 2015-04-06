@@ -64,7 +64,7 @@ class WtcrVendorProductsController extends AppController
         $this->set('_serialize', ['wtcrVendorProduct']);
     }
     
-    public function add_product($vendor_sku = $null) {
+    public function add_product($vendor_sku = null) {
         error_log('Vendor SKU:: ' . $vendor_sku);
     }
 
