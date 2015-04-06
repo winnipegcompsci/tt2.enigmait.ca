@@ -72,17 +72,31 @@ class WtcrVendorProductsController extends AppController
             
 			$wtcrProducts = TableRegistry::get('WtcrProducts');
             $wtcrProduct = $wtcrProducts->newEntity();
-			
 			echo "<pre>WTCR PRODUCT:: " . print_r($wtcrProduct, TRUE) . "</pre>";
 			echo "<pre>THIS REQUEST DATA:: " . print_r($this->request->data, TRUE) . "</pre>";
 			$wtcrProduct = $wtcrProducts->patchEntity($wtcrProduct, $this->request->data);
-            echo "<pre>WTCR PRODUCT:: " . print_r($wtcrProduct, TRUE) . "</pre>";
+            
+			
 			
 			// Set other values:
-			// WTCR Price = Base + Markup
-			// Marketplaces = (Check Default)
-			// 
+			$wtcrProduct->autoupdate = 1;
+			$wtcrProduct->supplierstock = "YES";
 			
+			$wtcrProduct->suggestedprice = $this->request->data['vendor_price']; // GET MARKUP!!!
+			
+			$wtcrProduct->suggestedmarkup = 0.50;
+		
+			$wtcrProduct->wtcrprice = $wtcrProduct->suggestedprice + ($wtcrProduct->suggestedmarkup * wtcrProduct->suggestedprice);
+			
+			$wtcrProduct->wtcr_nid = null;
+			$wtcrProduct->lastupdated = date('Y-m-d H:i:s');
+			$wtcrProduct->wtcr_vendor = $this->request->data['wtcr_vendor_id'];
+			$wtcrProduct->wtcr_product_category = $this->request->data['wtcr_product_category_id'];
+			
+			$wtcrproduct->extra = serialize($wtcrProduct);
+			
+			echo "<pre>WTCR PRODUCT:: " . print_r($wtcrProduct, TRUE) . "</pre>";
+						
 			
             if($wtcrProducts->save($wtcrProduct)) {
                 $this->Flash->success("The wtcr product has been saved.");
