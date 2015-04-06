@@ -1,17 +1,16 @@
 Functionality:
 -------------------------------------------------------------------------------
-	Import Product Map Items from WTCR.
-    	
-	Fetch from EPROM				(Cron Call - No Interface)......................
-	
-    Fetching from Longtech          (Ajax Progressor)...............................
-	Fetching from Longtech			(Cron Call - No Interface)......................
-	
-	Fetching from ASI               (Ajax Progressor)...............................
-	Fetching from ASI 				(Cron Call - No Interface)......................
-	
-	Manually add AllWay Products    (Add Form that does Lookup against Map).........
-        
+
+	Vendor Products:
+		Import Product Map Items from WTCR.
+    	Fetching from Longtech          (Ajax Progressor)...............................	
+		Fetching from ASI               (Ajax Progressor)...............................
+		Fetch from EPROM				(Cron Call - No Interface)......................   
+		Fetching from Longtech			(Cron Call - No Interface)......................
+		Fetching from ASI 				(Cron Call - No Interface)......................
+		Manually add AllWay Products    (Add Form that does Lookup against Map).........
+    
+    
     Receive Products (WTCR Product => Inventory)....................................
         Creates Inventory Item from WTCR Product + Vendor Product Info.
             Gets Serial Numbers, Unique Instance Information, 
@@ -46,6 +45,8 @@ Functionality:
 -------------------------------------------------------------------------------
 User Interface
 -------------------------------------------------------------------------------
+	Right Hand Menus -> Port to Cog Button in Panel Header.
+	
 	User Profile View
         Secret Key
         Change Password    
@@ -76,6 +77,7 @@ User Interface
         
 	'Notifications' - Header Element
 
+	
     
     Fix / Center Paginated Numbers.
 	Dashboard - Recent Orders Table (10 Orders)

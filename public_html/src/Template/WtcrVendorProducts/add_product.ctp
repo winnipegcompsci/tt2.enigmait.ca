@@ -23,31 +23,27 @@
     <fieldset>
         <legend><?= __('Create WTCR Product from a Vendor Product') ?></legend>
         <?php
+			echo $this->Form->input('wtcr_vendor_id', ['options' => $wtcrVendors,'default' => $default_vendor_id ]);
+			echo $this->Form->input('wtcr_vendor_sku', ['default' => $default_vendor_sku]);
+ 			echo $this->Form->input('product_name', ['default' => $default_name, 'label' => 'Product Name']);
+			echo $this->Form->input('description');
+			echo $this->Form->input('mfg_part_num', ['default' => $mfg_part_num ]);
+            echo $this->Form->input('wtcrsku', ['default' => getWtcrSku($mfg_part_num)]);
+			echo $this->Form->input('vendor_price', ['default' => $default_vendor_price]);
+            echo $this->Form->input('wtcr_product_category_id', ['options' => $wtcrCategories, 'default' => $default_category]);
+			
+			*
+			/*
             echo $this->Form->input('product_name', ['default' => $default_name, 'label' => 'Product Name']);
             echo $this->Form->input('wtcr_vendor_id', ['options' => $wtcrVendors,'default' => $default_vendor_id ]);
             echo $this->Form->input('wtcr_vendor_sku', ['default' => $default_vendor_sku]);
             echo $this->Form->input('mfg_part_num', ['default' => $mfg_part_num ]);
             echo $this->Form->input('vendor_price', ['default' => $default_vendor_price]);
             echo $this->Form->input('wtcr_category_id', ['options' => $wtcrCategories, 'default' => $default_category]);
-        ?>
+			*/
+		?>
     </fieldset>
     <?= $this->Form->button(__('Save New WTCR Product')) ?>
     <?= $this->Form->end() ?>
 </div>
 
-<!-- 
-wtcr_vendor_id
-mfg_part_num
-wtcrsku
-description
-wtcr_vendor_sku
-supplierstock
-autoupdate
-suggestedprice
-suggestedmarkup
-wtcrprice;
-wtcr_nid
-last_updated
-extra => (serialize obj)
-wtcr_vendor
--->
