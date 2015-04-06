@@ -42,13 +42,6 @@ class AppController extends Controller
 		],
 	];
     
-    public function beforeRender() 
-    {
-        if (Configure::read('debug' > 0)) {
-            App::import('Vendor', 'lessc');
-        }
-    }
-
 	public function beforeFilter(Event $event)
     {	
 		
