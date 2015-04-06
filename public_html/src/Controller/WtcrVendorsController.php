@@ -221,12 +221,13 @@ class WtcrVendorsController extends AppController
                     
                     foreach($existing_prods as $prod) {
                         $product = $prod;
-						error_log("<pre>" . print_r($prod, TRUE) . "</pre>");
                     }
                     
                     
                     if(!$product) {
                         $product = $products->newEntity();
+						error_log("Product:: " . print_r($product, TRUE)):
+						
                         $product->name = $description;
                         $product->wtcr_vendor_id = 0;
                         $product->wtcr_vendor_sku = $supplier_sku;
@@ -250,8 +251,7 @@ class WtcrVendorsController extends AppController
             }
                         
             $this->Flash->success('Updated EPROM product list');
-            
-            
+                        
                         
             return $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'view_vendor_products', 'eprom']);
             
