@@ -147,9 +147,6 @@
                                     </ul>
 								</li>
 								<li>
-									<a href="<?php echo $this->Url->build(['controller' => 'WtcrCurrencyProviders', 'action' => 'index']); ?>/"><i class="fa fa-database fa-fw"></i>&nbsp;Crypto Rate Providers</a>
-								</li>
-								<li>
                                     <a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'under_construction']); ?>"><i class="fa fa-bar-chart-o fa-fw"></i>&nbsp;Reports</a>
                                 </li>
 								<li>

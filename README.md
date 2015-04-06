@@ -2,7 +2,6 @@ Functionality:
 -------------------------------------------------------------------------------
 	Import Product Map Items from WTCR.
 	
-    Fetch from EPROM				(CSV Download)..................................DONE
 	Fetch from EPROM				(Cron Call - No Interface)......................
 	
     Fetching from Longtech          (Ajax Progressor)...............................
