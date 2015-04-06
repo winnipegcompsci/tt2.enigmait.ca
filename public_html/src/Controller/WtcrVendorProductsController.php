@@ -73,6 +73,9 @@ class WtcrVendorProductsController extends AppController
 			$wtcrProducts = TableRegistry::get('WtcrProducts');
             $wtcrProduct = $wtcrProducts->newEntity();
 			
+			echo "<pre>WTCR PRODUCT:: " . print_r($wtcrProduct, TRUE) . "</pre>";
+			echo "<pre>THIS REQUEST DATA:: " . print_r($this->request->data, TRUE) . "</pre>";
+			
             $wtcrProduct = $wtcrProducts->patchEntity($wtcrProduct, $this->request->data);
             
             if($wtcrProducts->save($wtcrProduct)) {
@@ -81,13 +84,10 @@ class WtcrVendorProductsController extends AppController
                 error_log("SAVE SUCCESS");
             } else {
                 $this->Flash->error('Failed to Save WTCR Product');
-				echo "<pre>" . print_r($wtcrProducts, TRUE) . "</pre>";               
+				// echo "<pre>" . print_r($wtcrProducts, TRUE) . "</pre>";               
             }
             
-        } else {
-            error_log('NOT POST');
-        }
-               
+        }                
         
         $product = $this->WtcrVendorProducts->find('all')->where(['wtcr_vendor_sku' => $vendor_sku]);
         $wtcrVendors = $this->WtcrVendorProducts->WtcrVendors->find('list', ['limit' => 200]);
@@ -112,6 +112,7 @@ class WtcrVendorProductsController extends AppController
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $wtcrVendorProduct = $this->WtcrVendorProducts->patchEntity($wtcrVendorProduct, $this->request->data);
+			
             if ($this->WtcrVendorProducts->save($wtcrVendorProduct)) {
                 $this->Flash->success('The wtcr vendor product has been saved.');
                 return $this->redirect(['action' => 'index']);
