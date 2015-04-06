@@ -34,3 +34,20 @@
     <?= $this->Form->button(__('Save New WTCR Product')) ?>
     <?= $this->Form->end() ?>
 </div>
+
+<!-- 
+wtcr_vendor_id
+mfg_part_num
+wtcrsku
+description
+wtcr_vendor_sku
+supplierstock
+autoupdate
+suggestedprice
+suggestedmarkup
+wtcrprice;
+wtcr_nid
+last_updated
+extra => (serialize obj)
+wtcr_vendor
+-->
