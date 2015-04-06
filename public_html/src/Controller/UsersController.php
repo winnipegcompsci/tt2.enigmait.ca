@@ -138,6 +138,6 @@ class UsersController extends AppController
     public function isAuthorized($user) 
     {
 		
-        return parent::isAuthorized();
+        return parent::isAuthorized($user);
     }
 }
