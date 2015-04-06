@@ -95,7 +95,7 @@ class WtcrVendorProductsController extends AppController
 			
 			$wtcrproduct->extra = serialize($wtcrProduct);
 			
-			echo "<pre>WTCR PRODUCT:: " . print_r($wtcrProduct, TRUE) . "</pre>";
+			// echo "<pre>WTCR PRODUCT:: " . print_r($wtcrProduct, TRUE) . "</pre>";
 						
 			
             if($wtcrProducts->save($wtcrProduct)) {
