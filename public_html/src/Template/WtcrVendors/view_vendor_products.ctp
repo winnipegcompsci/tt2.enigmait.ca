@@ -35,8 +35,8 @@
                     if(isset($vendor_products) && $vendor_products !== null) {
                         foreach($vendor_products as $product) {?> 
                         <tr>
-                            <td><?= $product->name ?></td>
-                            <td><?= $product->vendor_sku ?></td>
+                            <td><?= $product->product_name ?></td>
+                            <td><?= $product->wtcr_vendor_sku ?></td>
                             <td>$<?= number_format($product->vendor_price, 2); ?></td>
                             <td><?= $product->wtcr_sku ?></td>
                             <td><?= $product->wtcr_category ?></td>
