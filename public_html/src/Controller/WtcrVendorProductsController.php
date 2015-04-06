@@ -117,6 +117,8 @@ class WtcrVendorProductsController extends AppController
         $this->set('wtcrCategories', $wtcrCategories);
         $this->set('wtcrVendors', $wtcrVendors);
         $this->set('product', $product->toArray());
+		
+		return $this->redirect('action' => 'index');
     }
 
     /**
