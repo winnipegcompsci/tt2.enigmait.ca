@@ -3,7 +3,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\ORM\TableRegistry;
-App::import('Vendor', 'simple_html_dom');
+// App::import('Vendor', 'simple_html_dom');
 
 /**
  * WtcrVendors Controller
