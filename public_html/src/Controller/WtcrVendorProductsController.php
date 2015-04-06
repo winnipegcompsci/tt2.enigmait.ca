@@ -77,7 +77,12 @@ class WtcrVendorProductsController extends AppController
 			// echo "<pre>THIS REQUEST DATA:: " . print_r($this->request->data, TRUE) . "</pre>";
 			
             $wtcrProduct = $wtcrProducts->patchEntity($wtcrProduct, $this->request->data);
-            
+            // Set other values:
+			// WTCR Price = Base + Markup
+			// Marketplaces = (Check Default)
+			// 
+			
+			
             if($wtcrProducts->save($wtcrProduct)) {
                 $this->Flash->success("The wtcr product has been saved.");
                 return $this->redirect(['action' => 'index']);
@@ -144,4 +149,8 @@ class WtcrVendorProductsController extends AppController
         }
         return $this->redirect(['action' => 'index']);
     }
+	
+	public function getWtcrSku($mfg_part_num = null) {
+		return $mfg_part_num;
+	}
 }
