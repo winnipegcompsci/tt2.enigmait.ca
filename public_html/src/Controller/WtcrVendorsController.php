@@ -280,7 +280,7 @@ class WtcrVendorsController extends AppController
         
         ini_set('max_execution_time', 0);
         
-        require_once('simple_html_dom.php');        // Dom Parsing Toolit.
+        App::import('Vendor', 'simple_html_dom');
         
         
         // Import DOM.
