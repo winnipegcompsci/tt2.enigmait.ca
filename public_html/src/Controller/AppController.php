@@ -64,7 +64,7 @@ class AppController extends Controller
         ]);	// REMOVE THIS AFTER!!!
         */
         
-       		$this->set('logged_in', $this->Auth->loggedIn());
+       		// $this->set('logged_in', $this->Auth->loggedIn());
 		// ...
     }
 
