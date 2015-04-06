@@ -14,7 +14,7 @@
             $default_name = $p->name;
             $default_vendor_id = $p->wtcr_vendor_id;
             $default_vendor_sku = $p->vendor_sku;
-            $default_wtcr_sku = $p->wtcr_sku;
+            $mfg_part_num = $p->mfg_part_num;
             $default_vendor_price = $p->vendor_price;
             $default_category =  $p->wtcr_category_id;
         }
@@ -25,8 +25,8 @@
         <?php
             echo $this->Form->text('name', ['default' => $default_name ]);
             echo $this->Form->input('wtcr_vendor_id', ['options' => $wtcrVendors,'default' => $default_vendor_id, 'empty' => true]);
-            echo $this->Form->input('vendor_sku', ['default' => $default_vendor_sku]);
-            echo $this->Form->input('wtcr_sku', ['default' => $default_wtcr_sku ]);
+            echo $this->Form->input('wtcr_vendor_sku', ['default' => $default_vendor_sku]);
+            echo $this->Form->input('mfg_part_num', ['default' => $mfg_part_num ]);
             echo $this->Form->input('vendor_price', ['default' => $default_vendor_price]);
             echo $this->Form->input('wtcr_category_id', ['options' => $wtcrCategories, 'empty' => true, 'default' => $default_category]);
         ?>
