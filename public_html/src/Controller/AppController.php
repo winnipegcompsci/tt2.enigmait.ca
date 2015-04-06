@@ -119,9 +119,9 @@ class AppController extends Controller
         
     }
 	
-	public function isAuthorized() 
+	public function isAuthorized($user) 
 	{
-		$loggedIn = $this->Auth->identify();
+		error_log('USER: ' . print_r($user, TRUE) . );
 		
 		if($loggedIn) {
 			error_log('LOGGED IN = TRUE');
