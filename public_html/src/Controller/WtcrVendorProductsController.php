@@ -70,16 +70,18 @@ class WtcrVendorProductsController extends AppController
         
         if($this->request->is('post')) {
             
-            $wtcrProduct = TableRegistry::get('WtcrProducts')->newEntity();
-            $wtcrProduct = TableRegistry::get('WtcrProducts')->patchEntity($wtcrProduct, $this->request->data);
+			$wtcrProducts = TableRegistry::get('WtcrProducts');
+            $wtcrProduct = $wtcrProducts->newEntity();
+			
+            $wtcrProduct = $wtcrProducts->patchEntity($wtcrProduct, $this->request->data);
             
-            if(TableRegistry::get('WtcrProducts')->save($wtcrProduct)) {
+            if($wtcrProducts->save($wtcrProduct)) {
                 $this->Flash->success("The wtcr product has been saved.");
                 return $this->redirect(['action' => 'index']);
                 error_log("SAVE SUCCESS");
             } else {
                 $this->Flash->error('Failed to Save WTCR Product');
-				echo "<pre>" . print_r(TableRegistry::get('WtcrProducts'), TRUE) . "</pre>";               
+				echo "<pre>" . print_r($wtcrProducts, TRUE) . "</pre>";               
             }
             
         } else {
