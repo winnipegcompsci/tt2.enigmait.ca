@@ -67,7 +67,7 @@ class WtcrVendorProductsController extends AppController
     public function add_product($vendor_sku = null) {
         error_log('Vendor SKU:: ' . $vendor_sku);
         
-        if($this->request->is('post') {
+        if($this->request->is('post')) {
             error_log('TRY SAVING NEW SKU');
         } else {
             error_log('NOT POST');
