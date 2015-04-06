@@ -1,24 +1,18 @@
 TT2.0 Development Progress / TODO:
 -------------------------------------------------------------------------------    
-Database:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
--------------------------------------------------------------------------------
-    Run Integration Script
-	Rebake All Views.
-    
--------------------------------------------------------------------------------    
 Functionality::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 -------------------------------------------------------------------------------
-    Adding Item to Inventory
-       Adds Details from Vendors Table (Product Map) to WTCR Products Table
-            (SKU Lookup on SKU Map)
-          
-        IF HAS WTCR-SKU IN MAP => USE IT
-        ELSE =? Generate New WTCR SKU
-    
+	Import Product Map Items from WTCR.
+	
+    Fetch from EPROM				(CSV Download)
+	Fetch from EPROM				(Cron Call - No Interface)
+	
     Fetching from Longtech          (Ajax Progressor)
 	Fetching from Longtech			(Cron Call - No Interface)
+	
 	Fetching from ASI               (Ajax Progressor)
 	Fetching from ASI 				(Cron Call - No Interface)
+	
 	Manually add AllWay Products    (Add Form that does Lookup against Map)    
     
     Receive Products (WTCR Product => Inventory)
@@ -65,7 +59,6 @@ User Interface:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 	Panel for Competitors
 	Panel for Data Providers    
 	
-    TT:
     Tickets (Add View)
     Tickets (Edit View)
     Tickets (Index View)
