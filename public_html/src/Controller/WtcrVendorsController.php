@@ -195,7 +195,8 @@ class WtcrVendorsController extends AppController
             
             $category = "";
             $products = TableRegistry::get('wtcr_vendor_products');
-                                
+			$numProdSaved = 0;
+			
             foreach(preg_split("/((\r?\n)|(\r\n?))/", $downloaded_file) as $line) {
 				// error_log('FOUND LINE: ' . $line);
                 $parts = explode(",", $line, 6);
@@ -250,7 +251,7 @@ class WtcrVendorsController extends AppController
 					error_log('Product::3::' . print_r($product, TRUE) );
 					
                     if($products->save($product)) {
-						error_log('Eprom Product Fetched');
+						$numProdSaved++;
 					} else {
 						error_log('Failed to Fetch EPROM Product');
 					}
@@ -258,7 +259,7 @@ class WtcrVendorsController extends AppController
                 
             }
                         
-            $this->Flash->success('Updated EPROM product list');
+            $this->Flash->success('Updated ' . $numProdSaved . ' EPROM product list');
                         
                         
             return $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'view_vendor_products', 'eprom']);
