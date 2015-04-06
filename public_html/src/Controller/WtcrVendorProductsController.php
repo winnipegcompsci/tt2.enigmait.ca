@@ -78,16 +78,14 @@ class WtcrVendorProductsController extends AppController
                 return $this->redirect(['action' => 'index']);
                 error_log("SAVE SUCCESS");
             } else {
-                $this->Flash->error('Failed to Save WTCR Product' . 
-                    "<pre>" . print_r(TableRegistry::get('WtcrProducts'), TRUE) . "</pre>");
-                error_log("FAILED TO SAVE");
+                $this->Flash->error('Failed to Save WTCR Product');
+				echo "<pre>" . print_r(TableRegistry::get('WtcrProducts'), TRUE) . "</pre>";               
             }
             
         } else {
             error_log('NOT POST');
         }
-        
-        
+               
         
         $product = $this->WtcrVendorProducts->find('all')->where(['wtcr_vendor_sku' => $vendor_sku]);
         $wtcrVendors = $this->WtcrVendorProducts->WtcrVendors->find('list', ['limit' => 200]);

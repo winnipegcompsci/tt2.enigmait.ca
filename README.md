@@ -1,8 +1,7 @@
 Functionality:
 -------------------------------------------------------------------------------
 	Import Product Map Items from WTCR.
-    
-	
+    	
 	Fetch from EPROM				(Cron Call - No Interface)......................
 	
     Fetching from Longtech          (Ajax Progressor)...............................
@@ -12,9 +11,7 @@ Functionality:
 	Fetching from ASI 				(Cron Call - No Interface)......................
 	
 	Manually add AllWay Products    (Add Form that does Lookup against Map).........
-    
-    Authentication Not Working......................................................
-    
+        
     Receive Products (WTCR Product => Inventory)....................................
         Creates Inventory Item from WTCR Product + Vendor Product Info.
             Gets Serial Numbers, Unique Instance Information, 
