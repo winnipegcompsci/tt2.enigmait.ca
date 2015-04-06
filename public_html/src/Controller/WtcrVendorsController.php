@@ -276,6 +276,15 @@ class WtcrVendorsController extends AppController
     public function fetch_longtech_products() 
     {
         $this->Flash->warn('Debug:: Fetching Longtech Products');
+        
+        update_progress($index, 'Starting Longtech Fetch', 0);
+        header("Connection: Keep-alive");
+        
+        $this->Html->script('longtech_fetch');
+        
+        echo $this->element('progress_bar', 0);
+        
+        
     }
     
     public function fetch_asi_products()

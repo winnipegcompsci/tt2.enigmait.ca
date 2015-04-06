@@ -153,7 +153,7 @@
 									<a href="settings"><i class="fa fa-cog fa-fw"></i>&nbsp;Settings<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
-                                            <a href="<?php echo $this->Url->build(['controller' => 'WtcrProducts', 'action' => 'index']); ?>/">&nbsp; Product Categories</a>
+                                            <a href="<?php echo $this->Url->build(['controller' => 'WtcrProductCategories', 'action' => 'index']); ?>/">&nbsp; Product Categories</a>
                                         </li>
 										<li>
                                             <a href="<?php echo $this->Url->build(['controller' => 'WtcrVendors', 'action' => 'index']); ?>/">&nbsp; WTCR Vendors</a>
