@@ -63,7 +63,8 @@ class AppController extends Controller
             'add_product',
         ]);	// REMOVE THIS AFTER!!!
         */
-		$this->Auth->allow(['index', 'view', 'display']);
+		
+		// $this->Auth->allow(['index', 'view', 'display']);
         
         
        		// $this->set('logged_in', $this->Auth->loggedIn());
