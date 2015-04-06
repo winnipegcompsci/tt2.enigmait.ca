@@ -89,7 +89,7 @@ class WtcrVendorProductsController extends AppController
                 error_log("SAVE SUCCESS");
             } else {
                 $this->Flash->error('Failed to Save WTCR Product');
-				echo "<pre>" . print_r($wtcrProducts, TRUE) . "</pre>";               
+				// echo "<pre>" . print_r($wtcrProducts, TRUE) . "</pre>";               
 				error_log('Failed to Save');
 			}
             

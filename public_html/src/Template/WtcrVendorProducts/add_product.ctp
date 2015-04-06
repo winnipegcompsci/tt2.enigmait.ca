@@ -47,7 +47,3 @@
     <?= $this->Form->button(__('Save New WTCR Product')) ?>
     <?= $this->Form->end() ?>
 </div>
-
-<?php
-	
-?>
