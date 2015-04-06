@@ -226,7 +226,7 @@ class WtcrVendorsController extends AppController
                     
                     if(!$product) {
                         $product = $products->newEntity();
-						error_log("Product:: " . print_r($product, TRUE)):
+						error_log("Product:: " . print_r($product, TRUE));
 						
                         $product->name = $description;
                         $product->wtcr_vendor_id = 0;
