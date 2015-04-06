@@ -1,31 +1,31 @@
 TT2.0 Development Progress / TODO:
 -------------------------------------------------------------------------------    
-Functionality::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Functionality:
 -------------------------------------------------------------------------------
 	Import Product Map Items from WTCR.
 	
-    Fetch from EPROM				(CSV Download)
-	Fetch from EPROM				(Cron Call - No Interface)
+    Fetch from EPROM				(CSV Download)..................................DONE
+	Fetch from EPROM				(Cron Call - No Interface)......................
 	
-    Fetching from Longtech          (Ajax Progressor)
-	Fetching from Longtech			(Cron Call - No Interface)
+    Fetching from Longtech          (Ajax Progressor)...............................
+	Fetching from Longtech			(Cron Call - No Interface)......................
 	
-	Fetching from ASI               (Ajax Progressor)
-	Fetching from ASI 				(Cron Call - No Interface)
+	Fetching from ASI               (Ajax Progressor)...............................
+	Fetching from ASI 				(Cron Call - No Interface)......................
 	
-	Manually add AllWay Products    (Add Form that does Lookup against Map)    
+	Manually add AllWay Products    (Add Form that does Lookup against Map).........
     
-    Receive Products (WTCR Product => Inventory)
-        Pushes WTCR Vendor Product to WTCR_Product.
+    Receive Products (WTCR Product => Inventory)....................................
+        Pushes WTCR Vendor Product to WTCR_Product
             Gets Serial Numbers, Unique Instance Information, 
             (Comments: scratched) -> Saves to Inventory.
     
-    Find Product Details
+    Find Product Details............................................................
         Scan Barcode attached to item to lookup data about that particular
         product. 
         eg) Date Received, Date Sold, Price Received, Price Sold,Order #, 
        
-	Generate ZPL Barcode for Inventory Tracking
+	Generate ZPL Barcode for Inventory Tracking.....................................
         Barcode Gets Displayed in Inventory View along with link to print?
 	
 	Push Product to Drupal (WTCR)
@@ -33,21 +33,21 @@ Functionality::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 	Push Product to eBay (WTCR)
 	Push Product to Kijiji (WTCR)
 
-	Create Reports (Taxes, Ticket, Billing Status, Employee Report, Inventory)
+	Create Reports (Taxes, Ticket, Billing Status, Employee Report, Inventory).....
         Supplier Price Fetches                  DAILY
         Event: Crypto Currency Rate Updates     Every 4-6 Hours?
         Competitor Price Fetches                DAILY
         Event: UPDATE MARKETPLACE PRICES        DAILY
         
 	
-	2-Factor Authentication
+	2-Factor Authentication........................................................
     
-    Send Emails on Event Add.
-    Send Emails on Ticket Assign
-    Send Emails on New Notification (pertaining to user ROLE).
+    Send Emails on Event Add.......................................................
+    Send Emails on Ticket Assign...................................................
+    Send Emails on New Notification (pertaining to user ROLE)......................
         
 -------------------------------------------------------------------------------
-User Interface:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+User Interface
 -------------------------------------------------------------------------------
 	User Profile View
         Secret Key
@@ -85,7 +85,7 @@ User Interface:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 	'Sales by Marketplace' Donut Graph.      
         
 -------------------------------------------------------------------------------        
-WTCR2.0 Development::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+WTCR2.0 Development
 -------------------------------------------------------------------------------
 Install Drupal 8.0 (Acquia Dev Desktop)
 Find Good Responsive Theme
