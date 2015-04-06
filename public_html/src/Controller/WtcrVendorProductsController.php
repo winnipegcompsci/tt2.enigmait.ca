@@ -71,7 +71,7 @@ class WtcrVendorProductsController extends AppController
         if($this->request->is('post')) {
             
             $wtcrProduct = TableRegistry::get('WtcrProducts')->newEntity();
-            $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
+            $wtcrProduct = TableRegistry::get('WtcrProducts')->patchEntity($wtcrProduct, $this->request->data);
             
             if($this->WtcrProducts->save($wtcrProduct)) {
                 $this->Flash->success("The wtcr product has been saved.");
