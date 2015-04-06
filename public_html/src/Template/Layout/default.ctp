@@ -56,7 +56,7 @@
 					?>
 			        </nav>
 					<?php } else if(strpos($this->request->params['action'], 'login') == false) {
-                        return $this->redirect(['controller' => 'Users', 'action' => 'login']);
+                        // return $this->redirect(['controller' => 'Users', 'action' => 'login']);
                     }                    
                     ?>
 			
