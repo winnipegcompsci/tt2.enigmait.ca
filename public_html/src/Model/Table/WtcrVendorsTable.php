@@ -22,7 +22,7 @@ class WtcrVendorsTable extends Table
     public function initialize(array $config)
     {
         $this->table('wtcr_vendors');
-        $this->displayField('name');
+        $this->displayField('vendor_name');
         $this->primaryKey('id');
         $this->hasMany('Inventory', [
             'foreignKey' => 'wtcr_vendor_id'
