@@ -22,7 +22,7 @@ class WtcrVendorProductsTable extends Table
     public function initialize(array $config)
     {
         $this->table('wtcr_vendor_products');
-        $this->displayField('name');
+        $this->displayField('product_name');
         $this->primaryKey('id');
         $this->belongsTo('WtcrVendors', [
             'foreignKey' => 'wtcr_vendor_id'
