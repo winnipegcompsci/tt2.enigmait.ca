@@ -214,6 +214,7 @@ class WtcrVendorsController extends AppController
                     
                     
                     $product = $products->newEntity();
+					error_log("Product::1::" . print_r($product, TRUE) );
                     
                     $existing_prods = $products->find()
                         ->where(['wtcr_vendor_sku' => $supplier_sku])
@@ -226,7 +227,7 @@ class WtcrVendorsController extends AppController
                     
                     if(!$product) {
                         $product = $products->newEntity();
-						error_log("Product:: " . print_r($product, TRUE));
+						error_log("Product::2:: " . print_r($product, TRUE));
 						
                         $product->name = $description;
                         $product->wtcr_vendor_id = 0;
