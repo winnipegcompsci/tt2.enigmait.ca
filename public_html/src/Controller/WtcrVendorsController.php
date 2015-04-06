@@ -254,7 +254,9 @@ class WtcrVendorsController extends AppController
 						$numProdSaved++;
 					} else {
 						error_log('Failed to Fetch EPROM Product');
-						die( "<pre>" . print_r($product, TRUE) . "</pre>");
+						echo "<pre><br />Product:: " . print_r($product, TRUE) . "</pre>";
+						echo "<pre><br />Products:: " . print_r($products, TRUE) . "</pre>";
+						die();
 					}
                 }
             }
