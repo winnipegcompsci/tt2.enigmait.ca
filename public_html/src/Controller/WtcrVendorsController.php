@@ -228,14 +228,14 @@ class WtcrVendorsController extends AppController
                     
                     if(!$product) {
                         $product = $products->newEntity();
-						error_log("Product::2:: " . print_r($product, TRUE));
+						// error_log("Product::2:: " . print_r($product, TRUE));
 						
                         $product->product_name = $description;
                         $product->wtcr_vendor_id = 1;				  // Replace this with Fetched ID After.
                         $product->wtcr_vendor_sku = $supplier_sku;
                         $product->mfg_part_num = $supplier_sku;       // Create a VENDOR_SKU -> WTCR_SKU FUNC
 						$product->vendor_price = $supplier_price;
-                        $product->wtcr_category_id = 0;
+                        $product->wtcr_product_category_id = 0;
                         $product->last_updated = date('Y-m-d H:i:s');
                     } else {
                         $product->product_name = $description;
@@ -243,20 +243,20 @@ class WtcrVendorsController extends AppController
                         $product->wtcr_vendor_sku = $supplier_sku;
                         $product->mfg_part_num = $supplier_sku;       // Create a VENDOR_SKU -> WTCR_SKU FUNC
                         $product->vendor_price = number_format($supplier_price, 2);
-                        $product->wtcr_category_id = 0;				// Options: $category.
+                        $product->wtcr_product_category_id = 0;				// Options: $category.
                         $product->last_updated = date('Y-m-d H:i:s');
                     }
                     
 					
-					error_log('Product::3::' . print_r($product, TRUE) );
+					// error_log('Product::3::' . print_r($product, TRUE) );
 					
                     if($products->save($product)) {
 						$numProdSaved++;
 					} else {
 						error_log('Failed to Fetch EPROM Product');
-						echo "<pre><br />Product:: " . print_r($product, TRUE) . "</pre>";
-						echo "<pre><br />Products:: " . print_r($products, TRUE) . "</pre>";
-						die();
+						// echo "<pre><br />Product:: " . print_r($product, TRUE) . "</pre>";
+						// echo "<pre><br />Products:: " . print_r($products, TRUE) . "</pre>";
+						// die();
 					}
                 }
             }
