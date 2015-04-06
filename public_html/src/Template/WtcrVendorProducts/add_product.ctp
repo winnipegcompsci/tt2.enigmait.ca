@@ -32,7 +32,7 @@
 			echo $this->Form->input('vendor_price', ['default' => $default_vendor_price]);
             echo $this->Form->input('wtcr_product_category_id', ['options' => $wtcrCategories, 'default' => $default_category]);
 			
-			*
+			
 			/*
             echo $this->Form->input('product_name', ['default' => $default_name, 'label' => 'Product Name']);
             echo $this->Form->input('wtcr_vendor_id', ['options' => $wtcrVendors,'default' => $default_vendor_id ]);
