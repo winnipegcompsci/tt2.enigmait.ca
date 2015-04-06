@@ -43,27 +43,7 @@ class AppController extends Controller
 	];
     
 	public function beforeFilter(Event $event)
-    {	
-		/*
-        $this->Auth->allow([
-            'add',
-            'index', 
-            'view', 
-            'display', 
-            'find_product', 
-            'receive_products',
-            'view_vendor_products',
-            'fetch_vendor_products',
-            'fetch_eprom_products',
-            'fetch_longtech_products',
-            'fetch_asi_products',
-            'set_solution',
-			'delete',
-            'update_ticket',
-            'add_product',
-        ]);	// REMOVE THIS AFTER!!!
-        */
-		
+    {			
 		// $this->Auth->allow(['index', 'view', 'display']);
         
         
@@ -122,14 +102,14 @@ class AppController extends Controller
 	
 	public function isAuthorized($user) 
 	{
-		error_log('USER: ' . print_r($user['user_role_id'], TRUE) );
+		// error_log('USER: ' . print_r($user['user_role_id'], TRUE) );
 		
 		if(isset($user['user_role_id'])) {
-			error_log('LOGGED IN = TRUE');
+			// error_log('LOGGED IN = TRUE');
 			return true;
 		} 
 		
-		error_log('NOT LOGGED IN');
+		// error_log('NOT LOGGED IN');
 		return false; 
 		
 		
