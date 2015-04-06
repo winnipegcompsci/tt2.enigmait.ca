@@ -227,7 +227,7 @@ class WtcrVendorsController extends AppController
                     
                     if(!$product) {
                         $product = $products->newEntity();
-						// error_log("Product::2:: " . print_r($product, TRUE));
+						error_log("Product::2:: " . print_r($product, TRUE));
 						
                         $product->product_name = $description;
                         $product->wtcr_vendor_id = 0;
@@ -236,7 +236,7 @@ class WtcrVendorsController extends AppController
 						$product->vendor_price = $supplier_price;
                         // $product->wtcr_category_id = $category;
                         $product->last_updated = date('Y-m-d H:i:s');
-                    } else {
+                    } else { // $product exists. 
                         $product->product_name = $description;
                         $product->wtcr_vendor_id = 0;
                         $product->wtcr_vendor_sku = $supplier_sku;
