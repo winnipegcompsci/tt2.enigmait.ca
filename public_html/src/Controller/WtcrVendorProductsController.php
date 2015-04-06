@@ -175,3 +175,5 @@ class WtcrVendorProductsController extends AppController
 		return $mfg_part_num;
 	}
 }
+
+?>
