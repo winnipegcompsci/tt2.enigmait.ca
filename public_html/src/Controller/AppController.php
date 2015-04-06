@@ -121,7 +121,7 @@ class AppController extends Controller
 	
 	public function isAuthorized($user) 
 	{
-		error_log('USER: ' . print_r($user->user_role_id, TRUE) );
+		error_log('USER: ' . print_r($user['user_role_id'], TRUE) );
 		
 		if($loggedIn) {
 			error_log('LOGGED IN = TRUE');
