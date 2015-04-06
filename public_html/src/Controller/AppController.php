@@ -123,23 +123,13 @@ class AppController extends Controller
 	{
 		error_log('USER: ' . print_r($user['user_role_id'], TRUE) );
 		
-		if($loggedIn) {
+		if(isset($user['user_role_id'])) {
 			error_log('LOGGED IN = TRUE');
-		} else {
-			error_log('LOGGED IN = FALSE');
-		}
-		
-		if(1==1) {
 			return true;
-		}
-		// error_log("Called:: isAuthorized() hook");
-        
-		$this->set('logged_in', $this->Auth->identify());
+		} 
 		
-		echo "<pre>" . print_r($user, TRUE) . "</pre>"; 
-		
-		// error_log('USER NOT AUTHORIZED');
-		return false;
+		error_log('NOT LOGGED IN');
+		return false; 
 		
 		
 		
