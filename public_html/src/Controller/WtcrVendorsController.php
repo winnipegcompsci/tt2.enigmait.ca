@@ -214,7 +214,7 @@ class WtcrVendorsController extends AppController
                     
                     
                     $product = $products->newEntity();
-					error_log("Product::1::" . print_r($product, TRUE) );
+					// error_log("Product::1::" . print_r($product, TRUE) );
                     
                     $existing_prods = $products->find()
                         ->where(['wtcr_vendor_sku' => $supplier_sku])
@@ -227,7 +227,7 @@ class WtcrVendorsController extends AppController
                     
                     if(!$product) {
                         $product = $products->newEntity();
-						error_log("Product::2:: " . print_r($product, TRUE));
+						// error_log("Product::2:: " . print_r($product, TRUE));
 						
                         $product->product_name = $description;
                         $product->wtcr_vendor_id = 0;
@@ -246,6 +246,9 @@ class WtcrVendorsController extends AppController
                         $product->last_updated = date('Y-m-d H:i:s');
                     }
                     
+					
+					error_log('Product::3::' . print_r($product, TRUE) );
+					
                     if($products->save($product)) {
 						error_log('Eprom Product Fetched');
 					} else {
