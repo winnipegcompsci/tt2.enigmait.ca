@@ -41,10 +41,17 @@ class AppController extends Controller
 			'className' => 'Bootstrap3.BootstrapModal'
 		],
 	];
+    
+    public function beforeRender() 
+    {
+        if (Configure::read('debug' > 0)) {
+            App::import('Vendor', 'lessc');
+        }
+    }
 
 	public function beforeFilter(Event $event)
-    {			
-		
+    {	
+		/*
         $this->Auth->allow([
             'add',
             'index', 
@@ -62,6 +69,7 @@ class AppController extends Controller
             'update_ticket',
             'add_product',
         ]);	// REMOVE THIS AFTER!!!
+        */
         
         
        		// $this->set('logged_in', $this->Auth->loggedIn());
