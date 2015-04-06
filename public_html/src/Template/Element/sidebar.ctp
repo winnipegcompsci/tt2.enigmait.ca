@@ -111,7 +111,7 @@
 								
                                 </li>
 								<li>
-								<a href="<?php echo $this->Url->build(['controller' => 'WtcrProducts', 'action' => 'index']); ?>">WTCR Products </a>
+									<a href="<?php echo $this->Url->build(['controller' => 'WtcrProducts', 'action' => 'index']); ?>"><i class="fa fa-suitcase fa-fw">WTCR Products </a>
 								</li>
                                 <li>
                                     <a href="<?php echo $this->Url->build(['controller' => 'WtcrVendors', 'action' => 'index']); ?>/"><i class="fa fa-suitcase fa-fw"></i>&nbsp;Vendor Products <span class="fa arrow"></span></a>
