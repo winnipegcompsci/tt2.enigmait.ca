@@ -118,10 +118,12 @@ class AppController extends Controller
         
     }
 	
-	public function isAuthorized($user) 
+	public function isAuthorized() 
 	{
-		die("USER: " . $user);
-        // error_log("Called:: isAuthorized() hook");
+		if(1==1) {
+			return true;
+		}
+		// error_log("Called:: isAuthorized() hook");
         
 		$this->set('logged_in', $this->Auth->identify());
 		
