@@ -14,7 +14,7 @@ class WtcrInventoryController extends AppController
     /**
      * Index method
      *
-     * @return void
+     * @return void 
      */
     public function index()
     {
