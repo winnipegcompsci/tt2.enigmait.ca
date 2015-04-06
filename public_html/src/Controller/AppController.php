@@ -44,7 +44,7 @@ class AppController extends Controller
     
 	public function beforeFilter(Event $event)
     {	
-		
+		/*
         $this->Auth->allow([
             'add',
             'index', 
@@ -62,7 +62,8 @@ class AppController extends Controller
             'update_ticket',
             'add_product',
         ]);	// REMOVE THIS AFTER!!!
-        
+        */
+		$this->Auth->allow(['index', 'view', 'display']);
         
         
        		// $this->set('logged_in', $this->Auth->loggedIn());
