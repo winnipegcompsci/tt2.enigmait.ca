@@ -13,13 +13,12 @@ Functionality:
 	Manually add AllWay Products    (Add Form that does Lookup against Map).........
     
     Receive Products (WTCR Product => Inventory)....................................
-        Pushes WTCR Vendor Product to WTCR_Product
+        Creates Inventory Item from WTCR Product + Vendor Product Info.
             Gets Serial Numbers, Unique Instance Information, 
-            (Comments: scratched) -> Saves to Inventory.
-    
+            
     Find Product Details............................................................
         Scan Barcode attached to item to lookup data about that particular
-        product. 
+        inventory item. 
         eg) Date Received, Date Sold, Price Received, Price Sold,Order #, 
        
 	Generate ZPL Barcode for Inventory Tracking.....................................
