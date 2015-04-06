@@ -73,8 +73,8 @@ class WtcrVendorProductsController extends AppController
 			$wtcrProducts = TableRegistry::get('WtcrProducts');
             $wtcrProduct = $wtcrProducts->newEntity();
 			
-			// echo "<pre>WTCR PRODUCT:: " . print_r($wtcrProduct, TRUE) . "</pre>";
-			// echo "<pre>THIS REQUEST DATA:: " . print_r($this->request->data, TRUE) . "</pre>";
+			echo "<pre>WTCR PRODUCT:: " . print_r($wtcrProduct, TRUE) . "</pre>";
+			echo "<pre>THIS REQUEST DATA:: " . print_r($this->request->data, TRUE) . "</pre>";
 			
             $wtcrProduct = $wtcrProducts->patchEntity($wtcrProduct, $this->request->data);
             
