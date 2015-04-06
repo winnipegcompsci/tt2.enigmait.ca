@@ -28,7 +28,7 @@
  			echo $this->Form->input('product_name', ['default' => $default_name, 'label' => 'Product Name']);
 			echo $this->Form->input('description');
 			echo $this->Form->input('mfg_part_num', ['default' => $mfg_part_num ]);
-            echo $this->Form->input('wtcrsku', ['default' => getWtcrSku($mfg_part_num)]);
+            echo $this->Form->input('wtcrsku', ['default' => $product->getWtcrSku($mfg_part_num)]);
 			echo $this->Form->input('vendor_price', ['default' => $default_vendor_price]);
             echo $this->Form->input('wtcr_product_category_id', ['options' => $wtcrCategories, 'default' => $default_category]);
 			

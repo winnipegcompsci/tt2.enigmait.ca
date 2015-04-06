@@ -151,6 +151,11 @@ class WtcrVendorProductsController extends AppController
     }
 	
 	public function getWtcrSku($mfg_part_num = null) {
+		/*
+			IMPLEMENT::
+				TALK TO SEAN!
+		*/
+		
 		return $mfg_part_num;
 	}
 }
