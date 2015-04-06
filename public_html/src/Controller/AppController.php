@@ -118,19 +118,13 @@ class AppController extends Controller
         
     }
 	
-	public function isAuthorized() 
+	public function isAuthorized($user) 
 	{
         // error_log("Called:: isAuthorized() hook");
         
 		$this->set('logged_in', $this->Auth->identify());
 		
-		$this_user = $this->Auth->identify();
-		
-		// Admin can access every action
-		if($this_user) {
-			// error_log('USER IS AUTHORIZED');
-			return true;
-		} 
+		echo "<pre>" . print_r($user, TRUE) . "</pre>"; 
 		
 		// error_log('USER NOT AUTHORIZED');
 		return false;
