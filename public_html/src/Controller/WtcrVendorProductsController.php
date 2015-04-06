@@ -108,6 +108,7 @@ class WtcrVendorProductsController extends AppController
 				error_log('Failed to Save');
 			}
             
+			return $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'view_vendor_products', 'eprom']);
         }                
         
         $product = $this->WtcrVendorProducts->find('all')->where(['wtcr_vendor_sku' => $vendor_sku]);
@@ -118,7 +119,7 @@ class WtcrVendorProductsController extends AppController
         $this->set('wtcrVendors', $wtcrVendors);
         $this->set('product', $product->toArray());
 		
-		return $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'view_vendor_products', 'eprom']);
+		
     }
 
     /**
