@@ -16,9 +16,7 @@ class UsersController extends AppController
 	{
 		parent::beforeFilter($event);
 		$this->Auth->allow(['login', 'logout']);
-        
-        return $this->redirect($this->Auth->redirectUrl);
-	}
+    }
 	
 	public function login() 
 	{
