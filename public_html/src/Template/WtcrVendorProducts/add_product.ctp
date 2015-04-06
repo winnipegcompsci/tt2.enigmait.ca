@@ -21,7 +21,7 @@
     ?>
     <?= $this->Form->create(null); ?>
     <fieldset>
-        <legend><?= __('Add Wtcr Vendor Product') ?></legend>
+        <legend><?= __('Create WTCR Product from a Vendor Product') ?></legend>
         <?php
             echo $this->Form->input('product_name', ['default' => $default_name, 'label' => 'Product Name']);
             echo $this->Form->input('wtcr_vendor_id', ['options' => $wtcrVendors,'default' => $default_vendor_id, 'empty' => true]);
@@ -31,6 +31,6 @@
             echo $this->Form->input('wtcr_category_id', ['options' => $wtcrCategories, 'default' => $default_category]);
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Save New WTCR Product')) ?>
     <?= $this->Form->end() ?>
 </div>
