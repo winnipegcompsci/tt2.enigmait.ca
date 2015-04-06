@@ -111,17 +111,17 @@ class WtcrVendorsController extends AppController
         
         if($vendor == "eprom") {
             $this->set('vendor_name', 'Eprom');
-            $vendor_id = 0;
+            $vendor_id = 1;	// FIX THIS
         }
         
         if($vendor == "longtech") {
             $this->set('vendor_name', 'Longtech');
-            $vendor_id = 1;
+            $vendor_id = 2; // FIX THIS
         }
         
         if($vendor == "asi") {
             $this->set('vendor_name', 'ASI');
-            $vendor_id = 2;
+            $vendor_id = 3; // FIX THIS!
         }
         
         $vendor_products = TableRegistry::get('wtcr_vendor_products')->find('all', [
