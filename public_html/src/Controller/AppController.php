@@ -121,6 +121,7 @@ class AppController extends Controller
 	
 	public function isAuthorized() 
 	{
+		error_log('Logged IN: ' . $this->Auth->identify());
 		if(1==1) {
 			return true;
 		}
@@ -132,5 +133,8 @@ class AppController extends Controller
 		
 		// error_log('USER NOT AUTHORIZED');
 		return false;
+		
+		
+		
 	}
 }
