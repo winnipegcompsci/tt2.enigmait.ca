@@ -86,7 +86,7 @@ class WtcrVendorProductsController extends AppController
 			
 			$wtcrProduct->suggestedmarkup = 0.50;
 		
-			$wtcrProduct->wtcrprice = $wtcrProduct->suggestedprice + ($wtcrProduct->suggestedmarkup * wtcrProduct->suggestedprice);
+			$wtcrProduct->wtcrprice = $wtcrProduct->suggestedprice + ($wtcrProduct->suggestedmarkup * $wtcrProduct->suggestedprice);
 			
 			$wtcrProduct->wtcr_nid = null;
 			$wtcrProduct->lastupdated = date('Y-m-d H:i:s');
