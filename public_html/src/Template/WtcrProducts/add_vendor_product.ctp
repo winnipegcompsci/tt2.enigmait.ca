@@ -10,9 +10,13 @@
 </div>
 
 <?php
+__('Related Products');
+echo "<table>";
 foreach($productVendors as $item) {
-	echo "<pre>" . print_r($item, TRUE) . "</pre>";
+	echo "<td>" . $item->product_name . "</td>";
+    echo "<td>" . $item->vendor_price . "</td>";
 }
+echo "</table>";
 ?>
 
 <div class="wtcrProducts form col-lg-10 col-md-9 columns">
