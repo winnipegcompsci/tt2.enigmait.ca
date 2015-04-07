@@ -30,7 +30,7 @@
 <div class="wtcrProducts form col-lg-5 col-md-6 columns">
     <?php        
     if(count($productVendors) != 0) { ?>
-    <p> This product can be purchased from the following vendors: </p>
+    <legend> This product can be purchased from the following vendors: </legend>
     <table id="VendorTable" width="100%">
         <thead>
             <tr>
@@ -54,7 +54,7 @@
     </table>
 <?php } 
 
-    echo "<br /><br /><p>" . __('This product can be sold on') . "</p>";
+    echo "<br /><br /><legend>" . __('This product can be sold on') . "</legend>";
 
     echo "<ul>";
     foreach($marketplaces as $marketplace) {
