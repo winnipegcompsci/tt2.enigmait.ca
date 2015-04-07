@@ -70,15 +70,15 @@ class WtcrProductsController extends AppController
         
         // die('Pre Post');
         if($this->request->is('post')) {
-            die('Entered Post');
+            echo '<br />Entered Post';
             $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
-            die('Set WTCR Product Object');
+            echo '<br />Set WTCR Product Object';
             $wtcrProduct->lastupdated = date('Y-m-d H:i:s');
-            die('Set Last Updated Time');
+            echo '<br />Set Last Updated Time';
             $wtcrProduct->mfg_part_num = $mfg_part_num;
-            die('Set Mfg. Part Num');
+            echo '<br />Set Mfg. Part Num';
             
-            die('Setting mfg_part_num');
+            echo '<br />Setting mfg_part_num';
             
             if ($this->WtcrProducts->save($wtcrProduct)) {
                 $this->Flash->success('The vendor product has been saved.');
