@@ -76,6 +76,7 @@ class WtcrProductsController extends AppController
             // echo "<pre>" . print_r($this->request->data, TRUE) . "</pre>";
              
             // $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
+            echo "<pre>Starting to set properties</pre>";
             $wtcrProduct->lastupdated = date('Y-m-d H:i:s');
             $wtcrProduct->mfg_part_num = $mfg_part_num;
             $wtcrProduct->wtcrsku = $this->request->data['wtcrsku'];
@@ -86,8 +87,10 @@ class WtcrProductsController extends AppController
             $wtcrProduct->suggestedmarkup = $this->request->data['suggestedmarkup'];
             $wtcrProduct->wtcrprice = $this->request->data['wtcrprice'];
             $wtcrProduct->wtcr_product_category = $this->request->data['wtcr_product_category'];
-            
+            echo "<pre>Finished Setting Properties</pre>";
             // echo "<pre>Product (After Edit): " . print_r($wtcrProduct, TRUE) . "</pre>";
+            
+            echo "<pre>Checking if Saved</pre>";
             
             if ($this->WtcrProducts->save($wtcrProduct)) {
                 echo "Save SUCCESS";
