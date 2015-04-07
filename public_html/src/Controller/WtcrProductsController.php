@@ -74,6 +74,7 @@ class WtcrProductsController extends AppController
 				return $this->redirect(['controller' => 'WtcrVendors', 'action' => 'view_vendor_products', 'eprom']);
 			} else {
 				$this->Flash->error('The vendor product could not be added. Please try again');
+				return $this->redirect(['action' => 'add_vendor_product', $mfg_part_num]);
 			}
 		}
 		
