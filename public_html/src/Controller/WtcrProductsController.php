@@ -78,8 +78,16 @@ class WtcrProductsController extends AppController
             // $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
             $wtcrProduct->lastupdated = date('Y-m-d H:i:s');
             $wtcrProduct->mfg_part_num = $mfg_part_num;
+            $wtcrProduct->wtcrsku = $this->request->data['wtcrsku'];
+            $wtcrProduct->wtcr_product_name = $this->request->data['wtcr_product_name'];
+            $wtcrProduct->description = $this->request->data['description'];
+            $wtcrProduct->autoupdate = $this->request->data['autoupdate'];
+            $wtcrProduct->static_price = $this->request->data['static_price'];
+            $wtcrProduct->suggestedmarkup = $this->request->data['suggestedmarkup'];
+            $wtcrProduct->wtcrprice = $this->request->data['wtcrprice'];
+            $wtcrProduct->wtcr_product_category = $this->request->data['wtcr_product_category'];
             
-            echo "<pre>Product (After Edit): " . print_r($wtcrProduct, TRUE) . "</pre>";
+            // echo "<pre>Product (After Edit): " . print_r($wtcrProduct, TRUE) . "</pre>";
             
             if ($this->WtcrProducts->save($wtcrProduct)) {
                 $this->Flash->success('The vendor product has been saved.');
