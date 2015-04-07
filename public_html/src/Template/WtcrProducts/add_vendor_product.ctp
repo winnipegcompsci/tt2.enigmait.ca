@@ -31,7 +31,7 @@
         <?php
             echo $this->Form->input('mfg_part_num', ['default' => $mfg_part_num]);
             echo $this->Form->input('wtcrsku');
-            echo $this->Form->input('wtcr_product_name');
+            echo $this->Form->input('wtcr_product_name', ['default' => $default_name]);
             echo $this->Form->input('description');
             echo $this->Form->input('autoupdate', ['type' => 'checkbox']);
             echo $this->Form->input('static_price');
