@@ -9,11 +9,34 @@
     </ul>
 </div>
 
+<?php if(count($productVendors) != 0) { ?>
+    <table id="datatable">
+        <thead>
+            <tr>
+                <th> Product Name </th>
+                <th> Vendor </th>
+                <th> Vendor Price </th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <?php foreach($productVendors as $item) {
+                echo "<tr>";
+                echo "<td>" . $item->product_name . "</td>";
+                echo "<td>" . $item->wtcr_vendor_id . "</td>";
+                echo "<td>" . $item->vendor_price . "</td>";
+                echo "</tr>";
+            } ?>
+        </tbody>
+    </table>
+<?php } ?>
+
 <?php
 __('Related Products');
-echo "<table class=\"columns col-lg-10\">";
+echo "<table id=\"datatable\">";
 foreach($productVendors as $item) {
 	echo "<td>" . $item->product_name . "</td>";
+    echo "<td>" . $item->vendor;
     echo "<td>" . $item->vendor_price . "</td>";
 }
 echo "</table>";
