@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `tt2` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `tt2`;
+CREATE DATABASE  IF NOT EXISTS `TT2` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `TT2`;
 -- MySQL dump 10.13  Distrib 5.6.13, for Win32 (x86)
 --
 -- Host: localhost    Database: tt2
@@ -26,7 +26,6 @@ DROP TABLE IF EXISTS `wtcr_products`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wtcr_products` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'A unique ID for the product',
-  `wtcr_vendor_id` int(11) NOT NULL COMMENT 'The Supplier that offers the product',
   `mfg_part_num` varchar(40) NOT NULL COMMENT 'Part # The Manufacturer Uses',
   `wtcrsku` varchar(40) NOT NULL COMMENT 'The SKU used by WTCR to identify the product',
   `wtcr_product_category_id` int(11) NOT NULL COMMENT 'The category the product falls in',
@@ -40,8 +39,9 @@ CREATE TABLE `wtcr_products` (
   `lastupdated` datetime NOT NULL COMMENT 'The date/time this product was last updated from supplier',
   `marketplace_data` longtext NOT NULL,
   `pictures` longtext,
-  PRIMARY KEY (`id`,`wtcr_vendor_id`,`mfg_part_num`),
+  PRIMARY KEY (`id`,`mfg_part_num`),
   UNIQUE KEY `id_UNIQUE` (`id`),
+  UNIQUE KEY `mfg_part_num_UNIQUE` (`mfg_part_num`),
   UNIQUE KEY `nid` (`wtcr_nid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9695 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -64,4 +64,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-07 10:15:46
+-- Dump completed on 2015-04-07 10:32:41

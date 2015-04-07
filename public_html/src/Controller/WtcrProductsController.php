@@ -66,6 +66,8 @@ class WtcrProductsController extends AppController
     public function add_vendor_product($mfg_part_num) 
     {
         $wtcrProduct = $this->WtcrProducts->newEntity();
+        $vendorProducts = null;
+        
         if ($this->request->is('post')) {
             $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
             if ($this->WtcrProducts->save($wtcrProduct)) {
@@ -82,6 +84,7 @@ class WtcrProductsController extends AppController
         $this->set(compact('wtcrProduct', 'wtcrVendors', 'wtcrProductCategories'));
         $this->set('_serialize', ['wtcrProduct']);
         $this->set('wtcrProduct', $wtcrProduct);
+        $this->set('vendorProduct', $vendorProducts);
     }
 
     /**
