@@ -67,7 +67,9 @@ class WtcrProductsController extends AppController
         $wtcrProduct = $this->WtcrProducts->newEntity();
         
         $productVendors = TableRegistry::get('wtcr_vendor_products')->find('all', [
-            'conditions' => ['mfg_part_num' => $mfg_part_num]
+            'conditions' => ['mfg_part_num' => $mfg_part_num],
+            'contain' => ['WtcrVendors']
+            
         ]);
         
         $wtcrProductCategories = $this->WtcrProducts->WtcrProductCategories->find('list', ['limit' => 200]);
