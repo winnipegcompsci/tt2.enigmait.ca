@@ -23,7 +23,7 @@
 <div class="wtcrProducts form col-lg-5 col-md-6 columns">
     <?php 
         foreach($marketplaces as $marketplace) {
-            echo "<pre>" . print_r($marketplace, TRUE) . "</pre>";
+            echo "<pre>" . print_r($marketplace->marketplace_name, TRUE) . "</pre>";
         }   
         
     if(count($productVendors) != 0) { ?>
