@@ -48,6 +48,7 @@ class WtcrProductsController extends AppController
     public function add()
     {
         $wtcrProduct = $this->WtcrProducts->newEntity();
+        
         if ($this->request->is('post')) {
             $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
             if ($this->WtcrProducts->save($wtcrProduct)) {
@@ -63,29 +64,14 @@ class WtcrProductsController extends AppController
         $this->set('_serialize', ['wtcrProduct']);
     }
 
-    public function add_vendor_product($mfg_part_num) {
-        // die('Called Add Vendor Product');
-        
-        $wtcrProduct = $this->WtcrProducts->newEntity();
-                
-        // die('Pre Post');
+    public function add_vendor_product($mfg_part_num) 
+    {        
+        $wtcrProduct = $this->WtcrProducts->newEntity();              
+
         if($this->request->is('post')) {
             $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
-            // echo "<pre>Starting to set properties</pre>";
-            // $wtcrProduct->lastupdated = date('Y-m-d H:i:s');
-            // $wtcrProduct->mfg_part_num = $mfg_part_num;
-            // $wtcrProduct->wtcrsku = $this->request->data['wtcrsku'];
-            // $wtcrProduct->wtcr_product_name = $this->request->data['wtcr_product_name'];
-            // $wtcrProduct->description = $this->request->data['description'];
-            // $wtcrProduct->autoupdate = $this->request->data['autoupdate'];
-            // $wtcrProduct->static_price = $this->request->data['static_price'];
-            // $wtcrProduct->suggestedmarkup = $this->request->data['suggestedmarkup'];
-            // $wtcrProduct->wtcrprice = $this->request->data['wtcrprice'];
-            // $wtcrProduct->wtcr_product_category = $this->request->data['wtcr_product_category'];
-            // echo "<pre>Finished Setting Properties</pre>";
-            // // echo "<pre>Product (After Edit): " . print_r($wtcrProduct, TRUE) . "</pre>";
             
-            // echo "<pre>Checking if Saved</pre>";
+            echo "DEBUG: 1";
             
             if ($this->WtcrProducts->save($wtcrProduct)) {
                 echo "Save SUCCESS";
