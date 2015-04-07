@@ -87,6 +87,7 @@ class WtcrProductsController extends AppController
         $this->set(compact('wtcrProduct', 'wtcrVendors', 'wtcrProductCategories'));
         $this->set('_serialize', ['wtcrProduct']);
         $this->set('this_product', $wtcrProduct);
+        $this->set('productVendors', $productVendors);
     }
     /**
      * Edit method

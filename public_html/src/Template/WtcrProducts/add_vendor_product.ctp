@@ -30,10 +30,10 @@
 
 echo "<pre>" . print_r($this_product, TRUE) . "</pre>";
 
-foreach($related_products as $item) {
+foreach($productVendors as $item) {
 	echo "<pre>" . print_r($item, TRUE) . "</pre>";
 }
- ?>
+?>
 
 <div class="wtcrProducts form col-lg-10 col-md-9 columns">
     <?= $this->Form->create($wtcrProduct); ?>
