@@ -70,7 +70,7 @@ class WtcrProductsController extends AppController
                 
         if($this->request->is('post')) {
             $wtcrProducts = $this->WtcrProducts;
-            $wtcrProduct = $wtcrProducts->patchEntity($wtcrProduct, $this->request->data);
+            $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
             // $wtcrProduct->lastupdated = date('Y-m-d H:i:s');
             // $wtcrProduct->mfg_part_num = $mfg_part_num;
             die('Setting mfg_part_num');
@@ -80,7 +80,7 @@ class WtcrProductsController extends AppController
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error('The vendor product could not be saved. Please, try again.');
-                echo "<pre>" . print_r($wtcrProducts, TRUE) . "</pre>";
+                // echo "<pre>" . print_r($wtcrProducts, TRUE) . "</pre>";
             }
         }
         
