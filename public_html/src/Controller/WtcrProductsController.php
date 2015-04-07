@@ -73,6 +73,7 @@ class WtcrProductsController extends AppController
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error('The vendor product could not be saved. Please, try again.');
+                echo "<pre>" . print_r($this->wtcrProducts, TRUE) . "</pre>";
             }
         }
         
