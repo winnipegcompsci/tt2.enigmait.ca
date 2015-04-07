@@ -14,7 +14,7 @@
             echo $this->Form->input('wtcrsku');
             echo $this->Form->input('wtcr_product_name', ['default' => $default_name]);
             echo $this->Form->input('description');
-            echo $this->Form->input('autoupdate', ['type' => 'checkbox', 'label' => 'AutoUpdate Price with Vendor Price Updates']);
+            echo $this->Form->input('autoupdate', ['type' => 'checkbox', 'label' => 'AutoUpdate WTCR Price with Vendor Price Updates']);
             echo $this->Form->input('static_price', ['label' => 'Static Price on Site']);
             echo $this->Form->input('suggestedmarkup', ['default' => '0.5', 'label' => 'Suggested Markup:']);
             echo $this->Form->input('wtcrprice', ['default' => $vendor_price * 1.5, 'label' => 'WTCR Price:']);
