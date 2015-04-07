@@ -66,7 +66,10 @@ class WtcrVendorProductsController extends AppController
     }
     
     public function add_product($vendor_sku = null) {
-              
+	
+        $product = $this->WtcrVendorProducts->find('all')->where(['wtcr_vendor_sku' => $vendor_sku]);
+        $wtcrVendors = $this->WtcrVendorProducts->WtcrVendors->find('list', ['limit' => 200]);
+        $wtcrCategories = $this->WtcrVendorProducts->WtcrProductCategories->find('list', ['limit' => 200]);              
         
         if($this->request->is('post')) {
             
@@ -110,15 +113,10 @@ class WtcrVendorProductsController extends AppController
             
 			return $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'view_vendor_products', 'eprom']);
         }                
-        
-        $product = $this->WtcrVendorProducts->find('all')->where(['wtcr_vendor_sku' => $vendor_sku]);
-        $wtcrVendors = $this->WtcrVendorProducts->WtcrVendors->find('list', ['limit' => 200]);
-        $wtcrCategories = $this->WtcrVendorProducts->WtcrProductCategories->find('list', ['limit' => 200]);
-    
+            
         $this->set('wtcrCategories', $wtcrCategories);
         $this->set('wtcrVendors', $wtcrVendors);
         $this->set('product', $product->toArray());
-		
 		
     }
 
