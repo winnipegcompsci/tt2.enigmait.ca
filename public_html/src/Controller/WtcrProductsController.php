@@ -73,7 +73,7 @@ class WtcrProductsController extends AppController
         $wtcrProductCategories = $this->WtcrProducts->WtcrProductCategories->find('list', ['limit' => 200]);
         $this->set('this_product', $wtcrProduct);
         $this->set('productVendors', $productVendors);
-        
+        $this->set('mfg_part_num', $mfg_part_num);
         $this->set('wtcrProduct', $wtcrProduct);
         $this->set('categories', $wtcrProductCategories);
     }
