@@ -67,6 +67,7 @@ class WtcrVendorProductsController extends AppController
     
     public function add_product($vendor_sku = null) {
 	
+		error_log('Calling add_product');
         $product = $this->WtcrVendorProducts->find('all')->where(['wtcr_vendor_sku' => $vendor_sku]);
         $wtcrVendors = $this->WtcrVendorProducts->WtcrVendors->find('list', ['limit' => 200]);
         $wtcrCategories = $this->WtcrVendorProducts->WtcrProductCategories->find('list', ['limit' => 200]);              
@@ -100,7 +101,6 @@ class WtcrVendorProductsController extends AppController
 			
 			// echo "<pre>WTCR PRODUCT:: " . print_r($wtcrProduct, TRUE) . "</pre>";
 						
-			die('Pre-Save');
             if($wtcrProducts->save($wtcrProduct)) {
 				die('Yes');
                 $this->Flash->success("The wtcr product has been saved.");
