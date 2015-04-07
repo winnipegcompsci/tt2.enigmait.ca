@@ -75,7 +75,7 @@ class WtcrProductsController extends AppController
 			} else {
 				die('Add Vendor Product Save Error');
 				$this->Flash->error('The vendor product could not be added. Please try again');
-				return $this->redirect(['action' => 'add_vendor_product', $mfg_part_num]);
+				// return $this->redirect(['action' => 'add_vendor_product', $mfg_part_num]);
 			}
 		}
 	
