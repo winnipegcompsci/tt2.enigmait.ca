@@ -10,7 +10,7 @@
 </div>
 
 <?php if(count($productVendors) != 0) { ?>
-    <table id="datatable">
+    <table id="productVendorTable">
         <thead>
             <tr>
                 <th> Product Name </th>
@@ -31,16 +31,6 @@
     </table>
 <?php } ?>
 
-<?php
-__('Related Products');
-echo "<table id=\"datatable\">";
-foreach($productVendors as $item) {
-	echo "<td>" . $item->product_name . "</td>";
-    echo "<td>" . $item->vendor;
-    echo "<td>" . $item->vendor_price . "</td>";
-}
-echo "</table>";
-?>
 
 <div class="wtcrProducts form col-lg-10 col-md-9 columns">
     <?= $this->Form->create($wtcrProduct); ?>
@@ -64,3 +54,12 @@ echo "</table>";
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
 </div>
+
+<script>
+$(document).ready( function() {
+    $('#productVendorTable').dataTable( {
+        "bPaginate": false
+    });
+});
+</script>
+
