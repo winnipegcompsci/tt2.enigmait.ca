@@ -10,7 +10,7 @@
 </div>
 
 <?php if(count($productVendors) != 0) { ?>
-    <table id="productVendorTable" width="100%">
+    <table id="" width="100%">
         <thead>
             <tr>
                 <th> Product Name </th>
