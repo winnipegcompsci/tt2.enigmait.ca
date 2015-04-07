@@ -24,7 +24,7 @@
 <?php } ?>
 
 
-<div class="wtcrProducts form col-lg-10 col-md-9 columns">
+<div class="wtcrProducts form col-lg-5 col-md-6 columns">
     <?= $this->Form->create($wtcrProduct); ?>
     <fieldset>
         <legend><?= __('Add Wtcr Product') ?></legend>
@@ -35,7 +35,7 @@
             echo $this->Form->input('description');
             echo $this->Form->input('autoupdate', ['type' => 'checkbox']);
             echo $this->Form->input('static_price');
-            echo $this->Form->input('suggestedmarkup');
+            echo $this->Form->input('suggestedmarkup', ['default' => '0.5');
             echo $this->Form->input('wtcrprice', ['default' => $vendor_price * 1.5]);
             echo $this->Form->input('wtcr_nid');
             echo $this->Form->input('extra');
@@ -44,6 +44,14 @@
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
+</div>
+
+<div class="wtcrProducts form col-lg-5 col-md-6 columns">
+    <?php 
+        foreach($marketplaces as $marketplace) {
+            echo "<pre>" . print_r($marketplace, TRUE) . "</pre>";
+        }   
+    ?>
 </div>
 
 <script>
