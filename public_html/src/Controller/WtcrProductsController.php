@@ -71,7 +71,7 @@ class WtcrProductsController extends AppController
         // die('Pre Post');
         if($this->request->is('post')) {
             
-            echo "<pre>Product (Before Edit): " . print_r($wtcrProduct, TRUE) . "</pre>";
+            // echo "<pre>Product (Before Edit): " . print_r($wtcrProduct, TRUE) . "</pre>";
              
             echo "<pre>" . $this->request->data . "</pre>";
              
