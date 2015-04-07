@@ -66,7 +66,7 @@ class WtcrProductsController extends AppController
 	
 	public function add_vendor_product($mfg_part_num) 
 	{
-		$wtcrProduct = $this->WtcrProduct->newEntity();
+		$wtcrProduct = $this->WtcrProducts->newEntity();
 		if($this->request->is('post')) {
 			$wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
 			if ($this->WtcrProducts->save($wtcrProduct)) {
