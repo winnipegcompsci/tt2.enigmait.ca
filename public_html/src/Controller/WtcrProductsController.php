@@ -71,7 +71,7 @@ class WtcrProductsController extends AppController
         // die('Pre Post');
         if($this->request->is('post')) {
             echo '<br />Entered Post';
-            $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
+            // $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
             echo '<br />Set WTCR Product Object';
             $wtcrProduct->lastupdated = date('Y-m-d H:i:s');
             echo '<br />Set Last Updated Time';
