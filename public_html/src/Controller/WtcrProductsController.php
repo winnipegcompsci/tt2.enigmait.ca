@@ -77,8 +77,8 @@ class WtcrProductsController extends AppController
             }
         }
         
-        $productVendors = TableRegistry::get('wtcr_vendor_products')->where(['mfg_part_num' => $mfg_part_num]);
-        echo "<pre>" . print_r($productVendors,  TRUE) . "</pre>";
+        // $productVendors = TableRegistry::get('wtcr_vendor_products')->where(['mfg_part_num' => $mfg_part_num]);
+        // echo "<pre>" . print_r($productVendors,  TRUE) . "</pre>";
         
         $wtcrVendors = $this->WtcrProducts->WtcrVendors->find('list', ['limit' => 200]);
         $wtcrProductCategories = $this->WtcrProducts->WtcrProductCategories->find('list', ['limit' => 200]);
