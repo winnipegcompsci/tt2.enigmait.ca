@@ -13,7 +13,7 @@
                 echo "<tr>";
                 echo "<td>" . $item->product_name . "</td>";
                 echo "<td>" . print_r($item->wtcr_vendor->vendor_name, TRUE) . "</td>";
-                echo "<td>" . number_format($item->vendor_price, 2) . "</td>";
+                echo "<td>$" . number_format($item->vendor_price, 2) . "</td>";
                 echo "</tr>";
             } ?>
         </tbody>
@@ -30,7 +30,7 @@
             echo $this->Form->input('wtcrsku');
             echo $this->Form->input('wtcr_product_name');
             echo $this->Form->input('description');
-            echo $this->Form->input('autoupdate');
+            echo $this->Form->input('autoupdate', ['type' => 'checkbox']);
             echo $this->Form->input('static_price');
             echo $this->Form->input('suggestedmarkup');
             echo $this->Form->input('wtcrprice');
