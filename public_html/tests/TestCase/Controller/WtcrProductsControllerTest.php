@@ -17,13 +17,13 @@ class WtcrProductsControllerTest extends IntegrationTestCase
      */
     public $fixtures = [
         'WtcrProducts' => 'app.wtcr_products',
+        'WtcrProductCategories' => 'app.wtcr_product_categories',
+        'WtcrVendorProducts' => 'app.wtcr_vendor_products',
         'WtcrVendors' => 'app.wtcr_vendors',
         'Inventory' => 'app.inventory',
         'WtcrCategories' => 'app.wtcr_categories',
         'WtcrManufacturers' => 'app.wtcr_manufacturers',
-        'WtcrProductMap' => 'app.wtcr_product_map',
-        'WtcrProductCategories' => 'app.wtcr_product_categories',
-        'WtcrVendorProducts' => 'app.wtcr_vendor_products'
+        'WtcrProductMap' => 'app.wtcr_product_map'
     ];
 
     /**

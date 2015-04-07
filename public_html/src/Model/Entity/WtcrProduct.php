@@ -27,7 +27,6 @@ class WtcrProduct extends Entity
         'lastupdated' => true,
         'marketplace_data' => true,
         'pictures' => true,
-        'wtcr_vendor' => true,
         'wtcr_product_category' => true,
     ];
 }
