@@ -60,6 +60,7 @@ class WtcrVendorsController extends AppController
         $this->set(compact('wtcrVendor'));
         $this->set('_serialize', ['wtcrVendor']);
     }
+    
 
     /**
      * Edit method

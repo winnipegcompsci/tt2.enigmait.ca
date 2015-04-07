@@ -63,6 +63,23 @@ class WtcrProductsController extends AppController
         $this->set('_serialize', ['wtcrProduct']);
     }
 
+    
+    public function add_vendor_product() 
+    {
+        $wtcrProduct = $this->WtcrProducts->newEntity();
+        if($this->request->is('post')) {
+            $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
+            // $wtcrProduct->lastUpdated = date('Y-m-d H:i:s');
+            
+            if($this->WtcrProducts->save($wtcrProduct)) {
+                $this->Flash->success('The vendor product has been saved.');
+                return $this->redirect(['action' => 'index'];
+            } else {
+                $this->Flash->error('The vendor product could not be saved.');
+            }
+        }
+    }
+    
     /**
      * Edit method
      *
