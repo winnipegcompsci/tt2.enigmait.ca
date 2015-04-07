@@ -100,7 +100,7 @@ class WtcrVendorProductsController extends AppController
 			
 			// echo "<pre>WTCR PRODUCT:: " . print_r($wtcrProduct, TRUE) . "</pre>";
 						
-			
+			die('Pre-Save');
             if($wtcrProducts->save($wtcrProduct)) {
 				die('Yes');
                 $this->Flash->success("The wtcr product has been saved.");
