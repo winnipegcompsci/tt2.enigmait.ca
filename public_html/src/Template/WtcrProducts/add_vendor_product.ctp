@@ -17,7 +17,7 @@
             
             $autoupdate_opts = [
                 'options' => [1 => 'Yes', 0 => 'No'], 
-                'label' => 'Auto-Update WTCR Price if average Vendor Price Increases. '
+                'label' => 'Auto-Update WTCR Price on Vendor Price Increases'
             ];
             echo $this->Form->input('autoupdate', $autoupdate_opts);
             echo $this->Form->input('static_price', ['label' => 'Static Price on Site']);
