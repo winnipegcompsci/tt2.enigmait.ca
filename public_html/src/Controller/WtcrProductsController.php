@@ -83,7 +83,7 @@ class WtcrProductsController extends AppController
             
         ]);
         
-        $marketplaces = TableRegistry::get('wtcr_vendors');
+        $marketplaces = TableRegistry::get('wtcr_marketplaces');
         
         $wtcrProductCategories = $this->WtcrProducts->WtcrProductCategories->find('list', ['limit' => 200]);
         $this->set('this_product', $wtcrProduct);
