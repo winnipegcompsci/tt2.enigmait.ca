@@ -11,7 +11,7 @@
 
 <?php
 __('Related Products');
-echo "<table>";
+echo "<table class=\"columns col-lg-10\">";
 foreach($productVendors as $item) {
 	echo "<td>" . $item->product_name . "</td>";
     echo "<td>" . $item->vendor_price . "</td>";
