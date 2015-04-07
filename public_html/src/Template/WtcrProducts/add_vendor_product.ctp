@@ -18,9 +18,7 @@
             echo $this->Form->input('static_price');
             echo $this->Form->input('suggestedmarkup', ['default' => '0.5']);
             echo $this->Form->input('wtcrprice', ['default' => $vendor_price * 1.5]);
-            echo $this->Form->input('wtcr_nid');
-            echo $this->Form->input('extra');
-            echo $this->Form->input('wtcr_product_category_id', ['options' => $categories]);
+            echo $this->Form->input('wtcr_product_category', ['options' => $categories]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
