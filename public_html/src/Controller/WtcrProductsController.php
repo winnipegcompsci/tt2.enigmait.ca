@@ -73,7 +73,7 @@ class WtcrProductsController extends AppController
             
             // echo "<pre>Product (Before Edit): " . print_r($wtcrProduct, TRUE) . "</pre>";
              
-            echo "<pre>" . $this->request->data . "</pre>";
+            echo "<pre>" . print_r($this->request->data, TRUE) . "</pre>";
              
             // $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
             $wtcrProduct->lastupdated = date('Y-m-d H:i:s');
