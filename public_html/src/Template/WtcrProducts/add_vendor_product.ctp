@@ -15,6 +15,9 @@
                 echo "<td>" . print_r($item->wtcr_vendor->vendor_name, TRUE) . "</td>";
                 echo "<td>$" . number_format($item->vendor_price, 2) . "</td>";
                 echo "</tr>";
+                
+                $default_name = $item->product_name;
+                
             } ?>
         </tbody>
     </table>
