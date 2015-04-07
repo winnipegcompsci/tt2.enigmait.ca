@@ -70,6 +70,7 @@ class WtcrProductsController extends AppController
         
         echo "<pre>Product: " . print_r($wtcrProduct, TRUE) . "</pre>";
         echo "<pre>Products: " . print_r($this->WtcrProducts, TRUE) . "</pre>";
+        echo "<pre>Mfg Part Number: " . print_r($mfg_part_num, TRUE) . "</pre>";
         
         // die('Pre Post');
         if($this->request->is('post')) {
