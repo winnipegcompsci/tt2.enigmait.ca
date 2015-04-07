@@ -64,10 +64,13 @@ class WtcrProductsController extends AppController
     }
 
     public function add_vendor_product($mfg_part_num) {
+        die('Called Add Vendor Product');
         
         $wtcrProduct = $this->WtcrProducts->newEntity();
-                
+        
+        die('Pre Post');
         if($this->request->is('post')) {
+            die('This is a post request');
             $wtcrProducts = $this->WtcrProducts;
             $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
             // $wtcrProduct->lastupdated = date('Y-m-d H:i:s');
