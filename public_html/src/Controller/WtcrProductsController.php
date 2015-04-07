@@ -85,7 +85,7 @@ class WtcrProductsController extends AppController
         $wtcrProductCategories = $this->WtcrProducts->WtcrProductCategories->find('list', ['limit' => 200]);
         $this->set(compact('wtcrProduct', 'wtcrVendors', 'wtcrProductCategories'));
 		$this->set('related_products', $related_products);
-		$this->set('mfg_part_num');
+		$this->set('mfg_part_num', $mfg_part_num);
         $this->set('_serialize', ['wtcrProduct']);
 	}
 
