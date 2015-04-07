@@ -64,67 +64,7 @@ class WtcrVendorProductsController extends AppController
         $this->set(compact('wtcrVendorProduct', 'wtcrVendors', 'wtcrProductCategories'));
         $this->set('_serialize', ['wtcrVendorProduct']);
     }
-    
-	/*
-    public function add_product($vendor_sku = null) {
-	
-		error_log('Calling add_product');
-        $product = $this->WtcrVendorProducts->find('all')->where(['wtcr_vendor_sku' => $vendor_sku]);
-        $wtcrVendors = $this->WtcrVendorProducts->WtcrVendors->find('list', ['limit' => 200]);
-        $wtcrCategories = $this->WtcrVendorProducts->WtcrProductCategories->find('list', ['limit' => 200]);              
-        
-        if($this->request->is('post')) {
-            
-			$wtcrProducts = TableRegistry::get('WtcrProducts');
-            $wtcrProduct = $wtcrProducts->newEntity();
-			// echo "<pre>WTCR PRODUCT:: " . print_r($wtcrProduct, TRUE) . "</pre>";
-			// echo "<pre>THIS REQUEST DATA:: " . print_r($this->request->data, TRUE) . "</pre>";
-			$wtcrProduct = $wtcrProducts->patchEntity($wtcrProduct, $this->request->data);
-            
-			
-			
-			// Set other values:
-			$wtcrProduct->autoupdate = 1;
-			$wtcrProduct->supplierstock = "YES";
-			
-			$wtcrProduct->suggestedprice = $this->request->data['vendor_price']; // GET MARKUP!!!
-			
-			$wtcrProduct->suggestedmarkup = 0.50;
-		
-			$wtcrProduct->wtcrprice = $wtcrProduct->suggestedprice + ($wtcrProduct->suggestedmarkup * $wtcrProduct->suggestedprice);
-			
-			$wtcrProduct->wtcr_nid = null;
-			$wtcrProduct->lastupdated = date('Y-m-d H:i:s');
-			$wtcrProduct->wtcr_vendor = $this->request->data['wtcr_vendor_id'];
-			$wtcrProduct->wtcr_product_category = $this->request->data['wtcr_product_category_id'];
-			
-			$wtcrproduct->extra = serialize($wtcrProduct);
-			
-			// echo "<pre>WTCR PRODUCT:: " . print_r($wtcrProduct, TRUE) . "</pre>";
-						
-            if($wtcrProducts->save($wtcrProduct)) {
-				die('Yes');
-                $this->Flash->success("The wtcr product has been saved.");
-                return $this->redirect(['action' => 'index']);
-                error_log("SAVE SUCCESS");
-            } else {
-				debug($wtcrProduct);
-				die('DIE');
-                $this->Flash->error('Failed to Save WTCR Product');
-				// echo "<pre>" . print_r($wtcrProducts, TRUE) . "</pre>";               
-				error_log('Failed to Save');
-			}
-            
-			return $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'view_vendor_products', 'eprom']);
-        }                
-            
-        $this->set('wtcrCategories', $wtcrCategories);
-        $this->set('wtcrVendors', $wtcrVendors);
-        $this->set('product', $product->toArray());
-		
-    }
-	*/
-	
+    	
     /**
      * Edit method
      *

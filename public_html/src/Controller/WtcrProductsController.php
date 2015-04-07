@@ -63,6 +63,11 @@ class WtcrProductsController extends AppController
         $this->set(compact('wtcrProduct', 'wtcrVendors', 'wtcrProductCategories'));
         $this->set('_serialize', ['wtcrProduct']);
     }
+	
+	public function add_vendor_product() 
+	{
+		die('Called add_vendor_product()');
+	}
 
     /**
      * Edit method
