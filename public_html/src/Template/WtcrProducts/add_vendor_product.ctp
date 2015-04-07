@@ -5,8 +5,9 @@
     <table id="VendorTable" width="100%">
         <thead>
             <tr>
+                <th> Vendor Name </th>
                 <th> Product Name </th>
-                <th> Vendor </th>
+                <th> Vendor SKU </th>
                 <th> Vendor Price </th>
             </tr>
         </thead>
