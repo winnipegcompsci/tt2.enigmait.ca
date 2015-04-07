@@ -63,11 +63,14 @@ class WtcrProductsController extends AppController
     }
 
     public function add_vendor_product($mfg_part_num) {
-        $productVendors = TableRegistry::get('wtcr_vendor_products')->find('all');
+        $wtcrProduct = $this->WtcrProducts->newEntity();
         
-        foreach($productVendors as $vendor) {
-            echo "<pre>Vendor:: " . print_r($vendor, TRUE) . "</pre>";
-        }
+        $productVendors = TableRegistry::get('wtcr_vendor_products')->find('all', [
+            'conditions' => ['mfg_part_num' => $mfg_part_num]
+        ]);
+        
+        $this->set('this_product', $wtcrProduct);
+        $this->set('productVendors', $productVendors);
     }
     
     /**
