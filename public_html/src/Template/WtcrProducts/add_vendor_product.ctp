@@ -10,9 +10,6 @@
 </div>
 
 <?php
-
-echo "<pre>" . print_r($this_product, TRUE) . "</pre>";
-
 foreach($productVendors as $item) {
 	echo "<pre>" . print_r($item, TRUE) . "</pre>";
 }
