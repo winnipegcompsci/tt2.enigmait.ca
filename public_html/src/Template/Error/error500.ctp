@@ -55,9 +55,7 @@ use Cake\Error\Debugger;
                     <div class="col-lg-12 text-danger" style="padding: 15px">
 						<!-- CAKE PHP CALLS -------------------------------------------------->
 						<?php echo $this->Flash->render(); ?>
-						
-							if(isset($error->queryString)) {
-						   <strong>Error: <?= h($error->queryString); ?> </strong>
+						<strong>Error: <?= h($error->queryString); ?> </strong>
 						<?= sprintf('The view for <em>%sController::%s()</em> was not found.', h($this->request->controller), h($this->request->action)); ?>
 						<?php $this->end() ?>
 
