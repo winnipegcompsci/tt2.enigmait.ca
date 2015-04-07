@@ -35,7 +35,7 @@
             echo $this->Form->input('description');
             echo $this->Form->input('autoupdate', ['type' => 'checkbox']);
             echo $this->Form->input('static_price');
-            echo $this->Form->input('suggestedmarkup', ['default' => '0.5');
+            echo $this->Form->input('suggestedmarkup', ['default' => '0.5']);
             echo $this->Form->input('wtcrprice', ['default' => $vendor_price * 1.5]);
             echo $this->Form->input('wtcr_nid');
             echo $this->Form->input('extra');
