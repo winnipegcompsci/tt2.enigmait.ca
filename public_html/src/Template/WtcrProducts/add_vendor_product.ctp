@@ -8,7 +8,7 @@
 <div class="wtcrProducts form col-lg-5 col-md-6 columns pull-left">
     <?= $this->Form->create($wtcrProduct); ?>
     <fieldset>
-        <legend><?= __('Add Wtcr Product') ?></legend>
+        <legend><?= __('Create WTCR Product from Vendor Product') ?></legend>
         <?php
             echo $this->Form->input('mfg_part_num', ['default' => $mfg_part_num]);
             echo $this->Form->input('wtcrsku', ['default' => $mfg_part_num]);
