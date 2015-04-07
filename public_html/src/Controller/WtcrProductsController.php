@@ -75,10 +75,13 @@ class WtcrProductsController extends AppController
                 $this->Flash->error('The vendor product could not be saved. Please, try again.');
             }
         }
+
         $wtcrVendors = $this->WtcrProducts->WtcrVendors->find('list', ['limit' => 200]);
+        
         $wtcrProductCategories = $this->WtcrProducts->WtcrProductCategories->find('list', ['limit' => 200]);
         $this->set(compact('wtcrProduct', 'wtcrVendors', 'wtcrProductCategories'));
         $this->set('_serialize', ['wtcrProduct']);
+        $this->set('wtcrProduct', $wtcrProduct);
     }
 
     /**

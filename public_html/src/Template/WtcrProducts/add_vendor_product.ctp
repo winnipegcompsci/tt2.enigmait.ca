@@ -10,6 +10,9 @@
 </div>
 
 <?php 
+
+echo "<pre>" . print_r($wtcrProduct, TRUE) . "</pre>";
+
 foreach($related_products as $item) {
 	echo "<pre>" . print_r($item, TRUE) . "</pre>";
 }
