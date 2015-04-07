@@ -9,7 +9,11 @@
     </ul>
 </div>
 
-<?php echo "<pre>" . print_r($related_products, TRUE) . "</pre>"; ?>
+<?php 
+foreach($related_products as $item) {
+	echo "<pre>" . print_r($item, TRUE) . "</pre>";
+}
+ ?>
 
 <div class="wtcrProducts form col-lg-10 col-md-9 columns">
     <?= $this->Form->create($wtcrProduct); ?>
