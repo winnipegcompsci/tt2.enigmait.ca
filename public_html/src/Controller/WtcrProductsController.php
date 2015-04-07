@@ -70,27 +70,22 @@ class WtcrProductsController extends AppController
                 
         // die('Pre Post');
         if($this->request->is('post')) {
+            $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
+            // echo "<pre>Starting to set properties</pre>";
+            // $wtcrProduct->lastupdated = date('Y-m-d H:i:s');
+            // $wtcrProduct->mfg_part_num = $mfg_part_num;
+            // $wtcrProduct->wtcrsku = $this->request->data['wtcrsku'];
+            // $wtcrProduct->wtcr_product_name = $this->request->data['wtcr_product_name'];
+            // $wtcrProduct->description = $this->request->data['description'];
+            // $wtcrProduct->autoupdate = $this->request->data['autoupdate'];
+            // $wtcrProduct->static_price = $this->request->data['static_price'];
+            // $wtcrProduct->suggestedmarkup = $this->request->data['suggestedmarkup'];
+            // $wtcrProduct->wtcrprice = $this->request->data['wtcrprice'];
+            // $wtcrProduct->wtcr_product_category = $this->request->data['wtcr_product_category'];
+            // echo "<pre>Finished Setting Properties</pre>";
+            // // echo "<pre>Product (After Edit): " . print_r($wtcrProduct, TRUE) . "</pre>";
             
-            // echo "<pre>Product (Before Edit): " . print_r($wtcrProduct, TRUE) . "</pre>";
-             
-            // echo "<pre>" . print_r($this->request->data, TRUE) . "</pre>";
-             
-            // $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
-            echo "<pre>Starting to set properties</pre>";
-            $wtcrProduct->lastupdated = date('Y-m-d H:i:s');
-            $wtcrProduct->mfg_part_num = $mfg_part_num;
-            $wtcrProduct->wtcrsku = $this->request->data['wtcrsku'];
-            $wtcrProduct->wtcr_product_name = $this->request->data['wtcr_product_name'];
-            $wtcrProduct->description = $this->request->data['description'];
-            $wtcrProduct->autoupdate = $this->request->data['autoupdate'];
-            $wtcrProduct->static_price = $this->request->data['static_price'];
-            $wtcrProduct->suggestedmarkup = $this->request->data['suggestedmarkup'];
-            $wtcrProduct->wtcrprice = $this->request->data['wtcrprice'];
-            $wtcrProduct->wtcr_product_category = $this->request->data['wtcr_product_category'];
-            echo "<pre>Finished Setting Properties</pre>";
-            // echo "<pre>Product (After Edit): " . print_r($wtcrProduct, TRUE) . "</pre>";
-            
-            echo "<pre>Checking if Saved</pre>";
+            // echo "<pre>Checking if Saved</pre>";
             
             if ($this->WtcrProducts->save($wtcrProduct)) {
                 echo "Save SUCCESS";
@@ -102,6 +97,7 @@ class WtcrProductsController extends AppController
                 $this->Flash->error('The vendor product could not be saved. Please, try again.');
                 // echo "<pre>" . print_r($wtcrProducts, TRUE) . "</pre>";
             }
+            echo "Done Save";
         }
         
         $productVendors = TableRegistry::get('wtcr_vendor_products')->find('all', [
