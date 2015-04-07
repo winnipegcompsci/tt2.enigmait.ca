@@ -66,6 +66,16 @@ class WtcrProductsController extends AppController
     public function add_vendor_product($mfg_part_num) {
         $wtcrProduct = $this->WtcrProducts->newEntity();
         
+        if($this->request->is('post')) {
+            $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
+            if ($this->WtcrProducts->save($wtcrProduct)) {
+                $this->Flash->success('The vendor product has been saved.');
+                return $this->redirect(['action' => 'index']);
+            } else {
+                $this->Flash->error('The vendor product could not be saved. Please, try again.');
+            }
+        }
+        
         $productVendors = TableRegistry::get('wtcr_vendor_products')->find('all', [
             'conditions' => ['mfg_part_num' => $mfg_part_num],
             'contain' => ['WtcrVendors']

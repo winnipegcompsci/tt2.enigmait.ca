@@ -35,7 +35,6 @@
             echo $this->Form->input('suggestedmarkup');
             echo $this->Form->input('wtcrprice');
             echo $this->Form->input('wtcr_nid');
-            echo $this->Form->input('lastupdated');
             echo $this->Form->input('extra');
             echo $this->Form->input('wtcr_product_category_id', ['options' => $categories]);
         ?>
