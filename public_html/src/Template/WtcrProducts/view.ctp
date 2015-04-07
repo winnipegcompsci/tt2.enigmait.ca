@@ -15,8 +15,6 @@
     <h2><?= h($wtcrProduct->id) ?></h2>
     <div class="row">
         <div class="large-5 columns strings">
-            <h6 class="subheader"><?= __('Wtcr Vendor') ?></h6>
-            <p><?= $wtcrProduct->has('wtcr_vendor') ? $this->Html->link($wtcrProduct->wtcr_vendor->vendor_name, ['controller' => 'WtcrVendors', 'action' => 'view', $wtcrProduct->wtcr_vendor->id]) : '' ?></p>
             <h6 class="subheader"><?= __('Mfg Part Num') ?></h6>
             <p><?= h($wtcrProduct->mfg_part_num) ?></p>
             <h6 class="subheader"><?= __('Wtcrsku') ?></h6>

@@ -15,7 +15,6 @@ class WtcrProduct extends Entity
      * @var array
      */
     protected $_accessible = [
-        'wtcr_vendor_id' => true,
         'mfg_part_num' => true,
         'wtcrsku' => true,
         'wtcr_product_name' => true,

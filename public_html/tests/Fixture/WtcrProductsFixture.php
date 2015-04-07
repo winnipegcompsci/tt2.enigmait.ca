@@ -18,7 +18,6 @@ class WtcrProductsFixture extends TestFixture
     // @codingStandardsIgnoreStart
     public $fields = [
         'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => 'A unique ID for the product', 'autoIncrement' => true, 'precision' => null],
-        'wtcr_vendor_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => 'The Supplier that offers the product', 'precision' => null, 'autoIncrement' => null],
         'mfg_part_num' => ['type' => 'string', 'length' => 40, 'null' => false, 'default' => null, 'comment' => 'Part # The Manufacturer Uses', 'precision' => null, 'fixed' => null],
         'wtcrsku' => ['type' => 'string', 'length' => 40, 'null' => false, 'default' => null, 'comment' => 'The SKU used by WTCR to identify the product', 'precision' => null, 'fixed' => null],
         'wtcr_product_category_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => 'The category the product falls in', 'precision' => null, 'autoIncrement' => null],
@@ -33,8 +32,9 @@ class WtcrProductsFixture extends TestFixture
         'marketplace_data' => ['type' => 'text', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
         'pictures' => ['type' => 'text', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
         '_constraints' => [
-            'primary' => ['type' => 'primary', 'columns' => ['id', 'wtcr_vendor_id', 'mfg_part_num'], 'length' => []],
+            'primary' => ['type' => 'primary', 'columns' => ['id', 'mfg_part_num'], 'length' => []],
             'id_UNIQUE' => ['type' => 'unique', 'columns' => ['id'], 'length' => []],
+            'mfg_part_num_UNIQUE' => ['type' => 'unique', 'columns' => ['mfg_part_num'], 'length' => []],
             'nid' => ['type' => 'unique', 'columns' => ['wtcr_nid'], 'length' => []],
         ],
         '_options' => [
@@ -51,8 +51,7 @@ class WtcrProductsFixture extends TestFixture
     public $records = [
         [
             'id' => 1,
-            'wtcr_vendor_id' => 1,
-            'mfg_part_num' => '99b99398-4570-4397-bb2e-62845bfbff68',
+            'mfg_part_num' => '1f6b76d8-7321-4bae-96b5-08f3b899662f',
             'wtcrsku' => 'Lorem ipsum dolor sit amet',
             'wtcr_product_category_id' => 1,
             'wtcr_product_name' => 'Lorem ipsum dolor sit amet',
@@ -62,7 +61,7 @@ class WtcrProductsFixture extends TestFixture
             'suggestedmarkup' => 1,
             'wtcrprice' => 1,
             'wtcr_nid' => 'Lorem ip',
-            'lastupdated' => '2015-04-07 15:17:35',
+            'lastupdated' => '2015-04-07 15:33:28',
             'marketplace_data' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
             'pictures' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.'
         ],

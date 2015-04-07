@@ -13,7 +13,6 @@
     <fieldset>
         <legend><?= __('Add Wtcr Product') ?></legend>
         <?php
-            echo $this->Form->input('wtcr_vendor_id', ['options' => $wtcrVendors]);
             echo $this->Form->input('mfg_part_num');
             echo $this->Form->input('wtcrsku');
             echo $this->Form->input('wtcr_product_name');

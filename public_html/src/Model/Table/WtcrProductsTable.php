@@ -24,9 +24,6 @@ class WtcrProductsTable extends Table
         $this->table('wtcr_products');
         $this->displayField('id');
         $this->primaryKey(['id', 'createnode', 'wtcr_product_category_id']);
-        $this->belongsTo('WtcrVendors', [
-            'foreignKey' => 'wtcr_vendor_id'
-        ]);
         $this->belongsTo('WtcrProductCategories', [
             'foreignKey' => 'wtcr_product_category_id'
         ]);
@@ -43,8 +40,6 @@ class WtcrProductsTable extends Table
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('id', 'create')
-            ->add('wtcr_vendor_id', 'valid', ['rule' => 'numeric'])
-            ->allowEmpty('wtcr_vendor_id', 'create')
             ->allowEmpty('mfg_part_num', 'create')
             ->requirePresence('wtcrsku', 'create')
             ->notEmpty('wtcrsku')
@@ -82,7 +77,6 @@ class WtcrProductsTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['wtcr_vendor_id'], 'WtcrVendors'));
         $rules->add($rules->existsIn(['wtcr_product_category_id'], 'WtcrProductCategories'));
         return $rules;
     }

@@ -13,12 +13,12 @@
     <thead>
         <tr>
             <th><?= $this->Paginator->sort('id') ?></th>
-            <th><?= $this->Paginator->sort('wtcr_vendor_id') ?></th>
             <th><?= $this->Paginator->sort('mfg_part_num') ?></th>
             <th><?= $this->Paginator->sort('wtcrsku') ?></th>
             <th><?= $this->Paginator->sort('wtcr_product_category_id') ?></th>
             <th><?= $this->Paginator->sort('wtcr_product_name') ?></th>
             <th><?= $this->Paginator->sort('autoupdate') ?></th>
+            <th><?= $this->Paginator->sort('static_price') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
         </tr>
     </thead>
@@ -26,9 +26,6 @@
     <?php foreach ($wtcrProducts as $wtcrProduct): ?>
         <tr>
             <td><?= $this->Number->format($wtcrProduct->id) ?></td>
-            <td>
-                <?= $wtcrProduct->has('wtcr_vendor') ? $this->Html->link($wtcrProduct->wtcr_vendor->vendor_name, ['controller' => 'WtcrVendors', 'action' => 'view', $wtcrProduct->wtcr_vendor->id]) : '' ?>
-            </td>
             <td><?= h($wtcrProduct->mfg_part_num) ?></td>
             <td><?= h($wtcrProduct->wtcrsku) ?></td>
             <td>
@@ -36,6 +33,7 @@
             </td>
             <td><?= h($wtcrProduct->wtcr_product_name) ?></td>
             <td><?= $this->Number->format($wtcrProduct->autoupdate) ?></td>
+            <td><?= $this->Number->format($wtcrProduct->static_price) ?></td>
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['action' => 'view', $wtcrProduct->id]) ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $wtcrProduct->id]) ?>
