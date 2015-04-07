@@ -67,13 +67,13 @@ class WtcrProductsController extends AppController
         // die('Called Add Vendor Product');
         
         $wtcrProduct = $this->WtcrProducts->newEntity();
-        
-        echo "<pre>Product: " . print_r($wtcrProduct, TRUE) . "</pre>";
-        echo "<pre>Products: " . print_r($this->WtcrProducts, TRUE) . "</pre>";
-        echo "<pre>Mfg Part Number: " . print_r($mfg_part_num, TRUE) . "</pre>";
-        
+                
         // die('Pre Post');
         if($this->request->is('post')) {
+            echo "<pre>Product: " . print_r($wtcrProduct, TRUE) . "</pre>";
+            echo "<pre>Products: " . print_r($this->WtcrProducts, TRUE) . "</pre>";
+            echo "<pre>Mfg Part Number: " . print_r($mfg_part_num, TRUE) . "</pre>";
+           
             $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
             // $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
             $wtcrProduct->lastupdated = date('Y-m-d H:i:s');
