@@ -77,10 +77,13 @@ class WtcrProductsController extends AppController
 				return $this->redirect(['action' => 'add_vendor_product', $mfg_part_num]);
 			}
 		}
+	
+		$related_products = $this->WtcrProducts->find('all')->where(['mfg_part_num' => $mfg_part_num]);
 		
 		$wtcrVendors = $this->WtcrProducts->WtcrVendors->find('list', ['limit' => 200]);
         $wtcrProductCategories = $this->WtcrProducts->WtcrProductCategories->find('list', ['limit' => 200]);
         $this->set(compact('wtcrProduct', 'wtcrVendors', 'wtcrProductCategories'));
+		$this->set('related_products', $related_products);
         $this->set('_serialize', ['wtcrProduct']);
 	}
 

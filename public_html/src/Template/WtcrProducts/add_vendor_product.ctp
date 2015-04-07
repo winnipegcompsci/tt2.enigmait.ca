@@ -8,6 +8,9 @@
         <li><?= $this->Html->link(__('New Wtcr Product Category'), ['controller' => 'WtcrProductCategories', 'action' => 'add']) ?> </li>
     </ul>
 </div>
+
+<?php echo "<pre>" . print_r($related_products, TRUE) . "</pre>"; ?>
+
 <div class="wtcrProducts form col-lg-10 col-md-9 columns">
     <?= $this->Form->create($wtcrProduct); ?>
     <fieldset>
