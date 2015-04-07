@@ -64,9 +64,23 @@ class WtcrProductsController extends AppController
         $this->set('_serialize', ['wtcrProduct']);
     }
 	
-	public function add_vendor_product() 
+	public function add_vendor_product($mfg_part_num) 
 	{
-		die('Called add_vendor_product()');
+		$wtcrProduct = $this->WtcrProduct->newEntity();
+		if($this->request->is('post')) {
+			$wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
+			if ($this->WtcrProducts->save($wtcrProduct)) {
+				$this->Flash->success('The vendor product was added as a WTCR product');
+				return $this->redirect(['controller' => 'WtcrVendors', 'action' => 'view_vendor_products', 'eprom']);
+			} else {
+				$this->Flash->error('The vendor product could not be added. Please try again');
+			}
+		}
+		
+		$wtcrVendors = $this->WtcrProducts->WtcrVendors->find('list', ['limit' => 200]);
+        $wtcrProductCategories = $this->WtcrProducts->WtcrProductCategories->find('list', ['limit' => 200]);
+        $this->set(compact('wtcrProduct', 'wtcrVendors', 'wtcrProductCategories'));
+        $this->set('_serialize', ['wtcrProduct']);
 	}
 
     /**
