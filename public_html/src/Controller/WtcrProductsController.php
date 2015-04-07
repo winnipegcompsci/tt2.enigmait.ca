@@ -6,8 +6,7 @@ use App\Controller\AppController;
 /**
  * WtcrProducts Controller
  *
- * @property \App\Model\Table\WtcrProductsTable $WtcrProducts
- */
+ * @property \App\Model\Table\WtcrProductsTable $WtcrProducts */
 class WtcrProductsController extends AppController
 {
 
@@ -63,31 +62,6 @@ class WtcrProductsController extends AppController
         $this->set(compact('wtcrProduct', 'wtcrVendors', 'wtcrProductCategories'));
         $this->set('_serialize', ['wtcrProduct']);
     }
-	
-	public function add_vendor_product($mfg_part_num) 
-	{
-		$wtcrProduct = $this->WtcrProducts->newEntity();
-		if($this->request->is('post')) {
-			$wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
-			if ($this->WtcrProducts->save($wtcrProduct)) {
-				$this->Flash->success('The vendor product was added as a WTCR product');
-				return $this->redirect(['controller' => 'WtcrVendors', 'action' => 'view_vendor_products', 'eprom']);
-			} else {
-				die('Add Vendor Product Save Error');
-				$this->Flash->error('The vendor product could not be added. Please try again');
-				// return $this->redirect(['action' => 'add_vendor_product', $mfg_part_num]);
-			}
-		}
-	
-		$related_products = $this->WtcrProducts->find('all')->where(['mfg_part_num' => $mfg_part_num]);
-		
-		$wtcrVendors = $this->WtcrProducts->WtcrVendors->find('list', ['limit' => 200]);
-        $wtcrProductCategories = $this->WtcrProducts->WtcrProductCategories->find('list', ['limit' => 200]);
-        $this->set(compact('wtcrProduct', 'wtcrVendors', 'wtcrProductCategories'));
-		$this->set('related_products', $related_products);
-		$this->set('mfg_part_num', $mfg_part_num);
-        $this->set('_serialize', ['wtcrProduct']);
-	}
 
     /**
      * Edit method

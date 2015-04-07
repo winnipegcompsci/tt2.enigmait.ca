@@ -16,25 +16,17 @@
     <div class="row">
         <div class="large-5 columns strings">
             <h6 class="subheader"><?= __('Wtcr Vendor') ?></h6>
-            <p><?= $wtcrProduct->has('wtcr_vendor') ? $this->Html->link($wtcrProduct->wtcr_vendor->name, ['controller' => 'WtcrVendors', 'action' => 'view', $wtcrProduct->wtcr_vendor->id]) : '' ?></p>
+            <p><?= $wtcrProduct->has('wtcr_vendor') ? $this->Html->link($wtcrProduct->wtcr_vendor->vendor_name, ['controller' => 'WtcrVendors', 'action' => 'view', $wtcrProduct->wtcr_vendor->id]) : '' ?></p>
+            <h6 class="subheader"><?= __('Wtcr Vendor Sku') ?></h6>
+            <p><?= h($wtcrProduct->wtcr_vendor_sku) ?></p>
             <h6 class="subheader"><?= __('Mfg Part Num') ?></h6>
             <p><?= h($wtcrProduct->mfg_part_num) ?></p>
             <h6 class="subheader"><?= __('Wtcrsku') ?></h6>
             <p><?= h($wtcrProduct->wtcrsku) ?></p>
             <h6 class="subheader"><?= __('Wtcr Product Category') ?></h6>
-            <p><?= $wtcrProduct->has('wtcr_product_category') ? $this->Html->link($wtcrProduct->wtcr_product_category->id, ['controller' => 'WtcrProductCategories', 'action' => 'view', $wtcrProduct->wtcr_product_category->id]) : '' ?></p>
-            <h6 class="subheader"><?= __('Description') ?></h6>
-            <p><?= h($wtcrProduct->description) ?></p>
-            <h6 class="subheader"><?= __('Wtcr Vendor Sku') ?></h6>
-            <p><?= h($wtcrProduct->wtcr_vendor_sku) ?></p>
-            <h6 class="subheader"><?= __('Supplierstock') ?></h6>
-            <p><?= h($wtcrProduct->supplierstock) ?></p>
-            <h6 class="subheader"><?= __('Suggestedprice') ?></h6>
-            <p><?= h($wtcrProduct->suggestedprice) ?></p>
-            <h6 class="subheader"><?= __('Suggestedmarkup') ?></h6>
-            <p><?= h($wtcrProduct->suggestedmarkup) ?></p>
-            <h6 class="subheader"><?= __('Wtcrprice') ?></h6>
-            <p><?= h($wtcrProduct->wtcrprice) ?></p>
+            <p><?= $wtcrProduct->has('wtcr_product_category') ? $this->Html->link($wtcrProduct->wtcr_product_category->category_name, ['controller' => 'WtcrProductCategories', 'action' => 'view', $wtcrProduct->wtcr_product_category->id]) : '' ?></p>
+            <h6 class="subheader"><?= __('Wtcr Product Name') ?></h6>
+            <p><?= h($wtcrProduct->wtcr_product_name) ?></p>
             <h6 class="subheader"><?= __('Wtcr Nid') ?></h6>
             <p><?= h($wtcrProduct->wtcr_nid) ?></p>
         </div>
@@ -43,8 +35,12 @@
             <p><?= $this->Number->format($wtcrProduct->id) ?></p>
             <h6 class="subheader"><?= __('Autoupdate') ?></h6>
             <p><?= $this->Number->format($wtcrProduct->autoupdate) ?></p>
-            <h6 class="subheader"><?= __('Createnode') ?></h6>
-            <p><?= $this->Number->format($wtcrProduct->createnode) ?></p>
+            <h6 class="subheader"><?= __('Wtcr Vendor Price') ?></h6>
+            <p><?= $this->Number->format($wtcrProduct->wtcr_vendor_price) ?></p>
+            <h6 class="subheader"><?= __('Suggestedmarkup') ?></h6>
+            <p><?= $this->Number->format($wtcrProduct->suggestedmarkup) ?></p>
+            <h6 class="subheader"><?= __('Wtcrprice') ?></h6>
+            <p><?= $this->Number->format($wtcrProduct->wtcrprice) ?></p>
         </div>
         <div class="large-2 columns dates end">
             <h6 class="subheader"><?= __('Lastupdated') ?></h6>
@@ -53,8 +49,22 @@
     </div>
     <div class="row texts">
         <div class="columns large-9">
-            <h6 class="subheader"><?= __('Extra') ?></h6>
-            <?= $this->Text->autoParagraph(h($wtcrProduct->extra)); ?>
+            <h6 class="subheader"><?= __('Description') ?></h6>
+            <?= $this->Text->autoParagraph(h($wtcrProduct->description)); ?>
+
+        </div>
+    </div>
+    <div class="row texts">
+        <div class="columns large-9">
+            <h6 class="subheader"><?= __('Marketplace Data') ?></h6>
+            <?= $this->Text->autoParagraph(h($wtcrProduct->marketplace_data)); ?>
+
+        </div>
+    </div>
+    <div class="row texts">
+        <div class="columns large-9">
+            <h6 class="subheader"><?= __('Pictures') ?></h6>
+            <?= $this->Text->autoParagraph(h($wtcrProduct->pictures)); ?>
 
         </div>
     </div>

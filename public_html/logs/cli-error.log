@@ -762,3 +762,24 @@ Stack Trace:
 #14 {main}
 
 
+2015-04-07 15:06:15 Error: [PDOException] SQLSTATE[HY000] [1045] Accès refusé pour l'utilisateur: 'root'@'@localhost' (mot de passe: OUI)
+Stack Trace:
+#0 C:\wamp\www\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Database\Driver\PDODriverTrait.php(48): PDO->__construct('mysql:host=loca...', 'root', '1qaz2wsx', Array)
+#1 C:\wamp\www\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Database\Driver\Mysql.php(86): Cake\Database\Driver\Mysql->_connect('mysql:host=loca...', Array)
+#2 C:\wamp\www\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Database\Schema\BaseSchema.php(46): Cake\Database\Driver\Mysql->connect()
+#3 C:\wamp\www\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Database\Dialect\MysqlDialectTrait.php(62): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 C:\wamp\www\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 C:\wamp\www\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(44): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 C:\wamp\www\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Database\Connection.php(319): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 C:\wamp\www\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(759): Cake\Database\Connection->schemaCollection()
+#8 C:\wamp\www\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(735): Bake\Shell\Task\ModelTask->_getAllTables()
+#9 C:\wamp\www\tt2.enigmait.ca\public_html\vendor\cakephp\bake\src\Shell\BakeShell.php(213): Bake\Shell\Task\ModelTask->listAll()
+#10 [internal function]: Bake\Shell\BakeShell->all()
+#11 C:\wamp\www\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\Shell.php(376): call_user_func_array(Array, Array)
+#12 C:\wamp\www\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(200): Cake\Console\Shell->runCommand(Array, true)
+#13 C:\wamp\www\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(171): Cake\Console\ShellDispatcher->_dispatch()
+#14 C:\wamp\www\tt2.enigmait.ca\public_html\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(122): Cake\Console\ShellDispatcher->dispatch()
+#15 C:\wamp\www\tt2.enigmait.ca\public_html\bin\cake.php(20): Cake\Console\ShellDispatcher::run(Array)
+#16 {main}
+
+

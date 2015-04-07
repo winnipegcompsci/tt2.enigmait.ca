@@ -35,9 +35,7 @@ class WtcrProductsTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('WtcrProducts') ? [] : ['className' => 'App\Model\Table\WtcrProductsTable'];
-        $this->WtcrProducts = TableRegistry::get('WtcrProducts', $config);
-    }
+        $config = TableRegistry::exists('WtcrProducts') ? [] : ['className' => 'App\Model\Table\WtcrProductsTable'];        $this->WtcrProducts = TableRegistry::get('WtcrProducts', $config);    }
 
     /**
      * tearDown method
