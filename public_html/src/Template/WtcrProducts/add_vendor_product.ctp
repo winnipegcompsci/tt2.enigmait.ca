@@ -1,43 +1,9 @@
-<div class="wtcrProducts form col-lg-5 col-md-6 columns ">
-    <?php        
-    if(count($productVendors) != 0) { ?>
-    <p> This product can be purchased from the following vendors: </p>
-    <table id="VendorTable" width="100%">
-        <thead>
-            <tr>
-                <th> Vendor Name </th>
-                <th> Product Name </th>
-                <th> Vendor SKU </th>
-                <th> Vendor Price </th>
-            </tr>
-        </thead>
-        
-        <tbody>
-            <?php foreach($productVendors as $item) {
-                echo "<tr>";
-                echo "<td>" . print_r($item->wtcr_vendor->vendor_name, TRUE) . "</td>";
-                echo "<td>" . $item->product_name . "</td>";
-                echo "<td>" . print_r($item->wtcr_vendor_sku, TRUE) . "</td>";
-                echo "<td>$" . number_format($item->vendor_price, 2) . "</td>";
-                echo "</tr>";
-                
-                $default_name = $item->product_name;
-                $vendor_price = $item->vendor_price;
-            } ?>
-        </tbody>
-    </table>
-<?php } 
-
-    echo "<br /><br /><p>" . __('This product can be sold on') . "</p>";
-
-    echo "<ul>";
-    foreach($marketplaces as $marketplace) {
-        echo "<li>" . $marketplace->marketplace_name . "</li>";
-    }  
-    echo "</ul>";
-
+<?php 
+    foreach($productVendors as $item) {                
+        $default_name = $item->product_name;
+        $vendor_price = $item->vendor_price;
+    }   
 ?>
-</div>
 
 <div class="wtcrProducts form col-lg-5 col-md-6 columns pull-left">
     <?= $this->Form->create($wtcrProduct); ?>
@@ -61,6 +27,43 @@
     <?= $this->Form->end() ?>
 </div>
 
+<div class="wtcrProducts form col-lg-5 col-md-6 columns">
+    <?php        
+    if(count($productVendors) != 0) { ?>
+    <p> This product can be purchased from the following vendors: </p>
+    <table id="VendorTable" width="100%">
+        <thead>
+            <tr>
+                <th> Vendor Name </th>
+                <th> Product Name </th>
+                <th> Vendor SKU </th>
+                <th> Vendor Price </th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <?php foreach($productVendors as $item) {
+                echo "<tr>";
+                echo "<td>" . print_r($item->wtcr_vendor->vendor_name, TRUE) . "</td>";
+                echo "<td>" . $item->product_name . "</td>";
+                echo "<td>" . print_r($item->wtcr_vendor_sku, TRUE) . "</td>";
+                echo "<td>$" . number_format($item->vendor_price, 2) . "</td>";
+                echo "</tr>";
+            } ?>
+        </tbody>
+    </table>
+<?php } 
+
+    echo "<br /><br /><p>" . __('This product can be sold on') . "</p>";
+
+    echo "<ul>";
+    foreach($marketplaces as $marketplace) {
+        echo "<li>" . $marketplace->marketplace_name . "</li>";
+    }  
+    echo "</ul>";
+
+?>
+</div>
 
 <script>
 $(document).ready( function() {
