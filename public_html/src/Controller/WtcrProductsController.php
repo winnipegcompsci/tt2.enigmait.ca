@@ -73,6 +73,7 @@ class WtcrProductsController extends AppController
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error('The wtcr product could not be saved. Please, try again.');
+                return $this->redirect(['controller' => 'wtcr_products', 'action' => 'add_vendor_product', $mfg_part_num]);
             }
         }
         
