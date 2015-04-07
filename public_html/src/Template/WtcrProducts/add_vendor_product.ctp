@@ -24,7 +24,7 @@
                 echo "<tr>";
                 echo "<td>" . $item->product_name . "</td>";
                 echo "<td>" . $item->wtcr_vendor_id . "</td>";
-                echo "<td>" . $item->vendor_price . "</td>";
+                echo "<td>" . number_format($item->vendor_price, 2) . "</td>";
                 echo "</tr>";
             } ?>
         </tbody>
