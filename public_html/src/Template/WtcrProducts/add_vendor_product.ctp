@@ -1,5 +1,5 @@
 <?php if(count($productVendors) != 0) { ?>
-    <table id="" width="100%">
+    <table id="VendorTable" width="100%">
         <thead>
             <tr>
                 <th> Product Name </th>
