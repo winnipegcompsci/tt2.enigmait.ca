@@ -17,8 +17,6 @@
         <div class="large-5 columns strings">
             <h6 class="subheader"><?= __('Wtcr Vendor') ?></h6>
             <p><?= $wtcrProduct->has('wtcr_vendor') ? $this->Html->link($wtcrProduct->wtcr_vendor->vendor_name, ['controller' => 'WtcrVendors', 'action' => 'view', $wtcrProduct->wtcr_vendor->id]) : '' ?></p>
-            <h6 class="subheader"><?= __('Wtcr Vendor Sku') ?></h6>
-            <p><?= h($wtcrProduct->wtcr_vendor_sku) ?></p>
             <h6 class="subheader"><?= __('Mfg Part Num') ?></h6>
             <p><?= h($wtcrProduct->mfg_part_num) ?></p>
             <h6 class="subheader"><?= __('Wtcrsku') ?></h6>
@@ -35,8 +33,8 @@
             <p><?= $this->Number->format($wtcrProduct->id) ?></p>
             <h6 class="subheader"><?= __('Autoupdate') ?></h6>
             <p><?= $this->Number->format($wtcrProduct->autoupdate) ?></p>
-            <h6 class="subheader"><?= __('Wtcr Vendor Price') ?></h6>
-            <p><?= $this->Number->format($wtcrProduct->wtcr_vendor_price) ?></p>
+            <h6 class="subheader"><?= __('Static Price') ?></h6>
+            <p><?= $this->Number->format($wtcrProduct->static_price) ?></p>
             <h6 class="subheader"><?= __('Suggestedmarkup') ?></h6>
             <p><?= $this->Number->format($wtcrProduct->suggestedmarkup) ?></p>
             <h6 class="subheader"><?= __('Wtcrprice') ?></h6>

@@ -14,13 +14,12 @@
         <legend><?= __('Add Wtcr Product') ?></legend>
         <?php
             echo $this->Form->input('wtcr_vendor_id', ['options' => $wtcrVendors]);
-            echo $this->Form->input('wtcr_vendor_sku');
             echo $this->Form->input('mfg_part_num');
             echo $this->Form->input('wtcrsku');
             echo $this->Form->input('wtcr_product_name');
             echo $this->Form->input('description');
             echo $this->Form->input('autoupdate');
-            echo $this->Form->input('wtcr_vendor_price');
+            echo $this->Form->input('static_price');
             echo $this->Form->input('suggestedmarkup');
             echo $this->Form->input('wtcrprice');
             echo $this->Form->input('wtcr_nid');
