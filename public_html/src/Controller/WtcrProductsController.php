@@ -70,11 +70,12 @@ class WtcrProductsController extends AppController
         
         // die('Pre Post');
         if($this->request->is('post')) {
-            // die('This is a post request');
+            die('This is a post request');
             // $wtcrProducts = $this->WtcrProducts;
             $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
-            // $wtcrProduct->lastupdated = date('Y-m-d H:i:s');
-            // $wtcrProduct->mfg_part_num = $mfg_part_num;
+            $wtcrProduct->lastupdated = date('Y-m-d H:i:s');
+            $wtcrProduct->mfg_part_num = $mfg_part_num;
+            
             die('Setting mfg_part_num');
             
             if ($this->WtcrProducts->save($wtcrProduct)) {
