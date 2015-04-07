@@ -51,7 +51,7 @@ class WtcrProductsFixture extends TestFixture
     public $records = [
         [
             'id' => 1,
-            'mfg_part_num' => 'be4b5129-cbd6-4b81-9add-a141a6f493d5',
+            'mfg_part_num' => '8d434301-88a3-4d36-8ea5-aab03fd1f0cb',
             'wtcrsku' => 'Lorem ipsum dolor sit amet',
             'wtcr_product_category_id' => 1,
             'wtcr_product_name' => 'Lorem ipsum dolor sit amet',
@@ -61,7 +61,7 @@ class WtcrProductsFixture extends TestFixture
             'suggestedmarkup' => 1,
             'wtcrprice' => 1,
             'wtcr_nid' => 'Lorem ip',
-            'lastupdated' => '2015-04-07 15:53:36',
+            'lastupdated' => '2015-04-07 16:18:12',
             'marketplace_data' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
             'pictures' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.'
         ],
