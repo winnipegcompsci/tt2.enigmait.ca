@@ -71,7 +71,7 @@ class WtcrProductsController extends AppController
             $wtcrProduct = $wtcrProducts->patchEntity($wtcrProduct, $this->request->data);
             $wtcrProduct->lastupdated = date('Y-m-d H:i:s');
             $wtcrProduct->mfg_part_num = $mfg_part_num;
-            
+            die('Setting mfg_part_num');
             
             if ($this->WtcrProducts->save($wtcrProduct)) {
                 $this->Flash->success('The vendor product has been saved.');
