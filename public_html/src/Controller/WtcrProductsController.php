@@ -68,7 +68,7 @@ class WtcrProductsController extends AppController
         
         $wtcrProduct = $this->WtcrProducts->newEntity();
         
-        die('Pre Post');
+        // die('Pre Post');
         if($this->request->is('post')) {
             die('This is a post request');
             $wtcrProducts = $this->WtcrProducts;
