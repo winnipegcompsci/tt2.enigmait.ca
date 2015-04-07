@@ -67,14 +67,16 @@ class WtcrProductsController extends AppController
         $wtcrProduct = $this->WtcrProducts->newEntity();
         
         if($this->request->is('post')) {
-            $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
+            $wtcrProducts = $this->WtcrProducts;
+            $wtcrProduct = $wtcrProducts->patchEntity($wtcrProduct, $this->request->data);
             $wtcrProduct->lastupdated = date('Y-m-d H:i:s');
+            
             if ($this->WtcrProducts->save($wtcrProduct)) {
                 $this->Flash->success('The vendor product has been saved.');
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error('The vendor product could not be saved. Please, try again.');
-                echo "<pre>" . print_r($this->WtcrProducts, TRUE) . "</pre>";
+                echo "<pre>" . print_r($wtcrProducts, TRUE) . "</pre>";
             }
         }
         
