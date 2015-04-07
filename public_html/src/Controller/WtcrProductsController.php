@@ -62,6 +62,12 @@ class WtcrProductsController extends AppController
         $this->set('_serialize', ['wtcrProduct']);
     }
 
+    public function add_vendor_product($mfg_part_num) {
+        echo "<pre>" . print_r($mfg_part_num, TRUE) . "</pre>";
+        
+        
+    }
+    
     /**
      * Edit method
      *
