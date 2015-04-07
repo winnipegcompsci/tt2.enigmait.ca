@@ -12,7 +12,7 @@
             <?php foreach($productVendors as $item) {
                 echo "<tr>";
                 echo "<td>" . $item->product_name . "</td>";
-                echo "<td>" . print_r($item, TRUE) . "</td>";
+                echo "<td>" . print_r($item->wtcr_vendor->vendor_name, TRUE) . "</td>";
                 echo "<td>" . number_format($item->vendor_price, 2) . "</td>";
                 echo "</tr>";
             } ?>
