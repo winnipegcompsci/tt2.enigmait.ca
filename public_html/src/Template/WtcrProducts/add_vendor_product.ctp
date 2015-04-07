@@ -1,29 +1,3 @@
-<?php if(count($productVendors) != 0) { ?>
-    <table id="VendorTable" width="100%">
-        <thead>
-            <tr>
-                <th> Product Name </th>
-                <th> Vendor </th>
-                <th> Vendor Price </th>
-            </tr>
-        </thead>
-        
-        <tbody>
-            <?php foreach($productVendors as $item) {
-                echo "<tr>";
-                echo "<td>" . $item->product_name . "</td>";
-                echo "<td>" . print_r($item->wtcr_vendor->vendor_name, TRUE) . "</td>";
-                echo "<td>$" . number_format($item->vendor_price, 2) . "</td>";
-                echo "</tr>";
-                
-                $default_name = $item->product_name;
-                $vendor_price = $item->vendor_price;
-            } ?>
-        </tbody>
-    </table>
-<?php } ?>
-
-
 <div class="wtcrProducts form col-lg-5 col-md-6 columns">
     <?= $this->Form->create($wtcrProduct); ?>
     <fieldset>
@@ -51,7 +25,31 @@
         foreach($marketplaces as $marketplace) {
             echo "<pre>" . print_r($marketplace, TRUE) . "</pre>";
         }   
-    ?>
+        
+    if(count($productVendors) != 0) { ?>
+    <table id="VendorTable" width="100%">
+        <thead>
+            <tr>
+                <th> Product Name </th>
+                <th> Vendor </th>
+                <th> Vendor Price </th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <?php foreach($productVendors as $item) {
+                echo "<tr>";
+                echo "<td>" . $item->product_name . "</td>";
+                echo "<td>" . print_r($item->wtcr_vendor->vendor_name, TRUE) . "</td>";
+                echo "<td>$" . number_format($item->vendor_price, 2) . "</td>";
+                echo "</tr>";
+                
+                $default_name = $item->product_name;
+                $vendor_price = $item->vendor_price;
+            } ?>
+        </tbody>
+    </table>
+<?php } ?>
 </div>
 
 <script>
