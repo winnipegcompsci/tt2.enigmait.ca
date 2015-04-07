@@ -27,6 +27,8 @@
     </table>
 <?php } 
 
+    echo "<p>" . __('This product can be sold on') . "</p>";
+
     foreach($marketplaces as $marketplace) {
         echo "<pre>" . print_r($marketplace->marketplace_name, TRUE) . "</pre>";
     }  
