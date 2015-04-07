@@ -107,6 +107,8 @@ class WtcrVendorProductsController extends AppController
                 return $this->redirect(['action' => 'index']);
                 error_log("SAVE SUCCESS");
             } else {
+				debug($wtcrProduct);
+				die('DIE');
                 $this->Flash->error('Failed to Save WTCR Product');
 				// echo "<pre>" . print_r($wtcrProducts, TRUE) . "</pre>";               
 				error_log('Failed to Save');
