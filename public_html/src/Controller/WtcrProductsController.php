@@ -57,6 +57,7 @@ class WtcrProductsController extends AppController
                 $this->Flash->error('The wtcr product could not be saved. Please, try again.');
             }
         }
+        
         $wtcrProductCategories = $this->WtcrProducts->WtcrProductCategories->find('list', ['limit' => 200]);
         $this->set(compact('wtcrProduct', 'wtcrProductCategories'));
         $this->set('_serialize', ['wtcrProduct']);
@@ -69,8 +70,11 @@ class WtcrProductsController extends AppController
             'conditions' => ['mfg_part_num' => $mfg_part_num]
         ]);
         
+        $wtcrProductCategories = $this->WtcrProducts->WtcrProductCategories->find('list', ['limit' => 200]);
         $this->set('this_product', $wtcrProduct);
         $this->set('productVendors', $productVendors);
+        
+        $this->set('categories', $wtcrProductCategories);
     }
     
     /**
