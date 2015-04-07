@@ -10,8 +10,25 @@
 </div>
 
 <?php 
+/*
+            [mfg_part_num] => 1
+            [wtcrsku] => 1
+            [wtcr_product_name] => 1
+            [description] => 1
+            [autoupdate] => 1
+            [static_price] => 1
+            [suggestedmarkup] => 1
+            [wtcrprice] => 1
+            [wtcr_nid] => 1
+            [lastupdated] => 1
+            [marketplace_data] => 1
+            [pictures] => 1
+            [wtcr_vendor] => 1
+            [wtcr_product_category] => 1
+*/
 
-echo "<pre>" . print_r($wtcrProduct, TRUE) . "</pre>";
+
+echo "<pre>" . print_r($this_product, TRUE) . "</pre>";
 
 foreach($related_products as $item) {
 	echo "<pre>" . print_r($item, TRUE) . "</pre>";
