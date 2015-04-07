@@ -1,26 +1,4 @@
-<div class="wtcrProducts form col-lg-5 col-md-6 columns">
-    <?= $this->Form->create($wtcrProduct); ?>
-    <fieldset>
-        <legend><?= __('Add Wtcr Product') ?></legend>
-        <?php
-            echo $this->Form->input('mfg_part_num', ['default' => $mfg_part_num]);
-            echo $this->Form->input('wtcrsku');
-            echo $this->Form->input('wtcr_product_name', ['default' => $default_name]);
-            echo $this->Form->input('description');
-            echo $this->Form->input('autoupdate', ['type' => 'checkbox']);
-            echo $this->Form->input('static_price');
-            echo $this->Form->input('suggestedmarkup', ['default' => '0.5']);
-            echo $this->Form->input('wtcrprice', ['default' => $vendor_price * 1.5]);
-            echo $this->Form->input('wtcr_nid');
-            echo $this->Form->input('extra');
-            echo $this->Form->input('wtcr_product_category_id', ['options' => $categories]);
-        ?>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
-    <?= $this->Form->end() ?>
-</div>
-
-<div class="wtcrProducts form col-lg-5 col-md-6 columns">
+<div class="wtcrProducts form col-lg-5 col-md-6 columns pull-right">
     <?php 
         foreach($marketplaces as $marketplace) {
             echo "<pre>" . print_r($marketplace->marketplace_name, TRUE) . "</pre>";
@@ -51,6 +29,29 @@
     </table>
 <?php } ?>
 </div>
+
+<div class="wtcrProducts form col-lg-5 col-md-6 columns pull-left">
+    <?= $this->Form->create($wtcrProduct); ?>
+    <fieldset>
+        <legend><?= __('Add Wtcr Product') ?></legend>
+        <?php
+            echo $this->Form->input('mfg_part_num', ['default' => $mfg_part_num]);
+            echo $this->Form->input('wtcrsku');
+            echo $this->Form->input('wtcr_product_name', ['default' => $default_name]);
+            echo $this->Form->input('description');
+            echo $this->Form->input('autoupdate', ['type' => 'checkbox']);
+            echo $this->Form->input('static_price');
+            echo $this->Form->input('suggestedmarkup', ['default' => '0.5']);
+            echo $this->Form->input('wtcrprice', ['default' => $vendor_price * 1.5]);
+            echo $this->Form->input('wtcr_nid');
+            echo $this->Form->input('extra');
+            echo $this->Form->input('wtcr_product_category_id', ['options' => $categories]);
+        ?>
+    </fieldset>
+    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->end() ?>
+</div>
+
 
 <script>
 $(document).ready( function() {
