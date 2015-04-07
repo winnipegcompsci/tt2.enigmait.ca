@@ -1,9 +1,5 @@
 <div class="wtcrProducts form col-lg-5 col-md-6 columns pull-right">
-    <?php 
-        foreach($marketplaces as $marketplace) {
-            echo "<pre>" . print_r($marketplace->marketplace_name, TRUE) . "</pre>";
-        }   
-        
+    <?php        
     if(count($productVendors) != 0) { ?>
     <p> This product can be purchased from the following vendors: </p>
     <table id="VendorTable" width="100%">
@@ -29,7 +25,13 @@
             } ?>
         </tbody>
     </table>
-<?php } ?>
+<?php } 
+
+    foreach($marketplaces as $marketplace) {
+        echo "<pre>" . print_r($marketplace->marketplace_name, TRUE) . "</pre>";
+    }  
+
+?>
 </div>
 
 <div class="wtcrProducts form col-lg-5 col-md-6 columns pull-left">
