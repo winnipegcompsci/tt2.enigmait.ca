@@ -73,7 +73,7 @@ class WtcrProductsController extends AppController
             
             // echo "<pre>Product (Before Edit): " . print_r($wtcrProduct, TRUE) . "</pre>";
              
-            echo "<pre>" . print_r($this->request->data, TRUE) . "</pre>";
+            // echo "<pre>" . print_r($this->request->data, TRUE) . "</pre>";
              
             // $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
             $wtcrProduct->lastupdated = date('Y-m-d H:i:s');
@@ -90,9 +90,12 @@ class WtcrProductsController extends AppController
             // echo "<pre>Product (After Edit): " . print_r($wtcrProduct, TRUE) . "</pre>";
             
             if ($this->WtcrProducts->save($wtcrProduct)) {
+                echo "Save SUCCESS";
                 $this->Flash->success('The vendor product has been saved.');
                 return $this->redirect(['action' => 'index']);
+            
             } else {
+                echo "SAVE FAILED";
                 $this->Flash->error('The vendor product could not be saved. Please, try again.');
                 // echo "<pre>" . print_r($wtcrProducts, TRUE) . "</pre>";
             }
