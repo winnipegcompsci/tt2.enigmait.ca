@@ -79,7 +79,7 @@ class WtcrProductsController extends AppController
         
         $productVendors = TableRegistry::get('wtcr_vendor_products')->find('all', [
             'conditions' => ['mfg_part_num' => $mfg_part_num],
-            'contain' => ['WtcrVendors']
+            'contain' => ['WtcrVendors', 'WtcrVendorProducts']
             
         ]);
         

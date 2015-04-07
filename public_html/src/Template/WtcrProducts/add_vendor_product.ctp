@@ -20,7 +20,7 @@
                 echo "<tr>";
                 echo "<td>" . print_r($item->wtcr_vendor->vendor_name, TRUE) . "</td>";
                 echo "<td>" . $item->product_name . "</td>";
-                echo "<td>" . $item->wtcr_vendor_products->wtcr_vendor_sku . "</td>";
+                echo "<td>" . $item->wtcr_vendor_product->wtcr_vendor_sku . "</td>";
                 echo "<td>$" . number_format($item->vendor_price, 2) . "</td>";
                 echo "</tr>";
                 
