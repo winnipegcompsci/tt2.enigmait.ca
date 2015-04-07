@@ -27,6 +27,9 @@ class WtcrMarketplacesTable extends Table
         $this->belongsTo('WtcrMarketplaceTemplates', [
             'foreignKey' => 'wtcr_marketplace_template_id'
         ]);
+        $this->hasMany('WtcrMarketplaceTemplates', [
+            'foreignKey' => 'wtcr_marketplace_id'
+        ]);
     }
 
     /**

@@ -29,9 +29,7 @@ class WtcrMarketplacesTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('WtcrMarketplaces') ? [] : ['className' => 'App\Model\Table\WtcrMarketplacesTable'];
-        $this->WtcrMarketplaces = TableRegistry::get('WtcrMarketplaces', $config);
-    }
+        $config = TableRegistry::exists('WtcrMarketplaces') ? [] : ['className' => 'App\Model\Table\WtcrMarketplacesTable'];        $this->WtcrMarketplaces = TableRegistry::get('WtcrMarketplaces', $config);    }
 
     /**
      * tearDown method

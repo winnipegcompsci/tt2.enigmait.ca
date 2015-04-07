@@ -6,8 +6,7 @@ use App\Controller\AppController;
 /**
  * WtcrMarketplaces Controller
  *
- * @property \App\Model\Table\WtcrMarketplacesTable $WtcrMarketplaces
- */
+ * @property \App\Model\Table\WtcrMarketplacesTable $WtcrMarketplaces */
 class WtcrMarketplacesController extends AppController
 {
 
