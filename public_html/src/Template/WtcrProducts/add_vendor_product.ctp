@@ -17,7 +17,7 @@
                 echo "</tr>";
                 
                 $default_name = $item->product_name;
-                
+                $vendor_price = $item->vendor_price;
             } ?>
         </tbody>
     </table>
@@ -36,7 +36,7 @@
             echo $this->Form->input('autoupdate', ['type' => 'checkbox']);
             echo $this->Form->input('static_price');
             echo $this->Form->input('suggestedmarkup');
-            echo $this->Form->input('wtcrprice');
+            echo $this->Form->input('wtcrprice', ['default' => $vendor_price * 1.5]);
             echo $this->Form->input('wtcr_nid');
             echo $this->Form->input('extra');
             echo $this->Form->input('wtcr_product_category_id', ['options' => $categories]);
