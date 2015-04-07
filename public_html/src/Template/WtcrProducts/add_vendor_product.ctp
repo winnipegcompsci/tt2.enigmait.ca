@@ -30,9 +30,11 @@
 
     echo "<br /><br /><p>" . __('This product can be sold on') . "</p>";
 
+    echo "<ul>";
     foreach($marketplaces as $marketplace) {
-        echo "<pre>" . print_r($marketplace->marketplace_name, TRUE) . "</pre>";
+        echo "<li>" . $marketplace->marketplace_name . "</li>";
     }  
+    echo "</ul>";
 
 ?>
 </div>
