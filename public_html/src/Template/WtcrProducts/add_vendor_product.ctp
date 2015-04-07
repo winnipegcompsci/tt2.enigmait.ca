@@ -1,4 +1,4 @@
-<div class="wtcrProducts form col-lg-5 col-md-6 columns pull-right">
+<div class="wtcrProducts form col-lg-5 col-md-6 columns ">
     <?php        
     if(count($productVendors) != 0) { ?>
     <p> This product can be purchased from the following vendors: </p>
