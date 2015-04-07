@@ -5,6 +5,7 @@
         }   
         
     if(count($productVendors) != 0) { ?>
+    <p> This product can be purchased from the following vendors: </p>
     <table id="VendorTable" width="100%">
         <thead>
             <tr>
