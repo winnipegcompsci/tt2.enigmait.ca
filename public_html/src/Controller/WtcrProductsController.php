@@ -63,26 +63,7 @@ class WtcrProductsController extends AppController
         $this->set(compact('wtcrProduct', 'wtcrProductCategories'));
         $this->set('_serialize', ['wtcrProduct']);
     }
-
-    public function add_vendor_product($mfg_part_num) {
-        $wtcrProduct = $this->WtcrProducts->newEntity();
-        
-         if ($this->request->is('post')) {
-            $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
-            if ($this->WtcrProducts->save($wtcrProduct)) {
-                $this->Flash->success('The wtcr product has been saved.');
-                return $this->redirect(['action' => 'index']);
-            } else {
-                $this->Flash->error('The wtcr product could not be saved. Please, try again.');
-            }
-        }
-        
-        $wtcrProductCategories = $this->WtcrProducts->WtcrProductCategories->find('list', ['limit' => 200]);
-        $this->set(compact('wtcrProduct', 'wtcrProductCategories'));
-        $this->set('_serialize', ['wtcrProduct']);
-    }
     
-    /*
     public function add_vendor_product($mfg_part_num) 
     {        
         $wtcrProduct = $this->WtcrProducts->newEntity();              
@@ -120,7 +101,6 @@ class WtcrProductsController extends AppController
         $this->set('categories', $wtcrProductCategories);
         $this->set('marketplaces', $marketplaces);
     }
-    */
     
     /**
      * Edit method
