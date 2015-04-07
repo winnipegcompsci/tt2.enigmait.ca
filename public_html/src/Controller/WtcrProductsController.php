@@ -70,14 +70,14 @@ class WtcrProductsController extends AppController
                 
         // die('Pre Post');
         if($this->request->is('post')) {
-            echo "<pre>Product: " . print_r($wtcrProduct, TRUE) . "</pre>";
-            echo "<pre>Products: " . print_r($this->WtcrProducts, TRUE) . "</pre>";
-            echo "<pre>Mfg Part Number: " . print_r($mfg_part_num, TRUE) . "</pre>";
-           
-            $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
+            
+            echo "<pre>Product (Before Edit): " . print_r($wtcrProduct, TRUE) . "</pre>";
+                        
             // $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
             $wtcrProduct->lastupdated = date('Y-m-d H:i:s');
             $wtcrProduct->mfg_part_num = $mfg_part_num;
+            
+            echo "<pre>Product (After Edit): " . print_r($wtcrProduct, TRUE) . "</pre>";
             
             if ($this->WtcrProducts->save($wtcrProduct)) {
                 $this->Flash->success('The vendor product has been saved.');
