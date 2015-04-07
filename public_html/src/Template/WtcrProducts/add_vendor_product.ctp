@@ -17,7 +17,7 @@
             
             $autoupdate_opts = [ 1 => 'Yes', 0 => 'No'];
             echo $this->Form->label('Auto Update WTCR Price as [Avg. Vendor Price] * Markup.');
-            echo $this->Form->select('autoupdate', $autoupdate_opts);
+            echo $this->Form->select('autoupdate', $autoupdate_opts, ['label' => 'Auto Update']);
             echo $this->Form->input('static_price', ['label' => 'Static Price on Site']);
             echo $this->Form->input('suggestedmarkup', ['default' => '0.5', 'label' => 'Suggested Markup:']);
             echo $this->Form->input('wtcrprice', ['default' => $vendor_price * 1.5, 'label' => 'WTCR Price:']);
