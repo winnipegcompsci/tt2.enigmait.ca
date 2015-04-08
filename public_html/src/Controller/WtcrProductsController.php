@@ -66,20 +66,22 @@ class WtcrProductsController extends AppController
     }
     
     public function add_vendor_product($mfg_part_num) 
-    {       
+    {   
+        error_log('#1  Reached');
         $wtcrProduct = $this->WtcrProducts->newEntity();              
         
+        error_log('The request is post check');
         if($this->request->is('post')) {
             $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
            
-            echo "<pre>" . print_r($wtcrProduct, TRUE) . "</pre>";      // DEBUG
+           $wtcrProduct->lastupdated = date("Y-m-d H:i:s");
+           
+            echo "<pre>New Product::" . print_r($wtcrProduct, TRUE) . "</pre>";      // DEBUG
             
             if($this->WtcrProducts->save($wtcrProduct)) {
-                error_log('Save Success');
                 $this->Flash->success('The Vendor product has been saved as a WTCR Product.');
                 return $this->redirect(['action' => 'index']);
             } else {
-                error_log('Save Failed!');
                 $this->Flash->error('The vendor product could not be saved');
             }
             
