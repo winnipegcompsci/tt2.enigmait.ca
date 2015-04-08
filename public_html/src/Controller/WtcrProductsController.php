@@ -74,10 +74,14 @@ class WtcrProductsController extends AppController
         if($this->request->is('post')) {
            $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
            
+           echo "<pre>" . print_r($this->request->data, TRUE) . "</pre>";
+           
+           
            $wtcrProduct->lastupdated = date("Y-m-d H:i:s");
            $wtcrProduct->wtcr_nid = 0;
            $wtcrProduct->marketplace_data = serialize( array() );
-           $wtcrProduct->wtcr_product_category = $this->request->data['wtcr_product_category_id'];
+           $wtcrProduct->wtcr_product_category = 0;
+           $wtcrProduct->pictures = serialize( array() );
            
             $this->Flash->error("<pre>New Product::" . print_r($wtcrProduct, TRUE) . "</pre>");      // DEBUG
             
