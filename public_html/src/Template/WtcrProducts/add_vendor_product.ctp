@@ -52,7 +52,7 @@
                 echo "<td>" . $item->product_name . "</td>";
                 echo "<td>" . print_r($item->wtcr_vendor_sku, TRUE) . "</td>";
                 echo "<td>$" . number_format($item->vendor_price, 2) . "</td>";
-                echo "<td>" . $item->
+                echo "<td>" . $item->lastupdated . "</td>";
                 echo "</tr>";
             } ?>
         </tbody>
