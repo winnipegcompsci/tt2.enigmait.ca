@@ -103,6 +103,8 @@ class WtcrProductsController extends AppController
         $this->set('wtcrProduct', $wtcrProduct);
         $this->set('categories', $wtcrProductCategories);
         $this->set('marketplaces', $marketplaces);
+        
+        return $this->redirect('controller' => 'wtcr_products', 'action' => 'add_vendor_product', $mfg_part_num);
     }
     
     /**
