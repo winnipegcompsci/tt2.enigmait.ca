@@ -389,13 +389,21 @@ class WtcrVendorsController extends AppController
                     'last_updated' => date('Y-m-d H:i:s'),
                 ];
                 
-                $thisProduct = $vendorProducts->newEntity($data);
+                $thisProduct = $vendorProducts->newEntity();
+                $thisProduct->product_name = $pna[$index];
+                $thisProduct->wtcr_vendor_id = 2;
+                $thisProduct->wtcr_vendor_sku = $pno[$index];
+                $thisProduct->mfg_part_num, $pno[$index];
+                $thisProduct->vendor_pricfe = $prices[$index];
+                $thisProduct->wtcr_product_category_id = 1;
+                $thisProduct->last_updated = date('Y-m-d H:i:s');
+                
                 
                 if($vendorProducts->save($thisProduct)) {
                     error_log('Saved ' . $pna[$index] . ' properly');
                 } else {
                     error_log('Failed to Save ' . $pna[$index]. ' properly');
-                    error_log("<pre>" . print_r($vendorProducts, TRUE) . "</pre>");
+                    // error_log("<pre>" . print_r($vendorProducts, TRUE) . "</pre>");
                 }
             }
             
