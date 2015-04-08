@@ -83,6 +83,14 @@ class WtcrProductsController extends AppController
             echo "<pre>About to save</pre>";
             debug($wtcrProduct);
            
+            try {
+                $wtcrProduct = $this->WtcrProducts->save($wtcrProduct);
+            } catch (Exception $e) {
+                echo "<pre>Exception:: " . $e->getMessage() . "</pre>";
+            }            
+            
+            
+           /*
             if($this->WtcrProducts->save($wtcrProduct)) {
                 echo "<pre>Save Worked</pre>";
                 $this->Flash->success('The Vendor product has been saved as a WTCR Product.');
@@ -92,6 +100,7 @@ class WtcrProductsController extends AppController
                 echo "WTCR PRODUCTS!!!<pre>" . print_r($this->WtcrProducts, TRUE) . "</pre>";
                 $this->Flash->error('The Vendor product could not be saved');
             }
+            */
            
         }
         
