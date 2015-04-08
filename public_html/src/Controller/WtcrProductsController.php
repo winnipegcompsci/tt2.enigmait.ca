@@ -89,8 +89,10 @@ class WtcrProductsController extends AppController
                 $this->Flash->error('The Vendor product could not be saved');
             }
             
-            
+            die('END OF POST');
         }
+        
+        
         
         $productVendors = TableRegistry::get('wtcr_vendor_products')->find('all', [
             'conditions' => ['mfg_part_num' => $mfg_part_num],
@@ -110,7 +112,7 @@ class WtcrProductsController extends AppController
         $this->set('categories', $wtcrProductCategories);
         $this->set('marketplaces', $marketplaces);
         
-        error_log( "DEBUG NEW PRODUCT:: <pre>" . print_r($wtcrProduct, TRUE) . "<pre>");
+        // error_log( "DEBUG NEW PRODUCT:: <pre>" . print_r($wtcrProduct, TRUE) . "<pre>");
         // return $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'view_vendor_products', 'eprom']);
     }
     
