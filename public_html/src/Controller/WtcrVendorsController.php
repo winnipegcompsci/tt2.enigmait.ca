@@ -378,14 +378,24 @@ class WtcrVendorsController extends AppController
             // $longtech_products[] = array($pno[$index], $pna[$index], $prices[$index]);
             
             if(strcmp($prices[$index], "0.00") != 0) {        
-                $thisProduct = $vendorProducts->newEntity();
+                                
+                $data = [
+                    'product_name' => $pna[$index],
+                    'wtcr_vendor_id' => 2,
+                    'wtcr_vendor_sku' => $pno[$index],
+                    'mfg_part_num' => $pno[$index], // REPLACE WITH PARSED MFG_PART_NUM
+                    'vendor_price' => $prices[$index],
+                    'wtcr_product_category_id' => 1,
+                    'last_updated' => date('Y-m-d H:i:s'),
+                ];
                 
-                echo "<br />" . $pno[$index];
-                echo "<br />" . $pna[$index];
-                echo "<br />" . $prices[$index];
-                echo "<br />";
+                $thisProduct = $vendorProducts->newEntity($data);
                 
-                error_log($pna[$index] . " was saved!");
+                if($vendorProducts->save($thisProduct)) {
+                    error_log('Saved ' . $pna[$index] . ' properly');
+                } else {
+                    error_log('Failed to Save ' . $pna[$index]. ' properly');
+                }
             }
             
             $index++;
