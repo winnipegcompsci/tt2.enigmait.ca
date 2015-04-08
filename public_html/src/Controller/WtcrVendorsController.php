@@ -419,4 +419,10 @@ class WtcrVendorsController extends AppController
         $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'view_vendor_products', 'longtech']);
         
     } /*.longtech_fetch */
+    
+    public function fetch_longtech_products() {
+        echo "IMPLEMENT ASI FETCH!";
+    
+    }
+    
 }   
