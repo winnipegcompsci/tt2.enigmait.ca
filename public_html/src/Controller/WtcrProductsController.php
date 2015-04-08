@@ -67,12 +67,10 @@ class WtcrProductsController extends AppController
     
     public function add_vendor_product($mfg_part_num) 
     {   
-        error_log('#1  Reached');
         $wtcrProduct = $this->WtcrProducts->newEntity();              
         
-        error_log('The request is post check');
         if($this->request->is('post')) {
-            $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
+           $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
            
            $wtcrProduct->lastupdated = date("Y-m-d H:i:s");
            
