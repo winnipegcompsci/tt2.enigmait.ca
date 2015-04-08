@@ -309,7 +309,7 @@ class WtcrVendorsController extends AppController
         $vendorProducts = TableRegistry::get('wtcr_vendor_products');
         $html = file_get_html($url . '1');
         
-        /*
+      
         foreach($html->find('div.page') as $pageFooter) {
             foreach($pageFooter->find('a') as $pageLink) {
                 $pos = strrpos($pageLink->href, '=');
@@ -318,8 +318,7 @@ class WtcrVendorsController extends AppController
                 $lastPage = $page;
             }    
         }
-        */
-        
+         
         $time_start = microtime(true);
         $index = 0;
         while ($curPage <= $lastPage) {
