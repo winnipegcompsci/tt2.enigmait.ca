@@ -324,6 +324,8 @@ class WtcrVendorsController extends AppController
         $time_start = microtime(true);
         $index = 0;
         while ($curPage <= $lastPage) {
+            echo "<br />" . $curPage;
+            
             $thisURL = $url . $curPage;
             $duration = number_format(microtime(true) - $time_start, 1);
             
