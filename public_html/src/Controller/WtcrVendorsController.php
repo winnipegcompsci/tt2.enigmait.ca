@@ -376,19 +376,32 @@ class WtcrVendorsController extends AppController
         $index = 0;
         while($index < $curPage) {
             // $longtech_products[] = array($pno[$index], $pna[$index], $prices[$index]);
-            
-            error_log("Trying to Save: " . $pna[$index] . " @ $" . $prices[$index]);
-            
-            if(strcmp($prices[$index], "0.00") !== 0) {        
+                        
+            if(strcmp($prices[$index], "0.00") !== 0) {
                 $thisProduct = $vendorProducts->newEntity();
-                $thisProduct->product_name = $pna[$index];
-                $thisProduct->wtcr_vendor_id = 2;
-                $thisProduct->wtcr_vendor_sku = $pno[$index];
-                $thisProduct->mfg_part_num = $pno[$index];
-                $thisProduct->vendor_pricfe = $prices[$index];
-                $thisProduct->wtcr_product_category_id = 1;
-                $thisProduct->last_updated = date('Y-m-d H:i:s');
                 
+                $existing_prods = $vendorProducts->find()
+                    ->where(['wtcr_vendor_sku' => $pno[$index]])
+                    ->toArray();
+                    
+                foreach($existing_prods as $prod) {
+                    $thisProduct = $prod;
+                }
+                
+                if(!$thisProduct) {                
+                    $thisProduct->product_name = $pna[$index];
+                    $thisProduct->wtcr_vendor_id = 2;
+                    $thisProduct->wtcr_vendor_sku = $pno[$index];
+                    $thisProduct->mfg_part_num = $pno[$index];
+                    $thisProduct->vendor_price = $prices[$index];
+                    $thisProduct->wtcr_product_category_id = 1;
+                    $thisProduct->last_updated = date('Y-m-d H:i:s');
+                    error_log('Creating New Longtech Product');
+                } else {
+                    $thisProduct->vendor_price = $prices[$index];
+                    $thisProduct->last_updated = date('Y-m-d H:i:s');
+                    error_log('Updating Existing Longtech Product');
+                }
                 
                 if($vendorProducts->save($thisProduct)) {
                     error_log('Saved ' . $pna[$index] . ' properly');
@@ -396,6 +409,7 @@ class WtcrVendorsController extends AppController
                     error_log('Failed to Save ' . $pna[$index]. ' properly');
                     // error_log("<pre>" . print_r($vendorProducts, TRUE) . "</pre>");
                 }
+                
             }
             
             $index++;
