@@ -78,9 +78,7 @@ class WtcrProductsController extends AppController
            $wtcrProduct->wtcr_nid = 0;
            $wtcrProduct->marketplace_data = serialize( array() );
            $wtcrProduct->pictures = serialize( array() );
-           
-           debug($this->WtcrProducts);
-           
+                      
             // debug($wtcrProduct);
                        
             if($this->WtcrProducts->save($wtcrProduct)) {
