@@ -57,6 +57,7 @@ class WtcrProductsController extends AppController
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error('The wtcr product could not be saved. Please, try again.');
+                die($this->WtcrProducts);
             }
         }
         
@@ -88,7 +89,6 @@ class WtcrProductsController extends AppController
             } else {
                 echo "FAILED TO SAVE WTCR PRODUCT!!!<pre>" . print_r($this->WtcrProducts, TRUE) . "</pre>";
                 $this->Flash->error('The Vendor product could not be saved');
-                die($this->WtcrProducts);
             }
                        
         }
