@@ -46,9 +46,7 @@
         </thead>
         
         <tbody>
-            <?php foreach($productVendors as $item) {
-                echo "<pre>" . print_r($item, TRUE) . "</pre>";
-                
+            <?php foreach($productVendors as $item) {                
                 echo "<tr>";
                 echo "<td>" . print_r($item->wtcr_vendor->vendor_name, TRUE) . "</td>";
                 echo "<td>" . $item->product_name . "</td>";
