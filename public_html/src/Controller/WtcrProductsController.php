@@ -66,16 +66,11 @@ class WtcrProductsController extends AppController
     }
     
     public function add_vendor_product($mfg_part_num) 
-    {
-        $products = TableRegistry::get('WtcrProducts')->find('all');
-        
-        // $wtcrProduct = $this->WtcrProducts->newEntity($this->request->data);              
-        $newProduct = $products->get(1);
-        if($newProduct->errors()) {
-            echo "<pre>New Prod Errs:" . print_r($newProduct->errors(), TRUE) . "</pre>";
-        }
+    {       
+        $wtcrProduct = $this->WtcrProducts->newEntity($this->request->data);              
         
         if($this->request->is('post')) {
+            
             // $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
             /*
             $newProduct = $products->patchEntity($newProduct, $this->request->data);
@@ -88,7 +83,7 @@ class WtcrProductsController extends AppController
                 $this->Flash->error('The vendor product could not be saved');
             }
             */
-            echo "end of is('post').....";
+            
         }
         
         $productVendors = TableRegistry::get('wtcr_vendor_products')->find('all', [
