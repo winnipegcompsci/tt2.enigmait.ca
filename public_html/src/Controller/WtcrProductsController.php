@@ -84,7 +84,7 @@ class WtcrProductsController extends AppController
             } else {
                 $this->Flash->error('The Vendor product could not be saved');
                 echo "New Object:: <pre>" . print_r($this->WtcrProducts->newEntity(), TRUE) . "</pre>";
-                die('Product NOT SAVED:: <pre>' . print_r($wtcrProduct, TRUE);
+                die('Product NOT SAVED:: <pre>' . print_r($wtcrProduct, TRUE) . '</pre>');
             }
             
             
