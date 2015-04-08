@@ -47,6 +47,8 @@ class WtcrProductsController extends AppController
      */
     public function add()
     {
+        die("WTCR PRODUCTS::: <pre>" . print_r($this->WtcrProducts, TRUE) . "</pre>");
+        
         $wtcrProduct = $this->WtcrProducts->newEntity();
         
         if ($this->request->is('post')) {
