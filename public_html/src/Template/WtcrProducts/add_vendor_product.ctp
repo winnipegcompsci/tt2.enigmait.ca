@@ -54,7 +54,7 @@
                 echo "<td>" . $item->product_name . "</td>";
                 echo "<td>" . print_r($item->wtcr_vendor_sku, TRUE) . "</td>";
                 echo "<td>$" . number_format($item->vendor_price, 2) . "</td>";
-                echo "<td>" . $item->lastupdated . "</td>";
+                echo "<td>" . $item->last_updated . "</td>";
                 echo "</tr>";
             } ?>
         </tbody>
