@@ -5,8 +5,6 @@ use App\Controller\AppController;
 use Cake\ORM\TableRegistry;
 use Cake\Core\Configure;
 
-require_once(APP . 'Vendor' . DS . 'simple_html_dom.php');
-
 /**
  * WtcrVendors Controller
  *
@@ -292,11 +290,90 @@ class WtcrVendorsController extends AppController
     
     public function fetch_longtech_products() 
     {
+        require_once(APP . 'Vendor' . DS . 'simple_html_dom.php');
+        
         ini_set('max_execution_time', 0);
         
+        $username = "winnipegtechnology";
+        $password = "R3E3H1";
+        
+        $pno = array();
+        $pna = array();
+        $prices = array();
+        $longtech_products = array();
+        
+        $totalNumInserted = 0;
+        $totalNumUpdated = 0;
+        
+        $url = "http://longtech.ca/search/index.php?weblan=cn&page=";
+        $curPage = 1;
+        $lastPage = 20;
+        
+        $html = file_get_html($url . '1');
+        
+        foreach($html->find('div.page') as $pageFooter) {
+            foreach($pageFooter->find('a') as $pageLink) {
+                $pos = strrpos($pageLink->href, '=');
+                $page = substr($pageLink->href, $pos+1);
+             
+                $lastPage = $page;
+            }    
+        }
+        
+        $time_start = microtime(true);
+        $index = 0;
+        while ($curPage <= $lastPage) {
+            $thisURL = $url . $curPage;
+            $duration = number_format(microtime(true) - $time_start, 1);
+            
+            $message = 'on page ' . $curPage . ' of ' . $lastPage . ' (elapsed time: ' . $duration . ' seconds)';
+            update_progress($curPage, $message, number_format(($curPage/$lastPage)*100,2));
+            
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $thisURL);
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, 'uname=' . $username . '&upass=' . $password . "&action=login_save");
+            curl_setopt($ch, CURLOPT_COOKIEFILE, '/cookie.txt');
+            curl_setopt($ch, CURLOPT_COOKIEJAR, '/cookie.txt');
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_AUTOREFERER, 1);
+            
+            $referer = variable_get('prodmgr_referer', 'http://google.ca');
+            curl_setopt($ch, CURLOPT_REFERER, $referer);
+            
+            $userAgent = variable_get('prodmgr_user_agent', 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)');
+            curl_setopt($ch, CURLOPT_USERAGENT, $userAgent);
+            
+            // Perform the Login Request///////////////////////////////////////////////////
+            $login_content = curl_exec($ch);
+            $login_info    = curl_getinfo($ch);
+        
+            $html = str_get_html($login_content);
+       
+            if(!empty($html)) {        
+                foreach($html->find('p.pno') as $number) {
+                    $pno[] = str_replace("ID:", "", $number->innertext);
+                }
                 
-        // require_once('simple_html_dom.php');        // Include DOM Parsing Toolkit
-     
+                foreach($html->find('p.pna') as $name) {
+                    $pna[] = $name->innertext;
+                }
+                
+                foreach($html->find('p.price') as $price) {
+                    $prices[] = str_replace('$', '', $price->innertext);
+                }
+            } else {
+                $output .= "html var was empty"; // DEBUG
+            }
+            
+            $curPage++;
+            $index++;
+   
+        }
+        
+        $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'view_vendor_products', 'eprom']);
+        
         
      
     } /*.longtech_fetch */
