@@ -101,8 +101,7 @@ class WtcrProductsController extends AppController
             'conditions' => ['mfg_part_num' => $mfg_part_num],
             'contain' => ['WtcrVendors']
             
-        ]);
-        
+        ]);        
         
         $marketplaces = TableRegistry::get('wtcr_marketplaces')->find('all');
         $wtcrProductCategories = $this->WtcrProducts->WtcrProductCategories->find('list', ['limit' => 200]);
@@ -115,7 +114,9 @@ class WtcrProductsController extends AppController
         $this->set('marketplaces', $marketplaces);
         
 
-        return $this->redirect(['controller' => 'WtcrVendors', 'action' => 'view_vendor_products', 'eprom']);
+        return $this->redirect([
+            'controller' => 'WtcrProducts', 'action' => 'view', $mfg_part_num
+        ]);
     }
     
     /**
