@@ -380,16 +380,13 @@ class WtcrVendorsController extends AppController
             $longtech_products[] = array($pno[$index], $pna[$index], $prices[$index]);
             
             if(strcmp($prices[$index], "0.00") != 0) {        
-                echo "<tr>";
-                echo "<td>" . ($index+1) . "</td>";
-                echo "<td>" . str_replace('ID:','', $pno[$index]) . "</td>";
-                echo "<td>" . $pna[$index] . "</td>";
-                echo "<td>" . $prices[$index] . "</td>";
-                echo "</tr>";
-        
+                $longtech_products[] = array($pno[$index], $pna[$index], $prices[$index]);
+            
                 $index++;
             }
         }
+        
+        $this->set('longtech_products', $longtech_products);
         
         die($output); // DEBUG.
         $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'view_vendor_products', 'eprom']);
