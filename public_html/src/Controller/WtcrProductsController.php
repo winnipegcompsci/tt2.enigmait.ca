@@ -81,6 +81,7 @@ class WtcrProductsController extends AppController
            $wtcrProduct->pictures = serialize( array() );
            
             echo "<pre>About to save</pre>";
+            debug($wtcrProduct);
            
             if($this->WtcrProducts->save($wtcrProduct)) {
                 echo "<pre>Save Worked</pre>";
