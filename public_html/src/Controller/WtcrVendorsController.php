@@ -273,14 +273,15 @@ class WtcrVendorsController extends AppController
         
     }
     
-    public function update_longtech_progress($percent)
+    public function longtech_update_progress($curPage, $message, $percent)
     {
         Configure::write('longtech_fetch', $percent);
+        Configure::write('longtech_msg', $message);
         
         return $this->redirect(['action' => 'view_vendor_products', 'longtech']);
     }
     
-    public function get_longtech_progress()
+    public function longtech_get_progress()
     {
         $progress = Configure::read('longtech_fetch');
         
@@ -327,7 +328,7 @@ class WtcrVendorsController extends AppController
             $duration = number_format(microtime(true) - $time_start, 1);
             
             $message = 'on page ' . $curPage . ' of ' . $lastPage . ' (elapsed time: ' . $duration . ' seconds)';
-            update_progress($curPage, $message, number_format(($curPage/$lastPage)*100,2));
+            longtech_update_progress($curPage, $message, number_format(($curPage/$lastPage)*100,2));
             
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $thisURL);
