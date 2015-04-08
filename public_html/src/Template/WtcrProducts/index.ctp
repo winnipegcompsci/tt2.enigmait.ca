@@ -31,7 +31,8 @@
                         <th>Category</th>
                         <th>Name</th>
                         <th>AutoUpdate Price</th>
-                        <th>Static (Constant) Price</th>
+                        <th>Fixed Price</th>
+                        <th>Active Marketplaces</th>
                         <th class="actions"><?= __('Actions') ?></th>
                     </tr>
                 </thead>
@@ -47,6 +48,7 @@
                         <td><?= h($wtcrProduct->wtcr_product_name) ?></td>
                         <td><?= $this->Number->format($wtcrProduct->autoupdate) ?></td>
                         <td><?= $this->Number->format($wtcrProduct->static_price) ?></td>
+                        <td><?= unserialize($wtcrProduct->marketplace_data) ?></td>
                         <td class="actions">
                             <?= $this->Html->link(__('View'), ['action' => 'view', $wtcrProduct->id]) ?>
                             <?= $this->Html->link(__('Edit'), ['action' => 'edit', $wtcrProduct->id]) ?>
