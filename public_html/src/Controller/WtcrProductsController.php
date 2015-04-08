@@ -76,14 +76,13 @@ class WtcrProductsController extends AppController
            
            echo "<pre>" . print_r($this->request->data, TRUE) . "</pre>";
            
-           
+           $wtcrProduct->createnode = 0;
            $wtcrProduct->lastupdated = date("Y-m-d H:i:s");
            $wtcrProduct->wtcr_nid = 0;
            $wtcrProduct->marketplace_data = serialize( array() );
            $wtcrProduct->wtcr_product_category_id = 0;
            $wtcrProduct->pictures = serialize( array() );
            
-            $this->Flash->error("<pre>New Product::" . print_r($wtcrProduct, TRUE) . "</pre>");      // DEBUG
             
             if($this->WtcrProducts->save($wtcrProduct)) {
                 $this->Flash->success('The Vendor product has been saved as a WTCR Product.');
