@@ -395,6 +395,7 @@ class WtcrVendorsController extends AppController
                     error_log('Saved ' . $pna[$index] . ' properly');
                 } else {
                     error_log('Failed to Save ' . $pna[$index]. ' properly');
+                    error_log("<pre>" . print_r($vendorProducts, TRUE) . "</pre>");
                 }
             }
             
