@@ -72,7 +72,7 @@ class WtcrProductsController extends AppController
         $wtcrProduct = $this->WtcrProducts->newEntity();              
         
         if($this->request->is('post')) {
-           $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
+           // $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
                       
            $wtcrProduct->createnode = 0;
            $wtcrProduct->lastupdated = date("Y-m-d H:i:s");
@@ -80,17 +80,9 @@ class WtcrProductsController extends AppController
            $wtcrProduct->marketplace_data = serialize( array() );
            $wtcrProduct->pictures = serialize( array() );
            
-            echo "<pre>About to save</pre>";
             debug($wtcrProduct);
+            
            
-            try {
-                $wtcrProduct = $this->WtcrProducts->save($wtcrProduct);
-            } catch (Exception $e) {
-                echo "<pre>Exception:: " . $e->getMessage() . "</pre>";
-            }            
-            
-            
-           /*
             if($this->WtcrProducts->save($wtcrProduct)) {
                 echo "<pre>Save Worked</pre>";
                 $this->Flash->success('The Vendor product has been saved as a WTCR Product.');
@@ -100,8 +92,7 @@ class WtcrProductsController extends AppController
                 echo "WTCR PRODUCTS!!!<pre>" . print_r($this->WtcrProducts, TRUE) . "</pre>";
                 $this->Flash->error('The Vendor product could not be saved');
             }
-            */
-           
+                       
         }
         
         
