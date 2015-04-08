@@ -388,7 +388,7 @@ class WtcrVendorsController extends AppController
                 echo "<br />" . $prices[$index];
                 echo "<br />";
                 
-                die("Product: " . print_r($thisProduct, TRUE) . "</pre>";
+                die("Product: <pre>" . print_r($thisProduct, TRUE) . "</pre>");
             }
         }
         
