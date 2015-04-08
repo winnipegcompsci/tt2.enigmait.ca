@@ -306,7 +306,7 @@ class WtcrVendorsController extends AppController
         
         $url = "http://longtech.ca/search/index.php?weblan=cn&page=";
         $curPage = 1;
-        $lastPage = 20;
+        $lastPage = 30;
                 
         $vendorProducts = TableRegistry::get('wtcr_vendor_products');
         $html = file_get_html($url . '1');
