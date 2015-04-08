@@ -93,8 +93,8 @@
 						<li>
                             <a href="#"><i class="fa fa-power-off fa-fw"></i> WTCR <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-								<li class="disabled">
-									<a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'under_construction']);?>"><i class="fa fa-dollar fa-fw"></i>&nbsp;In-Store POS</a>
+                            	<li class="disabled">
+									<a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'under_construction']); ?>"><i class="fa fa-star-half-full fa-fw"></i>&nbsp;Orders</a>
 								</li>
 								<li>
 									<a href="<?php echo $this->Url->build(['controller' => 'WtcrProducts', 'action' => 'index']); ?>"><i class="fa fa-won fa-fw"></i>&nbsp;WTCR Products </a>
@@ -129,9 +129,6 @@
                                     <!-- /.nav-third-level -->
                                 </li>
 
-								<li class="disabled">
-									<a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'under_construction']); ?>"><i class="fa fa-star-half-full fa-fw"></i>&nbsp;Orders</a>
-								</li>
 								<li class="disabled">
 									<a href="#"><i class="fa fa-bitcoin fa-fw"></i>&nbsp;Crypto Currency Rates<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
