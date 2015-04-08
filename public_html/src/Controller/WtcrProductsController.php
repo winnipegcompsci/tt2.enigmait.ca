@@ -74,7 +74,6 @@ class WtcrProductsController extends AppController
         if($this->request->is('post')) {
            $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
            
-            die("<pre>" . print_r($this->WtcrProducts, TRUE) . "</pre>");
            $wtcrProduct->createnode = 0;
            $wtcrProduct->lastupdated = date("Y-m-d H:i:s");
            $wtcrProduct->wtcr_nid = 0;
@@ -84,12 +83,10 @@ class WtcrProductsController extends AppController
             // debug($wtcrProduct);
                        
             if($this->WtcrProducts->save($wtcrProduct)) {
-                echo "<pre>Save Worked</pre>";
                 $this->Flash->success('The Vendor product has been saved as a WTCR Product.');
                 return $this->redirect(['action' => 'index']);
             } else {
-                echo "<pre>Save Failed </pre>";
-                echo "WTCR PRODUCTS!!!<pre>" . print_r($this->WtcrProducts, TRUE) . "</pre>";
+                echo "FAILED TO SAVE WTCR PRODUCT!!!<pre>" . print_r($this->WtcrProducts, TRUE) . "</pre>";
                 $this->Flash->error('The Vendor product could not be saved');
             }
                        
