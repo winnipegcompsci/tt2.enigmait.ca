@@ -309,7 +309,8 @@ class WtcrVendorsController extends AppController
         $url = "http://longtech.ca/search/index.php?weblan=cn&page=";
         $curPage = 1;
         $lastPage = 20;
-        
+                
+        $vendorProducts = TableRegistry::get('wtcr_vendor_products');
         $html = file_get_html($url . '1');
         
         /*
@@ -368,9 +369,7 @@ class WtcrVendorsController extends AppController
                 foreach($html->find('p.price') as $price) {
                     $prices[] = str_replace('$', '', $price->innertext);
                 }
-            } else {
-                $output .= "html var was empty"; // DEBUG
-            }
+            } 
             
             $curPage++;
             $index++;
@@ -381,7 +380,6 @@ class WtcrVendorsController extends AppController
             // $longtech_products[] = array($pno[$index], $pna[$index], $prices[$index]);
             
             if(strcmp($prices[$index], "0.00") != 0) {        
-                $vendorProducts = TableRegistry::get('wtcr_vendor_products');
                 $thisProduct = $vendorProducts->newEntity();
                 
                 echo "<br />" . $pno[$index];
