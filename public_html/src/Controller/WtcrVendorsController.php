@@ -5,7 +5,7 @@ use App\Controller\AppController;
 use Cake\ORM\TableRegistry;
 use Cake\Core\Configure;
 
-require_once(App::path('Vendor') . '/simple_html_dom');
+require_once(APP . 'Vendor' . DS . 'simple_html_dom');
 
 /**
  * WtcrVendors Controller
