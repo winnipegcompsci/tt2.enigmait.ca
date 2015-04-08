@@ -72,8 +72,8 @@ class WtcrProductsController extends AppController
 
         
         if($this->request->is('post')) {
-            echo "<pre>" . print_r($wtcrProduct, TRUE) . "</pre>";
-            echo "<pre>" . print_r($this->request->data, TRUE) . "</pre>";
+            // echo "<pre>" . print_r($wtcrProduct, TRUE) . "</pre>";
+            // echo "<pre>" . print_r($this->request->data, TRUE) . "</pre>";
         
             $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
            
@@ -82,7 +82,10 @@ class WtcrProductsController extends AppController
             $wtcrProduct->wtcr_nid = 0;
             $wtcrProduct->marketplace_data = serialize( array() );
             $wtcrProduct->pictures = serialize( array() );
-                      
+            
+            echo "<pre>" . print_r($wtcrProduct, TRUE) . "</pre>";
+            echo "<pre>" . print_r($this->request->data, TRUE) . "</pre>";
+            die();
             // debug($wtcrProduct);
                        
             if($this->WtcrProducts->save($wtcrProduct)) {
