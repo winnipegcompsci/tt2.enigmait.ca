@@ -81,7 +81,7 @@ class WtcrProductsController extends AppController
                 error_log('Save Failed!');
                 $this->Flash->error('The vendor product could not be saved');
             }
-            */
+            
             
         }
         
