@@ -69,17 +69,19 @@ class WtcrProductsController extends AppController
     public function add_vendor_product($mfg_part_num) 
     {   
         $wtcrProduct = $this->WtcrProducts->newEntity();   
-        echo "<pre>" . print_r($wtcrProduct, TRUE) . "</pre>";
-        echo "<pre>" . print_r($this->request->data, TRUE) . "</pre>";
+
         
         if($this->request->is('post')) {
-           $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
+            echo "<pre>" . print_r($wtcrProduct, TRUE) . "</pre>";
+            echo "<pre>" . print_r($this->request->data, TRUE) . "</pre>";
+        
+            $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
            
-           $wtcrProduct->createnode = 0;
-           $wtcrProduct->lastupdated = date("Y-m-d H:i:s");
-           $wtcrProduct->wtcr_nid = 0;
-           $wtcrProduct->marketplace_data = serialize( array() );
-           $wtcrProduct->pictures = serialize( array() );
+            $wtcrProduct->createnode = 0;
+            $wtcrProduct->lastupdated = date("Y-m-d H:i:s");
+            $wtcrProduct->wtcr_nid = 0;
+            $wtcrProduct->marketplace_data = serialize( array() );
+            $wtcrProduct->pictures = serialize( array() );
                       
             // debug($wtcrProduct);
                        
