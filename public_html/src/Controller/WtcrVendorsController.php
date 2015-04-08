@@ -4,7 +4,8 @@ namespace App\Controller;
 use App\Controller\AppController;
 use Cake\ORM\TableRegistry;
 use Cake\Core\Configure;
-// App::import('Vendor', 'simple_html_dom');
+
+require_once(App::path('Vendor') . '/simple_html_dom');
 
 /**
  * WtcrVendors Controller

@@ -55,7 +55,6 @@
                             <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $wtcrProduct->id], ['confirm' => __('Are you sure you want to delete # {0}?', $wtcrProduct->id)]) ?>
                         </td>
                     </tr>
-
                 <?php endforeach; ?>
                 </tbody>
             </table>
