@@ -378,7 +378,7 @@ class WtcrVendorsController extends AppController
             if(strcmp($prices[$index], "0.00") !== 0) {
                                
                 $existing_prods = $vendorProducts->find()
-                    ->where(['wtcr_vendor_sku' => $pno[$index], 'wtcr_vendor_id' => 2])
+                    ->where(['wtcr_vendor_sku' => trim($pno[$index]), 'wtcr_vendor_id' => 2])
                     ->toArray();
                 
                 foreach($existing_prods as $prod) {
@@ -390,7 +390,7 @@ class WtcrVendorsController extends AppController
                     $thisProduct->product_name = trim($pna[$index]);
                     $thisProduct->wtcr_vendor_id = 2;
                     $thisProduct->wtcr_vendor_sku = trim($pno[$index]);
-                    $thisProduct->mfg_part_num = substr(trim($pno[$index]), strpos(trim($pno[$index]), '-', strpos(trim($pno[$index]), '-')));
+                    $thisProduct->mfg_part_num = substr(trim($pno[$index]), strpos(trim($pno[$index]), '-', strpos(trim($pno[$index]), '-')) + 1);
                     $thisProduct->vendor_price = trim($prices[$index]);
                     $thisProduct->wtcr_product_category_id = 1;
                     $thisProduct->last_updated = date('Y-m-d H:i:s');
