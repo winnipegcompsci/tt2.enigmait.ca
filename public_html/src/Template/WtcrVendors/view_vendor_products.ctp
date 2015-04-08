@@ -25,7 +25,7 @@
                     <td>Mfg. Part # </td>
                     <td>WTCR Category</td>
                     <td>Last Updated</td>
-                    <td>In Inventory </td>
+                    <td>Add Product </td>
                     <td>Hide</td>
                 </tr>
             </thead>
@@ -41,7 +41,7 @@
                             <td><?= $product->mfg_part_num ?></td>
                             <td><?= $product->wtcr_product_category_id ?></td>
                             <td><?= $product->last_updated ?></td>
-                            <td><?= $this->Html->link('Add', ['controller' => 'wtcr_products', 'action' => 'add_vendor_product', $product->wtcr_vendor_sku]); ?></td>
+                            <td><?= $this->Html->link('Add Product', ['controller' => 'wtcr_products', 'action' => 'add_vendor_product', $product->wtcr_vendor_sku]); ?></td>
                             <td><i class="fa fa-remove fa-fw"></i>Hide</td>
                         </tr> 
                     <?php } 
