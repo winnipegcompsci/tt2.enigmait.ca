@@ -275,18 +275,16 @@ class WtcrVendorsController extends AppController
     
     public function longtech_update_progress($curPage, $message, $percent)
     {
-        Configure::write('longtech_fetch', $percent);
-        Configure::write('longtech_msg', $message);
+        Configure::write('longtech' . , $percent);
+        Configure::write('longtech', $message);
         
-        return $this->redirect(['action' => 'view_vendor_products', 'longtech']);
     }
     
     public function longtech_get_progress()
     {
         $progress = Configure::read('longtech_fetch');
-        
-        
-        die(print_r($progress, TRUE));
+        echo $progress;
+        die();
     }
     
     public function fetch_longtech_products() 
