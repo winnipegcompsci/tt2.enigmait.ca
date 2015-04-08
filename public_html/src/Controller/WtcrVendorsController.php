@@ -380,16 +380,22 @@ class WtcrVendorsController extends AppController
             $longtech_products[] = array($pno[$index], $pna[$index], $prices[$index]);
             
             if(strcmp($prices[$index], "0.00") != 0) {        
-                $longtech_products[] = array($pno[$index], $pna[$index], $prices[$index]);
-            
-                $index++;
+                $vendorProducts = TableRegistry::get('wtcr_vendor_products');
+                $thisProduct = $vendorProducts->newEntity();
+                
+                echo "<br />" . $pno[$index];
+                echo "<br />" . $pna[$index];
+                echo "<br />" . $prices[$index];
+                echo "<br />";
+                
+                die("Product: " . print_r($thisProduct, TRUE) . "</pre>";
             }
         }
         
         $this->set('longtech_products', $longtech_products);
         
         die($output); // DEBUG.
-        $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'view_vendor_products', 'eprom']);
+        $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'view_vendor_products', 'longtech']);
         
     } /*.longtech_fetch */
 }   
