@@ -420,7 +420,7 @@ class WtcrVendorsController extends AppController
         
     } /*.longtech_fetch */
     
-    public function fetch_longtech_products() {
+    public function fetch_asi_products() {
         echo "IMPLEMENT ASI FETCH!";
     
     }
