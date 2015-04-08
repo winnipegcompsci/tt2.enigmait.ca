@@ -84,9 +84,7 @@ class WtcrProductsController extends AppController
             $wtcrProduct->pictures = serialize( array() );
             $wtcrProduct->wtcr_product_category_id = $this->request->data['wtcr_product_category_id'];
             
-            echo "<pre>" . print_r($wtcrProduct, TRUE) . "</pre>";
-            echo "<pre>" . print_r($this->request->data, TRUE) . "</pre>";
-            die();
+
             // debug($wtcrProduct);
                        
             if($this->WtcrProducts->save($wtcrProduct)) {
