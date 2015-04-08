@@ -130,9 +130,7 @@ class WtcrVendorsController extends AppController
             'conditions' => ['wtcr_vendor_id' => $vendor_id]
         ]);
                 
-        $wtcrProductCategories = TableRegistry::get('wtcr_product_categories')->find('list', ['limit' => 200]);
-        
-        $this->set('categories', $wtcrProductCategories->toArray());
+
         $this->set('vendor_products', $vendor_products);
         $this->set('vendor_id', $vendor_id);
     }
