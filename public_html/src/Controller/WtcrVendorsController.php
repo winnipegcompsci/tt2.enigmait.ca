@@ -380,12 +380,12 @@ class WtcrVendorsController extends AppController
             $longtech_products[] = array($pno[$index], $pna[$index], $prices[$index]);
             
             if(strcmp($prices[$index], "0.00") != 0) {        
-                $output .= "<tr>";
-                $output .= "<td>" . ($index+1) . "</td>";
-                $output .= "<td>" . str_replace('ID:','', $pno[$index]) . "</td>";
-                $output .= "<td>" . $pna[$index] . "</td>";
-                $output .= "<td>" . $prices[$index] . "</td>";
-                $output .= "</tr>";
+                echo "<tr>";
+                echo "<td>" . ($index+1) . "</td>";
+                echo "<td>" . str_replace('ID:','', $pno[$index]) . "</td>";
+                echo "<td>" . $pna[$index] . "</td>";
+                echo "<td>" . $prices[$index] . "</td>";
+                echo "</tr>";
         
                 $index++;
             }
