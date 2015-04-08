@@ -129,19 +129,19 @@
                                     <!-- /.nav-third-level -->
                                 </li>
 
-								<li>
+								<li class="disabled">
 									<a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'under_construction']); ?>"><i class="fa fa-star-half-full fa-fw"></i>&nbsp;Orders</a>
 								</li>
-								<li>
+								<li class="disabled">
 									<a href="#"><i class="fa fa-bitcoin fa-fw"></i>&nbsp;Crypto Currency Rates<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
-                                        <li>
+                                        <li class="disabled">
                                             <a href="#">Bitcoin</a>
                                         </li>
-                                        <li>
+                                        <li class="disabled">
                                             <a href="#">Litecoin</a>
                                         </li>
-                                        <li>
+                                        <li class="disabled">
                                             <a href="#">Peercoin</a>
                                         </li>
                                     </ul>

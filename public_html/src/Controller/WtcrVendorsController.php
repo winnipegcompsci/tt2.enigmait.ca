@@ -285,8 +285,8 @@ class WtcrVendorsController extends AppController
     {
         $progress = Configure::read('longtech_fetch');
         
-        echo "Progress: " . print_r($progress, TRUE);
-        die();
+        
+        die(print_r($progress, TRUE));
     }
     
     public function fetch_longtech_products() 
