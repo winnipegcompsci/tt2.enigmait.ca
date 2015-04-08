@@ -75,7 +75,7 @@ class WtcrProductsController extends AppController
             // echo "<pre>" . print_r($wtcrProduct, TRUE) . "</pre>";
             // echo "<pre>" . print_r($this->request->data, TRUE) . "</pre>";
         
-            $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
+            // $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
            
             $wtcrProduct->createnode = 0;
             $wtcrProduct->lastupdated = date("Y-m-d H:i:s");
@@ -114,9 +114,8 @@ class WtcrProductsController extends AppController
         $this->set('categories', $wtcrProductCategories);
         $this->set('marketplaces', $marketplaces);
         
-        die("Test:::: <pre>" . print_r($this->WtcrProducts, TRUE) . "</pre>");
+
         // error_log( "DEBUG NEW PRODUCT:: <pre>" . print_r($wtcrProduct, TRUE) . "<pre>");
-        return $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'view_vendor_products', 'eprom']);
     }
     
     /**
