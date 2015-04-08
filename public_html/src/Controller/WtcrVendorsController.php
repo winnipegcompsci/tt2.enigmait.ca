@@ -328,7 +328,7 @@ class WtcrVendorsController extends AppController
             $duration = number_format(microtime(true) - $time_start, 1);
             
             $message = 'on page ' . $curPage . ' of ' . $lastPage . ' (elapsed time: ' . $duration . ' seconds)';
-            longtech_update_progress($curPage, $message, number_format(($curPage/$lastPage)*100,2));
+            $this->longtech_update_progress($curPage, $message, number_format(($curPage/$lastPage)*100,2));
             
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $thisURL);
