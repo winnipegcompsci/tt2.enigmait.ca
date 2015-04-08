@@ -377,6 +377,8 @@ class WtcrVendorsController extends AppController
         while($index < $curPage) {
             // $longtech_products[] = array($pno[$index], $pna[$index], $prices[$index]);
             
+            error_log("Trying to Save: " . $pna[$index] . " @ $" . $prices[$index]);
+            
             if(strcmp($prices[$index], "0.00") !== 0) {        
                 $thisProduct = $vendorProducts->newEntity();
                 $thisProduct->product_name = $pna[$index];
