@@ -80,7 +80,7 @@ class WtcrProductsController extends AppController
            $wtcrProduct->lastupdated = date("Y-m-d H:i:s");
            $wtcrProduct->wtcr_nid = 0;
            $wtcrProduct->marketplace_data = serialize( array() );
-           $wtcrProduct->wtcr_product_category = 0;
+           $wtcrProduct->wtcr_product_category_id = 0;
            $wtcrProduct->pictures = serialize( array() );
            
             $this->Flash->error("<pre>New Product::" . print_r($wtcrProduct, TRUE) . "</pre>");      // DEBUG
