@@ -57,6 +57,16 @@ class WtcrProductsControllerTest extends IntegrationTestCase
     }
 
     /**
+     * Test add_vendor_product method
+     *
+     * @return void
+     */
+    public function testAddVendorProduct()
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
      * Test edit method
      *
      * @return void

@@ -6,15 +6,14 @@ use App\Controller\AppController;
 /**
  * WtcrInventory Controller
  *
- * @property \App\Model\Table\WtcrInventoryTable $WtcrInventory
- */
+ * @property \App\Model\Table\WtcrInventoryTable $WtcrInventory */
 class WtcrInventoryController extends AppController
 {
 
     /**
      * Index method
      *
-     * @return void 
+     * @return void
      */
     public function index()
     {

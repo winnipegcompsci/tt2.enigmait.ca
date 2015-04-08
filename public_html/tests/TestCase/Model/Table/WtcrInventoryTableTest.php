@@ -36,9 +36,7 @@ class WtcrInventoryTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('WtcrInventory') ? [] : ['className' => 'App\Model\Table\WtcrInventoryTable'];
-        $this->WtcrInventory = TableRegistry::get('WtcrInventory', $config);
-    }
+        $config = TableRegistry::exists('WtcrInventory') ? [] : ['className' => 'App\Model\Table\WtcrInventoryTable'];        $this->WtcrInventory = TableRegistry::get('WtcrInventory', $config);    }
 
     /**
      * tearDown method

@@ -16,9 +16,9 @@
             <th><?= $this->Paginator->sort('wtcr_sku') ?></th>
             <th><?= $this->Paginator->sort('product_name') ?></th>
             <th><?= $this->Paginator->sort('wtcr_product_category_id') ?></th>
-            <th><?= $this->Paginator->sort('mfg_part_number') ?></th>
+            <th><?= $this->Paginator->sort('wtcr_manufacturer_id') ?></th>
+            <th><?= $this->Paginator->sort('manufacturer_sku') ?></th>
             <th><?= $this->Paginator->sort('wtcr_vendor_id') ?></th>
-            <th><?= $this->Paginator->sort('vendor_sku') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
         </tr>
     </thead>
@@ -29,13 +29,13 @@
             <td><?= h($wtcrInventory->wtcr_sku) ?></td>
             <td><?= h($wtcrInventory->product_name) ?></td>
             <td>
-                <?= $wtcrInventory->has('wtcr_product_category') ? $this->Html->link($wtcrInventory->wtcr_product_category->id, ['controller' => 'WtcrProductCategories', 'action' => 'view', $wtcrInventory->wtcr_product_category->id]) : '' ?>
+                <?= $wtcrInventory->has('wtcr_product_category') ? $this->Html->link($wtcrInventory->wtcr_product_category->category_name, ['controller' => 'WtcrProductCategories', 'action' => 'view', $wtcrInventory->wtcr_product_category->id]) : '' ?>
             </td>
-            <td><?= h($wtcrInventory->mfg_part_number) ?></td>
+            <td><?= $this->Number->format($wtcrInventory->wtcr_manufacturer_id) ?></td>
+            <td><?= h($wtcrInventory->manufacturer_sku) ?></td>
             <td>
-                <?= $wtcrInventory->has('wtcr_vendor') ? $this->Html->link($wtcrInventory->wtcr_vendor->name, ['controller' => 'WtcrVendors', 'action' => 'view', $wtcrInventory->wtcr_vendor->id]) : '' ?>
+                <?= $wtcrInventory->has('wtcr_vendor') ? $this->Html->link($wtcrInventory->wtcr_vendor->vendor_name, ['controller' => 'WtcrVendors', 'action' => 'view', $wtcrInventory->wtcr_vendor->id]) : '' ?>
             </td>
-            <td><?= h($wtcrInventory->vendor_sku) ?></td>
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['action' => 'view', $wtcrInventory->id]) ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $wtcrInventory->id]) ?>

@@ -27,6 +27,9 @@ class WtcrInventoryTable extends Table
         $this->belongsTo('WtcrProductCategories', [
             'foreignKey' => 'wtcr_product_category_id'
         ]);
+        $this->belongsTo('WtcrManufacturers', [
+            'foreignKey' => 'wtcr_manufacturer_id'
+        ]);
         $this->belongsTo('WtcrVendors', [
             'foreignKey' => 'wtcr_vendor_id'
         ]);
@@ -48,7 +51,9 @@ class WtcrInventoryTable extends Table
             ->add('wtcr_product_category_id', 'valid', ['rule' => 'numeric'])
             ->requirePresence('wtcr_product_category_id', 'create')
             ->notEmpty('wtcr_product_category_id')
-            ->allowEmpty('mfg_part_number')
+            ->add('wtcr_manufacturer_id', 'valid', ['rule' => 'numeric'])
+            ->allowEmpty('wtcr_manufacturer_id')
+            ->allowEmpty('manufacturer_sku')
             ->add('wtcr_vendor_id', 'valid', ['rule' => 'numeric'])
             ->requirePresence('wtcr_vendor_id', 'create')
             ->notEmpty('wtcr_vendor_id')
@@ -74,6 +79,7 @@ class WtcrInventoryTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['wtcr_product_category_id'], 'WtcrProductCategories'));
+        $rules->add($rules->existsIn(['wtcr_manufacturer_id'], 'WtcrManufacturers'));
         $rules->add($rules->existsIn(['wtcr_vendor_id'], 'WtcrVendors'));
         return $rules;
     }
