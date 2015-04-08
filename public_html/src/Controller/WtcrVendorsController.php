@@ -377,7 +377,7 @@ class WtcrVendorsController extends AppController
         
         $index = 0;
         while($index < $curPage) {
-            $longtech_products[] = array($pno[$index], $pna[$index], $prices[$index]);
+            // $longtech_products[] = array($pno[$index], $pna[$index], $prices[$index]);
             
             if(strcmp($prices[$index], "0.00") != 0) {        
                 $vendorProducts = TableRegistry::get('wtcr_vendor_products');
