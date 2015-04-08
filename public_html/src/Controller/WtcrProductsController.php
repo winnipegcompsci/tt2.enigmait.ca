@@ -71,6 +71,9 @@ class WtcrProductsController extends AppController
         
         // $wtcrProduct = $this->WtcrProducts->newEntity($this->request->data);              
         $newProduct = $products->get(1);
+        if($newProduct->errors()) {
+            echo "<pre>" . print_r($newProduct->errors(), TRUE) . "</pre>";
+        }
         
         if($this->request->is('post')) {
             // $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
