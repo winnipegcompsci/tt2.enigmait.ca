@@ -63,7 +63,7 @@
 
     echo "<ul>";
     foreach($marketplaces as $marketplace) {
-        echo "<li>" . $this->Html->link($marketplace->marketplace_name, ['controller' => 'WtcrMarketplaces', 'action' => $view, $marketplace->id]) . "</li>";
+        echo "<li>" . $this->Html->link($marketplace->marketplace_name, ['controller' => 'WtcrMarketplaces', 'action' => 'view', $marketplace->id]) . "</li>";
     }  
     echo "</ul>";
 
