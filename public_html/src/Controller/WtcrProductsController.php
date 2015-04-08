@@ -55,6 +55,7 @@ class WtcrProductsController extends AppController
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error('The wtcr product could not be saved. Please, try again.');
+                
                 debug(print_r($this->WtcrProducts, TRUE));
             }
         }
