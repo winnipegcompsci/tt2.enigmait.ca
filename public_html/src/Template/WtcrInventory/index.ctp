@@ -1,14 +1,4 @@
-<div class="actions columns col-lg-2 col-md-3 pull-right">
-    <h3><?= __('Actions') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Html->link(__('New Wtcr Inventory'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Wtcr Product Categories'), ['controller' => 'WtcrProductCategories', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Wtcr Product Category'), ['controller' => 'WtcrProductCategories', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Wtcr Vendors'), ['controller' => 'WtcrVendors', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Wtcr Vendor'), ['controller' => 'WtcrVendors', 'action' => 'add']) ?> </li>
-    </ul>
-</div>
-<div class="wtcrInventory index col-lg-10 col-md-9 columns">
+<div class="wtcrInventory index col-lg-12 col-md-9 columns">
     <div class="panel panel-info">
         <div class="panel-heading">
             <i class="fa fa-list-alt fa-2x"></i><span style="font-size: 2em"> WTCR Inventory  </span>
@@ -19,6 +9,12 @@
                     <li><a href="#">Find Inventory Item</a></li>
                     <li class="divider"></li>
                     <li><a href="">Delete Inventory Item</a></li>
+                    <li class="divider"></li>
+                    <li><?= $this->Html->link(__('New Wtcr Inventory'), ['action' => 'add']) ?></li>
+                    <li><?= $this->Html->link(__('List Wtcr Product Categories'), ['controller' => 'WtcrProductCategories', 'action' => 'index']) ?> </li>
+                    <li><?= $this->Html->link(__('New Wtcr Product Category'), ['controller' => 'WtcrProductCategories', 'action' => 'add']) ?> </li>
+                    <li><?= $this->Html->link(__('List Wtcr Vendors'), ['controller' => 'WtcrVendors', 'action' => 'index']) ?> </li>
+                    <li><?= $this->Html->link(__('New Wtcr Vendor'), ['controller' => 'WtcrVendors', 'action' => 'add']) ?> </li>
                 </ul>
             </div>
         </div>
