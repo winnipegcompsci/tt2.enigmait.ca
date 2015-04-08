@@ -33,7 +33,10 @@
             <tbody>
                 <?php 
                     if(isset($vendor_products) && $vendor_products !== null) {
-                        foreach($vendor_products as $product) {?> 
+                        foreach($vendor_products as $product) {
+                            echo "<pre>" . print_r($product, TRUE) . "</pre>";
+                        ?>
+                        
                         <tr>
                             <td><?= $product->product_name ?></td>
                             <td><?= $product->wtcr_vendor_sku ?></td>
