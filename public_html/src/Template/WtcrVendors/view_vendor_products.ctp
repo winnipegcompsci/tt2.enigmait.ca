@@ -38,7 +38,7 @@
                         <tr>
                             <td><?= $product->product_name ?></td>
                             <td><?= $product->wtcr_vendor_sku ?></td>
-                            <td class="pull-right">$<?= number_format($product->vendor_price, 2); ?></td>
+                            <td>$<?= number_format($product->vendor_price, 2); ?></td>
                             <td><?= $product->mfg_part_num ?></td>
                             <td><?= $product->wtcr_product_category_id ?></td>
                             <td><?= $product->last_updated ?></td>
