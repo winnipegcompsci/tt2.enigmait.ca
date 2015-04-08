@@ -376,17 +376,18 @@ class WtcrVendorsController extends AppController
             // $longtech_products[] = array($pno[$index], $pna[$index], $prices[$index]);
                         
             if(strcmp($prices[$index], "0.00") !== 0) {
-                $thisProduct = $vendorProducts->newEntity();
-                
+                               
                 $existing_prods = $vendorProducts->find()
                     ->where(['wtcr_vendor_sku' => $pno[$index]])
                     ->toArray();
-                    
-                foreach($existing_prods as $prod) {
-                    $thisProduct = $prod;
-                }
                 
+                if($existing_prods != array() ) {
+                    foreach($existing_prods as $prod) {
+                        $thisProduct = $prod;
+                    }
+                }
                 if(!$thisProduct) {                
+                    $thisProduct = $vendorProducts->newEntity();
                     $thisProduct->product_name = $pna[$index];
                     $thisProduct->wtcr_vendor_id = 2;
                     $thisProduct->wtcr_vendor_sku = $pno[$index];
