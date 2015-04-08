@@ -312,6 +312,7 @@ class WtcrVendorsController extends AppController
         
         $html = file_get_html($url . '1');
         
+        /*
         foreach($html->find('div.page') as $pageFooter) {
             foreach($pageFooter->find('a') as $pageLink) {
                 $pos = strrpos($pageLink->href, '=');
@@ -320,6 +321,7 @@ class WtcrVendorsController extends AppController
                 $lastPage = $page;
             }    
         }
+        */
         
         $time_start = microtime(true);
         $index = 0;
@@ -372,7 +374,6 @@ class WtcrVendorsController extends AppController
             
             $curPage++;
             $index++;
-   
         }
         
         $index = 0;
@@ -388,8 +389,10 @@ class WtcrVendorsController extends AppController
                 echo "<br />" . $prices[$index];
                 echo "<br />";
                 
-                die("Product: <pre>" . print_r($thisProduct, TRUE) . "</pre>");
+                error_log($pna[$index] . " was saved!");
             }
+            
+            $index++;
         }
         
         $this->set('longtech_products', $longtech_products);
