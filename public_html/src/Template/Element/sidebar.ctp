@@ -146,7 +146,7 @@
                                         </li>
                                     </ul>
 								</li>
-								<li>
+								<li class="disabled">
                                     <a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'under_construction']); ?>"><i class="fa fa-bar-chart-o fa-fw"></i>&nbsp;Reports</a>
                                 </li>
 								<li>
