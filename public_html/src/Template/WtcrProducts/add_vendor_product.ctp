@@ -6,7 +6,7 @@
 ?>
 
 <div class="wtcrProducts form col-lg-5 col-md-6 columns pull-left">
-    <?= $this->Form->create($wtcrProduct); ?>
+    <?= $this->Form->create($this_product); ?>
     <fieldset>
         <legend><?= __('Create WTCR Product from Vendor Product') ?></legend>
         <?php
