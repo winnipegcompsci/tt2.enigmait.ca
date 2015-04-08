@@ -22,7 +22,7 @@
             echo $this->Form->input('autoupdate', $autoupdate_opts);
             echo $this->Form->input('static_price', ['label' => 'Static Price on Site']);
             echo $this->Form->input('suggestedmarkup', ['default' => '0.5', 'label' => 'Suggested Markup:']);
-            echo $this->Form->input('wtcrprice', ['default' => $vendor_price * 1.5, 'label' => 'WTCR Price:']);
+            echo $this->Form->input('wtcrprice', ['default' => $vendor_price * 1.5, 'label' => 'Suggested WTCR Price:']);
             echo $this->Form->input('wtcr_product_category', ['options' => $categories]);
         ?>
     </fieldset>
@@ -41,6 +41,7 @@
                 <th> Product Name </th>
                 <th> Vendor SKU </th>
                 <th> Vendor Price </th>
+                <th> Last Updated </th>
             </tr>
         </thead>
         
@@ -51,6 +52,7 @@
                 echo "<td>" . $item->product_name . "</td>";
                 echo "<td>" . print_r($item->wtcr_vendor_sku, TRUE) . "</td>";
                 echo "<td>$" . number_format($item->vendor_price, 2) . "</td>";
+                echo "<td>" . $item->
                 echo "</tr>";
             } ?>
         </tbody>
