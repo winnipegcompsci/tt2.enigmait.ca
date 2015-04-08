@@ -275,160 +275,21 @@ class WtcrVendorsController extends AppController
         
     }
     
+    public function update_longtech_progress()
+    {
+    
+    }
+    
+    public function fetch_longtech_progress()
+    {
+    
+    }
+    
     public function fetch_longtech_products() 
     {
         ini_set('max_execution_time', 0);
-        require_once('simple_html_dom.php');        // Include DOM Parsing Toolkit
+        // require_once('simple_html_dom.php');        // Include DOM Parsing Toolkit
      
-        $username = "winnipegtechnology";
-        $password = "R3E3H1";
-        error_log("WinnipegTMaz_Execution_Team");
- 
-        $pno = array();
-        $pna = array();
-        $prices = array();
-        $longtech_products = array();
-    
-        $totalNumUpdated = 0;
-        $totalNumInserted = 0;
-             
-        $url = "http://www.longtech.ca/search/index.php?weblan=cn&page=";
-        $curPage = 1;
-        $lastPage = 20; // 113?
-    
-        $html = file_get_html($url . '1');
-        
-        // GETS THE TOTAL NUMBER OF PAGES OF PRODUCTS LONGTECH OFFERS
-        foreach($html->find('div.page') as $pageFooter) {
-            foreach($pageFooter->find('a') as $pageLink) {
-                $pos = strrpos($pageLink->href, '=');
-                $page = substr($pageLink->href, $pos+1);
-             
-                $lastPage = $page;
-            }
-        }
-        
-        $output .= "<h2>Longtech: Fetch Results</h2> (" . $url .  "1-$lastPage)... ($lastPage pages)<br />";  // DEBUG
-    
-        $time_start = microtime(true);
-    
-        $index = 0;
-        while($curPage <= $lastPage) {
-            $thisURL = $url . $curPage;
-        
-            $duration = number_format(microtime(true) - $time_start, 1);
-        
-            // Report Back to Drupal Var.
-            $message = 'on page ' . $curPage . ' of ' . $lastPage . ' (elapsed time: ' . $duration . ' seconds)';
-            update_progress($curPage, $message, number_format(($curPage/$lastPage)*100,2));
-                
-            error_log("GET: " . $thisURL . " out of " . $lastPage . " | " . number_format($duration, 4) . " seconds");
-        
-            // Login with CURL
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, $thisURL);
-            curl_setopt($ch, CURLOPT_POST, 1);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, 'uname=' . $username . '&upass=' . $password . "&action=login_save");
-            curl_setopt($ch, CURLOPT_COOKIEFILE, '/cookie.txt');
-            curl_setopt($ch, CURLOPT_COOKIEJAR, '/cookie.txt');
-            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            curl_setopt($ch, CURLOPT_AUTOREFERER, 1);
-        
-            $referer = variable_get('prodmgr_referer', 'http://google.ca');
-            curl_setopt($ch, CURLOPT_REFERER, $referer);
-        
-            $userAgent = variable_get('prodmgr_user_agent', 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)');
-            curl_setopt($ch, CURLOPT_USERAGENT, $userAgent);
-
-            // Perform the Login Request///////////////////////////////////////////////////
-            $login_content = curl_exec($ch);
-            $login_info    = curl_getinfo($ch);
-        
-            $html = str_get_html($login_content);
-       
-            if(!empty($html)) {        
-                foreach($html->find('p.pno') as $number) {
-                    $pno[] = str_replace("ID:", "", $number->innertext);
-                }
-            
-                foreach($html->find('p.pna') as $name) {
-                    $pna[] = $name->innertext;
-                }
-            
-                foreach($html->find('p.price') as $price) {
-                    $prices[] = str_replace('$', '', $price->innertext);
-                }
-            } else {
-                $output .= "html var was empty"; // DEBUG
-            }
-        
-            $curPage++;
-            $index++;
-        }
-        
-        // DEBUG: DRAW TABLE //
-        $numRows = count($pno);
-        if(count($pna) > $numRows) {
-            $numRows = count($pna);
-        }
-        if(count($prices) > $numRows) {
-            $numRows = count($prices);
-        }
-        
-        
-        $index = 0;
-            
-        while($index < $numRows) {    
-            $longtech_products[] = array($pno[$index], $pna[$index], $prices[$index]);
-                    
-            if(strcmp($prices[$index], "0.00") != 0) {        
-                $output .= "<tr>";
-                $output .= "<td>" . ($index+1) . "</td>";
-                $output .= "<td>" . str_replace('ID:','', $pno[$index]) . "</td>";
-                $output .= "<td>" . $pna[$index] . "</td>";
-                $output .= "<td>" . $prices[$index] . "</td>";
-                $output .= "</tr>";
-                
-                
-                $status = db_merge('prodmgr_supplier_prices')
-                    ->insertFields(array(
-                        'supplier_id' => $longtech['supplier_id'],
-                        'product_description' => $pna[$index],
-                        'supplier_sku' =>  $pno[$index],
-                        'supplier_price' => $prices[$index],
-                        'last_updated' => date('Y-m-d H:i:s'),
-                    ))
-                    ->updateFields(array(
-                        'supplier_price' => $prices[$index],
-                        'last_updated' => date('Y-m-d H:i:s'),
-                    ))
-                    ->key(array('supplier_sku' => $pno[$index], 'supplier_id' => $longtech['supplier_id']))
-                    ->execute();
-                
-                if($status == MergeQuery::STATUS_INSERT) {
-                    $output .= "<br />Inserted New Item: " . $pna[$index] . " @ " . $prices[$index];
-                    $totalNumInserted++;
-                } else if ($status == MergeQuery::STATUS_UPDATE) {
-                    $output .= "<br />Updated Existing Item: " . $pna[$index] . " @ "  . $prices[$index];
-                    $totalNumUpdated++;
-                }
-            } else {
-                // Product Price is 0.00 [Not Available]
-            }
-            
-            // echo "<br /> <strong> Longtech Products </strong>: <pre>" . print_r($longtech_produts, TRUE ) . "</pre>";
-            
-            $index++;     
-        }
-
-        $output .= "<p> <h2> Operations: </h2> <br /> New Products: " . $totalNumInserted . 
-            "<br /> Updated Products: " . $totalNumUpdated . "</p>"; 
-
-        
-        // $output .= '<br />' . l('Go Back to Longtech Products', $base_url . '/admin/config/prodmgr/suppliers/longtech');
-               
-        
            
     } /*.longtech_fetch */
 }   

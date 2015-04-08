@@ -66,9 +66,11 @@
                 are currently offering.
                 
                 Once you find a vendor product you would like to Add to WTCR you can click the 'Add Product' button in the column.
-                This creates an 'Inventory' entry in the database with product details specific to that particular employer.
+                This creates an 'Inventory' entry in the database with product details specific to that particular vendor.
                 
-                Once an order is made for these parts from this vendor, they will get moved from the WTCR Products model to the Inventory Model.
+                Vendor Products that get ordered, and then received will get moved from the WTCR Products model to the Inventory Model.
+                Inventory Items are specific instances of a WTCR Product. The inventory
+                item contains things like date received, date sold, price received, and price sold, and who bought the item.
             </div>
 
             <div class="modal-footer">
