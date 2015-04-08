@@ -284,7 +284,7 @@ class WtcrVendorsController extends AppController
     {
         $progress = Configure::read('fetchlongtech.progress');
         
-        return $progress;
+        echo $progress;
         die();
     }
     
