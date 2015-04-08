@@ -114,9 +114,7 @@ class WtcrProductsController extends AppController
         $this->set('marketplaces', $marketplaces);
         
 
-        return $this->redirect([
-            'controller' => 'WtcrProducts', 'action' => 'view', $mfg_part_num
-        ]);
+        return $this->redirect(['controller' => 'WtcrProducts', 'action' => 'view', $mfg_part_num]);
     }
     
     /**
