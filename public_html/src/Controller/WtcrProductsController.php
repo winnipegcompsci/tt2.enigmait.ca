@@ -104,7 +104,7 @@ class WtcrProductsController extends AppController
         $this->set('categories', $wtcrProductCategories);
         $this->set('marketplaces', $marketplaces);
         
-        $this->Flash->error("Fell through to here");
+        $this->Flash->error("<pre>" . print_r($wtcrProduct) . "<pre>");
         return $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'view_vendor_products', 'eprom']);
     }
     
