@@ -393,7 +393,7 @@ class WtcrVendorsController extends AppController
                 $thisProduct->product_name = $pna[$index];
                 $thisProduct->wtcr_vendor_id = 2;
                 $thisProduct->wtcr_vendor_sku = $pno[$index];
-                $thisProduct->mfg_part_num, $pno[$index];
+                $thisProduct->mfg_part_num = $pno[$index];
                 $thisProduct->vendor_pricfe = $prices[$index];
                 $thisProduct->wtcr_product_category_id = 1;
                 $thisProduct->last_updated = date('Y-m-d H:i:s');
