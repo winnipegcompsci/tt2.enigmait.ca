@@ -23,7 +23,7 @@
             echo $this->Form->input('static_price', ['label' => 'Static Price on Site']);
             echo $this->Form->input('suggestedmarkup', ['default' => '0.5', 'label' => 'Suggested Markup:']);
             echo $this->Form->input('wtcrprice', ['default' => $vendor_price * 1.5, 'label' => 'Suggested WTCR Price:']);
-            echo $this->Form->input('wtcr_product_category_id', ['options' => $categories]);
+            echo $this->Form->input('wtcr_product_category_id', ['options' => $categories, 'default' => 0]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
