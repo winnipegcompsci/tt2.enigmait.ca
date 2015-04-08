@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `TT2` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `TT2`;
+CREATE DATABASE  IF NOT EXISTS `tt2` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `tt2`;
 -- MySQL dump 10.13  Distrib 5.6.13, for Win32 (x86)
 --
 -- Host: localhost    Database: tt2
@@ -43,7 +43,7 @@ CREATE TABLE `wtcr_products` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `mfg_part_num_UNIQUE` (`mfg_part_num`),
   UNIQUE KEY `nid` (`wtcr_nid`)
-) ENGINE=InnoDB AUTO_INCREMENT=9695 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,4 +64,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-07 10:32:41
+-- Dump completed on 2015-04-08 12:17:05
