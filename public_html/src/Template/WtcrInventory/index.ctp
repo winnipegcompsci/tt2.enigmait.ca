@@ -11,7 +11,7 @@
 <div class="wtcrInventory index col-lg-10 col-md-9 columns">
     <div class="panel panel-info">
         <div class="panel-heading">
-            <i class="fa fa-ticket fa-2x"></i><span style="font-size: 2em"> Tickets </span>
+            <i class="fa-fa fa-list-alt fa-2x"></i><span style="font-size: 2em"> WTCR Inventory  </span>
             <div class="btn-group pull-right">
                 <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i> Ticket Menu <span class="caret"></span></button>
                 <ul class="dropdown-menu" role="menu">
