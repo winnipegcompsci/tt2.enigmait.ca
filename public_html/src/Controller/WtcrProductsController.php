@@ -84,18 +84,6 @@ class WtcrProductsController extends AppController
                 $this->Flash->error('The vendor product could not be saved');
             }
             
-            /*          
-            if ($this->WtcrProducts->save($wtcrProduct)) {
-                echo "Save SUCCESS";
-                $this->Flash->success('The vendor product has been saved.');
-                return $this->redirect(['action' => 'index']);
-            
-            } else {
-                echo "SAVE FAILED";
-                $this->Flash->error('The vendor product could not be saved. Please, try again.');
-                // echo "<pre>" . print_r($wtcrProducts, TRUE) . "</pre>";
-            }
-            */
         }
         
         $productVendors = TableRegistry::get('wtcr_vendor_products')->find('all', [
@@ -105,8 +93,8 @@ class WtcrProductsController extends AppController
         ]);
         
         $marketplaces = TableRegistry::get('wtcr_marketplaces')->find('all');
-        
         $wtcrProductCategories = $this->WtcrProducts->WtcrProductCategories->find('list', ['limit' => 200]);
+        
         $this->set('this_product', $wtcrProduct);
         $this->set('productVendors', $productVendors);
         $this->set('mfg_part_num', $mfg_part_num);
