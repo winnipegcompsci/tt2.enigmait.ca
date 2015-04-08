@@ -92,6 +92,8 @@ class WtcrProductsController extends AppController
             
         ]);
         
+        
+        
         $marketplaces = TableRegistry::get('wtcr_marketplaces')->find('all');
         $wtcrProductCategories = $this->WtcrProducts->WtcrProductCategories->find('list', ['limit' => 200]);
         
@@ -102,6 +104,7 @@ class WtcrProductsController extends AppController
         $this->set('categories', $wtcrProductCategories);
         $this->set('marketplaces', $marketplaces);
         
+        $this->Flash->error("Fell through to here");
         return $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'view_vendor_products', 'eprom']);
     }
     
