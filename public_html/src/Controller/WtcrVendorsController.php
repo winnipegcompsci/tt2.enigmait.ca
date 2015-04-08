@@ -395,9 +395,9 @@ class WtcrVendorsController extends AppController
             $index++;
         }
         
-        $this->set('longtech_products', $longtech_products);
+        // $this->set('longtech_products', $longtech_products);
         
-        die($output); // DEBUG.
+        // die($output); // DEBUG.
         $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'view_vendor_products', 'longtech']);
         
     } /*.longtech_fetch */
