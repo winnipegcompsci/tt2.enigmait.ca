@@ -378,7 +378,7 @@ class WtcrVendorsController extends AppController
             if(strcmp($prices[$index], "0.00") !== 0) {
                                
                 $existing_prods = $vendorProducts->find()
-                    ->where(['wtcr_vendor_sku' => $pno[$index]])
+                    ->where(['wtcr_vendor_sku' => $pno[$index], 'wtcr_vendor_id' => 2])
                     ->toArray();
                 
                 foreach($existing_prods as $prod) {
