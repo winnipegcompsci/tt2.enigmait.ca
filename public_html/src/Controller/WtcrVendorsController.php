@@ -387,11 +387,10 @@ class WtcrVendorsController extends AppController
         
                 $index++;
             }
+        }
         
         die(); // DEBUG.
         $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'view_vendor_products', 'eprom']);
         
-        
-     
     } /*.longtech_fetch */
 }   
