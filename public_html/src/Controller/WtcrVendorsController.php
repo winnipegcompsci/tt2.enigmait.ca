@@ -374,7 +374,8 @@ class WtcrVendorsController extends AppController
         $index = 0;
         while($index < $curPage) {
             // $longtech_products[] = array($pno[$index], $pna[$index], $prices[$index]);
-                        
+            $thisProduct = FALSE;
+                
             if(strcmp($prices[$index], "0.00") !== 0) {
                                
                 $existing_prods = $vendorProducts->find()
@@ -387,11 +388,11 @@ class WtcrVendorsController extends AppController
 
                 if(!$thisProduct) {                
                     $thisProduct = $vendorProducts->newEntity();
-                    $thisProduct->product_name = $pna[$index];
+                    $thisProduct->product_name = trim($pna[$index]);
                     $thisProduct->wtcr_vendor_id = 2;
-                    $thisProduct->wtcr_vendor_sku = $pno[$index];
-                    $thisProduct->mfg_part_num = $pno[$index];
-                    $thisProduct->vendor_price = $prices[$index];
+                    $thisProduct->wtcr_vendor_sku = trim($pno[$index]);
+                    $thisProduct->mfg_part_num = trim($pno[$index]);
+                    $thisProduct->vendor_price = trim($prices[$index]);
                     $thisProduct->wtcr_product_category_id = 1;
                     $thisProduct->last_updated = date('Y-m-d H:i:s');
                     error_log('Creating New Longtech Product');
