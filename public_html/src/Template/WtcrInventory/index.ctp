@@ -13,7 +13,7 @@
         <div class="panel-heading">
             <i class="fa fa-list-alt fa-2x"></i><span style="font-size: 2em"> WTCR Inventory  </span>
             <div class="btn-group pull-right">
-                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i> Ticket Menu <span class="caret"></span></button>
+                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i> Inventory Menu <span class="caret"></span></button>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="#">Receive Inventory</a></li>
                     <li><a href="#">Find Inventory Item</a></li>
@@ -27,13 +27,13 @@
             <table id="datatable" cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
                 <thead>
                     <tr>
-                        <th><?= $this->Paginator->sort('id') ?></th>
-                        <th><?= $this->Paginator->sort('wtcr_sku') ?></th>
-                        <th><?= $this->Paginator->sort('product_name') ?></th>
-                        <th><?= $this->Paginator->sort('wtcr_product_category_id') ?></th>
-                        <th><?= $this->Paginator->sort('wtcr_manufacturer_id') ?></th>
-                        <th><?= $this->Paginator->sort('manufacturer_sku') ?></th>
-                        <th><?= $this->Paginator->sort('wtcr_vendor_id') ?></th>
+                        <th>ID</th>
+                        <th>WTCR SKU</th>
+                        <th>Product Name</th>
+                        <th>Category</th>
+                        <th>Manufacturer</th>
+                        <th>Mfg. Part #</th>
+                        <th>Vendor</th>
                         <th class="actions"><?= __('Actions') ?></th>
                     </tr>
                 </thead>

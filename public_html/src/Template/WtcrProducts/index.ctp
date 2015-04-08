@@ -11,7 +11,7 @@
         <div class="panel-heading">
             <i class="fa fa-won fa-2x"></i><span style="font-size: 2em"> WTCR Products  </span>
             <div class="btn-group pull-right">
-                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i> Ticket Menu <span class="caret"></span></button>
+                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i> Product Menu <span class="caret"></span></button>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="#">Find WTCR Product</a></li>
                     <li><a href="#">Show Recently Added Products</a></li>
