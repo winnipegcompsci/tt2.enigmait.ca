@@ -75,6 +75,8 @@ class WtcrProductsController extends AppController
            $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
            
            $wtcrProduct->lastupdated = date("Y-m-d H:i:s");
+           $wtcrProduct->wtcr_nid = 0;
+           $wtcrProduct->marketplace_data = serialize(array());
            
             $this->Flash->error("<pre>New Product::" . print_r($wtcrProduct, TRUE) . "</pre>");      // DEBUG
             
