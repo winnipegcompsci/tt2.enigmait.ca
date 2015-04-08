@@ -275,8 +275,8 @@ class WtcrVendorsController extends AppController
     
     public function longtech_update_progress($curPage, $message, $percent)
     {
-        Configure::write('longtech' , 'percent' => $percent);
-        Configure::write('longtech', 'message' => $message);
+        Configure::write('longtech' , ['percent' => $percent]);
+        Configure::write('longtech', ['message' => $message]);
         
     }
     
