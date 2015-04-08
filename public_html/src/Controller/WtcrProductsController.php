@@ -76,7 +76,7 @@ class WtcrProductsController extends AppController
            
            $wtcrProduct->lastupdated = date("Y-m-d H:i:s");
            
-            echo "<pre>New Product::" . print_r($wtcrProduct, TRUE) . "</pre>";      // DEBUG
+            $this->Flash->error("<pre>New Product::" . print_r($wtcrProduct, TRUE) . "</pre>");      // DEBUG
             
             if($this->WtcrProducts->save($wtcrProduct)) {
                 $this->Flash->success('The Vendor product has been saved as a WTCR Product.');
