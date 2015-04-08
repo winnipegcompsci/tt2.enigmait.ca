@@ -25,13 +25,13 @@
             <table id="datatable" cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
                 <thead>
                     <tr>
-                        <th><?= $this->Paginator->sort('id') ?></th>
-                        <th><?= $this->Paginator->sort('mfg_part_num') ?></th>
-                        <th><?= $this->Paginator->sort('wtcrsku') ?></th>
-                        <th><?= $this->Paginator->sort('wtcr_product_category_id') ?></th>
-                        <th><?= $this->Paginator->sort('wtcr_product_name') ?></th>
-                        <th><?= $this->Paginator->sort('autoupdate') ?></th>
-                        <th><?= $this->Paginator->sort('static_price') ?></th>
+                        <th>ID</th>
+                        <th>Mfg. Part #</th>
+                        <th>WTCR SKU</th>
+                        <th>Category</th>
+                        <th>Name</th>
+                        <th>AutoUpdate Price</th>
+                        <th>Static (Constant) Price</th>
                         <th class="actions"><?= __('Actions') ?></th>
                     </tr>
                 </thead>
