@@ -377,18 +377,7 @@ class WtcrVendorsController extends AppController
         while($index < $curPage) {
             // $longtech_products[] = array($pno[$index], $pna[$index], $prices[$index]);
             
-            if(strcmp($prices[$index], "0.00") != 0) {        
-                                
-                $data = [
-                    'product_name' => $pna[$index],
-                    'wtcr_vendor_id' => 2,
-                    'wtcr_vendor_sku' => $pno[$index],
-                    'mfg_part_num' => $pno[$index], // REPLACE WITH PARSED MFG_PART_NUM
-                    'vendor_price' => $prices[$index],
-                    'wtcr_product_category_id' => 1,
-                    'last_updated' => date('Y-m-d H:i:s'),
-                ];
-                
+            if(strcmp($prices[$index], "0.00") !== 0) {        
                 $thisProduct = $vendorProducts->newEntity();
                 $thisProduct->product_name = $pna[$index];
                 $thisProduct->wtcr_vendor_id = 2;
