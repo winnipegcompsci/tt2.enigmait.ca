@@ -381,11 +381,10 @@ class WtcrVendorsController extends AppController
                     ->where(['wtcr_vendor_sku' => $pno[$index]])
                     ->toArray();
                 
-                if($existing_prods != array() ) {
-                    foreach($existing_prods as $prod) {
-                        $thisProduct = $prod;
-                    }
+                foreach($existing_prods as $prod) {
+                    $thisProduct = $prod;
                 }
+
                 if(!$thisProduct) {                
                     $thisProduct = $vendorProducts->newEntity();
                     $thisProduct->product_name = $pna[$index];
