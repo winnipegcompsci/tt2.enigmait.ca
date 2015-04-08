@@ -390,7 +390,7 @@ class WtcrVendorsController extends AppController
                     $thisProduct->product_name = trim($pna[$index]);
                     $thisProduct->wtcr_vendor_id = 2;
                     $thisProduct->wtcr_vendor_sku = trim($pno[$index]);
-                    $thisProduct->mfg_part_num = strpos(trim($pno[$index], '-', strpos(trim($pno[$index], '-'));
+                    $thisProduct->mfg_part_num = substr(trim($pno[$index]), strpos(trim($pno[$index], '-', strpos(trim($pno[$index], '-')))));
                     $thisProduct->vendor_price = trim($prices[$index]);
                     $thisProduct->wtcr_product_category_id = 1;
                     $thisProduct->last_updated = date('Y-m-d H:i:s');
