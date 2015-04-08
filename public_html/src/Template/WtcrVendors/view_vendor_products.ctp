@@ -42,7 +42,7 @@
                             <td><?= $product->wtcr_vendor_sku ?></td>
                             <td>$<?= number_format($product->vendor_price, 2); ?></td>
                             <td><?= $product->mfg_part_num ?></td>
-                            <td><?= print_r($categories, TRUE); ?></td>
+                            <td><?= $product->wtcr_product_category_id ?></td>
                             <td><?= $product->last_updated ?></td>
                             <td><?= $this->Html->link('Add Product', ['controller' => 'wtcr_products', 'action' => 'add_vendor_product', $product->wtcr_vendor_sku]); ?></td>
                             <td><i class="fa fa-remove fa-fw"></i>Hide</td>
