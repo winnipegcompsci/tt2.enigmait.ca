@@ -103,7 +103,7 @@ class WtcrProductsController extends AppController
         $this->set('categories', $wtcrProductCategories);
         $this->set('marketplaces', $marketplaces);
         
-        $this->Flash->error("<pre>" . print_r($wtcrProduct) . "<pre>");
+        $this->Flash->error("<pre>" . print_r($wtcrProduct, TRUE) . "<pre>");
         return $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'view_vendor_products', 'eprom']);
     }
     
