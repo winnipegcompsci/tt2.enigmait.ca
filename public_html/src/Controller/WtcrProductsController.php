@@ -80,16 +80,18 @@ class WtcrProductsController extends AppController
            $wtcrProduct->marketplace_data = serialize( array() );
            $wtcrProduct->pictures = serialize( array() );
            
-            
+            echo "<pre>About to save</pre>";
+           
             if($this->WtcrProducts->save($wtcrProduct)) {
+                echo "<pre>Save Worked</pre>";
                 $this->Flash->success('The Vendor product has been saved as a WTCR Product.');
                 return $this->redirect(['action' => 'index']);
             } else {
+                echo "<pre>Save Failed </pre>";
                 echo "WTCR PRODUCTS!!!<pre>" . print_r($this->WtcrProducts, TRUE) . "</pre>";
                 $this->Flash->error('The Vendor product could not be saved');
             }
-            
-            die('END OF POST');
+           
         }
         
         
