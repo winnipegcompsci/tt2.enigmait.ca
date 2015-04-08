@@ -262,10 +262,8 @@ class WtcrVendorsController extends AppController
 					}
                 }
             }
-                
-                        
+            
             $this->Flash->success('Updated ' . $numProdSaved . ' EPROM products in the database');
-                        
                         
             return $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'view_vendor_products', 'eprom']);
             
@@ -275,21 +273,27 @@ class WtcrVendorsController extends AppController
         
     }
     
-    public function update_longtech_progress()
+    public function update_longtech_progress($percent)
     {
-    
+        Configure::write('fetchlongtech', ['progress' => $percent]);
     }
     
-    public function fetch_longtech_progress()
+    public function get_longtech_progress()
     {
-    
+        $progress = Configure::read('fetchlongtech.progress');
+        
+        return $progress;
+        die();
     }
     
     public function fetch_longtech_products() 
     {
         ini_set('max_execution_time', 0);
+        
+                
         // require_once('simple_html_dom.php');        // Include DOM Parsing Toolkit
      
-           
+        
+     
     } /*.longtech_fetch */
 }   
