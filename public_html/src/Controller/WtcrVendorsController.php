@@ -567,9 +567,7 @@ class WtcrVendorsController extends AppController
         $time_start = microtime(true);
         $totalNumProducts = 0;
         
-        foreach($productTypes as $key => $productType) {
-            $thisProduct = null;
-            
+        foreach($productTypes as $key => $productType) {            
             $thisURL = "https://www.asipartner.com/partneraccess/" . $key . "/search.aspx?sort=price-asc&ost=no";
     
             $duration = number_format(microtime(true) - $time_start, 1);
@@ -662,6 +660,8 @@ class WtcrVendorsController extends AppController
             
             // Add Last Scraped Category Products to Database.
             for($pos = 0; $pos < count($product_skus); $pos++) {
+                $thisProduct = FALSE;
+                
                 // Save ASI Product to Database.
                  $existing_prods = $vendorProducts->find()
                     ->where(['wtcr_vendor_sku' => trim($product_skus[$pos]), 'wtcr_vendor_id' => 3])
