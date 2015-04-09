@@ -225,10 +225,7 @@ class WtcrVendorsController extends AppController
                         $product = $prod;
                     }
                     
-                    $skuParts = explode("-", $supplier_sku);
-                    
-                    $mfg_part_num = "";
-                    
+                    $skuParts = explode("-", $supplier_sku);                  
                     
                     if(count($skuParts) > 3) {
                         $partNumParts = array_slice($skuParts, 2);
@@ -238,7 +235,7 @@ class WtcrVendorsController extends AppController
                         $mfg_part_num = implode('-', $partNumParts);
                     }
                     
-                    $start = 1;
+
                     
    
                     
@@ -412,7 +409,17 @@ class WtcrVendorsController extends AppController
                     $thisProduct->wtcr_vendor_id = 2;
                     $thisProduct->wtcr_vendor_sku = trim($pno[$index]);
                     
-                    $mfg_part_num = end(explode(',', $pno[$index]));
+                    $skuParts = explode("-", trim($pno[$index]));                  
+                    
+                    if(count($skuParts) > 3) {
+                        $partNumParts = array_slice($skuParts, 2);
+                        $mfg_part_num = implode('-', $partNumParts);
+                    } else {
+                        $partNumParts = array_slice ($skuParts, -2);
+                        $mfg_part_num = implode('-', $partNumParts);
+                    }               
+                    
+                    
                     $thisProduct->mfg_part_num = substr(trim($pno[$index]), strpos(trim($pno[$index]), '-', strpos(trim($pno[$index]), '-')) + 1);
                     $thisProduct->vendor_price = trim($prices[$index]);
                     $thisProduct->wtcr_product_category_id = 1;
