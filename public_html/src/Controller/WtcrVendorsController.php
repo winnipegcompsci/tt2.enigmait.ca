@@ -476,6 +476,7 @@ class WtcrVendorsController extends AppController
     
     public function fetch_asi_products() {
         ini_set('max_execution_time', 0);
+        $vendorProducts = TableRegistry::get('wtcr_vendor_products');    
             
         $loginURL = "https://www.asipartner.com/partneraccess/Auth/Login.aspx?";
     
@@ -641,37 +642,58 @@ class WtcrVendorsController extends AppController
                 die("html variable is empty. Please check your query again!");
             }
     
-            error_log('COUNTS: PROD NAMES: ' . count($product_names) . 
-                ' PROD SKUS: ' . count($product_skus) .
-                ' PROD PRICES: ' . count($product_prices));
-    
             $totalNumProducts += count($product_skus);
                    
             // Add Last Scraped Category Products to Database.
             for($pos = 0; $pos < count($product_skus); $pos++) {
-                /*
-                $status = db_merge('prodmgr_supplier_prices')
-                    ->insertFields(array(
-                        'supplier_id' => $asi['supplier_id'],
-                        'product_description' => $product_names[$pos],
-                        'supplier_sku' => $product_skus[$pos],
-                        'supplier_price' => $product_prices[$pos],
-                        'last_updated' => date('Y-m-d H:i:s'),
-                    ))
-                    ->updateFields(array(
-                        'supplier_price' => $product_prices[$pos],
-                        'last_updated' => date('Y-m-d H:i:s'),
-                    ))
-                    ->key(array('supplier_sku' => $product_skus[$pos], 'supplier_id' => $asi['supplier_id']))
-                    ->execute();
+                // Save ASI Product to Database.
+                 $existing_prods = $vendorProducts->find()
+                    ->where(['wtcr_vendor_sku' => trim($product_skus[$pos]), 'wtcr_vendor_id' => 3])
+                    ->toArray();
                 
-                if($status == MergeQuery::STATUS_INSERT) {
-                    // $output .= "<br />Inserted New Item: " . $product_names[$pos] . " @ " . $product_prices[$pos];
-                } else if ($status == MergeQuery::STATUS_UPDATE) {
-                    // $output .= "<br />Updated Existing Item: " . $product_names[$pos] . " @ " . $product_prices[$pos];
+                foreach($existing_prods as $prod) {
+                    $thisProduct = $prod;
                 }
-                */
+                
+                $skuParts = explode("-", trim($product_skus[$pos]));                  
+                    
+                    
+                if(count($skuParts) > 2) {
+                    $partNumParts = array_slice($skuParts, 1);
+                    $mfg_part_num = implode('-', $partNumParts);
+                } else {
+                    $partNumParts = array_slice ($skuParts, -2);
+                    $mfg_part_num = implode('-', $partNumParts);
+                }
+                
+                
+                if(!$thisProduct) {                
+                    $thisProduct = $vendorProducts->newEntity();
+                    $thisProduct->product_name = trim($product_names[$pos]);
+                    $thisProduct->wtcr_vendor_id = 3;
+                    $thisProduct->wtcr_vendor_sku = trim($product_skus[$pos]);                  
+                    
+                    $thisProduct->mfg_part_num = $mfg_part_num;
+                    $thisProduct->vendor_price = trim($prices[$index]);
+                    $thisProduct->wtcr_product_category_id = 1;
+                    $thisProduct->last_updated = date('Y-m-d H:i:s');
+                    // error_log('Creating New Longtech Product');
+                } else {
+                    $thisProduct->vendor_price = $prices[$index];
+                    $thisProduct->last_updated = date('Y-m-d H:i:s');
+                    $thisProduct->mfg_part_num = $mfg_part_num;
+                    // error_log('Updating Existing Longtech Product');
+                }
+                
+                if($vendorProducts->save($thisProduct)) {
+                    error_log('Saved ' . $pna[$index] . ' properly');
+                } else {
+                    error_log('Failed to Save ' . $pna[$index]. ' properly');
+                    // error_log("<pre>" . print_r($vendorProducts, TRUE) . "</pre>");
+                }
+               
                 $message = "Adding " . $productType . " product " . $pos . " of " . count($product_skus) . " to database";
+                error_log($message);
                 $this->asi_update_progress($key, $message, number_format(($index / count($productTypes))*100, 2));
             } // end for add to database loop.
            
