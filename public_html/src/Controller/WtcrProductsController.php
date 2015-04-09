@@ -125,13 +125,28 @@ class WtcrProductsController extends AppController
                 'conditions' => ['mfg_part_num' => $mfg_part_num]
             ]);
             
-
             foreach($prods as $p) {
-                error_log('RETURN ' . $p->wtcrsku);
+                $wtcrSku = $p->wtcrsku;
+            }
+        
+            if(isset($wtcrSku) &&  $wtcrSku != "") {
+                return $wtcrSku;
             }
         }
         
-        return $wtcrSku;
+        return createNewSku($mfg_part_num);
+    }
+    
+    public function createNewSku($mfg_part_num = null) 
+    {
+        if(!empty($mfg_part_num)) 
+        {
+            return 'WTCR-' . $mfg_part_num;
+        } else {
+            return 'W-' . rand(1000, 9999) . '-' . rand(1000, 9999) . '-01'; 
+        }
+        
+        $wtcrSKU = 'WTCR-' . $mfg_part_num
     }
     
     /**
