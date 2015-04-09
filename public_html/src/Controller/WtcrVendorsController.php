@@ -230,7 +230,7 @@ class WtcrVendorsController extends AppController
                     $mfg_part_num = "";
                     
                     
-                    if(count($skuParts) > 2) {
+                    if(count($skuParts) > 3) {
                         $partNumParts = array_slice($skuParts, 2);
                         $mfg_part_num = implode('-', $partNumParts);
                     } else {
