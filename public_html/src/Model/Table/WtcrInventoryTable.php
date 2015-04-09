@@ -27,11 +27,11 @@ class WtcrInventoryTable extends Table
         $this->belongsTo('WtcrProductCategories', [
             'foreignKey' => 'wtcr_product_category_id'
         ]);
-        $this->belongsTo('WtcrManufacturers', [
-            'foreignKey' => 'wtcr_manufacturer_id'
-        ]);
         $this->belongsTo('WtcrVendors', [
             'foreignKey' => 'wtcr_vendor_id'
+        ]);
+        $this->belongsTo('Orders', [
+            'foreignKey' => 'order_id'
         ]);
     }
 
@@ -46,25 +46,30 @@ class WtcrInventoryTable extends Table
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('id', 'create')
-            ->allowEmpty('wtcr_sku')
-            ->allowEmpty('product_name')
+            ->requirePresence('wtcr_sku', 'create')
+            ->notEmpty('wtcr_sku')
+            ->requirePresence('product_name', 'create')
+            ->notEmpty('product_name')
             ->add('wtcr_product_category_id', 'valid', ['rule' => 'numeric'])
             ->requirePresence('wtcr_product_category_id', 'create')
             ->notEmpty('wtcr_product_category_id')
-            ->add('wtcr_manufacturer_id', 'valid', ['rule' => 'numeric'])
-            ->allowEmpty('wtcr_manufacturer_id')
-            ->allowEmpty('manufacturer_sku')
+            ->requirePresence('mfg_part_number', 'create')
+            ->notEmpty('mfg_part_number')
             ->add('wtcr_vendor_id', 'valid', ['rule' => 'numeric'])
             ->requirePresence('wtcr_vendor_id', 'create')
             ->notEmpty('wtcr_vendor_id')
             ->allowEmpty('vendor_sku')
             ->add('vendor_price', 'valid', ['rule' => 'numeric'])
-            ->allowEmpty('vendor_price')
+            ->requirePresence('vendor_price', 'create')
+            ->notEmpty('vendor_price')
             ->add('received_date', 'valid', ['rule' => 'datetime'])
-            ->allowEmpty('received_date')
+            ->requirePresence('received_date', 'create')
+            ->notEmpty('received_date')
             ->add('markup', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('markup')
-            ->allowEmpty('serial_numbers');
+            ->allowEmpty('serial_numbers')
+            ->add('order_id', 'valid', ['rule' => 'numeric'])
+            ->allowEmpty('order_id');
 
         return $validator;
     }
@@ -79,8 +84,8 @@ class WtcrInventoryTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['wtcr_product_category_id'], 'WtcrProductCategories'));
-        $rules->add($rules->existsIn(['wtcr_manufacturer_id'], 'WtcrManufacturers'));
         $rules->add($rules->existsIn(['wtcr_vendor_id'], 'WtcrVendors'));
+        $rules->add($rules->existsIn(['order_id'], 'Orders'));
         return $rules;
     }
 }

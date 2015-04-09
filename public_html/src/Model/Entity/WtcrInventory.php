@@ -18,15 +18,16 @@ class WtcrInventory extends Entity
         'wtcr_sku' => true,
         'product_name' => true,
         'wtcr_product_category_id' => true,
-        'wtcr_manufacturer_id' => true,
-        'manufacturer_sku' => true,
+        'mfg_part_number' => true,
         'wtcr_vendor_id' => true,
         'vendor_sku' => true,
         'vendor_price' => true,
         'received_date' => true,
         'markup' => true,
         'serial_numbers' => true,
+        'order_id' => true,
         'wtcr_product_category' => true,
+        'wtcr_manufacturer' => true,
         'wtcr_vendor' => true,
     ];
 }
