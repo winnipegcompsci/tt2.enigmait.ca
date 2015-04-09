@@ -231,6 +231,11 @@ class WtcrVendorsController extends AppController
                     
                     $mfg_part_num = implode('-', $partNumParts);
                     
+                    if(strlen($mfg_part_num) < 8) {
+                        $partNumParts = array_slice($skuParts, -3, 3);
+                        $mfg_part_num = implode('-', $partNumParts);
+                    }
+                    
                     if(!$product) {
                         $product = $products->newEntity();
 						// error_log("Product::2:: " . print_r($product, TRUE));
