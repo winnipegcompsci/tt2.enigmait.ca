@@ -588,7 +588,7 @@ class WtcrVendorsController extends AppController
         
             // Perform Login Request
             $page_content = curl_exec($ch);
-            // die(htmlspecialchars($page_content));       // DEBUG.
+            echo "<br /><br /><br />" . htmlspecialchars($page_content) ;       // DEBUG.
             $page_info = curl_getinfo($ch);
         
             // error_log("PAGE INFO: " . print_r($page_info, TRUE));
@@ -598,6 +598,7 @@ class WtcrVendorsController extends AppController
             $html = str_get_html($page_content);
                
             if(!empty($html)) {
+                
                 // error_log('HTML Not EMPTY' . print_r($html->find('body'), TRUE) );
                 foreach($html->find('dd.specs') as $specs) {
                     error_log("FOUND SPECS");
