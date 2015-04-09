@@ -537,7 +537,7 @@ class WtcrVendorsController extends AppController
         $totalNumUpdated = 0;
         $totalNumInserted = 0;
         
-        $newFileName = "/cookie.txt";
+        $cookieFile = "/fetch/cookie.txt";
         if(!is_writable(dirname($newFileName))) {
             echo getcwd() . dirname($newFileName) , " must be writable";
         }
@@ -548,8 +548,8 @@ class WtcrVendorsController extends AppController
         curl_setopt($ch, CURLOPT_URL, $loginURL);
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, 'username=' . $username . '&password1=' . $password . "&action=login_save");
-        curl_setopt($ch, CURLOPT_COOKIEFILE, '/cookie.txt');
-        curl_setopt($ch, CURLOPT_COOKIEJAR, '/cookie.txt');
+        curl_setopt($ch, CURLOPT_COOKIEFILE, $cookieFile);
+        curl_setopt($ch, CURLOPT_COOKIEJAR, $cookieFile);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_AUTOREFERER, 1);
@@ -582,8 +582,8 @@ class WtcrVendorsController extends AppController
             curl_setopt($ch, CURLOPT_HEADER, 1);
             curl_setopt($ch, CURLOPT_POST, 1);
             // curl_setopt($ch, CURLOPT_POSTFIELDS, 'username=' . $username . '&password1=' . $password . "&action=login_save");
-            curl_setopt($ch, CURLOPT_COOKIEFILE, '/cookie.txt');
-            curl_setopt($ch, CURLOPT_COOKIEJAR, '/cookie.txt');
+            curl_setopt($ch, CURLOPT_COOKIEFILE, $cookieFile);
+            curl_setopt($ch, CURLOPT_COOKIEJAR, $cookieFile);
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($ch, CURLOPT_AUTOREFERER, 1);
