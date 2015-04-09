@@ -714,6 +714,6 @@ class WtcrVendorsController extends AppController
         } //end foreach product type.
 
         // $output .= '<br />' . l('Go Back to ASI Products $', '/admin/config/prodmgr/suppliers/asi');
-        $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'view_vendor_products', 'longtech']);
+        $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'view_vendor_products', 'asi']);
     } // done I think
 }   
