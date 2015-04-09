@@ -595,7 +595,7 @@ class WtcrVendorsController extends AppController
             $html = str_get_html($page_content);
                
             if(!empty($html)) {
-                error_log('HTML Not EMPTY' . print_r($html->find('body'), TRUE) );
+                // error_log('HTML Not EMPTY' . print_r($html->find('body'), TRUE) );
                 foreach($html->find('dd.specs') as $specs) {
                     // Look for each List Item in Specs.
                     foreach($specs->find('li') as $listItem) {               
@@ -619,7 +619,7 @@ class WtcrVendorsController extends AppController
                     
                     foreach($nameSource->find('a') as $link) {
                         $thisName = trim($link->innertext);              // Add Name to Array
-                        
+                        error_log('THIS NAME: ' . $thisName);
                         $product_names[] = $thisName;
                     }
                 } // end foreach Name
@@ -631,6 +631,7 @@ class WtcrVendorsController extends AppController
                         if(strpos($span, '$') !== FALSE) {
                             $thisPrice = trim($span->innertext);
                             $thisPrice = str_replace('$', '', $thisPrice);
+                            error_log('This Price: ' . $thisPrice); 
                             
                             $product_prices[] = $thisPrice;
                         }
