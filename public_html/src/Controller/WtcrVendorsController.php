@@ -596,11 +596,12 @@ class WtcrVendorsController extends AppController
             $html = str_get_html($page_content);
                
             if(!empty($html)) {
-                error_log('HTML NOT EMPTY!!!!!');
                 // error_log('HTML Not EMPTY' . print_r($html->find('body'), TRUE) );
                 foreach($html->find('dd.specs') as $specs) {
+                    error_log("FOUND SPECS");
                     // Look for each List Item in Specs.
                     foreach($specs->find('li') as $listItem) {               
+                        error_log("FOUND LIST ITEM: " . print_r($listItem, TRUE) );
                         if(strpos($listItem, 'SKU') !== FALSE) {
                             error_log("LIST ITEM: " . $listItem);
                             $thisSKU = str_replace('SKU:', '', $listItem);
