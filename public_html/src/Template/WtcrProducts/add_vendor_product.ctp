@@ -5,7 +5,7 @@
     }   
 ?>
 
-<div class="wtcrProducts form col-lg-5 col-md-6 columns pull-left">
+<div class="wtcrProducts form col-lg-6 col-md-6 columns pull-left">
     <?= $this->Form->create($this_product); ?>
     <fieldset>
         <legend><?= __('Create WTCR Product from Vendor Product') ?></legend>
@@ -30,7 +30,7 @@
     <?= $this->Form->end() ?>
 </div>
 
-<div class="wtcrProducts form col-lg-5 col-md-6 columns">
+<div class="wtcrProducts form col-lg-6 col-md-6 columns">
     <?php        
     if(count($productVendors) != 0) { ?>
     <legend> This product can be purchased from the following vendors: </legend>
