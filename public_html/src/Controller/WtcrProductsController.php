@@ -134,7 +134,7 @@ class WtcrProductsController extends AppController
             }
         }
         
-        return createNewSku($mfg_part_num);
+        return $this->createNewSku($mfg_part_num);
     }
     
     public function createNewSku($mfg_part_num = null) 
