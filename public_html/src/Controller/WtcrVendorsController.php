@@ -683,6 +683,10 @@ class WtcrVendorsController extends AppController
                 }
                 
                 
+                error_log("DEBUG: # product_names " . count($product_names));
+                error_log("DEBUG: # product_prices " . count($product_prices));
+                error_log("DEBUG: # product_skus " . count($product_skus));
+                
                 if(!$thisProduct) {                
                     $thisProduct = $vendorProducts->newEntity();
                     $thisProduct->product_name = trim($product_names[$pos]);
