@@ -103,4 +103,7 @@
 
 </html>
 
-<?php $this->end('file');
+
+<?php 
+
+// $this->end('file');
