@@ -539,7 +539,7 @@ class WtcrVendorsController extends AppController
         
         $cookieFile = "/fetch/cookie.txt";
         if(!is_writable($cookieFile)) {
-            die(getcwd() . ($cookieFile) . " must be writable");
+            die($cookieFile) . " must be writable");
         }
         
         
