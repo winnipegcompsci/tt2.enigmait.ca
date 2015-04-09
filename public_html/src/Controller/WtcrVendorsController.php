@@ -641,7 +641,7 @@ class WtcrVendorsController extends AppController
     
             error_log('COUNTS: PROD NAMES: ' . count($product_names) . 
                 ' PROD SKUS: ' . count($product_skus) .
-                ' PROD PRICES: ' . count($product_prices);
+                ' PROD PRICES: ' . count($product_prices));
     
             $totalNumProducts += count($product_skus);
                    
