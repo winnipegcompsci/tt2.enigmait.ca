@@ -228,10 +228,19 @@ class WtcrVendorsController extends AppController
                     $skuParts = explode("-", $supplier_sku);
                     
                     $mfg_part_num = "";
+                    
+                    
+                    if(count($skuParts) >= 2) {
+                        $partNumParts = array_slice($skuParts, 2);
+                        $mfg_part_num = implode('-', $partNumParts);
+                    } else {
+                        $partNumParts = array_slice ($skuParts, -2);
+                        $mfg_part_num = implode('-', $partNumParts);
+                    }
+                    
                     $start = 1;
                     
-                    $partNumParts = array_slice($skuParts, 2);
-                    $mfg_part_num = implode('-', $partNumParts);   
+   
                     
                     if(!$product) {
                         $product = $products->newEntity();
