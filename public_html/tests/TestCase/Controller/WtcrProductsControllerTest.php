@@ -75,4 +75,34 @@ class WtcrProductsControllerTest extends IntegrationTestCase
     {
         $this->markTestIncomplete('Not implemented yet.');
     }
+
+    /**
+     * Test add_vendor_product method
+     *
+     * @return void
+     */
+    public function testAddVendorProduct()
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test getWtcrSku method
+     *
+     * @return void
+     */
+    public function testGetWtcrSku()
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test createNewSku method
+     *
+     * @return void
+     */
+    public function testCreateNewSku()
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
 }
