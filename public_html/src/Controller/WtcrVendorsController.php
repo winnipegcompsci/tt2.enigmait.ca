@@ -568,6 +568,8 @@ class WtcrVendorsController extends AppController
         $totalNumProducts = 0;
         
         foreach($productTypes as $key => $productType) {
+            $thisProduct = null;
+            
             $thisURL = "https://www.asipartner.com/partneraccess/" . $key . "/search.aspx?sort=price-asc&ost=no";
     
             $duration = number_format(microtime(true) - $time_start, 1);
@@ -632,7 +634,6 @@ class WtcrVendorsController extends AppController
                     
                     foreach($nameSource->find('a') as $link) {
                         $thisName = trim($link->innertext);              // Add Name to Array
-                        // error_log('THIS NAME: ' . $thisName);
                         $product_names[] = $thisName;
                     }
                 } // end foreach Name
