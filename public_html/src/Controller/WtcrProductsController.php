@@ -125,7 +125,7 @@ class WtcrProductsController extends AppController
             $wtcrProduct->marketplace_data = serialize( array() );
             $wtcrProduct->pictures = serialize( array() );
             $wtcrProduct->wtcr_product_category = $this->request->data['wtcr_product_category_id'];
-            $wtcrProduct->wtcr_product_category_id = $this->request->data['wtcr_product_category_id'];
+            $wtcrProduct->wtcr_product_category_id = 1;
             
 
             // debug($wtcrProduct);
