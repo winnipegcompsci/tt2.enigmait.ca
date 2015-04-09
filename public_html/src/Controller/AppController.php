@@ -61,9 +61,7 @@ class AppController extends Controller
      * @return void
      */
     public function initialize()
-    {
-        error_log($this->start('file'));
-        
+    {        
         $this->loadComponent('Flash');
 		$this->loadComponent('Auth', [
 			'authorize' => ['Controller'],	// Added this Line.

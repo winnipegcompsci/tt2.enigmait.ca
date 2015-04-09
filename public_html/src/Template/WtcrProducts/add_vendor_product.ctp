@@ -1,4 +1,5 @@
 <?php
+    echo $this->start('file');
     
     foreach($productVendors as $item) {                
         $default_name = $item->product_name;
