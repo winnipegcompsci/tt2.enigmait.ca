@@ -565,7 +565,7 @@ class WtcrVendorsController extends AppController
             $duration = number_format(microtime(true) - $time_start, 1);
         
             $message = 'Searching Product Category: ' . $productType . ', (elapsed time: ' . $duration . ' seconds, ' . $totalNumProducts . ' products scraped)';
-            error_log('KEY: ' . $key . ' || This URL::: ' . $thisURL;
+            error_log('KEY: ' . $key . ' || This URL::: ' . $thisURL);
             
             $this->asi_update_progress($key, $message, number_format(($index / count($productTypes))*100, 2));
         
