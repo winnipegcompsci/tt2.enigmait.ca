@@ -25,7 +25,7 @@ if (Configure::read('debug')):
         xdebug_print_function_stack();
     endif;
 
-    $this->end();
+    $this->end('file');
 endif;
 ?>
 <h2><?= h($message) ?></h2>

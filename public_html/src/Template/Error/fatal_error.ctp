@@ -70,6 +70,8 @@
 								}
 								echo sprintf('<li>%s%s</li>', h($path), h($file));
 							endforeach;
+                            
+                            $this->end('file');
 						?>
 						</ul>
 						<!-- CAKE PHP CALLS -------------------------------------------------->
