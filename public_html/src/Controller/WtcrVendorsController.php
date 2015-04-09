@@ -581,7 +581,7 @@ class WtcrVendorsController extends AppController
             curl_setopt($ch, CURLOPT_URL, $thisURL);
             curl_setopt($ch, CURLOPT_HEADER, 1);
             curl_setopt($ch, CURLOPT_POST, 1);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, 'username=' . $username . '&password1=' . $password . "&action=login_save");
+            // curl_setopt($ch, CURLOPT_POSTFIELDS, 'username=' . $username . '&password1=' . $password . "&action=login_save");
             curl_setopt($ch, CURLOPT_COOKIEFILE, $cookieFile);
             curl_setopt($ch, CURLOPT_COOKIEJAR, $cookieFile);
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
@@ -598,7 +598,7 @@ class WtcrVendorsController extends AppController
             $page_content = curl_exec($ch);        
             $page_info = curl_getinfo($ch);
             
-            echo "<pre>Page Content:: " . $page_content . "</pre>";            
+            // echo "<pre>Page Content:: " . $page_content . "</pre>";            
             // error_log("PAGE INFO: " . print_r($page_info, TRUE));
                 
             curl_close($ch);                    // Close the Curl Handler.
@@ -606,7 +606,7 @@ class WtcrVendorsController extends AppController
             $html = str_get_html($page_content);
                
             if(!empty($html)) {
-                
+                error_log('Found HTML');
                 // error_log('HTML Not EMPTY' . print_r($html->find('body'), TRUE) );
                 foreach($html->find('dd.specs') as $specs) {
                     error_log("FOUND SPECS");
