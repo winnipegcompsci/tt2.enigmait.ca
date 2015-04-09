@@ -681,21 +681,21 @@ class WtcrVendorsController extends AppController
                     $thisProduct->wtcr_vendor_sku = trim($product_skus[$pos]);                  
                     
                     $thisProduct->mfg_part_num = $mfg_part_num;
-                    $thisProduct->vendor_price = trim($prices[$index]);
+                    $thisProduct->vendor_price = trim($product_prices[$pos]);
                     $thisProduct->wtcr_product_category_id = 1;
                     $thisProduct->last_updated = date('Y-m-d H:i:s');
-                    // error_log('Creating New Longtech Product');
+
                 } else {
-                    $thisProduct->vendor_price = $prices[$index];
+                    $thisProduct->vendor_price = $product_prices[$pos];
                     $thisProduct->last_updated = date('Y-m-d H:i:s');
                     $thisProduct->mfg_part_num = $mfg_part_num;
-                    // error_log('Updating Existing Longtech Product');
+
                 }
                 
                 if($vendorProducts->save($thisProduct)) {
-                    error_log('Saved ' . $pna[$index] . ' properly');
+                    error_log('Saved ' . $product_names[$pos] . ' properly');
                 } else {
-                    error_log('Failed to Save ' . $pna[$index]. ' properly');
+                    error_log('Failed to Save ' . $product_names[$pos]. ' properly');
                     // error_log("<pre>" . print_r($vendorProducts, TRUE) . "</pre>");
                 }
                
