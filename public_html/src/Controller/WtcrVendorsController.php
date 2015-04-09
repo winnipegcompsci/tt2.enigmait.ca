@@ -581,7 +581,7 @@ class WtcrVendorsController extends AppController
             curl_setopt($ch, CURLOPT_URL, $thisURL);
             curl_setopt($ch, CURLOPT_HEADER, 1);
             curl_setopt($ch, CURLOPT_POST, 1);
-            // curl_setopt($ch, CURLOPT_POSTFIELDS, 'username=' . $username . '&password1=' . $password . "&action=login_save");
+            curl_setopt($ch, CURLOPT_POSTFIELDS, 'username=' . $username . '&password1=' . $password . "&action=login_save");
             curl_setopt($ch, CURLOPT_COOKIEFILE, $cookieFile);
             curl_setopt($ch, CURLOPT_COOKIEJAR, $cookieFile);
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
@@ -595,13 +595,10 @@ class WtcrVendorsController extends AppController
             curl_setopt($ch, CURLOPT_USERAGENT, $userAgent);
         
             // Perform Login Request
-            $page_content = curl_exec($ch);
-            
-            echo "<br /><br />" . $page_content;
-            
-            
+            $page_content = curl_exec($ch);        
             $page_info = curl_getinfo($ch);
-        
+            
+            echo "<pre>" . $page_content . "</pre>";            
             // error_log("PAGE INFO: " . print_r($page_info, TRUE));
                 
             curl_close($ch);                    // Close the Curl Handler.
