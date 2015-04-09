@@ -587,13 +587,14 @@ class WtcrVendorsController extends AppController
         
             // Perform Login Request
             $page_content = curl_exec($ch);
+            error_log($page_content);
             $page_info = curl_getinfo($ch);
         
             // error_log("PAGE INFO: " . print_r($page_info, TRUE));
                 
             curl_close($ch);                    // Close the Curl Handler.
         
-            $html = $this->str_get_html($page_content);
+            $html = str_get_html($page_content);
                
             if(!empty($html)) {
                 error_log('HTML NOT EMPTY');
