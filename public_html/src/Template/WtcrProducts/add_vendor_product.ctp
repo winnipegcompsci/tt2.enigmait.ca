@@ -1,6 +1,4 @@
-<?php
-    echo "STARTFILE: " . $this->start('file');
-    
+<?php    
     foreach($productVendors as $item) {                
         $default_name = $item->product_name;
         $vendor_price = $item->vendor_price;
