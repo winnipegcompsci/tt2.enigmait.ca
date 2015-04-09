@@ -537,6 +537,11 @@ class WtcrVendorsController extends AppController
         $totalNumUpdated = 0;
         $totalNumInserted = 0;
         
+        $newFileName = "/cookie.txt";
+        if(!is_writable(dirname($newFileName))) {
+            echo dirname($newFileName) , " must be writable";
+        }
+        
         
         // Login With Curl
         $ch = curl_init();
@@ -555,7 +560,7 @@ class WtcrVendorsController extends AppController
         // Perform Login Request
         $login_content = curl_exec($ch);
         
-        echo "<br /><br /><br />Login Content<br />" . $login_content;
+        echo "<br /><br /><br />Login Content<br />" . htmlspecialchars($login_content);
         
         $login_info = curl_getinfo($ch);
 
@@ -576,7 +581,7 @@ class WtcrVendorsController extends AppController
             curl_setopt($ch, CURLOPT_URL, $thisURL);
             curl_setopt($ch, CURLOPT_HEADER, 1);
             curl_setopt($ch, CURLOPT_POST, 1);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, 'username=' . $username . '&password1=' . $password . "&action=login_save");
+            // curl_setopt($ch, CURLOPT_POSTFIELDS, 'username=' . $username . '&password1=' . $password . "&action=login_save");
             curl_setopt($ch, CURLOPT_COOKIEFILE, '/cookie.txt');
             curl_setopt($ch, CURLOPT_COOKIEJAR, '/cookie.txt');
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
@@ -591,7 +596,6 @@ class WtcrVendorsController extends AppController
         
             // Perform Login Request
             $page_content = curl_exec($ch);
-            echo "<br /><br /><br />" . htmlspecialchars($page_content) ;       // DEBUG.
             $page_info = curl_getinfo($ch);
         
             // error_log("PAGE INFO: " . print_r($page_info, TRUE));
