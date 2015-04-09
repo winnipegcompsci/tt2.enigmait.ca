@@ -537,7 +537,7 @@ class WtcrVendorsController extends AppController
         $totalNumUpdated = 0;
         $totalNumInserted = 0;
         
-        $cookieFile = getccwd() . "/fetch/cookie.txt";
+        $cookieFile = getcwd() . "/fetch/cookie.txt";
         if(!is_writable(dirname($cookieFile))) {
             echo dirname($cookieFile) . " must be writable";
         }
