@@ -661,7 +661,7 @@ class WtcrVendorsController extends AppController
             }
             
             // Add Last Scraped Category Products to Database.
-            for($pos = 0; $pos < $totalNumProducts; $pos++) {
+            for($pos = 0; $pos < count($product_skus); $pos++) {
                 // Save ASI Product to Database.
                  $existing_prods = $vendorProducts->find()
                     ->where(['wtcr_vendor_sku' => trim($product_skus[$pos]), 'wtcr_vendor_id' => 3])
