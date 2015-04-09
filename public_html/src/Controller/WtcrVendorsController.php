@@ -542,8 +542,7 @@ class WtcrVendorsController extends AppController
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $loginURL);
         curl_setopt($ch, CURLOPT_POST, 1);
-        // curl_setopt($ch, CURLOPT_POSTFIELDS, 'username=' . $username . '&password1=' . $password . "&action=login_save");
-        curl_setopt($ch, CURLOPT_POSTFIELDS, 'username=' . $username . '&password1=' . $password . "&action=Login.aspx?ReturnUrl=%2fpartneraccess%2fAC%2fsearch.aspx%3fcat1%3dAC%26%26sort%3dprice-asc%26ost%3dno");
+        curl_setopt($ch, CURLOPT_POSTFIELDS, 'username=' . $username . '&password1=' . $password . "&action=login_save");
         curl_setopt($ch, CURLOPT_COOKIEFILE, '/cookie.txt');
         curl_setopt($ch, CURLOPT_COOKIEJAR, '/cookie.txt');
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
@@ -565,9 +564,7 @@ class WtcrVendorsController extends AppController
     
             $duration = number_format(microtime(true) - $time_start, 1);
         
-            $message = 'Searching Product Category: ' . $productType . ', (elapsed time: ' . $duration . ' seconds, ' . $totalNumProducts . ' products scraped)';
-            error_log('KEY: ' . $key . ' || This URL::: ' . $thisURL);
-            
+            $message = 'Searching Product Category: ' . $productType . ', (elapsed time: ' . $duration . ' seconds, ' . $totalNumProducts . ' products scraped)';            
             $this->asi_update_progress($key, $message, number_format(($index / count($productTypes))*100, 2));
         
             // Setup Request for Page/Product Category Content
@@ -590,7 +587,7 @@ class WtcrVendorsController extends AppController
         
             // Perform Login Request
             $page_content = curl_exec($ch);
-            die(htmlspecialchars($page_content));
+            // die(htmlspecialchars($page_content));       // DEBUG.
             $page_info = curl_getinfo($ch);
         
             // error_log("PAGE INFO: " . print_r($page_info, TRUE));
@@ -600,7 +597,6 @@ class WtcrVendorsController extends AppController
             $html = str_get_html($page_content);
                
             if(!empty($html)) {
-                error_log('HTML NOT EMPTY');
                 // error_log('HTML Not EMPTY' . print_r($html->find('body'), TRUE) );
                 foreach($html->find('dd.specs') as $specs) {
                     error_log("FOUND SPECS");
