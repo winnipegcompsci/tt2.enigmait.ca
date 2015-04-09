@@ -701,7 +701,7 @@ class WtcrVendorsController extends AppController
                 }
                 
                 if($vendorProducts->save($thisProduct)) {
-                    error_log('Saved ' . $product_names[$pos] . ' properly');
+                    error_log('Saved ' . $product_names[$pos] . ' with Product Number: ' . $product_skus[$pos]);
                 } else {
                     error_log('Failed to Save ' . $product_names[$pos]. ' properly');
                     // error_log("<pre>" . print_r($vendorProducts, TRUE) . "</pre>");
@@ -722,5 +722,5 @@ class WtcrVendorsController extends AppController
 
         // $output .= '<br />' . l('Go Back to ASI Products $', '/admin/config/prodmgr/suppliers/asi');
         $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'view_vendor_products', 'asi']);
-    } // done I think
+    } // done asi fetch.
 }   
