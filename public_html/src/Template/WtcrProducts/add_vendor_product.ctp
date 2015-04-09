@@ -11,7 +11,7 @@
         <legend><?= __('Create WTCR Product from Vendor Product') ?></legend>
         <?php
             echo $this->Form->input('mfg_part_num', ['default' => $mfg_part_num]);
-            echo $this->Form->input('wtcrsku', ['default' => $mfg_part_num]);
+            echo $this->Form->input('wtcrsku', ['default' => getWtcrSku($mfg_part_num)]);
             echo $this->Form->input('wtcr_product_name', ['default' => $default_name]);
             echo $this->Form->input('description');
             
@@ -20,7 +20,7 @@
                 'label' => 'Auto-Update WTCR Price on Vendor Price Increases'
             ];
             echo $this->Form->input('autoupdate', $autoupdate_opts);
-            echo $this->Form->input('static_price', ['label' => 'Static Price on Site']);
+            echo $this->Form->input('static_price', ['label' => 'Override Price on Site to: ']);
             echo $this->Form->input('suggestedmarkup', ['default' => '0.5', 'label' => 'Suggested Markup:']);
             echo $this->Form->input('wtcrprice', ['default' => $vendor_price * 1.5, 'label' => 'Suggested WTCR Price:']);
             echo $this->Form->input('wtcr_product_category_id', ['options' => $categories]);
