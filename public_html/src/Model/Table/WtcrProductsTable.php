@@ -45,7 +45,7 @@ class WtcrProductsTable extends Table
             ->notEmpty('wtcrsku')
             ->add('wtcr_product_category_id', 'valid', ['rule' => 'numeric'])
             ->requirePresence('wtcr_product_category_id', 'create')
-            ->notEmpty('wtcr_product_category_id')
+            ->notEmpty('wtcr_product_category_id');
             // ->allowEmpty('wtcr_product_name')
             // ->allowEmpty('description')
             // ->add('autoupdate', 'valid', ['rule' => 'numeric'])
