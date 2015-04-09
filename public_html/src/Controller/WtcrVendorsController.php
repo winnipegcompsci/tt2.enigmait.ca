@@ -284,6 +284,21 @@ class WtcrVendorsController extends AppController
         
     }
     
+    public function asi_update_progress($curPage, $message, $percent)
+    {
+        Configure::write('asi', ['percent' = $percent]);
+        Configure::write('asi', ['message' => $message]);
+    }
+    
+    public function asi_get_progress()
+    {
+        $progress = Configure::read('asi.percent');
+        echo $progress;
+        die();
+    }
+    
+    
+    
     public function longtech_update_progress($curPage, $message, $percent)
     {
         Configure::write('longtech' , ['percent' => $percent]);
