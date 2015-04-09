@@ -601,6 +601,7 @@ class WtcrVendorsController extends AppController
                     // Look for each List Item in Specs.
                     foreach($specs->find('li') as $listItem) {               
                         if(strpos($listItem, 'SKU') !== FALSE) {
+                            error_log("LIST ITEM: " . $listItem);
                             $thisSKU = str_replace('SKU:', '', $listItem);
                             $thisSKU = str_replace('<span>', '', $thisSKU);
                             $thisSKU = str_replace('</span>', '', $thisSKU);
