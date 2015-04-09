@@ -142,7 +142,6 @@ class WtcrProductsController extends AppController
                 // echo "DEBUG ERROR <pre>" . print_r($wtcrProduct->toArray(), TRUE) . "</pre>";
                 // echo "NEW PRODUCT <pre>" . print_r($this->WtcrProducts->newEntity(), TRUE) . "</pre>";
             }
-                       
         }        
         
         $productVendors = TableRegistry::get('wtcr_vendor_products')->find('all', [
