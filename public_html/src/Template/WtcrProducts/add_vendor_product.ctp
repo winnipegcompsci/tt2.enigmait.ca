@@ -1,4 +1,5 @@
-<?php 
+<?php
+    
     foreach($productVendors as $item) {                
         $default_name = $item->product_name;
         $vendor_price = $item->vendor_price;
@@ -11,7 +12,7 @@
         <legend><?= __('Create WTCR Product from Vendor Product') ?></legend>
         <?php
             echo $this->Form->input('mfg_part_num', ['default' => $mfg_part_num]);
-            echo $this->Form->input('wtcrsku', ['default' => getWtcrSku($mfg_part_num)]);
+            echo $this->Form->input('wtcrsku', ['default' => $this->getWtcrSku($mfg_part_num)]);
             echo $this->Form->input('wtcr_product_name', ['default' => $default_name]);
             echo $this->Form->input('description');
             
