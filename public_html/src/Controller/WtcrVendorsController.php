@@ -473,8 +473,211 @@ class WtcrVendorsController extends AppController
     } /*.longtech_fetch */
     
     public function fetch_asi_products() {
-        echo "IMPLEMENT ASI FETCH!";
+        ini_set('max_execution_time', 0);
+            
+        $loginURL = "https://www.asipartner.com/partneraccess/Auth/Login.aspx?";
     
-    }
+        $username = "96827";
+        $password = "^l96827Db";
+    
+        $productTypes = array(
+            "AC" => 'Accessories', 
+            "SY" => 'Barbones/Complete Systems', 
+            "CB" => 'Cables', 
+            "CM" => 'Cameras', 
+            "CS" => 'Cases', 
+            "CC" => 'Controller Cards',
+            "CP" => 'CPU\'s', 
+            "RD" => 'Drive Enclosure', 
+            "FN" => 'Fans', 
+            "MF" => 'Flash Device', 
+            "FD" => 'Floppy Drive', 
+            "GM" => 'Games', 
+            "HD" => 'Hard Drives', 
+            "HE" => 'Head Phones', 
+            "KB" => 'Keyboards',
+            "ME" => 'Memory', 
+            "MC" => 'Mice', 
+            "MD" => 'Modems', 
+            "MN" => 'Monitors/LCD', 
+            "MB" => 'Motherboards', 
+            "MM" => 'Multimedia MP3', 
+            "NT" => 'Networking', 
+            "NB" => 'Notebooks/PDA',
+            "OD" => 'Optical Drive', 
+            "OP" => 'Optical Eyewear', 
+            "OM" => 'Optical Media', 
+            "OT" => 'Other', 
+            "PO" => 'POS Equipment', 
+            "PS" => 'Power Supply', 
+            "PR" => 'Printers',
+            "PJ" => 'Projectors', 
+            "RN" => 'Rack Mount', 
+            "SC" => 'Scanners', 
+            "SF" => 'Software', 
+            "SD" => 'Solid State Drives', 
+            "SO" => 'Sound Cards', 
+            "SP" => 'Speakers', 
+            "TV" => 'TV', 
+            "UP" => 'UPS', 
+            "VC" => 'Video Cards', 
+            "VE" => 'Video Editing',
+        );
+        
+        $index = 0;
+    
+        $product_skus = array();
+        $product_names = array();
+        $product_prices = array();
+        $asi_products = array();
+        
+        $totalNumUpdated = 0;
+        $totalNumInserted = 0;
+        
+        
+        // Login With Curl
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $loginURL);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, 'username=' . $username . '&password1=' . $password . "&action=login_save");
+        curl_setopt($ch, CURLOPT_COOKIEFILE, '/cookie.txt');
+        curl_setopt($ch, CURLOPT_COOKIEJAR, '/cookie.txt');
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_AUTOREFERER, 1);
+        
+        $userAgent = variable_get('prodmgr_user_agent', 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)');
+        curl_setopt($ch, CURLOPT_USERAGENT, $userAgent);
+        
+        // Perform Login Request
+        $login_content = curl_exec($ch);
+        $login_info = curl_getinfo($ch);
+
+        $time_start = microtime(true);
+        $totalNumProducts = 0;
+        
+        foreach($productTypes as $key => $productType) {
+            $thisURL = "https://www.asipartner.com/partneraccess/" . $key . "/search.aspx?sort=price-asc&ost=no";
+    
+            $duration = number_format(microtime(true) - $time_start, 1);
+        
+            $message = 'Searching Product Category: ' . $productType . ', (elapsed time: ' . $duration . ' seconds, ' . $totalNumProducts . ' products scraped)';
+            asi_update_progress($key, $message, number_format(($index / count($productTypes))*100, 2));
+        
+            // Setup Request for Page/Product Category Content
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $thisURL);
+            curl_setopt($ch, CURLOPT_HEADER, 1);
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, 'username=' . $username . '&password1=' . $password . "&action=login_save");
+            curl_setopt($ch, CURLOPT_COOKIEFILE, '/cookie.txt');
+            curl_setopt($ch, CURLOPT_COOKIEJAR, '/cookie.txt');
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_AUTOREFERER, 1);
+        
+            $referer = 'http://google.ca';
+            curl_setopt($ch, CURLOPT_REFERER);
+        
+            $userAgent = variable_get('prodmgr_user_agent', 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)');
+            curl_setopt($ch, CURLOPT_USERAGENT, $userAgent);
+        
+            // Perform Login Request
+            $page_content = curl_exec($ch);
+            $page_info = curl_getinfo($ch);
+        
+            // error_log("PAGE INFO: " . print_r($page_info, TRUE));
+                
+            curl_close($ch);                    // Close the Curl Handler.
+        
+            $html = str_get_html($page_content);
+               
+            if(!empty($html)) {
+                foreach($html->find('dd.specs') as $specs) {
+                    // Look for each List Item in Specs.
+                    foreach($specs->find('li') as $listItem) {               
+                        if(strpos($listItem, 'SKU') !== FALSE) {
+                            $thisSKU = str_replace('SKU:', '', $listItem);
+                            $thisSKU = str_replace('<span>', '', $thisSKU);
+                            $thisSKU = str_replace('</span>', '', $thisSKU);
+                            $thisSKU = str_replace('<li>', '', $thisSKU);
+                            $thisSKU = str_replace('</li>', '', $thisSKU);
+                            $thisSKU = str_replace('\t', '', $thisSKU);
+                            
+                            $thisSKU = trim($thisSKU);
+                            
+                            $product_skus[] = $thisSKU;                         // Add SKU to Array
+                        } // if includes SKU: in li string.
+                    } // end foreach li
+                } // end foreach SKU
+                
+                foreach($html->find('div.name') as $name) {
+                    $nameSource = str_get_html($name);
+                    
+                    foreach($nameSource->find('a') as $link) {
+                        $thisName = trim($link->innertext);              // Add Name to Array
+                        
+                        $product_names[] = $thisName;
+                    }
+                } // end foreach Name
+                
+                foreach($html->find('li.old') as $listItem) {
+                    $listSource = str_get_html($listItem);
+                    
+                    foreach($listSource->find('span') as $span) {
+                        if(strpos($span, '$') !== FALSE) {
+                            $thisPrice = trim($span->innertext);
+                            $thisPrice = str_replace('$', '', $thisPrice);
+                            
+                            $product_prices[] = $thisPrice;
+                        }
+                    }                              
+                } // end foreach Price
+            } else {
+                die("html variable is empty. Please check your query again!");
+            }
+    
+            $totalNumProducts += count($product_skus);
+                   
+            // Add Last Scraped Category Products to Database.
+            for($pos = 0; $pos < count($product_skus); $pos++) {
+                $status = db_merge('prodmgr_supplier_prices')
+                    ->insertFields(array(
+                        'supplier_id' => $asi['supplier_id'],
+                        'product_description' => $product_names[$pos],
+                        'supplier_sku' => $product_skus[$pos],
+                        'supplier_price' => $product_prices[$pos],
+                        'last_updated' => date('Y-m-d H:i:s'),
+                    ))
+                    ->updateFields(array(
+                        'supplier_price' => $product_prices[$pos],
+                        'last_updated' => date('Y-m-d H:i:s'),
+                    ))
+                    ->key(array('supplier_sku' => $product_skus[$pos], 'supplier_id' => $asi['supplier_id']))
+                    ->execute();
+                
+                if($status == MergeQuery::STATUS_INSERT) {
+                    // $output .= "<br />Inserted New Item: " . $product_names[$pos] . " @ " . $product_prices[$pos];
+                } else if ($status == MergeQuery::STATUS_UPDATE) {
+                    // $output .= "<br />Updated Existing Item: " . $product_names[$pos] . " @ " . $product_prices[$pos];
+                }
+                
+                $message = "Adding " . $productType . " product " . $pos . " of " . count($product_skus) . " to database";
+                update_progress($key, $message, number_format(($index / count($productTypes))*100, 2));
+            } // end for add to database loop.
+           
+            unset($html);
+            unset($product_prices);
+            unset($product_skus);
+            unset($product_names);
+        
+            $index++;
+        } //end foreach product type.
+
+        $output .= '<br />' . l('Go Back to ASI Products $', '/admin/config/prodmgr/suppliers/asi');
+       
+        
+    
+    } ./end fetch
     
 }   
