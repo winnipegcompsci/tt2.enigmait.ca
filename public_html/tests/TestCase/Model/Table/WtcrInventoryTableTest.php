@@ -25,7 +25,8 @@ class WtcrInventoryTableTest extends TestCase
         'Inventory' => 'app.inventory',
         'WtcrCategories' => 'app.wtcr_categories',
         'WtcrManufacturers' => 'app.wtcr_manufacturers',
-        'WtcrProductMap' => 'app.wtcr_product_map'
+        'WtcrProductMap' => 'app.wtcr_product_map',
+        'Orders' => 'app.orders'
     ];
 
     /**

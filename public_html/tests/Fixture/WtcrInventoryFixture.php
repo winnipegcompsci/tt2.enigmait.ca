@@ -60,7 +60,7 @@ class WtcrInventoryFixture extends TestFixture
             'wtcr_vendor_id' => 1,
             'vendor_sku' => 'Lorem ipsum dolor sit amet',
             'vendor_price' => 1,
-            'received_date' => '2015-04-09 16:26:07',
+            'received_date' => '2015-04-09 16:31:09',
             'markup' => 1,
             'serial_numbers' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
             'order_id' => 1

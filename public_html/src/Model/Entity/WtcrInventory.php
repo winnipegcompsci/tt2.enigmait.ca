@@ -27,7 +27,7 @@ class WtcrInventory extends Entity
         'serial_numbers' => true,
         'order_id' => true,
         'wtcr_product_category' => true,
-        'wtcr_manufacturer' => true,
         'wtcr_vendor' => true,
+        'order' => true,
     ];
 }

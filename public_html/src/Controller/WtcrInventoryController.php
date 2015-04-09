@@ -18,7 +18,7 @@ class WtcrInventoryController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['WtcrProductCategories', 'WtcrManufacturers', 'WtcrVendors']
+            'contain' => ['WtcrProductCategories', 'WtcrVendors', 'Orders']
         ];
         $this->set('wtcrInventory', $this->paginate($this->WtcrInventory));
         $this->set('_serialize', ['wtcrInventory']);
@@ -34,7 +34,7 @@ class WtcrInventoryController extends AppController
     public function view($id = null)
     {
         $wtcrInventory = $this->WtcrInventory->get($id, [
-            'contain' => ['WtcrProductCategories', 'WtcrManufacturers', 'WtcrVendors']
+            'contain' => ['WtcrProductCategories', 'WtcrVendors', 'Orders']
         ]);
         $this->set('wtcrInventory', $wtcrInventory);
         $this->set('_serialize', ['wtcrInventory']);
@@ -58,9 +58,9 @@ class WtcrInventoryController extends AppController
             }
         }
         $wtcrProductCategories = $this->WtcrInventory->WtcrProductCategories->find('list', ['limit' => 200]);
-        $wtcrManufacturers = $this->WtcrInventory->WtcrManufacturers->find('list', ['limit' => 200]);
         $wtcrVendors = $this->WtcrInventory->WtcrVendors->find('list', ['limit' => 200]);
-        $this->set(compact('wtcrInventory', 'wtcrProductCategories', 'wtcrManufacturers', 'wtcrVendors'));
+        $orders = $this->WtcrInventory->Orders->find('list', ['limit' => 200]);
+        $this->set(compact('wtcrInventory', 'wtcrProductCategories', 'wtcrVendors', 'orders'));
         $this->set('_serialize', ['wtcrInventory']);
     }
 
@@ -86,9 +86,9 @@ class WtcrInventoryController extends AppController
             }
         }
         $wtcrProductCategories = $this->WtcrInventory->WtcrProductCategories->find('list', ['limit' => 200]);
-        $wtcrManufacturers = $this->WtcrInventory->WtcrManufacturers->find('list', ['limit' => 200]);
         $wtcrVendors = $this->WtcrInventory->WtcrVendors->find('list', ['limit' => 200]);
-        $this->set(compact('wtcrInventory', 'wtcrProductCategories', 'wtcrManufacturers', 'wtcrVendors'));
+        $orders = $this->WtcrInventory->Orders->find('list', ['limit' => 200]);
+        $this->set(compact('wtcrInventory', 'wtcrProductCategories', 'wtcrVendors', 'orders'));
         $this->set('_serialize', ['wtcrInventory']);
     }
 
