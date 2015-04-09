@@ -384,9 +384,13 @@ class WtcrVendorsController extends AppController
                 }
             } 
             
+                      
             $curPage++;
             $index++;
         }
+        
+        error_log('Size of Attributes = {Index = ' . $index . ' PNO:' . count($pno) 
+            . ' PNA: ' . count($pna) . ' Prices: ' . count($prices));
         
         $index = 0;
         while($index < $curPage) {
@@ -424,16 +428,16 @@ class WtcrVendorsController extends AppController
                     $thisProduct->vendor_price = trim($prices[$index]);
                     $thisProduct->wtcr_product_category_id = 1;
                     $thisProduct->last_updated = date('Y-m-d H:i:s');
-                    error_log('Creating New Longtech Product');
+                    // error_log('Creating New Longtech Product');
                 } else {
                     $thisProduct->vendor_price = $prices[$index];
                     $thisProduct->last_updated = date('Y-m-d H:i:s');
                     $thisProduct->mfg_part_num = $mfg_part_num;
-                    error_log('Updating Existing Longtech Product');
+                    // error_log('Updating Existing Longtech Product');
                 }
                 
                 if($vendorProducts->save($thisProduct)) {
-                    error_log('Saved ' . $pna[$index] . ' properly');
+                    // error_log('Saved ' . $pna[$index] . ' properly');
                 } else {
                     error_log('Failed to Save ' . $pna[$index]. ' properly');
                     // error_log("<pre>" . print_r($vendorProducts, TRUE) . "</pre>");
