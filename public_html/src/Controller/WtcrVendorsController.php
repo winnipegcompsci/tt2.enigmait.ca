@@ -567,6 +567,7 @@ class WtcrVendorsController extends AppController
             $message = 'Searching Product Category: ' . $productType . ', (elapsed time: ' . $duration . ' seconds, ' . $totalNumProducts . ' products scraped)';            
             $this->asi_update_progress($key, $message, number_format(($index / count($productTypes))*100, 2));
         
+        
             // Setup Request for Page/Product Category Content
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $thisURL);
@@ -713,6 +714,6 @@ class WtcrVendorsController extends AppController
         } //end foreach product type.
 
         // $output .= '<br />' . l('Go Back to ASI Products $', '/admin/config/prodmgr/suppliers/asi');
-    
-    } // done I think lol 
+        $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'view_vendor_products', 'longtech']);
+    } // done I think
 }   
