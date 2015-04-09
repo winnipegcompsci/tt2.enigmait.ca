@@ -598,7 +598,7 @@ class WtcrVendorsController extends AppController
             $page_content = curl_exec($ch);        
             $page_info = curl_getinfo($ch);
             
-            echo "<pre>" . $page_content . "</pre>";            
+            echo "<pre>Page Content:: " . $page_content . "</pre>";            
             // error_log("PAGE INFO: " . print_r($page_info, TRUE));
                 
             curl_close($ch);                    // Close the Curl Handler.
