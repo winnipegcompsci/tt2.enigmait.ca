@@ -714,6 +714,7 @@ class WtcrVendorsController extends AppController
             unset($product_prices);
             unset($product_skus);
             unset($product_names);
+            unset($product_mpns);
         
             $index++;
         } //end foreach product type.
