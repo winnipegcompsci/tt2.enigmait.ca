@@ -406,9 +406,6 @@ class WtcrVendorsController extends AppController
             $index++;
         }
         
-        error_log('Size of Attributes = {Index = ' . $index . ' PNO:' . count($pno) 
-            . ' PNA: ' . count($pna) . ' Prices: ' . count($prices));
-        
         $index = 0;
         
         while($index < count($pno)) {
@@ -447,12 +444,10 @@ class WtcrVendorsController extends AppController
                     $thisProduct->vendor_price = trim($prices[$index]);
                     $thisProduct->wtcr_product_category_id = 1;
                     $thisProduct->last_updated = date('Y-m-d H:i:s');
-                    // error_log('Creating New Longtech Product');
                 } else {
                     $thisProduct->vendor_price = $prices[$index];
                     $thisProduct->last_updated = date('Y-m-d H:i:s');
                     $thisProduct->mfg_part_num = $mfg_part_num;
-                    // error_log('Updating Existing Longtech Product');
                 }
                 
                 if($vendorProducts->save($thisProduct)) {
@@ -672,8 +667,7 @@ class WtcrVendorsController extends AppController
                 }
                 
                 $skuParts = explode("-", trim($product_skus[$pos]));                  
-                    
-                    
+                                        
                 if(count($skuParts) > 2) {
                     $partNumParts = array_slice($skuParts, 1);
                     $mfg_part_num = implode('-', $partNumParts);
@@ -705,12 +699,10 @@ class WtcrVendorsController extends AppController
                 if($vendorProducts->save($thisProduct)) {
                     error_log('Saved #' . $thisProduct->id . '::' . $product_names[$pos] . ' with Product Number: ' . $product_skus[$pos]);
                 } else {
-                    error_log("ERROR SAVING: " . $thisProduct->errors());
                     // error_log('Failed to Save ' . $product_names[$pos]. ' properly');
                 }
                
                 $message = "Adding " . $productType . " product " . $pos . "/" . $totalNumProducts . " from ASI -- " . number_format(($index / count($productTypes))*100, 2) . "% complete scan";
-                // error_log($message);
                 $this->asi_update_progress($key, $message, number_format(($index / count($productTypes))*100, 2));
             } // end for add to database loop.
            
