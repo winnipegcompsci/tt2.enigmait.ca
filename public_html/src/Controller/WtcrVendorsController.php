@@ -694,7 +694,7 @@ class WtcrVendorsController extends AppController
                 } else {
                     $thisProduct->vendor_price = $product_prices[$pos];
                     $thisProduct->last_updated = date('Y-m-d H:i:s');
-                    $thisProduct->mfg_part_num = $prodjuct_mpns[$pos];
+                    $thisProduct->mfg_part_num = $product_mpns[$pos];
                     $thisProduct->wtcr_vendor_id = 3;
 
                 }
