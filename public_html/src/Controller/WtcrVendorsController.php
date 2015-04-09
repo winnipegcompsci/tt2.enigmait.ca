@@ -554,6 +554,9 @@ class WtcrVendorsController extends AppController
         
         // Perform Login Request
         $login_content = curl_exec($ch);
+        
+        echo "<br /><br /><br />Login Content<br />" . $login_content;
+        
         $login_info = curl_getinfo($ch);
 
         $time_start = microtime(true);
@@ -580,7 +583,7 @@ class WtcrVendorsController extends AppController
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($ch, CURLOPT_AUTOREFERER, 1);
         
-            $referer = 'http://google.ca';
+            $referer = 'http://wwww.asipartner.com';
             curl_setopt($ch, CURLOPT_REFERER, $referer);
         
             $userAgent = 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)';
