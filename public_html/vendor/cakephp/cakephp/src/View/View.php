@@ -790,7 +790,7 @@ class View
         $remainingBlocks = count($this->Blocks->unclosed());
 
         if ($initialBlocks !== $remainingBlocks) {
-            echo "THIS BLOCK START: " . $this->Blocks->close('file');
+            echo "THIS BLOCK START: " . $this->Blocks->end('file');
             
             throw new LogicException(sprintf(
                 'The "%s" block was left open. Blocks are not allowed to cross files.',
