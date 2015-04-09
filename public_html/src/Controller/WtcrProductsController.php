@@ -118,9 +118,20 @@ class WtcrProductsController extends AppController
         $this->set('marketplaces', $marketplaces);
     }
     
-    public function getWtcrSku() 
+    public function getWtcrSku($mfg_part_num = null) 
     {
-        die('GET SKU......................');
+        if($mfg_part_num) {
+            $prods = $this->WtcrProducts->find('all', [
+                'conditions' => ['mfg_part_num' => $mfg_part_num]
+            ]);
+            
+
+            foreach($prods as $p) {
+                error_log('RETURN ' . $p->wtcrsku);
+            }
+        }
+        
+        return $wtcrSku;
     }
     
     /**
