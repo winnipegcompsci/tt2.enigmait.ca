@@ -682,11 +682,6 @@ class WtcrVendorsController extends AppController
                     $mfg_part_num = implode('-', $partNumParts);
                 }
                 
-                
-                error_log("DEBUG: # product_names " . count($product_names));
-                error_log("DEBUG: # product_prices " . count($product_prices));
-                error_log("DEBUG: # product_skus " . count($product_skus));
-                
                 if(!$thisProduct) {                
                     $thisProduct = $vendorProducts->newEntity();
                     $thisProduct->product_name = trim($product_names[$pos]);
@@ -712,7 +707,7 @@ class WtcrVendorsController extends AppController
                     // error_log("<pre>" . print_r($vendorProducts, TRUE) . "</pre>");
                 }
                
-                $message = "Adding " . $productType . " product " . $pos . " of " . $totalNumProducts . " to database";
+                $message = "Adding " . $productType . " product " . $pos . " of " . number_format(($index / count($productTypes))*100, 2) . " to database";
                 error_log($message);
                 $this->asi_update_progress($key, $message, number_format(($index / count($productTypes))*100, 2));
             } // end for add to database loop.
