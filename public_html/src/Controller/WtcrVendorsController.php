@@ -700,10 +700,13 @@ class WtcrVendorsController extends AppController
 
                 }
                 
+                error_log('Attempting to save...');
                 if($vendorProducts->save($thisProduct)) {
                     error_log('Saved ' . $product_names[$pos] . ' with Product Number: ' . $product_skus[$pos]);
                 } else {
-                    error_log('Failed to Save ' . $product_names[$pos]. ' properly');
+                    error_log($thisProduct->errors());
+                    die();
+                    // error_log('Failed to Save ' . $product_names[$pos]. ' properly');
                     // error_log("<pre>" . print_r($vendorProducts, TRUE) . "</pre>");
                 }
                
