@@ -587,7 +587,7 @@ class WtcrVendorsController extends AppController
         
             // Perform Login Request
             $page_content = curl_exec($ch);
-            error_log($page_content);
+            die($page_content);
             $page_info = curl_getinfo($ch);
         
             // error_log("PAGE INFO: " . print_r($page_info, TRUE));
