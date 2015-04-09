@@ -142,11 +142,9 @@ class WtcrProductsController extends AppController
         if(!empty($mfg_part_num)) 
         {
             return 'WTCR-' . $mfg_part_num;
-        } else {
-            return 'W-' . rand(1000, 9999) . '-' . rand(1000, 9999) . '-01'; 
-        }
+        } 
         
-        $wtcrSKU = 'WTCR-' . $mfg_part_num
+        return 'W-' . rand(1000, 9999) . '-' . rand(1000, 9999) . '-01'; 
     }
     
     /**
