@@ -642,8 +642,10 @@ class WtcrVendorsController extends AppController
                 die("html variable is empty. Please check your query again!");
             }
     
-            $totalNumProducts += count($product_skus);
-                   
+            if(isset($product_skus)) {
+                $totalNumProducts += count($product_skus);
+            }
+            
             // Add Last Scraped Category Products to Database.
             for($pos = 0; $pos < count($product_skus); $pos++) {
                 // Save ASI Product to Database.
