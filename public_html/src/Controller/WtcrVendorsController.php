@@ -225,6 +225,10 @@ class WtcrVendorsController extends AppController
                         $product = $prod;
                     }
                     
+                    $skuParts = explode("-", $supplier_sku);
+                    
+                    $mfg_part_num = end($skuParts);
+                    
                     
                     if(!$product) {
                         $product = $products->newEntity();
@@ -233,7 +237,7 @@ class WtcrVendorsController extends AppController
                         $product->product_name = $description;
                         $product->wtcr_vendor_id = 1;				  // Replace this with Fetched ID After.
                         $product->wtcr_vendor_sku = $supplier_sku;
-                        $product->mfg_part_num = $supplier_sku;       // Create a VENDOR_SKU -> WTCR_SKU FUNC
+                        $product->mfg_part_num = $mfg_part_num;       // Create a VENDOR_SKU -> WTCR_SKU FUNC
 						$product->vendor_price = $supplier_price;
                         $product->wtcr_product_category_id = 1;
                         $product->last_updated = date('Y-m-d H:i:s');
@@ -241,7 +245,7 @@ class WtcrVendorsController extends AppController
                         $product->product_name = $description;
                         $product->wtcr_vendor_id = 1;				 // Replace this with Fetched ID After
                         $product->wtcr_vendor_sku = $supplier_sku;
-                        $product->mfg_part_num = $supplier_sku;       // Create a VENDOR_SKU -> WTCR_SKU FUNC
+                        $product->mfg_part_num = $mfg_part_num;       // Create a VENDOR_SKU -> WTCR_SKU FUNC
                         $product->vendor_price = $supplier_price;
                         $product->wtcr_product_category_id = 1;				// Options: $category.
                         $product->last_updated = date('Y-m-d H:i:s');
@@ -352,17 +356,21 @@ class WtcrVendorsController extends AppController
         
             $html = str_get_html($login_content);
        
-            if(!empty($html)) {        
+            if(!empty($html)) {
+                error_log("Index = " . $index);
                 foreach($html->find('p.pno') as $number) {
                     $pno[] = str_replace("ID:", "", $number->innertext);
+                    error_log("Vendor SKU: " . $number->innertext);
                 }
                 
                 foreach($html->find('p.pna') as $name) {
                     $pna[] = $name->innertext;
+                    error_log("Product Name: " . $name->innertext);
                 }
                 
                 foreach($html->find('p.price') as $price) {
                     $prices[] = str_replace('$', '', $price->innertext);
+                    error_log("Price: $" . $price->innertext);
                 }
             } 
             
@@ -384,12 +392,14 @@ class WtcrVendorsController extends AppController
                 foreach($existing_prods as $prod) {
                     $thisProduct = $prod;
                 }
-
+                
                 if(!$thisProduct) {                
                     $thisProduct = $vendorProducts->newEntity();
                     $thisProduct->product_name = trim($pna[$index]);
                     $thisProduct->wtcr_vendor_id = 2;
                     $thisProduct->wtcr_vendor_sku = trim($pno[$index]);
+                    
+                    $mfg_part_num = end(explode(',', $pno[$index]));
                     $thisProduct->mfg_part_num = substr(trim($pno[$index]), strpos(trim($pno[$index]), '-', strpos(trim($pno[$index]), '-')) + 1);
                     $thisProduct->vendor_price = trim($prices[$index]);
                     $thisProduct->wtcr_product_category_id = 1;
