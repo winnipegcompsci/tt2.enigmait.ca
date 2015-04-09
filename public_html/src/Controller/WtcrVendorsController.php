@@ -622,6 +622,7 @@ class WtcrVendorsController extends AppController
                             $thisSKU = str_replace('\t', '', $thisSKU);
                             
                             $thisSKU = trim($thisSKU);
+                            error_log('FOUND ASI SKU: ' . $thisSKU);
                             
                             $product_skus[] = $thisSKU;                         // Add SKU to Array
                         } // if includes SKU: in li string.
