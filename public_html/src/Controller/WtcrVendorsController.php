@@ -596,6 +596,7 @@ class WtcrVendorsController extends AppController
             $html = str_get_html($page_content);
                
             if(!empty($html)) {
+                error_log('HTML NOT EMPTY!!!!!');
                 // error_log('HTML Not EMPTY' . print_r($html->find('body'), TRUE) );
                 foreach($html->find('dd.specs') as $specs) {
                     // Look for each List Item in Specs.
@@ -640,6 +641,7 @@ class WtcrVendorsController extends AppController
                     }                              
                 } // end foreach Price
             } else {
+                error_log('HTML Was Empty');
                 die("html variable is empty. Please check your query again!");
             }
     
