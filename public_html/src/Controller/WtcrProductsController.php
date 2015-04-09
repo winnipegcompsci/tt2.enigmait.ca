@@ -93,7 +93,7 @@ class WtcrProductsController extends AppController
                 // echo "FAILED TO SAVE WTCR PRODUCT!!!<pre>" . print_r($this->WtcrProducts, TRUE) . "</pre>";
                 $this->Flash->error('The Vendor Product could not be saved as a WTCR Product.');
                 echo "DEBUG ERROR <pre>" . print_r($wtcrProduct->toArray(), TRUE) . "</pre>";
-                echo "NEW PRODUCT <pre>" . print_r($this->WtcrProducts->newEntity()->toArray(), TRUE) . "</pre>";
+                echo "NEW PRODUCT <pre>" . print_r($this->WtcrProducts->newEntity(), TRUE) . "</pre>";
             }
                        
         }        
