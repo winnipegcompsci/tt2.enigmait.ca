@@ -639,6 +639,10 @@ class WtcrVendorsController extends AppController
                 die("html variable is empty. Please check your query again!");
             }
     
+            error_log('COUNTS: PROD NAMES: ' . count($product_names) . 
+                ' PROD SKUS: ' . count($product_skus) .
+                ' PROD PRICES: ' . count($product_prices);
+    
             $totalNumProducts += count($product_skus);
                    
             // Add Last Scraped Category Products to Database.
