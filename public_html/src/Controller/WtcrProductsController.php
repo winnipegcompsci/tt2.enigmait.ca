@@ -92,8 +92,9 @@ class WtcrProductsController extends AppController
             } else {
                 // echo "FAILED TO SAVE WTCR PRODUCT!!!<pre>" . print_r($this->WtcrProducts, TRUE) . "</pre>";
                 $this->Flash->error('The Vendor Product could not be saved as a WTCR Product.');
-                echo "DEBUG ERROR <pre>" . print_r($wtcrProduct->toArray(), TRUE) . "</pre>";
-                echo "NEW PRODUCT <pre>" . print_r($this->WtcrProducts->newEntity(), TRUE) . "</pre>";
+                echo "DEBUG: <pre>" . print_r($this->WtcrProducts, TRUE) . "</pre>";
+                // echo "DEBUG ERROR <pre>" . print_r($wtcrProduct->toArray(), TRUE) . "</pre>";
+                // echo "NEW PRODUCT <pre>" . print_r($this->WtcrProducts->newEntity(), TRUE) . "</pre>";
             }
                        
         }        
@@ -172,7 +173,7 @@ class WtcrProductsController extends AppController
         $this->set(compact('wtcrProduct', 'wtcrProductCategories'));
         $this->set('_serialize', ['wtcrProduct']);
     }
-
+    
     /**
      * Delete method
      *
