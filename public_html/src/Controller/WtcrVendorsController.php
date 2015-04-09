@@ -227,8 +227,9 @@ class WtcrVendorsController extends AppController
                     
                     $skuParts = explode("-", $supplier_sku);
                     
-                    $mfg_part_num = end($skuParts);
+                    $partNumParts = array_slice($skuParts, -2, 2);
                     
+                    $mfg_part_num = implode('-', $partNumParts);
                     
                     if(!$product) {
                         $product = $products->newEntity();
@@ -259,8 +260,8 @@ class WtcrVendorsController extends AppController
 					} else {
 						error_log('Failed to Fetch EPROM Product');
 						// echo "<pre><br />Product:: " . print_r($product, TRUE) . "</pre>";
-						echo "<pre><br />Products:: " . print_r($products, TRUE) . "</pre>";
-						die();
+						// echo "<pre><br />Products:: " . print_r($products, TRUE) . "</pre>";
+						// die();
 					}
                 }
             }
@@ -358,6 +359,7 @@ class WtcrVendorsController extends AppController
        
             if(!empty($html)) {
                 error_log("Index = " . $index);
+                
                 foreach($html->find('p.pno') as $number) {
                     $pno[] = str_replace("ID:", "", $number->innertext);
                     error_log("Vendor SKU: " . $number->innertext);
