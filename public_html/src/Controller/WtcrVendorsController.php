@@ -593,7 +593,7 @@ class WtcrVendorsController extends AppController
                 
             curl_close($ch);                    // Close the Curl Handler.
         
-            $html = str_get_html($page_content);
+            $html = $this->str_get_html($page_content);
                
             if(!empty($html)) {
                 error_log('HTML NOT EMPTY');
