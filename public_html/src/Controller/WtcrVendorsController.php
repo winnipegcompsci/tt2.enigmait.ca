@@ -393,7 +393,8 @@ class WtcrVendorsController extends AppController
             . ' PNA: ' . count($pna) . ' Prices: ' . count($prices));
         
         $index = 0;
-        while($index < $curPage) {
+        
+        while($index < count($pno)) {
             // $longtech_products[] = array($pno[$index], $pna[$index], $prices[$index]);
             $thisProduct = FALSE;
                 
