@@ -107,12 +107,20 @@ class WtcrProductsController extends AppController
         $marketplaces = TableRegistry::get('wtcr_marketplaces')->find('all');
         $wtcrProductCategories = $this->WtcrProducts->WtcrProductCategories->find('list', ['limit' => 200]);
         
+        $this_wtcr_sku = getWtcrSku($mfg_part_num);
+        
         $this->set('this_product', $wtcrProduct);
         $this->set('productVendors', $productVendors);
+        $this->set('this_wtcr_sku', $this_wtcr_sku);
         $this->set('mfg_part_num', $mfg_part_num);
         $this->set('wtcrProduct', $wtcrProduct);
         $this->set('categories', $wtcrProductCategories);
         $this->set('marketplaces', $marketplaces);
+    }
+    
+    public function getWtcrSku() 
+    {
+        die('GET SKU......................');
     }
     
     /**

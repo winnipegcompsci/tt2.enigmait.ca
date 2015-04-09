@@ -117,9 +117,5 @@ class AppController extends Controller
 		
 		
 	}
-    
-    public function getWtcrSku() 
-    {
-        die('DEBUUUUUUUUUUUUUUUUUUUUUUG');
-    }
+   
 }
