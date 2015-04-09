@@ -562,7 +562,7 @@ class WtcrVendorsController extends AppController
             $duration = number_format(microtime(true) - $time_start, 1);
         
             $message = 'Searching Product Category: ' . $productType . ', (elapsed time: ' . $duration . ' seconds, ' . $totalNumProducts . ' products scraped)';
-            asi_update_progress($key, $message, number_format(($index / count($productTypes))*100, 2));
+            $this->asi_update_progress($key, $message, number_format(($index / count($productTypes))*100, 2));
         
             // Setup Request for Page/Product Category Content
             $ch = curl_init();
@@ -641,6 +641,7 @@ class WtcrVendorsController extends AppController
                    
             // Add Last Scraped Category Products to Database.
             for($pos = 0; $pos < count($product_skus); $pos++) {
+                /*
                 $status = db_merge('prodmgr_supplier_prices')
                     ->insertFields(array(
                         'supplier_id' => $asi['supplier_id'],
@@ -661,9 +662,9 @@ class WtcrVendorsController extends AppController
                 } else if ($status == MergeQuery::STATUS_UPDATE) {
                     // $output .= "<br />Updated Existing Item: " . $product_names[$pos] . " @ " . $product_prices[$pos];
                 }
-                
+                */
                 $message = "Adding " . $productType . " product " . $pos . " of " . count($product_skus) . " to database";
-                update_progress($key, $message, number_format(($index / count($productTypes))*100, 2));
+                $this->asi_update_progress($key, $message, number_format(($index / count($productTypes))*100, 2));
             } // end for add to database loop.
            
             unset($html);
