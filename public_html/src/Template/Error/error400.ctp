@@ -25,7 +25,7 @@ if (Configure::read('debug')):
         xdebug_print_function_stack();
     endif;
 
-    $this->end('file');
+
 endif;
 ?>
 <h2><?= h($message) ?></h2>
@@ -34,5 +34,9 @@ endif;
     <?= sprintf(
         __d('cake', 'The requested address %s was not found on this server.'),
         "<strong>'{$url}'</strong>"
-    ) ?>
+    ) 
+    
+    // $this->end('file');
+    
+    ?>
 </p>

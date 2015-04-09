@@ -79,7 +79,7 @@ use Cake\Error\Debugger;
                                 echo sprintf('<li>%s%s</li>', h($path), h($file));
 							endforeach; 
                         
-                            $this->end('file');
+                            // $this->end('file');
                         ?>
 						</ul>
 						<!-- CAKE PHP CALLS -------------------------------------------------->
