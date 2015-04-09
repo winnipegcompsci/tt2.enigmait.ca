@@ -611,7 +611,7 @@ class WtcrVendorsController extends AppController
                     // error_log("FOUND SPECS");
                     // Look for each List Item in Specs.
                     foreach($specs->find('li') as $listItem) {               
-                        // error_log("FOUND LIST ITEM: " . print_r($listItem, TRUE) );
+                        error_log("FOUND LIST ITEM: " . print_r($listItem, TRUE) );
                         if(strpos($listItem, 'SKU') !== FALSE) {
                             // error_log("LIST ITEM: " . $listItem);
                             $thisSKU = str_replace('SKU:', '', $listItem);
@@ -622,8 +622,6 @@ class WtcrVendorsController extends AppController
                             $thisSKU = str_replace('\t', '', $thisSKU);
                             
                             $thisSKU = trim($thisSKU);
-                            error_log('FOUND ASI SKU: ' . $thisSKU);
-                            
                             $product_skus[] = $thisSKU;                         // Add SKU to Array
                         } // if includes SKU: in li string.
                     } // end foreach li
