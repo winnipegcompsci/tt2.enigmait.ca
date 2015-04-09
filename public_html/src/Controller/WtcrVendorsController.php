@@ -581,7 +581,7 @@ class WtcrVendorsController extends AppController
             curl_setopt($ch, CURLOPT_URL, $thisURL);
             curl_setopt($ch, CURLOPT_HEADER, 1);
             curl_setopt($ch, CURLOPT_POST, 1);
-            // curl_setopt($ch, CURLOPT_POSTFIELDS, 'username=' . $username . '&password1=' . $password . "&action=login_save");
+            curl_setopt($ch, CURLOPT_POSTFIELDS, 'username=' . $username . '&password1=' . $password . "&action=login_save");
             curl_setopt($ch, CURLOPT_COOKIEFILE, $cookieFile);
             curl_setopt($ch, CURLOPT_COOKIEJAR, $cookieFile);
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
