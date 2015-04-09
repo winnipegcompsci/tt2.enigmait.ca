@@ -611,7 +611,7 @@ class WtcrVendorsController extends AppController
                     // error_log("FOUND SPECS");
                     // Look for each List Item in Specs.
                     foreach($specs->find('li') as $listItem) {               
-                        error_log("FOUND LIST ITEM: " . print_r($listItem, TRUE) );
+                        // error_log("FOUND LIST ITEM: " . print_r($listItem, TRUE) );
                         if(strpos($listItem, 'SKU') !== FALSE) {
                             // error_log("LIST ITEM: " . $listItem);
                             $thisSKU = str_replace('SKU:', '', $listItem);
@@ -632,7 +632,7 @@ class WtcrVendorsController extends AppController
                     
                     foreach($nameSource->find('a') as $link) {
                         $thisName = trim($link->innertext);              // Add Name to Array
-                        error_log('THIS NAME: ' . $thisName);
+                        // error_log('THIS NAME: ' . $thisName);
                         $product_names[] = $thisName;
                     }
                 } // end foreach Name
@@ -644,14 +644,14 @@ class WtcrVendorsController extends AppController
                         if(strpos($span, '$') !== FALSE) {
                             $thisPrice = trim($span->innertext);
                             $thisPrice = str_replace('$', '', $thisPrice);
-                            error_log('This Price: ' . $thisPrice); 
+                            // error_log('This Price: ' . $thisPrice); 
                             
                             $product_prices[] = $thisPrice;
                         }
                     }                              
                 } // end foreach Price
             } else {
-                error_log('HTML Was Empty');
+                // error_log('HTML Was Empty');
                 die("html variable is empty. Please check your query again!");
             }
     
@@ -708,7 +708,7 @@ class WtcrVendorsController extends AppController
                 }
                
                 $message = "Adding " . $productType . " product " . $pos . "/" . $totalNumProducts . " from ASI -- " . number_format(($index / count($productTypes))*100, 2) . "% complete scan";
-                error_log($message);
+                // error_log($message);
                 $this->asi_update_progress($key, $message, number_format(($index / count($productTypes))*100, 2));
             } // end for add to database loop.
            
