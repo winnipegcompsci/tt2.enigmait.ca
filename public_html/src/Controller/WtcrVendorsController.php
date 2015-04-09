@@ -618,7 +618,20 @@ class WtcrVendorsController extends AppController
                             
                             $thisSKU = trim($thisSKU);
                             $product_skus[] = $thisSKU;                         // Add SKU to Array
+                            
                         } // if includes SKU: in li string.
+                        
+                        if(strpos($listItem, 'MFG.') !== FALSE) {
+                            $thisPN = str_replace('MFG.ID:', '', $listItem);
+                            $thisPN = str_replace('<span>', '', $thisPN);
+                            $thisPN = str_replace('</span>', '', $thisPN);
+                            $thisPN = str_replace('<li>', '', $thisPN);
+                            $thisPN = str_replace('</li>', '', $thisPN);
+                            $thisPN = str_replace('\t', '', $thisPN);
+                            
+                            $thisPN = trim($thisPN);
+                            $product_mpns[] = $thisPN;
+                        }
                     } // end foreach li
                 } // end foreach SKU
                 
@@ -666,23 +679,14 @@ class WtcrVendorsController extends AppController
                     $thisProduct = $prod;
                 }
                 
-                $skuParts = explode("-", trim($product_skus[$pos]));                  
-                                        
-                if(count($skuParts) > 2) {
-                    $partNumParts = array_slice($skuParts, 1);
-                    $mfg_part_num = implode('-', $partNumParts);
-                } else {
-                    $partNumParts = array_slice ($skuParts, -2);
-                    $mfg_part_num = implode('-', $partNumParts);
-                }
-                
+               
                 if(!$thisProduct) {                
                     $thisProduct = $vendorProducts->newEntity();
                     $thisProduct->product_name = trim($product_names[$pos]);
                     $thisProduct->wtcr_vendor_id = 3;
                     $thisProduct->wtcr_vendor_sku = trim($product_skus[$pos]);                  
                     
-                    $thisProduct->mfg_part_num = $mfg_part_num;
+                    $thisProduct->mfg_part_num = $product_mpns[$pos];
                     $thisProduct->vendor_price = trim($product_prices[$pos]);
                     $thisProduct->wtcr_product_category_id = 1;
                     $thisProduct->last_updated = date('Y-m-d H:i:s');
@@ -690,7 +694,7 @@ class WtcrVendorsController extends AppController
                 } else {
                     $thisProduct->vendor_price = $product_prices[$pos];
                     $thisProduct->last_updated = date('Y-m-d H:i:s');
-                    $thisProduct->mfg_part_num = $mfg_part_num;
+                    $thisProduct->mfg_part_num = $prodjuct_mpns[$pos];
                     $thisProduct->wtcr_vendor_id = 3;
 
                 }
