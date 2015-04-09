@@ -407,22 +407,23 @@ class WtcrVendorsController extends AppController
                     $thisProduct = $prod;
                 }
                 
+                $skuParts = explode("-", trim($pno[$index]));                  
+                    
+                    
+                if(count($skuParts) > 2) {
+                    $partNumParts = array_slice($skuParts, 2);
+                    $mfg_part_num = implode('-', $partNumParts);
+                } else {
+                    $partNumParts = array_slice ($skuParts, -2);
+                    $mfg_part_num = implode('-', $partNumParts);
+                }
+                
+                
                 if(!$thisProduct) {                
                     $thisProduct = $vendorProducts->newEntity();
                     $thisProduct->product_name = trim($pna[$index]);
                     $thisProduct->wtcr_vendor_id = 2;
-                    $thisProduct->wtcr_vendor_sku = trim($pno[$index]);
-                    
-                    $skuParts = explode("-", trim($pno[$index]));                  
-                    
-                    if(count($skuParts) > 2) {
-                        $partNumParts = array_slice($skuParts, 2);
-                        $mfg_part_num = implode('-', $partNumParts);
-                    } else {
-                        $partNumParts = array_slice ($skuParts, -2);
-                        $mfg_part_num = implode('-', $partNumParts);
-                    }               
-                    
+                    $thisProduct->wtcr_vendor_sku = trim($pno[$index]);                  
                     
                     $thisProduct->mfg_part_num = $mfg_part_num;
                     $thisProduct->vendor_price = trim($prices[$index]);
