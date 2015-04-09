@@ -411,7 +411,7 @@ class WtcrVendorsController extends AppController
                     
                     $skuParts = explode("-", trim($pno[$index]));                  
                     
-                    if(count($skuParts) > 3) {
+                    if(count($skuParts) > 2) {
                         $partNumParts = array_slice($skuParts, 2);
                         $mfg_part_num = implode('-', $partNumParts);
                     } else {
@@ -420,7 +420,7 @@ class WtcrVendorsController extends AppController
                     }               
                     
                     
-                    $thisProduct->mfg_part_num = substr(trim($pno[$index]), strpos(trim($pno[$index]), '-', strpos(trim($pno[$index]), '-')) + 1);
+                    $thisProduct->mfg_part_num = $mfg_part_num;
                     $thisProduct->vendor_price = trim($prices[$index]);
                     $thisProduct->wtcr_product_category_id = 1;
                     $thisProduct->last_updated = date('Y-m-d H:i:s');
@@ -428,6 +428,7 @@ class WtcrVendorsController extends AppController
                 } else {
                     $thisProduct->vendor_price = $prices[$index];
                     $thisProduct->last_updated = date('Y-m-d H:i:s');
+                    $thisProduct->mfg_part_num = $mfg_part_num;
                     error_log('Updating Existing Longtech Product');
                 }
                 
