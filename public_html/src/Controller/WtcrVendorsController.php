@@ -675,9 +675,6 @@ class WtcrVendorsController extends AppController
         } //end foreach product type.
 
         $output .= '<br />' . l('Go Back to ASI Products $', '/admin/config/prodmgr/suppliers/asi');
-       
-        
     
-    } ./end fetch
-    
+    } // done I think lol 
 }   
