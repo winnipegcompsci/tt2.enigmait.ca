@@ -712,7 +712,7 @@ class WtcrVendorsController extends AppController
                     // error_log("<pre>" . print_r($vendorProducts, TRUE) . "</pre>");
                 }
                
-                $message = "Adding " . $productType . " product " . $pos . " of " . count($product_skus) . " to database";
+                $message = "Adding " . $productType . " product " . $pos . " of " . $totalNumProducts . " to database";
                 error_log($message);
                 $this->asi_update_progress($key, $message, number_format(($index / count($productTypes))*100, 2));
             } // end for add to database loop.
