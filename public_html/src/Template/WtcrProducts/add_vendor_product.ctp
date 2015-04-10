@@ -19,7 +19,7 @@
             
             echo $this->Form->input('wtcr_product_name', ['default' => isset($default_name) ? $default_name : '']);
             echo $this->Form->label('Product Category');
-            echo $this->Form->select('wtcr_product_category', $categories, ['label' => 'Product Category', 'default' => 1]);
+            echo $this->Form->select('wtcr_product_category_id', $categories, ['label' => 'Product Category', 'default' => 1]);
             echo $this->Form->input('description');
             
             $autoupdate_opts = [
