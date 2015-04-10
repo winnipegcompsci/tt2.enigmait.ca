@@ -3,8 +3,6 @@
         $default_name = $item->product_name;
         $vendor_price = $item->vendor_price;
     }
-
-    echo "Adding Vendor Product::: <pre>" . print_r($this->getVars(), TRUE) . "</pre>";
 ?>
 
 <div class="wtcrProducts form col-lg-6 col-md-6 columns pull-left">
