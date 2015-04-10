@@ -23,6 +23,5 @@ class WtcrVendorProduct extends Entity
         'wtcr_product_category_id' => true,
         'last_updated' => true,
         'wtcr_vendor' => true,
-        'wtcr_product_category' => true,
     ];
 }
