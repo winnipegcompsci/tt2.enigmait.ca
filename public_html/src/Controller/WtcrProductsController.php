@@ -95,7 +95,7 @@ class WtcrProductsController extends AppController
                 $this->Flash->error('The Vendor Product could not be saved as a WTCR Product.');
             }
             
-            return $this->redirect(['controller' => 'wtcr_products', 'action' => 'add_vendor_product', $mfg_part_num ]);
+            
         }        
         
         $productVendors = TableRegistry::get('wtcr_vendor_products')->find('all', [
@@ -116,6 +116,8 @@ class WtcrProductsController extends AppController
         $this->set('wtcrProduct', $wtcrProduct);
         $this->set('categories', $wtcrProductCategories);
         $this->set('marketplaces', $marketplaces);
+        
+        return $this->redirect(['controller' => 'wtcr_products', 'action' => 'add_vendor_product', $mfg_part_num ]);
     }
     
     public function getWtcrSku($mfg_part_num = null) 
