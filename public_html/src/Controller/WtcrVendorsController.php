@@ -262,9 +262,6 @@ class WtcrVendorsController extends AppController
                         $product->last_updated = date('Y-m-d H:i:s');
                     }
                     
-					
-					// error_log('Product::3::' . print_r($product, TRUE) );
-					
                     if($products->save($product)) {
 						$numProdSaved++;
 					} else {

@@ -1,17 +1,12 @@
 Functionality:
 -------------------------------------------------------------------------------
 Vendor Products................................................................
--Impolement Fetching from Longtech              (Ajax Progressor)	
--Implement Fetching from ASI                    (Ajax Progressor)
-
 -Implement Fetch from EPROM				        (Cron Call - No Interface)
 -Implement Fetching from Longtech			    (Cron Call - No Interface)
 -Implement Fetching from ASI 				    (Cron Call - No Interface)
-
-- Adding a Vendor Product as a WTCR Products 
         
-Receive Products:
-- (WTCR Product Gets Used to Create an Inventory Entity).......................
+Receive Products...............................................................
+- (WTCR Product Gets Used to Create an Inventory Entity)
 - Creates Inventory Item from WTCR Product + Vendor Product Info.
     -Gets Serial Numbers, Unique Instance Information, 
 
