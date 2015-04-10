@@ -1270,13 +1270,19 @@ class Table implements RepositoryInterface, EventListenerInterface
     public function save(EntityInterface $entity, $options = [])
     {
         // echo "Debug:: <pre>" . debug($options) . "</pre>"; // DEBUG.
+        $options['atomic'] = true;
+        $options['associated'] = true;
+        $options['checkRules'] = false;
+        $options['checkExisting'] = true;
         
+        /*
         $options = new ArrayObject($options + [
             'atomic' => true,
             'associated' => true,
             'checkRules' => true,
             'checkExisting' => true
         ]);
+        */
 
         if ($entity->errors()) {
             return false;
