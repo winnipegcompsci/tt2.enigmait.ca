@@ -67,6 +67,7 @@ class WtcrProductsController extends AppController
     {   
         $wtcrProduct = $this->WtcrProducts->newEntity();   
 
+        echo "<pre> About to enter Post </pre>";
         
         if($this->request->is('post')) {
             // echo "<pre>" . print_r($wtcrProduct, TRUE) . "</pre>";
@@ -74,6 +75,7 @@ class WtcrProductsController extends AppController
         
             $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
            
+            echo "<pre>WTCR Product:: " . print_r($wtcrProduct, TRUE) . "</pre>";
             $wtcrProduct->createnode = 0;
             $wtcrProduct->lastupdated = date("Y-m-d H:i:s");
             $wtcrProduct->wtcr_nid = 0;
