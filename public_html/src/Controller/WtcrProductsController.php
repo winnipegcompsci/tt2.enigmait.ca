@@ -73,14 +73,14 @@ class WtcrProductsController extends AppController
         
             $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
            
-            echo "<pre>WTCR Product:: " . print_r($wtcrProduct->errors(), TRUE) . "</pre>";
-            $wtcrProduct->createnode = 0;
+            // $wtcrProduct->createnode = 0;
             $wtcrProduct->lastupdated = date("Y-m-d H:i:s");
-            $wtcrProduct->wtcr_nid = 0;
-            $wtcrProduct->marketplace_data = serialize( array() );
-            $wtcrProduct->pictures = serialize( array() );
+            // $wtcrProduct->wtcr_nid = 0;
+            // $wtcrProduct->marketplace_data = serialize( array() );
+            // $wtcrProduct->pictures = serialize( array() );
             // $wtcrProduct->wtcr_product_category = $this->request->data['wtcr_product_category_id'];
-            $wtcrProduct->wtcr_product_category_id = $this->request->data['wtcr_product_category_id'];
+            // $wtcrProduct->wtcr_product_category_id = $this->request->data['wtcr_product_category_id'];
+            echo "<pre>WTCR Product:: " . print_r($wtcrProduct->errors(), TRUE) . "</pre>";
             
             
 
