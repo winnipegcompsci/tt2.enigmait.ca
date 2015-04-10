@@ -4,7 +4,7 @@
         $vendor_price = $item->vendor_price;
     }
     
-    $blockContent = $this->Blocks->get('file');
+    $blockContent = $this->Blocks->get();
     echo "Content of Block['file']:: <pre>" . print_r($blockContent, TRUE) . "</pre>";
 ?>
 
