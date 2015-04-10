@@ -1269,6 +1269,8 @@ class Table implements RepositoryInterface, EventListenerInterface
      */
     public function save(EntityInterface $entity, $options = [])
     {
+        echo "Debug:: <pre>" . debug($options) . "</pre>"; // DEBUG.
+        
         $options = new ArrayObject($options + [
             'atomic' => true,
             'associated' => true,
