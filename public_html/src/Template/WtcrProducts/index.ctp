@@ -7,47 +7,55 @@
     </ul>
 </div>
 <div class="wtcrProducts index col-lg-10 col-md-9 columns">
-    <table cellpadding="0" cellspacing="0">
-    <thead>
-        <tr>
-            <th><?= $this->Paginator->sort('id') ?></th>
-            <th><?= $this->Paginator->sort('mfg_part_num') ?></th>
-            <th><?= $this->Paginator->sort('wtcrsku') ?></th>
-            <th><?= $this->Paginator->sort('wtcr_product_category_id') ?></th>
-            <th><?= $this->Paginator->sort('wtcr_product_name') ?></th>
-            <th><?= $this->Paginator->sort('autoupdate') ?></th>
-            <th><?= $this->Paginator->sort('static_price') ?></th>
-            <th class="actions"><?= __('Actions') ?></th>
-        </tr>
-    </thead>
-    <tbody>
-    <?php foreach ($wtcrProducts as $wtcrProduct): ?>
-        <tr>
-            <td><?= $this->Number->format($wtcrProduct->id) ?></td>
-            <td><?= h($wtcrProduct->mfg_part_num) ?></td>
-            <td><?= h($wtcrProduct->wtcrsku) ?></td>
-            <td>
-                <?= $wtcrProduct->has('wtcr_product_category') ? $this->Html->link($wtcrProduct->wtcr_product_category->category_name, ['controller' => 'WtcrProductCategories', 'action' => 'view', $wtcrProduct->wtcr_product_category->id]) : '' ?>
-            </td>
-            <td><?= h($wtcrProduct->wtcr_product_name) ?></td>
-            <td><?= $this->Number->format($wtcrProduct->autoupdate) ?></td>
-            <td><?= $this->Number->format($wtcrProduct->static_price) ?></td>
-            <td class="actions">
-                <?= $this->Html->link(__('View'), ['action' => 'view', $wtcrProduct->id]) ?>
-                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $wtcrProduct->id]) ?>
-                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $wtcrProduct->id], ['confirm' => __('Are you sure you want to delete # {0}?', $wtcrProduct->id)]) ?>
-            </td>
-        </tr>
-
-    <?php endforeach; ?>
-    </tbody>
-    </table>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-        </ul>
-        <p><?= $this->Paginator->counter() ?></p>
-    </div>
-</div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <i class="fa fa-ticket fa-2x"></i><span style="font-size: 2em"> Tickets </span>
+            <div class="btn-group pull-right">
+                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i> Ticket Menu <span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Create New Ticket</a></li>
+                    <li><a href="#">Find Ticket</a></li>
+                    <li class="divider"></li>
+                    <li><a href="">Delete Ticket</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="panel-body">
+            <table id="datatable" cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>MFG. Part Number</th>
+                        <th>WTCR SKU</th>
+                        <th>Product Category</th>
+                        <th>Product Name</th>
+                        <th>Autoupdate</th>
+                        <th>Static Price</th>
+                        <th class="actions"><?= __('Actions') ?></th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($wtcrProducts as $wtcrProduct): ?>
+                    <tr>
+                        <td><?= $this->Number->format($wtcrProduct->id) ?></td>
+                        <td><?= h($wtcrProduct->mfg_part_num) ?></td>
+                        <td><?= h($wtcrProduct->wtcrsku) ?></td>
+                        <td>
+                            <?= $wtcrProduct->has('wtcr_product_category') ? $this->Html->link($wtcrProduct->wtcr_product_category->category_name, ['controller' => 'WtcrProductCategories', 'action' => 'view', $wtcrProduct->wtcr_product_category->id]) : '' ?>
+                        </td>
+                        <td><?= h($wtcrProduct->wtcr_product_name) ?></td>
+                        <td><?= $this->Number->format($wtcrProduct->autoupdate) ?></td>
+                        <td><?= $this->Number->format($wtcrProduct->static_price) ?></td>
+                        <td class="actions">
+                        <?= $this->Html->link(__('View'), ['action' => 'view', $wtcrProduct->id]) ?>
+                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $wtcrProduct->id]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $wtcrProduct->id], ['confirm' => __('Are you sure you want to delete # {0}?', $wtcrProduct->id)]) ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div> <!-- ./panel-body -->  
+    </div> <!-- ./panel -->
+</div> <!-- ./full width flex -->
