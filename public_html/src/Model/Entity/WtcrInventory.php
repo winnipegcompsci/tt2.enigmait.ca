@@ -26,7 +26,6 @@ class WtcrInventory extends Entity
         'markup' => true,
         'serial_numbers' => true,
         'order_id' => true,
-        'wtcr_product_category' => true,
         'wtcr_vendor' => true,
         'order' => true,
     ];

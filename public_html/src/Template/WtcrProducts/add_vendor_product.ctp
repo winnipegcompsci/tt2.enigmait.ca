@@ -27,7 +27,7 @@
             echo $this->Form->input('static_price', ['label' => 'Override Price on Site to: ']);
             echo $this->Form->input('suggestedmarkup', ['default' => '0.5', 'label' => 'Suggested Markup:']);
             echo $this->Form->input('wtcrprice', ['default' => $vendor_price * 1.5, 'label' => 'Suggested WTCR Price:']);
-            echo $this->Form->input('wtcr_product_category_id', ['options' => $categories]);
+            echo $this->Form->input('wtcr_product_category', ['options' => $categories]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
