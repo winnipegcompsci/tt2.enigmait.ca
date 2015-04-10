@@ -34,7 +34,7 @@
                     if(isset($vendor_products) && $vendor_products !== null) {
                         foreach($vendor_products as $product) {
                         
-                            echo "<pre>" . print_r($product->wtcr_product_categories, TRUE) . "</pre>";
+                            echo "<pre>" . print_r($product, TRUE) . "</pre>";
                         
                         ?>
                         
