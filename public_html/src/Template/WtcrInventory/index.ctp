@@ -1,4 +1,4 @@
-<div class="wtcrInventory index col-lg-10 col-md-9 columns">
+<div class="wtcrInventory index col-lg-12 col-md-9 columns">
     <div class="panel panel-primary">
         <div class="panel-heading">
             <i class="fa fa-list-alt fa-2x"></i><span style="font-size: 2em"> WTCR Inventory </span>
