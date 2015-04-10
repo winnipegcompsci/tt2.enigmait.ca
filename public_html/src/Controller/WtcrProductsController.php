@@ -89,16 +89,13 @@ class WtcrProductsController extends AppController
             // debug($wtcrProduct);
                        
             if($this->WtcrProducts->save($wtcrProduct)) {
-                die('SAVED WTCR PRODUCT');
                 $this->Flash->success('The Vendor Product has been saved as a WTCR Product.');
                 return $this->redirect(['action' => 'index']);
             } else {
-                die('Failed to Save WTCR Product');
-              echo "<br />Product Errors:: <pre>" . print_r($wtcrProduct->errors(), TRUE) . "</pre>";
-                echo "<br />Products Entity:: <pre>" . print_r($this->WtcrProducts, true) . "</pre>";
-                die('END OF ERROR MESSAGES');
                 $this->Flash->error('The Vendor Product could not be saved as a WTCR Product.');
             }
+            
+            return $this->redirect(['controller' => 'wtcr_products', 'action' => 'add_vendor_product', $mfg_part_num ]);
         }        
         
         $productVendors = TableRegistry::get('wtcr_vendor_products')->find('all', [
