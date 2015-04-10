@@ -86,9 +86,11 @@ class WtcrProductsController extends AppController
 
             // debug($wtcrProduct);      
             if($this->WtcrProducts->save($wtcrProduct, FALSE)) {
+                die('Saved WTCR Product');
                 $this->Flash->success('The Vendor Product has been saved as a WTCR Product.');
                 return $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'index']);
             } else {
+                die('FAILED TO SAVE WTCR PRODUCT');
                 $this->Flash->error('The Vendor Product could not be saved as a WTCR Product.');
             }
         }        
