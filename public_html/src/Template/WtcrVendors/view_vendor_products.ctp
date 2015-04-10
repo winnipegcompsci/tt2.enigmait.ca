@@ -33,9 +33,6 @@
                 <?php 
                     if(isset($vendor_products) && $vendor_products !== null) {
                         foreach($vendor_products as $product) {
-                        
-                            echo "<pre>" . print_r($product->wtcr_product_category->category_name, TRUE) . "</pre>";
-                        
                         ?>
                         
                         <tr>
@@ -43,7 +40,7 @@
                             <td><?= $product->wtcr_vendor_sku ?></td>
                             <td>$<?= number_format($product->vendor_price, 2); ?></td>
                             <td><?= $product->mfg_part_num ?></td>
-                            <td><?= $product->wtcr_product_category_id ?></td>
+                            <td><?= $product->wtcr_product_category->category_name ?></td>
                             <td><?= $product->last_updated ?></td>
                             <td><?= $this->Html->link('Add Product', ['controller' => 'wtcr_products', 'action' => 'add_vendor_product', $product->mfg_part_num]); ?></td>
                         </tr> 
