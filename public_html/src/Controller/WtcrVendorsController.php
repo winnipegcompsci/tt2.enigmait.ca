@@ -383,21 +383,21 @@ class WtcrVendorsController extends AppController
             $html = str_get_html($login_content);
        
             if(!empty($html)) {
-                error_log("Index = " . $index);
+                // error_log("Index = " . $index);
                 
                 foreach($html->find('p.pno') as $number) {
                     $pno[] = str_replace("ID:", "", $number->innertext);
-                    error_log("Vendor SKU: " . $number->innertext);
+                    // error_log("Vendor SKU: " . $number->innertext);
                 }
                 
                 foreach($html->find('p.pna') as $name) {
                     $pna[] = $name->innertext;
-                    error_log("Product Name: " . $name->innertext);
+                    // error_log("Product Name: " . $name->innertext);
                 }
                 
                 foreach($html->find('p.price') as $price) {
                     $prices[] = str_replace('$', '', $price->innertext);
-                    error_log("Price: $" . $price->innertext);
+                    // error_log("Price: $" . $price->innertext);
                 }
             } 
             
