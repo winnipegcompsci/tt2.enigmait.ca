@@ -18,7 +18,7 @@ class WtcrInventoryController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['WtcrProductCategories', 'WtcrVendors', 'Orders']
+            'contain' => ['WtcrProductCategories', 'WtcrVendors']
         ];
         $this->set('wtcrInventory', $this->paginate($this->WtcrInventory));
         $this->set('_serialize', ['wtcrInventory']);
@@ -34,7 +34,7 @@ class WtcrInventoryController extends AppController
     public function view($id = null)
     {
         $wtcrInventory = $this->WtcrInventory->get($id, [
-            'contain' => ['WtcrProductCategories', 'WtcrVendors', 'Orders']
+            'contain' => ['WtcrProductCategories', 'WtcrVendors']
         ]);
         $this->set('wtcrInventory', $wtcrInventory);
         $this->set('_serialize', ['wtcrInventory']);
@@ -59,8 +59,7 @@ class WtcrInventoryController extends AppController
         }
         $wtcrProductCategories = $this->WtcrInventory->WtcrProductCategories->find('list', ['limit' => 200]);
         $wtcrVendors = $this->WtcrInventory->WtcrVendors->find('list', ['limit' => 200]);
-        $orders = $this->WtcrInventory->Orders->find('list', ['limit' => 200]);
-        $this->set(compact('wtcrInventory', 'wtcrProductCategories', 'wtcrVendors', 'orders'));
+        $this->set(compact('wtcrInventory', 'wtcrProductCategories', 'wtcrVendors'));
         $this->set('_serialize', ['wtcrInventory']);
     }
 
@@ -87,8 +86,7 @@ class WtcrInventoryController extends AppController
         }
         $wtcrProductCategories = $this->WtcrInventory->WtcrProductCategories->find('list', ['limit' => 200]);
         $wtcrVendors = $this->WtcrInventory->WtcrVendors->find('list', ['limit' => 200]);
-        $orders = $this->WtcrInventory->Orders->find('list', ['limit' => 200]);
-        $this->set(compact('wtcrInventory', 'wtcrProductCategories', 'wtcrVendors', 'orders'));
+        $this->set(compact('wtcrInventory', 'wtcrProductCategories', 'wtcrVendors'));
         $this->set('_serialize', ['wtcrInventory']);
     }
 

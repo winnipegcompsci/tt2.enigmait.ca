@@ -16,14 +16,14 @@
             echo $this->Form->input('wtcr_sku');
             echo $this->Form->input('product_name');
             echo $this->Form->input('wtcr_product_category_id', ['options' => $wtcrProductCategories]);
-            echo $this->Form->input('wtcr_manufacturer_id');
-            echo $this->Form->input('manufacturer_sku');
+            echo $this->Form->input('mfg_part_number');
             echo $this->Form->input('wtcr_vendor_id', ['options' => $wtcrVendors]);
             echo $this->Form->input('vendor_sku');
             echo $this->Form->input('vendor_price');
             echo $this->Form->input('received_date');
             echo $this->Form->input('markup');
             echo $this->Form->input('serial_numbers');
+            echo $this->Form->input('order_details');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

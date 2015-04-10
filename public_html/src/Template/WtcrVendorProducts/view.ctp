@@ -12,19 +12,19 @@
     </ul>
 </div>
 <div class="wtcrVendorProducts view col-lg-10 col-md-9 columns">
-    <h2><?= h($wtcrVendorProduct->name) ?></h2>
+    <h2><?= h($wtcrVendorProduct->product_name) ?></h2>
     <div class="row">
         <div class="large-5 columns strings">
             <h6 class="subheader"><?= __('Product Name') ?></h6>
             <p><?= h($wtcrVendorProduct->product_name) ?></p>
             <h6 class="subheader"><?= __('Wtcr Vendor') ?></h6>
-            <p><?= $wtcrVendorProduct->has('wtcr_vendor') ? $this->Html->link($wtcrVendorProduct->wtcr_vendor->name, ['controller' => 'WtcrVendors', 'action' => 'view', $wtcrVendorProduct->wtcr_vendor->id]) : '' ?></p>
+            <p><?= $wtcrVendorProduct->has('wtcr_vendor') ? $this->Html->link($wtcrVendorProduct->wtcr_vendor->vendor_name, ['controller' => 'WtcrVendors', 'action' => 'view', $wtcrVendorProduct->wtcr_vendor->id]) : '' ?></p>
             <h6 class="subheader"><?= __('Wtcr Vendor Sku') ?></h6>
             <p><?= h($wtcrVendorProduct->wtcr_vendor_sku) ?></p>
             <h6 class="subheader"><?= __('Mfg Part Num') ?></h6>
             <p><?= h($wtcrVendorProduct->mfg_part_num) ?></p>
             <h6 class="subheader"><?= __('Wtcr Product Category') ?></h6>
-            <p><?= $wtcrVendorProduct->has('wtcr_product_category') ? $this->Html->link($wtcrVendorProduct->wtcr_product_category->id, ['controller' => 'WtcrProductCategories', 'action' => 'view', $wtcrVendorProduct->wtcr_product_category->id]) : '' ?></p>
+            <p><?= $wtcrVendorProduct->has('wtcr_product_category') ? $this->Html->link($wtcrVendorProduct->wtcr_product_category->category_name, ['controller' => 'WtcrProductCategories', 'action' => 'view', $wtcrVendorProduct->wtcr_product_category->id]) : '' ?></p>
         </div>
         <div class="large-2 columns numbers end">
             <h6 class="subheader"><?= __('Id') ?></h6>

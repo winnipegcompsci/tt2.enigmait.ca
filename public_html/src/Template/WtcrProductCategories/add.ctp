@@ -2,8 +2,8 @@
     <h3><?= __('Actions') ?></h3>
     <ul class="side-nav">
         <li><?= $this->Html->link(__('List Wtcr Product Categories'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Wtcr Product Map'), ['controller' => 'WtcrProductMap', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Wtcr Product Map'), ['controller' => 'WtcrProductMap', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Wtcr Products'), ['controller' => 'WtcrProducts', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Wtcr Product'), ['controller' => 'WtcrProducts', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Wtcr Vendor Products'), ['controller' => 'WtcrVendorProducts', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Wtcr Vendor Product'), ['controller' => 'WtcrVendorProducts', 'action' => 'add']) ?> </li>
     </ul>

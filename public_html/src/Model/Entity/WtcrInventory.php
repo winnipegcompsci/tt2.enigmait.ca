@@ -28,6 +28,5 @@ class WtcrInventory extends Entity
         'order_details' => true,
         'wtcr_product_category' => true,
         'wtcr_vendor' => true,
-        'order' => true,
     ];
 }

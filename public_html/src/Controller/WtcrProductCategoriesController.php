@@ -6,8 +6,7 @@ use App\Controller\AppController;
 /**
  * WtcrProductCategories Controller
  *
- * @property \App\Model\Table\WtcrProductCategoriesTable $WtcrProductCategories
- */
+ * @property \App\Model\Table\WtcrProductCategoriesTable $WtcrProductCategories */
 class WtcrProductCategoriesController extends AppController
 {
 
@@ -32,7 +31,7 @@ class WtcrProductCategoriesController extends AppController
     public function view($id = null)
     {
         $wtcrProductCategory = $this->WtcrProductCategories->get($id, [
-            'contain' => ['WtcrProductMap', 'WtcrVendorProducts']
+            'contain' => ['WtcrProducts', 'WtcrVendorProducts']
         ]);
         $this->set('wtcrProductCategory', $wtcrProductCategory);
         $this->set('_serialize', ['wtcrProductCategory']);

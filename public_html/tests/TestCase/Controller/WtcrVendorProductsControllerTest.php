@@ -22,7 +22,9 @@ class WtcrVendorProductsControllerTest extends IntegrationTestCase
         'WtcrCategories' => 'app.wtcr_categories',
         'WtcrManufacturers' => 'app.wtcr_manufacturers',
         'WtcrProductMap' => 'app.wtcr_product_map',
-        'WtcrProductCategories' => 'app.wtcr_product_categories'
+        'WtcrProductCategories' => 'app.wtcr_product_categories',
+        'WtcrInventory' => 'app.wtcr_inventory',
+        'WtcrProducts' => 'app.wtcr_products'
     ];
 
     /**

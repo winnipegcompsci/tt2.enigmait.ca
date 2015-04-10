@@ -49,7 +49,7 @@ class WtcrVendorProductsFixture extends TestFixture
             'mfg_part_num' => 'Lorem ipsum dolor sit amet',
             'vendor_price' => 1,
             'wtcr_product_category_id' => 1,
-            'last_updated' => '2015-04-05'
+            'last_updated' => '2015-04-10'
         ],
     ];
 }

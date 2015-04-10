@@ -14,7 +14,6 @@
             echo $this->Form->input('mfg_part_num');
             echo $this->Form->input('wtcrsku');
             echo $this->Form->input('wtcr_product_name');
-            echo $this->Form->input('wtcr_product_category', ['options' => $wtcrProductCategories]);
             echo $this->Form->input('description');
             echo $this->Form->input('autoupdate');
             echo $this->Form->input('static_price');
@@ -24,7 +23,6 @@
             echo $this->Form->input('lastupdated');
             echo $this->Form->input('marketplace_data');
             echo $this->Form->input('pictures');
-            
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

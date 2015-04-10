@@ -18,12 +18,13 @@ class WtcrProductCategoriesTableTest extends TestCase
      */
     public $fixtures = [
         'WtcrProductCategories' => 'app.wtcr_product_categories',
-        'WtcrProductMap' => 'app.wtcr_product_map',
+        'WtcrProducts' => 'app.wtcr_products',
+        'WtcrVendorProducts' => 'app.wtcr_vendor_products',
         'WtcrVendors' => 'app.wtcr_vendors',
         'Inventory' => 'app.inventory',
         'WtcrCategories' => 'app.wtcr_categories',
         'WtcrManufacturers' => 'app.wtcr_manufacturers',
-        'WtcrVendorProducts' => 'app.wtcr_vendor_products'
+        'WtcrProductMap' => 'app.wtcr_product_map'
     ];
 
     /**
@@ -34,9 +35,7 @@ class WtcrProductCategoriesTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('WtcrProductCategories') ? [] : ['className' => 'App\Model\Table\WtcrProductCategoriesTable'];
-        $this->WtcrProductCategories = TableRegistry::get('WtcrProductCategories', $config);
-    }
+        $config = TableRegistry::exists('WtcrProductCategories') ? [] : ['className' => 'App\Model\Table\WtcrProductCategoriesTable'];        $this->WtcrProductCategories = TableRegistry::get('WtcrProductCategories', $config);    }
 
     /**
      * tearDown method

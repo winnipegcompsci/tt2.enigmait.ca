@@ -24,6 +24,9 @@ class WtcrProductCategoriesTable extends Table
         $this->table('wtcr_product_categories');
         $this->displayField('category_name');
         $this->primaryKey('id');
+        $this->hasMany('WtcrInventory', [
+            'foreignKey' => 'wtcr_product_category_id'
+        ]);
         $this->hasMany('WtcrProducts', [
             'foreignKey' => 'wtcr_product_category_id'
         ]);

@@ -17,7 +17,7 @@ class WtcrProductCategory extends Entity
     protected $_accessible = [
         'category_name' => true,
         'default_markup' => true,
-        'wtcr_product_map' => true,
+        'wtcr_products' => true,
         'wtcr_vendor_products' => true,
     ];
 }

@@ -2,13 +2,11 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
-use Cake\ORM\TableRegistry;
 
 /**
  * WtcrVendorProducts Controller
  *
- * @property \App\Model\Table\WtcrVendorProductsTable $WtcrVendorProducts
- */
+ * @property \App\Model\Table\WtcrVendorProductsTable $WtcrVendorProducts */
 class WtcrVendorProductsController extends AppController
 {
 
@@ -58,15 +56,13 @@ class WtcrVendorProductsController extends AppController
             } else {
                 $this->Flash->error('The wtcr vendor product could not be saved. Please, try again.');
             }
-        } 
-		
+        }
         $wtcrVendors = $this->WtcrVendorProducts->WtcrVendors->find('list', ['limit' => 200]);
         $wtcrProductCategories = $this->WtcrVendorProducts->WtcrProductCategories->find('list', ['limit' => 200]);
         $this->set(compact('wtcrVendorProduct', 'wtcrVendors', 'wtcrProductCategories'));
         $this->set('_serialize', ['wtcrVendorProduct']);
-		
     }
-    	
+
     /**
      * Edit method
      *
@@ -81,7 +77,6 @@ class WtcrVendorProductsController extends AppController
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $wtcrVendorProduct = $this->WtcrVendorProducts->patchEntity($wtcrVendorProduct, $this->request->data);
-			
             if ($this->WtcrVendorProducts->save($wtcrVendorProduct)) {
                 $this->Flash->success('The wtcr vendor product has been saved.');
                 return $this->redirect(['action' => 'index']);
@@ -113,15 +108,4 @@ class WtcrVendorProductsController extends AppController
         }
         return $this->redirect(['action' => 'index']);
     }
-	
-	public function getWtcrSku($mfg_part_num = null) {
-		/*
-			IMPLEMENT::
-				TALK TO SEAN!
-		*/
-		
-		return $mfg_part_num;
-	}
 }
-
-?>

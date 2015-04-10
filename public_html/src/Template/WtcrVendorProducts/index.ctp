@@ -28,13 +28,13 @@
             <td><?= $this->Number->format($wtcrVendorProduct->id) ?></td>
             <td><?= h($wtcrVendorProduct->product_name) ?></td>
             <td>
-                <?= $wtcrVendorProduct->has('wtcr_vendor') ? $this->Html->link($wtcrVendorProduct->wtcr_vendor->name, ['controller' => 'WtcrVendors', 'action' => 'view', $wtcrVendorProduct->wtcr_vendor->id]) : '' ?>
+                <?= $wtcrVendorProduct->has('wtcr_vendor') ? $this->Html->link($wtcrVendorProduct->wtcr_vendor->vendor_name, ['controller' => 'WtcrVendors', 'action' => 'view', $wtcrVendorProduct->wtcr_vendor->id]) : '' ?>
             </td>
             <td><?= h($wtcrVendorProduct->wtcr_vendor_sku) ?></td>
             <td><?= h($wtcrVendorProduct->mfg_part_num) ?></td>
             <td><?= $this->Number->format($wtcrVendorProduct->vendor_price) ?></td>
             <td>
-                <?= $wtcrVendorProduct->has('wtcr_product_category') ? $this->Html->link($wtcrVendorProduct->wtcr_product_category->id, ['controller' => 'WtcrProductCategories', 'action' => 'view', $wtcrVendorProduct->wtcr_product_category->id]) : '' ?>
+                <?= $wtcrVendorProduct->has('wtcr_product_category') ? $this->Html->link($wtcrVendorProduct->wtcr_product_category->category_name, ['controller' => 'WtcrProductCategories', 'action' => 'view', $wtcrVendorProduct->wtcr_product_category->id]) : '' ?>
             </td>
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['action' => 'view', $wtcrVendorProduct->id]) ?>

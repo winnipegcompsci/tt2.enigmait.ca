@@ -20,7 +20,7 @@ class WtcrProductsFixture extends TestFixture
         'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => 'A unique ID for the product', 'autoIncrement' => true, 'precision' => null],
         'mfg_part_num' => ['type' => 'string', 'length' => 40, 'null' => false, 'default' => null, 'comment' => 'Part # The Manufacturer Uses', 'precision' => null, 'fixed' => null],
         'wtcrsku' => ['type' => 'string', 'length' => 40, 'null' => false, 'default' => null, 'comment' => 'The SKU used by WTCR to identify the product', 'precision' => null, 'fixed' => null],
-        'wtcr_product_category_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => '1', 'comment' => 'The category the product falls in', 'precision' => null, 'autoIncrement' => null],
+        'wtcr_product_category_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => true, 'default' => '1', 'comment' => 'The category the product falls in', 'precision' => null, 'autoIncrement' => null],
         'wtcr_product_name' => ['type' => 'string', 'length' => 45, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
         'description' => ['type' => 'text', 'length' => null, 'null' => true, 'default' => null, 'comment' => 'A description of the product', 'precision' => null],
         'autoupdate' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => '1', 'comment' => '1 if Product Should Auto Update Price, 0 otherwise.', 'precision' => null, 'autoIncrement' => null],
@@ -51,7 +51,7 @@ class WtcrProductsFixture extends TestFixture
     public $records = [
         [
             'id' => 1,
-            'mfg_part_num' => 'cae0040f-6343-4429-b446-857147561922',
+            'mfg_part_num' => '4fa06971-88dc-412d-a71b-a73190944994',
             'wtcrsku' => 'Lorem ipsum dolor sit amet',
             'wtcr_product_category_id' => 1,
             'wtcr_product_name' => 'Lorem ipsum dolor sit amet',
@@ -61,7 +61,7 @@ class WtcrProductsFixture extends TestFixture
             'suggestedmarkup' => 1,
             'wtcrprice' => 1,
             'wtcr_nid' => 'Lorem ip',
-            'lastupdated' => '2015-04-10 16:10:06',
+            'lastupdated' => '2015-04-10 16:30:51',
             'marketplace_data' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
             'pictures' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.'
         ],
