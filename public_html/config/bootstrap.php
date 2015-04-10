@@ -81,6 +81,15 @@ if (!Configure::read('debug')) {
     Configure::write('Cache._cake_core_.duration', '+1 years');
 }
 
+
+Configure::write('Session', array(
+        'defaults' => 'php',
+        'timeout' => 30, // The session will timeout after 30 minutes of inactivity
+        'cookieTimeout' => 1440, // The session cookie will live for at most 24 hours, this does not effect session timeouts
+        'checkAgent' => false,
+        'autoRegenerate' => true, // causes the session expiration time to reset on each page load
+    ));
+
 /**
  * Set server timezone to UTC. You can change it to another timezone of your
  * choice but using UTC makes time calculations / conversions easier.
