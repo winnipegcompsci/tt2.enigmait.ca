@@ -105,5 +105,4 @@
 
 
 <?php 
-
-// $this->end('file');
+ $this->end('file');

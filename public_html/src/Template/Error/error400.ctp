@@ -36,7 +36,7 @@ endif;
         "<strong>'{$url}'</strong>"
     ) 
     
-    // $this->end('file');
+    $this->end('file');
     
     ?>
 </p>

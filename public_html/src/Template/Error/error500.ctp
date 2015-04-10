@@ -106,7 +106,7 @@ use Cake\Error\Debugger;
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
- <?php // $this->end('file'); ?>
+ <?php $this->end('file'); ?>
     
 </body>
 
