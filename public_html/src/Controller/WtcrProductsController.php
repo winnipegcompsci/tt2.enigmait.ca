@@ -2,7 +2,6 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
-use Cake\ORM\TableRegistry;
 
 /**
  * WtcrProducts Controller
@@ -56,58 +55,11 @@ class WtcrProductsController extends AppController
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error('The wtcr product could not be saved. Please, try again.');
-                echo "<br /><pre>" . print_r($wtcrProduct->errors(), TRUE) . "</pre>";
-                echo "<br /><pre>" . print_r($this->WtcrProducts, TRUE) . "</pre>";
             }
         }
         $wtcrProductCategories = $this->WtcrProducts->WtcrProductCategories->find('list', ['limit' => 200]);
         $this->set(compact('wtcrProduct', 'wtcrProductCategories'));
         $this->set('_serialize', ['wtcrProduct']);
-    }
-
-    /**
-     * Edit method
-     *
-     * @param string|null $id Wtcr Product id.
-     * @return void Redirects on successful edit, renders view otherwise.
-     * @throws \Cake\Network\Exception\NotFoundException When record not found.
-     */
-    public function edit($id = null)
-    {
-        $wtcrProduct = $this->WtcrProducts->get($id, [
-            'contain' => []
-        ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
-            $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
-            if ($this->WtcrProducts->save($wtcrProduct)) {
-                $this->Flash->success('The wtcr product has been saved.');
-                return $this->redirect(['action' => 'index']);
-            } else {
-                $this->Flash->error('The wtcr product could not be saved. Please, try again.');
-            }
-        }
-        $wtcrProductCategories = $this->WtcrProducts->WtcrProductCategories->find('list', ['limit' => 200]);
-        $this->set(compact('wtcrProduct', 'wtcrProductCategories'));
-        $this->set('_serialize', ['wtcrProduct']);
-    }
-
-    /**
-     * Delete method
-     *
-     * @param string|null $id Wtcr Product id.
-     * @return void Redirects to index.
-     * @throws \Cake\Network\Exception\NotFoundException When record not found.
-     */
-    public function delete($id = null)
-    {
-        $this->request->allowMethod(['post', 'delete']);
-        $wtcrProduct = $this->WtcrProducts->get($id);
-        if ($this->WtcrProducts->delete($wtcrProduct)) {
-            $this->Flash->success('The wtcr product has been deleted.');
-        } else {
-            $this->Flash->error('The wtcr product could not be deleted. Please, try again.');
-        }
-        return $this->redirect(['action' => 'index']);
     }
     
     public function add_vendor_product($mfg_part_num) 
@@ -194,5 +146,50 @@ class WtcrProductsController extends AppController
         } 
         
         return 'W-' . rand(1000, 9999) . '-' . rand(1000, 9999) . '-01'; 
+    }
+
+    /**
+     * Edit method
+     *
+     * @param string|null $id Wtcr Product id.
+     * @return void Redirects on successful edit, renders view otherwise.
+     * @throws \Cake\Network\Exception\NotFoundException When record not found.
+     */
+    public function edit($id = null)
+    {
+        $wtcrProduct = $this->WtcrProducts->get($id, [
+            'contain' => []
+        ]);
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
+            if ($this->WtcrProducts->save($wtcrProduct)) {
+                $this->Flash->success('The wtcr product has been saved.');
+                return $this->redirect(['action' => 'index']);
+            } else {
+                $this->Flash->error('The wtcr product could not be saved. Please, try again.');
+            }
+        }
+        $wtcrProductCategories = $this->WtcrProducts->WtcrProductCategories->find('list', ['limit' => 200]);
+        $this->set(compact('wtcrProduct', 'wtcrProductCategories'));
+        $this->set('_serialize', ['wtcrProduct']);
+    }
+
+    /**
+     * Delete method
+     *
+     * @param string|null $id Wtcr Product id.
+     * @return void Redirects to index.
+     * @throws \Cake\Network\Exception\NotFoundException When record not found.
+     */
+    public function delete($id = null)
+    {
+        $this->request->allowMethod(['post', 'delete']);
+        $wtcrProduct = $this->WtcrProducts->get($id);
+        if ($this->WtcrProducts->delete($wtcrProduct)) {
+            $this->Flash->success('The wtcr product has been deleted.');
+        } else {
+            $this->Flash->error('The wtcr product could not be deleted. Please, try again.');
+        }
+        return $this->redirect(['action' => 'index']);
     }
 }

@@ -30,9 +30,6 @@ class WtcrInventoryTable extends Table
         $this->belongsTo('WtcrVendors', [
             'foreignKey' => 'wtcr_vendor_id'
         ]);
-        $this->belongsTo('Orders', [
-            'foreignKey' => 'order_id'
-        ]);
     }
 
     /**
@@ -68,8 +65,8 @@ class WtcrInventoryTable extends Table
             ->add('markup', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('markup')
             ->allowEmpty('serial_numbers')
-            ->add('order_id', 'valid', ['rule' => 'numeric'])
-            ->allowEmpty('order_id');
+            ->add('order_details', 'valid', ['rule' => 'numeric'])
+            ->allowEmpty('order_details');
 
         return $validator;
     }
@@ -85,7 +82,6 @@ class WtcrInventoryTable extends Table
     {
         $rules->add($rules->existsIn(['wtcr_product_category_id'], 'WtcrProductCategories'));
         $rules->add($rules->existsIn(['wtcr_vendor_id'], 'WtcrVendors'));
-        $rules->add($rules->existsIn(['order_id'], 'Orders'));
         return $rules;
     }
 }

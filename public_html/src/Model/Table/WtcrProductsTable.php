@@ -61,8 +61,7 @@ class WtcrProductsTable extends Table
             ->add('lastupdated', 'valid', ['rule' => 'datetime'])
             ->requirePresence('lastupdated', 'create')
             ->notEmpty('lastupdated')
-            ->requirePresence('marketplace_data', 'create')
-            ->notEmpty('marketplace_data')
+            ->allowEmpty('marketplace_data')
             ->allowEmpty('pictures');
 
         return $validator;
