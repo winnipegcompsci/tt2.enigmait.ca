@@ -3,6 +3,9 @@
         $default_name = $item->product_name;
         $vendor_price = $item->vendor_price;
     }
+    
+    $blockContent = $this->Blocks->get('file');
+    echo "Content of Block['file']:: <pre>" . print_r($blockContent, TRUE) . "</pre>";
 ?>
 
 <div class="wtcrProducts form col-lg-6 col-md-6 columns pull-left">
