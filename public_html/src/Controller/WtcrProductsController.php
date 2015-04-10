@@ -134,12 +134,12 @@ class WtcrProductsController extends AppController
                 $this->Flash->success('The Vendor Product has been saved as a WTCR Product.');
                 return $this->redirect(['action' => 'index']);
             } else {
-                echo "Death:: <pre>" . print_r($wtcrProduct->errors(), TRUE) . "</pre>";
+                echo "<br />Product: <pre>" . print_r($wtcrProduct, TRUE) . "</pre>";
+                echo "<br />Product Errors:: <pre>" . print_r($wtcrProduct->errors(), TRUE) . "</pre>";
+                echo "<br />Products Entity:: <pre>" . print_r($this->WtcrProducts, true) . "</pre>";
                 
                 // echo "FAILED TO SAVE WTCR PRODUCT!!!<pre>" . print_r($this->WtcrProducts, TRUE) . "</pre>";
                 $this->Flash->error('The Vendor Product could not be saved as a WTCR Product.');
-                echo "DEBUG: <pre>" . print_r($this->WtcrProducts->error(), TRUE) . "</pre>";
-                // echo "DEBUG ERROR <pre>" . print_r($wtcrProduct->toArray(), TRUE) . "</pre>";
                 // echo "NEW PRODUCT <pre>" . print_r($this->WtcrProducts->newEntity(), TRUE) . "</pre>";
             }
         }        
