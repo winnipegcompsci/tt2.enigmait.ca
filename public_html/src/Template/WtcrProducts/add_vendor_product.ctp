@@ -29,6 +29,7 @@
             echo $this->Form->input('suggestedmarkup', ['default' => '0.5', 'label' => 'Suggested Markup:']);
             echo $this->Form->input('wtcrprice', ['default' => $vendor_price * 1.5, 'label' => 'Suggested WTCR Price:']);
             // echo $this->Form->input('wtcr_product_category_id', ['options' => $categories]);
+            echo $this->Form->label('WTCR Product Category');
             echo $this->Form->select('wtcr_product_category_id', $categories, ['label' => 'Product Category', 'default' => 1]);
         ?>
     </fieldset>
