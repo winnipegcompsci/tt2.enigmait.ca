@@ -80,20 +80,21 @@ class WtcrProductsController extends AppController
             // $wtcrProduct->pictures = serialize( array() );
             // $wtcrProduct->wtcr_product_category = $this->request->data['wtcr_product_category_id'];
             // $wtcrProduct->wtcr_product_category_id = $this->request->data['wtcr_product_category_id'];
-            echo "<pre>WTCR Product:: " . print_r($wtcrProduct->errors(), TRUE) . "</pre>";
+            // echo "<pre>WTCR Product:: " . print_r($wtcrProduct->errors(), TRUE) . "</pre>";
             
             
 
             // debug($wtcrProduct);
             echo "Trying to save...... ";           
             if($this->WtcrProducts->save($wtcrProduct)) {
-                echo "Success!<br />";
+                die("Success!<br />");
                 $this->Flash->success('The Vendor Product has been saved as a WTCR Product.');
                 return $this->redirect(['action' => 'index']);
             } else {
-                echo "Fail!<br />";
+                die("Fail!<br />");
                 $this->Flash->error('The Vendor Product could not be saved as a WTCR Product.');
             }
+            die('REACHED BOTTOM');
             
             
         }        
