@@ -251,7 +251,6 @@ class WtcrVendorsController extends AppController
                         $product->mfg_part_num = $mfg_part_num;       // Create a VENDOR_SKU -> WTCR_SKU FUNC
 						$product->vendor_price = $supplier_price;
                         $product->wtcr_product_category_id = 1;
-                        $product->wtcr_product_category = 1;
                         $product->last_updated = date('Y-m-d H:i:s');
                     } else {
                         $product->product_name = $description;
@@ -260,7 +259,6 @@ class WtcrVendorsController extends AppController
                         $product->mfg_part_num = $mfg_part_num;       // Create a VENDOR_SKU -> WTCR_SKU FUNC
                         $product->vendor_price = $supplier_price;
                         $product->wtcr_product_category_id = 1;				// Options: $category. 
-                        $product->
                         $product->last_updated = date('Y-m-d H:i:s');
                     }
                     
