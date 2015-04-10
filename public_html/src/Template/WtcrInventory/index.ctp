@@ -20,7 +20,7 @@
                         <th>ID</th>
                         <th>WTCR SKU</th>
                         <th>Product Name</th>
-                        <th> Category </th>
+                        <th>Category </th>
                         <th>Mfg. Part Number</th>
                         <th>Vendor</th>
                         <th>Vendor SKU</th>

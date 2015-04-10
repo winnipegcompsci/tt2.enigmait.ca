@@ -18,9 +18,9 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>MFG. Part Number</th>
+                        <th>Mfg. Part Number</th>
                         <th>WTCR SKU</th>
-                        <th>Product Category</th>
+                        <th>Category</th>
                         <th>Product Name</th>
                         <th>Autoupdate</th>
                         <th>Static Price</th>
