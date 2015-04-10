@@ -127,6 +127,7 @@ class WtcrProductsController extends AppController
             // $wtcrProduct->wtcr_product_category = $this->request->data['wtcr_product_category_id'];
             $wtcrProduct->wtcr_product_category_id = $this->request->data['wtcr_product_category_id'];
             
+            
 
             // debug($wtcrProduct);
                        
@@ -137,7 +138,7 @@ class WtcrProductsController extends AppController
                 echo "<br />Product: <pre>" . print_r($wtcrProduct, TRUE) . "</pre>";
                 echo "<br />Product Errors:: <pre>" . print_r($wtcrProduct->errors(), TRUE) . "</pre>";
                 echo "<br />Products Entity:: <pre>" . print_r($this->WtcrProducts, true) . "</pre>";
-                
+                die('END OF ERROR MESSAGES');
                 // echo "FAILED TO SAVE WTCR PRODUCT!!!<pre>" . print_r($this->WtcrProducts, TRUE) . "</pre>";
                 $this->Flash->error('The Vendor Product could not be saved as a WTCR Product.');
                 // echo "NEW PRODUCT <pre>" . print_r($this->WtcrProducts->newEntity(), TRUE) . "</pre>";

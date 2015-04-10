@@ -14,7 +14,7 @@
             echo $this->Form->input('wtcrsku', [
                 'default' => $this_wtcr_sku, 
                 'label' => 'WTCR SKU', 
-                'class' => "form-group has-warning",
+                'class' => "",
             ]);
             echo $this->Form->input('wtcr_product_name', ['default' => $default_name]);
             echo $this->Form->input('description');
