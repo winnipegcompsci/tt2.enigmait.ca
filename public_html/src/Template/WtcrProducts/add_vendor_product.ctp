@@ -16,7 +16,7 @@
                 'label' => 'WTCR SKU', 
                 'class' => "",
             ]);
-            echo $this->Form->input('wtcr_product_name', ['default' => $default_name]);
+            echo $this->Form->input('wtcr_product_name', ['default' => isset($default_name) ? $default_name : '']);
             echo $this->Form->input('description');
             
             $autoupdate_opts = [
