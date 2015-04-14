@@ -79,16 +79,7 @@ class WtcrProductsController extends AppController
             $wtcrProduct->pictures = serialize( array() );
             $wtcrProduct->wtcr_product_category = $this->request->data['wtcr_product_category_id'];    
             
-            // debug($wtcrProduct);      
-
-            error_log('Testing validation:: ');
-            try {
-                error_log('Validation:: ' . $this->WtcrProducts->validate($wtcrProduct));           
-                error_log('END OF TESTING');
-            } catch (Exceprtion $e) {
-                error_log('Catch Exception:: ' . $e->getMessage());
-            }
-            
+            // debug($wtcrProduct);                  
             if($this->WtcrProducts->save($wtcrProduct)) {
                 error_log('Successfully Saved WTCR Product');
                 $this->Flash->success('The Vendor Product has been saved as a WTCR Product.');

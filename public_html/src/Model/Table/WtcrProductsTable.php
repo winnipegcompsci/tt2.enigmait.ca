@@ -37,7 +37,7 @@ class WtcrProductsTable extends Table
      */
     public function validationDefault(Validator $validator)
     {   
-        /*
+        
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('id', 'create')
@@ -65,9 +65,8 @@ class WtcrProductsTable extends Table
             ->allowEmpty('pictures');
 
         return $validator;
-        */
         
-        return TRUE;
+   
     }
 
     /**
