@@ -10,17 +10,20 @@
 </div>
 <div class="wtcrInventory form col-lg-10 col-md-9 columns">
     <?php 
-        echo "<pre>" . print_r($thisProduct, TRUE) . "</pre>";
+        
     ?>
     <?= $this->Form->create($wtcrInventory); ?>
     <fieldset>
         
         <legend><?= __('Add Wtcr Inventory') ?></legend>
         <?php
-            echo $this->Form->input('wtcr_sku', ['default' => $this_wtcr_sku]);
-            echo $this->Form->input('product_name');
-            echo $this->Form->input('wtcr_product_category_id', ['options' => $wtcrProductCategories]);
-            echo $this->Form->input('mfg_part_number');
+            echo $this->Form->input('wtcr_sku', ['default' => $thisProduct->wtcr_sku]);
+            echo $this->Form->input('product_name', ['default' => $thisProduct->wtcr_product_name]);
+            echo $this->Form->input('wtcr_product_category_id', [
+                'options' => $wtcrProductCategories,
+                'default' => $thisProduct->wtcr_product_category_id,
+            ]);
+            echo $this->Form->input('mfg_part_number', ['default' => $thisProduct->mfg_part_num]);
             echo $this->Form->input('wtcr_vendor_id', ['options' => $wtcrVendors]);
             echo $this->Form->input('vendor_sku');
             echo $this->Form->input('vendor_price');
