@@ -109,7 +109,7 @@ class WtcrInventoryController extends AppController
         return $this->redirect(['action' => 'index']);
     }
     
-    public function receive($vendor_sku = null)
+    public function receive($mfg_part_num = null)
     {
         // Input List
         /*
