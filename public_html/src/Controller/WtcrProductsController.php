@@ -84,6 +84,8 @@ class WtcrProductsController extends AppController
             
 
             debug($wtcrProduct);      
+            die('DEATH BEFORE TRYING TO SAVE');
+            
             if($this->WtcrProducts->save($wtcrProduct, FALSE)) {
                 // die('Saved WTCR Product');
                 $this->Flash->success('The Vendor Product has been saved as a WTCR Product.');
