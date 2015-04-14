@@ -110,8 +110,7 @@ class WtcrProductsController extends AppController
         $this->set('mfg_part_num', $mfg_part_num);
         $this->set('wtcrProduct', $wtcrProduct);
         $this->set('categories', $wtcrProductCategories);
-        $this->set('marketplaces', $marketplaces);
-        
+        $this->set('marketplaces', $marketplaces);      
         
         
         // error_log('About to redirect to WTCRProducts->Index');

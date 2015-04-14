@@ -136,6 +136,7 @@ class WtcrVendorsController extends AppController
 
         $this->set('vendor_products', $vendor_products);
         $this->set('vendor_id', $vendor_id);
+        $this->set('wtcr_products' , TableRegistry::get('wtcr_products')->find('all'));
     }
     
     
