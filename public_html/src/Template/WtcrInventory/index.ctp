@@ -40,8 +40,8 @@
                         <td><?= h($wtcrInventory->mfg_part_number) ?></td>
                         <td>
                             <?php 
-                                error_log('Unserialize: ' . unserialize($wtcrInventory->order_details);
-                                error_log('array() was just rolling lol');
+                                error_log('Unserialize: ' . unserialize($wtcrInventory->order_details));
+                                error_log('array()');
                                 if(unserialize($wtcrInventory->order_details) == array()) {
                                     echo 'YES';
                                 } else {
