@@ -50,15 +50,11 @@
                                
                                 }
                             }
-                            
-                            
-                            
+                               
                             if(!$exists) {
-                                error_log('DOES NOT EXIST - PRINT LINK TO ADD!');
                                 $addLink =  $this->Html->link('Add Product', ['controller' => 'wtcr_products', 'action' => 'add_vendor_product', $product->mfg_part_num]);
                             } else {
-                                $addLink = "Added";
-                                error_log('DOES EXIST -- SHOW ADDED');
+                                $addLink = "Already Carried";
                             }
 
               
