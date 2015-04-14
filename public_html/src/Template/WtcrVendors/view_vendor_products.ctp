@@ -44,8 +44,8 @@
                         $exists = FALSE;
                         foreach($vendor_products as $product) {
                             foreach($wtcr_products as $prod) {
-                                echo "Product:: <pre>" . print_r($product, TRUE) . "</pre>";
-                                echo "Produ:: <pre>" . print_r($prod, TRUE) . "</pre>";
+                                echo "Product:: <pre>" . print_r($product->mfg_part_num, TRUE) . "</pre>";
+                                echo "Prod:: <pre>" . print_r($prod->mfg_part_num, TRUE) . "</pre>";
                             }
                             
                             die('DONE ITERATING OVER WTCR PRODUCTS');
