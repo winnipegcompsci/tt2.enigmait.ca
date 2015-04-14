@@ -66,6 +66,15 @@ class WtcrInventoryController extends AppController
     
     public function receive($wtcr_sku = null) 
     {
+        if($this->request->is('post')) {
+            $wtcrInventory = $this->WtcrInventory->patchEntity($wtcrInventory, $this->request->data);
+            if($this->WtcrInventory->save($wtcrInventory)) {
+                $this->Flash->success('WTCR Inventory Item Received');
+            } else {
+                $this->Flash->error();
+            }
+        }
+    
         $wtcrInventory = $this->WtcrInventory->newEntity();
         $thisProduct = TableRegistry::get('WtcrProducts')->find('all', [
             'conditions' => ['wtcrsku' => $wtcr_sku]           
