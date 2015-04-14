@@ -73,7 +73,7 @@ class WtcrInventoryController extends AppController
         
         $thisVendorProduct = TableRegistry::get('WtcrVendorProducts')->find('all', [
             'conditions' => ['mfg_part_num' => $thisProduct->mfg_part_num]
-        ]);
+        ])->first();
         
         $wtcrProductCategories = $this->WtcrInventory->WtcrProductCategories->find('list', ['limit' => 200]);
         $wtcrVendors = $this->WtcrInventory->WtcrVendors->find('list', ['limit' => 200]);
