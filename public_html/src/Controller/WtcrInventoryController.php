@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\Table;
 
 /**
  * WtcrInventory Controller
@@ -66,13 +67,18 @@ class WtcrInventoryController extends AppController
     public function receive($wtcr_sku = null) 
     {
         $wtcrInventory = $this->WtcrInventory->newEntity();
+        $thisProduct = TableRegistry::get('WtcrProducts')->find('all', [
+            'conditions' => ['wtcrsku' => $wtcr_sku]           
+        ]);
+        
         
         $wtcrProductCategories = $this->WtcrInventory->WtcrProductCategories->find('list', ['limit' => 200]);
         $wtcrVendors = $this->WtcrInventory->WtcrVendors->find('list', ['limit' => 200]);
         $this->set(compact('wtcrInventory', 'wtcrProductCategories', 'wtcrVendors'));
         $this->set('_serialize', ['wtcrInventory']);
+        $this->set('thisProduct', $thisProduct);
     }
-
+    
     /**
      * Edit method
      *
