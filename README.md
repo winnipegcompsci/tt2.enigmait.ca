@@ -1,10 +1,10 @@
 Functionality:
 -------------------------------------------------------------------------------
-
 Add Vendor Product as WTCR Product.............................................
-        
+    
+    
 Receive Products...............................................................
-- (WTCR Product Gets Used to Create an Inventory Entity)
+- (WTCR Product Gets Used to Create an Inventory Item Entity)
 - Creates Inventory Item from WTCR Product + Vendor Product Info.
     -Gets Serial Numbers, Unique Instance Information, 
 

@@ -67,6 +67,8 @@ class WtcrProductsController extends AppController
     {   
         $wtcrProduct = $this->WtcrProducts->newEntity();   
         
+        debug($this->request);
+        
         if($this->request->is('post')) {
             // echo "<pre>" . print_r($wtcrProduct, TRUE) . "</pre>";
             // echo "<pre>" . print_r($this->request->data, TRUE) . "</pre>";
@@ -92,6 +94,8 @@ class WtcrProductsController extends AppController
                 // die('FAILED TO SAVE WTCR PRODUCT');
                 $this->Flash->error('The Vendor Product could not be saved as a WTCR Product.');
             }
+            
+            debug($wtcrProduct);
         }        
         
         $productVendors = TableRegistry::get('wtcr_vendor_products')->find('all', [
@@ -113,7 +117,9 @@ class WtcrProductsController extends AppController
         $this->set('categories', $wtcrProductCategories);
         $this->set('marketplaces', $marketplaces);
         
-        error_log('About to redirect to WTCRProducts->Index');
+        
+        
+        // error_log('About to redirect to WTCRProducts->Index');
         
         // return $this->redirect(['controller' => 'WtcrProducts', 'action' => 'index']);
     }
