@@ -84,10 +84,10 @@ class WtcrProductsController extends AppController
             error_log('Saving Product (Rules == FALSE)');
             
             echo $this->WtcrProducts->validate($wtcrProduct);           
-            die('END OF TESTING');
+            error_log('END OF TESTING');
             
             
-            if($this->WtcrProducts->save($wtcrProduct, ['checkRules' => false])) {
+            if($this->WtcrProducts->save($wtcrProduct)) {
                 // die('Saved WTCR Product');
                 error_log('Successfully Saved WTCR Product');
                 $this->Flash->success('The Vendor Product has been saved as a WTCR Product.');
