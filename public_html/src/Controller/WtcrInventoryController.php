@@ -108,4 +108,20 @@ class WtcrInventoryController extends AppController
         }
         return $this->redirect(['action' => 'index']);
     }
+    
+    public function receive($vendor_sku = null)
+    {
+        // Input List
+        /*
+            GET WTCR SKU
+            GET PRODUCT NAME
+            GET PRODUCT CATEGORY
+            GET MFG_PART_NUM
+            GET VENDOR
+            GET VENDOR SKU (FUNCTION ARG)
+            GET VENDOR PRICE (BASE + MARKUP)
+            GET RECEIVED_DATE = NOW () [ON FORM SUBMIT];
+            READ IN SERIAL NUMBERS.   
+        */
+    }
 }
