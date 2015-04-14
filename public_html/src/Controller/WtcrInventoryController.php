@@ -67,6 +67,8 @@ class WtcrInventoryController extends AppController
     {
         $wtcrInventory = $this->WtcrInventory->newEntity();
         
+        $wtcrProductCategories = $this->WtcrInventory->WtcrProductCategories->find('list', ['limit' => 200]);
+        $wtcrVendors = $this->WtcrInventory->WtcrVendors->find('list', ['limit' => 200]);
         $this->set(compact('wtcrInventory', 'wtcrProductCategories', 'wtcrVendors'));
         $this->set('_serialize', ['wtcrInventory']);
     }
