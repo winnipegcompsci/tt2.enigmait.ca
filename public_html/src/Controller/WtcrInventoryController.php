@@ -111,6 +111,7 @@ class WtcrInventoryController extends AppController
     
     public function receive($mfg_part_num = null)
     {
+        
         // Input List
         /*
             GET WTCR SKU
@@ -123,5 +124,8 @@ class WtcrInventoryController extends AppController
             GET RECEIVED_DATE = NOW () [ON FORM SUBMIT];
             READ IN SERIAL NUMBERS.   
         */
+        
+        
+        
     }
 }
