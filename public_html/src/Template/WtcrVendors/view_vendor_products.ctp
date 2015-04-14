@@ -44,6 +44,7 @@
                         $exists = FALSE;
                         foreach($vendor_products as $product) {
                             foreach($wtcr_products as $prod) {
+                                error_log('DOES: ' . $prod->mfg_part_num . ' == ' . $product->mfg_part_num);
                                 if($prod->mfg_part_num == $product->mfg_part_num) {
                                     $exists = TRUE;
                                 }
