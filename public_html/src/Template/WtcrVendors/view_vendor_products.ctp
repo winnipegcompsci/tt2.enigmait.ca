@@ -42,25 +42,29 @@
                         
                         
                         $exists = FALSE;
+                        
+                        
                         foreach($vendor_products as $product) {
+                            $class = "danger";
+                            
                             foreach($wtcr_products as $prod) {
                                 if($prod->mfg_part_num == $product->mfg_part_num) {
                                     $exists = TRUE;
-                                     error_log('DOES: ' . $prod->mfg_part_num . ' == ' . $product->mfg_part_num);
-                               
+                                    $class = "success";
+                                    
                                 }
                             }
                                
                             if(!$exists) {
                                 $addLink =  $this->Html->link('Add Product', ['controller' => 'wtcr_products', 'action' => 'add_vendor_product', $product->mfg_part_num]);
                             } else {
-                                $addLink = "Already Carried";
+                                $addLink = "<strong>Already Carried</strong>";
                             }
 
               
                         ?>
                         
-                        <tr>
+                        <tr class="<?= $class ?>">
                             <td><?= $product->product_name ?></td>
                             <td><?= $product->wtcr_vendor_sku ?></td>
                             <td>$<?= number_format($product->vendor_price, 2); ?></td>
