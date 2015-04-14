@@ -82,12 +82,14 @@ class WtcrProductsController extends AppController
             // debug($wtcrProduct);      
 
             error_log('Testing validation:: ');
-            echo $this->WtcrProducts->validate($wtcrProduct);           
-            error_log('END OF TESTING');
-            
+            try {
+                error_log('Validation:: ' . $this->WtcrProducts->validate($wtcrProduct));           
+                error_log('END OF TESTING');
+            } catch (Exceprtion $e) {
+                error_log('Catch Exception:: ' . $e->getMessage());
+            }
             
             if($this->WtcrProducts->save($wtcrProduct)) {
-                // die('Saved WTCR Product');
                 error_log('Successfully Saved WTCR Product');
                 $this->Flash->success('The Vendor Product has been saved as a WTCR Product.');
                 return $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'index']);
