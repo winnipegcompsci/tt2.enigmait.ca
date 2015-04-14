@@ -10,10 +10,7 @@
 </div>
 <div class="wtcrInventory form col-lg-10 col-md-9 columns">
     <?php 
-        foreach($thisProduct as $try) {
-            echo "TRY<pre>" . print_r($try, TRUE) . "</pre>";
-            
-        }
+        echo "<pre>" . print_r($thisProduct, TRUE) . "</pre>";
     ?>
     <?= $this->Form->create($wtcrInventory); ?>
     <fieldset>
