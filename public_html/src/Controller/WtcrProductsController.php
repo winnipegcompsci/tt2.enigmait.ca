@@ -52,10 +52,10 @@ class WtcrProductsController extends AppController
         if ($this->request->is('post')) {
             $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
             if ($this->WtcrProducts->save($wtcrProduct)) {
-                $this->Flash->success('The wtcr product has been saved.');
+                $this->Flash->success('The WTCR product has been saved.');
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error('The wtcr product could not be saved. Please, try again.');
+                $this->Flash->error('The WTCR product could not be saved. Please, try again.');
             }
         }
         $wtcrProductCategories = $this->WtcrProducts->WtcrProductCategories->find('list', ['limit' => 200]);
