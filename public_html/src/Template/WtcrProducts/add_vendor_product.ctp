@@ -82,7 +82,7 @@
 </div>
 
 <script>
-jQuery(document).ready( function() {
+$(document).ready( function() {
     $('#productVendorTable').dataTable( {
         "bPaginate": false
     });
