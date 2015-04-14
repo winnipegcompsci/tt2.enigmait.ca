@@ -43,7 +43,7 @@
                         die('PRINTED WTCR PRODUCTS');
                         
                         foreach($vendor_products as $product) {
-                            if(/* IF MFG_PART_NUM EXISTS IN ARRAY. */) {
+                            if($product->mfg_part_num != NULL) {
                                 $addLink =  $this->Html->link('Add Product', ['controller' => 'wtcr_products', 'action' => 'add_vendor_product', $product->mfg_part_num]);
                             } else {
                                 $addLink = "# in Inventory";
