@@ -114,7 +114,8 @@ class WtcrProductsController extends AppController
         $this->set('marketplaces', $marketplaces);
         
         error_log('About to redirect to WTCRProducts->Index');
-        return $this->redirect(['controller' => 'WtcrProducts', 'action' => 'index']);
+        
+        // return $this->redirect(['controller' => 'WtcrProducts', 'action' => 'index']);
     }
     
     public function getWtcrSku($mfg_part_num = null) 
