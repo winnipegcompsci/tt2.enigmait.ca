@@ -66,9 +66,7 @@ class WtcrProductsController extends AppController
     public function add_vendor_product($mfg_part_num) 
     {   
         $wtcrProduct = $this->WtcrProducts->newEntity();   
-        
-        debug($this->request);
-        
+                
         if($this->request->is('post')) {
             // echo "<pre>" . print_r($wtcrProduct, TRUE) . "</pre>";
             // echo "<pre>" . print_r($this->request->data, TRUE) . "</pre>";
@@ -96,7 +94,7 @@ class WtcrProductsController extends AppController
             }
             
             debug($wtcrProduct);
-        }        
+        } //end if post.        
         
         $productVendors = TableRegistry::get('wtcr_vendor_products')->find('all', [
             'conditions' => ['mfg_part_num' => $mfg_part_num],
