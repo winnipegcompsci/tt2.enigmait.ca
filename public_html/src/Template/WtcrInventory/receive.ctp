@@ -14,9 +14,14 @@
     ?>
     <?= $this->Form->create($wtcrInventory); ?>
     <fieldset>
+       
+        
         
         <legend><?= __('Add Wtcr Inventory') ?></legend>
         <?php
+            echo "<pre>" . print_r($thisVendorProduct, TRUE) . "</pre>";
+        
+        
             echo $this->Form->input('wtcr_sku', ['default' => $thisProduct->wtcrsku]);
             echo $this->Form->input('product_name', ['default' => $thisProduct->wtcr_product_name]);
             echo $this->Form->input('wtcr_product_category_id', [

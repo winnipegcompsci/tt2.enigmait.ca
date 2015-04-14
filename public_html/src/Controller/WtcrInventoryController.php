@@ -71,12 +71,16 @@ class WtcrInventoryController extends AppController
             'conditions' => ['wtcrsku' => $wtcr_sku]           
         ])->first();
         
+        $thisVendorProduct = TableRegistry::get('WtcrVendorProducts')->find('all', [
+            'conditions' => ['mfg_part_num' => $thisProduct->mfg_part_num]
+        ]);
         
         $wtcrProductCategories = $this->WtcrInventory->WtcrProductCategories->find('list', ['limit' => 200]);
         $wtcrVendors = $this->WtcrInventory->WtcrVendors->find('list', ['limit' => 200]);
         $this->set(compact('wtcrInventory', 'wtcrProductCategories', 'wtcrVendors'));
         $this->set('_serialize', ['wtcrInventory']);
         $this->set('thisProduct', $thisProduct);
+        $this->set('thisVendorProduct', $thisVendorProduct);
     }
     
     /**
