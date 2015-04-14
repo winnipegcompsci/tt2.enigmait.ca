@@ -12,6 +12,7 @@
     <?php 
         foreach($thisProduct as $try) {
             echo "<pre>" . print_r($try, TRUE) . "</pre>";
+            
         }
     ?>
     <?= $this->Form->create($wtcrInventory); ?>
@@ -19,7 +20,7 @@
         
         <legend><?= __('Add Wtcr Inventory') ?></legend>
         <?php
-            echo $this->Form->input('wtcr_sku', ['default' => '']);
+            echo $this->Form->input('wtcr_sku', ['default' => $this_wtcr_sku]);
             echo $this->Form->input('product_name');
             echo $this->Form->input('wtcr_product_category_id', ['options' => $wtcrProductCategories]);
             echo $this->Form->input('mfg_part_number');
