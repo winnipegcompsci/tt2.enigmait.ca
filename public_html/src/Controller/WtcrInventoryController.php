@@ -62,6 +62,14 @@ class WtcrInventoryController extends AppController
         $this->set(compact('wtcrInventory', 'wtcrProductCategories', 'wtcrVendors'));
         $this->set('_serialize', ['wtcrInventory']);
     }
+    
+    public function receive($wtcr_sku = null) 
+    {
+        $wtcrInventory = $this->WtcrInventory->newEntity();
+        
+        $this->set(compact('wtcrInventory', 'wtcrProductCategories', 'wtcrVendors'));
+        $this->set('_serialize', ['wtcrInventory']);
+    }
 
     /**
      * Edit method
@@ -107,25 +115,5 @@ class WtcrInventoryController extends AppController
             $this->Flash->error('The wtcr inventory could not be deleted. Please, try again.');
         }
         return $this->redirect(['action' => 'index']);
-    }
-    
-    public function receive($mfg_part_num = null)
-    {
-        
-        // Input List
-        /*
-            GET WTCR SKU
-            GET PRODUCT NAME
-            GET PRODUCT CATEGORY
-            GET MFG_PART_NUM
-            GET VENDOR
-            GET VENDOR SKU (FUNCTION ARG)
-            GET VENDOR PRICE (BASE + MARKUP)
-            GET RECEIVED_DATE = NOW () [ON FORM SUBMIT];
-            READ IN SERIAL NUMBERS.   
-        */
-        
-        
-        
     }
 }
