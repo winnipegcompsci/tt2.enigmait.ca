@@ -702,11 +702,11 @@ class WtcrVendorsController extends AppController
 
                 }
                 
-                // error_log('Attempting to save...');
+                error_log('Attempting to save...');
                 if($vendorProducts->save($thisProduct)) {
                     error_log('Saved #' . $thisProduct->id . '::' . $thisProduct->mfg_part_num . ':: ' . $product_names[$pos] . ' with Product Number: ' . $product_skus[$pos]);
                 } else {
-                    // error_log('Failed to Save ' . $product_names[$pos]. ' properly');
+                    error_log('Failed to Save ' . $product_names[$pos]. ' properly');
                 }
                
                 $message = "Adding " . $productType . " product " . $pos . "/" . $totalNumProducts . " from ASI -- " . number_format(($index / count($productTypes))*100, 2) . "% complete scan";
