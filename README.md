@@ -1,9 +1,7 @@
 Functionality:
 -------------------------------------------------------------------------------
-Vendor Products................................................................
--Implement Fetch from EPROM				        (Cron Call - No Interface)
--Implement Fetching from Longtech			    (Cron Call - No Interface)
--Implement Fetching from ASI 				    (Cron Call - No Interface)
+
+Add Vendor Product as WTCR Product.............................................
         
 Receive Products...............................................................
 - (WTCR Product Gets Used to Create an Inventory Entity)
@@ -20,6 +18,11 @@ Generate ZPL Barcode for Inventory Tracking:
 - Gets Displayed in Inventory 'view' view along with link to print label.
 - Barcode Can Ber Scanned to bring Up Inventory Details
     eg) Date Received, Date Sold, Price Received, price sold, order #.
+
+Vendor Products................................................................
+-Implement Auto Fetch from EPROM		        (Cron Call - No Interface)
+-Implement Auto Fetch from Longtech			    (Cron Call - No Interface)
+-Implement Auto Fetch from ASI 				    (Cron Call - No Interface)
 	
 - Pushing WTCR Products to Marketplaces........................................
 - Push Product to Drupal (WTCR)
@@ -27,7 +30,7 @@ Generate ZPL Barcode for Inventory Tracking:
 - Push Product to eBay (WTCR)
 - Push Product to Kijiji (WTCR)
 
-Reports........................................................................
+TT / WTCR Reports..............................................................
     (WTCR) Taxes
     (WTCR) Sales (volume, by marketplace)
     (Enigma) Ticket Reports
@@ -48,9 +51,9 @@ Order Information Lookup.......................................................
 - Fetch from Remote Drupal Table?- 
 
 Email Notifications............................................................
-Send Emails on Event Add.......................................................
-Send Emails on Ticket Assign...................................................
-Send Emails on New Notification (pertaining to user ROLE)......................
+    - Email on Ticket Assign / Status Change / Event Add
+    - Email on New Vendor Product. 
+    - Email Price Change Alerts. 
         
 -------------------------------------------------------------------------------
 User Interface
@@ -91,8 +94,9 @@ User Interface
     Fix / Center Paginated Numbers.............................................
 	Dashboard - Recent Orders Table (10 Orders)................................
 	'Sales by Marketplace' Donut Graph......................................... 
--------------------------------------------------------------------------------
-        
+
+    
+-------------------------------------------------------------------------------      
 WTCR2.0 Development
 -------------------------------------------------------------------------------
 Install Drupal 8.0 (Acquia Dev Desktop)
