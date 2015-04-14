@@ -24,6 +24,7 @@
                         <th>Category</th>
                         <th>Autoupdate</th>
                         <th>Static Price</th>
+                        <th>Receive </th>
                         <th class="actions"><?= __('Actions') ?></th>
                     </tr>
                 </thead>
@@ -39,6 +40,7 @@
                         </td>
                         <td><?= $this->Number->format($wtcrProduct->autoupdate) == 1 ? 'Enabled' : 'Disabled' ?></td>
                         <td><?= $this->Number->format($wtcrProduct->static_price) == 0 ? 'Not Set' : $this->Number->format($wtcrProduct->static_price) ?></td>
+                        <th><?= $thus0>Html->link(__('Receive'), ['controller' => 'WtcrInventory', 'action' => 'add', $wtcrProduct->mfg_part_num] ); ?></th>
                         <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $wtcrProduct->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $wtcrProduct->id]) ?>
