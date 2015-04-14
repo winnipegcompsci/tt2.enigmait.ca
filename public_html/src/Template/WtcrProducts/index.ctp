@@ -37,7 +37,7 @@
                             <?= $wtcrProduct->has('wtcr_product_category') ? $this->Html->link($wtcrProduct->wtcr_product_category->category_name, ['controller' => 'WtcrProductCategories', 'action' => 'view', $wtcrProduct->wtcr_product_category->id]) : '' ?>
                         </td>
                         <td><?= h($wtcrProduct->wtcr_product_name) ?></td>
-                        <td><?= $this->Number->format($wtcrProduct->autoupdate) ?></td>
+                        <td><?= $this->Number->format($wtcrProduct->autoupdate) == 1 ? 'Enabled' : 'Disabled' ?></td>
                         <td><?= $this->Number->format($wtcrProduct->static_price) ?></td>
                         <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $wtcrProduct->id]) ?>
