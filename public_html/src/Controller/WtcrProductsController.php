@@ -79,14 +79,11 @@ class WtcrProductsController extends AppController
             $wtcrProduct->wtcr_nid = 0;
             $wtcrProduct->marketplace_data = serialize( array() );
             $wtcrProduct->pictures = serialize( array() );
-            $wtcrProduct->wtcr_product_category = $this->request->data['wtcr_product_category_id'];
-            // echo "<pre>WTCR Product:: " . print_r($wtcrProduct->errors(), TRUE) . "</pre>";
+            $wtcrProduct->wtcr_product_category = $this->request->data['wtcr_product_category_id'];    
             
-            
-
             debug($wtcrProduct);      
-            // die('DEATH BEFORE TRYING TO SAVE');
-            
+
+            error_log('About to try saving product...');
             if($this->WtcrProducts->save($wtcrProduct, ['checkRules' => false])) {
                 // die('Saved WTCR Product');
                 error_log('Successfully Saved WTCR Product');
