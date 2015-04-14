@@ -28,16 +28,16 @@ CREATE TABLE `wtcr_products` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'A unique ID for the product',
   `mfg_part_num` varchar(40) NOT NULL COMMENT 'Part # The Manufacturer Uses',
   `wtcrsku` varchar(40) NOT NULL COMMENT 'The SKU used by WTCR to identify the product',
-  `wtcr_product_category_id` int(11) DEFAULT '1' NOT NULL COMMENT 'The category the product falls in',
+  `wtcr_product_category_id` int(11) DEFAULT '1' COMMENT 'The category the product falls in',
   `wtcr_product_name` varchar(45) DEFAULT NULL,
   `description` longtext COMMENT 'A description of the product',
-  `autoupdate` int(11) NOT NULL COMMENT '1 if Product Should Auto Update Price, 0 otherwise.',
+  `autoupdate` int(11) NOT NULL DEFAULT '1' COMMENT '1 if Product Should Auto Update Price, 0 otherwise.',
   `static_price` float DEFAULT NULL COMMENT 'The Price Suggested based on Current Markup',
   `suggestedmarkup` float DEFAULT '0.5' COMMENT 'The Suggested Markup Percentage for a Product',
   `wtcrprice` float DEFAULT NULL COMMENT 'The Price WTCR Charges',
   `wtcr_nid` varchar(10) DEFAULT NULL COMMENT 'The NID of the Product on WTCRs Website',
   `lastupdated` datetime NOT NULL COMMENT 'The date/time this product was last updated from supplier',
-  `marketplace_data` longtext NOT NULL,
+  `marketplace_data` longtext,
   `pictures` longtext,
   PRIMARY KEY (`id`,`mfg_part_num`),
   UNIQUE KEY `id_UNIQUE` (`id`),
@@ -64,4 +64,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-08 12:17:05
+-- Dump completed on 2015-04-14 12:29:14
