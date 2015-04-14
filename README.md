@@ -1,12 +1,5 @@
 Functionality:
 -------------------------------------------------------------------------------    
-    
-    
-Receive Products...............................................................
-- (WTCR Product Gets Used to Create an Inventory Item Entity)
-- Creates Inventory Item from WTCR Product + Vendor Product Info.
-    -Gets Serial Numbers, Unique Instance Information, 
-
 Find Product Details.........................................................
     -Scan Barcode attached to item to lookup data about that particular
     inventory item
