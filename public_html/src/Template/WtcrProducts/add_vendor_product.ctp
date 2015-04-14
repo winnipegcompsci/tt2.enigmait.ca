@@ -45,7 +45,7 @@
     <?php        
     if(count($productVendors) != 0) { ?>
     <legend> This product can be purchased from the following vendors: </legend>
-    <table id="datatable" width="100%">
+    <table id="productVendorTable" width="100%">
         <thead>
             <tr>
                 <th> Vendor Name </th>
