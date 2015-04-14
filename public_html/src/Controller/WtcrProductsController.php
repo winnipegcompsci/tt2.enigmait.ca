@@ -92,7 +92,7 @@ class WtcrProductsController extends AppController
                 $this->Flash->success('The Vendor Product has been saved as a WTCR Product.');
                 return $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'index']);
             } else {
-                // die('FAILED TO SAVE WTCR PRODUCT');
+                die('FAILED TO SAVE WTCR PRODUCT');
                 $this->Flash->error('The Vendor Product could not be saved as a WTCR Product.');
             }
             
@@ -153,9 +153,7 @@ class WtcrProductsController extends AppController
         } 
         
         return 'W-' . rand(1000, 9999) . '-' . rand(1000, 9999) . '-01'; 
-    }
-
-    
+    }    
 
     /**
      * Edit method
