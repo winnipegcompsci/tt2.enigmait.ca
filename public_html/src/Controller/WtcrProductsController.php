@@ -113,6 +113,7 @@ class WtcrProductsController extends AppController
         $this->set('categories', $wtcrProductCategories);
         $this->set('marketplaces', $marketplaces);
         
+        error_log('About to redirect to WTCRProducts->Index');
         return $this->redirect(['controller' => 'WtcrProducts', 'action' => 'index']);
     }
     
