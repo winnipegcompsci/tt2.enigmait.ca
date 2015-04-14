@@ -11,7 +11,7 @@
 <div class="wtcrInventory form col-lg-10 col-md-9 columns">
     <?php 
         foreach($thisProduct as $try) {
-            echo "<pre>" . print_r($try, TRUE) . "</pre>";
+            echo "TRY<pre>" . print_r($try, TRUE) . "</pre>";
             
         }
     ?>
