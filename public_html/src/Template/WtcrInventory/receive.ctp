@@ -17,7 +17,7 @@
         
         <legend><?= __('Add Wtcr Inventory') ?></legend>
         <?php
-            echo $this->Form->input('wtcr_sku', ['default' => $thisProduct->wtcr_sku]);
+            echo $this->Form->input('wtcr_sku', ['default' => $thisProduct->wtcrsku]);
             echo $this->Form->input('product_name', ['default' => $thisProduct->wtcr_product_name]);
             echo $this->Form->input('wtcr_product_category_id', [
                 'options' => $wtcrProductCategories,
