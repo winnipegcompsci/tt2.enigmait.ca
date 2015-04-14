@@ -29,6 +29,14 @@
                 </tr>
             </thead>
             
+            <?php 
+                $addLink =  $this->Html->link('Add Product', ['controller' => 'wtcr_products', 'action' => 'add_vendor_product', $product->mfg_part_num]);
+                
+                // IF $MFG_PART_NUM EXISTS IN WTCR_PRODUCTS 
+                //    => Show 'Added' / # Left in Inventory.
+                //    => 
+            ?>
+            
             <tbody>
                 <?php 
                     if(isset($vendor_products) && $vendor_products !== null) {
