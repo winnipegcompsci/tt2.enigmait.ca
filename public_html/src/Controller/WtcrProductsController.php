@@ -67,13 +67,13 @@ class WtcrProductsController extends AppController
     {   
         $wtcrProduct = $this->WtcrProducts->newEntity();   
                 
-        if($this->request->is('post')) {
-            // echo "<pre>" . print_r($wtcrProduct, TRUE) . "</pre>";
-            // echo "<pre>" . print_r($this->request->data, TRUE) . "</pre>";
-        
+        if($this->request->is('post')) {        
             $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
-           
-            // $wtcrProduct->createnode = 0;
+            debug($wtcrProduct);
+
+            $wtcrProduct=> gg
+            
+            $wtcrProduct->createnode = 0;
             $wtcrProduct->lastupdated = date("Y-m-d H:i:s");
             $wtcrProduct->static_price = 0;
             $wtcrProduct->wtcr_nid = 0;
@@ -84,6 +84,7 @@ class WtcrProductsController extends AppController
             debug($wtcrProduct);      
 
             error_log('Saving Product (Rules == FALSE)');
+            
             if($this->WtcrProducts->save($wtcrProduct, ['checkRules' => false])) {
                 // die('Saved WTCR Product');
                 error_log('Successfully Saved WTCR Product');
@@ -95,7 +96,7 @@ class WtcrProductsController extends AppController
             }
             
             debug($wtcrProduct);
-            die('END OF PROCESSING');
+            error_log('END OF PROCESSING');
         } //end if post.        
         
         $productVendors = TableRegistry::get('wtcr_vendor_products')->find('all', [
