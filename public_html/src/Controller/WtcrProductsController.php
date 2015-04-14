@@ -85,7 +85,7 @@ class WtcrProductsController extends AppController
             
 
             debug($wtcrProduct);      
-            // die('DEATH BEFORE TRYING TO SAVE');
+            die('DEATH BEFORE TRYING TO SAVE');
             
             if($this->WtcrProducts->save($wtcrProduct)) {
                 // die('Saved WTCR Product');
