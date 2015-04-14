@@ -30,12 +30,10 @@
             ]);
             echo $this->Form->input('mfg_part_number', ['default' => $thisProduct->mfg_part_num]);
             echo $this->Form->input('wtcr_vendor_id', ['options' => $wtcrVendors]);
-            echo $this->Form->input('vendor_sku');
-            echo $this->Form->input('vendor_price');
-            echo $this->Form->input('received_date');
-            echo $this->Form->input('markup');
+            echo $this->Form->input('vendor_sku', ['default' => $thisVendorProduct->wtcr_vendor_sku]);
+            echo $this->Form->input('vendor_price', ['default' => $thisVendorProduct->vendor_price]);
+            echo $this->Form->input('received_date', ['default' => date('Y-m-d H:i:s')]);
             echo $this->Form->input('serial_numbers');
-            echo $this->Form->input('order_details');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
