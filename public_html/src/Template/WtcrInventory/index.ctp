@@ -40,7 +40,7 @@
                         <td><?= h($wtcrInventory->mfg_part_number) ?></td>
                         <td>
                             <?php                               
-                                if($wtcrInventory->order_details == "")) {
+                                if($wtcrInventory->order_details == "") {
                                     echo 'YES';
                                 } else {
                                     echo 'SOLD';
