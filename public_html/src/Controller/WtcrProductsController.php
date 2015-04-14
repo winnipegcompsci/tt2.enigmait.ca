@@ -87,7 +87,7 @@ class WtcrProductsController extends AppController
             debug($wtcrProduct);      
             // die('DEATH BEFORE TRYING TO SAVE');
             
-            if($this->WtcrProducts->save($wtcrProduct, FALSE)) {
+            if($this->WtcrProducts->save($wtcrProduct)) {
                 // die('Saved WTCR Product');
                 $this->Flash->success('The Vendor Product has been saved as a WTCR Product.');
                 return $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'index']);
@@ -97,7 +97,7 @@ class WtcrProductsController extends AppController
             }
             
             debug($wtcrProduct);
-            die();
+            die('END OF PROCESSING');
         } //end if post.        
         
         $productVendors = TableRegistry::get('wtcr_vendor_products')->find('all', [
