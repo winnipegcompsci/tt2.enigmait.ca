@@ -9,10 +9,6 @@
     </ul>
 </div>
 <div class="wtcrInventory form col-lg-10 col-md-9 columns">
-    <?php 
-        echo "THIS PRODUCT::: <pre>" . print_r($thisProduct, TRUE) . "</pre>";
-    ?>
-
     <?= $this->Form->create($wtcrInventory); ?>
     <fieldset>
         <legend><?= __('Add Wtcr Inventory') ?></legend>
