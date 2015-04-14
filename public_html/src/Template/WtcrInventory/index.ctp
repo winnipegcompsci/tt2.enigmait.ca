@@ -22,6 +22,7 @@
                         <th>Product Name</th>
                         <th>Category </th>
                         <th>Mfg. Part Number</th>
+                        <th>In Stock </th>
                         <th>Vendor</th>
                         <th>Vendor SKU</th>
                         <th class="actions"><?= __('Actions') ?></th>
@@ -37,6 +38,15 @@
                             <?= $wtcrInventory->has('wtcr_product_category') ? $this->Html->link($wtcrInventory->wtcr_product_category->category_name, ['controller' => 'WtcrProductCategories', 'action' => 'view', $wtcrInventory->wtcr_product_category->id]) : '' ?>
                         </td>
                         <td><?= h($wtcrInventory->mfg_part_number) ?></td>
+                        <td>
+                            <?php 
+                                if(unserialize($wtcrInventory->order_details) == array()) {
+                                    echo 'YES';
+                                } else {
+                                    echo 'SOLD';
+                                }                            
+                            ?>
+                        </td>
                         <td>
                             <?= $wtcrInventory->has('wtcr_vendor') ? $this->Html->link($wtcrInventory->wtcr_vendor->vendor_name, ['controller' => 'WtcrVendors', 'action' => 'view', $wtcrInventory->wtcr_vendor->id]) : '' ?>
                         </td>
