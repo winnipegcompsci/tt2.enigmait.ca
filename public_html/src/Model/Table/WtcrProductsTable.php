@@ -22,8 +22,8 @@ class WtcrProductsTable extends Table
     public function initialize(array $config)
     {
         $this->table('wtcr_products');
-        $this->displayField('id');
-        $this->primaryKey(['id', 'createnode', 'wtcr_product_category_id']);
+        $this->displayField('mfg_part_num');
+        $this->primaryKey(['id']);
         $this->belongsTo('WtcrProductCategories', [
             'foreignKey' => 'wtcr_product_category_id'
         ]);
@@ -36,7 +36,8 @@ class WtcrProductsTable extends Table
      * @return \Cake\Validation\Validator
      */
     public function validationDefault(Validator $validator)
-    {
+    {   
+        /*
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('id', 'create')
@@ -64,6 +65,9 @@ class WtcrProductsTable extends Table
             ->allowEmpty('pictures');
 
         return $validator;
+        */
+        
+        return TRUE;
     }
 
     /**
