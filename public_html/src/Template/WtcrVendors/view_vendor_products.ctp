@@ -39,15 +39,22 @@
             <tbody>
                 <?php 
                     if(isset($vendor_products) && $vendor_products !== null) {
-                        echo "<pre>" . print_r($wtcr_products->toArray(), TRUE) . "</pre>";
-                        die('PRINTED WTCR PRODUCTS');
                         
+                        
+                        $exists = FALSE;
                         foreach($vendor_products as $product) {
+                            foreach($wtcr_products as $prod) {
+                                echo "Product:: <pre>" . print_r($product, TRUE) . "</pre>";
+                                echo "Produ:: <pre>" . print_r($prod, TRUE) . "</pre>";
+                            }
+                            
+                            die('DONE ITERATING OVER WTCR PRODUCTS');
+                            
                             if($product->mfg_part_num != NULL) {
                                 $addLink =  $this->Html->link('Add Product', ['controller' => 'wtcr_products', 'action' => 'add_vendor_product', $product->mfg_part_num]);
-                            } else {
-                                $addLink = "# in Inventory";
                             }
+
+              
                         ?>
                         
                         <tr>
