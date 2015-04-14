@@ -39,11 +39,8 @@
                         </td>
                         <td><?= h($wtcrInventory->mfg_part_number) ?></td>
                         <td>
-                            <?php
-                                error_log("ORDER DETAILS: " . print_r($wtcrInventory->order_details, TRUE));
-                                error_log("SERIALIZED ARRAY: " . serialize(array()));
-                                
-                                if($wtcrInventory->order_details == serialize(array())) {
+                            <?php                               
+                                if($wtcrInventory->order_details == "")) {
                                     echo 'YES';
                                 } else {
                                     echo 'SOLD';
