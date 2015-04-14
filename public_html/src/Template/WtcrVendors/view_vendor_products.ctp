@@ -39,7 +39,7 @@
             <tbody>
                 <?php 
                     if(isset($vendor_products) && $vendor_products !== null) {
-                        echo "<pre>" . print_r($wtcr_products, TRUE) . "</pre>";
+                        echo "<pre>" . print_r($wtcr_products->toArray(), TRUE) . "</pre>";
                         die('PRINTED WTCR PRODUCTS');
                         
                         foreach($vendor_products as $product) {
