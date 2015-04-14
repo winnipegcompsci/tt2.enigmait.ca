@@ -20,8 +20,8 @@
                         <th>ID</th>
                         <th>Mfg. Part Number</th>
                         <th>WTCR SKU</th>
-                        <th>Category</th>
                         <th>Product Name</th>
+                        <th>Category</th>
                         <th>Autoupdate</th>
                         <th>Static Price</th>
                         <th class="actions"><?= __('Actions') ?></th>
@@ -33,10 +33,10 @@
                         <td><?= $this->Number->format($wtcrProduct->id) ?></td>
                         <td><?= h($wtcrProduct->mfg_part_num) ?></td>
                         <td><?= h($wtcrProduct->wtcrsku) ?></td>
+                        <td><?= h($wtcrProduct->wtcr_product_name) ?></td>
                         <td>
                             <?= $wtcrProduct->has('wtcr_product_category') ? $this->Html->link($wtcrProduct->wtcr_product_category->category_name, ['controller' => 'WtcrProductCategories', 'action' => 'view', $wtcrProduct->wtcr_product_category->id]) : '' ?>
                         </td>
-                        <td><?= h($wtcrProduct->wtcr_product_name) ?></td>
                         <td><?= $this->Number->format($wtcrProduct->autoupdate) == 1 ? 'Enabled' : 'Disabled' ?></td>
                         <td><?= $this->Number->format($wtcrProduct->static_price) == 0 ? 'Not Set' : $this->Number->format($wtcrProduct->static_price) ?></td>
                         <td class="actions">
