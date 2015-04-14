@@ -40,7 +40,7 @@
                         <td><?= h($wtcrInventory->mfg_part_number) ?></td>
                         <td>
                             <?php 
-                                if(unserialize($wtcrInventory->order_details) == array()) {
+                                if($wtcrInventory->order_details == serialize(array())) {
                                     echo 'YES';
                                 } else {
                                     echo 'SOLD';
