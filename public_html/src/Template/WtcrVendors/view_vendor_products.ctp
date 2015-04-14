@@ -44,14 +44,15 @@
                         $exists = FALSE;
                         foreach($vendor_products as $product) {
                             foreach($wtcr_products as $prod) {
-                                echo "Product:: <pre>" . print_r($product->mfg_part_num, TRUE) . "</pre>";
-                                echo "Prod:: <pre>" . print_r($prod->mfg_part_num, TRUE) . "</pre>";
+                                if($prod->mfg_part_num == $product->mfg_part_num) {
+                                    $exists = TRUE;
+                                }
                             }
                             
-                            die('DONE ITERATING OVER WTCR PRODUCTS');
-                            
-                            if($product->mfg_part_num != NULL) {
+                            if($exists) {
                                 $addLink =  $this->Html->link('Add Product', ['controller' => 'wtcr_products', 'action' => 'add_vendor_product', $product->mfg_part_num]);
+                            } else {
+                                $addLink = "Added";
                             }
 
               
