@@ -67,7 +67,7 @@ class WtcrInventoryController extends AppController
     public function receive($wtcr_sku = null) 
     {
         $wtcrInventory = $this->WtcrInventory->newEntity();
-        $thisProduct = TableRegistry::get('WtcrProducts')->find('first', [
+        $thisProduct = TableRegistry::get('WtcrProducts')->find('all', [
             'conditions' => ['wtcrsku' => $wtcr_sku]           
         ]);
         
