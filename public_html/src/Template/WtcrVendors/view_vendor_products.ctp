@@ -30,8 +30,7 @@
             </thead>
             
             <?php 
-                $addLink =  $this->Html->link('Add Product', ['controller' => 'wtcr_products', 'action' => 'add_vendor_product', $product->mfg_part_num]);
-                
+               
                 // IF $MFG_PART_NUM EXISTS IN WTCR_PRODUCTS 
                 //    => Show 'Added' / # Left in Inventory.
                 //    => 
@@ -41,6 +40,11 @@
                 <?php 
                     if(isset($vendor_products) && $vendor_products !== null) {
                         foreach($vendor_products as $product) {
+                            if($product->mfg_part_num) {
+                                $addLink =  $this->Html->link('Add Product', ['controller' => 'wtcr_products', 'action' => 'add_vendor_product', $product->mfg_part_num]);
+                            } else {
+                                $addLink = "# in Inventory";
+                            }
                         ?>
                         
                         <tr>
