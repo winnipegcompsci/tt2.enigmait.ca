@@ -44,13 +44,14 @@
                         $exists = FALSE;
                         foreach($vendor_products as $product) {
                             foreach($wtcr_products as $prod) {
-                                error_log('DOES: ' . $prod->mfg_part_num . ' == ' . $product->mfg_part_num);
                                 if($prod->mfg_part_num == $product->mfg_part_num) {
                                     $exists = TRUE;
+                                     error_log('DOES: ' . $prod->mfg_part_num . ' == ' . $product->mfg_part_num);
+                               
                                 }
                             }
                             
-                            if($exists) {
+                            if(!$exists) {
                                 $addLink =  $this->Html->link('Add Product', ['controller' => 'wtcr_products', 'action' => 'add_vendor_product', $product->mfg_part_num]);
                             } else {
                                 $addLink = "Added";
@@ -68,7 +69,9 @@
                             <td><?= $product->last_updated ?></td>
                             <td><?= $this->Html->link('Add Product', ['controller' => 'wtcr_products', 'action' => 'add_vendor_product', $product->mfg_part_num]); ?></td>
                         </tr> 
-                    <?php } 
+                    <?php 
+                            $exists = FALSE;
+                        } 
                     }
                 ?>                
             </tbody>
