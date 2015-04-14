@@ -70,8 +70,6 @@ class WtcrProductsController extends AppController
         if($this->request->is('post')) {        
             $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
             debug($wtcrProduct);
-
-            $wtcrProduct=> gg
             
             $wtcrProduct->createnode = 0;
             $wtcrProduct->lastupdated = date("Y-m-d H:i:s");
