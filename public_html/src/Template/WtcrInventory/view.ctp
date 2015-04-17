@@ -1,25 +1,3 @@
-<div class="actions columns col-lg-2 col-md-3 pull-right">
-    <h3><?= __('Item Barcode:') ?></h3>
-    
-    <div id="ivnentory-barcode" src='Generateing Inventory Item Barcode'>
-        <img src='/inventory_barcode.php' style="border 3px solid green" alt = 'Product Barcode' width="250" >
-    </div>
-    
-    
-    <!--
-    <ul class="side-nav">
-        
-        <li><?= $this->Html->link(__('Edit Wtcr Inventory'), ['action' => 'edit', $wtcrInventory->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Wtcr Inventory'), ['action' => 'delete', $wtcrInventory->id], ['confirm' => __('Are you sure you want to delete # {0}?', $wtcrInventory->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Wtcr Inventory'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Wtcr Inventory'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Wtcr Product Categories'), ['controller' => 'WtcrProductCategories', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Wtcr Product Category'), ['controller' => 'WtcrProductCategories', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Wtcr Vendors'), ['controller' => 'WtcrVendors', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Wtcr Vendor'), ['controller' => 'WtcrVendors', 'action' => 'add']) ?> </li>
-    </ul>
-    -->
-</div>
 <div class="wtcrInventory view col-lg-6 col-md-9 columns">
     <h2>Inventory Item#: <?= h($wtcrInventory->mfg_part_number) ?></h2>
     <div class="row">
@@ -61,10 +39,15 @@
     </div>
 </div>
 
-<?php 
-    $barcode = "sometext";
-    $labelcode ="<<<AAA^XA^FO100,751^BCN, 100,Y, N,^FD$barcode^FS^XZAAA";
-?>
+<div class="actions columns col-lg-2 col-md-3">
+    <h3><?= __('Item Barcode:') ?></h3>
+    
+    <div id="ivnentory-barcode" src='Generateing Inventory Item Barcode'>
+        <img src='/inventory_barcode.php?text=<?= $wtcrInventory->serial_numbers ?>' style="border 3px solid green" alt = 'Product Barcode' width="250" >
+    </div>
+    
+</div>
+
 
 
 
