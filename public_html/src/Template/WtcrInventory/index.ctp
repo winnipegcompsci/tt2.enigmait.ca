@@ -24,7 +24,7 @@
                         <th>Mfg. Part Number</th>
                         <th>In Stock </th>
                         <th>Vendor</th>
-                        <th>Vendor SKU</th>
+                        <th>Serial #</th>
                         <th class="actions"><?= __('Actions') ?></th>
                     </tr>
                 </thead>
@@ -50,7 +50,7 @@
                         <td>
                             <?= $wtcrInventory->has('wtcr_vendor') ? $this->Html->link($wtcrInventory->wtcr_vendor->vendor_name, ['controller' => 'WtcrVendors', 'action' => 'view', $wtcrInventory->wtcr_vendor->id]) : '' ?>
                         </td>
-                        <td><?= h($wtcrInventory->vendor_sku) ?></td>
+                        <td><?= h($wtcrInventory->serial_numbers) ?></td>
                         <td class="actions">
                             <?= $this->Html->link(__('View'), ['action' => 'view', $wtcrInventory->id]) ?>
                             <?= $this->Html->link(__('Edit'), ['action' => 'edit', $wtcrInventory->id]) ?>
