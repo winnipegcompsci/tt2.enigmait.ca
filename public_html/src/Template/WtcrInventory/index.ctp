@@ -50,7 +50,7 @@
                         <td>
                             <?= $wtcrInventory->has('wtcr_vendor') ? $this->Html->link($wtcrInventory->wtcr_vendor->vendor_name, ['controller' => 'WtcrVendors', 'action' => 'view', $wtcrInventory->wtcr_vendor->id]) : '' ?>
                         </td>
-                        <td><?= h($wtcrInventory->serial_numbers) ?></td>
+                        <td><?= h(explode(',' , $wtcrInventory->serial_numbers)[0]) ?></td>
                         <td class="actions">
                             <?= $this->Html->link(__('View'), ['action' => 'view', $wtcrInventory->id]) ?>
                             <?= $this->Html->link(__('Edit'), ['action' => 'edit', $wtcrInventory->id]) ?>
