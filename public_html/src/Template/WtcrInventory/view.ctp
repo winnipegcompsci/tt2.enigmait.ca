@@ -12,7 +12,7 @@
     </ul>
 </div>
 <div class="wtcrInventory view col-lg-10 col-md-9 columns">
-    <h2><?= h($wtcrInventory->id) ?></h2>
+    <h2>Inventory Item#: <?= h($wtcrInventory->mfg_part_number) ?></h2>
     <div class="row">
         <div class="large-5 columns strings">
             <h6 class="subheader"><?= __('Wtcr Sku') ?></h6>
