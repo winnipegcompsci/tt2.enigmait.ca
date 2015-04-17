@@ -43,7 +43,7 @@
     <h3><?= __('Item Barcode:') ?></h3>
     
     <div id="ivnentory-barcode" src='Generateing Inventory Item Barcode'>
-        <img src='/inventory_barcode.php?text=<?= $wtcrInventory->serial_numbers ?>' style="border 3px solid green" alt = 'Product Barcode' width="250" >
+        <img src='/inventory_barcode.php?text=<?= $wtcrInventory->mfg_part_number ?>' style="border 3px solid green" alt = 'Product Barcode' width="250" >
     </div>
     
 </div>
