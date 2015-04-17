@@ -3,15 +3,15 @@
     <div class="row">
         <div class="large-5 columns strings">
             <h6 class="subheader"><?= __('Wtcr Sku') ?></h6>
-            <p style="display: inline"><?= h($wtcrInventory->wtcr_sku) ?></p>
+            <p><?= h($wtcrInventory->wtcr_sku) ?></p>
             <h6 class="subheader"><?= __('Product Name') ?></h6>
-            <p style="display: inline"><?= h($wtcrInventory->product_name) ?></p>
-            <h6class="subheader"><?= __('Wtcr Product Category') ?></h6>
-            <p style="display: inline"><?= $wtcrInventory->has('wtcr_product_category') ? $this->Html->link($wtcrInventory->wtcr_product_category->category_name, ['controller' => 'WtcrProductCategories', 'action' => 'view', $wtcrInventory->wtcr_product_category->id]) : '' ?></p>
+            <p><?= h($wtcrInventory->product_name) ?></p>
+            <h6 class="subheader"><?= __('Wtcr Product Category') ?></h6>
+            <p><?= $wtcrInventory->has('wtcr_product_category') ? $this->Html->link($wtcrInventory->wtcr_product_category->category_name, ['controller' => 'WtcrProductCategories', 'action' => 'view', $wtcrInventory->wtcr_product_category->id]) : '' ?></p>
             <h6 class="subheader"><?= __('Mfg Part Number') ?></h6>
-            <p style="display: inline"><?= h($wtcrInventory->mfg_part_number) ?></p>
+            <p><?= h($wtcrInventory->mfg_part_number) ?></p>
             <h6  class="subheader"><?= __('Wtcr Vendor') ?></h6>
-            <p style="display: inline"><?= $wtcrInventory->has('wtcr_vendor') ? $this->Html->link($wtcrInventory->wtcr_vendor->vendor_name, ['controller' => 'WtcrVendors', 'action' => 'view', $wtcrInventory->wtcr_vendor->id]) : '' ?></p>
+            <p><?= $wtcrInventory->has('wtcr_vendor') ? $this->Html->link($wtcrInventory->wtcr_vendor->vendor_name, ['controller' => 'WtcrVendors', 'action' => 'view', $wtcrInventory->wtcr_vendor->id]) : '' ?></p>
             <h6 class="subheader"><?= __('Vendor Sku') ?></h6>
             <p style="display: inline"><?= h($wtcrInventory->vendor_sku) ?></p>
         </div>
