@@ -44,7 +44,7 @@
     
     <div id="ivnentory-barcode" src='Generateing Inventory Item Barcode'>
         <img src='/inventory_barcode.php?size=60&text=<?= $wtcrInventory->mfg_part_number ?>' style="border 3px solid green" alt = 'Product Barcode' width="250" >
-        <a href='#print_barcode'>Print Barcode </a>
+        <a class="pull-right" href='#print_barcode'>Print Barcode </a>
     </div>
     
 </div>
