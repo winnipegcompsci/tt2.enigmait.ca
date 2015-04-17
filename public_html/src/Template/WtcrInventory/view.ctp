@@ -1,6 +1,11 @@
 <div class="actions columns col-lg-2 col-md-3 pull-right">
     <h3><?= __('Item Barcode:') ?></h3>
     
+    <div id="ivnentory-barcode" src='Generateing Inventory Item Barcode'>
+        <img src='someimage.gif' style="border 3px solid green" alt = 'Product Barcode' width="250" >
+    </div>
+    
+    
     <!--
     <ul class="side-nav">
         
