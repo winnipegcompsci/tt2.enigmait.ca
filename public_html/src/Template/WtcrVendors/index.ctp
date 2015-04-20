@@ -1,24 +1,14 @@
-<div class="actions columns col-lg-2 col-md-3 pull-right">
-    <h3><?= __('Actions') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Html->link(__('New Wtcr Vendor'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Inventory'), ['controller' => 'Inventory', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Inventory'), ['controller' => 'Inventory', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Wtcr Vendor Products'), ['controller' => 'WtcrVendorProducts', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Wtcr Vendor Product'), ['controller' => 'WtcrVendorProducts', 'action' => 'add']) ?> </li>
-    </ul>
-</div>
 <div class="wtcrVendors index col-lg-10 col-md-9 columns">
     <div class="panel panel-primary">
         <div class="panel-heading">
-            <i class="fa fa-ticket fa-2x"></i><span style="font-size: 2em"> Vendor Products </span>
+            <i class="fa fa-ticket fa-2x"></i><span style="font-size: 2em"> WTCR Vendors </span>
             <div class="btn-group pull-right">
                 <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i> WTCR Vendor Menu <span class="caret"></span></button>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="#">Create New Vendor</a></li>
-                    <li><a href="#">Find Vendor</a></li>
+                    <li><a href="#">Find Vendor Product</a></li>
                     <li class="divider"></li>
-                    <li><a href="">Delete Vendor Product</a></li>
+                    <li><a href="">Delete Vendor</a></li>
                 </ul>
             </div>
         </div>

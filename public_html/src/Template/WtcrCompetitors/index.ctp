@@ -1,11 +1,3 @@
-<div class="actions columns col-lg-2 col-md-3 pull-right">
-    <h3><?= __('Actions') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Html->link(__('New Wtcr Competitor'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Wtcr Competitor Products'), ['controller' => 'WtcrCompetitorProducts', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Wtcr Competitor Product'), ['controller' => 'WtcrCompetitorProducts', 'action' => 'add']) ?> </li>
-    </ul>
-</div>
 <div class="wtcrCompetitors index col-lg-10 col-md-9 columns">
     <table cellpadding="0" cellspacing="0">
     <thead>
