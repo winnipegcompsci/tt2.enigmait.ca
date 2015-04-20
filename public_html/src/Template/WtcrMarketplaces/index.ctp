@@ -1,14 +1,14 @@
 <div class="wtcrMarketplaces index col-lg-10 col-md-9 columns">
     <div class="panel panel-primary">
         <div class="panel-heading">
-            <i class="fa fa-ticket fa-2x"></i><span style="font-size: 2em"> Tickets </span>
+            <i class="fa fa-ticket fa-2x"></i><span style="font-size: 2em"> WTCR Marketplaces </span>
             <div class="btn-group pull-right">
                 <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i> Ticket Menu <span class="caret"></span></button>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Create New Ticket</a></li>
-                    <li><a href="#">Find Ticket</a></li>
+                    <li><a href="#">Create New Marketplace</a></li>
+                    <li><a href="#">Find Marketplace Transaction</a></li>
                     <li class="divider"></li>
-                    <li><a href="">Delete Ticket</a></li>
+                    <li><a href="">Delete Marketplace</a></li>
                 </ul>
             </div>
         </div>
