@@ -160,7 +160,6 @@
             <th><?= __('Billing Type Id') ?></th>
             <th><?= __('Time Type Id') ?></th>
             <th><?= __('Time Taken') ?></th>
-            <th><?= __('Is Resolution') ?></th>
             <th><?= __('Resolution Date') ?></th>
             <th><?= __('Time Start') ?></th>
             <th><?= __('Time End') ?></th>
@@ -177,8 +176,6 @@
             <td><?= h($ticketEvents->billing_type_id) ?></td>
             <td><?= h($ticketEvents->time_type_id) ?></td>
             <td><?= h($ticketEvents->time_taken) ?></td>
-            <td><?= h($ticketEvents->is_resolution) ?></td>
-            <?php error_log('IS RESOLUTION:: ' . $ticketEvents->is_resolution); ?>
             <td><?= h($ticketEvents->resolution_date) ?></td>
             <td><?= h($ticketEvents->time_start) ?></td>
             <td><?= h($ticketEvents->time_end) ?></td>
