@@ -1,34 +1,27 @@
-<div class="actions columns col-lg-2 col-md-3 pull-right">
-    <h3><?= __('Actions') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List User Roles'), ['controller' => 'UserRoles', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New User Role'), ['controller' => 'UserRoles', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Customers'), ['controller' => 'Customers', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Customer'), ['controller' => 'Customers', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Customer Notes'), ['controller' => 'CustomerNotes', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Customer Note'), ['controller' => 'CustomerNotes', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Project Tasks'), ['controller' => 'ProjectTasks', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Project Task'), ['controller' => 'ProjectTasks', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Ticket Events'), ['controller' => 'TicketEvents', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Ticket Event'), ['controller' => 'TicketEvents', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Ticket History'), ['controller' => 'TicketHistory', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Ticket History'), ['controller' => 'TicketHistory', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Tickets'), ['controller' => 'Tickets', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Ticket'), ['controller' => 'Tickets', 'action' => 'add']) ?> </li>
-    </ul>
-</div>
 <div class="users index col-lg-10 col-md-9 columns">
-    <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer" class="table table-striped table-bordered table-hover dataTable no-footer">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <i class="fa fa-ticket fa-2x"></i><span style="font-size: 2em"> Users </span>
+            <div class="btn-group pull-right">
+                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i> Ticket Menu <span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Create New User</a></li>
+                    <li><a href="#">Find User</a></li>
+                    <li class="divider"></li>
+                    <li><a href="">Delete Users</a></li>
+                </ul>
+            </div>
+        </div>
+    <table id="datatable" cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer" class="table table-striped table-bordered table-hover dataTable no-footer">
     <thead>
         <tr>
-            <th><?= $this->Paginator->sort('id') ?></th>
-            <th><?= $this->Paginator->sort('username') ?></th>
-            <th><?= $this->Paginator->sort('password') ?></th>
-            <th><?= $this->Paginator->sort('first_name') ?></th>
-            <th><?= $this->Paginator->sort('last_name') ?></th>
-            <th><?= $this->Paginator->sort('email') ?></th>
-            <th><?= $this->Paginator->sort('user_role_id') ?></th>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>User Role</th>
             <th class="actions"><?= __('Actions') ?></th>
         </tr>
     </thead>
@@ -54,6 +47,7 @@
     <?php endforeach; ?>
     </tbody>
     </table>
+    </div>
     <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->prev('< ' . __('previous')) ?>
