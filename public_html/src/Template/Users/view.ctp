@@ -178,6 +178,7 @@
             <td><?= h($ticketEvents->time_type_id) ?></td>
             <td><?= h($ticketEvents->time_taken) ?></td>
             <td><?= h($ticketEvents->is_resolution) ?></td>
+            <?php error_log('IS RESOLUTION:: ' . $ticketEvents->is_resolution); ?>
             <td><?= h($ticketEvents->resolution_date) ?></td>
             <td><?= h($ticketEvents->time_start) ?></td>
             <td><?= h($ticketEvents->time_end) ?></td>
