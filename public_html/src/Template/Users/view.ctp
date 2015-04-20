@@ -109,7 +109,7 @@
 </div>
 <div class="related row">
     <div class="column large-12">
-    <h4 class="subheader"><?= __('Related ProjectTasks') ?></h4>
+    <h4 class="subheader"><?= __('Related Project Tasks') ?></h4>
     <?php if (!empty($user->project_tasks)): ?>
     <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
         <tr>
@@ -147,7 +147,7 @@
 </div>
 <div class="related row">
     <div class="column large-12">
-    <h4 class="subheader"><?= __('Related TicketEvents') ?></h4>
+    <h4 class="subheader"><?= __('Related Ticket Events') ?></h4>
     <?php if (!empty($user->ticket_events)): ?>
     <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
         <tr>
