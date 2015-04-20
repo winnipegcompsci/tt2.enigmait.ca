@@ -10,9 +10,9 @@
     <table cellpadding="0" cellspacing="0">
     <thead>
         <tr>
-            <th><?= $this->Paginator->sort('id') ?></th>
-            <th><?= $this->Paginator->sort('marketplace_name') ?></th>
-            <th><?= $this->Paginator->sort('wtcr_marketplace_template_id') ?></th>
+            <th>ID</th>
+            <th>Marketplace Name</th>
+            <th>Default Template</th>
             <th class="actions"><?= __('Actions') ?></th>
         </tr>
     </thead>
