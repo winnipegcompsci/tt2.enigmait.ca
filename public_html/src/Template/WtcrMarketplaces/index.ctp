@@ -29,7 +29,7 @@
                 <td><?= $this->Number->format($wtcrMarketplace->id) ?></td>
                 <td><?= h($wtcrMarketplace->marketplace_name) ?></td>
                 <td>
-                    <?= $wtcrMarketplace->has('wtcr_marketplace_template') ? $this->Html->link($wtcrMarketplace->wtcr_marketplace_template->id, ['controller' => 'WtcrMarketplaceTemplates', 'action' => 'view', $wtcrMarketplace->wtcr_marketplace_template->id]) : '' ?>
+                    <?= $wtcrMarketplace->has('wtcr_marketplace_template') ? $this->Html->link($wtcrMarketplace->wtcr_marketplace_template->id, ['controller' => 'WtcrMarketplaceTemplates', 'action' => 'view', $wtcrMarketplace->wtcr_marketplace_template->id]) : 'Not Set' ?>
                 </td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $wtcrMarketplace->id]) ?>
