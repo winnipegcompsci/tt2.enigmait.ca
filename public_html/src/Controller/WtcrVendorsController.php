@@ -108,7 +108,7 @@ class WtcrVendorsController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 	
- public function view_vendor_products($vendor = null) 
+    public function view_vendor_products($vendor = null) 
     {
         $vendor_products = null;
                 
@@ -268,10 +268,6 @@ class WtcrVendorsController extends AppController
 						$numProdSaved++;
 					} else {
 						error_log('Failed to Fetch EPROM Product');
-                        echo "<pre>" . print_r($this->request->data, TRUE) . "</pre>";
-                        echo "<pre>" . print_r($product->errors(), TRUE) . "</pre>";
-                        echo "<pre>" . print_r($products, TRUE) . "</pre>";
-                        die('WROTE TO CONSOLE');
 					}
                 }
             }
