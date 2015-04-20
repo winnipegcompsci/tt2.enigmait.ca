@@ -17,9 +17,9 @@
             <table id="datatable" cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('category_name') ?></th>
-                    <th><?= $this->Paginator->sort('default_markup') ?></th>
+                    <th> ID</th>
+                    <th>Category Name</th>
+                    <th>Default Markup</th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
