@@ -53,4 +53,4 @@
     </div>
 </div>
 
-<?php echo $this->element('modal');
+<?php echo $this->element('modal', array('title' => 'TITLE', 'body' => 'BODY'));
