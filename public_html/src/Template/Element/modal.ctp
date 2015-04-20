@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button class="close" data-dismiss="modal" type="button">×</button>
+                <button class="close" data-dismiss="modal" type="button">x</button>
                 <h4 class="modal-title" id="myModalLabel"><?= $title ?></h4>
             </div>
 
