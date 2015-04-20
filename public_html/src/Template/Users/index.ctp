@@ -53,4 +53,8 @@
     </div>
 </div>
 
-<?php echo $this->element('modal', array('title' => 'TITLE', 'body' => 'BODY'));
+<?php 
+    echo $this->element('modal', array(
+        'title' => 'Users Page', 
+        'body' => 'Here you can Manage Users that have access to TT2.0 and the Inventory Management System.'
+    ));
