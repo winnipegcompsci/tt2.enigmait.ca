@@ -2,7 +2,7 @@
     <h2>Inventory Item#: <?= h($wtcrInventory->mfg_part_number) ?></h2>
     <div class="row">
         <div class="large-5 columns strings">
-            <h6 style="display:inline" class="subheader"><strong><?= __('Wtcr Sku') ?></strong></h6>
+            <h6 class="subheader"><strong><?= __('Wtcr Sku') ?></strong></h6>
             <p><?= h($wtcrInventory->wtcr_sku) ?></p>
             <h6 class="subheader"><?= __('Product Name') ?></h6>
             <p><?= h($wtcrInventory->product_name) ?></p>
