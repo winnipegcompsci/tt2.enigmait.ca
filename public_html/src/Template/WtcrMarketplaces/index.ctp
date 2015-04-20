@@ -13,8 +13,8 @@
             </div>
         </div>
         
-        <div id="datatable" class="panel-body" class="table table-striped table-bordered table-hover dataTable no-footer">
-           <table cellpadding="0" cellspacing="0">
+        <div class="panel-body">
+           <table id="datatable" cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover dataTable no-footer">
             <thead>
             <tr>
                 <th>ID</th>
