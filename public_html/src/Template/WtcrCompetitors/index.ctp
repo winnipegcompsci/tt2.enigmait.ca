@@ -5,10 +5,10 @@
             <div class="btn-group pull-right">
                 <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i> Ticket Menu <span class="caret"></span></button>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Create New Ticket</a></li>
-                    <li><a href="#">Find Ticket</a></li>
+                    <li><a href="#">Create New Competitor</a></li>
+                    <li><a href="#">Find Competitor Product</a></li>
                     <li class="divider"></li>
-                    <li><a href="">Delete Ticket</a></li>
+                    <li><a href="">Delete Competitor</a></li>
                 </ul>
             </div>
         </div>
