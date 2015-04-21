@@ -51,9 +51,13 @@
         }
         
     ?>
-    <div id="ivnentory-barcode" src='Generateing Inventory Item Barcode'>
+    <div id="inventory-barcode">
         <img src='/inventory_barcode.php?size=60&text=<?= $thisSerial ?>' style="border 3px solid green" alt = 'Product Barcode' width="250" >
         <a class="pull-right" href='#print_barcode'>Print Barcode </a>
+    </div>
+    
+    <div id="inventory-image">
+        <h4> Inventory Image Here </h4>
     </div>
     
 </div>
