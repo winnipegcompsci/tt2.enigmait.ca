@@ -3,7 +3,7 @@
     <div class="row">
         <div class="large-5 columns strings">
             <table>
-                <tr><td><h6>WTCR SKU</h6></td>          <td><?= h($wtcrInventory->wtcr_sku) ?></td></tr>
+                <tr><td><h6>WTCR SKU</h6></td>          <td class="pull-right"><?= h($wtcrInventory->wtcr_sku) ?></td></tr>
                 <tr><td><h6>Product Name</h6></td>      <td><?= h($wtcrInventory->product_name) ?></td></tr>
                 <tr><td><h6>Product Category</h6></td>  <td><?= $wtcrInventory->has('wtcr_product_category') ? $this->Html->link($wtcrInventory->wtcr_product_category->category_name, ['controller' => 'WtcrProductCategories', 'action' => 'view', $wtcrInventory->wtcr_product_category->id]) : '' ?></td></tr>
                 <tr><td><h6>Mfg. Part Number</h6></td>  <td><?= h($wtcrInventory->mfg_part_number) ?></td></tr>
