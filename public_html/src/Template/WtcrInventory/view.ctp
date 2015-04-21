@@ -55,20 +55,20 @@
         <br /><a class="" href='#print_barcode'>Print Barcode </a>
         <h3> Barcode Code </h3>;
         <pre>
-        ^XA
-        ^FO50,130
-        ^BY3^BCN,100,Y,N,N
-        ^FDP012000793^FS
-        ^FO50,280
-        ^BY3^BCN,100,Y,N,N
-        ^FDP012000794^FS
-        ^FO50,430
-        ^BY3^BCN,100,Y,N,N
-        ^FDP012000795^FS
-        ^FO50,580
-        ^BY3^BCN,100,Y,N,N
-        ^FD<?= $thisSerial ?>^FS
-        ^XZ
+^XA
+^FO50,130
+^BY3^BCN,100,Y,N,N
+^FDP012000793^FS
+^FO50,280
+^BY3^BCN,100,Y,N,N
+^FDP012000794^FS
+^FO50,430
+^BY3^BCN,100,Y,N,N
+^FDP012000795^FS
+^FO50,580
+^BY3^BCN,100,Y,N,N
+^FD<?= $thisSerial ?>^FS
+^XZ
         </pre>
     </div>
     
