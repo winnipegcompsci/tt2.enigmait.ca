@@ -55,8 +55,9 @@
         <a class="pull-right" href='#print_barcode'>Print Barcode </a>
     </div>
     
-    <div id="inventory-image">
+    <div id="inventory-image" class="pull-right">
         <h4> Inventory Image Here </h4>
+        
     </div>
     
 </div>
