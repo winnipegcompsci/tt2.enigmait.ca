@@ -12,37 +12,9 @@
                 <tr><td><h6>Vendor Price</h6></td>      <td><?= $this->Number->format($wtcrInventory->vendor_price) ?> </td></tr>
                 <tr><td><h6>Markup %</h6></td>          <td><?= $this->Number->format($wtcrInventory->markup) ?> </td></tr>
                 <tr><td><h6>Order Details</h6></td>     <td><?= $this->Number->format($wtcrInventory->order_details) ?> </td></tr>
-                <tr><td><h6>Received Date</h6></td>     <td><?= ?></td></tr>
+                <tr><td><h6>Received Date</h6></td>     <td><?= h($wtcrInventory->received_date) ?></td></tr>
             </table>
-            <!--
-            <h6 class="subheader"><strong><?= __('Wtcr Sku') ?></strong></h6>
-            <p style="display: inline"><?= h($wtcrInventory->wtcr_sku) ?></p>
-            <h6 class="subheader"><?= __('Product Name') ?></h6>
-            <p><?= h($wtcrInventory->product_name) ?></p>
-            <h6 class="subheader"><?= __('Wtcr Product Category') ?></h6>
-            <p><?= $wtcrInventory->has('wtcr_product_category') ? $this->Html->link($wtcrInventory->wtcr_product_category->category_name, ['controller' => 'WtcrProductCategories', 'action' => 'view', $wtcrInventory->wtcr_product_category->id]) : '' ?></p>
-            <h6 class="subheader"><?= __('Mfg Part Number') ?></h6>
-            <p><?= h($wtcrInventory->mfg_part_number) ?></p>
-            <h6  class="subheader"><?= __('Wtcr Vendor') ?></h6>
-            <p><?= $wtcrInventory->has('wtcr_vendor') ? $this->Html->link($wtcrInventory->wtcr_vendor->vendor_name, ['controller' => 'WtcrVendors', 'action' => 'view', $wtcrInventory->wtcr_vendor->id]) : '' ?></p>
-            <h6 class="subheader"><?= __('Vendor Sku') ?></h6>
-            <p style="display: inline"><?= h($wtcrInventory->vendor_sku) ?></p>
         </div>
-        <div class="large-2 columns numbers end">
-            <h6 class="subheader"><?= __('Id') ?></h6>
-            <p><?= $this->Number->format($wtcrInventory->id) ?></p>
-            <h6 class="subheader"><?= __('Vendor Price') ?></h6>
-            <p><?= $this->Number->format($wtcrInventory->vendor_price) ?></p>
-            <h6 class="subheader"><?= __('Markup') ?></h6>
-            <p><?= $this->Number->format($wtcrInventory->markup) ?></p>
-            <h6 class="subheader"><?= __('Order Details') ?></h6>
-            <p><?= $this->Number->format($wtcrInventory->order_details) ?></p>
-        </div>
-        <div class="large-2 columns dates end">
-            <h6 class="subheader"><?= __('Received Date') ?></h6>
-            <p><?= h($wtcrInventory->received_date) ?></p>
-        </div>
-        -->
     </div>
     <div class="row texts">
         <div class="columns large-9">
