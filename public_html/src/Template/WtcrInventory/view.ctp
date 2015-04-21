@@ -4,16 +4,16 @@
         <div class="large-5 columns strings">
             <table>
                 <tr><td><h6>WTCR SKU</h6></td>          <td class="pull-right"><?= h($wtcrInventory->wtcr_sku) ?></td></tr>
-                <tr><td><h6>Product Name</h6></td>      <td><?= h($wtcrInventory->product_name) ?></td></tr>
-                <tr><td><h6>Product Category</h6></td>  <td><?= $wtcrInventory->has('wtcr_product_category') ? $this->Html->link($wtcrInventory->wtcr_product_category->category_name, ['controller' => 'WtcrProductCategories', 'action' => 'view', $wtcrInventory->wtcr_product_category->id]) : '' ?></td></tr>
-                <tr><td><h6>Mfg. Part Number</h6></td>  <td><?= h($wtcrInventory->mfg_part_number) ?></td></tr>
-                <tr><td><h6>WTCR Vendor</h6></td>       <td><?= $wtcrInventory->has('wtcr_vendor') ? $this->Html->link($wtcrInventory->wtcr_vendor->vendor_name, ['controller' => 'WtcrVendors', 'action' => 'view', $wtcrInventory->wtcr_vendor->id]) : '' ?></td></tr>
-                <tr><td><h6>Vendor SKU</h6></td>        <td><?= h($wtcrInventory->vendor_sku) ?></td></tr>
-                <tr><td><h6>Vendor Price</h6></td>      <td><?= $this->Number->format($wtcrInventory->vendor_price) ?> </td></tr>
-                <tr><td><h6>Markup %</h6></td>          <td><?= $this->Number->format($wtcrInventory->markup) ?> </td></tr>
-                <tr><td><h6>Order Details</h6></td>     <td><?= $this->Number->format($wtcrInventory->order_details) ?> </td></tr>
-                <tr><td><h6>Received Date</h6></td>     <td><?= h($wtcrInventory->received_date) ?></td></tr>
-                <tr><td><h6>Serial Number(s)</h6></td>  <td><?= $this->Text->autoParagraph(h($wtcrInventory->serial_numbers)); ?></td></tr>
+                <tr><td><h6>Product Name</h6></td>      <td class="pull-right"><?= h($wtcrInventory->product_name) ?></td></tr>
+                <tr><td><h6>Product Category</h6></td>  <td class="pull-right"><?= $wtcrInventory->has('wtcr_product_category') ? $this->Html->link($wtcrInventory->wtcr_product_category->category_name, ['controller' => 'WtcrProductCategories', 'action' => 'view', $wtcrInventory->wtcr_product_category->id]) : '' ?></td></tr>
+                <tr><td><h6>Mfg. Part Number</h6></td>  <td class="pull-right"><?= h($wtcrInventory->mfg_part_number) ?></td></tr>
+                <tr><td><h6>WTCR Vendor</h6></td>       <td class="pull-right"><?= $wtcrInventory->has('wtcr_vendor') ? $this->Html->link($wtcrInventory->wtcr_vendor->vendor_name, ['controller' => 'WtcrVendors', 'action' => 'view', $wtcrInventory->wtcr_vendor->id]) : '' ?></td></tr>
+                <tr><td><h6>Vendor SKU</h6></td>        <td class="pull-right"><?= h($wtcrInventory->vendor_sku) ?></td></tr>
+                <tr><td><h6>Vendor Price</h6></td>      <td class="pull-right"><?= $this->Number->format($wtcrInventory->vendor_price) ?> </td></tr>
+                <tr><td><h6>Markup %</h6></td>          <td class="pull-right"><?= $this->Number->format($wtcrInventory->markup) ?> </td></tr>
+                <tr><td><h6>Order Details</h6></td>     <td class="pull-right"><?= $this->Number->format($wtcrInventory->order_details) ?> </td></tr>
+                <tr><td><h6>Received Date</h6></td>     <td class="pull-right"><?= h($wtcrInventory->received_date) ?></td></tr>
+                <tr><td><h6>Serial Number(s)</h6></td>  <td class="pull-right"><?= $this->Text->autoParagraph(h($wtcrInventory->serial_numbers)); ?></td></tr>
             </table>
         </div>
     </div>
