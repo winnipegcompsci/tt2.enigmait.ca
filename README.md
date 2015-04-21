@@ -19,7 +19,7 @@ Vendor Products................................................................
 Push Product to Drupal (WTCR)
 
 Push Product to Amazon (WTCR)
-    API - Sign up and get Key.
+    API - Sign up and get API Key.
 
 Push Product to eBay (WTCR)
     Look into API.
@@ -35,7 +35,6 @@ TT / WTCR Reports..............................................................
 
 Cron Jobs......................................................................
 - Supplier Price Fetches                        DAILY
-- Event: Crypto Currency Rate Updates           Every 4-6 Hours?
 - Competitor Price Fetches                      DAILY
 - Event: UPDATE MARKETPLACE PRICES              DAILY
         
@@ -65,24 +64,24 @@ Change Password (Hash pw before Save)
 Panels.........................................................................
 Panel for Quotes
 Panel for Reports
-Panel for Currencies
-Panel for Competitors
-Panel for Data Providers
 
 Tickets........................................................................
 Tickets (Add View)
 Tickets (Edit View)
 Tickets (Index View)
+Tickets (View View)
 
 Projects.......................................................................
 Projects (Add View)
 Projects (Edit View)
 Projects (Index View)
+Projects (View View)
 
 Quotes.........................................................................
 Quotes (Add View)
 Quotes (Edit View)
 Quotes (Index View)
+Quotes (View View)
 
 WTCR...........................................................................
 Orders (Add View)
@@ -98,9 +97,9 @@ Fix / Center Paginated Numbers.................................................
 - Setup Pagination Classes in Baked UI Template?
 
 Dashboard......................................................................
-- Sales by Marketplace Graph'
 - Last 10 Orders Table
-- Add Other Info to Dashboard?    
+- Sales by Marketplace Graph
+- Add Other Info to Dashboard?
    
 -------------------------------------------------------------------------------      
 WTCR2.0 Development
