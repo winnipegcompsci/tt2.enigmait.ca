@@ -39,13 +39,24 @@
     </div>
 </div>
 
-<div class="actions columns col-lg-2 col-md-3">
+<div class="actions columns col-lg-5 col-md-3">
     <h3><?= __('Item Barcode:') ?></h3>
     
-    <?php echo "<pre>" . print_r($wtcrInventory, TRUE) . "</pre>"; ?>
+    <?php 
+        echo "<pre>" . print_r($wtcrInventory->serial_numbers, TRUE) . "</pre>"; 
+        $serials = explode(',', $wtcrInventory->serial_numbers);
+        if(isset($serials[0]) && $serials[0] != "") {
+            $thisSerial = $serials[0];
+        } else {
+            $thisSerial = $wtcrInventory->mfg_part_number;
+        }
+        
+    ?>
+    
+    
     
     <div id="ivnentory-barcode" src='Generateing Inventory Item Barcode'>
-        <img src='/inventory_barcode.php?size=60&text=<?= $wtcrInventory->mfg_part_number ?>' style="border 3px solid green" alt = 'Product Barcode' width="250" >
+        <img src='/inventory_barcode.php?size=60&text=<?= $thisSerial ?>' style="border 3px solid green" alt = 'Product Barcode' width="250" >
         <a class="pull-right" href='#print_barcode'>Print Barcode </a>
     </div>
     
