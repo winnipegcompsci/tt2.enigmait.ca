@@ -52,7 +52,7 @@
         
     ?>
     <div id="inventory-barcode">
-        <img src='/inventory_barcode.php?size=60&text=<?= $thisSerial ?>' style="border 3px solid green" alt = 'Product Barcode' width="250" >
+        <img class="pull-right" src='/inventory_barcode.php?size=60&text=<?= $thisSerial ?>' style="border 3px solid green" alt = 'Product Barcode' width="250" >
         <a class="pull-right" href='#print_barcode'>Print Barcode </a>
     </div>
     
