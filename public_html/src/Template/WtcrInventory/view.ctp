@@ -49,7 +49,6 @@
         } else {
             $thisSerial = $wtcrInventory->mfg_part_number;
         }
-        
     ?>
     <div id="inventory-barcode">
         <img class="pull-right" src='/inventory_barcode.php?size=60&text=<?= $thisSerial ?>' style="border 3px solid green" alt = 'Product Barcode' width="250" >
