@@ -16,10 +16,15 @@ Vendor Products................................................................
 -Implement Auto Fetch from ASI 				    (Cron Call - No Interface)
 	
 - Pushing WTCR Products to Marketplaces........................................
-- Push Product to Drupal (WTCR)
-- Push Product to Amazon (WTCR)
-- Push Product to eBay (WTCR)
-- Push Product to Kijiji (WTCR)
+Push Product to Drupal (WTCR)
+
+Push Product to Amazon (WTCR)
+    API - Sign up and get Key.
+
+Push Product to eBay (WTCR)
+    Look into API.
+
+Push Product to Kijiji (WTCR)
 
 TT / WTCR Reports..............................................................
 (WTCR) Taxes
