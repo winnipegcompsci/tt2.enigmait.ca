@@ -12,8 +12,9 @@
                 <tr><td><h6>Vendor Price</h6></td>      <td><?= $this->Number->format($wtcrInventory->vendor_price) ?> </td></tr>
                 <tr><td><h6>Markup %</h6></td>          <td><?= $this->Number->format($wtcrInventory->markup) ?> </td></tr>
                 <tr><td><h6>Order Details</h6></td>     <td><?= $this->Number->format($wtcrInventory->order_details) ?> </td></tr>
+                <tr><td><h6>Received Date</h6></td>     <td><?= ?></td></tr>
             </table>
-            
+            <!--
             <h6 class="subheader"><strong><?= __('Wtcr Sku') ?></strong></h6>
             <p style="display: inline"><?= h($wtcrInventory->wtcr_sku) ?></p>
             <h6 class="subheader"><?= __('Product Name') ?></h6>
@@ -41,6 +42,7 @@
             <h6 class="subheader"><?= __('Received Date') ?></h6>
             <p><?= h($wtcrInventory->received_date) ?></p>
         </div>
+        -->
     </div>
     <div class="row texts">
         <div class="columns large-9">
