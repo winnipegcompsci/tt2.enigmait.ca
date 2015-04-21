@@ -53,10 +53,29 @@
     <div id="inventory-barcode">
         <img class="pull-right" src='/inventory_barcode.php?size=60&text=<?= $thisSerial ?>' style="border 3px solid green" alt = 'Product Barcode' width="250" >
         <br /><a class="" href='#print_barcode'>Print Barcode </a>
+        <h3> Barcode Code </h3>;
+        <pre>
+        ^XA
+        ^FO50,130
+        ^BY3^BCN,100,Y,N,N
+        ^FDP012000793^FS
+        ^FO50,280
+        ^BY3^BCN,100,Y,N,N
+        ^FDP012000794^FS
+        ^FO50,430
+        ^BY3^BCN,100,Y,N,N
+        ^FDP012000795^FS
+        ^FO50,580
+        ^BY3^BCN,100,Y,N,N
+        ^FD<?= $thisSerial ?>^FS
+        ^XZ
+        </pre>
     </div>
     
+    
+    
     <div id="inventory-image" style="padding-top: 150px" class="pull-right">
-        <h4> Inventory Image Here </h4>
+        <h4> (Inventory Image Here) </h4>
         
     </div>
     
