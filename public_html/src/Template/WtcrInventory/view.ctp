@@ -3,7 +3,7 @@
     <div class="row">
         <div class="large-5 columns strings">
             <h6 class="subheader"><strong><?= __('Wtcr Sku') ?></strong></h6>
-            <p><?= h($wtcrInventory->wtcr_sku) ?></p>
+            <p style="display: inline"><?= h($wtcrInventory->wtcr_sku) ?></p>
             <h6 class="subheader"><?= __('Product Name') ?></h6>
             <p><?= h($wtcrInventory->product_name) ?></p>
             <h6 class="subheader"><?= __('Wtcr Product Category') ?></h6>
