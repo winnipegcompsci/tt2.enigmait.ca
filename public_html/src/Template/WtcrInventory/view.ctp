@@ -13,14 +13,8 @@
                 <tr><td><h6>Markup %</h6></td>          <td><?= $this->Number->format($wtcrInventory->markup) ?> </td></tr>
                 <tr><td><h6>Order Details</h6></td>     <td><?= $this->Number->format($wtcrInventory->order_details) ?> </td></tr>
                 <tr><td><h6>Received Date</h6></td>     <td><?= h($wtcrInventory->received_date) ?></td></tr>
+                <tr><td><h6>Serial Number(s)</h6></td>  <td><?= $this->Text->autoParagraph(h($wtcrInventory->serial_numbers)); ?></td></tr>
             </table>
-        </div>
-    </div>
-    <div class="row texts">
-        <div class="columns large-9">
-            <h6 class="subheader"><?= __('Serial Numbers') ?></h6>
-            <?= $this->Text->autoParagraph(h($wtcrInventory->serial_numbers)); ?>
-
         </div>
     </div>
 </div>
