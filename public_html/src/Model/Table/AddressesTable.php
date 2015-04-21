@@ -22,7 +22,7 @@ class AddressesTable extends Table
     public function initialize(array $config)
     {
         $this->table('addresses');
-        $this->displayField('name');
+        $this->displayField('address');
         $this->primaryKey('id');
         $this->belongsTo('Provinces', [
             'foreignKey' => 'province_id'

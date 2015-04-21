@@ -16,4 +16,3 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div> <!-- /.model-fade -->
-
