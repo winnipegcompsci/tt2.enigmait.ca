@@ -22,7 +22,6 @@
                                 echo $part . ",<br />";
                             }
                         ?>
-                        <?= $this->Text->autoParagraph(h($wtcrInventory->serial_numbers)); ?>
                     </td>
                 </tr>
             </table>
