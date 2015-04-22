@@ -4,11 +4,13 @@ Find Product Details...........................................................
 -Scan Barcode attached to item to lookup data about that particular item
 eg) Date Received, Date Sold, Price Received, Price Sold,Order #, 
        
-Inventory Item View Page.......................................................
+// Inventory Item View Page....................................................
 Generate ZPL Barcode for Inventory Tracking:
+// 
+
 - Gets Displayed in Inventory 'view' view along with link to print label.
 - Barcode Can Ber Scanned to bring Up Inventory Details
-eg) Date Received, Date Sold, Price Received, price sold, order #.
+eg) Date Received, Date Sold, Price Received, price sold for.
 
 Vendor Products................................................................
 -Implement Auto Fetch from EPROM		        (Cron Call - No Interface)
