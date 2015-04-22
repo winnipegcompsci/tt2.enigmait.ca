@@ -658,12 +658,15 @@ class WtcrVendorsController extends AppController
                     }                              
                 } // end foreach Price
             } else {
-                // error_log('HTML Was Empty');
-                die("html variable is empty. Please check your query again!");
+                // You hve );
+                echo "CURL::getInfo() = <pre>" . print_r(curl_getinfo($ch), TRUE ) . "</pre>";
+                
+                die( "<br />Could not complete." );
             }
     
             if(isset($product_skus)) {
                 $totalNumProducts += count($product_skus);
+
             }
             
             // Add Last Scraped Category Products to Database.
