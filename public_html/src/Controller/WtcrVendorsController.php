@@ -653,11 +653,7 @@ class WtcrVendorsController extends AppController
                     }                              
                 } // end foreach Price
             } else {
-                echo "CURL::getInfo() = <pre>" . print_r(curl_getinfo($ch), TRUE) . "</pre>";
-                echo "CURL::getContent() = <pre>" . print_r(curl_exec($ch), TRUE) . "</pre>";
-                echo "HTML:: <pre>" . print_r($html, TRUE) . "</pre>";
-                echo "Page Content:: <pre>" . print_r($page_content, TRUE) . "</pre>";
-                die( "<br />Could not complete." );
+                echo "No Products Found In Category: " . $productType .  "!";
             }
     
             if(isset($product_skus)) {
