@@ -653,15 +653,13 @@ class WtcrVendorsController extends AppController
                     }                              
                 } // end foreach Price
             } else {
-                // You hve );
                 echo "CURL::getInfo() = <pre>" . print_r(curl_getinfo($ch), TRUE) . "</pre>";
-                echo "CURL::getContent() = <pre>" . print_r(curl_exec($ch), TRUE) . "</pre>"
+                echo "CURL::getContent() = <pre>" . print_r(curl_exec($ch), TRUE) . "</pre>";
                 die( "<br />Could not complete." );
             }
     
             if(isset($product_skus)) {
                 $totalNumProducts += count($product_skus);
-
             }
             
             // Add Last Scraped Category Products to Database.
