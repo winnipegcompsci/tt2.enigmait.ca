@@ -580,7 +580,7 @@ class WtcrVendorsController extends AppController
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($ch, CURLOPT_AUTOREFERER, 1);
         
-            $referer = 'http://wwww.asipartner.com';
+            $referer = 'http://wwww.asipartner.com/';
             curl_setopt($ch, CURLOPT_REFERER, $referer);
         
             $userAgent = 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)';
@@ -655,6 +655,8 @@ class WtcrVendorsController extends AppController
             } else {
                 echo "CURL::getInfo() = <pre>" . print_r(curl_getinfo($ch), TRUE) . "</pre>";
                 echo "CURL::getContent() = <pre>" . print_r(curl_exec($ch), TRUE) . "</pre>";
+                echo "HTML:: <pre>" . print_r($html, TRUE) . "</pre>";
+                echo "Page Content:: <pre>" . print_r($page_content, TRUE) . "</pre>";
                 die( "<br />Could not complete." );
             }
     
