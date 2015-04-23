@@ -55,3 +55,7 @@
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
 </div>
+
+<script>
+    $('#date-created').attr('type', 'date');
+</script>
