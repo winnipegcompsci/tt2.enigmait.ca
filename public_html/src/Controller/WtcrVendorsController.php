@@ -147,17 +147,17 @@ class WtcrVendorsController extends AppController
         
         if($vendor == "eprom") {
             $vendor_products = $this->fetch_eprom_products();
-            Email::deliver('drichardson@enigmait.ca', 'EPROM: Product Fetch', $message, ['from' => 'tt2@enigmait.ca']);
+            // Email::deliver('drichardson@enigmait.ca', 'EPROM: Product Fetch', $message, ['from' => 'tt2@enigmait.ca']);
         }
         
         if($vendor == "longtech") {
             $vendor_products = $this->fetch_longtech_products();
-            Email::deliver('drichardson@enigmait.ca', 'Longtech: Product Fetch', $message, ['from' => 'tt2@enigmait.ca']);
+            // Email::deliver('drichardson@enigmait.ca', 'Longtech: Product Fetch', $message, ['from' => 'tt2@enigmait.ca']);
         }
         
         if($vendor == "asi") {
             $vendor_products = $this->fetch_asi_products();
-            Email::deliver('drichardson@enigmait.ca', 'ASI: Product Fetch', $message, ['from' => 'tt2@enigmait.ca']);
+            // Email::deliver('drichardson@enigmait.ca', 'ASI: Product Fetch', $message, ['from' => 'tt2@enigmait.ca']);
         }
         
         return $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'view_vendor_products', $vendor]);
