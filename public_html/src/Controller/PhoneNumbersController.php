@@ -54,10 +54,7 @@ class PhoneNumbersController extends AppController
             if ($this->PhoneNumbers->save($phoneNumber)) {
                 $this->Flash->success('The phone number has been saved.');
                 return $this->redirect(['action' => 'index']);
-            } else {
-                echo "<pre>" . print_r($this->PhoneNumbers->error, TRUE) . "</pre>";
-                echo "<pre>" . print_r($phoneNumber, TRUE) . "</pre>";
-                
+            } else {                
                 $this->Flash->error('The phone number could not be saved. Please, try again.');
             }
         }
