@@ -143,22 +143,21 @@ class WtcrVendorsController extends AppController
     
     public function fetch_vendor_products($vendor = null) 
     {
+        $message = "Sample Email Message";
+        
         if($vendor == "eprom") {
             $vendor_products = $this->fetch_eprom_products();
-            error_log('Fetched Products from EPROM');
-            Email::deliver('drichardson@enigmait.ca', 'EPROM: Product Fetch', 'Message', ['from' => 'tt2@enigmait.ca']);
+            Email::deliver('drichardson@enigmait.ca', 'EPROM: Product Fetch', $message, ['from' => 'tt2@enigmait.ca']);
         }
         
         if($vendor == "longtech") {
             $vendor_products = $this->fetch_longtech_products();
-            error_log('Fetched Products from Longtech');
-            Email::deliver('drichardson@enigmait.ca', 'Longtech: Product Fetch', 'Message', ['from' => 'tt2@enigmait.ca']);
+            Email::deliver('drichardson@enigmait.ca', 'Longtech: Product Fetch', $message, ['from' => 'tt2@enigmait.ca']);
         }
         
         if($vendor == "asi") {
             $vendor_products = $this->fetch_asi_products();
-            error_log('Fetched Products from ASI');
-            Email::deliver('drichardson@enigmait.ca', 'ASI: Product Fetch', 'Message', ['from' => 'tt2@enigmait.ca']);
+            Email::deliver('drichardson@enigmait.ca', 'ASI: Product Fetch', $message, ['from' => 'tt2@enigmait.ca']);
         }
     }
     
