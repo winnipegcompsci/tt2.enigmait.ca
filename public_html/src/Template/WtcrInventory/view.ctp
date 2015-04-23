@@ -13,7 +13,8 @@
                 <tr><td><h6><strong>Markup %</strong></h6></td>          <td class="pull-right"><?= $this->Number->format($wtcrInventory->markup) ?> % </td></tr>
                 <tr><td><h6><strong>Order Details</strong></h6></td>     <td class="pull-right"><?= $this->Number->format($wtcrInventory->order_details) ?> </td></tr>
                 <tr><td><h6><strong>Received Date</strong></h6></td>     <td class="pull-right"><?= h($wtcrInventory->received_date) ?></td></tr>
-                <tr><td><h6><strong>Serial Number(s)</strong></h6></td>  
+                <tr>
+                    <td><h6><strong>Serial Number(s)</strong></h6></td>  
                     <td class="pull-right">
                         <?php 
                             $parts = explode(",", $wtcrInventory->serial_numbers);
