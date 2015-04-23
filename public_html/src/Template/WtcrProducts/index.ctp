@@ -39,7 +39,7 @@
                             <?= $wtcrProduct->has('wtcr_product_category') ? $this->Html->link($wtcrProduct->wtcr_product_category->category_name, ['controller' => 'WtcrProductCategories', 'action' => 'view', $wtcrProduct->wtcr_product_category->id]) : '' ?>
                         </td>
                         <td><?= $this->Number->format($wtcrProduct->autoupdate) == 1 ? 'Enabled' : 'Disabled' ?></td>
-                        <td><?= $this->Number->format($wtcrProduct->static_price) == 0 ? 'Not Set' : $this->Number->format($wtcrProduct->static_price, 2) ?></td>
+                        <td><?= $this->Number->format($wtcrProduct->static_price) == 0 ? 'Not Set' : '$' . $this->Number->format($wtcrProduct->static_price) ?></td>
                         <th><?= $this->Html->link(__('Receive'), ['controller' => 'WtcrInventory', 'action' => 'receive', $wtcrProduct->wtcrsku] ); ?></th>
                         <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $wtcrProduct->id]) ?>
