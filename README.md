@@ -19,13 +19,10 @@ Vendor Products................................................................
 	
 - Pushing WTCR Products to Marketplaces........................................
 Push Product to Drupal (WTCR)
-
 Push Product to Amazon (WTCR)
     API - Sign up and get API Key.
-
 Push Product to eBay (WTCR)
-    Look in Toron to (Kijiji's Email) API.
-
+    Look Into Kijiji / eBay API?
 Push Product to Kijiji (WTCR)
    
 TT / WTCR Reports..............................................................
@@ -51,7 +48,6 @@ Email Notifications............................................................
 - Email on Ticket Assign / Status Change / Event Add
 - Email on New Vendor Product. 
 - Email Price Change Alerts. 
-        
        
 -------------------------------------------------------------------------------
 User Interface
