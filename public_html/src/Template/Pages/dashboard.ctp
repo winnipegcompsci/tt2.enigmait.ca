@@ -176,7 +176,7 @@
 			</div>
 			<div class="panel-body">
 				<div id="morris-donut-chart">
-
+                    <!-- jQuery uses morris-donut-chart as placeholder for Donut Graph. -->
                 </div>
 				<a href="#" class="btn btn-default btn-block">View All Orders</a>
 			</div>
