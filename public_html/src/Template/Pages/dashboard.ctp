@@ -1,7 +1,7 @@
 <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
 <script src="../bower_components/raphael/raphael-min.js"></script>
-<script src="../bower_components/morrisjs/morris.min.js"></script>
+
 
 <!-- Row Containing Big Buttons Across Top -->
 <div class="row">
@@ -290,4 +290,4 @@
 
 
 <script src="../js/morris-data.js"></script>
-
+<script src="../bower_components/morrisjs/morris.min.js"></script>
