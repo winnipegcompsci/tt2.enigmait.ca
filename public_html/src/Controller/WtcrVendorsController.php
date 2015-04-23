@@ -4,6 +4,7 @@ namespace App\Controller;
 use App\Controller\AppController;
 use Cake\ORM\TableRegistry;
 use Cake\Core\Configure;
+use Cake\Network\Email\Email;
 
 require_once(APP . 'Vendor' . DS . 'simple_html_dom.php');
 
@@ -144,14 +145,20 @@ class WtcrVendorsController extends AppController
     {
         if($vendor == "eprom") {
             $vendor_products = $this->fetch_eprom_products();
+            error_log('Fetched Products from EPROM');
+            Email::deliver('drichardson@enigmait.ca', 'Subject', 'Message', ['from' => 'me@example.com']);
         }
         
         if($vendor == "longtech") {
             $vendor_products = $this->fetch_longtech_products();
+            error_log('Fetched Products from Longtech');
+            Email::deliver('drichardson@enigmait.ca', 'Subject', 'Message', ['from' => 'me@example.com']);
         }
         
         if($vendor == "asi") {
             $vendor_products = $this->fetch_asi_products();
+            error_log('Fetched Products from ASI');
+            Email::deliver('you@example.com', 'Subject', 'Message', ['from' => 'me@example.com']);
         }
     }
     
