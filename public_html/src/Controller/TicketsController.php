@@ -74,13 +74,12 @@ class TicketsController extends AppController
         $ticket = $this->Tickets->newEntity();
         if ($this->request->is('post')) {
             $ticket = $this->Tickets->patchEntity($ticket, $this->request->data);
-            $ticket->date_created = date('Y-m-d H:i:s'); // DEBUG??
+            // $ticket->date_created = date('Y-m-d H:i:s'); // DEBUG??
             if ($this->Tickets->save($ticket)) {
                 $this->Flash->success('The ticket has been saved.');
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error('The ticket could not be saved. Please, try again.');
-                echo "<pre>" . print_r($ticket, TRUE) . "</pre>";
                 echo "<pre>" . print_r($this->Tickets, TRUE) . "</pre>";
                 die('ERROR::: DIED');
             }
