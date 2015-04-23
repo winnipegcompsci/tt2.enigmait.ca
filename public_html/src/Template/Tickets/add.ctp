@@ -59,6 +59,6 @@
 <?php 
 echo $this->Html->scriptBlock(
     "$('#date-created').attr('type', 'date');",
-    array('inline' => true)
+    array('inline' => false)
 );  
 ?>
