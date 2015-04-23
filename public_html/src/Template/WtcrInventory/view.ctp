@@ -9,8 +9,8 @@
                 <tr><td><h6><strong>Mfg. Part Number</strong></h6></td>  <td class="pull-right"><?= h($wtcrInventory->mfg_part_number) ?></td></tr>
                 <tr><td><h6><strong>WTCR Vendor</strong></h6></td>       <td class="pull-right"><?= $wtcrInventory->has('wtcr_vendor') ? $this->Html->link($wtcrInventory->wtcr_vendor->vendor_name, ['controller' => 'WtcrVendors', 'action' => 'view', $wtcrInventory->wtcr_vendor->id]) : '' ?></td></tr>
                 <tr><td><h6><strong>Vendor SKU</strong></h6></td>        <td class="pull-right"><?= h($wtcrInventory->vendor_sku) ?></td></tr>
-                <tr><td><h6><strong>Vendor Price</strong></h6></td>      <td class="pull-right"><?= $this->Number->format($wtcrInventory->vendor_price) ?> </td></tr>
-                <tr><td><h6><strong>Markup %</strong></h6></td>          <td class="pull-right"><?= $this->Number->format($wtcrInventory->markup) ?> </td></tr>
+                <tr><td><h6><strong>Vendor Price</strong></h6></td>      <td class="pull-right">$<?= $this->Number->format($wtcrInventory->vendor_price) ?> </td></tr>
+                <tr><td><h6><strong>Markup %</strong></h6></td>          <td class="pull-right"><?= $this->Number->format($wtcrInventory->markup) ?> % </td></tr>
                 <tr><td><h6><strong>Order Details</strong></h6></td>     <td class="pull-right"><?= $this->Number->format($wtcrInventory->order_details) ?> </td></tr>
                 <tr><td><h6><strong>Received Date</strong></h6></td>     <td class="pull-right"><?= h($wtcrInventory->received_date) ?></td></tr>
                 <tr><td><h6><strong>Serial Number(s)</strong></h6></td>  
