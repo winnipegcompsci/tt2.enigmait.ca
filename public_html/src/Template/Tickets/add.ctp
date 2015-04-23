@@ -34,7 +34,7 @@
         <legend><?= __('Add Ticket') ?></legend>
         <?php
             echo $this->Form->input('id');
-            echo $this->Form->input('date_created', array('type' => 'text', 'hiddenField' => true, 'default' => date('Y-m-d H:i:s')));
+            echo $this->Form->hidden('date_created', array('type' => 'text', 'default' => date('Y-m-d H:i:s')));
             echo $this->Form->input('customer_id', ['options' => $customers]);
             echo $this->Form->input('contact_id', ['options' => $contacts]);
             echo $this->Form->input('ticket_type_id', ['options' => $ticketTypes]);
