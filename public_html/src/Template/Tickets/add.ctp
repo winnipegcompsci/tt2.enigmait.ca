@@ -57,5 +57,5 @@
 </div>
 
 <script>
-    $('#date-created').attr('type', 'date');
+    jQuery('#date-created').attr('type', 'date');
 </script>
