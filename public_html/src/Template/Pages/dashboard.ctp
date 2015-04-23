@@ -103,7 +103,7 @@
 				<i class="fa fa-bar-chart-o fa-fw"></i> Recent Orders
 			</div>
 			<div class="panel-body">
-				<table id="datatable" class="table table-bordered table-hover table-striped">
+				<table class="table table-bordered table-hover table-striped">
                     <thead>
                         <tr>
                             <th>Order #</th>
