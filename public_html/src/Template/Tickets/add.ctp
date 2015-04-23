@@ -57,5 +57,8 @@
 </div>
 
 <script>
-    jQuery('#date-created').attr('type', 'date');
+    $(document).ready(function() {
+        alert('Setting Date Created Type => Date');
+        $('#date-created').attr('type', 'date');
+    });
 </script>
