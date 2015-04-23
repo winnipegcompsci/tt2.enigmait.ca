@@ -80,6 +80,9 @@ class TicketsController extends AppController
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error('The ticket could not be saved. Please, try again.');
+                echo "<pre>" . print_r($ticket, TRUE) . "</pre>";
+                echo "<pre>" . print_r($this->Tickets, TRUE) . "</pre>";
+                die('ERROR::: DIED');
             }
         }
         $customers = $this->Tickets->Customers->find('list', ['limit' => 200]);
