@@ -3,7 +3,7 @@
         <div class="panel-heading">
             <i class="fa fa-ticket fa-2x"></i><span style="font-size: 2em"> Product Categories </span>
             <div class="btn-group pull-right">
-                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i> Ticket Menu <span class="caret"></span></button>
+                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i> Product Category Menu <span class="caret"></span></button>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="#">Create New Product Category</a></li>
                     <li><a href="#">Find Category Product</a></li>
