@@ -1,78 +1,74 @@
 Functionality:
 -------------------------------------------------------------------------------    
 Find Product Details...........................................................
--Scan Barcode attached to item to lookup data about that particular item
-eg) Date Received, Date Sold, Price Received, Price Sold,Order #, 
-       
-// Inventory Item View Page....................................................
-Generate ZPL Barcode for Inventory Tracking:
-// 
+    -Scan Barcode attached to item to lookup data about that particular item
+    eg) Date Received, Date Sold, Price Received, Price Sold,Order #, 
 
-- Gets Displayed in Inventory 'view' view along with link to print label.
-- Barcode Can Ber Scanned to bring Up Inventory Details
-eg) Date Received, Date Sold, Price Received, price sold for.
+ZPL Barcodes for Inventory Tracking:::        
+    - Generate ZPL Barcode for Inventory Tracking:
+    - Barcode Can Ber Scanned to bring Up Inventory Details 
+    - Filter on Inventory Page? or default to Steinbach search?
 
-Vendor Products................................................................
--Implement Auto Fetch from EPROM		        (Cron Call - No Interface)
--Implement Auto Fetch from Longtech			    (Cron Call - No Interface)
--Implement Auto Fetch from ASI 				    (Cron Call - No Interface)
+    eg) Date Received, Date Sold, Price Received, price sold for items of 
+    future contract nature.
 	
 - Pushing WTCR Products to Marketplaces........................................
-Push Product to Drupal (WTCR)
-Push Product to Amazon (WTCR)
-    API - Sign up and get API Key.
-Push Product to eBay (WTCR)
-    Look Into Kijiji / eBay API?
-Push Product to Kijiji (WTCR)
+    Push Product to Drupal (WTCR)
+        Create API from Services Module
+        Write Drupal Code somwhere in the portables there is a new printer.
+    Push Product to Amazon (WTCR)
+        API - Sign up and get API Key.
+    Push Product to eBay (WTCR)
+        Look Into eBay API?
+    Push Product to Kijiji (WTCR)
+        Look Into Kijiji API?
    
 TT / WTCR Reports..............................................................
-(WTCR) Taxes
-(WTCR) Sales (volume, by marketplace)
-(Enigma) Ticket Reports
-(Enigma) Billing Reports
-(Enigma) Employee Report
+    (WTCR) Taxes
+    (WTCR) Sales (volume, by marketplace)
+    (Enigma) Ticket Reports
+    (Enigma) Billing Reports
+    (Enigma) Employee Report
 
 Cron Jobs......................................................................
-- Supplier Price Fetches                        DAILY
-- Competitor Price Fetches                      DAILY
-- Event: UPDATE MARKETPLACE PRICES              DAILY
+    - Vendor Price Fetches                          DAILY
+    - Competitor Price Fetches                      DAILY
+    - Event: UPDATE MARKETPLACE PRICES              DAILY
         
 2-Factor Authentication........................................................
-- Implement Secret Key Column
-- Display QR Code to Add to Client. 
+    - Implement Secret Key Column
+    - Display QR Code to Add to Client. 
 
 Order Information Lookup.......................................................
-- Fetch from Remote Drupal Table?- 
+    - Fetch from Remote Drupal Table?- 
 
 Email Notifications............................................................
-- Email on Ticket Assign / Status Change / Event Add
-- Email on New Vendor Product. 
-- Email Price Change Alerts. 
+    - Email on Ticket Assign / Status Change / Event Add
+    - Email on New Vendor Product. 
+    - Email Price Change Alerts. 
        
 -------------------------------------------------------------------------------
 User Interface
 -------------------------------------------------------------------------------
-Right Hand Menus -> Port to Cog Button in Panel Header.
-
+   
 User Profile...................................................................
-Profile View
-Generate New Secret Key // Display QR Code.
-Change Password (Hash pw before Save)
+    Profile View
+    Generate New Secret Key // Display QR Code.
+    Change Password (Hash pw before Save)
 
 Panels.........................................................................
-Panel for Quotes
-Panel for Reports
+    Panel for Quotes
+    Panel for Reports
 
 Tickets........................................................................
-Tickets (Add View)
-Tickets (Edit View)
-Tickets (Index View)
+    Tickets (Add View)
+    Tickets (Edit View)
 
 Projects.......................................................................
-Projects (Add View)
-Projects (Edit View)
-Projects (Index View)
-Projects (View View)
+    Projects (Add View)
+    Projects (Edit View)
+    Projects (Index View)
+    Projects (View View)
 
 Quotes.........................................................................
 Quotes (Add View)
@@ -91,12 +87,10 @@ Orders (Edit View)
 - New Message Notifications
     
 Fix / Center Paginated Numbers.................................................
-- Setup Pagination Classes in Baked UI Template?
 
 Dashboard......................................................................
 - Last 10 Orders Table
 - Sales by Marketplace Graph
-- Add Other Info to Dashboard?
    
 -------------------------------------------------------------------------------      
 WTCR2.0 Development
