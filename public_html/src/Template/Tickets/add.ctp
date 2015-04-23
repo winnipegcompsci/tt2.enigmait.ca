@@ -58,7 +58,7 @@
 
 <?php 
 echo $this->Html->scriptBlock(
-    'alert('Setting Date Created Type => Date');',
+    "alert('Setting Date Created Type => Date');",
     array('inline' => true)
 );
   //      $('#date-created').attr('type', 'date');
