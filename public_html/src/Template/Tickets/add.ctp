@@ -55,10 +55,3 @@
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
 </div>
-
-<?php 
-echo $this->Html->scriptBlock(
-    "$('#date-created').attr('type', 'date');",
-    array('inline' => false)
-);  
-?>
