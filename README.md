@@ -24,10 +24,10 @@ Push Product to Amazon (WTCR)
     API - Sign up and get API Key.
 
 Push Product to eBay (WTCR)
-    Look into API.
+    Look in Toron to (Kijiji's Email) API.
 
 Push Product to Kijiji (WTCR)
-
+   
 TT / WTCR Reports..............................................................
 (WTCR) Taxes
 (WTCR) Sales (volume, by marketplace)
@@ -71,7 +71,6 @@ Tickets........................................................................
 Tickets (Add View)
 Tickets (Edit View)
 Tickets (Index View)
-Tickets (View View)
 
 Projects.......................................................................
 Projects (Add View)
