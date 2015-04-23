@@ -40,7 +40,7 @@
                         </td>
                         <td><?= $this->Number->format($wtcrProduct->autoupdate) == 1 ? 'Enabled' : 'Disabled' ?></td>
                         <td><?= $this->Number->format($wtcrProduct->static_price) == 0 ? 'Not Set' : '$' . number_format($wtcrProduct->static_price, 2) ?></td>
-                        <th><?= $this->Html->link("<i class='fa fa-inbox fa-fw'></i>" . __('Receive'), ['controller' => 'WtcrInventory', 'action' => 'receive', $wtcrProduct->wtcrsku] ); ?></th>
+                        <th><?= $this->Html->link("<i class='fa fa-inbox fa-fw'></i> Receive", ['controller' => 'WtcrInventory', 'action' => 'receive', $wtcrProduct->wtcrsku] ); ?></th>
                         <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $wtcrProduct->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $wtcrProduct->id]) ?>
