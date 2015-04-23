@@ -1,8 +1,3 @@
-<script src="../bower_components/jquery/dist/jquery.min.js"></script>
-<script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
-<script src="../bower_components/raphael/raphael-min.js"></script>
-
-
 <!-- Row Containing Big Buttons Across Top -->
 <div class="row">
 	<div class="col-lg-3 col-md-6">
@@ -181,7 +176,9 @@
 			</div>
 			<div class="panel-body">
 				<div id="morris-donut-chart">
-             
+                    <div id="morris-area-chart">
+                        
+                    </div>
                 </div>
 				<a href="#" class="btn btn-default btn-block">View All Orders</a>
 			</div>
@@ -288,6 +285,9 @@
 <!-- Morris Charts JavaScript -->
 <script src="../dist/js/sb-admin-2.js"></script>
 
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+<script src="../bower_components/raphael/raphael-min.js"></script>
 
 <script src="../js/morris-data.js"></script>
 <script src="../bower_components/morrisjs/morris.min.js"></script>
