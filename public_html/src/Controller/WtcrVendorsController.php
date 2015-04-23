@@ -146,19 +146,19 @@ class WtcrVendorsController extends AppController
         if($vendor == "eprom") {
             $vendor_products = $this->fetch_eprom_products();
             error_log('Fetched Products from EPROM');
-            Email::deliver('drichardson@enigmait.ca', 'Subject', 'Message', ['from' => 'me@example.com']);
+            Email::deliver('drichardson@enigmait.ca', 'EPROM: Product Fetch', 'Message', ['from' => 'tt2@enigmait.ca']);
         }
         
         if($vendor == "longtech") {
             $vendor_products = $this->fetch_longtech_products();
             error_log('Fetched Products from Longtech');
-            Email::deliver('drichardson@enigmait.ca', 'Subject', 'Message', ['from' => 'me@example.com']);
+            Email::deliver('drichardson@enigmait.ca', 'Longtech: Product Fetch', 'Message', ['from' => 'tt2@enigmait.ca']);
         }
         
         if($vendor == "asi") {
             $vendor_products = $this->fetch_asi_products();
             error_log('Fetched Products from ASI');
-            Email::deliver('you@example.com', 'Subject', 'Message', ['from' => 'me@example.com']);
+            Email::deliver('drichardson@enigmait.ca', 'ASI: Product Fetch', 'Message', ['from' => 'tt2@enigmait.ca']);
         }
     }
     
