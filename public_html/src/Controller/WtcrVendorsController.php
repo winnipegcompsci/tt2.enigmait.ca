@@ -159,6 +159,8 @@ class WtcrVendorsController extends AppController
             $vendor_products = $this->fetch_asi_products();
             Email::deliver('drichardson@enigmait.ca', 'ASI: Product Fetch', $message, ['from' => 'tt2@enigmait.ca']);
         }
+        
+        return $this->redirect(['controller' => 'wtcr_vendors', 'action' => 'view_vendor_products', $vendor]);
     }
     
     public function fetch_eprom_products() 
