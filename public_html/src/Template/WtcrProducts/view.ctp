@@ -83,7 +83,7 @@
                                 echo  "<tr><td>Date Listed: </td><td>" . $data[$market->marketplace_name]['date'] . "</td></tr>";
                                 echo "</table>";
                             } else {
-                               echo "<p class='pull-right'> Not Listed </p>"; 
+                               echo "<p> Not Listed </p>"; 
                             }
                             
                         }
