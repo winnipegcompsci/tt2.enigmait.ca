@@ -45,19 +45,19 @@
                         <tr>
                             <td>Override Mark Up Price with Static Price:</td>
                             <td></td>
-                            <td><?= $this->Number->format($wtcrProduct->static_price) ?></td>
+                            <td>$<?= number_format($wtcrProduct->static_price, 2) ?></td>
                         </tr>
                         
                         <tr>
                             <td>Suggested Markup</td>
                             <td></td>
-                            <td><?= $this->Number->format($wtcrProduct->suggestedmarkup) ?></td>
+                            <td><?= 100*number_format($wtcrProduct->suggestedmarkup, 2) ?>%</td>
                         </tr>
                         
                         <tr>
                             <td>Current WTCR Sale Price</td>
                             <td></td>
-                            <td><?= $this->Number->format($wtcrProduct->wtcrprice) ?></td>
+                            <td>$<?= number_format($wtcrProduct->wtcrprice, 2) ?></td>
                         </tr>                    
                     </table>
                 </div>
