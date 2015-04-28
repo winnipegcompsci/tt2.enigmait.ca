@@ -39,7 +39,7 @@
                         <tr>
                             <td>Auto-Update WTCR Price</td>
                             <td></td>
-                            <td><?= $this->Number->format($wtcrProduct->autoupdate) ?></td>
+                            <td><?= $this->Number->format($wtcrProduct->autoupdate) == 1 ? "Yes" : "No" ?></td>
                         </tr>
                         
                         <tr>
