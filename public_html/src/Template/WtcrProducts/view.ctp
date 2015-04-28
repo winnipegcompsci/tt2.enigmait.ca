@@ -102,13 +102,18 @@
             <div class="panel-body">
                 <?php 
                     $pictures = unserialize($wtcrProduct->pictures); 
-                    
+                                       
                     foreach($pictures as $picture) {
                         echo "<div class=\"columns col-lg-4\">";
                         echo "<h4 class=\"subheader\">" . $picture->name .  "</h4>";
                         echo "<img src='" . $picture->location . "</img>";
                         
                         echo "</div>";
+                    }
+                    
+                    if(count($pictures) == 0) {
+                        echo "<i class=\"fa fa-times fa-fw\"></i><span>No Pictures Found For This Product</span>";
+                       
                     }
                 ?>
             </div>
