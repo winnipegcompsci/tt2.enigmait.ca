@@ -1,6 +1,6 @@
 <div class="wtcrProducts view col-lg-12 col-md-9 columns">
     <div class="row">
-        <div class="panel panel-primary columns col-lg-5" style="padding-left:0px; padding-right:0px">
+        <div class="panel panel-primary columns col-lg-6" style="padding-left:0px; padding-right:0px">
             <div class="panel-heading">
                 <i class="fa fa-truck fa-2x"></i><span style="font-size: 2em"> WTCR Product: <?= h($wtcrProduct->wtcr_product_name) ?> Details </span>
                 <div class="btn-group pull-right">
@@ -51,7 +51,7 @@
             </div>
         </div>
         
-        <div class="columns col-lg-5 marketplaces"> 
+        <div class="columns col-lg-6 marketplaces"> 
             <div class="panel panel-green">
                 <div class="panel-heading">
                     <h6 class="subheader"><?= __('Marketplace Data') ?></h6>
