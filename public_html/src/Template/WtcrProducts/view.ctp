@@ -83,12 +83,11 @@
                                 echo  "<tr><td>Date Listed: </td><td>" . $data[$market->marketplace_name]['date'] . "</td></tr>";
                                 echo "</table>";
                             } else {
-                               echo "<p> Not Listed </p>"; 
+                               echo "<p class='pull-right'> Not Listed </p>"; 
                             }
                             
                         }
                     ?>
-                    <?= $this->Text->autoParagraph(h($wtcrProduct->marketplace_data)); ?>
                 </div>
             </div>
         </div> 
