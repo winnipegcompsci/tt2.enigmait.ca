@@ -14,51 +14,53 @@
                 </div>
             </div>
             <div class="panel-body">
-                <h4 class="subheader"> Product Details </h4>
-                <table>
-                    <tr>
-                        <td> Mfg. Part Number: </td>
-                        <td></td>
-                        <td><?= h($wtcrProduct->mfg_part_num) ?></td> 
-                    </tr>
-                    <tr>
-                        <td>WTCR SKU: </td>
-                        <td></td>
-                        <td><?= h($wtcrProduct->wtcrsku) ?></td>
-                    </tr>
-                    <tr>
-                        <td>Product Category </td>
-                        <td></td>
-                        <td><?= $wtcrProduct->has('wtcr_product_category') ? $this->Html->link($wtcrProduct->wtcr_product_category->category_name, ['controller' => 'WtcrProductCategories', 'action' => 'view', $wtcrProduct->wtcr_product_category->id]) : '' ?></td>
-                    </tr>                    
-                </table>
-                
-                <h4 class="subheader"> WTCR Product Attributes </h4>
-                <table>
-                    <tr>
-                        <td>Auto-Update WTCR Price</td>
-                        <td></td>
-                        <td><?= $this->Number->format($wtcrProduct->autoupdate) ?></td>
-                    </tr>
+                <div class="columns col-lg-12">
+                    <h4 class="subheader"> Product Details </h4>
+                    <table>
+                        <tr>
+                            <td> Mfg. Part Number: </td>
+                            <td></td>
+                            <td><?= h($wtcrProduct->mfg_part_num) ?></td> 
+                        </tr>
+                        <tr>
+                            <td>WTCR SKU: </td>
+                            <td></td>
+                            <td><?= h($wtcrProduct->wtcrsku) ?></td>
+                        </tr>
+                        <tr>
+                            <td>Product Category </td>
+                            <td></td>
+                            <td><?= $wtcrProduct->has('wtcr_product_category') ? $this->Html->link($wtcrProduct->wtcr_product_category->category_name, ['controller' => 'WtcrProductCategories', 'action' => 'view', $wtcrProduct->wtcr_product_category->id]) : '' ?></td>
+                        </tr>                    
+                    </table>
                     
-                    <tr>
-                        <td>Override Mark Up Price with Static Price:</td>
-                        <td></td>
-                        <td><?= $this->Number->format($wtcrProduct->static_price) ?></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>Suggested Markup</td>
-                        <td></td>
-                        <td><?= $this->Number->format($wtcrProduct->suggestedmarkup) ?></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>Current WTCR Sale Price</td>
-                        <td></td>
-                        <td><?= $this->Number->format($wtcrProduct->wtcrprice) ?></td>
-                    </tr>                    
-                </table>
+                    <h4 class="subheader"> WTCR Product Attributes </h4>
+                    <table>
+                        <tr>
+                            <td>Auto-Update WTCR Price</td>
+                            <td></td>
+                            <td><?= $this->Number->format($wtcrProduct->autoupdate) ?></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Override Mark Up Price with Static Price:</td>
+                            <td></td>
+                            <td><?= $this->Number->format($wtcrProduct->static_price) ?></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Suggested Markup</td>
+                            <td></td>
+                            <td><?= $this->Number->format($wtcrProduct->suggestedmarkup) ?></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Current WTCR Sale Price</td>
+                            <td></td>
+                            <td><?= $this->Number->format($wtcrProduct->wtcrprice) ?></td>
+                        </tr>                    
+                    </table>
+                </div>
             </div>
         </div>
         
