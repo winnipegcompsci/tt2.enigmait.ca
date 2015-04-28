@@ -39,25 +39,25 @@
                         <tr>
                             <td>Auto-Update WTCR Price</td>
                             <td></td>
-                            <td><?= $this->Number->format($wtcrProduct->autoupdate) == 1 ? "Yes" : "No" ?></td>
+                            <td class="pull-right"><?= $this->Number->format($wtcrProduct->autoupdate) == 1 ? "Yes" : "No" ?></td>
                         </tr>
                         
                         <tr>
                             <td>Override Mark Up Price with Static Price:</td>
                             <td></td>
-                            <td>$<?= number_format($wtcrProduct->static_price, 2) ?></td>
+                            <td class="pull-right">$<?= number_format($wtcrProduct->static_price, 2) ?></td>
                         </tr>
                         
                         <tr>
                             <td>Suggested Markup</td>
                             <td></td>
-                            <td><?= 100*number_format($wtcrProduct->suggestedmarkup, 2) ?>%</td>
+                            <td class="pull-right"><?= 100*number_format($wtcrProduct->suggestedmarkup, 2) ?>%</td>
                         </tr>
                         
                         <tr>
                             <td>Current WTCR Sale Price</td>
                             <td></td>
-                            <td>$<?= number_format($wtcrProduct->wtcrprice, 2) ?></td>
+                            <td class="pull-right">$<?= number_format($wtcrProduct->wtcrprice, 2) ?></td>
                         </tr>                    
                     </table>
                 </div>
