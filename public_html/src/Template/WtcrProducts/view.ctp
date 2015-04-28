@@ -16,7 +16,7 @@
             <div class="panel-body">
                 <div class="columns col-lg-12">
                     <h4 class="subheader"> Product Details </h4>
-                    <table>
+                    <table width="100%">
                         <tr>
                             <td> Mfg. Part Number: </td>
                             <td></td>
@@ -35,7 +35,7 @@
                     </table>
                     
                     <h4 class="subheader"> WTCR Product Attributes </h4>
-                    <table>
+                    <table width="100%">
                         <tr>
                             <td>Auto-Update WTCR Price</td>
                             <td></td>
