@@ -20,17 +20,17 @@
                         <tr>
                             <td> Mfg. Part Number: </td>
                             <td></td>
-                            <td><?= h($wtcrProduct->mfg_part_num) ?></td> 
+                            <td class="pull-right"><?= h($wtcrProduct->mfg_part_num) ?></td> 
                         </tr>
                         <tr>
                             <td>WTCR SKU: </td>
                             <td></td>
-                            <td><?= h($wtcrProduct->wtcrsku) ?></td>
+                            <td class="pull-right"><?= h($wtcrProduct->wtcrsku) ?></td>
                         </tr>
                         <tr>
                             <td>Product Category </td>
                             <td></td>
-                            <td><?= $wtcrProduct->has('wtcr_product_category') ? $this->Html->link($wtcrProduct->wtcr_product_category->category_name, ['controller' => 'WtcrProductCategories', 'action' => 'view', $wtcrProduct->wtcr_product_category->id]) : '' ?></td>
+                            <td class="pull-right"><?= $wtcrProduct->has('wtcr_product_category') ? $this->Html->link($wtcrProduct->wtcr_product_category->category_name, ['controller' => 'WtcrProductCategories', 'action' => 'view', $wtcrProduct->wtcr_product_category->id]) : '' ?></td>
                         </tr>                    
                     </table>
                     
