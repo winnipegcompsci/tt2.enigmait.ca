@@ -73,7 +73,7 @@
                 <div class="panel-body">
                     <?php 
                         foreach($marketplace_list as $market) {
-                            echo "<pre>" . print_r($market, TRUE) . "</pre>";
+                            echo "<pre>" . print_r($market->marketplace_name, TRUE) . "</pre>";
                         }
                     ?>
                     <?= $this->Text->autoParagraph(h($wtcrProduct->marketplace_data)); ?>
