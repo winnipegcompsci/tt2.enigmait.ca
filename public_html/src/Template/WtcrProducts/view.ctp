@@ -18,17 +18,17 @@
                     <h4 class="subheader"> Product Details </h4>
                     <table width="100%">
                         <tr>
-                            <td><strong> Mfg. Part Number: </strong></td>
+                            <td> Mfg. Part Number: </td>
                             <td></td>
                             <td class="pull-right"><?= h($wtcrProduct->mfg_part_num) ?></td> 
                         </tr>
                         <tr>
-                            <td><strong>WTCR SKU: </strong></td>
+                            <td>WTCR SKU: </td>
                             <td></td>
                             <td class="pull-right"><?= h($wtcrProduct->wtcrsku) ?></td>
                         </tr>
                         <tr>
-                            <td><strong>Product Category: </strong></td>
+                            <td>Product Category </td>
                             <td></td>
                             <td class="pull-right"><?= $wtcrProduct->has('wtcr_product_category') ? $this->Html->link($wtcrProduct->wtcr_product_category->category_name, ['controller' => 'WtcrProductCategories', 'action' => 'view', $wtcrProduct->wtcr_product_category->id]) : '' ?></td>
                         </tr>                    
@@ -37,25 +37,25 @@
                     <h4 class="subheader"> WTCR Product Attributes </h4>
                     <table width="100%">
                         <tr>
-                            <td><strong>Auto-Update WTCR Price:</strong></td>
+                            <td>Auto-Update WTCR Price</td>
                             <td></td>
                             <td class="pull-right"><?= $this->Number->format($wtcrProduct->autoupdate) == 1 ? "Yes" : "No" ?></td>
                         </tr>
                         
                         <tr>
-                            <td><strong>Override Mark Up Price with Static Price:</strong></td>
+                            <td>Override Mark Up Price with Static Price:</td>
                             <td></td>
                             <td class="pull-right">$<?= number_format($wtcrProduct->static_price, 2) ?></td>
                         </tr>
                         
                         <tr>
-                            <td><strong>Suggested Markup</strong></td>
+                            <td>Suggested Markup</td>
                             <td></td>
                             <td class="pull-right"><?= 100*number_format($wtcrProduct->suggestedmarkup, 2) ?>%</td>
                         </tr>
                         
                         <tr>
-                            <td><strong>Current WTCR Sale Price</strong></td>
+                            <td>Current WTCR Sale Price</td>
                             <td></td>
                             <td class="pull-right">$<?= number_format($wtcrProduct->wtcrprice, 2) ?></td>
                         </tr>                    
