@@ -1,6 +1,6 @@
 <div class="wtcrProducts view col-lg-12 col-md-9 columns">
     <div class="row">
-        <div class="panel panel-info columns col-lg-12" style="padding-left:0px; padding-right:0px">
+        <div class="panel panel-primary columns col-lg-12" style="padding-left:0px; padding-right:0px">
             <div class="panel-heading">
                 <i class="fa fa-truck fa-2x"></i><span style="font-size: 2em"> WTCR Product: <?= h($wtcrProduct->wtcr_product_name) ?> Details </span>
                 <div class="btn-group pull-right">
@@ -26,6 +26,12 @@
                     <h6 class="subheader"><?= __('Wtcr Nid') ?></h6>
                     <p><?= h($wtcrProduct->wtcr_nid) ?></p>
                 </div>
+                
+                <div class="columns large-9">
+                    <h6 class="subheader"><?= __('Description') ?></h6>
+                    <?= $this->Text->autoParagraph(h($wtcrProduct->description)); ?>
+                </div>
+                
                 <div class="large-2 columns numbers end">
                     <h6 class="subheader"><?= __('Id') ?></h6>
                     <p><?= $this->Number->format($wtcrProduct->id) ?></p>
@@ -66,7 +72,7 @@
     </div>
     
     <div class="row marketplaces"> 
-        <div class="panel panel-blue">
+        <div class="panel panel-yellow">
             <div class="panel-heading">
                 <h6 class="subheader"><?= __('Product Images'); ?></h6>
             </div>
