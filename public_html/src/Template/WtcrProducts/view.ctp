@@ -53,18 +53,27 @@
 
         </div>
     </div>
-    <div class="row texts">
-        <div class="columns large-9">
-            <h6 class="subheader"><?= __('Marketplace Data') ?></h6>
-            <?= $this->Text->autoParagraph(h($wtcrProduct->marketplace_data)); ?>
-
+    <div class="row pictures">
+        <div class="panel panel-green">
+            <div class="panel-heading">
+                <h6 class="subheader"><?= __('Marketplace Data') ?></h6>
+            </div>
+            
+            <div class="panel-body">
+                <?= $this->Text->autoParagraph(h($wtcrProduct->marketplace_data)); ?>
+            </div>
         </div>
     </div>
-    <div class="row texts">
-        <div class="columns large-9">
-            <h6 class="subheader"><?= __('Pictures') ?></h6>
-            <?= $this->Text->autoParagraph(h($wtcrProduct->pictures)); ?>
-
+    
+    <div class="row marketplaces"> 
+        <div class="panel panel-blue">
+            <div class="panel-heading">
+                <h6 class="subheader"><?= __('Product Images'); ?></h6>
+            </div>
+            
+            <div class="panel-body">
+                <?= $this->Text->autoParagraph(h($wtcrProduct->pictures)); ?>
+            </div>
         </div>
     </div>
 </div>
