@@ -83,7 +83,7 @@
                                 echo  "<tr><td>Date Listed: </td><td>" . $data[$market->marketplace_name]['date'] . "</td></tr>";
                                 echo "</table>";
                             } else {
-                               echo "<p> Not Listed, " . $this->Html->link('list now', ['controller' => 'WtcrMarketplaces', 'action' => 'index']); . " </p>"; 
+                               echo "<p> Not Listed </p>"; 
                             }
                             
                         }
