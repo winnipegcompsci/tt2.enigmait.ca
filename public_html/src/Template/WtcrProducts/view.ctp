@@ -71,9 +71,21 @@
                 </div>
                 
                 <div class="panel-body">
-                    <?php 
+                    <?php
+                        $data = unserialize($wtcrProduct->marketplace_data);
+                        
                         foreach($marketplace_list as $market) {
-                            echo "<pre>" . print_r($market->marketplace_name, TRUE) . "</pre>";
+                            echo "<h4>" . $market->marketplace_name . "</h4>";
+                            
+                            if(isset($data[$market->marketplace_name])) {
+                                echo  "<table>";
+                                echo  "<tr><td>Price: </td> <td>$" . number_format($data[$market->marketplace_name]['price'], 2) . "</td></tr>";
+                                echo  "<tr><td>Date Listed: </td><td>" . $data[$market->marketplace_name]['date'] . "</td></tr>";
+                                echo "</table>";
+                            } else {
+                               echo "<p> Not Listed </p>"; 
+                            }
+                            
                         }
                     ?>
                     <?= $this->Text->autoParagraph(h($wtcrProduct->marketplace_data)); ?>
