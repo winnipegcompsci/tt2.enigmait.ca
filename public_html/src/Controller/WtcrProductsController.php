@@ -39,6 +39,9 @@ class WtcrProductsController extends AppController
         ]);
         $this->set('wtcrProduct', $wtcrProduct);
         $this->set('_serialize', ['wtcrProduct']);
+        
+        $marketplaces = TableRegistry::get('WtcrMarketplaces')->find('all');
+        $this->set('marketplace_list', $marketplaces);
     }
 
     /**
