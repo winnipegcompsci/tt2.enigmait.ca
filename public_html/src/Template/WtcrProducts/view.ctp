@@ -1,4 +1,4 @@
-<div class="wtcrProducts view col-lg-10 col-md-9 columns">
+<div class="wtcrProducts view col-lg-12 col-md-9 columns">
     <div class="row">
         <div class="panel panel-info columns col-lg-12" style="padding-left:0px; padding-right:0px">
             <div class="panel-heading">
