@@ -1,6 +1,6 @@
 <div class="wtcrProducts view col-lg-12 col-md-9 columns">
     <div class="row">
-        <div class="panel panel-primary columns col-lg-12" style="padding-left:0px; padding-right:0px">
+        <div class="panel panel-primary columns col-lg-5" style="padding-left:0px; padding-right:0px">
             <div class="panel-heading">
                 <i class="fa fa-truck fa-2x"></i><span style="font-size: 2em"> WTCR Product: <?= h($wtcrProduct->wtcr_product_name) ?> Details </span>
                 <div class="btn-group pull-right">
@@ -51,6 +51,18 @@
             </div>
         </div>
         
+        <div class="columns col-lg-5 marketplaces"> 
+            <div class="panel panel-yellow">
+                <div class="panel-heading">
+                    <h6 class="subheader"><?= __('Product Images'); ?></h6>
+                </div>
+                
+                <div class="panel-body">
+                    <?= $this->Text->autoParagraph(h($wtcrProduct->pictures)); ?>
+                </div>
+            </div>
+        </div>
+        
     </div>
 
     <div class="row pictures">
@@ -61,18 +73,6 @@
             
             <div class="panel-body">
                 <?= $this->Text->autoParagraph(h($wtcrProduct->marketplace_data)); ?>
-            </div>
-        </div>
-    </div>
-    
-    <div class="row marketplaces"> 
-        <div class="panel panel-yellow">
-            <div class="panel-heading">
-                <h6 class="subheader"><?= __('Product Images'); ?></h6>
-            </div>
-            
-            <div class="panel-body">
-                <?= $this->Text->autoParagraph(h($wtcrProduct->pictures)); ?>
             </div>
         </div>
     </div>
