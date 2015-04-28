@@ -75,7 +75,7 @@
                         $data = unserialize($wtcrProduct->marketplace_data);
                         
                         foreach($marketplace_list as $market) {
-                            echo "<h4 class=\"subheader\">" . strtoupper($market->marketplace_name) . "</h4>";
+                            echo "<h4 class=\"subheader\">" . $market->marketplace_name . ":</h4>";
                             
                             if(isset($data[$market->marketplace_name])) {
                                 echo  "<table>";
