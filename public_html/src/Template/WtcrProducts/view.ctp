@@ -52,13 +52,7 @@
         </div>
         
     </div>
-    <div class="row texts">
-        <div class="columns large-9">
-            <h6 class="subheader"><?= __('Description') ?></h6>
-            <?= $this->Text->autoParagraph(h($wtcrProduct->description)); ?>
 
-        </div>
-    </div>
     <div class="row pictures">
         <div class="panel panel-green">
             <div class="panel-heading">
