@@ -2,7 +2,7 @@
     <div class="row">
         <div class="panel panel-primary columns col-lg-6" style="padding-left:0px; padding-right:0px">
             <div class="panel-heading">
-                <i class="fa fa-truck fa-2x"></i><span style="font-size: 2em"> WTCR Product: <?= h($wtcrProduct->wtcr_product_name) ?> Details </span>
+                <i class="fa fa-truck fa-2x"></i><span style="font-size: 1.5em"> WTCR Product: <?= h($wtcrProduct->wtcr_product_name) ?> </span>
                 <div class="btn-group pull-right">
                     <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i>  <span class="caret"></span></button>
                     <ul class="dropdown-menu" role="menu">
