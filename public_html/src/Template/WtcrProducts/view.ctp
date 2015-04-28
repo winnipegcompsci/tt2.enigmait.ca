@@ -100,7 +100,17 @@
             </div>
                 
             <div class="panel-body">
-                <?= $this->Text->autoParagraph(h($wtcrProduct->pictures)); ?>
+                <?php 
+                    $pictures = unserialize($wtcrProduct->pictures); 
+                    
+                    foreach($pictures as $picture) {
+                        echo "<div class=\"columns col-lg-4\">";
+                        echo "<h4 class=\"subheader\">" . $picture->name .  "</h4>";
+                        echo "<img src='" . $picture->location . "</img>";
+                        
+                        echo "</div>";
+                    }
+                ?>
             </div>
         </div>
     </div>
