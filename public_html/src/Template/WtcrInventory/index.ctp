@@ -62,7 +62,7 @@
             </table>
         </div> <!-- ./end panel-body -->
     </div> <!-- ./panel-primary -->
-</div> <!-- full width.
+</div> <!-- full width. -->
 
 <?php 
     echo $this->element('modal', array(
