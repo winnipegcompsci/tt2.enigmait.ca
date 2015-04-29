@@ -72,7 +72,7 @@
 
     echo $this->element('modal', array(
         'title' => 'WTCR Inventory Page', 
-        'body' => $form, //'More Details to Come.'
+        'body' => 'More Details to Come.'
     ));
 
 ?>
