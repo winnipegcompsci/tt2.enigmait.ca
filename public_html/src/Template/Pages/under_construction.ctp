@@ -27,6 +27,10 @@
     </div><!-- /.modal-dialog -->
 </div> <!-- /.model-fade -->
 
+<?php 
+    echo $this->element('modal', array('title' => 'title', 'body' => 'body'));
+?>
+
 
 <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 
