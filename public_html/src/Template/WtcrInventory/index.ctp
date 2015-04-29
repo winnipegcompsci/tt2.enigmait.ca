@@ -65,9 +65,14 @@
 </div> <!-- full width. -->
 
 <?php 
+    $form = $this->Form->create();
+    $form .= $this->Form->text('name');
+    $form .= $this->Form->end();
+
+
     echo $this->element('modal', array(
         'title' => 'WTCR Inventory Page', 
-        'body' => 'More Details to Come.'
+        'body' => $form, //'More Details to Come.'
     ));
 
 ?>
