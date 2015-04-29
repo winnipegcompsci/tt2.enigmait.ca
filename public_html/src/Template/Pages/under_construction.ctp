@@ -28,7 +28,11 @@
 </div> <!-- /.model-fade -->
 
 <?php 
-    echo $this->element('modal', array('title' => 'title', 'body' => 'body'));
+    echo $this->element('modal', array(
+        'title' => 'Under Construction Page', 
+        'body' => 'More Details to Come.'
+    ));
+
 ?>
 
 
