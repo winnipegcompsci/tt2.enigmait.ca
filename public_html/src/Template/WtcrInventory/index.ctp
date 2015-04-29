@@ -63,3 +63,11 @@
         </div> <!-- ./end panel-body -->
     </div> <!-- ./panel-primary -->
 </div> <!-- full width.
+
+<?php 
+    echo $this->element('modal', array(
+        'title' => 'WTCR Inventory Page', 
+        'body' => 'More Details to Come.'
+    ));
+
+?>

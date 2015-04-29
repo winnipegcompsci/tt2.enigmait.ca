@@ -59,3 +59,11 @@
         <p><?= $this->Paginator->counter() ?></p>
     </div>
 </div>
+
+<?php 
+    echo $this->element('modal', array(
+        'title' => 'Inventory Page', 
+        'body' => 'More Details to Come.'
+    ));
+
+?>
