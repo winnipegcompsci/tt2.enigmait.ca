@@ -176,13 +176,15 @@ class WtcrProductsController extends AppController
      */
     public function edit($id = null)
     {
-        echo "<pre> - FILES array: " . print_r($_FILES, TRUE) . "</pre>";
-    
+           
         $wtcrProduct = $this->WtcrProducts->get($id, [
             'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-                
+
+            echo '$_FILES:';
+            echo "<pre>" . print_r($_FILES, TRUE) . "</pre>";
+        
             $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
 
             if(isset($this->request->data['picture']) && $this->request->data['picture']['tmp_name'] != null) {
