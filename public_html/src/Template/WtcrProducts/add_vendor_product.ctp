@@ -70,7 +70,7 @@
                 echo "</tr>";
             } 
             
-                echo "<pre>" . print_r($pictures, TRUE) . "</pre>";
+                echo "<pre>" . print_r(unserialize($pictures), TRUE) . "</pre>";
             
             ?>
             
