@@ -87,8 +87,7 @@ class WtcrProductsController extends AppController
             copy($this->request->data['picture']['tmp_name'], 
                 WWW_ROOT . 'product_images' . DS . $this->request->data['picture']['name']
             );
-            
-            
+                        
             $data = unserialize($wtcrProduct->pictures);
             $data[] = array(
                 'name' => $this->request->data['picture']['name'],
