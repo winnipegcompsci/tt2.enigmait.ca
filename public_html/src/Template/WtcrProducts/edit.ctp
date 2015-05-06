@@ -21,14 +21,15 @@
             echo $this->Form->input('wtcrsku');
             echo $this->Form->input('wtcr_product_name');
             echo $this->Form->input('description');
-            echo $this->Form->input('autoupdate');
+            echo $this->Form->('autoupdate');
             echo $this->Form->input('static_price');
             echo $this->Form->input('suggestedmarkup');
             // echo $this->Form->input('wtcrprice');
             // echo $this->Form->input('wtcr_nid');
             echo $this->Form->input('lastupdated');
             echo $this->Form->input('marketplace_data');
-            echo $this->Form->input('product_images');
+            echo $this->Form->labeol('Add podut');
+            echo $this->Form->file('product_image');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
