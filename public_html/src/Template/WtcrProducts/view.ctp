@@ -85,7 +85,7 @@
                             } else {
                                 echo "<p> Not Listed" . $this->Html->url('List Product', [
                                         'controller' => 'wtcr_product', 
-                                        'action' => 'list_product',$id
+                                        'action' => 'list_product', $wtcrProduct->mfg_part_num
                                 ]) . "!</p>"; 
                             }
                             
