@@ -81,13 +81,16 @@ class WtcrProductsController extends AppController
             $wtcrProduct->static_price = 0;
             $wtcrProduct->wtcr_nid = 0;
             $wtcrProduct->marketplace_data = serialize( array() );
-            $wtcrProduct->pictures[] = serialize([
+            
+            $data = unserialize($wtcrProduct->pictures)
+            $data[] = array(
                 'name' => $this->request->data['picture']['name'],
                 'type' => $this->request->data['picture']['type'],
                 'tmp_name' => $this->request->data['picture']['tmp_name'],
                 'error' => $this->request->data['picture']['error'],
                 'size' => $this->request->data['picture']['size']
-            ]);
+            )
+            $wtcrProduct->pictures = serialize($data);
             $wtcrProduct->wtcr_product_category = $this->request->data['wtcr_product_category_id'];    
             
             // debug($wtcrProduct);                  
