@@ -35,9 +35,11 @@
             // Iterate over each picture and display if possible.
             
             $pictures = unserialize($wtcrProduct->pictures); 
-            foreach($pictures as $picture) {
+            foreach($pictures as $key => $picture) {
                 if(isset($picture['tmp_name']) && $picture['tmp_name'] != null) {
                     echo "<pre>" . print_r($picture, TRUE) . "</pre>";
+                } else {
+                    unset($picture[$key]);
                 }
             }
             
