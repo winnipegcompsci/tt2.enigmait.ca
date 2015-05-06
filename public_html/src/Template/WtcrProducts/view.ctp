@@ -84,7 +84,7 @@
                                 echo "</table>";
                             } else {
                                 echo "<p> Not Listed, &nbsp;" . $this->Html->link('List Product Now', [
-                                        'controller' => 'wtcr_product', 
+                                        'controller' => 'wtcr_products', 
                                         'action' => 'list_product', $wtcrProduct->mfg_part_num, $market->id
                                 ]) . "</p>"; 
                             }
