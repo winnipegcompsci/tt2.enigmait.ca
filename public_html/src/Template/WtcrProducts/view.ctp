@@ -102,7 +102,8 @@
             <div class="panel-body">
                 <?php 
                     $pictures = unserialize($product_pictures);
-                                       
+                    echo "<pre>" . print_r($pictures, TRUE) . "</pre>";
+                    
                     foreach($pictures as $picture) {
                         echo "<div style=\"border: 3px solid black\" class=\"columns col-lg-3\">";
                         echo "<h4 class=\"subheader\">" . $picture['name'] .  "</h4>";
