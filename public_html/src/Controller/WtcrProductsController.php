@@ -82,7 +82,7 @@ class WtcrProductsController extends AppController
             $wtcrProduct->wtcr_nid = 0;
             $wtcrProduct->marketplace_data = serialize( array() );
             
-            $data = unserialize($wtcrProduct->pictures)
+            $data = unserialize($wtcrProduct->pictures);
             $data[] = array(
                 'name' => $this->request->data['picture']['name'],
                 'type' => $this->request->data['picture']['type'],
