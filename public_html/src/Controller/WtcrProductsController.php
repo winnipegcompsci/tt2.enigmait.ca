@@ -85,12 +85,16 @@ class WtcrProductsController extends AppController
             $wtcrProduct->marketplace_data = serialize( array() );
             
             move_uploaded_file($_FILES['picture']['tmp_name'], WWW_ROOT . 'img' . DS . $_FILES['picture']['name']);
-           
+            /*
+            copy($this->request->data['picture']['tmp_name'], 
+                WWW_ROOT . 'img' . DS . $this->request->data['picture']['name']
+            );
+            */           
             $data = unserialize($wtcrProduct->pictures);
             $data[] = array(
                 'name' => $this->request->data['picture']['name'],
                 'type' => $this->request->data['picture']['type'],
-                'path' => $this->Url->build('/img' . DS . $_FILES['picture']['name'], TRUE),               
+                'path' => WWW_ROOT . 'img' . DS . $_FILES['picture']['name'],               
                 'error' => $this->request->data['picture']['error'],
                 'size' => $this->request->data['picture']['size']
             );
@@ -189,7 +193,7 @@ class WtcrProductsController extends AppController
                 $data[] = array(
                     'name' => $this->request->data['picture']['name'],
                     'type' => $this->request->data['picture']['type'],
-                    'path' => $this->Url->build('/img' . DS . $_FILES['picture']['name'], TRUE),               
+                    'path' => WWW_ROOT . 'img' . DS . $_FILES['picture']['name'],               
                     'error' => $this->request->data['picture']['error'],
                     'size' => $this->request->data['picture']['size']
                 );
