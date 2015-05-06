@@ -21,7 +21,7 @@
             echo $this->Form->input('wtcrsku');
             echo $this->Form->input('wtcr_product_name');
             echo $this->Form->input('description');
-            echo $this->Form->('autoupdate');
+            echo $this->Form->checkbox('autoupdate');
             echo $this->Form->input('static_price');
             echo $this->Form->input('suggestedmarkup');
             // echo $this->Form->input('wtcrprice');
@@ -31,7 +31,7 @@
             // Iterate over each marketplace in array and print out comparison.
             
             echo $this->Form->file('product_images');
-            // Iterate over each picture and don't want.
+            // Iterate over each picture and display if possible.
             
         ?>
     </fieldset>
