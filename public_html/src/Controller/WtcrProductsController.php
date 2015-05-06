@@ -241,12 +241,9 @@ class WtcrProductsController extends AppController
     
     function list_product_amazon($mfg_part_num)
     {
-        $modal = $this->element('modal', array(
-            'title' => "Listing $mfg_part_num on Amazon",
-            'body' => 'Yay!',
-        ));
+        $this->set('title',"Listing $mfg_part_num on Amazon");
+        $this->set('body', 'Yay!');
         
-        $this->set('modal', $modal);
     }
     
     function list_product_ebay($mfg_part_num) 
