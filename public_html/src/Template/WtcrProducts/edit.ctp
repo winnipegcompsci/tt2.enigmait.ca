@@ -24,11 +24,11 @@
             echo $this->Form->input('autoupdate');
             echo $this->Form->input('static_price');
             echo $this->Form->input('suggestedmarkup');
-            echo $this->Form->input('wtcrprice');
-            echo $this->Form->input('wtcr_nid');
+            // echo $this->Form->input('wtcrprice');
+            // echo $this->Form->input('wtcr_nid');
             echo $this->Form->input('lastupdated');
             echo $this->Form->input('marketplace_data');
-            echo $this->Form->input('type' => 'file', 'pictures');
+            echo $this->Form->input(measaves_sort ages');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
