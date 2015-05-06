@@ -177,16 +177,18 @@ class WtcrProductsController extends AppController
                 
             $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
 
-            $data = unserialize($wtcrProduct->pictures);
-            $data[] = array(
-                'name' => $this->request->data['picture']['name'],
-                'type' => $this->request->data['picture']['type'],
-                'tmp_name' => $this->request->data['picture']['tmp_name'],
-                'error' => $this->request->data['picture']['error'],
-                'size' => $this->request->data['picture']['size']
-            );
-            $wtcrProduct->pictures = serialize($data);
-
+            if(isset($this->request->data['picture']) && $this->request->data['picture']['tmp_name'] != null) {
+                $data = unserialize($wtcrProduct->pictures);
+                $data[] = array(
+                    'name' => $this->request->data['picture']['name'],
+                    'type' => $this->request->data['picture']['type'],
+                    'tmp_name' => $this->request->data['picture']['tmp_name'],
+                    'error' => $this->request->data['picture']['error'],
+                    'size' => $this->request->data['picture']['size']
+                );
+                $wtcrProduct->pictures = serialize($data);
+            }
+            
             if ($this->WtcrProducts->save($wtcrProduct)) {
                 $this->Flash->success('The wtcr product has been saved.');
                 return $this->redirect(['action' => 'index']);
