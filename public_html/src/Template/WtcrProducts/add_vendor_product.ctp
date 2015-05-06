@@ -6,7 +6,7 @@
 ?>
 
 <div class="wtcrProducts form col-lg-6 col-md-6 columns pull-left">
-    <?= $this->Form->create($this_product); ?>
+    <?= $this->Form->create($this_product, ['enctype' => 'multipart/form-data']); ?>
     <fieldset>
         <legend><?= __('Create WTCR Product from Vendor Product') ?></legend>
         <?php
@@ -31,7 +31,10 @@
             echo $this->Form->input('static_price', ['label' => 'Override Price on Site to: ']);
             echo $this->Form->input('suggestedmarkup', ['default' => '0.5', 'label' => 'Suggested Markup:']);
             echo $this->Form->input('wtcrprice', ['default' => $vendor_price * 1.5, 'label' => 'Suggested WTCR Price:']);
-            // echo $this->Form->input('wtcr_product_category_id', ['options' => $categories]);
+            echo $this->Form->input('wtcr_product_category_id', ['options' => $categories]);
+            
+            echo $this->Form->label('Upload a picture of the product');
+            echo $this->Form->File('picture');
             
         ?>
     </fieldset>
