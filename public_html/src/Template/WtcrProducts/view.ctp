@@ -102,15 +102,16 @@
             <div class="panel-body">
                 <?php 
                     $pictures = unserialize($product_pictures);
-                    echo "<pre>" . print_r($pictures, TRUE) . "</pre>";
                     
-                    foreach($pictures as $picture) {
+                    foreach($pictures as $key => $picture) {
                         if($picture['tmp_name'] != null) {
                             echo "<div style=\"border: 3px solid black\" class=\"columns col-lg-3\">";
                             echo "<h4 class=\"subheader\">" . $picture['name'] .  "</h4>";
                             echo "<img width='100%' src='" . $picture['tmp_name'] . "'> </img>";
                         
                             echo "</div>";
+                        } else {
+                            unset($pictures[$key]);
                         }
                     }
                     
