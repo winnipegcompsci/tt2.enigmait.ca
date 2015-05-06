@@ -245,7 +245,8 @@ class WtcrProductsController extends AppController
         $this->set('title',"Listing $mfg_part_num on Amazon");
         $this->set('body', $body);
         
-        $prods = TableRegistry::get('WtcrProducts')
+        $prods = TableRegistry::get('WtcrProducts');
+        
         $theseprods = $prods->find('all')->where('mfg_part_num' => $mfg_part_num);
         $this->set('productdata', $theseprods);
         
