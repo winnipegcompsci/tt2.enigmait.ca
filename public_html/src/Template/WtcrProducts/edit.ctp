@@ -31,7 +31,7 @@
             echo $this->Form->input('marketplace_data');        
             // Iterate over each marketplace in array and print out comparison.
             
-            echo $this->Form->file('product_images');
+            echo $this->Form->file('picture');
             // Iterate over each picture and display if possible.
             
             $pictures = unserialize($wtcrProduct->pictures); 
