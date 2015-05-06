@@ -105,11 +105,16 @@
                     
                     foreach($pictures as $key => $picture) {
                         if(isset($picture['path']) && $picture['path'] != null) {
-                            echo "<div class=\"columns col-lg-3\">";
-                            echo "<h4 class=\"subheader\">" . $picture['name'] .  "</h4>";
-                            echo "<img width='100%' src='" . $picture['path'] . "'> </img>";
-                        
-                            echo "</div>";
+                            if(file_exists($picture['path'])) {
+                                echo "<div class=\"columns col-lg-3\">";
+                                echo "<h4 class=\"subheader\">" . $picture['name'] .  "</h4>";
+                                echo "<img width='100%' src='" . $picture['path'] . "'> </img>";
+                            
+                                echo "</div>";
+                            } else {
+                                unset($pictures[$key]);
+                            }
+                            
                         } else {
                             unset($pictures[$key]);
                         }
