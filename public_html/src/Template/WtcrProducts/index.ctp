@@ -42,7 +42,7 @@
                         <td><?= $this->Number->format($wtcrProduct->static_price) == 0 ? 'Not Set' : '$' . number_format($wtcrProduct->static_price, 2) ?></td>
                         <td><i class='fa fa-inbox fa-fw'></i> <?= $this->Html->link("Receive", ['controller' => 'WtcrInventory', 'action' => 'receive', $wtcrProduct->wtcrsku] ); ?></td>
                         <td class="actions">
-                        <?= $this->Html->link('<i class="fa fa-eye"></i>', ['action' => 'view', $wtcrProduct->id, 'escape' => false]) ?>
+                        <?= $this->Html->link(__('View'), ['action' => 'view', $wtcrProduct->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $wtcrProduct->id]) ?>
                         <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $wtcrProduct->id], ['confirm' => __('Are you sure you want to delete # {0}?', $wtcrProduct->id)]) ?>
                         </td>
