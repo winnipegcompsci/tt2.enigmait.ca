@@ -85,11 +85,7 @@ class WtcrProductsController extends AppController
             $wtcrProduct->marketplace_data = serialize( array() );
             
             move_uploaded_file($_FILES['picture']['tmp_name'], WWW_ROOT . 'img' . DS . $_FILES['picture']['name']);
-            /*
-            copy($this->request->data['picture']['tmp_name'], 
-                WWW_ROOT . 'img' . DS . $this->request->data['picture']['name']
-            );
-            */           
+           
             $data = unserialize($wtcrProduct->pictures);
             $data[] = array(
                 'name' => $this->request->data['picture']['name'],
