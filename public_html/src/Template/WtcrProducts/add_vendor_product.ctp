@@ -68,7 +68,12 @@
                 echo "<td>$" . number_format($item->vendor_price, 2) . "</td>";
                 echo "<td>" . $item->last_updated . "</td>";
                 echo "</tr>";
-            } ?>
+            } 
+            
+                echo "<pre>" . print_r($pictures, TRUE) . "</pre>";
+            
+            ?>
+            
         </tbody>
     </table>
 <?php } 
