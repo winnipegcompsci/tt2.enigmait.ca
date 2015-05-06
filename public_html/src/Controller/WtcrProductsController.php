@@ -90,7 +90,7 @@ class WtcrProductsController extends AppController
             $data[] = array(
                 'name' => $this->request->data['picture']['name'],
                 'type' => $this->request->data['picture']['type'],
-                'path' => $this->Html->url('img' . DS . $_FILES['picture']['name']),               
+                'path' => $this->Url->build('/img' . DS . $_FILES['picture']['name'], TRUE),               
                 'error' => $this->request->data['picture']['error'],
                 'size' => $this->request->data['picture']['size']
             );

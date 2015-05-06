@@ -108,7 +108,7 @@
                             if(file_exists($picture['path'])) {
                                 echo "<div class=\"columns col-lg-3\">";
                                 echo "<h4 class=\"subheader\">" . $picture['name'] .  "</h4>";
-                                echo "<img width='100%' src='" . $picture['path'] . "'> </img>";
+                                echo "<img width='100%' src='" . $this->webroot .  $picture['name'] . "'> </img>";
                             
                                 echo "</div>";
                             } else {
