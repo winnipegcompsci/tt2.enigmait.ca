@@ -71,7 +71,7 @@ class WtcrProductsController extends AppController
         $wtcrProduct = $this->WtcrProducts->newEntity();   
                                 
         if($this->request->is('post')) {                   
-            echo "<pre>" . print_r($this->request, TRUE) . "</pre>";
+            // echo "<pre>" . print_r($this->request, TRUE) . "</pre>";
             
             $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
             debug($wtcrProduct);
@@ -81,7 +81,13 @@ class WtcrProductsController extends AppController
             $wtcrProduct->static_price = 0;
             $wtcrProduct->wtcr_nid = 0;
             $wtcrProduct->marketplace_data = serialize( array() );
-            $wtcrProduct->pictures = serialize( array() );
+            $wtcrProduct->pictures[] = serialize([
+                'name' => $this->request->data['picture']['name'],
+                'type' => $this->request->data['picture']['type'],
+                'tmp_name' => $this->request->data['picture']['tmp_name'],
+                'error' => $this->request->data['picture']['error'],
+                'size' => $this->request->data['picture']['size']
+            ]);
             $wtcrProduct->wtcr_product_category = $this->request->data['wtcr_product_category_id'];    
             
             // debug($wtcrProduct);                  
@@ -93,9 +99,6 @@ class WtcrProductsController extends AppController
                 error_log('Failed to add WTCR Product');
                 $this->Flash->error('The Vendor Product could not be saved as a WTCR Product.');
             }
-            
-            debug($wtcrProduct);
-            error_log('END OF PROCESSING');
         } //end if post.        
         
         $productVendors = TableRegistry::get('wtcr_vendor_products')->find('all', [
@@ -115,7 +118,8 @@ class WtcrProductsController extends AppController
         $this->set('mfg_part_num', $mfg_part_num);
         $this->set('wtcrProduct', $wtcrProduct);
         $this->set('categories', $wtcrProductCategories);
-        $this->set('marketplaces', $marketplaces);      
+        $this->set('marketplaces', $marketplaces);
+        $this->set('pictures', $wtcrProduct->pictures);
         
         
         // error_log('About to redirect to WTCRProducts->Index');

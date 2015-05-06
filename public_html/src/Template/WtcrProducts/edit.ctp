@@ -34,6 +34,8 @@
             echo $this->Form->file('product_images');
             // Iterate over each picture and display if possible.
             
+            echo "<pre>" . print_r($pictures, TRUE) . "</pre>";
+            
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
