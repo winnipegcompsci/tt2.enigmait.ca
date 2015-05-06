@@ -89,7 +89,7 @@ class WtcrProductsController extends AppController
                 'tmp_name' => $this->request->data['picture']['tmp_name'],
                 'error' => $this->request->data['picture']['error'],
                 'size' => $this->request->data['picture']['size']
-            )
+            );
             $wtcrProduct->pictures = serialize($data);
             $wtcrProduct->wtcr_product_category = $this->request->data['wtcr_product_category_id'];    
             
