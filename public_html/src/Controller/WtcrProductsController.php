@@ -193,7 +193,7 @@ class WtcrProductsController extends AppController
                 $data[] = array(
                     'name' => $this->request->data['picture']['name'],
                     'type' => $this->request->data['picture']['type'],
-                    'path' => Router::url('img' . DS . $_FILES['picture']['name']),
+                    'path' => WWW_ROOT . 'img' . DS . $_FILES['picture']['name'],
                     'error' => $this->request->data['picture']['error'],
                     'size' => $this->request->data['picture']['size']
                 );
