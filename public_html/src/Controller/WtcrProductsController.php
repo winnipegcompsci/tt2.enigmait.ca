@@ -241,11 +241,7 @@ class WtcrProductsController extends AppController
     
     function list_product_amazon($mfg_part_num)
     {
-        $body = $this->Form->create('Contact');
-        $body .= $this->Form->inputs();
-        $body .= $this->Form->end('Send');    
-    
-    
+        $body = "GET AMAZON INPUTS VARIABLES HERE";  
         $this->set('title',"Listing $mfg_part_num on Amazon");
         $this->set('body', $body);
         
@@ -253,11 +249,12 @@ class WtcrProductsController extends AppController
     
     function list_product_ebay($mfg_part_num) 
     {
-        
+        $body = "GET EBAY INPUT VARIABLES HERE";
+        $this->set('body', $body);
     }
     
     function list_product_wtcr($mfg_part_num) 
     {
-        
+        $this->set('title',"Listing $mfg_part_num on Amazon");
     }
 }
