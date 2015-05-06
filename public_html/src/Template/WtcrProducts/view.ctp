@@ -105,7 +105,7 @@
                     
                     foreach($pictures as $key => $picture) {
                         if($picture['tmp_name'] != null) {
-                            echo "<div style=\"border: 3px solid black\" class=\"columns col-lg-3\">";
+                            echo "<div class=\"columns col-lg-3\">";
                             echo "<h4 class=\"subheader\">" . $picture['name'] .  "</h4>";
                             echo "<img width='100%' src='" . $picture['tmp_name'] . "'> </img>";
                         
