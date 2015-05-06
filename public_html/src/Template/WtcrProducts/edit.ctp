@@ -27,9 +27,12 @@
             // echo $this->Form->input('wtcrprice');
             // echo $this->Form->input('wtcr_nid');
             echo $this->Form->input('lastupdated');
-            echo $this->Form->input('marketplace_data');
-            echo $this->Form->labeol('Add podut');
-            echo $this->Form->file('product_image');
+            echo $this->Form->input('marketplace_data');        
+            // Iterate over each marketplace in array and print out comparison.
+            
+            echo $this->Form->file('product_images');
+            // Iterate over each picture and don't want.
+            
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
