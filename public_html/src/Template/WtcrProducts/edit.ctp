@@ -28,7 +28,7 @@
             // echo $this->Form->input('wtcr_nid');
             echo $this->Form->input('lastupdated');
             echo $this->Form->input('marketplace_data');
-            echo $this->Form->input(measaves_sort ages');
+            echo $this->Form->input('product_images');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
