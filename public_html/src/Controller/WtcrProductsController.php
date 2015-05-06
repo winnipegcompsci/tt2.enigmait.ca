@@ -247,7 +247,7 @@ class WtcrProductsController extends AppController
         
         $prods = TableRegistry::get('WtcrProducts');
         
-        $theseprods = $prods->find('all')->where('mfg_part_num' => $mfg_part_num);
+        $theseprods = $prods->find('all')->where(['mfg_part_num' => $mfg_part_num]);
         $this->set('productdata', $theseprods);
         
     }
