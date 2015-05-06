@@ -245,6 +245,10 @@ class WtcrProductsController extends AppController
         $this->set('title',"Listing $mfg_part_num on Amazon");
         $this->set('body', $body);
         
+        $prods = TableRegistry::get('WtcrProducts')->find('all')
+            ->condition('mfg_part_num' = $mfg_part_num);
+        $this->set('productdata', $prods);
+        
     }
     
     function list_product_ebay($mfg_part_num) 
