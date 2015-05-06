@@ -13,7 +13,7 @@
     </ul>
 </div>
 <div class="wtcrProducts form col-lg-10 col-md-9 columns">
-    <?= $this->Form->create($wtcrProduct); ?>
+    <?= $this->Form->create($wtcrProduct, ['enctype' => 'multipart/form-data']); ?>
     <fieldset>
         <legend><?= __('Edit Wtcr Product') ?></legend>
         <?php
@@ -28,7 +28,7 @@
             echo $this->Form->input('wtcr_nid');
             echo $this->Form->input('lastupdated');
             echo $this->Form->input('marketplace_data');
-            echo $this->Form->input('pictures');
+            echo $this->Form->input('type' => 'file', 'pictures');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
