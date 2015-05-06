@@ -47,4 +47,40 @@
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
+    
+        <div class="row pictures">
+        <div class="panel panel-yellow">
+            <div class="panel-heading">
+                <h6 class="subheader"><?= __('Product Images'); ?></h6>
+            </div>
+                
+            <div class="panel-body">
+                <?php 
+                    $pictures = unserialize($product_pictures);
+                    
+                    foreach($pictures as $key => $picture) {
+                        if(isset($picture['path']) && $picture['path'] != null) {
+                            if(file_exists($picture['path'])) {
+                                echo "<div class=\"columns col-lg-3\">";
+                                echo "<h4 class=\"subheader\">" . $picture['name'] .  "</h4>";
+                                echo "<img width='100%' src='/img/" . $picture['name'] . "'> </img>";
+                            
+                                echo "</div>";
+                            } else {
+                                unset($pictures[$key]);
+                            }
+                            
+                        } else {
+                            unset($pictures[$key]);
+                        }
+                    }
+                    
+                    if(count($pictures) == 0) {
+                        echo "<i class=\"fa fa-times fa-fw\"></i><span>No Pictures Found For This Product</span>";
+                       
+                    }
+                ?>
+            </div>
+        </div>
+    </div>
 </div>

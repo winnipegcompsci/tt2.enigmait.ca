@@ -200,6 +200,7 @@ class WtcrProductsController extends AppController
                 
                                
                 $wtcrProduct->pictures = serialize($data);
+                $this->set('product_pictures', $wtcrProduct->pictures);
             }
             
             if ($this->WtcrProducts->save($wtcrProduct)) {
