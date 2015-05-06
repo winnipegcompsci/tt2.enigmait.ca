@@ -94,7 +94,7 @@ class WtcrProductsController extends AppController
             $data[] = array(
                 'name' => $this->request->data['picture']['name'],
                 'type' => $this->request->data['picture']['type'],
-                'path' => WWW_ROOT . 'product_images' . DS . $this->request->data['picture']['name'],                
+                'path' => WWW_ROOT . 'img' . DS . $_FILES['picture']['name'],               
                 'error' => $this->request->data['picture']['error'],
                 'size' => $this->request->data['picture']['size']
             );
@@ -196,7 +196,7 @@ class WtcrProductsController extends AppController
                 $data[] = array(
                     'name' => $this->request->data['picture']['name'],
                     'type' => $this->request->data['picture']['type'],
-                    'path' => WWW_ROOT . 'product_images' . DS . $this->request->data['picture']['name'],                
+                    'path' => WWW_ROOT . 'img' . DS . $_FILES['picture']['name'],               
                     'error' => $this->request->data['picture']['error'],
                     'size' => $this->request->data['picture']['size']
                 );
