@@ -248,4 +248,14 @@ class WtcrProductsController extends AppController
         
         $this->set('modal', $modal);
     }
+    
+    function list_product_ebay($mfg_part_num) 
+    {
+        
+    }
+    
+    function list_product_wtcr($mfg_part_num) 
+    {
+        
+    }
 }
