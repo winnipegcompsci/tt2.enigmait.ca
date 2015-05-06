@@ -42,6 +42,8 @@ class WtcrProductsController extends AppController
         
         $marketplaces = TableRegistry::get('WtcrMarketplaces')->find('all');
         $this->set('marketplace_list', $marketplaces);
+        $this->set('product_pictures', $wtcrProduct->pictures);
+        
     }
 
     /**

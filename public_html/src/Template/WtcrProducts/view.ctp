@@ -101,7 +101,7 @@
                 
             <div class="panel-body">
                 <?php 
-                    $pictures = unserialize($wtcrProduct->pictures); 
+                    $pictures = unserialize($product_pictures);
                                        
                     foreach($pictures as $picture) {
                         echo "<div class=\"columns col-lg-4\">";
