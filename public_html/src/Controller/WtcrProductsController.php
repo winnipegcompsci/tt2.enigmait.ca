@@ -180,17 +180,13 @@ class WtcrProductsController extends AppController
         $wtcrProduct = $this->WtcrProducts->get($id, [
             'contain' => []
         ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
-
-            echo '$_FILES:';
-            echo "<pre>" . print_r($_FILES, TRUE) . "</pre>";
-            die('HIT STOP');
-            
+        if ($this->request->is(['patch', 'post', 'put'])) {          
             $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
 
             if(isset($this->request->data['picture']) && $this->request->data['picture']['tmp_name'] != null) {
                 $data = unserialize($wtcrProduct->pictures);
                 
+                move_uploaded_file($_FILES['picture']['tmp_name'], WWW_ROOT . 'img' . DS . $_FILES['picture']['name']
                 /*
                 copy($this->request->data['picture']['tmp_name'], 
                     WWW_ROOT . 'img' . DS . $this->request->data['picture']['name']
