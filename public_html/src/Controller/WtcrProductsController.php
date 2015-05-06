@@ -85,7 +85,7 @@ class WtcrProductsController extends AppController
             $wtcrProduct->marketplace_data = serialize( array() );
             
             copy($this->request->data['picture']['tmp_name'], 
-                WWW_ROOT . 'product_images' . DS . $this->request->data['picture']['name']
+                WWW_ROOT . 'img' . DS . $this->request->data['picture']['name']
             );
                         
             $data = unserialize($wtcrProduct->pictures);
@@ -186,7 +186,7 @@ class WtcrProductsController extends AppController
                 $data = unserialize($wtcrProduct->pictures);
                 
                 copy($this->request->data['picture']['tmp_name'], 
-                    WWW_ROOT . 'product_images' . DS . $this->request->data['picture']['name']
+                    WWW_ROOT . 'img' . DS . $this->request->data['picture']['name']
                 );
                 $data[] = array(
                     'name' => $this->request->data['picture']['name'],
