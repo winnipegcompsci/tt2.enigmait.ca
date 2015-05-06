@@ -104,10 +104,10 @@
                     $pictures = unserialize($product_pictures);
                     
                     foreach($pictures as $key => $picture) {
-                        if($picture['tmp_name'] != null) {
+                        if($picture['path'] != null) {
                             echo "<div class=\"columns col-lg-3\">";
                             echo "<h4 class=\"subheader\">" . $picture['name'] .  "</h4>";
-                            echo "<img width='100%' src='" . $picture['tmp_name'] . "'> </img>";
+                            echo "<img width='100%' src='" . $picture['path'] . "'> </img>";
                         
                             echo "</div>";
                         } else {
