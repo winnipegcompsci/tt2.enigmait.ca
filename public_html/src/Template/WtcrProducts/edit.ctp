@@ -34,7 +34,7 @@
             echo $this->Form->file('product_images');
             // Iterate over each picture and display if possible.
             
-            $pictures = $wtcrProduct->pictures[] 
+            $pictures = unserialize($wtcrProduct->pictures); 
             echo "<pre>" . print_r($pictures, TRUE) . "</pre>";
             
         ?>
