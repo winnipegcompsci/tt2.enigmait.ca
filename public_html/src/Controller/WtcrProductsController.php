@@ -241,8 +241,13 @@ class WtcrProductsController extends AppController
     
     function list_product_amazon($mfg_part_num)
     {
+        $body = $form->create('Contact');
+        $body .= $form->inputs();
+        $body .= $form->end('Send');    
+    
+    
         $this->set('title',"Listing $mfg_part_num on Amazon");
-        $this->set('body', 'Yay!');
+        $this->set('body', $body);
         
     }
     
