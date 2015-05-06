@@ -69,11 +69,11 @@ class WtcrProductsController extends AppController
     public function add_vendor_product($mfg_part_num) 
     {   
         $wtcrProduct = $this->WtcrProducts->newEntity();   
-                
-        echo "::DEBUG:: <pre>" . print_r($this->request->data, TRUE) . "</pre>";
-        DIE('END OF PROCESSING');
-                
+                                
         if($this->request->is('post')) {                   
+            echo "::DEBUG:: <pre>" . print_r($this->request->data, TRUE) . "</pre>";
+            DIE('END OF PROCESSING');
+               
             $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
             debug($wtcrProduct);
             
