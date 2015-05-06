@@ -186,7 +186,7 @@ class WtcrProductsController extends AppController
             if(isset($this->request->data['picture']) && $this->request->data['picture']['tmp_name'] != null) {
                 $data = unserialize($wtcrProduct->pictures);
                 
-                move_uploaded_file($_FILES['picture']['tmp_name'], WWW_ROOT . 'img' . DS . $_FILES['picture']['name']
+                move_uploaded_file($_FILES['picture']['tmp_name'], WWW_ROOT . 'img' . DS . $_FILES['picture']['name']);
                 /*
                 copy($this->request->data['picture']['tmp_name'], 
                     WWW_ROOT . 'img' . DS . $this->request->data['picture']['name']
