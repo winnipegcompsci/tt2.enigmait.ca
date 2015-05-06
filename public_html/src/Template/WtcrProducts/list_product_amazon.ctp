@@ -9,7 +9,7 @@ echo $this->element('modal', [
 
 
 foreach($productdata as $product) {
-    echo "<pre>" . print_r($product, TRUE) . "</pre>";
+    echo "<pre>" . print_r($product->_properties, TRUE) . "</pre>";
 }
 
 ?>
