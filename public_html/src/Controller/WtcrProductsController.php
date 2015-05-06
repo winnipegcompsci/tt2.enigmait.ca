@@ -184,7 +184,8 @@ class WtcrProductsController extends AppController
 
             echo '$_FILES:';
             echo "<pre>" . print_r($_FILES, TRUE) . "</pre>";
-        
+            die('HIT STOP');
+            
             $wtcrProduct = $this->WtcrProducts->patchEntity($wtcrProduct, $this->request->data);
 
             if(isset($this->request->data['picture']) && $this->request->data['picture']['tmp_name'] != null) {
