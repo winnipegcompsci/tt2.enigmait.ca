@@ -8,7 +8,9 @@ echo $this->element('modal', [
 ]);
 
 
-echo "<pre>" . print_r($productdata, TRUE) . "</pre>";
+foreach($productdata as $product) {
+    echo "<pre>" . print_r($product, TRUE) . "</pre>";
+}
 
 ?>
 
