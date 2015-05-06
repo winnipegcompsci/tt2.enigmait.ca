@@ -239,9 +239,9 @@ class WtcrProductsController extends AppController
         return $this->redirect(['action' => 'index']);
     }
     
-    function list_product($data = null)
+    function list_product_amazon($mfg_part_num)
     {
-        echo "<br />MFG PART #: " . $data['mfg_part_num'];
-        echo "<br />MARKETPLACE #: " . $data['marketplace'];
+        echo "<br />MFG PART #: " . $mfg_part_num;
+        
     }
 }
