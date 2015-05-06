@@ -212,6 +212,8 @@ class WtcrProductsController extends AppController
         $wtcrProductCategories = $this->WtcrProducts->WtcrProductCategories->find('list', ['limit' => 200]);
         $this->set(compact('wtcrProduct', 'wtcrProductCategories'));
         $this->set('_serialize', ['wtcrProduct']);
+        
+        return $this->redirect(['controller' => 'wtcr_products', 'action' => 'view', $id]);
     }
 
     /**
