@@ -35,7 +35,9 @@
             // Iterate over each picture and display if possible.
             
             $pictures = unserialize($wtcrProduct->pictures); 
-            echo "<pre>" . print_r($pictures, TRUE) . "</pre>";
+            foreach($pictures as $picture) {
+                echo "<pre>" . print_r($picture, TRUE) . "</pre>";
+            }
             
         ?>
     </fieldset>
