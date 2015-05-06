@@ -44,7 +44,7 @@
                         <td class="actions">
                         <?= $this->Html->link('<i class="fa fa-eye"></i>', ['action' => 'view', $wtcrProduct->id], ['escape' => false]) ?>
                         <?= $this->Html->link('<i class="fa fa-pencil-square-o"></i>', ['action' => 'edit', $wtcrProduct->id], ['escape' => false]) ?>
-                        <?= $this->Form->postLink('<i class="fa fa-trash"></i>', ['action' => 'delete', $wtcrProduct->id], ['confirm' => __('Are you sure you want to delete # {0}?', $wtcrProduct->id)], ['escape' => false]) ?>
+                        <?= $this->Form->postLink('<i class="fa fa-trash"></i>', ['action' => 'delete', $wtcrProduct->id], ['confirm' => __('Are you sure you want to delete # {0}?', $wtcrProduct->id), 'escape' => false]); ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>
