@@ -105,8 +105,8 @@
                                        
                     foreach($pictures as $picture) {
                         echo "<div class=\"columns col-lg-4\">";
-                        echo "<h4 class=\"subheader\">" . $picture->name .  "</h4>";
-                        echo "<img src='" . $picture->tmp_name . "</img>";
+                        echo "<h4 class=\"subheader\">" . $picture['name'] .  "</h4>";
+                        echo "<img src='" . $picture['tmp_name'] . "</img>";
                         
                         echo "</div>";
                     }
