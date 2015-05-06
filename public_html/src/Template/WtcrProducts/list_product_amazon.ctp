@@ -12,4 +12,4 @@ echo $this->element('modal', [
 ?>
 
 
-<a href="#" data-toggle="modal" data-target="#modal"><i class="fa fa-info-circle fa-fw"></i> About </a>
+<a href="#" data-toggle="modal" data-target="#help"><i class="fa fa-info-circle fa-fw"></i> About </a>
