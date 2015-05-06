@@ -36,7 +36,9 @@
             
             $pictures = unserialize($wtcrProduct->pictures); 
             foreach($pictures as $picture) {
-                echo "<pre>" . print_r($picture, TRUE) . "</pre>";
+                if(isset($picture['tmp_name']) && $picture['tmp_name'] != null) {
+                    echo "<pre>" . print_r($picture, TRUE) . "</pre>";
+                }
             }
             
         ?>
