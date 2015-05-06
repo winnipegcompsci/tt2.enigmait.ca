@@ -21,7 +21,8 @@
             echo $this->Form->input('wtcrsku');
             echo $this->Form->input('wtcr_product_name');
             echo $this->Form->input('description');
-            echo $this->Form->checkbox('autoupdate', ['text' => 'AutoUpdate Price With Supplier Price Increases']);
+            echo $this->Form->label('AutoUpdate Listing Prices with Supplier Price Increases');
+            echo $this->Form->checkbox('autoupdate');
             echo $this->Form->input('static_price');
             echo $this->Form->input('suggestedmarkup');
             // echo $this->Form->input('wtcrprice');
