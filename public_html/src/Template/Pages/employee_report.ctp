@@ -15,7 +15,6 @@
             echo $this->Form->input("Time Logged From:");
             echo $this->Form->input("Time Logged To:");
             
-            echo $this->Form->label("User");
             echo $this->Form->input('user_id');
             
             echo $this->Form->label('Detail Level:');
