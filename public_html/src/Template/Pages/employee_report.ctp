@@ -32,7 +32,7 @@
         ?>
     </div>
 
-    <div class="col-lg-10">
+    <div class="col-lg-10" style="border: solid 1px black">
     Report Data Goes Here.
     </div>
 </div>
