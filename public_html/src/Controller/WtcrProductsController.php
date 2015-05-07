@@ -241,7 +241,6 @@ class WtcrProductsController extends AppController
     
     function list_product_amazon($mfg_part_num)
     {
-        $body = "GET AMAZON INPUTS VARIABLES HERE";  
         $this->set('title',"Listing $mfg_part_num on Amazon");
         $this->set('body', $body);
         

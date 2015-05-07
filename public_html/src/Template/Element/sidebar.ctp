@@ -37,10 +37,10 @@
                                 <a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'ticket_report']);?>">Ticket Report</a>
                             </li>
                             <li>
-                                <a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'employee_report']);?>">Employee Report</a>
+                                <a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'billing_report']);?>">Billing Report</a>
                             </li>
                             <li>
-                                <a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'billing_report']);?>">Billing Report</a>
+                                <a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'employee_report']);?>">Employee Report</a>
                             </li>
                         </ul>
                         <!-- /.nav-third-level -->
