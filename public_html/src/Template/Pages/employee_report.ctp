@@ -9,13 +9,12 @@
 
 <div class="row">
     <div class="col-lg-2">
-    
         <?php
             $attributes = array('legend' => false);
             echo $this->Form->input("Time Logged From:");
             echo $this->Form->input("Time Logged To:");
             
-            echo $this->Form->input('user_id');
+            echo $this->Form->input('user.first_name');
             
             echo $this->Form->label('Detail Level:') . "<br />";
             $options = array('summary' => 'Summary', 'detailed' => 'Detailed');
