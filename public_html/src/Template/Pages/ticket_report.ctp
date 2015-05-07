@@ -4,7 +4,7 @@
 
 
 <div class="row">
-    Ticket Report
+    <h1>Ticket Report</h1>
 </div>
 
 
