@@ -34,13 +34,13 @@
                         <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>&nbsp; Reports <span class="fa arrow"></span></a>
                         <ul class="nav nav-third-level">
                             <li>
-                                <a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'under_construction']);?>">Ticket Report</a>
+                                <a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'ticket_report']);?>">Ticket Report</a>
                             </li>
                             <li>
-                                <a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'under_construction']);?>">Employee Report</a>
+                                <a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'employee_report']);?>">Employee Report</a>
                             </li>
                             <li>
-                                <a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'under_construction']);?>">Billing Report</a>
+                                <a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'billing_report']);?>">Billing Report</a>
                             </li>
                         </ul>
                         <!-- /.nav-third-level -->
