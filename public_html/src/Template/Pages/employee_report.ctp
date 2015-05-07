@@ -3,7 +3,7 @@
 ?>
 
 <div class="row">
-    Employee Report
+    <h1>Employee Report</h1>
 </div>
 
 
@@ -11,6 +11,7 @@
     <div class="col-lg-2">
     
         <?php
+            $attributes = array('legend' => false);
             echo $this->Form->input("Time Logged From:");
             echo $this->Form->input("Time Logged To:");
             
