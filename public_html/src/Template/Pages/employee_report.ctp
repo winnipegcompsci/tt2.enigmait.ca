@@ -17,15 +17,16 @@
             
             echo $this->Form->input('user_id');
             
-            echo $this->Form->label('Detail Level:');
+            echo $this->Form->label('Detail Level:') . "<br />";
             $options = array('summary' => 'Summary', 'detailed' => 'Detailed');
             echo $this->Form->radio('detaillevel', $options, $attributes);
            
         
-            echo $this->Form->label('Output Format:');
+            echo $this->Form->label('Output Format:') . "<br />";
             $options = array('html' => 'HTML', 'pdf' => 'PDF', 'xls' => 'Excel');
             echo $this->Form->radio('format', $options, $attributes);
         
+            echo "<br />";
             echo $this->Form->button('Generate Report');
             echo $this->Form->end();
         ?>
