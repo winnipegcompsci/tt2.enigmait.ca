@@ -10,7 +10,7 @@
 
 <div class="row">
     <div class="col-lg-2">
-        <?= 
+        <?php
             echo $this->Form->create(); 
         
             $options = array('created' => 'Tickets Created', 'closed' => 'Tickets Closed', 'open' => 'Open Tickets');
