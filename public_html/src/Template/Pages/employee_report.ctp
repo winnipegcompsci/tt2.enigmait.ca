@@ -14,7 +14,7 @@
             echo $this->Form->input("Time Logged From:");
             echo $this->Form->input("Time Logged To:");
             
-            echo $this->Form->select('user.first_name');
+            echo $this->Form->select('user_id');
             
             echo $this->Form->label('Detail Level:') . "<br />";
             $options = array('summary' => 'Summary', 'detailed' => 'Detailed');
