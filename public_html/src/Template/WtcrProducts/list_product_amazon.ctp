@@ -12,7 +12,7 @@ $formbody .= $this->Form->end('Submit to Amazon');
 
 echo $this->element('modal', [
     'title' => $title,
-    'body' => $body,
+    'body' => $formbody,
 ]);
 
 
