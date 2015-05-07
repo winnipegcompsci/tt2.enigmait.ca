@@ -14,10 +14,10 @@
             echo $this->Form->input("Time Logged From:");
             echo $this->Form->input("Time Logged To:");
             
-            echo $this->Form->label('User');
+            echo $this->Form->label('User') . "<br />";
             echo $this->Form->select('user_id');
             
-            echo $this->Form->label('Detail Level:') . "<br />";
+            echo "<br />" . $this->Form->label('Detail Level:') . "<br />";
             $options = array('summary' => 'Summary', 'detailed' => 'Detailed');
             echo $this->Form->radio('detaillevel', $options, $attributes);
            
