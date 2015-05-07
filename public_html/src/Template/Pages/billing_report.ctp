@@ -9,7 +9,7 @@
 
 
 <div class="row">
-    <div class="col-lg-2">
+    <div class="col-lg-2 pull-right">
         <?php
             echo $this->Form->create(); 
         
@@ -24,7 +24,7 @@
                 'paid' => 'Paid',
             );
             echo $this->Form->label('Billing Statuses');
-            echo $this->Form->checkbox('billingstatus', $options);
+            echo $this->Form->select('billingstatus', $options);
             
             
             $options = array(
@@ -34,7 +34,7 @@
                 'emerg_hourly' => 'Hourly - Emergency',
             );
             echo $this->Form->label('Service Types');
-            echo $this->Form->checkbox('servicetypes', $options);
+            echo $this->Form->select('servicetypes', $options);
             
             $options = array(
                 'hardware' => 'Hardware', 
@@ -44,7 +44,7 @@
                 'phone' => 'Phone',
             );
             echo $this->Form->label('Problem Types');
-            echo $this->Form->checkbox('problemtypes', $options);          
+            echo $this->Form->select('problemtypes', $options);          
             
             echo $this->Form->input("Date From:");
             echo $this->Form->input("Date To:");
