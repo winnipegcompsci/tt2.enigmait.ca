@@ -4,7 +4,7 @@ echo "Listing Product on Amazon";
 
 $formbody = $this->Form->create();
 $formbody .= $this->Form->input('asin');
-$formbody .= $this->Form->input('name');
+$formbody .= $this->Form->input('product_name');
 $formbody .= $this->Form->input('price');
 $formbody .= $this->Form->end('Submit to Amazon');
 
