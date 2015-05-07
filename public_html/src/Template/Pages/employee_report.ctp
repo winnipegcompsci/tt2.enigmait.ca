@@ -8,7 +8,7 @@
 
 
 <div class="row">
-    <div class="col-lg-2 pull-right">
+    <div class="col-lg-2">
     
         <?php
             echo $this->Form->input("Time Logged From:");
