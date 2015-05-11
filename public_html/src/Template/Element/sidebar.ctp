@@ -16,7 +16,7 @@
                 <a href="<?php echo $this->Url->build(['controller' => 'Pages', 'action' => 'display', 'dashboard']);?>"><i class="fa fa-dashboard fa-fw"></i>&nbsp; Dashboard</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-puzzle-piece fa-fw"></i> Enigma <span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-puzzle-piece fa-fw"></i> Enigma Networks <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="<?php echo $this->Url->build(['controller' => 'Projects', 'action' => 'index']); ?>"><i class="fa fa-paperclip fa-fw"></i>&nbsp; Projects</a>
@@ -29,6 +29,9 @@
                     </li>
                     <li>
                         <a href="<?php echo $this->Url->build(['controller' => 'Quotes', 'action' => 'index']); ?>"><i class="fa fa-quote-left"></i>&nbsp; Quotes</a>
+                    </li>
+                    <li>
+                        
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>&nbsp; Reports <span class="fa arrow"></span></a>
