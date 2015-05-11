@@ -575,7 +575,6 @@ class WtcrVendorsController extends AppController
             $message = 'Searching Product Category: ' . $productType . ', (elapsed time: ' . $duration . ' seconds, ' . $totalNumProducts . ' products scraped)';            
             $this->asi_update_progress($key, $message, number_format(($index / count($productTypes))*100, 2));
         
-        
             // Setup Request for Page/Product Category Content
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $thisURL);
@@ -597,21 +596,14 @@ class WtcrVendorsController extends AppController
             // Perform Login Request
             $page_content = curl_exec($ch);        
             $page_info = curl_getinfo($ch);
-            
-            // echo "<pre>Page Content:: " . $page_content . "</pre>";            
-            // error_log("PAGE INFO: " . print_r($page_info, TRUE));
-                       
+                            
             $html = str_get_html($page_content);
                
             if(!empty($html)) {
-                // error_log('HTML Not EMPTY' . print_r($html->find('body'), TRUE) );
                 foreach($html->find('dd.specs') as $specs) {
-                    // error_log("FOUND SPECS");
                     // Look for each List Item in Specs.
                     foreach($specs->find('li') as $listItem) {               
-                        // error_log("FOUND LIST ITEM: " . print_r($listItem, TRUE) );
                         if(strpos($listItem, 'SKU') !== FALSE) {
-                            // error_log("LIST ITEM: " . $listItem);
                             $thisSKU = str_replace('SKU:', '', $listItem);
                             $thisSKU = str_replace('<span>', '', $thisSKU);
                             $thisSKU = str_replace('</span>', '', $thisSKU);
