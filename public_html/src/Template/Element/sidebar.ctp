@@ -31,7 +31,7 @@
                         <a href="<?php echo $this->Url->build(['controller' => 'Quotes', 'action' => 'index']); ?>"><i class="fa fa-quote-left"></i>&nbsp; Quotes</a>
                     </li>
                     <li>
-                        <a href="<?php echo $this->Url->build(['controller' => 'asterisk', 'action' => 'index']); ?>"><i class="fa fa-asterisk fa-fw"></i>&nbsp; Asterisk Lookup Tool</a>
+                        <a href="<?php echo $this->Url->build(['controller' => 'asterisk', 'action' => 'index']); ?>"><i class="fa fa-asterisk fa-fw"></i>&nbsp; Asterisk Call Logs </a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>&nbsp; Reports <span class="fa arrow"></span></a>
